@@ -12,8 +12,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" YouCompleteMe plugin
-Bundle 'Valloric/YouCompleteMe' 
+" Added plugin
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'majutsushi/tagbar'
+Bundle 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -72,3 +74,13 @@ set foldnestmax=10      " 10 nested fold max
 "set foldmethod=syntax   " fold based on syntax
 set foldmethod=indent
 
+
+"=========================
+" Tagbar
+"=========================
+nmap <F8> :TagbarToggle<CR>
+
+"=========================
+" NerdTree
+"=========================
+nmap <F7> :NERDTreeToggle<CR> 
