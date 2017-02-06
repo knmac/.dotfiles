@@ -13,7 +13,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Added plugin
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe' 
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 
@@ -43,15 +43,15 @@ set autoindent
 "=========================
 " UI config
 "=========================
+set mouse=a
 set number		        " show line numbers
-set showcmd		        " show command in bottom bar
+" set showcmd		        " show command in bottom bar
 set cursorline          " highlight current line
 hi Cursorline term=bold cterm=bold guibg=Grey40
 filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu (press <TAB> while typing in command mode)
 set lazyredraw          " redraw only when we need to
 set showmatch           " highlight matching [{()}]
-set visualbell          " use visualbell instead of sound
 
 
 "=========================
@@ -76,11 +76,28 @@ set foldmethod=indent
 
 
 "=========================
+" Tab
+"=========================
+"nnoremap <C-S-tab>      :tabprevious<CR>
+"nnoremap <C-tab>        :tabnext<CR>
+"nnoremap <C-Insert>     :tabnew<CR>
+"nnoremap <C-Delete>     :tabclose<CR>
+
+"inoremap <C-S-tab>      <Esc>:tabprevious<CR>i
+"inoremap <C-tab>        <Esc>:tabnext<CR>i
+"inoremap <C-Insert>     <Esc>:tabnew<CR>
+"inoremap <C-Delete>     <Esc>:tabclose<CR>
+
+
+"=========================
 " Tagbar
 "=========================
+"let g:tagbar_left=1
 nmap <F8> :TagbarToggle<CR>
+
 
 "=========================
 " NerdTree
 "=========================
-nmap <F7> :NERDTreeToggle<CR> 
+nmap <F7> :NERDTreeToggle<CR>
+
