@@ -1,103 +1,149 @@
-"=========================
-" Vundle
-"=========================
-set nocompatible              " be iMproved, required
-filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" ============================================================================
+" Vim-plug initialization
+" Avoid modify this section, unless you are very sure of what you are doing
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+let vim_plug_just_installed = 0
+let vim_plug_path = expand('~/.vim/autoload/plug.vim')
+if !filereadable(vim_plug_path)
+    echo "Installing Vim-plug..."
+    echo ""
+    silent !mkdir -p ~/.vim/autoload
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let vim_plug_just_installed = 1
+endif
 
-" Added plugin
-Bundle 'Valloric/YouCompleteMe' 
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/nerdtree'
+" manually load vim-plug the first time
+if vim_plug_just_installed
+    :execute 'source '.fnameescape(vim_plug_path)
+endif
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Obscure hacks done, you can now modify the rest of the .vimrc as you wish :)
+
+" ============================================================================
+" Active plugins
+" You can disable or add new ones here:
+
+" this needs to be here, so vim-plug knows we are declaring the plugins we
+" want to use
+call plug#begin('~/.vim/plugged')
+
+" Better file browser
+Plug 'scrooloose/nerdtree'
+" Code commenter
+Plug 'scrooloose/nerdcommenter'
+" Pending tasks list
+Plug 'fisadev/FixedTaskList.vim'
+" Class/module browser
+Plug 'majutsushi/tagbar'
+" Git integration
+Plug 'motemen/git-vim'
+" Tab list panel
+Plug 'kien/tabman.vim'
+" Python and other languages code checker
+Plug 'scrooloose/syntastic'
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Code autocompletion
+Plug 'Valloric/YouCompleteMe'
+
+" Tell vim-plug we finished declaring plugins, so it can load them
+call plug#end()
 
 
-"=========================
+" ============================================================================
+" Install plugins the first time vim runs
+
+
+if vim_plug_just_installed
+    echo "Installing Bundles, please ignore key map error messages"
+    :PlugInstall
+endif
+
+
+" ============================================================================
 " Color setting
-"=========================
-syntax enable    	    " enable syntax processing
-colorscheme default
+syntax enable
 
 
-"=========================
-" Spaces & Tabs
-"=========================
-set tabstop=4		    " number of visual spaces per TAB
-set softtabstop=4	    " number of spaces in tab when editing
-set expandtab       	" tabs are spaces
+" ============================================================================
+" Spaces and tabs
+set tabstop=4           " number of visual spaces per TAB
+set softtabstop=4       " number of spaces in tab when editing
+set expandtab           " tabs are spaces
 set shiftwidth=4
 set smarttab
 set autoindent
 
 
-"=========================
+" ============================================================================
 " UI config
-"=========================
+set ls=2                " always show status bar
 set mouse=a
-set number		        " show line numbers
-" set showcmd		        " show command in bottom bar
+set number              " show line numbers
+set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
-hi Cursorline term=bold cterm=bold guibg=Grey40
 filetype indent on      " load filetype-specific indent files
-set wildmenu            " visual autocomplete for command menu (press <TAB> while typing in command mode)
+" set wildmenu            " visual autocomplete for command menu (press <TAB> while typing in command mode)
+set wildmode=list:longest
 set lazyredraw          " redraw only when we need to
 set showmatch           " highlight matching [{()}]
 
 
-"=========================
+" ============================================================================
 " Searching
-"=========================
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
- " turn off search highlight (by pressing <SPACE> in command mode)
-nnoremap <leader><space> :nohlsearch<CR> 
+" turn off search highlight (by pressing <SPACE> in command mode)
+nnoremap <leader><space> :nohlsearch<CR>
 
 
-"=========================
-" Folding
-"=========================
+" ===========================================================================
+" Code folding
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
-" space open/closes folds
-" nnoremap <space> za
-"set foldmethod=syntax   " fold based on syntax
 set foldmethod=indent
 
 
-"=========================
-" Tab
-"=========================
-"nnoremap <C-S-tab>      :tabprevious<CR>
-"nnoremap <C-tab>        :tabnext<CR>
-"nnoremap <C-Insert>     :tabnew<CR>
-"nnoremap <C-Delete>     :tabclose<CR>
-
-"inoremap <C-S-tab>      <Esc>:tabprevious<CR>i
-"inoremap <C-tab>        <Esc>:tabnext<CR>i
-"inoremap <C-Insert>     <Esc>:tabnew<CR>
-"inoremap <C-Delete>     <Esc>:tabclose<CR>
+" ============================================================================
+" Task list
+nmap <F6> :TaskList<CR>
 
 
-"=========================
-" Tagbar
-"=========================
-"let g:tagbar_left=1
-nmap <F8> :TagbarToggle<CR>
-
-
-"=========================
-" NerdTree
-"=========================
+" ============================================================================
+" Nerd tree
 nmap <F7> :NERDTreeToggle<CR>
+" open nerdtree with the current file selected
+nmap ,t :NERDTreeFind<CR>
+" don't show these file types
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
+
+" ============================================================================
+" Tag bar
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+
+" ============================================================================
+" Syntastic
+" show list of errors and warnings on the current file
+nmap <F9> :Errors<CR>
+" check also when just opened the file
+let g:syntastic_check_on_open = 1
+" don't put icons on the sign column (it hides the vcs status icons of signify)
+let g:syntastic_enable_signs = 0
+
+
+" ============================================================================
+" TabMan
+" mappings to toggle display, and to focus on it
+let g:tabman_toggle = 'tl'
+let g:tabman_focus  = 'tf'
+
+" ============================================================================
+" Air line
+let g:airline_powerline_fonts = 0
+let g:airline_theme = 'bubblegum'
+let g:airline#extensions#whitespace#enabled = 0
