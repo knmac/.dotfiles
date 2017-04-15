@@ -1,10 +1,8 @@
 # Linux settings (how to use)
 
-vimrc --> rename to .vimrc
-
-tmux.conf --> rename to .tmux.conf (need to install vundle and youcompleteme in addition)
-
-config --> put inside ~/.ssh
+* Rename ``` vimrc ``` to ``` .vimrc ```
+* Rename ``` tmux.conf ``` to ``` .tmux.conf ```
+* Put ``` config ``` inside ``` ~/.ssh ```
 
 
 # Required packages for vimrc
@@ -12,6 +10,9 @@ config --> put inside ~/.ssh
 sudo apt-get install curl vim exuberant-ctags git ack-grep
 sudo pip install pep8 flake8 pyflakes isort yapf
 ```
+
+After cloning YouCompleteMe (inside ``` ~/.vim/plugged/ ``` by default), go to ``` ~/.vim/plugged/YouCompleteMe/ ``` and run
+``` python install.py ```
 
 # Install tmux 2.2
 ```
