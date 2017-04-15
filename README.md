@@ -1,8 +1,8 @@
 # Linux settings (how to use)
 
-* Rename ``` vimrc ``` to ``` .vimrc ```
-* Rename ``` tmux.conf ``` to ``` .tmux.conf ```
-* Put ``` config ``` inside ``` ~/.ssh ```
+* Rename ``` vimrc ``` to ``` .vimrc ``` and put in home folder.
+* Rename ``` tmux.conf ``` to ``` .tmux.conf ``` and put in home folder.
+* Put ``` config ``` inside ``` ~/.ssh ```.
 
 
 # Required packages for vimrc
@@ -11,8 +11,12 @@ sudo apt-get install curl vim exuberant-ctags git ack-grep
 sudo pip install pep8 flake8 pyflakes isort yapf
 ```
 
-After cloning YouCompleteMe (inside ``` ~/.vim/plugged/ ``` by default), go to ``` ~/.vim/plugged/YouCompleteMe/ ``` and run
-``` python install.py ```
+Open vim the first time will download and install all plugins. To activate YouCompleteMe (put inside ``` ~/.vim/plugged/ ``` by default), go to ``` ~/.vim/plugged/YouCompleteMe/ ``` and run:
+
+```
+python install.py
+```
+
 
 # Install tmux 2.2
 ```
