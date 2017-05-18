@@ -44,8 +44,9 @@ Plug 'scrooloose/syntastic'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Code autocompletion
-Plug 'Valloric/YouCompleteMe'
+" Code autocompletion, go to definition
+" Plug 'Valloric/YouCompleteMe'
+Plug 'davidhalter/jedi-vim'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -83,6 +84,7 @@ set mouse=a
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
+highlight CursorLine cterm=bold gui=bold
 filetype indent on      " load filetype-specific indent files
 " set wildmenu            " visual autocomplete for command menu (press <TAB> while typing in command mode)
 set wildmode=list:longest
@@ -108,12 +110,12 @@ set foldmethod=indent
 
 " ============================================================================
 " Task list
-nmap <F6> :TaskList<CR>
+nmap <F2> :TaskList<CR>
 
 
 " ============================================================================
 " Nerd tree
-nmap <F7> :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeToggle<CR>
 " open nerdtree with the current file selected
 nmap ,t :NERDTreeFind<CR>
 " don't show these file types
@@ -122,7 +124,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " ============================================================================
 " Tag bar
-nmap <F8> :TagbarToggle<CR>
+nmap <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 
@@ -142,8 +144,22 @@ let g:syntastic_enable_signs = 0
 let g:tabman_toggle = 'tl'
 let g:tabman_focus  = 'tf'
 
+
 " ============================================================================
 " Air line
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'bubblegum'
 let g:airline#extensions#whitespace#enabled = 0
+
+
+" ============================================================================
+" Jedi vim
+" All these mappings work only for python code:
+" Go to definition
+let g:jedi#goto_command = ',d'
+" Find ocurrences
+let g:jedi#usages_command = ',o'
+" Find assignments
+let g:jedi#goto_assignments_command = ',a'
+" Go to definition in new tab
+nmap ,D :tab split<CR>:call jedi#goto()<CR>
