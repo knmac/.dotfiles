@@ -47,6 +47,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Code autocompletion, go to definition
 " Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
+" Highlight syntax for caffe's prototxt
+Plug 'chiphogg/vim-prototxt'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
