@@ -47,8 +47,10 @@ Plug 'vim-airline/vim-airline-themes'
 " Code autocompletion, go to definition
 " Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
-" Highlight syntax for caffe's prototxt
-Plug 'chiphogg/vim-prototxt'
+" Git/mercurial/others diff icons on the side of the file lines
+Plug 'mhinz/vim-signify'
+" molokai theme
+Plug 'tomasr/molokai'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -56,8 +58,6 @@ call plug#end()
 
 " ============================================================================
 " Install plugins the first time vim runs
-
-
 if vim_plug_just_installed
     echo "Installing Bundles, please ignore key map error messages"
     :PlugInstall
@@ -92,6 +92,13 @@ filetype indent on      " load filetype-specific indent files
 set wildmode=list:longest
 set lazyredraw          " redraw only when we need to
 set showmatch           " highlight matching [{()}]
+
+colorscheme molokai
+if has("gui_running")
+    let g:molokai_original = 1
+else
+    let g:rehash256 = 1
+endif
 
 
 " ============================================================================
@@ -153,6 +160,17 @@ let g:airline_powerline_fonts = 0
 let g:airline_theme = 'bubblegum'
 let g:airline#extensions#whitespace#enabled = 0
 
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+
 
 " ============================================================================
 " Jedi vim
@@ -165,3 +183,19 @@ let g:jedi#usages_command = ',o'
 let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
+
+
+" Signify ====================================================================
+" this first setting decides in which order try to guess your current vcs
+" UPDATE it to reflect your preferences, it will speed up opening files
+let g:signify_vcs_list = [ 'git', 'hg' ]
+" mappings to jump to changed blocks
+nmap <leader>sn <plug>(signify-next-hunk)
+nmap <leader>sp <plug>(signify-prev-hunk)
+" nicer colors
+highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
+highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
+highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
