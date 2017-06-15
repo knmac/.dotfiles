@@ -1,8 +1,11 @@
 # Linux settings (how to use)
-
-* Rename ``` vimrc ``` to ``` .vimrc ``` and put in home folder.
-* Rename ``` tmux.conf ``` to ``` .tmux.conf ``` and put in home folder.
-* Put ``` config ``` inside ``` ~/.ssh ```.
+```
+cd
+git clone https://github.com/knmac/linux_settings.git
+cp linux_settings/vimrc/* .
+cp linux_settings/tmux/* .
+rm -r linux_settings
+```
 
 
 # vimrc's installation guide
