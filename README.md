@@ -23,6 +23,9 @@ sudo pip install pep8 flake8 pyflakes isort yapf
 * Open error list: F9
 * Open tab manager: tl
 * Code folding: za
+* Quick command: \ci
+* Go to definition: ,d
+* Auto complete (in editor mode): Ctrl + space
 
 
 # tmux 2.2's installation guide
