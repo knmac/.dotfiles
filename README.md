@@ -42,6 +42,7 @@ sudo make install
 
 ## Cheat sheet
 (After pressing Ctrl - b)
+* Mouse mode: m
 * Split veritcally: |
 * Split horizontally: -
 * Create new window: c
