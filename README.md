@@ -49,3 +49,9 @@ sudo make install
 * Kill pane: x
 * Kill window: &
 * Navigate, resize: use your mouse :)
+* Copy mode:
+  * Start copy mode: Ctrl-b Enter
+  * Select with mouse
+  * Paste from buffer: Ctrl-b p
+  * List buffer: Ctrl-b b
+  * Choose buffer: Ctrl-b P
