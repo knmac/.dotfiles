@@ -51,6 +51,8 @@ Plug 'davidhalter/jedi-vim'
 Plug 'mhinz/vim-signify'
 " molokai theme
 Plug 'tomasr/molokai'
+" make python syntax look prettier
+Plug 'sentientmachine/Pretty-Vim-Python'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
