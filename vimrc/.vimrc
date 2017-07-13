@@ -47,12 +47,17 @@ Plug 'vim-airline/vim-airline-themes'
 " Code autocompletion, go to definition
 " Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
+" Latex plugin
+Plug 'lervag/vimtex'
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
-" molokai theme
+" colorschemes
 Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
 " make python syntax look prettier
 Plug 'sentientmachine/Pretty-Vim-Python'
+" Code and files fuzzy finder
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -70,6 +75,13 @@ endif
 " Color setting
 syntax enable
 
+colorscheme molokai
+if has("gui_running")
+    let g:molokai_original = 1
+else
+    let g:rehash256 = 1
+endif
+
 
 " ============================================================================
 " Spaces and tabs
@@ -82,10 +94,16 @@ set autoindent
 
 
 " ============================================================================
+" Buffer settings
+set hidden
+
+
+" ============================================================================
 " UI config
 set ls=2                " always show status bar
 set mouse=a
 set number              " show line numbers
+set numberwidth=5
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 highlight CursorLine cterm=bold gui=bold
@@ -95,12 +113,7 @@ set wildmode=list:longest
 set lazyredraw          " redraw only when we need to
 set showmatch           " highlight matching [{()}]
 
-colorscheme molokai
-if has("gui_running")
-    let g:molokai_original = 1
-else
-    let g:rehash256 = 1
-endif
+set backspace=indent,eol,start
 
 
 " ============================================================================
@@ -120,9 +133,21 @@ set foldmethod=indent
 
 
 " ============================================================================
-" tmux copy paste
-set clipboard=unnamed " use the system clipboard
-
+" Make function keys work for mac
+if has('mac') && ($TERM == 'xterm-256color' || $TERM == 'screen-256color')
+	map <Esc>OP <F1>
+ 	map <Esc>OQ <F2>
+ 	map <Esc>OR <F3>
+ 	map <Esc>OS <F4>
+ 	map <Esc>[16~ <F5>
+	map <Esc>[17~ <F6>
+	map <Esc>[18~ <F7>
+	map <Esc>[19~ <F8>
+	map <Esc>[20~ <F9>
+	map <Esc>[21~ <F10>
+	map <Esc>[23~ <F11>
+	map <Esc>[24~ <F12>
+endif
 
 " ============================================================================
 " Task list
@@ -178,6 +203,14 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+" change appearance
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '| '
+
 
 " ============================================================================
 " Jedi vim
@@ -189,7 +222,9 @@ let g:jedi#usages_command = ',o'
 " Find assignments
 let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
+" open an empty buffer
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
+" open an empty buffer
 
 
 " Signify ====================================================================
@@ -206,3 +241,24 @@ highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
 highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
 highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
 highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
+
+
+" =============================================================================
+" CtrlP
+" Change the default mapping and the default command to invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" set its local working directory according to this variable
+let g:ctrlp_working_path_mode = 'ra'
+" Exclude files and directories using Vim's wildignore and CtrlP's own
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+" Use a custom file listing command
+"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+"let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
