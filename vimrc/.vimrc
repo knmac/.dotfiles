@@ -207,9 +207,11 @@ let g:airline_symbols.linenr = '⭡'
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-" change appearance
+" Show buffer index number
+let g:airline#extensions#tabline#buffer_nr_show = 1
+" Use 'straight' tab line
 let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '| '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 
 " ============================================================================
