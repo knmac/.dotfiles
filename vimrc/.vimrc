@@ -58,6 +58,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'sentientmachine/Pretty-Vim-Python'
 " Code and files fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
+" Buffer explorer
+"Plug 'fholgado/minibufexpl.vim'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -126,6 +128,16 @@ else
 	let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' | 
+    \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+endif
 
 " ============================================================================
 " Searching
@@ -186,7 +198,7 @@ let g:tagbar_autofocus = 1
 nmap <F9> :Errors<CR>
 " check also when just opened the file
 let g:syntastic_check_on_open = 1
-" don't put icons on the sign column (it hides the vcs status icons of signify)
+" don't put icons on the sign column (it etides the vcs status icons of signify)
 let g:syntastic_enable_signs = 0
 
 
@@ -214,6 +226,7 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
+
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
@@ -237,7 +250,6 @@ let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 " open an empty buffer
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
-" open an empty buffer
 
 
 " Signify ====================================================================
@@ -277,4 +289,10 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 
 
+" =============================================================================
+" Mini Buffer Explorer
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
 
