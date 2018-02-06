@@ -108,6 +108,7 @@ set number              " show line numbers
 set numberwidth=5
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
+set colorcolumn=80
 highlight CursorLine cterm=bold gui=bold
 filetype indent on      " load filetype-specific indent files
 " set wildmenu            " visual autocomplete for command menu (press <TAB> while typing in command mode)
