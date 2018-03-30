@@ -39,6 +39,8 @@ Plug 'majutsushi/tagbar'
 Plug 'motemen/git-vim'
 " Tab list panel
 Plug 'kien/tabman.vim'
+" Indexing search (show counter while searching)
+Plug 'vim-scripts/IndexedSearch'
 " Python and other languages code checker
 Plug 'scrooloose/syntastic'
 " Airline
@@ -49,10 +51,10 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Completion from other opened files
 Plug 'Shougo/context_filetype.vim'
 " Python autocompletion
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+"Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 " Latex plugin
 Plug 'vim-latex/vim-latex'
 " Git/mercurial/others diff icons on the side of the file lines
@@ -60,6 +62,7 @@ Plug 'mhinz/vim-signify'
 " colorschemes
 Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
+Plug 'skielbasa/vim-material-monokai'
 " make python syntax look prettier
 Plug 'sentientmachine/Pretty-Vim-Python'
 " Code and files fuzzy finder
@@ -226,18 +229,18 @@ let g:context_filetype#same_filetypes._ = '_'
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Jedi vim
-let g:jedi#completions_enabled = 0
+"let g:jedi#completions_enabled = 0
 
 " All these mappings work only for python code:
 " Go to definition
-let g:jedi#goto_command = ',d'
+"let g:jedi#goto_command = ',d'
 " Find ocurrences
-let g:jedi#usages_command = ',o'
+"let g:jedi#usages_command = ',o'
 " Find assignments
-let g:jedi#goto_assignments_command = ',a'
+"let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 " open an empty buffer
-nmap ,D :tab split<CR>:call jedi#goto()<CR>
+"nmap ,D :tab split<CR>:call jedi#goto()<CR>
 
 
 " Signify ====================================================================
