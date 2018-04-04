@@ -54,7 +54,7 @@ Plug 'Shougo/context_filetype.vim'
 "Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
-"Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 " Latex plugin
 Plug 'vim-latex/vim-latex'
 " Git/mercurial/others diff icons on the side of the file lines
@@ -229,18 +229,18 @@ let g:context_filetype#same_filetypes._ = '_'
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Jedi vim
-"let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled = 0
 
 " All these mappings work only for python code:
 " Go to definition
-"let g:jedi#goto_command = ',d'
+let g:jedi#goto_command = ',d'
 " Find ocurrences
-"let g:jedi#usages_command = ',o'
+let g:jedi#usages_command = ',o'
 " Find assignments
-"let g:jedi#goto_assignments_command = ',a'
+let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 " open an empty buffer
-"nmap ,D :tab split<CR>:call jedi#goto()<CR>
+nmap ,D :tab split<CR>:call jedi#goto()<CR>
 
 
 " Signify ====================================================================
