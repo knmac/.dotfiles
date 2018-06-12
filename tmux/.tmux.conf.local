@@ -269,6 +269,10 @@ bind - split-window -v
 unbind '"'
 unbind %
 
+# Move window around with Ctrl+Shit+Left (or Ctrl+Shift+Right)
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
+
 # enable mouse control (clickable windows, panes, resizable panes)
 #set -g mouse on  # tmux 2.2
 
