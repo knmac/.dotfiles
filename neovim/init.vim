@@ -69,6 +69,8 @@ Plug 'sentientmachine/Pretty-Vim-Python'
 Plug 'ctrlpvim/ctrlp.vim'
 " Better control of terminal
 Plug 'mklabs/split-term.vim'
+" Indentation guide
+Plug 'Yggdroot/indentLine'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -284,3 +286,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " split-term
 set splitright  " for when using :VTerm
 set splitbelow  " for when using :Term
+
+
+" =============================================================================
+" indentation guide
+let g:indentLine_char = '▏'
