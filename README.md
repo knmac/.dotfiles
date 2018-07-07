@@ -4,13 +4,14 @@ Some linux settings I have been collecting
 ## Installation
 Main installation
 ```
-cd
 git clone https://github.com/knmac/linux_settings.git
+cd linux_settings
 ./install.sh
 ```
 
 Theme installation
 ```
+cd linux_settings
 ./install_theme.sh
 ```
 
