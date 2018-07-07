@@ -1,10 +1,3 @@
-# install zsh
-sudo apt-get install zsh
-chsh -s /bin/zsh user
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-wget https://raw.githubusercontent.com/caiogondim/bullet-train.zsh/master/bullet-train.zsh-theme
-mv bullet-train.zsh-theme ~/.oh-my-zsh/themes/
-
 # install gogh
 sudo apt-get install dconf-cli
 wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh

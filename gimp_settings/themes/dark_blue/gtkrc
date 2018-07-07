@@ -1,0 +1,67 @@
+# ---------------------------------------------------------------------
+# Modded theme:
+#
+# Clearlooks-Flat-Icons-Dark-Blue theme v1.0.1
+# by migf1 (2014)
+#
+# I claim no copyright. I demand attribution though.
+# The rest of the license stays the same as in the
+# original theme (see below).
+
+# ---------------------------------------------------------------------
+# Original theme:
+#
+# Flat theme
+# Copyright (c) 2014 Andrew Pullins
+
+# ---------------------------------------------------------------------
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# I have written comments to tell you what most everything does. I tryed
+# to state where you can see changes, what changes, and if I saw anything
+# else chaned. Some lines of code will change the color of many different
+# things.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+/* ---------------------
+ * Theme starts here
+ * ---------------------
+ */
+
+include "imagerc"                      # include image resources
+
+/* -------------------------------------------------------------
+ * IMPORTANT:
+ *
+ * The symbolic color @hl_color (the main highlighting color)
+ * MUST be defined BEFORE including the base-theme (_darkrc)
+ *
+ * New styles and/or overwrites specific to this theme
+ * should be written AFTER the inclusion of the base-theme.
+ * -------------------------------------------------------------
+ */
+
+gtk_color_scheme = "hl_color:#3380b3"  # blue
+include "../_flat_gimp_icons/_darkrc"  # include base-theme
+
+
+/* -------------------------------------------------------------
+ * New styles or styles to be overwritten go here
+ * -------------------------------------------------------------
+ */
+
+style "gimp-tooltips"
+{
+  fg[NORMAL] = "#BFFFEF"
+}

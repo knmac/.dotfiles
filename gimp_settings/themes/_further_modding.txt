@@ -1,0 +1,225 @@
+# ---------------------------------------------------------------------
+# Modded theme:
+#
+# Clearlooks Flat Icons Gimp Themes v1.0.1
+# by migf1 (2014)
+#
+# I claim no copyright. I demand attribution though.
+# The rest of the license stays the same as in the
+# original theme.
+
+# ---------------------------------------------------------------------
+# Original themes:
+#
+# Flat theme
+# Copyright (c) 2014 Andrew Pullins
+#
+# ---------------------------------------------------------------------
+
+Usually, themes come with all their resources residing inside the folder of the
+theme (and maybe in sub-folders of it). A text-file called "gtkrc" (also inside
+the theme-folder) "drives" the usage of the resources. Finally the theme-folder
+is put inside Gimp's "themes/" folder.
+
+Compared to the original themes, in these modified versions I have re-arranged
+the folders structure, in an effort to avoid duplicating the same resources in
+the folder of each theme. The "gtkrc" file of each theme has been written with
+that structure in mind.
+
+So, inside Gimp's "themes/" folder and at the same level with the regular folders
+of the themes, there is a special folder called: "_flat_gimp_icons/" containing
+all the required icon images and the base-theme files, in an organized manner,
+as following:
+
+	The base-theme files:
+		"darkrc", "darksmall_rc", "lightrc" & "lightsmall_rc"
+	are essentially "gtkrc" files whose contents are common across dark, 
+	dark-small, light and light-small themes, respectively. Actually those
+	are the files that implement the themes. The regular "gtkrc" file of
+	each theme is simply setting up a symbolic highlighting-color and then
+	it includes one of the above files (well, the "gtkrc" file is also
+	including its own "imagerc" file, see below).
+
+	The sub-folders: "_Dark" & "_Light" contain all common icons across
+	dark and light themes, respectively.
+
+	The folder: "warning" contains icons that are common across all themes.
+
+	The sub-folders having colors as names, contain icons that are common
+	to BOTH the normal and the small version of the theme of that particular
+	color.
+
+The folder-tree goes like this:
+
+	themes
+	   |
+	   +-- _flat_gimp_icons
+	   |     |
+	   |     +--- images
+	   |           |
+	   |           +--- _Dark
+	   |           |     |
+	   |           |     +--- buttons
+	   |           |     |
+	   |           |     +--- dialogs
+	   |           |     |
+	   |           |     +--- menu
+	   |           |     |
+	   |           |     +--- tools
+	   |           |
+	   |           +--- _Light
+	   |           |     |
+	   |           |     +--- buttons
+	   |           |     |
+	   |           |     +--- dialogs
+	   |           |     |
+	   |           |     +--- menu
+	   |           |     |
+	   |           |     +--- tools
+           |           |
+	   |           +--- Blue
+	   |           |     |
+	   |           |     +--- dialogs
+	   |           |     |
+	   |           |     +--- menu
+	   |           |     |
+	   |           |     +--- tools
+           |           |
+	   |           +--- Orange
+	   |           |     |
+	   |           |     +--- dialogs
+	   |           |     |
+	   |           |     +--- menu
+	   |           |     |
+	   |           |     +--- tools
+           |           |
+	   |           +--- Pink
+	   |           |     |
+	   |           |     +--- dialogs
+	   |           |     |
+	   |           |     +--- menu
+	   |           |     |
+	   |           |     +--- tools
+           |           |
+	   |           +--- Red
+	   |           |     |
+	   |           |     +--- dialogs
+	   |           |     |
+	   |           |     +--- menu
+	   |           |     |
+	   |           |     +--- tools
+           |           |
+	   |           +--- Teal
+	   |           |     |
+	   |           |     +--- dialogs
+	   |           |     |
+	   |           |     +--- menu
+	   |           |     |
+	   |           |     +--- tools
+	   |           |
+	   |           +--- warning
+	   |
+	   +--- Dark Blue
+	   |
+	   +--- Dark Blue small
+	   |
+
+	   ...
+
+	   |
+	   +--- Light Teal
+	   |
+	   +--- Light Teal Small
+
+So for example, if you look at the "gtkrc" file of the "Dark Blue" theme
+(this is the file: themes/Dark Blue/gtkrc) you'll see that it consists of
+just a handful of lines:
+
+01.	include "imagerc"                      # include image resources
+02.	gtk_color_scheme = "hl_color:#3380b3"  # blue
+03.	include "../_flat_gimp_icons/_darkrc"  # include base-theme
+04.
+05.     # overwrite tooltips' text color
+06.	style "gimp-tooltips" { fg[NORMAL] = "#BFFFEF" }
+
+The 1st line includes the "imagerc" file that, as its name suggests, handles
+the image resources of the theme. Each theme has its own "imagerc" file inside
+the folder of the theme. As expected, all image references inside the "imagerc"
+file start with: "../_flat_gimp_icons/images/Blue/" (open the file and check it
+out).
+
+The 2nd line defines a symbolic color: @hl_color (meaning highlighting-color).
+
+This symbolic color (think of it something like a macro or a variable) is used
+inside the base-theme file: _darkc, which is included in the 3rd line. It is
+IMPORTANT to define the symbolic color @hl_color BEFORE including the _darkrc
+file.
+
+The 6th line overwrites the text color of the tooltips (which was initially
+defined by the included _darkrc file).
+
+-------------------------------------------------------------------------
+Creating a New Theme
+-------------------------------------------------------------------------
+
+Suppose we want to add a new theme, which will be using yellow as the main
+highlighting color:
+
+1. Inside the folder: "_flat_gimp_icons/images/" make a copy of an existing
+   color folder, and rename it to "Yellow" (copy for example the "Orange"
+   folder and rename it to "Yellow").
+
+2. Using a program like Gimp (Corel Paintshop Pro, Adobe Phostoshop, etc),
+   first we load the .png icon-images contained inside the sub-folders of the
+   "Yellow" folder. Then we change their color to yellow (try altering their
+   hue/saturation/lightness) and finally we save them back.
+
+   If our program supports it, the best way to do all this is by batch-processing
+   all the .png icon-images.
+
+   Since the icons are shared across dark & light variants of a theme, it is
+   a good idea to choose a yellowish color that will look good on both dark
+   and light backgrounds (for this, we prefer somewhat darker versions of the
+   color, but not too dark).
+
+3. We copy an existing theme-folder and rename it so that it reflects the name
+   of our new theme.
+
+   If we are making a dark theme, we want to copy an existing dark-theme folder
+   (say "Dark Orange" for example) and rename it to "Dark Yellow".
+   If we are making a light theme, we should copy a light theme-folder (say
+   "Light Orange") and rename it to "Light Yellow".
+
+   If we are making a "small" theme, then we want to copy an existing small-theme
+   folder (say "Dark Orange small") and rename it to "Light Yellow small".
+
+   Lets assume that our new yellow theme will be a dark one, with normal fonts,
+   so we copy the "Dark Orange" theme-folder and rename it to "Dark Yellow".
+
+4. Using a text editor, we open the file: "Dark Yellow/gtkrc", we locate the
+   line:
+	"gtk_color_scheme = "hl_color:#f07746"  # orange"
+   and we replace the #f07746 color code with a desired yellow (this code is
+   a regular HTML color code). Then we should adjust accordingly any comments
+   inside the file, and save it.
+
+   It is important to pick a yellow color that looks similar to the yellow we
+   have used for the icons, in step 2 (but we don't want them to be identical).
+
+5. Using a text editor, we open the file: "Dark Yellow/imagerc", and we simply
+   SEARCH for all occurrences of the word "Orange" and REPLACE each oneof them
+   with the word "Yellow" (most text editors provide a SEARCH & REPLACE command).
+
+   We should make sure that the Search & Replace procedure will be case-sensitive
+   and that it will operate on single-words-only (most text editors allow setting
+   both these options when searching & replacing text).
+
+That's it!
+
+Our new "Dark Yellow" (or "Light Yellow") theme may now be selected from within
+Gimp 2.8.
+
+All the resource files ("gtkrc", "imagerc", "_darkrc", "_darksmallrc", etc)
+include comments that hopefully will help you get along.
+
+Happy modding!

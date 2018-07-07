@@ -1,0 +1,88 @@
+# ---------------------------------------------------------------------
+# Modded theme:
+
+# Flat-Dark-small-Base theme v1.0.1
+# by migf1 (2014)
+#
+# I claim no copyright. I demand attribution though.
+# The rest of the license stays the same as in the
+# original theme (see below).
+
+# ---------------------------------------------------------------------
+# Original theme:
+#
+#
+# Flat theme
+# Copyright (c) 2014 Andrew Pullins
+
+# ---------------------------------------------------------------------
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# I have written comments to tell you what most everything does. I tryed
+# to state where you can see changes, what changes, and if I saw anything
+# else chaned. Some lines of code will change the color of many different
+# things.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+/* ---------------------
+ * Theme starts here
+ * ---------------------
+ */
+
+/* ------------------------------------------------------------------
+ * IMPORTANT:
+ *
+ * The symbolic color @hl_color determines the main highlighting color.
+ * It MUST be defined within the gtkrc file of each theme, BEFORE
+ * the line that includes this file.
+ *
+ * For example, the gtkrc file inside the "Dark Blue small" theme-folder
+ * must be something along the following lines:
+ *
+ *     gtk_color_scheme = "hl_color:#3380b3"
+ *     include "../_flat_gimp_icons/_darksmall_rc"
+ *
+ *     # new styles and/or overwrites go after this line
+ * ------------------------------------------------------------------
+ */
+
+/* ------------------------------------------------------------------
+ * For its most part the "Dark small" base-theme is identical to its
+ * "Dark" counterpart. So, we are first including the "Dark" base-theme,
+ * and then we overwrite only the parts we want to be different in the
+ * this "Dark small" base-theme.
+ * ------------------------------------------------------------------
+ */
+
+include "_darkrc"
+
+
+# Default
+# =========================================================
+style "gimp-default-style"
+{
+  GtkPaned     ::handle-size   = 10  # (was 8)  # Padding between panels, Drag handle size
+  GtkScrollbar ::slider-width  = 17  # (was 15) # Scrollbar Width
+
+  font_name = "sans 8"
+}
+
+# Panel tabs
+# =========================================================
+style "gimp-panel"
+{
+   xthickness = 5  # (was 8)
+   ythickness = 5  # (was 8)
+}
+

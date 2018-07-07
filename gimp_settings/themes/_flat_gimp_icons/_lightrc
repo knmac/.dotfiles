@@ -1,0 +1,434 @@
+# ---------------------------------------------------------------------
+# Modded theme:
+#
+# Flat-Light-Base theme v1.0.1
+# by migf1 (2014)
+#
+# I claim no copyright. I demand attribution though.
+# The rest of the license stays the same as in the
+# original theme (see below).
+
+# ---------------------------------------------------------------------
+# Original theme:
+#
+# Flat theme
+# Copyright (c) 2014 Andrew Pullins
+
+# ---------------------------------------------------------------------
+#
+# This program is free software: you can redistribute it and/or modify
+# It under the terms of the GNU General Public License as published by
+# The Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# But WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# I have written comments to tell you what most everything does. I tryed
+# To state where you can see changes, what changes, and if I saw anything
+# else changed. Some lines of code will change the color of many different
+# Things.
+#
+# You should have received a copy of the GNU General Public License
+# Along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+/*
+  =====================================================================
+  GTK2 General Guidelines
+  =====================================================================
+
+  x/ythickness
+	This option is used in many places to determine padding between text
+	and border of widgets. For details see the geometry documentation of
+	the specific widgets. 
+
+  fg	Foreground color. Used for text on buttons. Also used for the button
+	borders in some engines.
+  bg	Background color. This is the background color of windows and buttons.
+  text	Text color for text input widgets and lists (/GtkTreeView).
+  base	Background color of text widgets and lists. 
+
+  NORMAL
+	The normal color, nothing special happening.
+
+  PRELIGHT
+	Prelight means mouse over effects. Usually the background will be
+	slightly lighter.
+
+  ACTIVE
+	This state is used for buttons while the mouse is pressed.
+
+  INSENSITIVE
+	Used for widgets that are insensitive and cannot be used at that point.
+
+  SELECTED
+	This state is used for example for selected text.
+
+  --------------------------
+  Sample Style of an Element
+  --------------------------
+
+  style "" = ""
+  {
+     fg[NORMAL]        = "#00FF00"  #
+     fg[PRELIGHT]      = "#00FF00"  #
+     fg[ACTIVE]        = "#00FF00"  #
+     fg[SELECTED]      = "#00FF00"  #
+     fg[INSENSITIVE]   = "#00FF00"  #
+
+     bg[NORMAL]        = "#00FF00"  #
+     bg[PRELIGHT]      = "#00FF00"  #
+     bg[ACTIVE]        = "#00FF00"  #
+     bg[SELECTED]      = "#00FF00"  #
+     bg[INSENSITIVE]   = "#00FF00"  #
+
+     base[NORMAL]      = "#00FF00"  #
+     base[PRELIGHT]    = "#00FF00"  #
+     base[ACTIVE]      = "#00FF00"  #
+     base[SELECTED]    = "#00FF00"  #
+     base[INSENSITIVE] = "#00FF00"  #
+
+     text[NORMAL]      = "#AAAAAA"  #
+     text[PRELIGHT]    = "#00FF00"  #
+     text[ACTIVE]      = "#00FF00"  #
+     text[SELECTED]    = "#00FF00"  #
+     text[INSENSITIVE] = "#00FF00"  #
+  }
+
+ */
+
+/* ---------------------
+ * Theme starts here
+ * ---------------------
+ */
+
+/* ------------------------------------------------------------------
+ * IMPORTANT NOTE:
+ *
+ * The symbolic color @hl_color  determines the main highlighting color.
+ * It MUST be defined within the gtkrc file of each theme, BEFORE
+ * the line that includes this file.
+ *
+ * For example, the gtkrc file inside the Light Blue theme-folder
+ * must be something along the following lines:
+ *
+ *     gtk_color_scheme = "hl_color:@hl_color
+ *     include "../_flat_gimp_icons/_lightrc"
+ *
+ *     # New styles or styles to be overwritten go after this line
+ * ------------------------------------------------------------------
+ */
+
+# Default
+# =========================================================
+style "gimp-default-style"
+{
+  GtkButton      ::child-displacement-x  = 1              #
+  GtkButton      ::child-displacement-y  = 1              #
+  GtkButton      ::default_border        = { 0, 0, 0, 0 } #
+  GtkCheckButton ::indicator-size        = 14             # Checkbox size
+
+  GtkExpander    ::expander-size         = 16             #
+
+  GtkMenu        ::horizontal-padding    = 0              # Menu left/right padding
+  GtkMenu        ::vertical-padding      = 0              # Menu top/bottom padding
+  GtkMenuBar     ::internal-padding      = 0              #
+ 
+  GtkPaned       ::handle-size           = 12  # (was 8)  # Padding between panels, drag handle size
+
+  GtkRange       ::trough_border         = 0              #
+  GtkRange       ::slider_width          = 15             #
+  GtkRange       ::stepper_size          = 15             # Scrollbar stepper height
+ 
+  GtkScrollbar   ::min_slider_length     = 30             #
+#  GtkScrollbar   ::has-backward-stepper = 0               # Scrollbar Up/Left stepper
+#  GtkScrollbar   ::has-forward-stepper  = 0               # Scrollbar down/right stepper
+  GtkScrollbar   ::slider-width          = 19  # (was 15) # Scrollbar Width
+
+  GtkScale       ::slider-length         = 18             # Slider width
+  GtkScale       ::trough-side-details   = 1              #
+
+  GtkTreeView    ::expander_size         = 14             # Preferences item padding
+  GtkTreeView    ::vertical-separator    = 5              # Preferences item padding
+
+# Uncommenting this line allows to set a different (smaller) font for GIMP.
+#
+#  font_name = "sans 8"
+
+  xthickness        = 1
+  ythickness        = 1
+
+  fg[NORMAL]        = "#242424"  # Wilber, Active tab text, Enabled next/pre tab arrow
+  fg[PRELIGHT]      = "#404040"  # Panel text hover
+  fg[ACTIVE]        = "#404040"  # Inactive tab text, Panel selected item
+  fg[SELECTED]      = "#ffffff"  # Selected text areas
+  fg[INSENSITIVE]   = "#6B6B6B"  # Disabled next/pre tab arrow, Panel inactive item
+
+  bg[NORMAL]        = "#B8B8B8"  # Background
+  bg[PRELIGHT]      = "#cfcfcf"  # New image advanced options hover & Panel dragging-handle
+  bg[ACTIVE]        = "#535353"  # Active tools
+  bg[SELECTED]      = @hl_color  # (was "#f07746") # Preferences header and sliders, Panel sliders,
+                                                   # Selected check box/radiol button(Orange)
+  bg[INSENSITIVE]   = "#6B6B6B"  # Preferences button outline
+	
+  base[NORMAL]      = "#A4A4A4"  # Text box background
+#  base[PRELIGHT]    = "#00FF00"  #
+  base[ACTIVE]      = @hl_color  # (was "#f07746") # Selection without focus
+  base[SELECTED]    = @hl_color  # (was "#f07746") # Selected text and tabs
+  base[INSENSITIVE] = "#b8b8b8"  # (was "#868686") # Inactive area
+
+  text[NORMAL]      = "#242424"  # Main text & borders, Inside combos/radios/lists, etc
+  text[PRELIGHT]    = "#6B6B6B"  # Try "#404040 "prelight text
+  text[ACTIVE]      = "#ffffff"  # Preferences active text
+  text[SELECTED]    = "#ffffff"  # Preferences selected text
+  text[INSENSITIVE] = "#242424"  # (was "#404040")filter/tag text
+
+  engine "clearlooks" {  }
+}
+
+# Statusbar
+# =========================================================
+style "gimp-statusbar" = "gimp-default-style"
+{
+  bg[NORMAL]   = "#B8B8B8"       # Status bar background
+}
+
+# Horizontal Sliders
+# =========================================================
+style "gimp-hslider" = "gimp-default-style"
+{
+  bg[NORMAL]   = "#B8B8B8"       # Navigation panel border
+  bg[PRELIGHT] = @hl_color       # (was "#f07746") # Navigation panel slider stepper color hover
+  bg[ACTIVE]   = "#B8B8B8"       # Navigation panel slider right color
+  bg[SELECTED] = @hl_color       # (was "#f07746") # Navigation panel Slider left color
+}
+
+# Vertical Sliders
+# =========================================================
+style "gimp-vslider" = "gimp-default-style"
+{
+  bg[NORMAL]   = "#B8B8B8"       # Color border
+  bg[PRELIGHT] = @hl_color       # (was "#f07746") # Color panel slider stepper color hover
+  bg[ACTIVE]   = @hl_color       # (was "#f07746") # Color panel slider bottom color
+  bg[SELECTED] = "#B8B8B8"       # Color panel Slider top color
+}
+
+# Button Style
+# =========================================================
+style "gimp-button" = "gimp-default-style"
+{
+  xthickness         = 3
+  ythickness         = 3
+
+  bg[NORMAL]         = "#C0C0C0"  # Buttons
+  bg[PRELIGHT]       = "#cfcfcf"  # (was "#959595") # Buttons hover
+  bg[ACTIVE]         = "#B8B8B8"  # (was "#868686") # Buttons select
+  bg[SELECTED]       = "#B8B8B8"  # Buttons border
+  bg[INSENSITIVE]    = "#6B6B6B"  # (was "#929292") # Buttons Inactive
+
+  text[NORMAL]       = "#404040"  # Status bar zoom popup text, panel slider text and border
+  text[PRELIGHT]     = "#404040"  #
+  text[ACTIVE]       = "#404040"  #
+  text[SELECTED]     = "#404040"  #
+  text[INSENSITIVE]  = "#6B6B6B"  #
+}
+
+# Entry up/down Counter
+# =========================================================
+style "gimp-entry" = "gimp-default-style"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+# Checkboxes (this includes tools in the toolbox)
+# =========================================================
+style "gimp-check" = "gimp-button"
+{
+  bg[NORMAL]         = @hl_color  # (was "#f07746") # Checkbox Unselected border
+  bg[PRELIGHT]       = "#C0C0C0"  # (was "#AAAAAA") # Checkbox text background hover
+  bg[ACTIVE]         = "#cfcfcf"  # (was "868686")
+  bg[SELECTED]       = @hl_color  # (was "#f07746") # Checkbox box selected
+  bg[INSENSITIVE]    = "#6B6B6B"  # Checkbox Inactive
+
+  base[NORMAL]       = "#A4A4A4"  # Checkbox normal
+
+  text[NORMAL]       = "#000000"  # Checkbox check color
+  text[PRELIGHT]     = "#000000"  # Checkbox check hover
+  text[ACTIVE]       = "#000000"  # Checkbox check click
+  text[SELECTED]     = "#000000"  # Checkbox selected
+  text[INSENSITIVE]  = "#6B6B6B"  # Checkbox Inactive
+}
+
+# Panel tabs
+# =========================================================
+style "gimp-panel" = "gimp-default-style"
+{
+   xthickness        = 8
+   ythickness        = 8
+
+   fg[NORMAL]        = "#343434"  # Panel next/pre arrow color
+   fg[PRELIGHT]      = @hl_color  # (was "#f07746") # Panel next/pre arrow color hover
+   fg[ACTIVE]        = @hl_color  # (was "#f07746") # Panel next/pre arrow color click
+   fg[INSENSITIVE]   = "#6B6B6B"  # Panel next/pre arrow color inactive
+
+   bg[NORMAL]        = "#B8B8B8"  # Active tab background
+   bg[ACTIVE]        = "#B8B8B8"  # (was "#868686") # Inactive tab background
+   bg[SELECTED]      = @hl_color  # (was "#535353") # Tab highlight click line
+
+   text[NORMAL]      = "#404040"  # Normal tab text
+   text[PRELIGHT]    = "#404040"  # Hover tab text
+   text[ACTIVE]      = "#404040"  # Active tab text
+   text[SELECTED]    = "#404040"  # Selected tab text
+   text[INSENSITIVE] = "#6B6B6B"  # Inactive tab text
+}
+
+# Menus
+# =========================================================
+style "gimp-menu" = "gimp-default-style"
+{
+  xthickness         = 2
+  ythickness         = 1
+
+  fg[NORMAL]         = "#00FF00"  # Status bar pop up menu down arrow
+  fg[PRELIGHT]       = @hl_color  # (was "#f07746") # Status bar pop up menu down arrow hover
+  fg[ACTIVE]         = @hl_color  # (was "#f07746") # 
+  fg[SELECTED]       = @hl_color  # (was "#f07746") # 
+  fg[INSENSITIVE]    = "#00FF00"  #
+
+  bg[NORMAL]         = "#B8B8B8"  # Status bar pop up menu background
+  bg[PRELIGHT]       = "#B8B8B8"  # Status bar pop up down button hover
+  bg[ACTIVE]         = @hl_color  # (was "#f07746") # Status bar pop up down button arrow
+  bg[INSENSITIVE]    = "#B8B8B8"  # Status bar popup up button inactive
+}
+
+# Menu Items
+# =========================================================
+style "gimp-menu-item" = "gimp-default-style"
+{
+  xthickness         = 2
+  ythickness         = 2
+
+  fg[NORMAL]         = "#404040"  # Panel menu arrows
+  fg[PRELIGHT]       = "#000000"  # Panel menu text hover
+#  fg[ACTIVE]         = "#00FF00"  #
+#  fg[SELECTED]      = "#00FF00"   #
+  fg[INSENSITIVE]    = "#6B6B6B"  # Inactive text
+
+  bg[NORMAL]         = "#cfcfcf"  # Panel menu separator
+#  bg[PRELIGHT]       = "#00FF00"  #
+#  bg[ACTIVE]         = "#00FF00"  #
+  bg[SELECTED]       = "#cfcfcf"  # (was "#B8B8B8") # Panel menu highlight hover
+  bg[INSENSITIVE]    = "#6B6B6B"  # Inactive highlight arrows
+
+#  base[NORMAL]       = "#00FF00"  #
+#  base[PRELIGHT]     = "#00FF00"  #
+#  base[ACTIVE]       = "#00FF00"  #
+#  base[SELECTED]     = "#00FF00"  #
+#  base[INSENSITIVE]  = "#00FF00"  #
+
+  text[NORMAL]       = "#404040"  #
+  text[PRELIGHT]     = "#404040"  #
+  text[ACTIVE]       = "#404040"  #
+  text[SELECTED]     = "#404040"  #
+  text[INSENSITIVE]  = "#6B6B6B"  #
+}
+
+# Menu Bar
+# =========================================================
+style "gimp-menubar" = "gimp-default-style" {
+#  fg[NORMAL]         = "#00FF00"  #
+#  fg[PRELIGHT]       = "#00FF00"  #
+#  fg[ACTIVE]         = "#00FF00"  #
+#  fg[SELECTED]       = "#00FF00"  #
+#  fg[INSENSITIVE]    = "#929292"  #
+
+#  bg[NORMAL]         = "#00FF00"  #
+#  bg[PRELIGHT]       = "#00FF00"  #
+#  bg[ACTIVE]         = "#00FF00"  #
+#  bg[SELECTED]       = "#00FF00"  #
+#  bg[INSENSITIVE]    = "#929292"  #
+
+#  text[NORMAL]       = "#AAAAAA"  #
+#  text[PRELIGHT]     = "#00FF00"  #
+#  text[ACTIVE]       = "#00FF00"  #
+#  text[SELECTED]     = "#00FF00"  #
+#  text[INSENSITIVE]  = "#929292"  #
+}
+
+# Progress Bar
+# =========================================================
+style "gimp-progressbar" = "gimp-default-style"
+{
+  xthickness         = 1
+  ythickness         = 1
+
+  fg[NORMAL]         = "#000000"  # Progress bar normal text
+  fg[PRELIGHT]       = "#ffffff"  # Progress bar text when progress bar covers text
+
+  bg[ACTIVE]         = "#B8B8B8"  # Progress bar background
+  bg[SELECTED]       = @hl_color  # (was "#f07746") # Progress bar color
+}
+
+# Scrollbar
+# =========================================================
+style "gimp-scrollbar" = "clearlooks-default"
+{
+  fg[NORMAL]         = "#404040"  # Scrollbar arrows
+  fg[PRELIGHT]       = "#cccccc"  # (was "#f07746") # Scrollbar arrows hover
+  fg[ACTIVE]         = "#ffffff"  # (was "#f07746") # Scrollbar arrow click
+
+  bg[NORMAL]         = "#B8B8B8"  # Scrollbar bar
+  bg[PRELIGHT]       = @hl_color  # (was "#f07746") # Scrollbar bar hover
+  bg[ACTIVE]         = @hl_color  # (was "#f07746") # Scrollbar bar click
+}
+
+# "you can drop dockable dialogs here" text color
+# =========================================================
+style "gimp-drop-text-style" = "gimp-default-style"
+{
+  fg[NORMAL]         = "#B8B8B8"  # "you can drop dockable dialogs here" Label
+                                  # (migf1: try "#282828" to make it visible)
+}
+widget_class "*GimpPanedBox.GtkLabel" style:highest "gimp-drop-text-style"
+
+# Wilber color on empty image
+# =========================================================
+style "gimp-empty-image-style" = "gimp-default-style"
+{
+  bg[NORMAL]         = "#6C6C6C"  # Canvas padding
+  fg[NORMAL]         = "#404040"  # Wilber
+}
+widget_class "*Canv*" style:highest "gimp-empty-image-style"
+
+# =========================================================
+# Widget Styles
+# =========================================================
+class "GtkWidget"      style "gimp-default-style"
+class "GtkButton"      style "gimp-button"
+class "GtkMenu"        style "gimp-menu"
+class "GtkEntry"       style "gimp-entry"
+class "GtkMenuItem"    style "gimp-menu-item"
+class "GtkStatusbar"   style "gimp-statusbar"
+class "GtkNotebook"    style "gimp-panel"
+class "GtkProgressBar" style "gimp-progressbar"
+class "GtkCheckButton" style "gimp-check"
+class "GtkRadioButton" style "gimp-check"
+class "GtkMenuBar"     style "gimp-menubar"
+class "GtkScrollbar"   style "gimp-scrollbar"
+class "GtkHScale"      style "gimp-hslider"
+class "GtkVScale"      style "gimp-vslider"
+
+# (migf1) Tooltip Colors
+# =========================================================
+style "gimp-tooltips"  = "gimp-default-style"
+{
+  xthickness = 8
+  ythickness = 8
+
+  fg[NORMAL] = "#ffffff"
+  bg[NORMAL] = @hl_color
+}
+widget "*gtk-tooltip*" style:highest "gimp-tooltips"
