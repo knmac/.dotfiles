@@ -46,7 +46,7 @@ Some useful vim shortcuts:
 - Window navigation:
 	- :split: horizontal split
 	- :vsplit: vertical split
-	- Ctrl+w [h/j/k/l]: move to left/ down/ up/ right window
+	- Ctrl+w [h/j/k/l]: move to left/down/up/right window
 - Code folding:
 	- za: toggle folding
 - Open multiple files with buffer: (can be combined with NERDTree and CtrlP)
@@ -71,17 +71,54 @@ sudo make install
 ```
 
 ## Cheat sheet
-(After pressing Ctrl - b)
-- Mouse mode: m
-- Split veritcally: |
-- Split horizontally: -
-- Create new window: c
-- Kill pane: x
-- Kill window: &
-- Navigate, resize: use your mouse :)
-- Copy mode:
-	- Start copy mode: Ctrl-b Enter
-	- Select with mouse
-	- Paste from buffer: Ctrl-b p
-	- List buffer: Ctrl-b b
-	- Choose buffer: Ctrl-b P
+From outside tmux
+- Attach to a session:
+```
+tmux attach
+```
+- Attach to a specific session:
+```
+tmux attach -t [session-name]
+```
+- Attach with detaching (helps when display is off after connecting from a different computer):
+```
+tmux attach -d
+```
+- List all sessions:
+```
+tmux ls
+```
+
+From inside tmux (<PREFIX> = Ctrl-b)
+- Rename session:         <PREFIX> `:rename-session [new-session-name]`
+- Rename window:          <PREFIX> `:rename-window [new-window-name]`
+- Reload tmux config:     <PREFIX> `:source-file [path/to/file]`
+- Show all commands:      <PREFIX> ?
+- Show clock:             <PREFIX> t
+- Mouse mode:             <PREFIX> m
+- Split veritcally:       <PREFIX> |
+- Split horizontally:     <PREFIX> -
+- Create new window:      <PREFIX> c
+- Zoom/un-zoom a pane:    <PREFIX> z
+- Switch between layouts: <PREFIX> Space
+- Kill pane:              <PREFIX> x
+- Kill window:            <PREFIX> &
+- Move pane left/right:   <PREFIX> { or <PREFIX> }
+- Move window left/right: Ctrl-Shift-Left or Ctrl-Shift-Right
+- Move between panes:     <PREFIX> (release) h/j/k/l  *(or use your mouse)*
+- Move between windows:   <PREFIX> h/l                *(or use your mouse)*
+- Move between sessions:  <PREFIX> ( or )
+- Resize panes:           <PREFIX> Alt-Left/Down/Up/Right  *(or use your mouse)*
+- Copy process:
+    - Copy using keyboard:
+        1. Enter copy mode: <PREFIX> Enter
+        2. Move to start/end of text
+        3. Begin highlight:   Ctrl-Space
+        4. Move to end/start of text
+        5. Copy to clipboard: Alt-w (on Linux) or Esc-w (on Mac)
+    - Copy using mouse:
+        1. Enter copy mode: <PREFIX> Enter
+        2. Use your mouse to highlight
+	- Paste from buffer: <PREFIX> p
+	- List buffer:       <PREFIX> b
+	- Choose buffer:     <PREFIX> P
