@@ -39,14 +39,14 @@ Some useful vim shortcuts:
 - Screen navigation:
 	- `gg`/`G`: first/last line
   	- `nG` (or `:n`): go to n'th line
-	- `Ctrl-U`/ `Ctrl-D`: half-page up/down
+	- `Ctrl-u`/ `Ctrl-d`: half-page up/down
 - Search navigation:
 	- `:/[pattern]`: search for pattern
 	- `n`/`N`: next / previous matching pattern
 - Window navigation:
 	- `:split`: horizontal split
 	- `:vsplit`: vertical split
-	- `Ctrl+w [h/j/k/l]`: move to left/down/up/right window
+	- `Ctrl-w h/j/k/l`: move to left/down/up/right window
 - Code folding:
 	- `za`: toggle folding
 - Open multiple files with buffer: (can be combined with NERDTree and CtrlP)
@@ -106,19 +106,19 @@ From inside tmux (`<PREFIX>` = `Ctrl-b`)
 - Move pane left/right:   `<PREFIX> {` or `<PREFIX> }`
 - Move window left/right: `Ctrl-Shift-Left` or `Ctrl-Shift-Right`
 - Move between panes:     `<PREFIX>` (release) `h/j/k/l`  *(or use your mouse)*
-- Move between windows:   `<PREFIX> h/l`  *(or use your mouse)*
-- Move between sessions:  `<PREFIX> (/)`
+- Move between windows:   `<PREFIX> h` or `<PREFIX> l`  *(or use your mouse)*
+- Move between sessions:  `<PREFIX> (` or `<PREFIX> )`
 - Resize panes:           `<PREFIX> Alt-Left/Down/Up/Right`  *(or use your mouse)*
 - Copy process:
     - Copy using keyboard:
-        a. Enter copy mode: `<PREFIX> Enter`
-        b. Move to start/end of text
-        c. Begin highlight:   `Ctrl-Space`
-        d. Move to end/start of text
-        e. Copy to clipboard: `Alt-w` (on Linux) or `Esc-w` (on Mac)
+        1. Enter copy mode: `<PREFIX> Enter`
+        2. Move to start/end of text
+        3. Begin highlight:   `Ctrl-Space`
+        4. Move to end/start of text
+        5. Copy to clipboard: `Alt-w` (on Linux) or `Esc-w` (on Mac)
     - Copy using mouse:
-        a. Enter copy mode: `<PREFIX> Enter`
-        b. Use your mouse to highlight
+        1. Enter copy mode: `<PREFIX> Enter`
+        2. Use your mouse to highlight
 	- Paste from buffer: `<PREFIX> p`
 	- List buffer:       `<PREFIX> b`
 	- Choose buffer:     `<PREFIX> P`
