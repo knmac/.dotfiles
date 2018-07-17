@@ -28,11 +28,11 @@ Some self-defined shortcuts (in normal mode)
 - Find occurences: `,o`
 - Search files: `Ctrl-p`
 
-Some useful vim shortcuts:
+Some useful vim commands:
 - Line navigation:
 	- `h`/`j`/`k`/`l`: left/down/up/right
 	- `0`/`$`: start/end of current line
-	- `^, g\_`: non-blank start/end of current line
+	- `^, g_`: non-blank start/end of current line
 - Text navigation:
 	- `w`/`b`: next/previous beginning of a word
 	- `e`: end of a word
@@ -72,7 +72,7 @@ sudo make install
 
 ## Cheat sheet
 From outside tmux
-- Attach to a session:
+- Attach to the previous session:
 ```
 tmux attach
 ```
