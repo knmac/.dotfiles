@@ -27,6 +27,7 @@ Some self-defined shortcuts (in normal mode)
 - Go to assignment: `,a`
 - Find occurences: `,o`
 - Search files: `Ctrl-p`
+    - Switch to buffer or MRU searching (after `Ctrl-p`): `Ctrl-f` / `Ctrl-b`
 
 Some useful vim commands:
 - Line navigation:
