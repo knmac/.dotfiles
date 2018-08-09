@@ -93,12 +93,12 @@ endif
 " Color setting
 syntax enable
 
-colorscheme molokai
 if has("gui_running")
     let g:molokai_original = 1
 else
     let g:rehash256 = 1
 endif
+colorscheme molokai
 
 
 " ============================================================================
