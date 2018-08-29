@@ -19,6 +19,9 @@ cd linux_settings
 Some self-defined shortcuts (in normal mode)
 - Open todo list: `F2`
 - Navigate between files and folders: `F3`
+- Show (interactive) buffere list: `F5`
+- Previous buffer: `F6`
+- Next buffer: `F7`
 - Navigate between functions: `F8`
 - Open error list: `F9`
 - Open tab manager: `tl`

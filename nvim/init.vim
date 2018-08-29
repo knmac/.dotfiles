@@ -171,6 +171,13 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 
 " ============================================================================
+" Manage buffer
+nmap <F5> <C-p><C-f>
+nmap <F6> :bp<CR>
+nmap <F7> :bn<CR>
+
+
+" ============================================================================
 " Tag bar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
@@ -327,7 +334,7 @@ let g:indentLine_char = '▏'
 " =============================================================================
 " Markdown syntax highlighting
 " Syntax Concealing
-set conceallevel=2
+set conceallevel=0
 " LaTeX math
 let g:vim_markdown_math = 1
 " YAML Front Matter
