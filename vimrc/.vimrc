@@ -36,9 +36,13 @@ Plug 'fisadev/FixedTaskList.vim'
 " Class/module browser
 Plug 'majutsushi/tagbar'
 " Git integration
-Plug 'motemen/git-vim'
+"Plug 'motemen/git-vim'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
 " Tab list panel
 Plug 'kien/tabman.vim'
+" Indexing search (show counter while searching)
+Plug 'vim-scripts/IndexedSearch'
 " Python and other languages code checker
 Plug 'scrooloose/syntastic'
 " Airline
@@ -48,18 +52,25 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
 " Latex plugin
-Plug 'lervag/vimtex'
+Plug 'vim-latex/vim-latex'
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 " colorschemes
 Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
+Plug 'skielbasa/vim-material-monokai'
 " make python syntax look prettier
-Plug 'sentientmachine/Pretty-Vim-Python'
+Plug 'sheerun/vim-polyglot'
+"Plug 'sentientmachine/Pretty-Vim-Python'
 " Code and files fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
 " Buffer explorer
 "Plug 'fholgado/minibufexpl.vim'
+" Indentation guide
+Plug 'Yggdroot/indentLine'
+" Markdown syntax highlighting
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -188,6 +199,16 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 
 " ============================================================================
+" Buffer shortcut
+" Show interactive buffer list (need CtrlP)
+nmap <F5> <C-p><C-f>
+" Prev buffer
+nmap <F6> :bp<CR>
+" Next buffer
+nmap <F7> :bn<CR>
+
+
+" ============================================================================
 " Tag bar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
@@ -219,19 +240,43 @@ let g:airline#extensions#whitespace#enabled = 0
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
+"let g:airline_left_sep = '⮀'
+"let g:airline_left_alt_sep = '⮁'
+"let g:airline_right_sep = '⮂'
+"let g:airline_right_alt_sep = '⮃'
+"let g:airline_symbols.branch = '⭠'
+"let g:airline_symbols.readonly = '⭤'
+"let g:airline_symbols.linenr = '⭡'
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
+" Show path formatter
+let g:airline#extensions#tabline#formatter = 'default'
 " Show buffer index
 let g:airline#extensions#tabline#buffer_nr_show = 1
 " Use 'straight' tabline
@@ -297,3 +342,18 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "let g:miniBufExplMapCTabSwitchBufs = 1
 "let g:miniBufExplModSelTarget = 1
 
+
+" =============================================================================
+" indentation guide
+let g:indentLine_char = '▏'
+
+
+" =============================================================================
+" Markdown syntax highlighting
+filetype plugin on
+" LaTeX math
+let g:vim_markdown_math = 1
+" YAML Front Matter
+let g:vim_markdown_frontmatter = 1
+" Syntax Concealing
+set conceallevel=0

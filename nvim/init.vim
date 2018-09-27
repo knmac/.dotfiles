@@ -172,8 +172,11 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " ============================================================================
 " Manage buffer
+" Show interactive buffer list (need CtrlP)
 nmap <F5> <C-p><C-f>
+" Prev buffer
 nmap <F6> :bp<CR>
+" Next buffer
 nmap <F7> :bn<CR>
 
 
