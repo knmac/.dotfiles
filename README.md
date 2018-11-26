@@ -1,7 +1,11 @@
 # Linux settings
 Some linux settings I have been collecting
+![screen shot](screenshot.png)
 
-## Installation
+
+## Auto installation
+This is to install everything automatically. However, I recommend to open the installation files and execute only necessary sections. Some installation guides are also given here.
+
 Main installation
 ```
 git clone https://github.com/knmac/linux_settings.git
@@ -15,7 +19,39 @@ cd linux_settings
 ./install_theme.sh
 ```
 
-## Vim Cheatsheet
+## Powerlin Font
+This is to display breadcrumbs for Vim/Neovim and Tmux correctly.
+
+Install the fonts:
+```
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+```
+Then *manually* change the font in your terminal. The one I usually use is `Source Code Pro for Powerline Medium`
+
+
+## Vim/Neovim
+I recommend using neovim instead as it has async supports. Some mouse-clicking features also do not work in classic Vim.
+
+### Neovim installation
+Install neovim:
+```
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+```
+
+Install neovim dependencies:
+```
+sudo apt-get install python-dev python-pip python3-dev python3-pip curl vim exuberant-ctags git ack-grep
+pip install --user neovim pep8 flake8 pyflakes pylint isort
+pip3 install --user neovim pep8 flake8 pyflakes pylint isort
+```
+
+### Cheatsheet
 Some self-defined shortcuts (in normal mode)
 - Open todo list: `F2`
 - Navigate between files and folders: `F3`
@@ -60,9 +96,23 @@ Some useful vim commands:
 	- `:bd`: delete buffer
 	- `:ls`: list all buffer
 	- `:b [number/filename]`: go to that buffer
+- Substitution
+    - `:[substitution options]/[old string to be replaced]/[new string to replace]/[execution options]`
+    - Substitution options:
+        - `%s`: replace all
+        - `s`: replace the current line
+        - `5,12s`: replace from line 5 to line 12
+        - `,$s`: replace from current line to the last line
+    - Execution options:
+        - `g`: go
+        - `gc`: go, but with confirmation
+    - Examples:
+        - `:%s/foo/bar/g`: replace all `foo` by `bar`
+        - `:s/foo/bar/g`: replace `foo` by `bar` on the current line
 
 
-## tmux Building (from source)
+## Tmux
+### Building from source
 Change the version accordiningly
 ```
 sudo apt-get update
@@ -74,7 +124,7 @@ cd tmux-2.4/
 sudo make install
 ```
 
-## Cheat sheet
+### Cheat sheet
 From outside tmux
 - Attach to the previous session:
 ```

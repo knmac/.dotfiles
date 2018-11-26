@@ -282,4 +282,4 @@ bind-key -n C-S-Right swap-window -t +1
 set allow-rename off
 
 # enable mouse control (clickable windows, panes, resizable panes)
-#set -g mouse on  # tmux 2.2
+set -g mouse on  # tmux 2.2

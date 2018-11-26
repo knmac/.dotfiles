@@ -337,7 +337,8 @@ let g:indentLine_char = '▏'
 " =============================================================================
 " Markdown syntax highlighting
 " Syntax Concealing
-set conceallevel=0
+"set conceallevel=0
+autocmd FileType markdown let g:indentLine_enabled=0
 " LaTeX math
 let g:vim_markdown_math = 1
 " YAML Front Matter
