@@ -19,7 +19,7 @@ cd linux_settings
 ./install_theme.sh
 ```
 
-## Powerlin Font
+## Powerline Font
 This is to display breadcrumbs for Vim/Neovim and Tmux correctly.
 
 Install the fonts:
@@ -124,7 +124,7 @@ cd tmux-2.4/
 sudo make install
 ```
 
-### Cheat sheet
+### Cheatsheet
 From outside tmux
 - Attach to the previous session:
 ```
