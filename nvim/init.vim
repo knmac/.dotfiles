@@ -194,6 +194,10 @@ nmap <F9> :Errors<CR>
 let g:syntastic_check_on_open = 1
 " don't put icons on the sign column (it hides the vcs status icons of signify)
 let g:syntastic_enable_signs = 0
+" ignore some errors
+let g:syntastic_python_flake8_args = ['--ignore=E501,E402']
+" E501 : line too long
+" E402 : module level import not at top of file
 
 
 " ============================================================================
