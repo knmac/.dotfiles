@@ -53,6 +53,7 @@ pip3 install --user neovim pep8 flake8 pyflakes pylint isort
 
 ### Cheatsheet
 Some self-defined shortcuts (in normal mode)
+- Auto completion: `Ctrl-x Ctrl-o`
 - Open todo list: `F2`
 - Navigate between files and folders: `F3`
 - Show (interactive) buffere list: `F5`
@@ -62,11 +63,17 @@ Some self-defined shortcuts (in normal mode)
 - Open error list: `F9`
 - Open tab manager: `tl`
 - Quick comment toggle: `\ci`
-- Go to definition: `,d`
-- Go to assignment: `,a`
-- Find occurences: `,o`
+- Jedi-Vim mappings:
+    - Go to definition: `,d` (can use CTags instead)
+    - Go to assignment: `,a`
+    - Find occurences: `,o`
 - Search files: `Ctrl-p`
     - Switch to buffer or MRU searching (after `Ctrl-p`): `Ctrl-f` / `Ctrl-b`
+
+Some useful Ctags commands (requires Ctags):
+- Go to definition: `Ctrl-]`
+- Preview definition: `Ctrl-w }`
+- Close preview window: `Ctrl-w z`
 
 Some useful vim commands:
 - Line navigation:
