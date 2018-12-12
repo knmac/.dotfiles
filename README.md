@@ -47,8 +47,8 @@ sudo apt-get install neovim
 Install neovim dependencies:
 ```
 sudo apt-get install python-dev python-pip python3-dev python3-pip curl vim exuberant-ctags git ack-grep
-pip install --user neovim pep8 flake8 pyflakes pylint isort
-pip3 install --user neovim pep8 flake8 pyflakes pylint isort
+pip install --user neovim pep8 flake8 pyflakes pylint isort pynvim
+pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
 ```
 
 ### Cheatsheet
