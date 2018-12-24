@@ -66,8 +66,9 @@ Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'skielbasa/vim-material-monokai'
 " make python syntax look prettier
-Plug 'sheerun/vim-polyglot'
 "Plug 'sentientmachine/Pretty-Vim-Python'
+"Plug 'sheerun/vim-polyglot'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 " Code and files fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
 " Better control of terminal
