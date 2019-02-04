@@ -36,6 +36,13 @@ Then *manually* change the font in your terminal. The one I usually use is `Sour
 ## Vim/Neovim
 I recommend using neovim instead as it has async supports. Some mouse-clicking features also do not work in classic Vim.
 
+If you run neovim in a virtualenv and see this error: `[deoplete] deoplete failed to load. Try the :UpdateRemotePlugins command and restart Neovim. See also :checkhealth.`. Follow these steps:
+```
+pip install --upgrade neovim pynvim
+(Open neovim)
+:UpdateRemotePlugins
+```
+
 ### Neovim installation
 Install neovim:
 ```
