@@ -36,7 +36,6 @@ Plug 'fisadev/FixedTaskList.vim'
 " Class/module browser
 Plug 'majutsushi/tagbar'
 " Git integration
-"Plug 'motemen/git-vim'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 " Tab list panel
@@ -52,8 +51,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Completion from other opened files
 Plug 'Shougo/context_filetype.vim'
-" Python autocompletion
-" Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
@@ -66,7 +63,6 @@ Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'skielbasa/vim-material-monokai'
 " make python syntax look prettier
-"Plug 'sentientmachine/Pretty-Vim-Python'
 "Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 " Code and files fuzzy finder
@@ -114,27 +110,29 @@ set autoindent
 
 
 " ============================================================================
-" Buffer settings
+" Buffer settings (hiding instead of closing)
 set hidden
 
 
 " ============================================================================
 " UI config
 set ls=2                " always show status bar
-set mouse=a
+set mouse=a             " use mouse
 set number              " show line numbers
-set numberwidth=5
+set numberwidth=5       " width of line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
-set colorcolumn=80
+set colorcolumn=80      " show column ruler at the end
+
+" Highlight current line by bolding the text
 highlight CursorLine cterm=bold gui=bold
 filetype indent on      " load filetype-specific indent files
-" set wildmenu            " visual autocomplete for command menu (press <TAB> while typing in command mode)
-set wildmode=list:longest
+
+set wildmode=list:longest  " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to
 set showmatch           " highlight matching [{()}]
 
-set backspace=indent,eol,start
+set backspace=indent,eol,start  " resolve the problem of backspace not working
 
 " set cursor shape
 " nvim >= 0.2
@@ -145,6 +143,7 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 " Searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+
 " turn off search highlight (by pressing <SPACE> in command mode)
 nnoremap <leader><space> :nohlsearch<CR>
 
@@ -154,7 +153,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
-set foldmethod=indent
+set foldmethod=indent   " set folding method by looking at indentation
 
 
 " ============================================================================
@@ -218,14 +217,7 @@ let g:airline#extensions#whitespace#enabled = 0
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-"let g:airline_left_sep = '⮀'
-"let g:airline_left_alt_sep = '⮁'
-"let g:airline_right_sep = '⮂'
-"let g:airline_right_alt_sep = '⮃'
-"let g:airline_symbols.branch = '⭠'
-"let g:airline_symbols.readonly = '⭤'
-"let g:airline_symbols.linenr = '⭡'
-
+"
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
@@ -278,6 +270,7 @@ let g:context_filetype#same_filetypes._ = '_'
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Jedi vim
+" Deactivate autocompletion feature of jedi vim (and use deoplete instead)
 let g:jedi#completions_enabled = 0
 
 " All these mappings work only for python code:
@@ -287,6 +280,10 @@ let g:jedi#goto_command = ',d'
 let g:jedi#usages_command = ',o'
 " Find assignments
 let g:jedi#goto_assignments_command = ',a'
+" Rename
+let g:jedi#rename_command = ',r'
+" Show definition
+let g:jedi#documentation_command = ',k'
 " Go to definition in new tab
 " open an empty buffer
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
@@ -316,7 +313,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " set its local working directory according to this variable
 let g:ctrlp_working_path_mode = 'ra'
 " Exclude files and directories using Vim's wildignore and CtrlP's own
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip      " MacOSX/Linux
 "set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "let g:ctrlp_custom_ignore = {

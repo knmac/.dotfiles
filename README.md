@@ -70,10 +70,13 @@ Some self-defined shortcuts (in normal mode)
 - Open error list: `F9`
 - Open tab manager: `tl`
 - Quick comment toggle: `\ci`
+- Unhighlight searching text: `\<space>` (or `:nohl`)
 - Jedi-Vim mappings:
     - Go to definition: `,d` (can use CTags instead)
     - Go to assignment: `,a`
     - Find occurences: `,o`
+    - Rename: `,r`
+    - Show definition (in a new tab): `,k`
 - Search files: `Ctrl-p`
     - Switch to buffer or MRU searching (after `Ctrl-p`): `Ctrl-f` / `Ctrl-b`
 
