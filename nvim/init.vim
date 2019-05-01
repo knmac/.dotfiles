@@ -293,6 +293,7 @@ nmap ,D :tab split<CR>:call jedi#goto()<CR>
 " this first setting decides in which order try to guess your current vcs
 " UPDATE it to reflect your preferences, it will speed up opening files
 let g:signify_vcs_list = [ 'git', 'hg' ]
+let g:signify_realtime = 1
 " mappings to jump to changed blocks
 nmap <leader>sn <plug>(signify-next-hunk)
 nmap <leader>sp <plug>(signify-prev-hunk)
