@@ -29,24 +29,33 @@ call plug#begin('~/.vim/plugged')
 
 " Better file browser
 Plug 'scrooloose/nerdtree'
+
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
+
 " Pending tasks list
 Plug 'fisadev/FixedTaskList.vim'
+
 " Class/module browser
 Plug 'majutsushi/tagbar'
+
 " Git integration
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
+
 " Tab list panel
 Plug 'kien/tabman.vim'
+
 " Indexing search (show counter while searching)
 Plug 'vim-scripts/IndexedSearch'
+
 " Python and other languages code checker
 Plug 'scrooloose/syntastic'
+
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Completion from other opened files
@@ -54,26 +63,34 @@ Plug 'Shougo/context_filetype.vim'
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
-" Latex plugin
-Plug 'vim-latex/vim-latex'
+
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
+
 " colorschemes
 Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'skielbasa/vim-material-monokai'
-" make python syntax look prettier
-"Plug 'sheerun/vim-polyglot'
+
+" Syntax highlighting
+Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+
 " Code and files fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
+
 " Better control of terminal
 Plug 'mklabs/split-term.vim'
+
 " Indentation guide
 Plug 'Yggdroot/indentLine'
+
+" Latex plugin
+Plug 'vim-latex/vim-latex'
+
 " Markdown syntax highlighting
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -88,7 +105,7 @@ endif
 
 
 " ============================================================================
-" Color setting
+" Color and syntax highlighting
 syntax enable
 
 if has("gui_running")
@@ -97,6 +114,9 @@ else
     let g:rehash256 = 1
 endif
 colorscheme molokai
+
+" Don't use polyglot for python syntax highlighting (semshi is better)
+let g:polyglot_disabled = ['py']
 
 
 " ============================================================================
@@ -171,6 +191,12 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 
 " ============================================================================
+" Tag bar
+nmap <F4> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+
+" ============================================================================
 " Manage buffer
 " Show interactive buffer list (need CtrlP)
 nmap <F5> <C-p><C-f>
@@ -178,12 +204,8 @@ nmap <F5> <C-p><C-f>
 nmap <F6> :bp<CR>
 " Next buffer
 nmap <F7> :bn<CR>
-
-
-" ============================================================================
-" Tag bar
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+" Close buffer and switch to the previous one
+nmap <F8> :bp<CR>:bd #<CR>
 
 
 " ============================================================================

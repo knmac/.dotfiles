@@ -63,13 +63,15 @@ Some self-defined shortcuts (in normal mode)
 - Auto completion: `Ctrl-x Ctrl-o`
 - Open todo list: `F2`
 - Navigate between files and folders: `F3`
+- Navigate between functions: `F4`
 - Show (interactive) buffere list: `F5`
 - Previous buffer: `F6`
 - Next buffer: `F7`
-- Navigate between functions: `F8`
+- Close the current buffer (and switch to the previous one): `F8`
 - Open error list: `F9`
 - Open tab manager: `tl`
 - Quick comment toggle: `\ci`
+- 'Good-looking' comment on the left: `\cl`
 - Unhighlight searching text: `\<space>` (or `:nohl`)
 - Jedi-Vim mappings:
     - Go to definition: `,d` (can use CTags instead)
@@ -182,14 +184,18 @@ From inside tmux (`<PREFIX>` = `Ctrl-b`)
 - Resize panes:           `<PREFIX> Alt-Left/Down/Up/Right`  *(or use your mouse)*
 - Copy process:
     - Copy using keyboard:
-        1. Enter copy mode: `<PREFIX> Enter`
+        1. Enter copy mode: `<PREFIX> [` (or `<PREFIX> Enter`)
         2. Move to start/end of text
         3. Begin highlight:   `Ctrl-Space`
         4. Move to end/start of text
         5. Copy to clipboard: `Alt-w` (on Linux) or `Esc-w` (on Mac)
     - Copy using mouse:
-        1. Enter copy mode: `<PREFIX> Enter`
+        1. Enter copy mode: `<PREFIX> [`
         2. Use your mouse to highlight
 	- Paste from buffer: `<PREFIX> p`
 	- List buffer:       `<PREFIX> b`
 	- Choose buffer:     `<PREFIX> P`
+- Search text:
+    1. Enter copy mode: `<PREFIX> [`
+    2. Search for text: `Ctrl-s [text]`
+    3. Search forward/backward: `n/N`
