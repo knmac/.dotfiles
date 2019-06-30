@@ -77,7 +77,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Code and files fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Better control of terminal
 Plug 'mklabs/split-term.vim'
@@ -198,8 +200,9 @@ let g:tagbar_autofocus = 1
 
 " ============================================================================
 " Manage buffer
-" Show interactive buffer list (need CtrlP)
-nmap <F5> <C-p><C-f>
+" Show interactive buffer list (need fzf)
+"nmap <F5> <C-p><C-f>
+nmap <F5> :Buffers<CR>
 " Prev buffer
 nmap <F6> :bp<CR>
 " Next buffer
@@ -329,24 +332,29 @@ highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 
 " =============================================================================
-" CtrlP
-" Change the default mapping and the default command to invoke CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" set its local working directory according to this variable
-let g:ctrlp_working_path_mode = 'ra'
-" Exclude files and directories using Vim's wildignore and CtrlP's own
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip      " MacOSX/Linux
-"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-  "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  "\ 'file': '\v\.(exe|so|dll)$',
-  "\ 'link': 'some_bad_symbolic_links',
-  "\ }
-" Use a custom file listing command
-"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-"let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+"" CtrlP
+"" Change the default mapping and the default command to invoke CtrlP
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"" set its local working directory according to this variable
+"let g:ctrlp_working_path_mode = 'ra'
+"" Exclude files and directories using Vim's wildignore and CtrlP's own
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip      " MacOSX/Linux
+""set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+""let g:ctrlp_custom_ignore = {
+"  "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"  "\ 'file': '\v\.(exe|so|dll)$',
+"  "\ 'link': 'some_bad_symbolic_links',
+"  "\ }
+"" Use a custom file listing command
+""let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+""let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+
+
+" =============================================================================
+" FZF
+nmap <C-P> :Files<CR>
 
 
 " =============================================================================
