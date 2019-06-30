@@ -379,3 +379,8 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 
 filetype plugin on
+
+
+" =============================================================================
+" Shortcut for Python breakpoint (ipdb)
+nmap <leader>b oimport ipdb; ipdb.set_trace()<esc>

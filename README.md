@@ -72,6 +72,7 @@ Some self-defined shortcuts (in normal mode)
 - Open tab manager: `tl`
 - Quick comment toggle: `\ci`
 - 'Good-looking' comment on the left: `\cl`
+- Insert ipdb breakpoint: `\b`
 - Unhighlight searching text: `\<space>` (or `:nohl`)
 - Jedi-Vim mappings:
     - Go to definition: `,d` (can use CTags instead)
@@ -80,7 +81,6 @@ Some self-defined shortcuts (in normal mode)
     - Rename: `,r`
     - Show definition (in a new tab): `,k`
 - Search files: `Ctrl-p`
-    - Switch to buffer or MRU searching (after `Ctrl-p`): `Ctrl-f` / `Ctrl-b`
 
 Some useful Ctags commands (requires Ctags):
 - Go to definition: `Ctrl-]`
