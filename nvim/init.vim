@@ -49,8 +49,9 @@ Plug 'kien/tabman.vim'
 " Indexing search (show counter while searching)
 Plug 'vim-scripts/IndexedSearch'
 
-" Python and other languages code checker
-Plug 'scrooloose/syntastic'
+" Linters
+"Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -60,6 +61,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Completion from other opened files
 Plug 'Shougo/context_filetype.vim'
+" Python autocompletion
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
@@ -213,17 +216,42 @@ nmap <F8> :bp<CR>:bd #<CR>
 
 " ============================================================================
 " Syntastic
-" show list of errors and warnings on the current file
-nmap <F9> :Errors<CR>
-" check also when just opened the file
-let g:syntastic_check_on_open = 1
-" don't put icons on the sign column (it hides the vcs status icons of signify)
-let g:syntastic_enable_signs = 0
-" ignore some errors
-let g:syntastic_python_flake8_args = ['--ignore=E501,E402,E226']
-" E501 : line too long
-" E402 : module level import not at top of file
-" E226 : arithmetic spacing
+"" show list of errors and warnings on the current file
+"nmap <F9> :Errors<CR>
+"" check also when just opened the file
+"let g:syntastic_check_on_open = 1
+"" don't put icons on the sign column (it hides the vcs status icons of signify)
+"let g:syntastic_enable_signs = 0
+"" ignore some errors
+"let g:syntastic_python_flake8_args = ['--ignore=E501,E402,E226']
+"" E501 : line too long
+"" E402 : module level import not at top of file
+"" E226 : arithmetic spacing
+
+
+" ============================================================================
+" Neomake
+" Run linter on write
+autocmd! BufWritePost * Neomake
+
+" Check code as python3 by default
+let g:neomake_python_python_maker = neomake#makers#ft#python#python()
+let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
+let g:neomake_python_python_maker.exe = 'python3 -m py_compile'
+let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
+
+" Disable error messages inside the buffer, next to the problematic line
+let g:neomake_virtualtext_current_error = 0
+
+" Whenever :Neomake is called, open the location list without switching focus
+let g:neomake_open_list = 2
+
+" Shortcut to run linter
+nmap <F9> :Neomake<CR>
+
+" Change the default Neomake signs 
+let g:neomake_warning_sign = {'text': 'W', 'texthl': 'WarningMsg'}
+let g:neomake_error_sign = {'text': 'E', 'texthl': 'ErrorMsg'}
 
 
 " ============================================================================
