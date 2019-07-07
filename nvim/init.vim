@@ -232,7 +232,7 @@ nmap <F8> :bp<CR>:bd #<CR>
 " ============================================================================
 " Neomake
 " Run linter on write
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost,BufEnter * Neomake
 
 " Check code as python3 by default
 let g:neomake_python_python_maker = neomake#makers#ft#python#python()
