@@ -244,14 +244,25 @@ let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
 let g:neomake_virtualtext_current_error = 0
 
 " Whenever :Neomake is called, open the location list without switching focus
-let g:neomake_open_list = 2
-
-" Shortcut to run linter
-nmap <F9> :Neomake<CR>
+"let g:neomake_open_list = 2
 
 " Change the default Neomake signs 
 let g:neomake_warning_sign = {'text': 'W', 'texthl': 'WarningMsg'}
 let g:neomake_error_sign = {'text': 'E', 'texthl': 'ErrorMsg'}
+
+" Shortcut to toggle location list
+"nmap <F9> :Neomake<CR>
+let g:location_is_open = 0
+function! LocationToggle()
+    if g:location_is_open == 1
+        lclose
+        let g:location_is_open = 0
+    else
+        lopen
+        let g:location_is_open = 1
+    endif
+endfunction
+map <F9> <Esc>:call LocationToggle()<CR>
 
 
 " ============================================================================
