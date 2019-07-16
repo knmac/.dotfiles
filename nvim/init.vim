@@ -90,6 +90,9 @@ Plug 'mklabs/split-term.vim'
 " Indentation guide
 Plug 'Yggdroot/indentLine'
 
+" Detect indent automatically
+Plug 'ciaranm/detectindent'
+
 " Latex plugin
 Plug 'vim-latex/vim-latex'
 
@@ -120,7 +123,7 @@ else
 endif
 colorscheme molokai
 
-" Don't use polyglot for python syntax highlighting (semshi is better)
+" Don't use polyglot for python syntax highlighting (semshi looks better)
 let g:polyglot_disabled = ['py']
 
 
@@ -202,7 +205,7 @@ let g:tagbar_autofocus = 1
 
 
 " ============================================================================
-" Manage buffer
+" Manage buffers
 " Show interactive buffer list (need fzf)
 "nmap <F5> <C-p><C-f>
 nmap <F5> :Buffers<CR>
@@ -319,7 +322,7 @@ let g:airline#extensions#tabline#left_alt_sep = '| '
 
 
 " ============================================================================
-" Auto-complete
+" Auto-completion
 " Deoplete
 set completeopt+=noinsert
 set completeopt-=preview
@@ -353,7 +356,8 @@ let g:jedi#documentation_command = ',k'
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
 
 
-" Signify ====================================================================
+" =============================================================================
+" Signify
 " this first setting decides in which order try to guess your current vcs
 " UPDATE it to reflect your preferences, it will speed up opening files
 let g:signify_vcs_list = [ 'git', 'hg' ]
@@ -397,14 +401,23 @@ nmap <C-P> :Files<CR>
 
 
 " =============================================================================
-" split-term
+" Split-term
 set splitright  " for when using :VTerm
 set splitbelow  " for when using :Term
 
 
 " =============================================================================
-" indentation guide
+" Indentation guide
 let g:indentLine_char = '▏'
+
+
+" =============================================================================
+" DetectIndent
+" Auto matically run DetectIndent when open a file
+autocmd BufReadPost * :DetectIndent
+
+" Specify a preferred indent level when no detection is possible
+let g:detectindent_preferred_indent = 4
 
 
 " =============================================================================
