@@ -94,7 +94,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'ciaranm/detectindent'
 
 " Latex plugin
-Plug 'vim-latex/vim-latex'
+"Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
 
 " Markdown syntax highlighting
 Plug 'plasticboy/vim-markdown'
@@ -409,6 +410,9 @@ set splitbelow  " for when using :Term
 " =============================================================================
 " Indentation guide
 let g:indentLine_char = '▏'
+"autocmd FileType markdown let g:indentLine_enabled=0
+"autocmd FileType tex let g:indentLine_enabled=0
+let g:indentLine_conceallevel = 0
 
 
 " =============================================================================
@@ -424,7 +428,6 @@ let g:detectindent_preferred_indent = 4
 " Markdown syntax highlighting
 " Syntax Concealing
 "set conceallevel=0
-autocmd FileType markdown let g:indentLine_enabled=0
 " LaTeX math
 let g:vim_markdown_math = 1
 " YAML Front Matter
