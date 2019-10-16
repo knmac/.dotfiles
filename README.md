@@ -59,8 +59,8 @@ pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
 ```
 
 ### Cheatsheet
-Some self-defined shortcuts (in normal mode)
-- Auto completion: `Ctrl-x Ctrl-o`
+Some self-defined shortcuts:
+- Auto completion (in insert mode): `Ctrl-x Ctrl-o`
 - Open todo list: `F2`
 - Navigate between files and folders: `F3`
 - Navigate between functions: `F4`
@@ -74,6 +74,10 @@ Some self-defined shortcuts (in normal mode)
 - 'Good-looking' comment on the left: `\cl`
 - Insert ipdb breakpoint: `\b`
 - Unhighlight searching text: `\<space>` (or `:nohl`)
+- Vimtex mappings:
+    - Compile: `\ll`
+    - View: `\lv`
+    - Clean: `\lc`
 - Jedi-Vim mappings:
     - Go to definition: `,d` (can use CTags instead)
     - Go to assignment: `,a`
