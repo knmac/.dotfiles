@@ -102,3 +102,4 @@ source $ZSH/oh-my-zsh.sh
 # Customize plugins
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
