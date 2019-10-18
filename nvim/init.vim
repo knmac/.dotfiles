@@ -420,8 +420,12 @@ let g:indentLine_conceallevel = 0
 " Auto matically run DetectIndent when open a file
 autocmd BufReadPost * :DetectIndent
 
+" To prefer expandtab to noexpandtab when detection is impossible
+let g:detectindent_preferred_expandtab = 1
 " Specify a preferred indent level when no detection is possible
 let g:detectindent_preferred_indent = 4
+" To use preferred values instead of guessing:
+let g:detectindent_preferred_when_mixed = 1
 
 
 " =============================================================================
