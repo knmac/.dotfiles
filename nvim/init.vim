@@ -400,7 +400,10 @@ highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 " =============================================================================
 " FZF
+" Search for file name
 nmap <C-P> :Files<CR>
+" Search for file content (require ripgrep)
+nmap <C-G> :Rg<CR>
 
 
 " =============================================================================
