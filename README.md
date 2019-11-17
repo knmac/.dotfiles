@@ -77,6 +77,7 @@ Some **custom** Vim shortcuts:
 | Unhighlight searching text                                | `\<space>` (or `:nohl`) |
 
 Some NERD Commenter mappings:
+
 | Functionality           | Commands |
 |-------------------------|----------|
 | Comment                 | `\cc`    |
@@ -85,6 +86,7 @@ Some NERD Commenter mappings:
 | Comment 'Sexily'        | `\cs`    |
 
 Some JediVim mappings (for Python only; use CTags for non-Python files):
+
 | Functionality                  | Commands |
 |--------------------------------|----------|
 | Go to definition               | `,d`     |
@@ -93,13 +95,15 @@ Some JediVim mappings (for Python only; use CTags for non-Python files):
 | Rename variable                | `,r`     |
 | Show definition (in a new tab) | `,k`     |
 
-Some FZF Mappings
+Some FZF Mappings:
+
 | Functionality                                   | Commands |
 |-------------------------------------------------|----------|
 | Search for files with filename                  | `Ctrl-p` |
 | Search for files with string (requires ripgrep) | `Ctrl-g` |
 
 Some Vimtex mappings:
+
 | Functionality | Commands |
 |---------------|----------|
 | Compile       | `\ll`    |
@@ -107,6 +111,7 @@ Some Vimtex mappings:
 | Clean         | `\lc`    |
 
 Some useful Ctags commands (requires Ctags):
+
 | Functionality        | Commands   |
 |----------------------|------------|
 | Go to definition     | `Ctrl-]`   |
@@ -116,38 +121,38 @@ Some useful Ctags commands (requires Ctags):
 Some useful **default** vim commands:
 - Line navigation:
   - `h`/`j`/`k`/`l`: left/down/up/right
-  - `0`/`$`:             start/end of current line
-  - `^, g_`:           non-blank start/end of current line
+  - `0`/`$`:         start/end of current line
+  - `^, g_`:         non-blank start/end of current line
 - Text navigation:
   - `w`/`b`: next/previous beginning of a word
-  - `e`:       end of a word
+  - `e`:     end of a word
 - Screen navigation:
-  - `gg`/`G`:                     first/last line
-  - `nG` (or `:n`):            go to n'th line
+  - `gg`/`G`:           first/last line
+  - `nG` (or `:n`):     go to n'th line
   - `Ctrl-u`/ `Ctrl-d`: half-page up/down
 - Search navigation:
   - `:/[pattern]`: search for pattern
-  - `n`/`N`:                next / previous matching pattern
+  - `n`/`N`:       next / previous matching pattern
 - Window navigation:
-  - `:split`:                 horizontal split
-  - `:vsplit`:               vertical split
+  - `:split`:         horizontal split
+  - `:vsplit`:        vertical split
   - `Ctrl-w h/j/k/l`: move to left/down/up/right window
 - Code folding:
   - `za`: toggle folding
 - Open multiple files with buffer: (can be combined with NERDTree and CtrlP)
   - `:badd [filename]`: open file in new buffer
-  - `:bn`:                            next buffer
-  - `:bp`:                            previous buffer
-  - `:bd`:                            delete buffer
-  - `:ls`:                            list all buffer
+  - `:bn`:              next buffer
+  - `:bp`:              previous buffer
+  - `:bd`:              delete buffer
+  - `:ls`:              list all buffer
   - `:b [number/name]`: go to that buffer
 - Substitution
     - `:[substitution options]/[old string to be replaced]/[new string to replace]/[execution options]`
     - Substitution options:
-        - `%s`:       replace all
-        - `s`:         replace the current line
+        - `%s`:    replace all
+        - `s`:     replace the current line
         - `5,12s`: replace from line 5 to line 12
-        - `,$s`:     replace from current line to the last line
+        - `,$s`:   replace from current line to the last line
     - Execution options:
         - `g`:  go
         - `gc`: go, but with confirmation
