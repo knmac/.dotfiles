@@ -132,10 +132,15 @@ let g:polyglot_disabled = ['py']
 " Spaces and tabs
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
-set expandtab           " tabs are spaces
 set shiftwidth=4
 set smarttab
 set autoindent
+set expandtab           " tabs are spaces
+if has("autocmd")
+    " If the filetype is Makefile then we need to use tabs
+    " So do not expand tabs into space.
+    autocmd FileType make   set noexpandtab
+endif
 
 
 " ============================================================================
