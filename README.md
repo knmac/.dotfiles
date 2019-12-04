@@ -59,31 +59,31 @@ pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
 ```
 
 ### Cheatsheet
-Some **custom** Vim shortcuts:
+Some **custom** Vim shortcuts (default `<LEADER>` is `\`):
 
-| Functionality                                             | Commands                |
-|-----------------------------------------------------------|-------------------------|
-| Open todo list                                            | `F2`                    |
-| Navigate between files and folders                        | `F3`                    |
-| Navigate between functions                                | `F4`                    |
-| Show (interactive) buffere list                           | `F5`                    |
-| Previous buffer                                           | `F6`                    |
-| Next buffer                                               | `F7`                    |
-| Close the current buffer (and switch to the previous one) | `F8`                    |
-| Open error list                                           | `F9`                    |
-| Auto completion (in insert mode)                          | `Ctrl-x Ctrl-o`         |
-| Open tab manager (Notice: tab is different from buffer)   | `tl`                    |
-| Insert ipdb breakpoint                                    | `\b`                    |
-| Unhighlight searching text                                | `\<space>` (or `:nohl`) |
+| Functionality                                             | Commands                        |
+|-----------------------------------------------------------|---------------------------------|
+| Open todo list                                            | `F2`                            |
+| Navigate between files and folders                        | `F3`                            |
+| Navigate between functions                                | `F4`                            |
+| Show (interactive) buffere list                           | `F5`                            |
+| Previous buffer                                           | `F6`                            |
+| Next buffer                                               | `F7`                            |
+| Close the current buffer (and switch to the previous one) | `F8`                            |
+| Open error list                                           | `F9`                            |
+| Auto completion (in insert mode)                          | `Ctrl-x Ctrl-o`                 |
+| Open tab manager (Notice: tab is different from buffer)   | `tl`                            |
+| Insert ipdb breakpoint                                    | `<LEADER> b`                    |
+| Unhighlight searching text                                | `<LEADER> <space>` (or `:nohl`) |
 
 Some NERD Commenter mappings:
 
-| Functionality           | Commands |
-|-------------------------|----------|
-| Comment                 | `\cc`    |
-| Uncomment               | `\cu`    |
-| Comment with left-align | `\cl`    |
-| Comment 'Sexily'        | `\cs`    |
+| Functionality           | Commands      |
+|-------------------------|---------------|
+| Comment                 | `<LEADER> cc` |
+| Uncomment               | `<LEADER> cu` |
+| Comment with left-align | `<LEADER> cl` |
+| Comment 'Sexily'        | `<LEADER> cs` |
 
 Some JediVim mappings (for Python only; use CTags for non-Python files):
 
@@ -104,11 +104,11 @@ Some FZF Mappings:
 
 Some Vimtex mappings:
 
-| Functionality | Commands |
-|---------------|----------|
-| Compile       | `\ll`    |
-| View          | `\lv`    |
-| Clean         | `\lc`    |
+| Functionality | Commands      |
+|---------------|---------------|
+| Compile       | `<LEADER> ll` |
+| View          | `<LEADER> lv` |
+| Clean         | `<LEADER> lc` |
 
 Some useful Ctags commands (requires Ctags):
 
@@ -193,7 +193,7 @@ tmux attach -d
 tmux ls
 ```
 
-From inside tmux (`<PREFIX>` = `Ctrl-b`)
+From inside tmux (default `<PREFIX>` is `Ctrl-b`)
 - Rename session:         `<PREFIX> :rename-session [new-session-name]`
 - Rename window:          `<PREFIX> :rename-window [new-window-name]`
 - Reload tmux config:     `<PREFIX> :source-file [path/to/file]`
