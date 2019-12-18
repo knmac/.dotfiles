@@ -275,6 +275,11 @@ map <F9> <Esc>:call LocationToggle()<CR>
 
 
 " ============================================================================
+" Run the make file
+nmap <F10> :make<CR>
+
+
+" ============================================================================
 " TabMan
 " mappings to toggle display, and to focus on it
 let g:tabman_toggle = 'tl'
@@ -408,7 +413,7 @@ highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 " Search for file name
 nmap <C-P> :Files<CR>
 " Search for file content (require ripgrep)
-nmap <C-G> :Rg<CR>
+nmap <C-F> :Rg<CR>
 
 
 " =============================================================================

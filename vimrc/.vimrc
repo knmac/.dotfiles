@@ -230,6 +230,11 @@ let g:syntastic_enable_signs = 0
 
 
 " ============================================================================
+" Run the make file
+nmap <F10> :make<CR>
+
+
+" ============================================================================
 " TabMan
 " mappings to toggle display, and to focus on it
 let g:tabman_toggle = 'tl'
