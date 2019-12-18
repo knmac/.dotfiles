@@ -126,5 +126,6 @@ Execution options:
 | Execute with confirmation    | `gc`    |
 
 Examples:
-    - `:%s/foo/bar/g`: replace all `foo` by `bar`
-    - `:s/foo/bar/g`:  replace `foo` by `bar` on the current line
+
+- `:%s/foo/bar/g`: replace all `foo` by `bar`
+- `:s/foo/bar/g`:  replace `foo` by `bar` on the current line
