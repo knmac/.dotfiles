@@ -66,5 +66,11 @@ pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
 ### Building from source
 Change the versions, URLs, and paths accordingly in `install_tmux.sh`
 
+Then add these two lines in your `.bashrc`:
+```bash
+export PATH="$HOME/.local/bin":$PATH
+export LD_LIBRARY_PATH="$HOME/.local/lib":$LD_LIBRARY_PATH
+```
+
 ### Cheatsheet
 [Tmux cheatsheet](tmux_cheatsheet.md)
