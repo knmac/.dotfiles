@@ -64,16 +64,7 @@ pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
 
 ## Tmux
 ### Building from source
-Change the version accordiningly
-```
-sudo apt-get update
-sudo apt-get install -y libevent-dev libncurses-dev make
-wget https://github.com/tmux/tmux/releases/download/2.4/tmux-2.4.tar.gz
-tar xvzf tmux-2.4.tar.gz
-cd tmux-2.4/
-./configure && make
-sudo make install
-```
+Change the versions, URLs, and paths accordingly in `install_tmux.sh`
 
 ### Cheatsheet
 [Tmux cheatsheet](tmux_cheatsheet.md)
