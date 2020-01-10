@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/knmac/.oh-my-zsh
+export ZSH=/home/knmac/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -103,3 +103,6 @@ source $ZSH/oh-my-zsh.sh
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
+
+# Make FZF preview looks better. Requires Bat for syntax highlighting
+#export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --line-range :500 {}'"
