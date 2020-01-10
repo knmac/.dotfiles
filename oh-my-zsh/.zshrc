@@ -105,4 +105,4 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
 
 # Make FZF preview looks better. Requires Bat for syntax highlighting
-#export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --line-range :500 {}'"
+export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --line-range :500 {}'"
