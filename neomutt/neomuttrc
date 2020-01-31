@@ -1,0 +1,80 @@
+# About me
+set from = "user@gmail.com"
+set realname = "your name"
+set use_from = yes
+set envelope_from = yes
+
+# My credentials
+set smtp_url  = "smtps://user@gmail.com@smtp.gmail.com:465/"
+#set smtp_pass = ""
+set imap_user = "user@gmail.com"
+#set imap_pass = ""
+
+# My mailboxes
+set folder    = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+#set trash     = "+[Gmail]/Bin" # If disabled, mail will be archived (in Gmail)
+#set record    = "+[Gmail]/Sent Mail" # Causes duplicates in Gmail
+unset trash
+unset record
+mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash
+
+# Where to put the stuff
+set header_cache     = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+# Etc
+set mail_check = 30
+set move = no
+set imap_keepalive = 900
+set quit = ask-yes
+set sort_aux = last-date-received
+set sort = threads
+set editor = nvim
+set charset = utf-8
+set date_format = "!%a, %b %d, %Y at %I:%M:%S%p %Z"
+set index_format = "%4C %Z %{%b %d %H:%M}  %-15.15L (%?l?%4l&%4c?) %s"
+
+
+# -----------------------------------------------------------------------------
+# Pager settings
+#
+ignore *
+unignore From Message-ID Date To Cc Bcc Subject
+
+set pager_stop
+set pager_index_lines   = 15    # number of index lines to show
+set pager_context       = 3     # number of context lines to show
+unset markers
+
+# View html automatically
+auto_view text/html
+
+# Save html for last
+alternative_order text/plain text/enriched text/html
+
+
+# -----------------------------------------------------------------------------
+# Sidebar Patch
+#
+set sidebar_visible      = yes
+set mail_check_stats     = yes
+set sidebar_width   	 = 30
+set sidebar_divider_char = '│'
+set status_chars  		 = " *%A"
+set status_format 		 = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set sidebar_format       = "%B%?F? [%F]?%* %?N?%N/?%S"
+
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Co sidebar-open
+bind index,pager \Cp sidebar-prev-new
+bind index,pager \Cn sidebar-next-new
+bind index,pager B sidebar-toggle-visible
+
+
+# -----------------------------------------------------------------------------
+# Color settings
+source colors.muttrc
