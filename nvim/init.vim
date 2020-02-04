@@ -144,8 +144,9 @@ endif
 
 
 " ============================================================================
-" Buffer settings (hiding instead of closing)
-set hidden
+" Copy to clipboard
+"set clipboard=unnamed       " On Windows/Mac
+set clipboard=unnamedplus   " On Linux 
 
 
 " ============================================================================
@@ -209,9 +210,20 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 nmap <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+\ }
+
 
 " ============================================================================
 " Manage buffers
+set hidden
+
 " Show interactive buffer list (need fzf)
 "nmap <F5> <C-p><C-f>
 nmap <F5> :Buffers<CR>
@@ -317,9 +329,9 @@ let g:airline_right_sep     = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch     = ''
 let g:airline_symbols.readonly   = ''
-let g:airline_symbols.linenr     = ''
 let g:airline_symbols.paste      = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.linenr     = 'Ξ'
+let g:airline_symbols.maxlinenr  = ''
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1

@@ -99,10 +99,32 @@ source $ZSH/oh-my-zsh.sh
 
 
 # -----------------------------------------------------------------------------
-# Customize plugins
+# Turn on edit command line mode (Ctrl-x Ctrl-e)
+#autoload -U edit-command-line
+
+# Configure zsh highlighting
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
+# Configure zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
 
-# Make FZF preview looks better. Requires Bat for syntax highlighting
+# Configure FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --line-range :500 {}'"
+
+# Configure LF (Ctrl-o)
+#LFCD="$HOME/.config/lf/lfcd.sh"
+#if [ -f "$LFCD" ]; then
+  #source "$LFCD"
+  #bindkey -s '^o' 'lfcd\n'
+#fi
+
+# Aliases and exports
+if type xclip &>/dev/null; then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+elif type xsel &>/dev/null; then
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
+fi
