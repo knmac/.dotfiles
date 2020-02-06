@@ -136,11 +136,10 @@ set shiftwidth=4
 set smarttab
 set autoindent
 set expandtab           " tabs are spaces
-if has("autocmd")
-    " If the filetype is Makefile then we need to use tabs
-    " So do not expand tabs into space.
-    autocmd FileType make   set noexpandtab
-endif
+
+" If the filetype is Makefile then we need to use tabs
+" So do not expand tabs into space.
+autocmd FileType make   set noexpandtab
 
 
 " ============================================================================
@@ -253,7 +252,7 @@ nmap <F8> :bp<CR>:bd #<CR>
 " ============================================================================
 " Neomake
 " Run linter on write
-autocmd! BufWritePost,BufEnter * Neomake
+autocmd BufWritePost,BufEnter * Neomake
 
 " Check code as python3 by default
 let g:neomake_python_python_maker = neomake#makers#ft#python#python()
