@@ -42,15 +42,13 @@ Plug 'majutsushi/tagbar'
 " Git integration
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-
-" Tab list panel
-Plug 'kien/tabman.vim'
+" Git/mercurial/others diff icons on the side of the file lines
+Plug 'mhinz/vim-signify'
 
 " Indexing search (show counter while searching)
 Plug 'vim-scripts/IndexedSearch'
 
 " Linters
-"Plug 'scrooloose/syntastic'
 Plug 'neomake/neomake'
 
 " Airline
@@ -67,20 +65,16 @@ Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
 
-" Git/mercurial/others diff icons on the side of the file lines
-Plug 'mhinz/vim-signify'
-
 " colorschemes
 Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
 Plug 'skielbasa/vim-material-monokai'
+Plug 'joshdick/onedark.vim'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Code and files fuzzy finder
-"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -94,7 +88,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'ciaranm/detectindent'
 
 " Latex plugin
-"Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 
 " Markdown syntax highlighting
@@ -114,6 +107,37 @@ endif
 
 
 " ============================================================================
+" Default configurations
+" ============================================================================
+
+" ----------------------------------------------------------------------------
+" Look and feel
+set ls=2                   " always show status bar
+set mouse=a                " use mouse
+set number                 " show line numbers
+set numberwidth=5          " width of line numbers
+set showcmd                " show command in bottom bar
+set cursorline             " highlight current line
+set colorcolumn=80         " show column ruler at the end
+set encoding=utf-8         " use unicode
+set wildmode=list:longest  " visual autocomplete for command menu
+set lazyredraw             " redraw only when we need to
+set showmatch              " highlight matching [{()}]
+set backspace=indent,eol,start  " resolve the problem of backspace not working
+
+" set cursor shape (nvim >= 0.2)
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+
+" Highlight current line by bolding the text
+highlight CursorLine cterm=bold   gui=bold
+" Make comments italic
+highlight Comment    cterm=italic gui=italic
+
+filetype indent on      " load filetype-specific indent files
+filetype plugin on      " detects the type of file when the file is created or opened
+
+
+" ----------------------------------------------------------------------------
 " Color and syntax highlighting
 syntax enable
 
@@ -123,57 +147,34 @@ else
     let g:rehash256 = 1
 endif
 colorscheme molokai
+"colorscheme material-monokai
+"colorscheme onedark
 
 " Don't use polyglot for python syntax highlighting (semshi looks better)
 let g:polyglot_disabled = ['py']
 
 
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Spaces and tabs
+set expandtab           " tabs are spaces
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
 set shiftwidth=4
 set smarttab
 set autoindent
-set expandtab           " tabs are spaces
 
 " If the filetype is Makefile then we need to use tabs
 " So do not expand tabs into space.
 autocmd FileType make   set noexpandtab
 
 
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Copy to clipboard
 "set clipboard=unnamed       " On Windows/Mac
 set clipboard=unnamedplus   " On Linux 
 
 
-" ============================================================================
-" UI config
-set ls=2                " always show status bar
-set mouse=a             " use mouse
-set number              " show line numbers
-set numberwidth=5       " width of line numbers
-set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
-set colorcolumn=80      " show column ruler at the end
-
-" Highlight current line by bolding the text
-highlight CursorLine cterm=bold gui=bold
-filetype indent on      " load filetype-specific indent files
-
-set wildmode=list:longest  " visual autocomplete for command menu
-set lazyredraw          " redraw only when we need to
-set showmatch           " highlight matching [{()}]
-
-set backspace=indent,eol,start  " resolve the problem of backspace not working
-
-" set cursor shape
-" nvim >= 0.2
-set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-
-
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
@@ -182,7 +183,7 @@ set hlsearch            " highlight matches
 nnoremap <leader><space> :nohlsearch<CR>
 
 
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Code folding
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
@@ -191,11 +192,15 @@ set foldmethod=indent   " set folding method by looking at indentation
 
 
 " ============================================================================
+" Plugin configurations and key bindings
+" ============================================================================
+
+" ----------------------------------------------------------------------------
 " Task list
 nmap <F2> :TaskList<CR>
 
 
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Nerd tree
 nmap <F3> :NERDTreeToggle<CR>
 " open nerdtree with the current file selected
@@ -203,8 +208,17 @@ nmap ,t :NERDTreeFind<CR>
 " don't show these file types
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
+" Autorefresh on tree focus
+function! NERDTreeRefresh()
+    if &filetype == "nerdtree"
+        silent exe substitute(mapcheck("R"), "<CR>", "", "")
+    endif
+endfunction
 
-" ============================================================================
+autocmd BufEnter * call NERDTreeRefresh()
+
+
+" ----------------------------------------------------------------------------
 " Tag bar
 nmap <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
@@ -219,12 +233,11 @@ let g:tagbar_type_markdown = {
 \ }
 
 
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Manage buffers
 set hidden
 
 " Show interactive buffer list (need fzf)
-"nmap <F5> <C-p><C-f>
 nmap <F5> :Buffers<CR>
 " Prev buffer
 nmap <F6> :bp<CR>
@@ -234,32 +247,19 @@ nmap <F7> :bn<CR>
 nmap <F8> :bp<CR>:bd #<CR>
 
 
-" ============================================================================
-" Syntastic
-"" show list of errors and warnings on the current file
-"nmap <F9> :Errors<CR>
-"" check also when just opened the file
-"let g:syntastic_check_on_open = 1
-"" don't put icons on the sign column (it hides the vcs status icons of signify)
-"let g:syntastic_enable_signs = 0
-"" ignore some errors
-"let g:syntastic_python_flake8_args = ['--ignore=E501,E402,E226']
-"" E501 : line too long
-"" E402 : module level import not at top of file
-"" E226 : arithmetic spacing
-
-
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Neomake
 " Run linter on write
 autocmd BufWritePost,BufEnter * Neomake
 
 " Check code as python3 by default
-"let g:neomake_python_python_maker = neomake#makers#ft#python#python()
-"let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
-"let g:neomake_python_python_maker.exe = 'python3 -m py_compile'
-"let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
+let g:neomake_python_python_maker = neomake#makers#ft#python#python()
+let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
+let g:neomake_python_python_maker.exe = 'python3 -m py_compile'
+let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
 
+" Force to use flake8
+let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_python_flake8_maker = {
     \ 'args': ['--ignore=E501,E402,E226', '--format=default'],
     \ 'errorformat':
@@ -268,7 +268,6 @@ let g:neomake_python_flake8_maker = {
         \ '%A%f:%l: %t%n %m,' .
         \ '%-G%.%#',
     \ }
-let g:neomake_python_enabled_makers = ['flake8']
 " E501 : line too long
 " E402 : module level import not at top of file
 " E226 : arithmetic spacing
@@ -298,28 +297,21 @@ endfunction
 map <F9> <Esc>:call LocationToggle()<CR>
 
 
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Run the make file
 nmap <F10> :make<CR>
 
 
-" ============================================================================
-" TabMan
-" mappings to toggle display, and to focus on it
-let g:tabman_toggle = 'tl'
-let g:tabman_focus  = 'tf'
-
-
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Air line
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme = 'bubblegum'
 let g:airline#extensions#whitespace#enabled = 0
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-"
+
 " unicode symbols
 "let g:airline_left_sep = '»'
 "let g:airline_left_sep = '▶'
@@ -335,10 +327,10 @@ endif
 "let g:airline_symbols.whitespace = 'Ξ'
 
 " airline symbols
-let g:airline_left_sep      = ''
-let g:airline_left_alt_sep  = ''
-let g:airline_right_sep     = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep           = ''
+let g:airline_left_alt_sep       = ''
+let g:airline_right_sep          = ''
+let g:airline_right_alt_sep      = ''
 let g:airline_symbols.branch     = ''
 let g:airline_symbols.readonly   = ''
 let g:airline_symbols.paste      = 'ρ'
@@ -347,34 +339,44 @@ let g:airline_symbols.maxlinenr  = ''
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
+
 " Show just the filename
 "let g:airline#extensions#tabline#fnamemod = ':t'
+
 " Show path formatter
 let g:airline#extensions#tabline#formatter = 'default'
+
 " Show buffer index
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
 " Use 'straight' tabline
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '| '
 
 
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Auto-completion
-" Deoplete
+
+" Deoplete ...................................................................
+" needed so deoplete can auto select the first suggestion
 set completeopt+=noinsert
+
+" comment this line to enable autocompletion preview window
+" (displays documentation related to the selected completion option)
+" disabled by default because preview makes the window flicker
 set completeopt-=preview
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_delay = 100
-let g:context_filetype#same_filetypes = {}
+let g:deoplete#enable_at_startup        = 1
+let g:deoplete#enable_ignore_case       = 1
+let g:deoplete#enable_smart_case        = 1
+let g:deoplete#auto_complete_delay      = 100
+let g:context_filetype#same_filetypes   = {}
 let g:context_filetype#same_filetypes._ = '_'
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" Jedi vim
+" Jedi vim ...................................................................
 " Deactivate autocompletion feature of jedi vim (and use deoplete instead)
 let g:jedi#completions_enabled = 0
 
@@ -394,15 +396,17 @@ let g:jedi#documentation_command = ',k'
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
 
 
-" =============================================================================
+" ----------------------------------------------------------------------------
 " Signify
 " this first setting decides in which order try to guess your current vcs
 " UPDATE it to reflect your preferences, it will speed up opening files
 let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:signify_realtime = 1
+
 " mappings to jump to changed blocks
 nmap <leader>sn <plug>(signify-next-hunk)
 nmap <leader>sp <plug>(signify-prev-hunk)
+
 " nicer colors
 highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
 highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
@@ -412,28 +416,7 @@ highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
 highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 
-" =============================================================================
-"" CtrlP
-"" Change the default mapping and the default command to invoke CtrlP
-"let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlP'
-"" set its local working directory according to this variable
-"let g:ctrlp_working_path_mode = 'ra'
-"" Exclude files and directories using Vim's wildignore and CtrlP's own
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip      " MacOSX/Linux
-""set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-""let g:ctrlp_custom_ignore = {
-"  "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"  "\ 'file': '\v\.(exe|so|dll)$',
-"  "\ 'link': 'some_bad_symbolic_links',
-"  "\ }
-"" Use a custom file listing command
-""let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-""let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
-
-
-" =============================================================================
+" ----------------------------------------------------------------------------
 " FZF
 " Search for file name
 nmap <C-P> :Files<CR>
@@ -441,15 +424,16 @@ nmap <C-P> :Files<CR>
 nmap <C-F> :Rg<CR>
 
 
-" =============================================================================
+" ----------------------------------------------------------------------------
 " Split-term
 set splitright  " for when using :VTerm
 set splitbelow  " for when using :Term
 
 
-" =============================================================================
+" ----------------------------------------------------------------------------
 " Indentation guide
 let g:indentLine_char = '▏'
+
 " Do not use IndentLine in Markdown and Latex because it affect conceallevel
 " in math rendering
 autocmd FileType markdown let g:indentLine_enabled=0
@@ -457,7 +441,7 @@ autocmd FileType tex      let g:indentLine_enabled=0
 "let g:indentLine_conceallevel = 1
 
 
-" =============================================================================
+" ----------------------------------------------------------------------------
 " DetectIndent
 " Auto matically run DetectIndent when open a file
 autocmd BufReadPost * :DetectIndent
@@ -470,7 +454,7 @@ let g:detectindent_preferred_indent = 4
 let g:detectindent_preferred_when_mixed = 1
 
 
-" =============================================================================
+" ----------------------------------------------------------------------------
 " Markdown syntax highlighting
 " Syntax Concealing
 "set conceallevel=0
@@ -479,9 +463,7 @@ let g:vim_markdown_math = 1
 " YAML Front Matter
 let g:vim_markdown_frontmatter = 1
 
-filetype plugin on
 
-
-" =============================================================================
+" ----------------------------------------------------------------------------
 " Shortcut for Python breakpoint (ipdb)
-nmap <leader>b oimport ipdb; ipdb.set_trace()<esc>
+au FileType python map <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>

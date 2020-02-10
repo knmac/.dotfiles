@@ -16,7 +16,6 @@
 | Open error list                                           | `F9`                            |
 | Run the `make` command (required to set up Makefile)      | `F10`                           |
 | Auto completion (in insert mode)                          | `Ctrl-x Ctrl-o`                 |
-| Open tab manager (Notice: tab is different from buffer)   | `tl`                            |
 | Insert ipdb breakpoint                                    | `<LEADER> b`                    |
 | Unhighlight searching text                                | `<LEADER> <space>` (or `:nohl`) |
 
