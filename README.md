@@ -89,7 +89,8 @@ export LD_LIBRARY_PATH="$HOME/.local/lib":$LD_LIBRARY_PATH
 - Interactive process viewer: `htop`
 - Document converter: `pandoc`
 - Video converter: `ffmpeg`
-- Music player client: `ncmpcpp`
+- Music player client: `ncmpcpp`, `mpd`, `mpc` [moreinfo](https://computingforgeeks.com/how-to-configure-mpd-and-ncmpcpp-on-linux/)
 - Youtube/Spotify/... streamer: `tizonia`
 - Bandwidth monitor and rate esimator: `bmon`
 - System info viewer: `neofetch`
+- PDF reader (this is with GUI): `zathura`
