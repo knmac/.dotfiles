@@ -94,6 +94,8 @@ Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 
+"Plug 'ryanoasis/vim-devicons'
+
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
 
@@ -109,6 +111,23 @@ endif
 " ============================================================================
 " Default configurations
 " ============================================================================
+
+" ----------------------------------------------------------------------------
+" Color and syntax highlighting
+syntax enable
+
+if has("gui_running")
+    let g:molokai_original = 1
+else
+    let g:rehash256 = 1
+endif
+colorscheme molokai
+"colorscheme material-monokai
+"colorscheme onedark
+
+" Don't use polyglot for python syntax highlighting (semshi looks better)
+let g:polyglot_disabled = ['py']
+
 
 " ----------------------------------------------------------------------------
 " Look and feel
@@ -135,23 +154,6 @@ highlight Comment    cterm=italic gui=italic
 
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
-
-
-" ----------------------------------------------------------------------------
-" Color and syntax highlighting
-syntax enable
-
-if has("gui_running")
-    let g:molokai_original = 1
-else
-    let g:rehash256 = 1
-endif
-colorscheme molokai
-"colorscheme material-monokai
-"colorscheme onedark
-
-" Don't use polyglot for python syntax highlighting (semshi looks better)
-let g:polyglot_disabled = ['py']
 
 
 " ----------------------------------------------------------------------------
