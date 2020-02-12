@@ -9,5 +9,5 @@ mpc ls | mpc add
 
 # Install and configure ncmpcpp
 sudo apt-get install ncmpcpp
-mkdir -p $HOME/.config/ncmcpp/lyrics
+mkdir -p $HOME/.config/ncmpcpp/lyrics
 cp ./mpd_mpc_ncmpcpp/ncmpcpp/config $HOME/.config/ncmpcpp
