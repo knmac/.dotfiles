@@ -1,0 +1,14 @@
+set window-height 1024
+set window-width 768
+set page-padding 10
+set recolor-keephue
+set smooth-scroll true
+set selection-clipboard clipboard
+
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor
+map p print
