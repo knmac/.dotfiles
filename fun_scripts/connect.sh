@@ -17,5 +17,5 @@ connect() {
     fi
 
     echo "Port fowarding to $HOST:$PORT"
-    ssh -L $PORT:127.0.0.1:$PORT $HOST
+    ssh -NL $PORT:127.0.0.1:$PORT $HOST
 }
