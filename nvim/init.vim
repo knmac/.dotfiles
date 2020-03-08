@@ -58,17 +58,17 @@ Plug 'vim-airline/vim-airline-themes'
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Completion from other opened files
-Plug 'Shougo/context_filetype.vim'
+"Plug 'Shougo/context_filetype.vim'
 " Python autocompletion
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+"Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
 
 " colorschemes
 Plug 'tomasr/molokai'
-Plug 'skielbasa/vim-material-monokai'
-Plug 'joshdick/onedark.vim'
+"Plug 'skielbasa/vim-material-monokai'
+"Plug 'joshdick/onedark.vim'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
@@ -94,7 +94,11 @@ Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 
+" File type icons
 "Plug 'ryanoasis/vim-devicons'
+
+" CSS color highlighter
+Plug 'ap/vim-css-color'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -131,18 +135,19 @@ let g:polyglot_disabled = ['py']
 
 " ----------------------------------------------------------------------------
 " Look and feel
-set ls=2                   " always show status bar
-set mouse=a                " use mouse
-set number                 " show line numbers
-set numberwidth=5          " width of line numbers
-set showcmd                " show command in bottom bar
-set cursorline             " highlight current line
-set colorcolumn=80         " show column ruler at the end
-set encoding=utf-8         " use unicode
-set wildmode=list:longest  " visual autocomplete for command menu
-set lazyredraw             " redraw only when we need to
-set showmatch              " highlight matching [{()}]
+set ls=2                        " always show status bar
+set mouse=a                     " use mouse
+set number                      " show line numbers
+set numberwidth=5               " width of line numbers
+set showcmd                     " show command in bottom bar
+set cursorline                  " highlight current line
+set colorcolumn=80              " show column ruler at the end
+set encoding=utf-8              " use unicode
+set wildmode=list:longest       " visual autocomplete for command menu
+set lazyredraw                  " redraw only when we need to
+set showmatch                   " highlight matching [{()}]
 set backspace=indent,eol,start  " resolve the problem of backspace not working
+set path+=**                    " provide tab-completion for file-related tasks
 
 " set cursor shape (nvim >= 0.2)
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -436,10 +441,13 @@ set splitbelow  " for when using :Term
 " Indentation guide
 let g:indentLine_char = '▏'
 
+" Prevent the plugin from changing the conceal level setting
+let g:indentLine_setConceal = 0
+
 " Do not use IndentLine in Markdown and Latex because it affect conceallevel
 " in math rendering
-autocmd FileType markdown let g:indentLine_enabled=0
-autocmd FileType tex      let g:indentLine_enabled=0
+"autocmd FileType markdown let g:indentLine_enabled=0
+"autocmd FileType tex      let g:indentLine_enabled=0
 "let g:indentLine_conceallevel = 1
 
 
@@ -458,8 +466,6 @@ let g:detectindent_preferred_when_mixed = 1
 
 " ----------------------------------------------------------------------------
 " Markdown syntax highlighting
-" Syntax Concealing
-"set conceallevel=0
 " LaTeX math
 let g:vim_markdown_math = 1
 " YAML Front Matter
@@ -467,5 +473,8 @@ let g:vim_markdown_frontmatter = 1
 
 
 " ----------------------------------------------------------------------------
-" Shortcut for Python breakpoint (ipdb)
+" Shortcut for Python breakpoint (ipdb) - on the next line
 au FileType python map <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
+
+" Shortcut for Python breakpoint (ipdb) - on the previous line
+au FileType python map <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>

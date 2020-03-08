@@ -15,8 +15,8 @@
 | Close the current buffer (and switch to the previous one) | `F8`                            |
 | Open error list                                           | `F9`                            |
 | Run the `make` command (required to set up Makefile)      | `F10`                           |
-| Auto completion (in insert mode)                          | `Ctrl-x Ctrl-o`                 |
-| Insert ipdb breakpoint                                    | `<LEADER> b`                    |
+| Insert ipdb breakpoint (on the next line)                 | `<LEADER> b`                    |
+| Insert ipdb breakpoint (on the previous line)             | `<LEADER> B`                    |
 | Unhighlight searching text                                | `<LEADER> <space>` (or `:nohl`) |
 
 ## Some NERD Commenter mappings:
@@ -82,6 +82,17 @@
 | Window navigation | Create a horizontal split                   | `:split`                       |
 |                   | Create a vertical split                     | `:vsplit`                      |
 |                   | Go to left / down / up / right window       | `Ctrl-w` `h` / `j` / `k` / `l` |
+
+### Auto-completion (insert mode)
+| Functionality                      | Command         |
+|------------------------------------|-----------------|
+| Word/pattern completion - forward  | `Ctrl-x Ctrl-n` |
+| Word/pattern completion - backward | `Ctrl-x Ctrl-p` |
+| Line completion                    | `Ctrl-x Ctrl-l` |
+| Filename completion                | `Ctrl-x Ctrl-f` |
+| Omni completion **(my favorite)**  | `Ctrl-x Ctrl-o` |
+
+More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-5-awesome-examples-for-automatic-word-completion-using-ctrl-x-magic/)
 
 ### Code folding
 

@@ -81,7 +81,7 @@ export LD_LIBRARY_PATH="$HOME/.local/lib":$LD_LIBRARY_PATH
 
 - Web browser and pager: `w3m`
 - Email client: `neomutt`
-- File manager: `lf` 
+- File manager: `ranger` 
 - Visual shell for Unix-like system: `mc` (Midnight commander)
 - List contents in tree-like format: `tree`
 - File searcher: `rg` (ripgrep - improved version of `grep`)
