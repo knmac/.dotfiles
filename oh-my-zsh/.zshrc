@@ -112,6 +112,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
 # Configure FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --line-range :500 {}'"
+# determines search program for fzf
+#if type rg &> /dev/null; then
+#  export FZF_DEFAULT_COMMAND='rg --files --hidden'
+#fi
 
 # Configure LF (Ctrl-o)
 #LFCD="$HOME/.config/lf/lfcd.sh"

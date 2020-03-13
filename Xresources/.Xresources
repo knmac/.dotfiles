@@ -39,24 +39,38 @@
 
 
 ! -----------------------------------------------------------------------------
-! xterm configuration
-xterm*faceName:     Source Code Pro for Powerline
-xterm*faceSize:     11
+! st settings
+! Transparency (0-1):
+st.alpha:       0.9
+
+! Set a default font and font size as below:
+st.font:        SauceCodePro Nerd Font-10
+!st.font:        Monospace-10
+st.termname:    st-256color
+st.borderpx:    2
 
 
 ! -----------------------------------------------------------------------------
-! urxvt configuration
+! xterm settings
+xterm*faceName: SauceCodePro Nerd Font
+xterm*faceSize: 11
+
+
+! -----------------------------------------------------------------------------
+! URxvt settings
 URxvt.background:           [90]#1d1f21
 URxvt.intensityStyles:      false
 URxvt.scrollBar:            false
 URxvt.scrollBar_right:		true
 URxvt.depth:                32
-URxvt.geometry:             140x35
+URxvt.geometry:             90x30
 URxvt.fading:               30
 URxvt.loginShell:           true
 URxvt.saveLines:            1000
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
-URxvt.font:                 xft:FiraCode Nerd Font:Regular:size=12
+URxvt.font:                 xft:SauceCodePro Nerd Font:size=10
 URxvt.letterSpace:          -1
+
+URxvt.perl-ext-common:      default,matcher,keyboard-select
