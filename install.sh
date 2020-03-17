@@ -7,9 +7,11 @@ sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
 
-sudo apt-get install python-dev python-pip python3-dev python3-pip curl vim exuberant-ctags git ack-grep
-pip install --user neovim pep8 flake8 pyflakes pylint isort pynvim
-pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
+#sudo apt-get install python-dev python-pip python3-dev python3-pip curl vim exuberant-ctags git ack-grep
+#pip install --user neovim pep8 flake8 pyflakes pylint isort pynvim
+#pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
+sudo apt-get install python-dev python-pip python3-dev python3-pip curl vim exuberant-ctags
+pip3 install --user pynvim flake8 pylint
 
 mkdir -p $HOME/.config/nvim/
 cp ./nvim/init.vim $HOME/.config/nvim
@@ -33,16 +35,16 @@ chsh -s /bin/zsh user
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting 
 
 # Install zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 # Install bat for syntax highlighting
 sudo apt-get install bat
 
 # Copy the settings over
-cp -r ./oh-my-zsh/custom $HOME/.oh-my-zsh/custom
+cp oh-my-zsh/custom/themes/custom-bullet.zsh-theme ~/.oh-my-zsh/custom/themes 
 
 
 # -----------------------------------------------------------------------------
