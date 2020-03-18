@@ -478,3 +478,8 @@ au FileType python map <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
 " Shortcut for Python breakpoint (ipdb) - on the previous line
 au FileType python map <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
+
+
+" ----------------------------------------------------------------------------
+" Custom snippets
+nnoremap ,py :-1read $HOME/.config/nvim/skeleton.py<CR>
