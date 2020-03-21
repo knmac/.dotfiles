@@ -1,6 +1,7 @@
 # Linux settings
 Some linux settings I have been collecting
-![screen shot](screenshot.png)
+<!--![screen shot](screenshot.png)-->
+![demo](demo.gif)
 
 
 ## 0. Fonts configuration (Optional)
