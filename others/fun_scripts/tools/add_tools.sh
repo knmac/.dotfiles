@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ROOT="$HOME/tools"
 
 source "$ROOT/connect.sh"

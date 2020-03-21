@@ -95,7 +95,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 
 " File type icons
-"Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " CSS color highlighter
 Plug 'ap/vim-css-color'

@@ -2,14 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/knmac/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-#ZSH_THEME="bullet-train"
-ZSH_THEME="custom-bullet"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -35,7 +34,7 @@ ZSH_THEME="custom-bullet"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -100,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------------------------------
 # Turn on edit command line mode (Ctrl-x Ctrl-e)
-#autoload -U edit-command-line
+autoload -U edit-command-line
 
 # Configure zsh highlighting
 ZSH_HIGHLIGHT_STYLES[path]=none
@@ -113,16 +112,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --line-range :500 {}'"
 # determines search program for fzf
-#if type rg &> /dev/null; then
-#  export FZF_DEFAULT_COMMAND='rg --files --hidden'
-#fi
-
-# Configure LF (Ctrl-o)
-#LFCD="$HOME/.config/lf/lfcd.sh"
-#if [ -f "$LFCD" ]; then
-  #source "$LFCD"
-  #bindkey -s '^o' 'lfcd\n'
-#fi
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files --hidden'
+fi
 
 # Aliases and exports
 if type xclip &>/dev/null; then
