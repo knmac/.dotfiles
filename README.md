@@ -2,9 +2,7 @@
 Some linux settings I have been collecting.
 <!--![screen shot](screenshot.png)-->
 
-<center>
-![demo](demo.gif)
-</center>
+![demo](demo.gif){width=100%}
 
 
 ## 0. Fonts configuration (Optional)
