@@ -2,7 +2,7 @@
 sudo apt-get install mpd mpc
 mkdir -p $HOME/.config/mpd/playlists
 cp ./mpd/mpd.conf $HOME/.config/mpd
-sudo service mpd stop
+#sudo service mpd stop
 mpd
 mpc ls | mpc add
 
