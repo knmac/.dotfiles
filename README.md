@@ -1,8 +1,10 @@
 # Linux settings
 Some linux settings I have been collecting.
 <!--![screen shot](screenshot.png)-->
-
-![demo](demo.gif){width=100%}
+<!--![demo](demo.gif)-->
+<p align="center">
+  <img src="demo.gif">
+</p>
 
 
 ## 0. Fonts configuration (Optional)
