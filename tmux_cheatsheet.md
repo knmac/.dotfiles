@@ -49,7 +49,7 @@ The commands and key-bindings have to be after pressing `[PREFIX]` (except for *
 |                           |                               |                                              |
 | Kill session              | `:kill-session`               |                                              |
 | Kill window               | `:kill-window`                | `&`                                          |
-| Kill pane                 | `kill-pane`                   | `x`                                          |
+| Kill pane                 | `:kill-pane`                  | `x`                                          |
 |                           |                               |                                              |
 | Mouse mode                |                               | `m`                                          |
 | Clock mode                | `:clock-mode`                 | `t`                                          |
