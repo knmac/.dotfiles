@@ -21,42 +21,42 @@ tmux ls
 
 ## From inside tmux
 
-(The default `[PREFIX]` is `Ctrl-b`)
+The commands and key-bindings have to be after pressing `[PREFIX]` (except for *swap windows*). The default `[PREFIX]` is `Ctrl-b`
 
-| Functionality             | Command (after `[PREFIX]:`)  | Key-binding (after `[PREFIX]`)               |
-|---------------------------|------------------------------|----------------------------------------------|
-| Show all commands         |                              | `?`                                          |
-|                           |                              |                                              |
-| New session               | `new-session`                | `Ctrl-c`                                     |
-| New window                | `new-window`                 | `c`                                          |
-| Split vertically          | `split-window -v`            | `-` (default `%`)                            |
-| Split horizontally        | `split-window -h`            | `\` or `_` (default `"`)                     |
-|                           |                              |                                              |
-| Navigate between sessions |                              | `(`/`)`                                      |
-| Navigate between windows  |                              | `Ctrl-` `h`/`l`                              |
-| Navigate between panes    |                              | `h`/`j`/`k`/`l`                              |
-| Resize panes              |                              | `Shift-` `h`/`j`/`k`/`l`                     |
-| Swap windows              |                              | `Ctrl-Shift-` `Left`/`Right` (no `[PREFIX]`) |
-| Swap panes                |                              | `{`/`}`                                      |
-| Zoom/unzoom pane          | `resize-pane -Z`             | `z`                                          |
-| Next layout               | `next-layout`                | `space`                                      |
-|                           |                              |                                              |
-| Rename session            | `rename-session [name]`      | `$`                                          |
-| Rename window             | `rename-window [name]`       | `,`                                          |
-| List sessions             | `choose-tree -Zs`            | `s`                                          |
-| List windows              | `choose-tree -Zw`            | `w`                                          |
-|                           |                              |                                              |
-| Kill session              | `kill-session`               |                                              |
-| Kill window               | `kill-window`                | `&`                                          |
-| Kill pane                 | `kill-pane`                  | `x`                                          |
-|                           |                              |                                              |
-| Reload tmux config        | `source-file [path/to/file]` | `r`                                          |
-| Mouse mode                |                              | `m`                                          |
-| Clock mode                | `clock-mode`                 | `t`                                          |
-| Copy mode                 | `copy-mode`                  | `[` or `Enter`                               |
-| Paste from buffer         |                              | `]` or `p`                                   |
-| List buffer               |                              | `#` or `b`                                   |
-| Choose buffer             |                              | `P`                                          |
+| Functionality             | Command                       | Key-binding                                  |
+|---------------------------|-------------------------------|----------------------------------------------|
+| Show all commands         |                               | `?`                                          |
+| Reload tmux config        | `:source-file [path/to/file]` | `r`                                          |
+|                           |                               |                                              |
+| New session               | `:new-session`                | `Ctrl-c`                                     |
+| New window                | `:new-window`                 | `c`                                          |
+| Split vertically          | `:split-window -v`            | `-` (default `%`)                            |
+| Split horizontally        | `:split-window -h`            | `|` or `_` (default `"`)                     |
+|                           |                               |                                              |
+| Navigate between sessions |                               | `(`/`)`                                      |
+| Navigate between windows  |                               | `Ctrl-` `h`/`l`                              |
+| Navigate between panes    |                               | `h`/`j`/`k`/`l`                              |
+| Resize panes              |                               | `Shift-` `h`/`j`/`k`/`l`                     |
+| Swap windows              |                               | `Ctrl-Shift-` `Left`/`Right` (no `[PREFIX]`) |
+| Swap panes                |                               | `{`/`}`                                      |
+| Zoom/unzoom pane          | `:resize-pane -Z`             | `z`                                          |
+| Next layout               | `:next-layout`                | `space`                                      |
+|                           |                               |                                              |
+| Rename session            | `:rename-session [name]`      | `$`                                          |
+| Rename window             | `:rename-window [name]`       | `,`                                          |
+| List sessions             | `:choose-tree -Zs`            | `s`                                          |
+| List windows              | `:choose-tree -Zw`            | `w`                                          |
+|                           |                               |                                              |
+| Kill session              | `:kill-session`               |                                              |
+| Kill window               | `:kill-window`                | `&`                                          |
+| Kill pane                 | `kill-pane`                   | `x`                                          |
+|                           |                               |                                              |
+| Mouse mode                |                               | `m`                                          |
+| Clock mode                | `:clock-mode`                 | `t`                                          |
+| Copy mode                 | `:copy-mode`                  | `[` or `Enter`                               |
+| Paste from buffer         |                               | `]` or `p`                                   |
+| List buffer               |                               | `#` or `b`                                   |
+| Choose buffer             |                               | `P`                                          |
 
 
 In *copy mode*:
