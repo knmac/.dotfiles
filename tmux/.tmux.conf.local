@@ -42,7 +42,7 @@ tmux_conf_new_session_prompt=false
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
-tmux_conf_theme_24b_colour=false
+tmux_conf_theme_24b_colour=true
 
 # window style
 tmux_conf_theme_window_fg='default'
@@ -111,7 +111,8 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
 tmux_conf_theme_window_status_bg='#080808'              # dark gray
 tmux_conf_theme_window_status_attr='none'
-tmux_conf_theme_window_status_format='#I #W'
+tmux_conf_theme_window_status_format='#I:#W'
+#tmux_conf_theme_window_status_format='#I #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}'
 
@@ -126,7 +127,8 @@ tmux_conf_theme_window_status_format='#I #W'
 tmux_conf_theme_window_status_current_fg='#000000'      # black
 tmux_conf_theme_window_status_current_bg='#00afff'      # light blue
 tmux_conf_theme_window_status_current_attr='bold'
-tmux_conf_theme_window_status_current_format='#I #W'
+tmux_conf_theme_window_status_current_format='#I:#W'
+#tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 
@@ -313,6 +315,7 @@ tmux_conf_copy_to_os_clipboard=true
 # ===============================================================================
 # my settings
 #set -g status-justify centre
+set -g window-status-separator '  '
 
 # split panes using | and -
 bind | split-window -h
