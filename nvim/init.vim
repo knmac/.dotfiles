@@ -57,6 +57,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-jedi'
 " Completion from other opened files
 "Plug 'Shougo/context_filetype.vim'
 " Python autocompletion
