@@ -163,6 +163,7 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 highlight CursorLine cterm=bold   gui=bold
 " Make comments italic
 highlight Comment    cterm=italic gui=italic
+highlight Cursor     guibg=#626262
 
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
