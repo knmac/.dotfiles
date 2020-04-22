@@ -67,6 +67,7 @@ Plug 'davidhalter/jedi-vim'
 
 " colorschemes
 Plug 'tomasr/molokai'
+Plug 'fratajczak/one-monokai-vim'
 "Plug 'skielbasa/vim-material-monokai'
 "Plug 'joshdick/onedark.vim'
 
@@ -75,7 +76,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Code and files fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Better control of terminal
@@ -120,12 +121,17 @@ endif
 " Color and syntax highlighting
 syntax enable
 
-if has("gui_running")
-    let g:molokai_original = 1
-else
-    let g:rehash256 = 1
-endif
-colorscheme molokai
+"if has("gui_running")
+    "let g:molokai_original = 1
+"else
+    "let g:rehash256 = 1
+"endif
+"colorscheme molokai
+
+set termguicolors
+let g:monokai_term_italic = 1
+colorscheme one-monokai
+
 "colorscheme material-monokai
 "colorscheme onedark
 
