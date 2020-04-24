@@ -25,6 +25,7 @@
 | ----------------------- | ------------- |
 | Comment                 | `<LEADER> cc` |
 | Uncomment               | `<LEADER> cu` |
+| Toggle comment          | `<LEADER> ci` |
 | Comment with left-align | `<LEADER> cl` |
 | Comment 'Sexily'        | `<LEADER> cs` |
 

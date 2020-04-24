@@ -40,7 +40,6 @@ Plug 'fisadev/FixedTaskList.vim'
 Plug 'majutsushi/tagbar'
 
 " Git integration
-"Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
@@ -49,7 +48,8 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-scripts/IndexedSearch'
 
 " Linters
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
+Plug 'dense-analysis/ale'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -58,16 +58,12 @@ Plug 'vim-airline/vim-airline-themes'
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
-" Completion from other opened files
-"Plug 'Shougo/context_filetype.vim'
-" Python autocompletion
-"Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
 
 " colorschemes
-Plug 'tomasr/molokai'
+"Plug 'tomasr/molokai'
 Plug 'fratajczak/one-monokai-vim'
 "Plug 'skielbasa/vim-material-monokai'
 "Plug 'joshdick/onedark.vim'
@@ -263,53 +259,88 @@ nmap <F8> :bp<CR>:bd #<CR>
 
 
 " ----------------------------------------------------------------------------
-" Neomake
-" Run linter on write
-autocmd BufWritePost,BufEnter * Neomake
+"" Neomake
+"" Run linter on write
+"autocmd BufWritePost,BufEnter * Neomake
 
-" Check code as python3 by default
-let g:neomake_python_python_maker = neomake#makers#ft#python#python()
-let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
-let g:neomake_python_python_maker.exe = 'python3 -m py_compile'
-let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
+"" Check code as python3 by default
+"let g:neomake_python_python_maker = neomake#makers#ft#python#python()
+"let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
+"let g:neomake_python_python_maker.exe = 'python3 -m py_compile'
+"let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
 
+"" Force to use flake8
+"let g:neomake_python_enabled_makers = ['flake8']
+"let g:neomake_python_flake8_maker = {
+"    \ 'args': ['--ignore=E501,E402,E226', '--format=default'],
+"    \ 'errorformat':
+"        \ '%E%f:%l: could not compile,%-Z%p^,' .
+"        \ '%A%f:%l:%c: %t%n %m,' .
+"        \ '%A%f:%l: %t%n %m,' .
+"        \ '%-G%.%#',
+"    \ }
+"" E501 : line too long
+"" E402 : module level import not at top of file
+"" E226 : arithmetic spacing
+
+"" Disable error messages inside the buffer, next to the problematic line
+"let g:neomake_virtualtext_current_error = 0
+
+"" Whenever :Neomake is called, open the location list without switching focus
+""let g:neomake_open_list = 2
+
+"" Change the default Neomake signs 
+"let g:neomake_warning_sign = {'text': 'W', 'texthl': 'WarningMsg'}
+"let g:neomake_error_sign = {'text': 'E', 'texthl': 'ErrorMsg'}
+
+"" Shortcut to toggle location list
+""nmap <F9> :Neomake<CR>
+"let g:location_is_open = 0
+"function! LocationToggle()
+"    if g:location_is_open == 1
+"        lclose
+"        let g:location_is_open = 0
+"    else
+"        lopen
+"        let g:location_is_open = 1
+"    endif
+"endfunction
+"map <F9> <Esc>:call LocationToggle()<CR>
+
+
+" ----------------------------------------------------------------------------
+"" ALE
 " Force to use flake8
-let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_python_flake8_maker = {
-    \ 'args': ['--ignore=E501,E402,E226', '--format=default'],
-    \ 'errorformat':
-        \ '%E%f:%l: could not compile,%-Z%p^,' .
-        \ '%A%f:%l:%c: %t%n %m,' .
-        \ '%A%f:%l: %t%n %m,' .
-        \ '%-G%.%#',
-    \ }
+let g:ale_linters = {
+            \'python': ['flake8'],
+            \}
+let g:ale_python_flake8_options = '--ignore=E501,E402,E226'
 " E501 : line too long
 " E402 : module level import not at top of file
 " E226 : arithmetic spacing
 
-" Disable error messages inside the buffer, next to the problematic line
-let g:neomake_virtualtext_current_error = 0
+" Change message format
+let g:ale_echo_msg_error_str   = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_info_str    = 'I'
+let g:ale_echo_msg_format      = '[%linter%] %code%: %s [%severity%]'
 
-" Whenever :Neomake is called, open the location list without switching focus
-"let g:neomake_open_list = 2
+" Use quickfix list instead of location list
+let g:ale_set_loclist  = 0
+let g:ale_set_quickfix = 1
 
-" Change the default Neomake signs 
-let g:neomake_warning_sign = {'text': 'W', 'texthl': 'WarningMsg'}
-let g:neomake_error_sign = {'text': 'E', 'texthl': 'ErrorMsg'}
-
-" Shortcut to toggle location list
-"nmap <F9> :Neomake<CR>
-let g:location_is_open = 0
-function! LocationToggle()
-    if g:location_is_open == 1
-        lclose
-        let g:location_is_open = 0
+" Press <F9> to toggle quickfix list
+let g:quickfix_is_open = 0
+function! QuickfixToggle()
+    if g:quickfix_is_open == 1
+        cclose
+        let g:quickfix_is_open = 0
     else
-        lopen
-        let g:location_is_open = 1
+        copen
+        let g:quickfix_is_open = 1
     endif
 endfunction
-map <F9> <Esc>:call LocationToggle()<CR>
+nmap <F9> :call QuickfixToggle()<CR>
 
 
 " ----------------------------------------------------------------------------

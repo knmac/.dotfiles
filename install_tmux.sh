@@ -12,8 +12,8 @@ LIBEVENT_VERSION=2.1.11
 NCURSES_VERSION=6.1
 
 # create our directories
-mkdir -p $HOME/.local $HOME/tmux_tmp
-cd $HOME/tmux_tmp
+mkdir -p "$HOME/.local" "$HOME/tmux_tmp"
+cd "$HOME/tmux_tmp"
 
 # download source files for tmux, libevent, and ncurses
 wget "https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz" 
@@ -26,33 +26,33 @@ wget "ftp://ftp.gnu.org/gnu/ncurses/ncurses-${NCURSES_VERSION}.tar.gz"
 # libevent #
 ############
 tar xvzf libevent-${LIBEVENT_VERSION}-stable.tar.gz
-cd libevent-${LIBEVENT_VERSION}-stable
-./configure --prefix=$HOME/.local --disable-shared
+pushd libevent-${LIBEVENT_VERSION}-stable
+./configure --prefix="$HOME/.local" --disable-shared
 make
 make install
-cd ..
+popd
 
 ############
 # ncurses  #
 ############
 tar xvzf ncurses-${NCURSES_VERSION}.tar.gz
-cd ncurses-${NCURSES_VERSION}
-./configure --prefix=$HOME/.local
+pushd ncurses-${NCURSES_VERSION}
+./configure --prefix="$HOME/.local"
 make
 make install
-cd ..
+popd
 
 ############
 # tmux     #
 ############
 tar xvzf tmux-${TMUX_VERSION}.tar.gz
-cd tmux-${TMUX_VERSION}
+pushd tmux-${TMUX_VERSION}
 ./configure CFLAGS="-I$HOME/.local/include -I$HOME/.local/include/ncurses" LDFLAGS="-L$HOME/.local/lib -L$HOME/.local/include/ncurses -L$HOME/local/include"
 CPPFLAGS="-I$HOME/.local/include -I$HOME/.local/include/ncurses" LDFLAGS="-static -L$HOME/.local/include -L$HOME/.local/include/ncurses -L$HOME/.local/lib" make
-cp tmux $HOME/.local/bin
-cd ..
+cp tmux "$HOME/.local/bin"
+popd
 
 # cleanup
-rm -rf $HOME/tmux_tmp
+rm -rf "$HOME/tmux_tmp"
 
 echo "$HOME/.local/bin/tmux is now available. You can optionally add $HOME/.local/bin to your PATH."
