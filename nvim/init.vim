@@ -522,4 +522,4 @@ au FileType python map <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
 
 " ----------------------------------------------------------------------------
 " Custom snippets
-nnoremap ,py :-1read $HOME/.config/nvim/skeleton.py<CR>
+nnoremap ,py :-1read $HOME/.config/nvim/skeleton.py<esc>Gddgg
