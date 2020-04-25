@@ -96,7 +96,7 @@ Plug 'godlygeek/tabular'
 Plug 'ryanoasis/vim-devicons'
 
 " CSS color highlighter
-Plug 'ap/vim-css-color'
+Plug 'lilydjwg/colorizer'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -158,7 +158,7 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 " Highlight current line by bolding the text
 highlight CursorLine cterm=bold   gui=bold
 " Make comments italic
-highlight Comment    cterm=italic gui=italic
+"highlight Comment    cterm=italic gui=italic
 highlight Cursor     guibg=#626262
 
 filetype indent on      " load filetype-specific indent files
