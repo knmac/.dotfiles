@@ -107,6 +107,8 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # Configure zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
+# Press Ctrl+[space] to accept the suggestion
+bindkey '^ ' autosuggest-accept
 
 # Configure FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
