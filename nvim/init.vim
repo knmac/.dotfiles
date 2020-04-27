@@ -484,12 +484,12 @@ set splitbelow  " for when using :Term
 let g:indentLine_char = '▏'
 
 " Prevent the plugin from changing the conceal level setting
-let g:indentLine_setConceal = 0
+"let g:indentLine_setConceal = 0
 
 " Do not use IndentLine in Markdown and Latex because it affect conceallevel
 " in math rendering
-"autocmd FileType markdown let g:indentLine_enabled=0
-"autocmd FileType tex      let g:indentLine_enabled=0
+autocmd FileType markdown let g:indentLine_enabled=0
+autocmd FileType tex      let g:indentLine_enabled=0
 "let g:indentLine_conceallevel = 1
 
 
