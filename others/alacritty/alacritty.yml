@@ -257,35 +257,48 @@ font:
   #
   #indexed_colors: []
 
-# Campbell (Windows 10 default)
+# Base16 Google Dark 256 - alacritty color config
+# Seth Wright (http://sethawright.com)
 colors:
   # Default colors
   primary:
-    background: '#0c0c0c'
-    foreground: '#cccccc'
+    background: '0x1d1f21'
+    foreground: '0xc5c8c6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d1f21'
+    cursor: '0xc5c8c6'
 
   # Normal colors
   normal:
-    black:      '#0c0c0c'
-    red:        '#c50f1f'
-    green:      '#13a10e'
-    yellow:     '#c19c00'
-    blue:       '#0037da'
-    magenta:    '#881798'
-    cyan:       '#3a96dd'
-    white:      '#cccccc'
+    black:   '0x1d1f21'
+    red:     '0xcc342b'
+    green:   '0x198844'
+    yellow:  '0xfba922'
+    blue:    '0x3971ed'
+    magenta: '0xa36ac7'
+    cyan:    '0x3971ed'
+    white:   '0xc5c8c6'
 
   # Bright colors
   bright:
-    black:      '#767676'
-    red:        '#e74856'
-    green:      '#16c60c'
-    yellow:     '#f9f1a5'
-    blue:       '#3b78ff'
-    magenta:    '#b4009e'
-    cyan:       '#61d6d6'
-    white:      '#f2f2f2'
+    black:   '0x969896'
+    red:     '0xcc342b'
+    green:   '0x198844'
+    yellow:  '0xfba922'
+    blue:    '0x3971ed'
+    magenta: '0xa36ac7'
+    cyan:    '0x3971ed'
+    white:   '0xffffff'
 
+  indexed_colors:
+    - { index: 16, color: '0xf96a38' }
+    - { index: 17, color: '0x3971ed' }
+    - { index: 18, color: '0x282a2e' }
+    - { index: 19, color: '0x373b41' }
+    - { index: 20, color: '0xb4b7b4' }
+    - { index: 21, color: '0xe0e0e0' }
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -317,7 +330,7 @@ colors:
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #background_opacity: 1.0
-background_opacity: 0.85
+background_opacity: 0.95
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
