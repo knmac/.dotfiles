@@ -312,8 +312,8 @@ nmap <F8> :bp<CR>:bd #<CR>
 "" ALE
 " Force to use flake8
 let g:ale_linters = {
-            \'python': ['flake8'],
-            \}
+    \'python': ['flake8'],
+    \}
 let g:ale_python_flake8_options = '--ignore=E501,E402,E226'
 " E501 : line too long
 " E402 : module level import not at top of file
@@ -406,21 +406,21 @@ let g:airline#extensions#tabline#left_alt_sep = '| '
 
 " Deoplete ...................................................................
 " needed so deoplete can auto select the first suggestion
-set completeopt+=noinsert
+"set completeopt+=noinsert
 
 " comment this line to enable autocompletion preview window
 " (displays documentation related to the selected completion option)
 " disabled by default because preview makes the window flicker
-set completeopt-=preview
+"set completeopt-=preview
 
 let g:deoplete#enable_at_startup        = 1
 let g:deoplete#enable_ignore_case       = 1
 let g:context_filetype#same_filetypes   = {}
 let g:context_filetype#same_filetypes._ = '_'
-call deoplete#custom#option({
-    \ 'auto_complete_delay': 200,
-    \ 'smart_case': v:true,
-    \ })
+"call deoplete#custom#option({
+"    \ 'auto_complete_delay': 200,
+"    \ 'smart_case': v:true,
+"    \ })
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -429,20 +429,26 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " Deactivate autocompletion feature of jedi vim (and use deoplete instead)
 let g:jedi#completions_enabled = 0
 
+" Deactivate the window to shows detailing arguments
+let g:jedi#show_call_signatures = 0
+
+" Use <leader>k instead of the default `K` for better consistency
+let g:jedi#documentation_command = '<leader>k'
+
 " All these mappings work only for python code:
 " Go to definition
-let g:jedi#goto_command = ',d'
+"let g:jedi#goto_command = ',d'
 " Find ocurrences
-let g:jedi#usages_command = ',o'
+"let g:jedi#usages_command = ',o'
 " Find assignments
-let g:jedi#goto_assignments_command = ',a'
+"let g:jedi#goto_assignments_command = ',a'
 " Rename
-let g:jedi#rename_command = ',r'
+"let g:jedi#rename_command = ',r'
 " Show definition
-let g:jedi#documentation_command = ',k'
+"let g:jedi#documentation_command = ',k'
 " Go to definition in new tab
 " open an empty buffer
-nmap ,D :tab split<CR>:call jedi#goto()<CR>
+"nmap ,D :tab split<CR>:call jedi#goto()<CR>
 
 
 " ----------------------------------------------------------------------------

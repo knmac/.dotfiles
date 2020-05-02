@@ -1,6 +1,6 @@
 # My neovim cheatsheet
 
-(The default `<LEADER>` is `\`)
+(The default `<leader>` is `\`)
 
 ## Some custom Vim shortcuts
 
@@ -15,31 +15,31 @@
 | Close the current buffer (and switch to the previous one) | `F8`                            |
 | Open error list                                           | `F9`                            |
 | Run the `make` command (required to set up Makefile)      | `F10`                           |
-| Insert ipdb breakpoint (on the next line)                 | `<LEADER> b`                    |
-| Insert ipdb breakpoint (on the previous line)             | `<LEADER> B`                    |
-| Unhighlight searching text                                | `<LEADER> <space>` (or `:nohl`) |
+| Insert ipdb breakpoint (on the next line)                 | `<leader> b`                    |
+| Insert ipdb breakpoint (on the previous line)             | `<leader> B`                    |
+| Unhighlight searching text                                | `<leader> <space>` (or `:nohl`) |
 
 ## Some NERD Commenter mappings:
 
 | Functionality           | Command       |
 | ----------------------- | ------------- |
-| Comment                 | `<LEADER> cc` |
-| Uncomment               | `<LEADER> cu` |
-| Toggle comment          | `<LEADER> ci` |
-| Comment with left-align | `<LEADER> cl` |
-| Comment 'Sexily'        | `<LEADER> cs` |
+| Comment                 | `<leader> cc` |
+| Uncomment               | `<leader> cu` |
+| Toggle comment          | `<leader> ci` |
+| Comment with left-align | `<leader> cl` |
+| Comment 'Sexily'        | `<leader> cs` |
 
 ## Some JediVim mappings
 
 (This is for Python only; use CTags for non-Python files):
 
-| Functionality                  | Command |
-| ------------------------------ | ------- |
-| Go to definition               | `,d`    |
-| Go to assignment               | `,a`    |
-| Find occurences                | `,o`    |
-| Rename variable                | `,r`    |
-| Show definition (in a new tab) | `,k`    |
+| Functionality                 | Command      |
+|-------------------------------|--------------|
+| Go to definition              | `<leader> d` |
+| Go to assignment              | `<leader> g` |
+| Show documentation/pydoc      | `<leader> k` |
+| Renaming variables            | `<leader> r` |
+| Show all the usages of a name | `<leader> n` |
 
 ## Some FZF Mappings:
 
@@ -52,9 +52,9 @@
 
 | Functionality | Command       |
 | ------------- | ------------- |
-| Compile       | `<LEADER> ll` |
-| View          | `<LEADER> lv` |
-| Clean         | `<LEADER> lc` |
+| Compile       | `<leader> ll` |
+| View          | `<leader> lv` |
+| Clean         | `<leader> lc` |
 
 ## Some useful Ctags commands (requires Ctags):
 
