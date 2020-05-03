@@ -15,11 +15,12 @@
 | Close the current buffer (and switch to the previous one) | `F8`                            |
 | Open error list                                           | `F9`                            |
 | Run the `make` command (required to set up Makefile)      | `F10`                           |
-| Toggle conceallevel (between 0 and 1)                     | `F12`                           |
 | Unhighlight searching text                                | `<leader> <space>` (or `:nohl`) |
 | Insert ipdb breakpoint (on the next line)                 | `<leader> b`                    |
 | Insert ipdb breakpoint (on the previous line)             | `<leader> B`                    |
-| Insert python template                                    | `,py`                           |
+| Toggle conceallevel (between 0 and 1)                     | `,c`                            |
+| Insert python skeleton                                    | `,py`                           |
+| Insert html skeleton                                      | `,html`                         |
 
 ## Some NERD Commenter mappings:
 

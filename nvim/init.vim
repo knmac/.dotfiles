@@ -58,6 +58,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
+
+" Function navigation for python without using ctags
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
@@ -126,7 +128,6 @@ syntax enable
 "colorscheme molokai
 
 set termguicolors
-let g:monokai_term_italic = 1
 colorscheme one-monokai
 
 "colorscheme material-monokai
@@ -157,8 +158,7 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 
 " Highlight current line by bolding the text
 highlight CursorLine cterm=bold   gui=bold
-" Make comments italic
-"highlight Comment    cterm=italic gui=italic
+" Change the background of cursor
 highlight Cursor     guibg=#626262
 
 filetype indent on      " load filetype-specific indent files
@@ -208,14 +208,14 @@ set foldmethod=indent   " set folding method by looking at indentation
 
 " ----------------------------------------------------------------------------
 " Task list
-nmap <F2> :TaskList<CR>
+nnoremap <F2> :TaskList<CR>
 
 
 " ----------------------------------------------------------------------------
 " Nerd tree
-nmap <F3> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
 " open nerdtree with the current file selected
-nmap ,t :NERDTreeFind<CR>
+nnoremap ,t :NERDTreeFind<CR>
 " don't show these file types
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
@@ -231,7 +231,7 @@ autocmd BufEnter * call NERDTreeRefresh()
 
 " ----------------------------------------------------------------------------
 " Tag bar
-nmap <F4> :TagbarToggle<CR>
+nnoremap <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 let g:tagbar_type_markdown = {
@@ -249,63 +249,13 @@ let g:tagbar_type_markdown = {
 set hidden
 
 " Show interactive buffer list (need fzf)
-nmap <F5> :Buffers<CR>
+nnoremap <F5> :Buffers<CR>
 " Prev buffer
-nmap <F6> :bp<CR>
+nnoremap <F6> :bp<CR>
 " Next buffer
-nmap <F7> :bn<CR>
+nnoremap <F7> :bn<CR>
 " Close buffer and switch to the previous one
-nmap <F8> :bp<CR>:bd #<CR>
-
-
-" ----------------------------------------------------------------------------
-"" Neomake
-"" Run linter on write
-"autocmd BufWritePost,BufEnter * Neomake
-
-"" Check code as python3 by default
-"let g:neomake_python_python_maker = neomake#makers#ft#python#python()
-"let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
-"let g:neomake_python_python_maker.exe = 'python3 -m py_compile'
-"let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
-
-"" Force to use flake8
-"let g:neomake_python_enabled_makers = ['flake8']
-"let g:neomake_python_flake8_maker = {
-"    \ 'args': ['--ignore=E501,E402,E226', '--format=default'],
-"    \ 'errorformat':
-"        \ '%E%f:%l: could not compile,%-Z%p^,' .
-"        \ '%A%f:%l:%c: %t%n %m,' .
-"        \ '%A%f:%l: %t%n %m,' .
-"        \ '%-G%.%#',
-"    \ }
-"" E501 : line too long
-"" E402 : module level import not at top of file
-"" E226 : arithmetic spacing
-
-"" Disable error messages inside the buffer, next to the problematic line
-"let g:neomake_virtualtext_current_error = 0
-
-"" Whenever :Neomake is called, open the location list without switching focus
-""let g:neomake_open_list = 2
-
-"" Change the default Neomake signs 
-"let g:neomake_warning_sign = {'text': 'W', 'texthl': 'WarningMsg'}
-"let g:neomake_error_sign = {'text': 'E', 'texthl': 'ErrorMsg'}
-
-"" Shortcut to toggle location list
-""nmap <F9> :Neomake<CR>
-"let g:location_is_open = 0
-"function! LocationToggle()
-"    if g:location_is_open == 1
-"        lclose
-"        let g:location_is_open = 0
-"    else
-"        lopen
-"        let g:location_is_open = 1
-"    endif
-"endfunction
-"map <F9> <Esc>:call LocationToggle()<CR>
+nnoremap <F8> :bp<CR>:bd #<CR>
 
 
 " ----------------------------------------------------------------------------
@@ -340,12 +290,12 @@ function! QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfunction
-nmap <F9> :call QuickfixToggle()<CR>
+nnoremap <F9> :call QuickfixToggle()<CR>
 
 
 " ----------------------------------------------------------------------------
 " Run the make file
-nmap <F10> :make<CR>
+nnoremap <F10> :make<CR>
 
 
 " ----------------------------------------------------------------------------
@@ -402,9 +352,7 @@ let g:airline#extensions#tabline#left_alt_sep = '| '
 
 
 " ----------------------------------------------------------------------------
-" Auto-completion
-
-" Deoplete ...................................................................
+" Deoplete 
 " needed so deoplete can auto select the first suggestion
 "set completeopt+=noinsert
 
@@ -427,7 +375,8 @@ let g:context_filetype#same_filetypes._    = '_'
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 
-" Jedi vim ...................................................................
+" ----------------------------------------------------------------------------
+" JediVim
 " Deactivate autocompletion feature of jedi vim (and use deoplete instead)
 let g:jedi#completions_enabled = 0
 
@@ -461,8 +410,8 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:signify_realtime = 1
 
 " mappings to jump to changed blocks
-nmap <leader>sn <plug>(signify-next-hunk)
-nmap <leader>sp <plug>(signify-prev-hunk)
+nnoremap <leader>sn <plug>(signify-next-hunk)
+nnoremap <leader>sp <plug>(signify-prev-hunk)
 
 " nicer colors
 highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
@@ -476,9 +425,9 @@ highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 " ----------------------------------------------------------------------------
 " FZF
 " Search for file name
-nmap <C-P> :Files<CR>
+nnoremap <C-P> :Files<CR>
 " Search for file content (require ripgrep)
-nmap <C-F> :Rg<CR>
+nnoremap <C-F> :Rg<CR>
 
 
 " ----------------------------------------------------------------------------
@@ -495,24 +444,9 @@ let g:indentLine_char = '▏'
 let g:indentLine_setConceal = 0
 let g:indentLine_faster = 1
 
-" Do not use IndentLine in Markdown and Latex because it affect conceallevel
-" in math rendering
-"autocmd FileType markdown let g:indentLine_conceallevel=0
-"autocmd FileType tex      let g:indentLine_conceallevel=0
-
-" Press <F12> to toggle conceallevel, good when your want to copy text and
-" avoid copying indentLine_char
-let g:conceal_is_on = 0
-function! ConcealToggle()
-    if g:conceal_is_on == 1
-        let g:conceal_is_on = 0
-        set conceallevel=0
-    else
-        let g:conceal_is_on = 1
-        set conceallevel=1
-    endif
-endfunction
-nmap <F12> :call ConcealToggle()<CR>
+" Toggle conceallevel, good when your want to copy text and avoid copying 
+" indentLine_char
+nnoremap ,c :let &cole=(&cole == 2) ? 0 : 2 <bar> 'conceallevel ' . &cole <CR>
 
 
 " ----------------------------------------------------------------------------
@@ -538,12 +472,13 @@ let g:vim_markdown_frontmatter = 1
 
 " ----------------------------------------------------------------------------
 " Shortcut for Python breakpoint (ipdb) - on the next line
-au FileType python map <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
+au FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
 " Shortcut for Python breakpoint (ipdb) - on the previous line
-au FileType python map <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
+au FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
 
 
 " ----------------------------------------------------------------------------
 " Custom snippets
-nnoremap ,py :-1read $HOME/.config/nvim/skeleton.py<esc>Gddgg
+nnoremap ,py   :-1read $HOME/.config/nvim/skeleton.py<esc>Gddgg
+nnoremap ,html :-1read $HOME/.config/nvim/skeleton.html<esc>Gddgg
