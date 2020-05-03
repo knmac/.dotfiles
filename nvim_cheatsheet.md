@@ -9,15 +9,17 @@
 | Open todo list                                            | `F2`                            |
 | Navigate between files and folders                        | `F3`                            |
 | Navigate between functions                                | `F4`                            |
-| Show (interactive) buffere list                           | `F5`                            |
+| Show (interactive) buffer list                            | `F5`                            |
 | Previous buffer                                           | `F6`                            |
 | Next buffer                                               | `F7`                            |
 | Close the current buffer (and switch to the previous one) | `F8`                            |
 | Open error list                                           | `F9`                            |
 | Run the `make` command (required to set up Makefile)      | `F10`                           |
+| Toggle conceallevel (between 0 and 1)                     | `F12`                           |
+| Unhighlight searching text                                | `<leader> <space>` (or `:nohl`) |
 | Insert ipdb breakpoint (on the next line)                 | `<leader> b`                    |
 | Insert ipdb breakpoint (on the previous line)             | `<leader> B`                    |
-| Unhighlight searching text                                | `<leader> <space>` (or `:nohl`) |
+| Insert python template                                    | `,py`                           |
 
 ## Some NERD Commenter mappings:
 
@@ -68,21 +70,21 @@
 
 ### Navigation
 
-| Group             | Functionality                               | Command                        |
-|-------------------|---------------------------------------------|--------------------------------|
-| Line navigation   | Go left / down / up / right                 | `h` / `j` / `k` / `l`          |
-|                   | Go to start / end of current line           | `0` / `$`                      |
-|                   | Go to non-blank start / end of current line | `^` / `g_`                     |
-| Text navigation   | Go to next / previous beginning of a word   | `w` / `b`                      |
-|                   | Go to end of a word                         | `e`                            |
-| Screen navigation | Go to first / last line                     | `gg` / `G`                     |
-|                   | Go to `n`'th line                           | `nG` (or `:n`)                 |
-|                   | Go half-page up / down                      | `Ctrl-u`/ `Ctrl-d`             |
-| Search navigation | Search for pattern                          | `/[pattern]`                   |
-|                   | Go to next / previous matching pattern      | `n` / `N`                      |
-| Window navigation | Create a horizontal split                   | `:split`                       |
-|                   | Create a vertical split                     | `:vsplit`                      |
-|                   | Go to left / down / up / right window       | `Ctrl-w` `h` / `j` / `k` / `l` |
+| Group             | Functionality                             | Command                  |
+|-------------------|-------------------------------------------|--------------------------|
+| Line navigation   | Go left/down/up/ right                    | `h`/`j`/`k`/`l`          |
+|                   | Go to start/end of current line           | `0`/`$`                  |
+|                   | Go to non-blank start/end of current line | `^`/`g_`                 |
+| Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                  |
+|                   | Go to end of a word                       | `e`                      |
+| Screen navigation | Go to first/last line                     | `gg`/`G`                 |
+|                   | Go to `n`'th line                         | `nG` (or `:n`)           |
+|                   | Go half-page up/down                      | `Ctrl-u`/`Ctrl-d`        |
+| Search navigation | Search for pattern                        | `/[pattern]`             |
+|                   | Go to next/previous matching pattern      | `n`/`N`                  |
+| Window navigation | Create a horizontal split                 | `:split`                 |
+|                   | Create a vertical split                   | `:vsplit`                |
+|                   | Go to left/down/up/right window           | `Ctrl-w` `h`/`j`/`k`/`l` |
 
 ### Auto-completion (insert mode)
 | Functionality                      | Command         |
@@ -105,14 +107,14 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 
 ### Working with buffers
 
-| Functionality           | Command                                  |
-|-------------------------|------------------------------------------|
-| Open file in new buffer | `:badd [filename]`                       |
-| Go to next buffer       | `:bn`                                    |
-| Go to previous buffer   | `:bp`                                    |
-| Delete buffer           | `:bd`                                    |
-| List all buffer         | `:ls`                                    |
-| Go to a buffer          | `:b` `[buffer_index] ` / `[buffer_name]` |
+| Functionality           | Command                                |
+|-------------------------|----------------------------------------|
+| Open file in new buffer | `:badd [filename]`                     |
+| Go to next buffer       | `:bn`                                  |
+| Go to previous buffer   | `:bp`                                  |
+| Delete buffer           | `:bd`                                  |
+| List all buffer         | `:ls`                                  |
+| Go to a buffer          | `:b` `[buffer_index] `/`[buffer_name]` |
 
 ### Substitution
 

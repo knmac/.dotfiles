@@ -21,9 +21,9 @@ tmux ls
 
 ## From inside tmux
 
-The commands and key-bindings have to be after pressing `[PREFIX]` (except for *swap windows*). The default `[PREFIX]` is `Ctrl-b`
+The commands and key-bindings have to be after pressing `<prefix>` (except for *swap windows*). The default `<prefix>` is `Ctrl-b`
 
-| Functionality             | Command                       | Key-binding                                  |
+| Functionality             | Commands                      | Key-bindings                                 |
 |---------------------------|-------------------------------|----------------------------------------------|
 | Show all commands         |                               | `?`                                          |
 | Reload tmux config        | `:source-file [path/to/file]` | `r`                                          |
@@ -37,7 +37,7 @@ The commands and key-bindings have to be after pressing `[PREFIX]` (except for *
 | Navigate between windows  |                               | `Ctrl-` `h`/`l`                              |
 | Navigate between panes    |                               | `h`/`j`/`k`/`l`                              |
 | Resize panes              |                               | `Shift-` `h`/`j`/`k`/`l`                     |
-| Swap windows              |                               | `Ctrl-Shift-` `Left`/`Right` (no `[PREFIX]`) |
+| Swap windows              |                               | `Ctrl-Shift-` `Left`/`Right` (no `<prefix>`) |
 | Swap panes                |                               | `{`/`}`                                      |
 | Zoom/unzoom pane          | `:resize-pane -Z`             | `z`                                          |
 | Next layout               | `:next-layout`                | `space`                                      |
