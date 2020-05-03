@@ -413,10 +413,11 @@ let g:airline#extensions#tabline#left_alt_sep = '| '
 " disabled by default because preview makes the window flicker
 "set completeopt-=preview
 
-let g:deoplete#enable_at_startup        = 1
-let g:deoplete#enable_ignore_case       = 1
-let g:context_filetype#same_filetypes   = {}
-let g:context_filetype#same_filetypes._ = '_'
+let g:deoplete#enable_at_startup           = 1
+let g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#enable_ignore_case          = 1
+let g:context_filetype#same_filetypes      = {}
+let g:context_filetype#same_filetypes._    = '_'
 "call deoplete#custom#option({
 "    \ 'auto_complete_delay': 200,
 "    \ 'smart_case': v:true,
@@ -425,11 +426,12 @@ let g:context_filetype#same_filetypes._ = '_'
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+
 " Jedi vim ...................................................................
 " Deactivate autocompletion feature of jedi vim (and use deoplete instead)
 let g:jedi#completions_enabled = 0
 
-" Deactivate the window to shows detailing arguments
+" Deactivate the window to shows detailing arguments (let deoplete handle this)
 let g:jedi#show_call_signatures = 0
 
 " Use <leader>k instead of the default `K` for better consistency
@@ -489,15 +491,28 @@ set splitbelow  " for when using :Term
 " Indentation guide
 let g:indentLine_char = '▏'
 
-" Prevent the plugin from changing the conceal level setting
-let g:indentLine_faster = 1
+" Prevent the plugin from changing the conceal level setting automatically
 let g:indentLine_setConceal = 0
+let g:indentLine_faster = 1
 
 " Do not use IndentLine in Markdown and Latex because it affect conceallevel
 " in math rendering
-"autocmd FileType markdown let g:indentLine_enabled=0
-"autocmd FileType tex      let g:indentLine_enabled=0
-"let g:indentLine_conceallevel = 1
+"autocmd FileType markdown let g:indentLine_conceallevel=0
+"autocmd FileType tex      let g:indentLine_conceallevel=0
+
+" Press <F12> to toggle conceallevel, good when your want to copy text and
+" avoid copying indentLine_char
+let g:conceal_is_on = 0
+function! ConcealToggle()
+    if g:conceal_is_on == 1
+        let g:conceal_is_on = 0
+        set conceallevel=0
+    else
+        let g:conceal_is_on = 1
+        set conceallevel=1
+    endif
+endfunction
+nmap <F12> :call ConcealToggle()<CR>
 
 
 " ----------------------------------------------------------------------------
