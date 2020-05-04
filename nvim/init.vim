@@ -48,7 +48,6 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-scripts/IndexedSearch'
 
 " Linters
-"Plug 'neomake/neomake'
 Plug 'dense-analysis/ale'
 
 " Airline
@@ -57,7 +56,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-jedi'   " for Python
+"Plug 'deoplete-plugins/deoplete-clang'  " for C/C++/Obj-C/Obj-C++ with clang-python3
 
 " Function navigation for python without using ctags
 " Just to add the python go-to-definition and similar features, autocompletion
@@ -70,12 +70,15 @@ Plug 'fratajczak/one-monokai-vim'
 "Plug 'skielbasa/vim-material-monokai'
 "Plug 'joshdick/onedark.vim'
 
+" Smooth scroling
+Plug 'psliwka/vim-smoothie'
+
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Code and files fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Better control of terminal
@@ -318,6 +321,7 @@ endif
 "let g:airline_symbols.linenr = '␤'
 "let g:airline_symbols.linenr = '¶'
 "let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.branch = ''
 "let g:airline_symbols.paste = 'ρ'
 "let g:airline_symbols.paste = 'Þ'
 "let g:airline_symbols.paste = '∥'
@@ -362,7 +366,6 @@ let g:airline#extensions#tabline#left_alt_sep = '| '
 "set completeopt-=preview
 
 let g:deoplete#enable_at_startup           = 1
-let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#enable_ignore_case          = 1
 let g:context_filetype#same_filetypes      = {}
 let g:context_filetype#same_filetypes._    = '_'
@@ -373,6 +376,15 @@ let g:context_filetype#same_filetypes._    = '_'
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" Deoplete-jedi
+let g:deoplete#sources#jedi#show_docstring = 1
+"let g:deoplete#sources#jedi#statement_length = 50
+
+" Deoplete-clang
+" Change the paths accordingly
+"let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-10/lib/libclang.so.1"
+"let g:deoplete#sources#clang#clang_header = "/usr/lib/llvm-10/lib/clang/10.0.0"
 
 
 " ----------------------------------------------------------------------------
@@ -385,21 +397,6 @@ let g:jedi#show_call_signatures = 0
 
 " Use <leader>k instead of the default `K` for better consistency
 let g:jedi#documentation_command = '<leader>k'
-
-" All these mappings work only for python code:
-" Go to definition
-"let g:jedi#goto_command = ',d'
-" Find ocurrences
-"let g:jedi#usages_command = ',o'
-" Find assignments
-"let g:jedi#goto_assignments_command = ',a'
-" Rename
-"let g:jedi#rename_command = ',r'
-" Show definition
-"let g:jedi#documentation_command = ',k'
-" Go to definition in new tab
-" open an empty buffer
-"nmap ,D :tab split<CR>:call jedi#goto()<CR>
 
 
 " ----------------------------------------------------------------------------

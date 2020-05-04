@@ -23,7 +23,7 @@ tmux ls
 
 The commands and key-bindings have to be after pressing `<prefix>` (except for *swap windows*). The default `<prefix>` is `Ctrl-b`
 
-| Functionality             | Commands                      | Key-bindings                                 |
+| Functionality             | Command                       | Key-binding                                  |
 |---------------------------|-------------------------------|----------------------------------------------|
 | Show all commands         |                               | `?`                                          |
 | Reload tmux config        | `:source-file [path/to/file]` | `r`                                          |

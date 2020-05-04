@@ -4,23 +4,23 @@
 
 ## Some custom Vim shortcuts
 
-| Functionality                                             | Commands                        |
-|-----------------------------------------------------------|---------------------------------|
-| Open todo list                                            | `F2`                            |
-| Navigate between files and folders                        | `F3`                            |
-| Navigate between functions                                | `F4`                            |
-| Show (interactive) buffer list                            | `F5`                            |
-| Previous buffer                                           | `F6`                            |
-| Next buffer                                               | `F7`                            |
-| Close the current buffer (and switch to the previous one) | `F8`                            |
-| Open error list                                           | `F9`                            |
-| Run the `make` command (required to set up Makefile)      | `F10`                           |
-| Unhighlight searching text                                | `<leader> <space>` (or `:nohl`) |
-| Insert ipdb breakpoint (on the next line)                 | `<leader> b`                    |
-| Insert ipdb breakpoint (on the previous line)             | `<leader> B`                    |
-| Toggle conceallevel (between 0 and 1)                     | `,c`                            |
-| Insert python skeleton                                    | `,py`                           |
-| Insert html skeleton                                      | `,html`                         |
+| Functionality                                             | Command            |
+|-----------------------------------------------------------|--------------------|
+| Open todo list                                            | `F2`               |
+| Navigate between files and folders                        | `F3`               |
+| Navigate between functions                                | `F4`               |
+| Show (interactive) buffer list                            | `F5`               |
+| Previous buffer                                           | `F6`               |
+| Next buffer                                               | `F7`               |
+| Close the current buffer (and switch to the previous one) | `F8`               |
+| Open error list                                           | `F9`               |
+| Run the `make` command (required to set up Makefile)      | `F10`              |
+| Unhighlight searching text                                | `<leader> <space>` |
+| Insert ipdb breakpoint (on the next line)                 | `<leader> b`       |
+| Insert ipdb breakpoint (on the previous line)             | `<leader> B`       |
+| Toggle conceallevel (between 0 and 1)                     | `,c`               |
+| Insert python skeleton                                    | `,py`              |
+| Insert html skeleton                                      | `,html`            |
 
 ## Some NERD Commenter mappings:
 
@@ -46,10 +46,13 @@
 
 ## Some FZF Mappings:
 
+(Checkout [fzf.vim](https://github.com/junegunn/fzf.vim) for much cooler stuffs)
+
 | Functionality                                   | Command  |
-| ----------------------------------------------- | -------- |
+|-------------------------------------------------|----------|
 | Search for files with filename                  | `Ctrl-p` |
 | Search for files with string (requires ripgrep) | `Ctrl-f` |
+| Show (interactive) buffer list                  | `F5`     |
 
 ## Some Vimtex mappings:
 
