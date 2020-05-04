@@ -70,9 +70,6 @@ Plug 'fratajczak/one-monokai-vim'
 "Plug 'skielbasa/vim-material-monokai'
 "Plug 'joshdick/onedark.vim'
 
-" Smooth scroling
-Plug 'psliwka/vim-smoothie'
-
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
