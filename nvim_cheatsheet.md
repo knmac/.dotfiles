@@ -2,9 +2,9 @@
 
 (The default `<leader>` is `\`)
 
-## Some custom Vim shortcuts
+## Some custom Vim key-bindings:
 
-| Functionality                                             | Command            |
+| Functionality                                             | Key-binding        |
 |-----------------------------------------------------------|--------------------|
 | Open todo list                                            | `F2`               |
 | Navigate between files and folders                        | `F3`               |
@@ -18,13 +18,13 @@
 | Unhighlight searching text                                | `<leader> <space>` |
 | Insert ipdb breakpoint (on the next line)                 | `<leader> b`       |
 | Insert ipdb breakpoint (on the previous line)             | `<leader> B`       |
-| Toggle conceallevel (between 0 and 1)                     | `,c`               |
+| Toggle conceallevel (between 0 and 2)                     | `,c`               |
 | Insert python skeleton                                    | `,py`              |
 | Insert html skeleton                                      | `,html`            |
 
-## Some NERD Commenter mappings:
+## Some NERD Commenter key-bindings:
 
-| Functionality           | Command       |
+| Functionality           | Key-binding   |
 | ----------------------- | ------------- |
 | Comment                 | `<leader> cc` |
 | Uncomment               | `<leader> cu` |
@@ -32,11 +32,11 @@
 | Comment with left-align | `<leader> cl` |
 | Comment 'Sexily'        | `<leader> cs` |
 
-## Some JediVim mappings
+## Some JediVim key-bindings:
 
 (This is for Python only; use CTags for non-Python files):
 
-| Functionality                 | Command      |
+| Functionality                 | Key-binding  |
 |-------------------------------|--------------|
 | Go to definition              | `<leader> d` |
 | Go to assignment              | `<leader> g` |
@@ -44,37 +44,53 @@
 | Renaming variables            | `<leader> r` |
 | Show all the usages of a name | `<leader> n` |
 
-## Some FZF Mappings:
+## Some FZF key-bindings:
 
-(Checkout [fzf.vim](https://github.com/junegunn/fzf.vim) for much cooler stuffs)
+(I only list some commands I use frequently. I highly recommend to check out [fzf.vim](https://github.com/junegunn/fzf.vim) for much cooler stuffs)
 
-| Functionality                                   | Command  |
-|-------------------------------------------------|----------|
-| Search for files with filename                  | `Ctrl-p` |
-| Search for files with string (requires ripgrep) | `Ctrl-f` |
-| Show (interactive) buffer list                  | `F5`     |
+| Functionality                                   | Key-binding | Command     |
+|-------------------------------------------------|-------------|-------------|
+| Search for files with filename                  | `Ctrl-p`    | `:Files`    |
+| Search for files with string (requires ripgrep) | `Ctrl-f`    | `:Rg`       |
+| Buffer list (interactive instead of `:ls`)      | `F5`        | `:Buffers`  |
+| Git commits (it's **magic**)                    |             | `:Commits`  |
+| Show all commands                               |             | `:Commands` |
+| Show all mappings                               |             | `:Maps`     |
 
-## Some Vimtex mappings:
+To navigate in FZF's window, use either `Ctrl-j`/`Ctrl-n`/`down arrow` to go down and `Ctrl-k`/`Ctrl-p`/`up arrow` to go up.
 
-| Functionality | Command       |
-| ------------- | ------------- |
+## Some Vimtex key-bindings:
+
+| Functionality | Key-binding   |
+|---------------|---------------|
 | Compile       | `<leader> ll` |
 | View          | `<leader> lv` |
 | Clean         | `<leader> lc` |
 
-## Some useful Ctags commands (requires Ctags):
+## Some Vim-markdown key-bindings:
 
-| Functionality        | Command    |
-| -------------------- | ---------- |
-| Go to definition     | `Ctrl-]`   |
-| Preview definition   | `Ctrl-w }` |
-| Close preview window | `Ctrl-w z` |
+| Functionality                          | Key-binding/Command               |
+|----------------------------------------|-----------------------------------|
+| Open link in browser                   | `gx`                              |
+| Open link in Vim to edit               | `ge`                              |
+| Next header                            | `]]`                              |
+| Previous header                        | `[[`                              |
+| Format table                           | `:TableFormat` (requires Tabular) |
+| Create table of contents (to navigate) | `:Toc`                            |
 
-## Some useful (default) vim commands:
+## Some useful Ctags key-bindings (requires Ctags):
+
+| Functionality        | Key-binding |
+|----------------------|-------------|
+| Go to definition     | `Ctrl-]`    |
+| Preview definition   | `Ctrl-w }`  |
+| Close preview window | `Ctrl-w z`  |
+
+## Some default useful vim key-bindings:
 
 ### Navigation
 
-| Group             | Functionality                             | Command                  |
+| Group             | Functionality                             | Key-binding/Command      |
 |-------------------|-------------------------------------------|--------------------------|
 | Line navigation   | Go left/down/up/ right                    | `h`/`j`/`k`/`l`          |
 |                   | Go to start/end of current line           | `0`/`$`                  |
@@ -91,7 +107,7 @@
 |                   | Go to left/down/up/right window           | `Ctrl-w` `h`/`j`/`k`/`l` |
 
 ### Auto-completion (insert mode)
-| Functionality                      | Command         |
+| Functionality                      | Key-binding     |
 |------------------------------------|-----------------|
 | Word/pattern completion - forward  | `Ctrl-x Ctrl-n` |
 | Word/pattern completion - backward | `Ctrl-x Ctrl-p` |
@@ -103,22 +119,22 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 
 ### Code folding
 
-| Functionality    | Command |
-|------------------|---------|
-| Toggle a fold    | `za`    |
-| Close all folds  | `zM`    |
-| Reopen all folds | `zR`    |
+| Functionality    | Key-binding |
+|------------------|-------------|
+| Toggle a fold    | `za`        |
+| Close all folds  | `zM`        |
+| Reopen all folds | `zR`        |
 
 ### Working with buffers
 
-| Functionality           | Command                                |
-|-------------------------|----------------------------------------|
-| Open file in new buffer | `:badd [filename]`                     |
-| Go to next buffer       | `:bn`                                  |
-| Go to previous buffer   | `:bp`                                  |
-| Delete buffer           | `:bd`                                  |
-| List all buffer         | `:ls`                                  |
-| Go to a buffer          | `:b` `[buffer_index] `/`[buffer_name]` |
+| Functionality                     | Key-binding                            |
+|-----------------------------------|----------------------------------------|
+| Open file in new buffer           | `:badd [filename]`                     |
+| Go to next buffer                 | `:bn`                                  |
+| Go to previous buffer             | `:bp`                                  |
+| Delete buffer                     | `:bd`                                  |
+| List all buffer (not interactive) | `:ls`                                  |
+| Go to a buffer                    | `:b` `[buffer_index] `/`[buffer_name]` |
 
 ### Substitution
 
@@ -128,19 +144,19 @@ General command:
 
 Substitution options:
 
-| Functionality                              | Command |
-|--------------------------------------------|---------|
-| Replace all                                | `%s`    |
-| replace the current line                   | `s`     |
-| replace from line 5 to line 12             | `5,12s` |
-| replace from current line to the last line | `,$s`   |
+| Functionality                              | Key-binding |
+|--------------------------------------------|-------------|
+| Replace all                                | `%s`        |
+| replace the current line                   | `s`         |
+| replace from line 5 to line 12             | `5,12s`     |
+| replace from current line to the last line | `,$s`       |
 
 Execution options:
 
-| Functionality                | Command |
-|------------------------------|---------|
-| Execute without confirmation | `g`     |
-| Execute with confirmation    | `gc`    |
+| Functionality                | Key-binding |
+|------------------------------|-------------|
+| Execute without confirmation | `g`         |
+| Execute with confirmation    | `gc`        |
 
 Examples:
 
