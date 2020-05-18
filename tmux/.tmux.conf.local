@@ -320,8 +320,8 @@ set -g window-status-separator '  '
 # split panes using | and -
 bind | split-window -h
 bind - split-window -v
-unbind '"'
-unbind %
+#unbind '"'
+#unbind %
 
 # Move window around with Ctrl+Shit+Left (or Ctrl+Shift+Right)
 bind-key -n C-S-Left swap-window -t -1

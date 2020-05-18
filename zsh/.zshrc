@@ -112,7 +112,8 @@ bindkey '^ ' autosuggest-accept
 
 # Configure FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_CTRL_T_OPTS="--height 100% --preview 'bat --color=always --line-range :500 {}'"
+export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --border"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
 # determines search program for fzf
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
@@ -126,3 +127,6 @@ elif type xsel &>/dev/null; then
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
 fi
+
+export PATH="$HOME/.local/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"

@@ -10,7 +10,7 @@ sudo apt install neovim
 #sudo apt-get install python-dev python-pip python3-dev python3-pip curl vim exuberant-ctags git ack-grep
 #pip install --user neovim pep8 flake8 pyflakes pylint isort pynvim
 #pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
-sudo apt install python3-dev python3-pip curl exuberant-ctags
+sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck
 pip3 install --user pynvim neovim flake8 msgpack
 
 mkdir -p "$HOME/.config/nvim/"
@@ -22,17 +22,17 @@ nvim
 
 # -----------------------------------------------------------------------------
 echo "Install and setup tmux"
-sudo apt-get install tmux
+sudo apt install tmux
 
 cp ./tmux/.tmux* ~/
 
 
 # -----------------------------------------------------------------------------
 echo "Install and setup zsh"
-sudo apt-get install zsh
+sudo apt install zsh
 
-# Change default shell to zsh
-chsh -s /bin/zsh "$USER"
+# Change default shell to zsh. Deprecated, oh-my-zsh will do it for you
+#chsh -s /bin/zsh "$USER"
 
 # Clone oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -46,16 +46,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_CUSTOM/plug
 # Install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 
-# Install bat for syntax highlighting
-sudo apt install bat
+# Install bat for syntax highlighting, ripgrep for file finder (with a string)
+sudo apt install bat ripgrep
 
-# Install ripgrep
-sudo apt install ripgrep
-
-# Install shellcheck
-sudo apt install shellcheck
-
-# Copy the settings over
+# Copy the settings over. Deprecated, use p10k for better options
 #cp oh-my-zsh/custom/themes/custom-bullet.zsh-theme ~/.oh-my-zsh/custom/themes 
 
 # Install p10k theme

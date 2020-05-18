@@ -71,8 +71,8 @@ To navigate in FZF's window, use either `Ctrl-j`/`Ctrl-n`/`down arrow` to go dow
 
 | Functionality                          | Key-binding/Command               |
 |----------------------------------------|-----------------------------------|
-| Open link in browser                   | `gx`                              |
 | Open link in Vim to edit               | `ge`                              |
+| Open link in browser                   | `gx`                              |
 | Next header                            | `]]`                              |
 | Previous header                        | `[[`                              |
 | Format table                           | `:TableFormat` (requires Tabular) |

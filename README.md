@@ -1,14 +1,16 @@
 # Linux settings
 Some linux settings I have been collecting.
-<!--![screen shot](screenshot.png)-->
-<!--![demo](demo.gif)-->
 <p align="center">
   <img src="demo.gif">
 </p>
 
 
 ## 0. Fonts configuration (Optional)
-This is to display glyphs and breadcrumbs for Neovim and Tmux correctly. Visit [here](https://www.nerdfonts.com/#home) for more information. My favorite ones are [SauceCode Pro](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip) and [FiraCode](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip) (also included in `fonts` directory).
+This is to display glyphs and breadcrumbs for Neovim and Tmux correctly. Visit [here](https://www.nerdfonts.com/#home) for more information. My favorite ones are [FiraCode](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip) and [SauceCode Pro](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip) (also included in `fonts` directory).
+```bash
+mkdir -p ~/.local/share/fonts
+cp ./fonts/* ~/.local/share/fonts
+```
 
 You then may have to configure the font for your preferred terminal manually.
 
@@ -24,22 +26,23 @@ sudo sh ./install_auto.sh
 ```
 
 
-## 2. Neovim
+## 2. NeoVim
 
 ### 2.1. Installation
-Install neovim dependencies:
+Install NeoVim dependencies:
 ```bash
-sudo apt-get install python-dev python-pip python3-dev python3-pip curl exuberant-ctags
-pip3 install --user pynvim flake8 pylint
+sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck
+pip3 install --user pynvim neovim flake8 msgpack
 ```
 
-Install neovim with my configuration:
+Install NeoVim with my configuration:
 ```bash
 sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install neovim
-mkdir -p $HOME/..config/nvim
-cp nvim/* $HOME/.config/nvim
+sudo apt update
+sudo apt install neovim
+mkdir -p "$HOME/.config/nvim"
+cp -r nvim/* "$HOME/.config/nvim"
+nvim
 ```
 
 If you see this error (usually seen when run neovim in a virtual environment): 
@@ -62,7 +65,7 @@ pip3 install --user --upgrade pynvim
 
 ## 3. Tmux
 ### 3.1. Building from source
-Change the versions, URLs, and paths accordingly in `install_tmux.sh`.
+Change the versions, URLs, and paths accordingly in `install_tmux.sh`. The configuration is customized from [here](https://github.com/gpakosz/.tmux).
 
 Then add these two lines in your `.bashrc` or `.zshrc`:
 ```bash
@@ -74,21 +77,21 @@ export LD_LIBRARY_PATH="$HOME/.local/lib":$LD_LIBRARY_PATH
 [Tmux cheatsheet](tmux_cheatsheet.md)
 
 
-## 4. Some tools to help you ditch GUI ;)
+## 4. Some other tools that I like
 
 (You may look in `others` directory for more information about my configuration.)
 
-- Web browser and pager: `w3m`
-- Email client: `neomutt`
-- File manager: `ranger-fm` (I also use `ueberzug` for image preview method)
+- Terminal: `kitty`
+- File manager: `ranger-fm` (with `ueberzug` for image preview method)
 - List contents in tree-like format: `tree`
 - File searcher: `rg` (ripgrep - improved version of `grep`)
 - File preview with syntax highlighting: `bat`
 - Interactive process viewer: `htop`
-- Document converter: `pandoc`
-- Video converter: `ffmpeg`
-- Music player client: `ncmpcpp`, `mpd`, `mpc` [moreinfo](https://computingforgeeks.com/how-to-configure-mpd-and-ncmpcpp-on-linux/)
-<!--- Youtube/Spotify/... streamer: `tizonia`-->
 - Bandwidth monitor and rate esimator: `bmon`
 - System info viewer: `neofetch`
-- PDF reader (this is with GUI): `zathura`
+- Document converter: `pandoc`
+- Video converter: `ffmpeg`
+- Web browser and pager: `w3m`
+- Email client: `neomutt`
+- Music player client: `ncmpcpp`, `mpd`, `mpc` [moreinfo](https://computingforgeeks.com/how-to-configure-mpd-and-ncmpcpp-on-linux/)
+- PDF reader: `zathura`
