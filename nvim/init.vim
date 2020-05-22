@@ -366,10 +366,13 @@ let g:deoplete#enable_at_startup           = 1
 let g:deoplete#enable_ignore_case          = 1
 let g:context_filetype#same_filetypes      = {}
 let g:context_filetype#same_filetypes._    = '_'
-"call deoplete#custom#option({
-"    \ 'auto_complete_delay': 200,
-"    \ 'smart_case': v:true,
-"    \ })
+call deoplete#custom#option({
+    \ 'auto_complete_delay': 200,
+    \ 'smart_case': v:true,
+    \ })
+
+" Close preview window after finishing completion
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -458,10 +461,16 @@ let g:detectindent_preferred_when_mixed = 1
 
 " ----------------------------------------------------------------------------
 " Markdown syntax highlighting
+" Enable TOC window auto-fit
+let g:vim_markdown_toc_autofit = 1
 " LaTeX math
 let g:vim_markdown_math = 1
 " YAML Front Matter
 let g:vim_markdown_frontmatter = 1
+" Strikethrough
+let g:vim_markdown_strikethrough = 1
+" Adjust new list item indent
+let g:vim_markdown_new_list_item_indent = 0
 
 
 " ----------------------------------------------------------------------------
