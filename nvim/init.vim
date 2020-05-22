@@ -476,3 +476,5 @@ au FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<es
 " Custom snippets
 nnoremap ,py   :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
 nnoremap ,html :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
+nnoremap ,md   :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
+nnoremap ,date :read !date "+\%F"<CR>kJxA
