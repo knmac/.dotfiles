@@ -57,7 +57,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'   " for Python
-"Plug 'deoplete-plugins/deoplete-clang'  " for C/C++/Obj-C/Obj-C++ with clang-python3
+if executable('clang')
+    Plug 'deoplete-plugins/deoplete-clang'  " for C/C++/Obj-C/Obj-C++ with clang-python3
+endif
 
 " Function navigation for python without using ctags
 " Just to add the python go-to-definition and similar features, autocompletion
@@ -166,13 +168,19 @@ filetype plugin on      " detects the type of file when the file is created or o
 
 
 " ----------------------------------------------------------------------------
+" Splitting
+set splitright          " new verticals split appears on the right
+set splitbelow          " new horizontal split appears below
+
+
+" ----------------------------------------------------------------------------
 " Spaces and tabs
 set expandtab           " tabs are spaces
-set tabstop=4           " number of visual spaces per TAB
-set softtabstop=4       " number of spaces in tab when editing
-set shiftwidth=4
-set smarttab
-set autoindent
+set tabstop=4           " changes the width of the TAB character
+set softtabstop=4       " affects what happens when press <TAB> or <BS> keys
+set shiftwidth=4        " affects what happens when press >>, << or ==
+set smarttab            " affects how <TAB> are interpreted based on cursor location
+set autoindent          " copy the indentation from the prev line, on a new line
 
 " If the filetype is Makefile then we need to use tabs
 " So do not expand tabs into space.
@@ -234,14 +242,14 @@ autocmd BufEnter * call NERDTreeRefresh()
 nnoremap <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
-let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
-    \ ]
-\ }
+"let g:tagbar_type_markdown = {
+"    \ 'ctagstype' : 'markdown',
+"    \ 'kinds' : [
+"        \ 'h:Heading_L1',
+"        \ 'i:Heading_L2',
+"        \ 'k:Heading_L3'
+"    \ ]
+"\ }
 
 
 " ----------------------------------------------------------------------------
@@ -383,8 +391,10 @@ let g:deoplete#sources#jedi#show_docstring = 1
 
 " Deoplete-clang
 " Change the paths accordingly
-"let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-10/lib/libclang.so.1"
-"let g:deoplete#sources#clang#clang_header = "/usr/lib/llvm-10/lib/clang/10.0.0"
+if executable('clang')
+    let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-10/lib/libclang.so.1"
+    let g:deoplete#sources#clang#clang_header = "/usr/lib/llvm-10/lib/clang/10.0.0"
+endif
 
 
 " ----------------------------------------------------------------------------
@@ -428,12 +438,6 @@ nnoremap <C-F> :Rg<CR>
 
 
 " ----------------------------------------------------------------------------
-" Split-term
-set splitright  " for when using :VTerm
-set splitbelow  " for when using :Term
-
-
-" ----------------------------------------------------------------------------
 " Indentation guide
 let g:indentLine_char = '▏'
 
@@ -472,18 +476,21 @@ let g:vim_markdown_strikethrough = 1
 " Adjust new list item indent
 let g:vim_markdown_new_list_item_indent = 0
 
+" Use Toc instead of TagbarToggle for markdown files
+autocmd FileType markdown nnoremap <F4> :Toc<CR>
+
 
 " ----------------------------------------------------------------------------
 " Shortcut for Python breakpoint (ipdb) - on the next line
-au FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
+autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
 " Shortcut for Python breakpoint (ipdb) - on the previous line
-au FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
+autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
 
 
 " ----------------------------------------------------------------------------
 " Custom snippets
-nnoremap ,py   :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
-nnoremap ,html :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
-nnoremap ,md   :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
-nnoremap ,date :read !date "+\%F"<CR>kJxA
+nnoremap ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
+nnoremap ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
+nnoremap ,md    :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
+nnoremap ,today :read !date "+\%F"<CR>kJxA

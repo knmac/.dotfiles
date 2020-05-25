@@ -8,7 +8,7 @@
 |-----------------------------------------------------------|--------------------|
 | Open todo list                                            | `F2`               |
 | Navigate between files and folders                        | `F3`               |
-| Navigate between functions                                | `F4`               |
+| Navigate between functions (tags)                         | `F4`               |
 | Show (interactive) buffer list                            | `F5`               |
 | Previous buffer                                           | `F6`               |
 | Next buffer                                               | `F7`               |
@@ -21,6 +21,8 @@
 | Toggle conceallevel (between 0 and 2)                     | `,c`               |
 | Insert python skeleton                                    | `,py`              |
 | Insert html skeleton                                      | `,html`            |
+| Insert markdown skeleton                                  | `,md`              |
+| Insert today's date                                       | `,today`           |
 
 ## Some NERD Commenter key-bindings:
 
