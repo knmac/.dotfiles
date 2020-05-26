@@ -1,6 +1,6 @@
 ---
 title: Title
 author: Khoi-Nguyen C. Mac
-date:
+date: 
 keywords: []
 ---
