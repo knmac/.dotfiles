@@ -60,6 +60,7 @@ Plug 'deoplete-plugins/deoplete-jedi'   " for Python
 if executable('clang')
     Plug 'deoplete-plugins/deoplete-clang'  " for C/C++/Obj-C/Obj-C++ with clang-python3
 endif
+Plug 'ncm2/float-preview.nvim'
 
 " Function navigation for python without using ctags
 " Just to add the python go-to-definition and similar features, autocompletion
@@ -368,7 +369,8 @@ let g:airline#extensions#tabline#left_alt_sep = '| '
 " comment this line to enable autocompletion preview window
 " (displays documentation related to the selected completion option)
 " disabled by default because preview makes the window flicker
-"set completeopt-=preview
+set completeopt-=preview
+let g:float_preview#docked = 0
 
 let g:deoplete#enable_at_startup           = 1
 let g:deoplete#enable_ignore_case          = 1
@@ -380,7 +382,8 @@ call deoplete#custom#option({
     \ })
 
 " Close preview window after finishing completion
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
+" (only needed if use `set completeopt+=preview`)
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
