@@ -42,9 +42,9 @@
 |-------------------------------|--------------|
 | Go to definition              | `<leader> d` |
 | Go to assignment              | `<leader> g` |
-| Show documentation/pydoc      | `<leader> k` |
 | Renaming variables            | `<leader> r` |
 | Show all the usages of a name | `<leader> n` |
+| Show documentation/pydoc      | `K`          |
 
 ## Some FZF key-bindings:
 

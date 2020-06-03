@@ -409,7 +409,7 @@ let g:jedi#completions_enabled = 0
 let g:jedi#show_call_signatures = 0
 
 " Use <leader>k instead of the default `K` for better consistency
-let g:jedi#documentation_command = '<leader>k'
+"let g:jedi#documentation_command = '<leader>k'
 
 
 " ----------------------------------------------------------------------------
