@@ -13,6 +13,8 @@ sudo apt install neovim
 sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck
 pip3 install --user pynvim neovim flake8 msgpack
 
+echo "TODO: Install nodejs..."
+
 mkdir -p "$HOME/.config/nvim/"
 cp -r ./nvim/* "$HOME/.config/nvim"
 

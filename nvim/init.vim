@@ -134,6 +134,7 @@ endif
 " ----------------------------------------------------------------------------
 " Color and syntax highlighting
 syntax enable
+set termguicolors
 
 "if has("gui_running")
 "    let g:molokai_original = 1
@@ -142,7 +143,6 @@ syntax enable
 "endif
 "colorscheme molokai
 
-"set termguicolors
 "colorscheme one-monokai
 
 "colorscheme material-monokai
@@ -387,7 +387,7 @@ if use_coc
 
     " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
     " delays and poor user experience.
-    set updatetime=300
+    set updatetime=100
 
     " Don't pass messages to |ins-completion-menu|.
     set shortmess+=c

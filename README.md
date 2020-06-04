@@ -1,4 +1,5 @@
 # Linux settings
+
 Some linux settings I have been collecting.
 <p align="center">
   <img src="demo.gif">
@@ -6,7 +7,9 @@ Some linux settings I have been collecting.
 
 
 ## 0. Fonts configuration (Optional)
+
 This is to display glyphs and breadcrumbs for Neovim and Tmux correctly. Visit [here](https://www.nerdfonts.com/#home) for more information. My favorite ones are [FiraCode](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip) and [SauceCode Pro](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip) (also included in `fonts` directory).
+
 ```bash
 mkdir -p ~/.local/share/fonts
 cp ./fonts/* ~/.local/share/fonts
@@ -14,28 +17,33 @@ cp ./fonts/* ~/.local/share/fonts
 
 You then may have to configure the font for your preferred terminal manually.
 
-
 ## 1. Auto installation (required sudo)
+
 This is to install everything automatically. However, I recommend to open the installation files and execute only necessary sections. Some installation guides are also given here.
 
 Installation:
+
 ```bash
 git clone https://github.com/knmac/linux_settings.git
 cd linux_settings
 sudo sh ./install_auto.sh
 ```
 
-
 ## 2. NeoVim
 
 ### 2.1. Installation
+
 Install NeoVim dependencies:
+
 ```bash
 sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck
 pip3 install --user pynvim neovim flake8 msgpack
 ```
 
+==TODO== Install NodeJS for Coc.nvim
+
 Install NeoVim with my configuration:
+
 ```bash
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update
@@ -45,7 +53,7 @@ cp -r nvim/* "$HOME/.config/nvim"
 nvim
 ```
 
-If you see this error (usually seen when run neovim in a virtual environment): 
+If you see this error (usually seen when run neovim in a virtual environment):
 `[deoplete] deoplete failed to load. Try the :UpdateRemotePlugins command and restart Neovim. See also :checkhealth.`. 
 Follow these steps:
 
@@ -60,22 +68,26 @@ pip3 install --user --upgrade pynvim
 ```
 
 ### 2.2. Cheatsheet
+
 [Neovim cheatsheet](nvim_cheatsheet.md)
 
 
 ## 3. Tmux
+
 ### 3.1. Building from source
+
 Change the versions, URLs, and paths accordingly in `install_tmux.sh`. The configuration is customized from [here](https://github.com/gpakosz/.tmux).
 
 Then add these two lines in your `.bashrc` or `.zshrc`:
+
 ```bash
 export PATH="$HOME/.local/bin":$PATH
 export LD_LIBRARY_PATH="$HOME/.local/lib":$LD_LIBRARY_PATH
 ```
 
 ### 3.2. Cheatsheet
-[Tmux cheatsheet](tmux_cheatsheet.md)
 
+[Tmux cheatsheet](tmux_cheatsheet.md)
 
 ## 4. Some other tools that I like
 

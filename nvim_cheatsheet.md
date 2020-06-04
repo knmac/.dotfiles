@@ -2,7 +2,7 @@
 
 (The default `<leader>` is `\`)
 
-## Some custom Vim key-bindings:
+## Some custom Vim key-bindings
 
 | Functionality                                             | Key-binding        |
 |-----------------------------------------------------------|--------------------|
@@ -24,7 +24,7 @@
 | Insert markdown skeleton                                  | `,md`              |
 | Insert today's date                                       | `,today`           |
 
-## Some NERD Commenter key-bindings:
+## Some NERD Commenter key-bindings
 
 | Functionality           | Key-binding   |
 | ----------------------- | ------------- |
@@ -34,19 +34,21 @@
 | Comment with left-align | `<leader> cl` |
 | Comment 'Sexily'        | `<leader> cs` |
 
-## Some JediVim key-bindings:
+<!--
+   -## Some JediVim key-bindings:
+   -
+   -(This is for Python only; use CTags for non-Python files)
+   -
+   -| Functionality                 | Key-binding  |
+   -|-------------------------------|--------------|
+   -| Go to definition              | `<leader> d` |
+   -| Go to assignment              | `<leader> g` |
+   -| Renaming variables            | `<leader> r` |
+   -| Show all the usages of a name | `<leader> n` |
+   -| Show documentation/pydoc      | `K`          |
+   -->
 
-(This is for Python only; use CTags for non-Python files):
-
-| Functionality                 | Key-binding  |
-|-------------------------------|--------------|
-| Go to definition              | `<leader> d` |
-| Go to assignment              | `<leader> g` |
-| Renaming variables            | `<leader> r` |
-| Show all the usages of a name | `<leader> n` |
-| Show documentation/pydoc      | `K`          |
-
-## Some FZF key-bindings:
+## Some FZF key-bindings
 
 (I only list some commands I use frequently. I highly recommend to check out [fzf.vim](https://github.com/junegunn/fzf.vim) for much cooler stuffs)
 
@@ -61,7 +63,7 @@
 
 To navigate in FZF's window, use either `Ctrl-j`/`Ctrl-n`/`down arrow` to go down and `Ctrl-k`/`Ctrl-p`/`up arrow` to go up.
 
-## Some Vimtex key-bindings:
+## Some Vimtex key-bindings
 
 | Functionality | Key-binding   |
 |---------------|---------------|
@@ -69,7 +71,7 @@ To navigate in FZF's window, use either `Ctrl-j`/`Ctrl-n`/`down arrow` to go dow
 | View          | `<leader> lv` |
 | Clean         | `<leader> lc` |
 
-## Some Vim-markdown key-bindings:
+## Some Vim-markdown key-bindings
 
 | Functionality                          | Key-binding/Command               |
 |----------------------------------------|-----------------------------------|
@@ -80,7 +82,7 @@ To navigate in FZF's window, use either `Ctrl-j`/`Ctrl-n`/`down arrow` to go dow
 | Format table                           | `:TableFormat` (requires Tabular) |
 | Create table of contents (to navigate) | `:Toc`                            |
 
-## Some useful Ctags key-bindings (requires Ctags):
+## Some useful Ctags key-bindings (requires Ctags)
 
 | Functionality        | Key-binding |
 |----------------------|-------------|
@@ -88,7 +90,7 @@ To navigate in FZF's window, use either `Ctrl-j`/`Ctrl-n`/`down arrow` to go dow
 | Preview definition   | `Ctrl-w }`  |
 | Close preview window | `Ctrl-w z`  |
 
-## Some default useful vim key-bindings:
+## Some default useful vim key-bindings
 
 ### Navigation
 
@@ -108,7 +110,8 @@ To navigate in FZF's window, use either `Ctrl-j`/`Ctrl-n`/`down arrow` to go dow
 |                   | Create a vertical split                   | `:vsplit`                |
 |                   | Go to left/down/up/right window           | `Ctrl-w` `h`/`j`/`k`/`l` |
 
-### Auto-completion (insert mode)
+### Vim's default auto-completion (insert mode)
+
 | Functionality                      | Key-binding     |
 |------------------------------------|-----------------|
 | Word/pattern completion - forward  | `Ctrl-x Ctrl-n` |
@@ -136,7 +139,7 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 | Go to previous buffer             | `:bp`                                  |
 | Delete buffer                     | `:bd`                                  |
 | List all buffer (not interactive) | `:ls`                                  |
-| Go to a buffer                    | `:b` `[buffer_index] `/`[buffer_name]` |
+| Go to a buffer                    | `:b` `[buffer_index]`/`[buffer_name]` |
 
 ### Substitution
 
