@@ -133,3 +133,4 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+alias sim="nvim -u $HOME/.config/nvim/init_simple.vim"

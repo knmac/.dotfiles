@@ -63,23 +63,7 @@ endif
 " ----------------------------------------------------------------------------
 " Color and syntax highlighting
 syntax enable
-
-"if has("gui_running")
-"    let g:molokai_original = 1
-"else
-"    let g:rehash256 = 1
-"endif
-"colorscheme molokai
-
-"set termguicolors
-"colorscheme one-monokai
-
-"colorscheme material-monokai
-"colorscheme onedark
 colorscheme gruvbox
-
-" Don't use polyglot for python syntax highlighting (semshi looks better)
-let g:polyglot_disabled = ['py']
 
 
 " ----------------------------------------------------------------------------
@@ -199,8 +183,6 @@ nnoremap <F10> :make<CR>
 " ----------------------------------------------------------------------------
 " Air line
 let g:airline_powerline_fonts = 0
-"let g:airline_theme = 'bubblegum'
-"let g:airline_theme = 'onedark'
 let g:airline_theme = 'base16_default'
 let g:airline#extensions#whitespace#enabled = 0
 
@@ -208,37 +190,8 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-"let g:airline_left_sep           = ''
-"let g:airline_left_alt_sep       = ''
-"let g:airline_right_sep          = ''
-"let g:airline_right_alt_sep      = ''
-"let g:airline_symbols.branch     = ''
-"let g:airline_symbols.readonly   = ''
-"let g:airline_symbols.paste      = 'ρ'
-"let g:airline_symbols.linenr     = 'Ξ'
-"let g:airline_symbols.maxlinenr  = ''
-
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename
-"let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Show path formatter
 let g:airline#extensions#tabline#formatter = 'default'
@@ -265,11 +218,3 @@ autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace
 
 " Shortcut for Python breakpoint (ipdb) - on the previous line
 autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
-
-
-" ----------------------------------------------------------------------------
-" Custom snippets
-nnoremap ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
-nnoremap ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
-nnoremap ,md    :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
-nnoremap ,today :read !date "+\%F"<CR>kJxA

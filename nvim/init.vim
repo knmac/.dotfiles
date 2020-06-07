@@ -43,7 +43,7 @@ Plug 'fisadev/FixedTaskList.vim'
 Plug 'majutsushi/tagbar'
 
 " Git integration
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 
@@ -84,7 +84,7 @@ endif
 Plug 'morhetz/gruvbox'
 
 " Syntax highlighting
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Code and files fuzzy finder
@@ -103,12 +103,12 @@ Plug 'ciaranm/detectindent'
 " Latex plugin
 Plug 'lervag/vimtex'
 
-" Markdown syntax highlighting
+" Markdown plugin
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 
 " CSS color highlighter
-Plug 'lilydjwg/colorizer'
+"Plug 'lilydjwg/colorizer'
 
 " File type icons
 if use_fancy_symbols
@@ -387,7 +387,7 @@ if use_coc
 
     " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
     " delays and poor user experience.
-    set updatetime=100
+    set updatetime=300
 
     " Don't pass messages to |ins-completion-menu|.
     set shortmess+=c
