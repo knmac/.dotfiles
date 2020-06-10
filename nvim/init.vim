@@ -648,9 +648,6 @@ let g:vim_markdown_strikethrough = 1
 " Adjust new list item indent
 let g:vim_markdown_new_list_item_indent = 0
 
-" Use Toc instead of TagbarToggle for markdown files
-autocmd FileType markdown nnoremap <F4> :Toc<CR>
-
 
 " ----------------------------------------------------------------------------
 " Shortcut for Python breakpoint (ipdb) - on the next line
