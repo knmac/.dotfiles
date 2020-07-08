@@ -84,7 +84,7 @@ endif
 Plug 'morhetz/gruvbox'
 
 " Syntax highlighting
-"Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Code and files fuzzy finder
