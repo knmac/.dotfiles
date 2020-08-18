@@ -2,34 +2,6 @@
 echo "Automatically install and set up the packages. Requires sudo"
 
 # -----------------------------------------------------------------------------
-echo "Install and setup NeoVim"
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt update
-sudo apt install neovim
-
-#sudo apt-get install python-dev python-pip python3-dev python3-pip curl vim exuberant-ctags git ack-grep
-#pip install --user neovim pep8 flake8 pyflakes pylint isort pynvim
-#pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
-sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck
-pip3 install --user pynvim neovim flake8 msgpack
-
-echo "TODO: Install nodejs..."
-
-mkdir -p "$HOME/.config/nvim/"
-cp -r ./nvim/* "$HOME/.config/nvim"
-
-echo "Run nvim and begin the setup..."
-nvim
-
-
-# -----------------------------------------------------------------------------
-echo "Install and setup tmux"
-sudo apt install tmux
-
-cp ./tmux/.tmux* ~/
-
-
-# -----------------------------------------------------------------------------
 echo "Install and setup zsh"
 sudo apt install zsh
 
@@ -56,3 +28,36 @@ sudo apt install bat ripgrep
 
 # Install p10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
+
+
+# -----------------------------------------------------------------------------
+echo "Install and setup NeoVim"
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt update
+sudo apt install neovim
+
+#sudo apt-get install python-dev python-pip python3-dev python3-pip curl vim exuberant-ctags git ack-grep
+#pip install --user neovim pep8 flake8 pyflakes pylint isort pynvim
+#pip3 install --user neovim pep8 flake8 pyflakes pylint isort pynvim
+sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck
+pip3 install --user pynvim neovim flake8 msgpack
+
+echo "Install nodejs..."
+wget https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-x64.tar.xz
+tar xvf node-v12.18.3-linux-x64.tar.xz
+rm node-v12.18.3-linux-x64.tar.xz
+mv tar xvf node-v12.18.3-linux-x64.tar.xz ~/.local
+export PATH="$HOME/.local/node-v12.18.3-linux-x64/bin:$PATH" >> ~/.zshrc
+
+mkdir -p "$HOME/.config/nvim/"
+cp -r ./nvim/* "$HOME/.config/nvim"
+
+echo "Run nvim and begin the setup..."
+nvim
+
+
+# -----------------------------------------------------------------------------
+echo "Install and setup tmux"
+sudo apt install tmux
+
+cp ./tmux/.tmux* ~/

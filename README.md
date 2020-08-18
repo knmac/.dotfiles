@@ -40,7 +40,17 @@ sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck
 pip3 install --user pynvim neovim flake8 msgpack
 ```
 
-==TODO== Install NodeJS for Coc.nvim
+[Optional] Install NodeJS (locally) for Coc.nvim. Change the URL accordingly. See [this](https://github.com/neoclide/coc.nvim) for more information about Coc.
+
+If you do not want to use Coc and NodeJS, change the variable `use_coc` to 0 at the beginning of `init.nvim` and ignore this step.
+
+```bash
+wget https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-x64.tar.xz
+tar xvf node-v12.18.3-linux-x64.tar.xz
+rm node-v12.18.3-linux-x64.tar.xz
+mv tar xvf node-v12.18.3-linux-x64.tar.xz ~/.local
+export PATH="$HOME/.local/node-v12.18.3-linux-x64/bin:$PATH" >> ~/.zshrc
+```
 
 Install NeoVim with my configuration:
 

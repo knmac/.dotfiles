@@ -18,5 +18,4 @@ def main(args):
 
 
 if __name__ == '__main__':
-    args = parse_args()
-    sys.exit(main(args))
+    sys.exit(main(parse_args()))

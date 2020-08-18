@@ -333,6 +333,9 @@ bind-key -n C-S-Right swap-window -t +1
 # disable auto-rename
 #set allow-rename off
 
+# Use vim binding in copy-mode
+set-window-option -g mode-keys vi
+
 # enable mouse control (clickable windows, panes, resizable panes)
 set -g mouse on  # tmux 2.2
 

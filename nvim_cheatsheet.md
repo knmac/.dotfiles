@@ -48,6 +48,20 @@
    -| Show documentation/pydoc      | `K`          |
    -->
 
+## Some Coc key-bindings
+
+| Functionality                        | Key-binding   |
+|--------------------------------------|---------------|
+| Previous diagnostic                  | `[g`          |
+| Next diagnostic                      | `]g`          |
+| Go to definition                     | `gd`          |
+| Go to type definition                | `gy`          |
+| Go to implementation                 | `gi`          |
+| Go to reference                      | `gr`          |
+| Show documentation in preview window | `K`           |
+| Rename symbol                        | `<leader> rn` |
+| Format selected code                 | `<leader> f`  |
+
 ## Some FZF key-bindings
 
 (I only list some commands I use frequently. I highly recommend to check out [fzf.vim](https://github.com/junegunn/fzf.vim) for much cooler stuffs)
@@ -108,7 +122,7 @@ To navigate in FZF's window, use either `Ctrl-j`/`Ctrl-n`/`down arrow` to go dow
 |                   | Go to next/previous matching pattern      | `n`/`N`                  |
 | Window navigation | Create a horizontal split                 | `:split`                 |
 |                   | Create a vertical split                   | `:vsplit`                |
-|                   | Go to left/down/up/right window           | `Ctrl-w` `h`/`j`/`k`/`l` |
+|                   | Go to left/down/up/right split            | `Ctrl-w` `h`/`j`/`k`/`l` |
 
 ### Vim's default auto-completion (insert mode)
 

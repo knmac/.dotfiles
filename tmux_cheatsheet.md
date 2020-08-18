@@ -75,3 +75,5 @@ In *copy mode*:
     1. Enter copy mode
     2. Search for text: `Ctrl-s [text]`
     3. Search forward/backward: `n/N`
+
+(You can also use Vim key-bindings in Copy mode)
