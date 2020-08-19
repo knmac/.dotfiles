@@ -43,11 +43,12 @@ sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck
 pip3 install --user pynvim neovim flake8 msgpack
 
 echo "Install nodejs..."
-wget https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-x64.tar.xz
-tar xvf node-v12.18.3-linux-x64.tar.xz
-rm node-v12.18.3-linux-x64.tar.xz
-mv tar xvf node-v12.18.3-linux-x64.tar.xz ~/.local
-export PATH="$HOME/.local/node-v12.18.3-linux-x64/bin:$PATH" >> ~/.zshrc
+node_version="v14.4.0"
+wget https://nodejs.org/dist/${node_version}/node-${node_version}-linux-x64.tar.xz
+tar xvf node-${node_version}-linux-x64.tar.xz
+rm node-${node_version}-linux-x64.tar.xz
+mv tar xvf node-${node_version}-linux-x64.tar.xz ~/.local
+export PATH="$HOME/.local/node-${node_version}-linux-x64/bin:$PATH" >> ~/.zshrc
 
 mkdir -p "$HOME/.config/nvim/"
 cp -r ./nvim/* "$HOME/.config/nvim"

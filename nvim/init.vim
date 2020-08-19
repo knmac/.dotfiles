@@ -634,6 +634,11 @@ let g:detectindent_preferred_indent = 4
 " To use preferred values instead of guessing
 let g:detectindent_preferred_when_mixed = 1
 
+"
+" ----------------------------------------------------------------------------
+" Vim tex
+let g:tex_flavor = "latex"
+
 
 " ----------------------------------------------------------------------------
 " Markdown syntax highlighting
