@@ -371,6 +371,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '| '
 
+" Remove unnecessary airline extensions to speed up
+let g:airline_extensions = ['tabline']
+
 
 " ----------------------------------------------------------------------------
 " Coc
@@ -634,7 +637,7 @@ let g:detectindent_preferred_indent = 4
 " To use preferred values instead of guessing
 let g:detectindent_preferred_when_mixed = 1
 
-"
+
 " ----------------------------------------------------------------------------
 " Vim tex
 let g:tex_flavor = "latex"
