@@ -27,22 +27,8 @@ endif
 " want to use
 call plug#begin('~/.config/nvim/plugged')
 
-" Better file browser
-Plug 'scrooloose/nerdtree'
-
-" Indexing search (show counter while searching)
-Plug 'vim-scripts/IndexedSearch'
-
-" Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" colorschemes
-Plug 'morhetz/gruvbox'
-
-" Code and files fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Buftabline
+Plug 'ap/vim-buftabline'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -63,7 +49,7 @@ endif
 " ----------------------------------------------------------------------------
 " Color and syntax highlighting
 syntax enable
-colorscheme gruvbox
+colorscheme default
 
 
 " ----------------------------------------------------------------------------
@@ -95,6 +81,7 @@ highlight Normal guibg=NONE ctermbg=NONE
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
 
+set showtabline=2  " Show tabline
 
 " ----------------------------------------------------------------------------
 " Splitting
@@ -140,33 +127,49 @@ set foldmethod=indent   " set folding method by looking at indentation
 
 
 " ============================================================================
-" Plugin configurations and key bindings
+" Key bindings
 " ============================================================================
 
 " ----------------------------------------------------------------------------
-" Nerd tree
-nnoremap <F3> :NERDTreeToggle<CR>
-" open nerdtree with the current file selected
-nnoremap ,t :NERDTreeFind<CR>
-" don't show these file types
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-
-" Autorefresh on tree focus
-function! NERDTreeRefresh()
-    if &filetype == "nerdtree"
-        silent exe substitute(mapcheck("R"), "<CR>", "", "")
-    endif
+" File explorer with Netrw
+" Toggle vexplore
+function! ToggleVExplorer()
+  if exists("t:expl_buf_num")
+      let expl_win_num = bufwinnr(t:expl_buf_num)
+      if expl_win_num != -1
+          let cur_win_nr = winnr()
+          exec expl_win_num . 'wincmd w'
+          close
+          exec cur_win_nr . 'wincmd w'
+          unlet t:expl_buf_num
+      else
+          unlet t:expl_buf_num
+      endif
+  else
+      exec '1wincmd w'
+      Vexplore
+      let t:expl_buf_num = bufnr("%")
+  endif
 endfunction
 
-autocmd BufEnter * call NERDTreeRefresh()
+" Hit F3 to toggle
+nnoremap <F3> :call ToggleVExplorer()<CR>
+
+" Hit enter in the file browser to open the selected
+" file with :vsplit to the right of the browser.
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+
+" Change directory to the current buffer when opening files.
+set autochdir
 
 
 " ----------------------------------------------------------------------------
 " Manage buffers
 set hidden
 
-" Show interactive buffer list (need fzf)
-nnoremap <F5> :Buffers<CR>
+" Show buffer list
+nnoremap <F5> :buffers<CR>:buffer<Space>
 " Prev buffer
 nnoremap <F6> :bp<CR>
 " Next buffer
@@ -181,40 +184,39 @@ nnoremap <F10> :make<CR>
 
 
 " ----------------------------------------------------------------------------
-" Air line
-let g:airline_powerline_fonts = 0
-let g:airline_theme = 'base16_default'
-let g:airline#extensions#whitespace#enabled = 0
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
-" Show path formatter
-let g:airline#extensions#tabline#formatter = 'default'
-
-" Show buffer index
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" Use 'straight' tabline
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '| '
-
-
-" ----------------------------------------------------------------------------
-" FZF
-" Search for file name
-nnoremap <C-P> :Files<CR>
-" Search for file content (require ripgrep)
-nnoremap <C-F> :Rg<CR>
-
-
-" ----------------------------------------------------------------------------
 " Shortcut for Python breakpoint (ipdb) - on the next line
 autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
 " Shortcut for Python breakpoint (ipdb) - on the previous line
 autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
+
+" fill rest of line with characters
+function! FillLine( str )
+    " set tw to the desired total length
+    let tw = &textwidth
+    if tw==0 | let tw = 79 | endif
+    " strip trailing spaces first
+    .s/[[:space:]]*$//
+    " calculate total number of 'str's to insert
+    let reps = (tw - col("$")) / len(a:str)
+    " insert them, if there's room, removing trailing spaces (though forcing
+    " there to be one)
+    if reps > 0
+        .s/$/\=(' '.repeat(a:str, reps))/
+    endif
+endfunction
+
+nnoremap <leader>- :call FillLine('-')<CR>
+
+" ----------------------------------------------------------------------------
+" Custom snippets
+nnoremap ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
+nnoremap ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
+nnoremap ,md    :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
+nnoremap ,today :read !date "+\%F"<CR>kJxA
+
+
+" ============================================================================
+" Plugin configurations
+" ============================================================================
+" BuffTabLine
