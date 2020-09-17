@@ -27,8 +27,9 @@ endif
 " want to use
 call plug#begin('~/.config/nvim/plugged')
 
-" Buftabline
 Plug 'ap/vim-buftabline'
+Plug 'itchyny/lightline.vim'
+Plug 'morhetz/gruvbox'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -49,7 +50,7 @@ endif
 " ----------------------------------------------------------------------------
 " Color and syntax highlighting
 syntax enable
-colorscheme default
+colorscheme gruvbox
 
 
 " ----------------------------------------------------------------------------
@@ -81,7 +82,6 @@ highlight Normal guibg=NONE ctermbg=NONE
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
 
-set showtabline=2  " Show tabline
 
 " ----------------------------------------------------------------------------
 " Splitting
@@ -132,28 +132,27 @@ set foldmethod=indent   " set folding method by looking at indentation
 
 " ----------------------------------------------------------------------------
 " File explorer with Netrw
-" Toggle vexplore
-function! ToggleVExplorer()
-  if exists("t:expl_buf_num")
-      let expl_win_num = bufwinnr(t:expl_buf_num)
-      if expl_win_num != -1
-          let cur_win_nr = winnr()
-          exec expl_win_num . 'wincmd w'
-          close
-          exec cur_win_nr . 'wincmd w'
-          unlet t:expl_buf_num
-      else
-          unlet t:expl_buf_num
-      endif
-  else
-      exec '1wincmd w'
-      Vexplore
-      let t:expl_buf_num = bufnr("%")
-  endif
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
 endfunction
 
-" Hit F3 to toggle
-nnoremap <F3> :call ToggleVExplorer()<CR>
+" Add your own mapping. For example:
+noremap <silent> <F3> :call ToggleNetrw()<CR>
+
 
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
@@ -219,4 +218,5 @@ nnoremap ,today :read !date "+\%F"<CR>kJxA
 " ============================================================================
 " Plugin configurations
 " ============================================================================
-" BuffTabLine
+"set showtabline=2
+"set laststatus=2
