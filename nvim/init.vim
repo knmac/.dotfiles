@@ -43,7 +43,7 @@ Plug 'fisadev/FixedTaskList.vim'
 Plug 'majutsushi/tagbar'
 
 " Git integration
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 
@@ -372,7 +372,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '| '
 
 " Remove unnecessary airline extensions to speed up
-let g:airline_extensions = ['tabline']
+let g:airline_extensions = ['tabline', 'fzf', 'coc', 'branch', 'hunks']
 
 
 " ----------------------------------------------------------------------------
