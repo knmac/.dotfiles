@@ -18,6 +18,8 @@
 | Unhighlight searching text                                | `<leader> <space>` |
 | Insert ipdb breakpoint (on the next line)                 | `<leader> b`       |
 | Insert ipdb breakpoint (on the previous line)             | `<leader> B`       |
+| Insert '-' character until column 79                      | `<leader> -`       |
+| Find current file (in NERDTree)                           | `,t`               |
 | Toggle conceallevel (between 0 and 2)                     | `,c`               |
 | Insert python skeleton                                    | `,py`              |
 | Insert html skeleton                                      | `,html`            |

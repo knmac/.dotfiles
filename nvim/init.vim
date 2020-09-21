@@ -57,6 +57,10 @@ Plug 'vim-airline/vim-airline-themes'
 " Async autocompletion
 if use_coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "Plug 'neoclide/coc-python'
+    "Plug 'neoclide/coc-json'
+    "Plug 'neoclide/coc-html'
+    "Plug 'neoclide/coc-css'
 else
     " Linters
     Plug 'dense-analysis/ale'
@@ -84,7 +88,9 @@ endif
 Plug 'morhetz/gruvbox'
 
 " Syntax highlighting
-Plug 'sheerun/vim-polyglot'
+" Don't use polyglot for python syntax highlighting (semshi looks better)
+"let g:polyglot_disabled = ['py']
+"Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Code and files fuzzy finder
@@ -106,9 +112,6 @@ Plug 'lervag/vimtex'
 " Markdown plugin
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
-
-" CSS color highlighter
-"Plug 'lilydjwg/colorizer'
 
 " File type icons
 if use_fancy_symbols
@@ -148,9 +151,6 @@ set termguicolors
 "colorscheme material-monokai
 "colorscheme onedark
 colorscheme gruvbox
-
-" Don't use polyglot for python syntax highlighting (semshi looks better)
-let g:polyglot_disabled = ['py']
 
 
 " ----------------------------------------------------------------------------
