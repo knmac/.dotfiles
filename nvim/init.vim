@@ -57,10 +57,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Async autocompletion
 if use_coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    "Plug 'neoclide/coc-python'
-    "Plug 'neoclide/coc-json'
-    "Plug 'neoclide/coc-html'
-    "Plug 'neoclide/coc-css'
 else
     " Linters
     Plug 'dense-analysis/ale'
@@ -378,6 +374,15 @@ let g:airline_extensions = ['tabline', 'fzf', 'coc', 'branch', 'hunks']
 " ----------------------------------------------------------------------------
 " Coc
 if use_coc 
+    let g:coc_global_extensions = [
+        \ 'coc-python',
+        \ 'coc-json',
+        \ 'coc-html',
+        \ 'coc-css',
+        \ 'coc-sh',
+        \ 'coc-marketplace'
+        \ ]
+
     " TextEdit might fail if hidden is not set.
     "set hidden
 
