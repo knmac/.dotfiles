@@ -368,7 +368,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '| '
 
 " Remove unnecessary airline extensions to speed up
-let g:airline_extensions = ['tabline', 'fzf', 'coc', 'branch', 'hunks']
+let g:airline_extensions = ['tabline', 'coc', 'branch', 'hunks']
 
 
 " ----------------------------------------------------------------------------
