@@ -42,7 +42,7 @@ Plug 'fisadev/FixedTaskList.vim'
 " Class/module browser
 Plug 'majutsushi/tagbar'
 
-" Git integration
+" Git integration, can show git branch on statusline
 Plug 'tpope/vim-fugitive'
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
@@ -71,8 +71,8 @@ else
     Plug 'deoplete-plugins/deoplete-clang'
 
     " Function navigation for python without using ctags
-    " Just to add the python go-to-definition and similar features, autocompletion
-    " from this plugin is disabled
+    " Just to add the python go-to-definition and similar features,
+    " autocompletion from this plugin is disabled
     Plug 'davidhalter/jedi-vim'
 endif
 
@@ -84,9 +84,7 @@ endif
 Plug 'morhetz/gruvbox'
 
 " Syntax highlighting
-" Don't use polyglot for python syntax highlighting (semshi looks better)
-"let g:polyglot_disabled = ['py']
-"Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Code and files fuzzy finder
@@ -176,7 +174,7 @@ highlight Cursor     guibg=#626262
 highlight Normal guibg=NONE ctermbg=NONE
 
 filetype indent on      " load filetype-specific indent files
-filetype plugin on      " detects the type of file when the file is created or opened
+filetype plugin on      " detect the type of file when the it's created/opened
 
 
 " ----------------------------------------------------------------------------
@@ -408,6 +406,7 @@ if use_coc
     else
         set signcolumn=yes
     endif
+    highlight clear SignColumn
 
     " Use tab for trigger completion with characters ahead and navigate.
     " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -466,13 +465,13 @@ if use_coc
     xmap <leader>f  <Plug>(coc-format-selected)
     nmap <leader>f  <Plug>(coc-format-selected)
 
-    augroup mygroup
-        autocmd!
-        " Setup formatexpr specified filetype(s).
-        autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-        " Update signature help on jump placeholder.
-        autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-    augroup end
+    "augroup mygroup
+    "    autocmd!
+    "    " Setup formatexpr specified filetype(s).
+    "    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    "    " Update signature help on jump placeholder.
+    "    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    "augroup end
 
     " Applying codeAction to the selected region.
     " Example: `<leader>aap` for current paragraph
@@ -601,12 +600,12 @@ nnoremap <leader>sn <plug>(signify-next-hunk)
 nnoremap <leader>sp <plug>(signify-prev-hunk)
 
 " nicer colors
-highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
-highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
-highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
-highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
-highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
-highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
+"highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+"highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+"highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+"highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
+"highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
+"highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 
 " ----------------------------------------------------------------------------
@@ -686,6 +685,7 @@ function! FillLine( str )
 endfunction
 
 nnoremap <leader>- :call FillLine('-')<CR>
+nnoremap <leader>= :call FillLine('=')<CR>
 
 " ----------------------------------------------------------------------------
 " Custom snippets
