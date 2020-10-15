@@ -47,7 +47,7 @@ node_version="v14.4.0"
 wget https://nodejs.org/dist/${node_version}/node-${node_version}-linux-x64.tar.xz
 tar xvf node-${node_version}-linux-x64.tar.xz
 rm node-${node_version}-linux-x64.tar.xz
-mv tar xvf node-${node_version}-linux-x64.tar.xz ~/.local
+mv tar xvf node-${node_version}-linux-x64 ~/.local
 export PATH="$HOME/.local/node-${node_version}-linux-x64/bin:$PATH" >> ~/.zshrc
 
 mkdir -p "$HOME/.config/nvim/"

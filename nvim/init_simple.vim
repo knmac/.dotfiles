@@ -50,6 +50,7 @@ endif
 " ----------------------------------------------------------------------------
 " Color and syntax highlighting
 syntax enable
+set termguicolors
 colorscheme gruvbox
 
 
@@ -63,21 +64,23 @@ set showcmd                     " show command in bottom bar
 set cursorline                  " highlight current line
 set colorcolumn=80              " show column ruler at the end
 set encoding=utf-8              " use unicode
-set wildmode=list:longest       " visual autocomplete for command menu
+"set wildmode=list:longest       " visual autocomplete for command menu
 set lazyredraw                  " redraw only when we need to
 set showmatch                   " highlight matching [{()}]
 set backspace=indent,eol,start  " resolve the problem of backspace not working
 set path+=**                    " provide tab-completion for file-related tasks
 
 " set cursor shape (nvim >= 0.2)
-set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+"set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 " Highlight current line by bolding the text
 highlight CursorLine cterm=bold   gui=bold
 " Change the background of cursor
 highlight Cursor     guibg=#626262
 " Transparent background
-highlight Normal guibg=NONE ctermbg=NONE
+highlight Normal     guibg=NONE ctermbg=NONE
+" Clear highlight on sign column
+highlight clear SignColumn
 
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
@@ -105,8 +108,9 @@ autocmd FileType make   set noexpandtab
 
 " ----------------------------------------------------------------------------
 " Copy to clipboard
-"set clipboard=unnamed       " On Windows/Mac
-set clipboard=unnamedplus   " On Linux 
+if has('unnamedplus')
+    set clipboard=unnamed,unnamedplus
+endif
 
 
 " ----------------------------------------------------------------------------
@@ -124,6 +128,12 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " set folding method by looking at indentation
+
+
+" ----------------------------------------------------------------------------
+" Vmap for maintaining visual mode after shifting > and <
+vmap < <gv
+vmap > >gv
 
 
 " ============================================================================
@@ -212,7 +222,7 @@ nnoremap <leader>- :call FillLine('-')<CR>
 nnoremap ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
 nnoremap ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
 nnoremap ,md    :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
-nnoremap ,today :read !date "+\%F"<CR>kJxA
+nnoremap ,today :read !date "+\%F"<CR>kJ$
 
 
 " ============================================================================
