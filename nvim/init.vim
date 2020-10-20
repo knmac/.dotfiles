@@ -157,6 +157,8 @@ set showcmd                     " show command in bottom bar
 set cursorline                  " highlight current line
 set colorcolumn=80              " show column ruler at the end
 set encoding=utf-8              " use unicode
+set wildmenu
+set wildmode=longest:full,full  " visual autocomplete for command menu
 "set wildmode=list:longest       " visual autocomplete for command menu
 set lazyredraw                  " redraw only when we need to
 set showmatch                   " highlight matching [{()}]
@@ -179,6 +181,8 @@ highlight clear SignColumn
 
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detect the type of file when the it's created/opened
+
+let g:semshi#excluded_hl_groups = ['local', 'builtin']
 
 
 " ----------------------------------------------------------------------------
