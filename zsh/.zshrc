@@ -112,7 +112,8 @@ bindkey '^ ' autosuggest-accept
 
 # Configure FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --border"
+#export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --border"
+export FZF_DEFAULT_OPTS="--layout=default"
 # Use ripgrep as search program for fzf
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
