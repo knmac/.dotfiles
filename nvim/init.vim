@@ -107,6 +107,8 @@ Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 
+Plug 'voldikss/vim-floaterm'
+
 " File type icons
 if use_fancy_symbols
     Plug 'ryanoasis/vim-devicons'
@@ -182,7 +184,7 @@ highlight clear SignColumn
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detect the type of file when the it's created/opened
 
-let g:semshi#excluded_hl_groups = ['local', 'builtin']
+"let g:semshi#excluded_hl_groups = ['local', 'builtin']
 
 
 " ----------------------------------------------------------------------------
@@ -324,6 +326,11 @@ endif
 " ----------------------------------------------------------------------------
 " Run the make file
 nnoremap <F10> :make<CR>
+
+
+" ----------------------------------------------------------------------------
+" Toggle Float-term
+let g:floaterm_keymap_toggle = '<F12>'
 
 
 " ----------------------------------------------------------------------------
