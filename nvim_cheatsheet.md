@@ -15,6 +15,7 @@
 | Close the current buffer (and switch to the previous one) | `F8`               |
 | Open error list                                           | `F9`               |
 | Run the `make` command (required to set up Makefile)      | `F10`              |
+| Toggle floating terminal                                  | `F12`              |
 | Unhighlight searching text                                | `<leader> <space>` |
 | Insert ipdb breakpoint (on the next line)                 | `<leader> b`       |
 | Insert ipdb breakpoint (on the previous line)             | `<leader> B`       |
@@ -25,7 +26,7 @@
 | Insert python skeleton                                    | `,py`              |
 | Insert html skeleton                                      | `,html`            |
 | Insert markdown skeleton                                  | `,md`              |
-| Insert today's date                                       | `,today`           |
+| Insert today's date (end of line)                         | `,today`           |
 
 ## Some NERD Commenter key-bindings
 

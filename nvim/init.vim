@@ -178,6 +178,8 @@ highlight Cursor     guibg=#626262
 highlight Normal     guibg=NONE ctermbg=NONE
 " Clear highlight on sign column
 highlight clear SignColumn
+" Italic comments
+highlight Comment    cterm=italic gui=italic
 "highlight SignColumn guibg=black
 "highlight LineNr     guifg=grey guibg=black
 
