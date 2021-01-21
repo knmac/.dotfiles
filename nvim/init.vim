@@ -114,6 +114,9 @@ if use_fancy_symbols
     Plug 'ryanoasis/vim-devicons'
 endif
 
+" Startup page and session manager
+Plug 'mhinz/vim-startify'
+
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
 
@@ -711,6 +714,15 @@ endfunction
 
 nnoremap <leader>- :call FillLine('-')<CR>
 nnoremap <leader>= :call FillLine('=')<CR>
+
+
+" ----------------------------------------------------------------------------
+" Startify
+let g:startify_session_dir = '~/.config/nvim/session'
+
+" Update session automatically as you exit vim
+let g:startify_session_persistence = 1
+
 
 " ----------------------------------------------------------------------------
 " Custom snippets
