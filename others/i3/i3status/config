@@ -8,15 +8,15 @@ general {
   color_separator = "#B3BEFF"
 }
 
-order += "ethernet _first_"
-order += "wireless _first_"
-order += "load"
+#order += "load"
 order += "memory"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "disk /"
 order += "battery all"
 order += "volume master"
+#order += "ethernet _first_"
+#order += "wireless _first_"
 order += "time"
 
 battery all {
@@ -60,14 +60,14 @@ cpu_temperature 0 {
 }
 
 memory {
-  format = "  %used "
+  format = "  %percentage_used "
   threshold_degraded = "1G"
   format_degraded = "  < %available "
 }
 
 disk "/" {
   #format = " %free %avail"
-  format = "  %avail "
+  format = "  %percentage_used "
 }
 
 volume master {
