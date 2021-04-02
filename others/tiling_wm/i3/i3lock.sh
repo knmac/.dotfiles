@@ -36,7 +36,7 @@ i3lock \
   --layoutcolor=$blue \
   --datecolor=$blue \
   --timecolor=$blue \
-  --color="#00000033" \
+  --color="#00000077" \
   --screen 1 \
   --clock \
   --indicator \
