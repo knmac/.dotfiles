@@ -1,0 +1,52 @@
+; =============================================================================
+[global/wm]
+; =============================================================================
+; Adjust the _NET_WM_STRUT_PARTIAL top value
+; Used for top aligned bars
+margin-bottom = 0
+
+; Adjust the _NET_WM_STRUT_PARTIAL bottom value
+; Used for bottom aligned bars
+margin-top = 0
+
+; Include modules
+include-file = ~/.config/polybar/colors.ini
+
+include-file = ~/.config/polybar/modules/sysmenu.ini
+include-file = ~/.config/polybar/modules/i3.ini
+include-file = ~/.config/polybar/modules/title.ini
+
+include-file = ~/.config/polybar/modules/filesystem.ini
+include-file = ~/.config/polybar/modules/cpu.ini
+include-file = ~/.config/polybar/modules/memory.ini
+include-file = ~/.config/polybar/modules/battery.ini
+include-file = ~/.config/polybar/modules/backlight.ini
+include-file = ~/.config/polybar/modules/pulseaudio.ini
+include-file = ~/.config/polybar/modules/date.ini
+
+
+; =============================================================================
+[bar/mybar]
+; =============================================================================
+modules-left = sysmenu i3 title
+modules-center = 
+modules-right = filesystem cpu memory backlight pulseaudio battery date
+
+font-0 = FiraCode Nerd Font:style=Regular:size=10;2
+width = 100%
+height = 32
+radius = 0.0
+fixed-center = true
+bottom = false
+enable-ipc = true
+transparent = true
+background = ${colors.bg}
+foreground = ${colors.fg}
+line-size = 2
+separator = "%{F#555555} | %{F-}"
+scroll-up = "#i3.prev"
+scroll-down = "#i3.next"
+
+tray-position = right
+tray-background = ${colors.bg}
+tray-detached = false
