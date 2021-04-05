@@ -23,7 +23,7 @@ bindsym $mod+Shift+z gaps outer current minus 5
 #smart_borders on
 
 # Wallpaper settings
-set $wallpaper "/home/knmac/Pictures/Wallpapers/bird-abstract-low-poly-minimalist-minimalism-y7321.jpg"
+set $wallpaper "$HOME/Pictures/Wallpapers/bird-abstract-low-poly-minimalist-minimalism-y7321.jpg"
 exec_always feh --bg-scale --randomize $wallpaper
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -93,7 +93,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock \
 #    bindsym Escape mode "default"
 #}
 #bindsym $mod+Escape mode "$mode_system"
-bindsym $mod+Escape exec "~/.config/polybar/scripts/powermenu.sh"
+bindsym $mod+Escape exec "$HOME/.config/polybar/scripts/powermenu.sh"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -123,7 +123,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # File explorer
-bindsym $mod+e exec thunar
+bindsym $mod+e exec nemo
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -282,7 +282,7 @@ bindsym $mod+r mode "resize"
 #        separator  #12345678
 #    }
 #}
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # Screen shot using gnome-screenshot
 bindsym --release $mod+Print            exec gnome-screenshot
