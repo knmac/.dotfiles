@@ -9,7 +9,7 @@ let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.config/nvim/autoload/plug.vim')
 if !filereadable(vim_plug_path)
     echo "Installing Vim-plug..."
-	echo ""
+    echo ""
     silent !mkdir -p ~/.config/nvim/autoload
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     let vim_plug_just_installed = 1
@@ -169,6 +169,8 @@ set lazyredraw                  " redraw only when we need to
 set showmatch                   " highlight matching [{()}]
 set backspace=indent,eol,start  " resolve the problem of backspace not working
 set path+=**                    " provide tab-completion for file-related tasks
+set list
+set listchars=tab:>-
 
 " set cursor shape (nvim >= 0.2) (unnecessary for later nvim)
 "set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -395,7 +397,8 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '| '
 
 " Remove unnecessary airline extensions to speed up
-let g:airline_extensions = ['tabline', 'coc', 'branch', 'hunks']
+"let g:airline_extensions = ['tabline', 'coc', 'branch', 'hunks']
+let g:airline_extensions = ['tabline']
 
 
 " ----------------------------------------------------------------------------

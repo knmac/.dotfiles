@@ -6,7 +6,7 @@ let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.config/nvim/autoload/plug.vim')
 if !filereadable(vim_plug_path)
     echo "Installing Vim-plug..."
-	echo ""
+    echo ""
     silent !mkdir -p ~/.config/nvim/autoload
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     let vim_plug_just_installed = 1
@@ -27,8 +27,8 @@ endif
 " want to use
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'morhetz/gruvbox'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
@@ -71,6 +71,8 @@ set lazyredraw                  " redraw only when we need to
 set showmatch                   " highlight matching [{()}]
 set backspace=indent,eol,start  " resolve the problem of backspace not working
 set path+=**                    " provide tab-completion for file-related tasks
+set list
+set listchars=tab:>-
 
 " set cursor shape (nvim >= 0.2)
 "set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -83,6 +85,10 @@ highlight Cursor     guibg=#626262
 highlight Normal     guibg=NONE ctermbg=NONE
 " Clear highlight on sign column
 highlight clear SignColumn
+" Italic comments
+highlight Comment    cterm=italic gui=italic
+"highlight SignColumn guibg=black
+"highlight LineNr     guifg=grey guibg=black
 
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
@@ -230,5 +236,36 @@ nnoremap ,today :read !date "+\%F"<CR>kJ$
 " ============================================================================
 " Plugin configurations
 " ============================================================================
-"set showtabline=2
+set showtabline=2
 "set laststatus=2
+
+let g:lightline = {
+\   'colorscheme': 'deus',
+\   'active': {
+\     'left':[ [ 'mode', 'paste' ],
+\              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+\     ]
+\   },
+\   'component': {
+\     'lineinfo': ' %3l:%-2v',
+\   },
+\   'component_function': {
+\     'gitbranch': 'fugitive#head',
+\   },
+\   'tabline': {
+\     'left': [ ['buffers'] ],
+\     'right': [ ['close'] ]
+\   },
+\   'component_expand': {
+\     'buffers': 'lightline#bufferline#buffers'
+\   },
+\   'component_type': {
+\     'buffers': 'tabsel'
+\   }
+\ }
+"let g:lightline.separator = {
+"\   'left': '', 'right': ''
+"\}
+"let g:lightline.subseparator = {
+"\   'left': '', 'right': '' 
+"\}
