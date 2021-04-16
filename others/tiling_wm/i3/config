@@ -138,7 +138,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # Start rofi
-bindsym $mod+Shift+Return exec --no-startup-id rofi \
+bindsym $mod+space exec --no-startup-id rofi \
     -no-lazy-grab \
     -show run \
     -modi "run#drun#window#ssh" \
@@ -175,7 +175,7 @@ bindsym $mod+Ctrl+h split h
 bindsym $mod+Ctrl+v split v
 
 # toggle split orientation (horizontal/vertical)
-bindsym $mod+Tab split toggle
+bindsym $mod+BackSpace split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -186,10 +186,10 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+Shift+t focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+a focus parent
