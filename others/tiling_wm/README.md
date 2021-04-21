@@ -1,8 +1,8 @@
 ## Main
 
 ```bash
-sudo apt install i3-gaps feh lxappearance thunar polybar rofi
-cp -r i3 i3status $HOME/.config
+sudo apt install i3-gaps lxappearance nemo polybar rofi xrandr arandr sxhkd xclip scrot
+cp -r i3 dunst polybar rofi sxhkd $HOME/.config
 ```
 
 ## i3lock-color

@@ -11,9 +11,9 @@
 
 set $mod Mod4
 
-# Start compositor
-exec_always picom --experimental-backends
-
+# -----------------------------------------------------------------------------
+# i3 Settings
+# -----------------------------------------------------------------------------
 # Gap
 for_window [class=".*"] border pixel 2
 gaps inner 10
@@ -21,14 +21,6 @@ gaps outer 0
 bindsym $mod+z       gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 smart_borders on
-
-# Wallpaper settings
-set $wallpaper "$HOME/Pictures/my_wallpapers"
-exec_always nitrogen --set-zoom-fill --random $wallpaper --restore
-bindsym $mod+w exec nitrogen --set-zoom-fill --random $wallpaper --save
-
-# Control settings
-bindsym $mod+c exec gnome-control-center
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -38,70 +30,21 @@ font pango:FiraCode Nerd Font 11
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -c 00000077
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock \
-    --nofork \
-    --insidevercolor="#073642dd" \
-    --insidewrongcolor="#073642dd" \
-    --insidecolor="#073642dd" \
-    --ringvercolor="#859900dd" \
-    --ringwrongcolor="#dc322fdd" \
-    --ringvercolor="#859900dd" \
-    --ringwrongcolor="#dc322fdd" \
-    --ringcolor="#268bd2dd" \
-    --line-uses-ring \
-    --keyhlcolor="#d33682dd" \
-    --bshlcolor="#cb4b16dd" \
-    --separatorcolor="#586e75dd" \
-    --verifcolor="#859900" \
-    --wrongcolor="#dc322f" \
-    --layoutcolor="#268bd2" \
-    --datecolor="#268bd2" \
-    --timecolor="#268bd2" \
-    --color="#00000077" \
-    --screen 1 \
-    --clock \
-    --indicator \
-    --timestr="%H:%M:%S" \
-    --datestr="%a, %b %e, %Y" \
-    --veriftext="Verifying..." \
-    --wrongtext="Auth Failed" \
-    --noinput="No Input" \
-    --locktext="Locking..." \
-    --lockfailed="Lock Failed" \
-    --radius=100 \
-    --ring-width=20 \
-    --pass-media-keys \
-    --pass-screen-keys \
-    --pass-volume-keys
-
 # Lock screen, requires i3lock-color
-#set $lock_wallpaper "~/Pictures/minimalist-wallpaper.png"
-#set $i3lock ".config/i3/i3lock.sh"
 #set $mode_system [l]:Lock, [o]:Logout, [s]:Suspend, [r]:Reboot, [d]:Shutdown
 #mode "$mode_system" {
-#    #bindsym l exec i3lock -c 00000000 -i $lock_wallpaper, mode "default"
-#    bindsym l exec $i3lock,            mode "default"
-#    bindsym o exec i3-msg exit,        mode "default"
-#    bindsym s exec systemctl suspend,  mode "default"
-#    bindsym r exec systemctl reboot,   mode "default"
-#    bindsym d exec systemctl poweroff, mode "default"
+#    #bindsym l exec i3lock -c 00000000, mode "default"
+#    bindsym l exec $i3lock,             mode "default"
+#    bindsym o exec i3-msg exit,         mode "default"
+#    bindsym s exec systemctl suspend,   mode "default"
+#    bindsym r exec systemctl reboot,    mode "default"
+#    bindsym d exec systemctl poweroff,  mode "default"
 
 #    # back to normal: Enter or Escape
 #    bindsym Return mode "default"
 #    bindsym Escape mode "default"
 #}
 #bindsym $mod+Escape mode "$mode_system"
-bindsym $mod+Escape exec "$HOME/.config/polybar/scripts/powermenu.sh"
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec_always --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -110,24 +53,8 @@ exec_always --no-startup-id nm-applet
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 #bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Use amixer to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse sset Master 5%+ && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -D pulse sset Master 5%- && $refresh_i3status
-bindsym XF86AudioMute        exec --no-startup-id amixer -q -D pulse sset Master toggle && $refresh_i3status
-
-# Screen brightness
-bindsym XF86MonBrightnessUp   exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec kitty
-
-# File explorer
-bindsym $mod+e exec nemo
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -137,14 +64,6 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-#bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
-
-# Start rofi
-bindsym $mod+space exec --no-startup-id rofi \
-    -no-lazy-grab \
-    -show run \
-    -modi "run#drun#window#ssh" \
-    -theme "~/.config/rofi/theme.rasi"
 
 # change focus
 bindsym $mod+h focus left
@@ -290,10 +209,61 @@ bindsym $mod+r mode "resize"
 #        separator  #12345678
 #    }
 #}
+
+# -----------------------------------------------------------------------------
+# Startup programs
+# -----------------------------------------------------------------------------
+# Start compositor
+exec_always picom --experimental-backends
+
+# Start simple X hotkey deamon
+exec_always --no-startup-id sxhkd
+
+# Start polybar
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
-# Screen shot using gnome-screenshot
-bindsym --release $mod+Print            exec gnome-screenshot
-bindsym --release $mod+Shift+Print      exec gnome-screenshot -a
-bindsym --release $mod+Ctrl+Print       exec gnome-screenshot -c
-bindsym --release $mod+Ctrl+Shift+Print exec gnome-screenshot -ac
+# Wallpaper settings
+set $wallpaper "$HOME/Pictures/my_wallpapers"
+exec_always nitrogen --set-zoom-fill --random $wallpaper --restore
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec_always --no-startup-id nm-applet
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock \
+    --nofork \
+    --insidevercolor="#073642dd" \
+    --insidewrongcolor="#073642dd" \
+    --insidecolor="#073642dd" \
+    --ringvercolor="#859900dd" \
+    --ringwrongcolor="#dc322fdd" \
+    --ringvercolor="#859900dd" \
+    --ringwrongcolor="#dc322fdd" \
+    --ringcolor="#268bd2dd" \
+    --line-uses-ring \
+    --keyhlcolor="#d33682dd" \
+    --bshlcolor="#cb4b16dd" \
+    --separatorcolor="#586e75dd" \
+    --verifcolor="#859900" \
+    --wrongcolor="#dc322f" \
+    --layoutcolor="#268bd2" \
+    --datecolor="#268bd2" \
+    --timecolor="#268bd2" \
+    --color="#00000077" \
+    --screen 1 \
+    --clock \
+    --indicator \
+    --timestr="%H:%M:%S" \
+    --datestr="%a, %b %e, %Y" \
+    --veriftext="Verifying..." \
+    --wrongtext="Auth Failed" \
+    --noinput="No Input" \
+    --locktext="Locking..." \
+    --lockfailed="Lock Failed" \
+    --radius=100 \
+    --ring-width=20 \
+    --pass-media-keys \
+    --pass-screen-keys \
+    --pass-volume-keys

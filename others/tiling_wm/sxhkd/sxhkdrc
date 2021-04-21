@@ -1,0 +1,51 @@
+# Terminal
+super + Return
+    kitty
+
+# File explorer
+super + e
+    nemo
+
+# Conrol center
+super + c
+    gnome-control-center
+
+# Random wallpaper
+super + w
+    nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --save
+
+# Rofi menu
+super + space
+    rofi -no-lazy-grab -show run -modi "run#drun#window#ssh" -theme "~/.config/rofi/theme.rasi"
+
+# Power menu
+super + Escape
+    "$HOME/.config/polybar/scripts/powermenu.sh"
+
+# Screenshot
+Print
+    sleep 0.2; \
+    scrot
+shift + Print
+    sleep 0.2; \
+    scrot --select
+ctrl + Print
+    sleep 0.2; \
+    scrot '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
+ctrl + shift + Print
+    sleep 0.2; \
+    scrot --select '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
+
+# Backlight control
+XF86MonBrightnessUp
+    xbacklight -inc 10
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+# Volume control
+XF86AudioRaiseVolume
+    amixer -q -D pulse sset Master 10%+
+XF86AudioLowerVolume
+    amixer -q -D pulse sset Master 10%-
+XF86AudioMute
+    amixer -q -D pulse sset Master toggle
