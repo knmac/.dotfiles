@@ -1,7 +1,8 @@
 ## Main
 
 ```bash
-sudo apt install i3-gaps lxappearance nemo polybar rofi xrandr arandr sxhkd xclip scrot
+sudo add-apt-repository ppa:kgilmer/speed-ricer
+sudo apt install i3-gaps lxappearance nemo polybar rofi arandr sxhkd xclip scrot nitrogen
 cp -r i3 dunst polybar rofi sxhkd $HOME/.config
 ```
 

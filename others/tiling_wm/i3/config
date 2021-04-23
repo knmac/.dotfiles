@@ -223,8 +223,7 @@ exec_always --no-startup-id sxhkd
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # Wallpaper settings
-set $wallpaper "$HOME/Pictures/my_wallpapers"
-exec_always nitrogen --set-zoom-fill --random $wallpaper --restore
+exec_always nitrogen --restore
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
