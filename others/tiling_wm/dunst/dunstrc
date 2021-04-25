@@ -28,6 +28,7 @@ history_length = 20
 always_run_script = true
 title = Dunst
 class = Dunst
+transparency = 30
 
 [shortcuts]
 close = ctrl+space
