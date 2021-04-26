@@ -231,6 +231,9 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 # Start dropbox
 exec_always caja-dropbox start
 
+# Monitor settings
+exec_always "$HOME/.screenlayout/default.sh"
+
 # Wallpaper settings
 exec_always nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --restore
 
@@ -238,40 +241,9 @@ exec_always nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --r
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec_always --no-startup-id nm-applet
 
+# Autolock the screen. Place mouse at the bottom right to avoid autolock
+exec_always xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/i3lock.sh"
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock \
-    --nofork \
-    --insidevercolor="#073642dd" \
-    --insidewrongcolor="#073642dd" \
-    --insidecolor="#073642dd" \
-    --ringvercolor="#859900dd" \
-    --ringwrongcolor="#dc322fdd" \
-    --ringvercolor="#859900dd" \
-    --ringwrongcolor="#dc322fdd" \
-    --ringcolor="#268bd2dd" \
-    --line-uses-ring \
-    --keyhlcolor="#d33682dd" \
-    --bshlcolor="#cb4b16dd" \
-    --separatorcolor="#586e75dd" \
-    --verifcolor="#859900" \
-    --wrongcolor="#dc322f" \
-    --layoutcolor="#268bd2" \
-    --datecolor="#268bd2" \
-    --timecolor="#268bd2" \
-    --color="#00000077" \
-    --screen 1 \
-    --clock \
-    --indicator \
-    --timestr="%H:%M:%S" \
-    --datestr="%a, %b %e, %Y" \
-    --veriftext="Verifying..." \
-    --wrongtext="Auth Failed" \
-    --noinput="No Input" \
-    --locktext="Locking..." \
-    --lockfailed="Lock Failed" \
-    --radius=100 \
-    --ring-width=20 \
-    --pass-media-keys \
-    --pass-screen-keys \
-    --pass-volume-keys
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/i3lock.sh"
