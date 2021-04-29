@@ -235,7 +235,7 @@ exec_always --no-startup-id sxhkd
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # Start dropbox
-exec_always caja-dropbox start
+exec_always dropbox start
 
 # Monitor settings
 exec_always "$HOME/.screenlayout/default.sh"
