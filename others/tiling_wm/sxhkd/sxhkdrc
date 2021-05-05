@@ -32,13 +32,13 @@ Print
     scrot
 shift + Print
     sleep 0.2; \
-    scrot --select
+    scrot --select --freeze
 ctrl + Print
     sleep 0.2; \
     scrot '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
 ctrl + shift + Print
     sleep 0.2; \
-    scrot --select '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
+    scrot --select --freeze '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
 
 # Backlight control
 XF86MonBrightnessUp
