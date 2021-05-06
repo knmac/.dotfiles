@@ -241,7 +241,7 @@ exec_always dropbox start
 exec_always "$HOME/.screenlayout/default.sh"
 
 # Wallpaper settings
-exec_always nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --restore
+exec_always nitrogen --restore
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.

@@ -30,9 +30,6 @@ endif
 " want to use
 call plug#begin('~/.config/nvim/plugged')
 
-" Better file browser
-Plug 'scrooloose/nerdtree'
-
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
 
@@ -58,6 +55,9 @@ Plug 'vim-airline/vim-airline-themes'
 if use_coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
+    " File explorer
+    Plug 'scrooloose/nerdtree'
+
     " Linters
     Plug 'dense-analysis/ale'
 
@@ -257,20 +257,22 @@ nnoremap <F2> :TaskList<CR>
 
 " ----------------------------------------------------------------------------
 " Nerd tree
-nnoremap <F3> :NERDTreeToggle<CR>
-" open nerdtree with the current file selected
-nnoremap ,t :NERDTreeFind<CR>
-" don't show these file types
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '__pycache__']
+if !use_coc
+    nnoremap <F3> :NERDTreeToggle<CR>
+    " open nerdtree with the current file selected
+    nnoremap ,t :NERDTreeFind<CR>
+    " don't show these file types
+    let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '__pycache__']
 
-" Autorefresh on tree focus
-function! NERDTreeRefresh()
-    if &filetype == "nerdtree"
-        silent exe substitute(mapcheck("R"), "<CR>", "", "")
-    endif
-endfunction
+    " Autorefresh on tree focus
+    function! NERDTreeRefresh()
+        if &filetype == "nerdtree"
+            silent exe substitute(mapcheck("R"), "<CR>", "", "")
+        endif
+    endfunction
 
-autocmd BufEnter * call NERDTreeRefresh()
+    autocmd BufEnter * call NERDTreeRefresh()
+endif
 
 
 " ----------------------------------------------------------------------------
@@ -394,7 +396,9 @@ if use_coc
         \ 'coc-html',
         \ 'coc-css',
         \ 'coc-sh',
-        \ 'coc-marketplace'
+        \ 'coc-clangd',
+        \ 'coc-marketplace',
+        \ 'coc-explorer'
         \ ]
 
     " TextEdit might fail if hidden is not set.
@@ -547,6 +551,8 @@ if use_coc
     "nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
     "" Resume latest coc list.
     "nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+    nnoremap <silent> <F3> :CocCommand explorer --toggle<CR>
 endif
 
 
