@@ -40,11 +40,11 @@ endif
 " Basic configurations
 colorscheme gruvbox
 
-execute 'source ~/.config/nvim/plugin_cfg/basic.vim'
-execute 'source ~/.config/nvim/plugin_cfg/netrw.vim'
-execute 'source ~/.config/nvim/plugin_cfg/snippet.vim'
+source ~/.config/nvim/plugin_cfg/basic.vim
+source ~/.config/nvim/plugin_cfg/netrw.vim
+source ~/.config/nvim/plugin_cfg/snippet.vim
 
-execute 'source ~/.config/nvim/plugin_cfg/lightline.vim'
+source ~/.config/nvim/plugin_cfg/lightline.vim
 
 " ============================================================================
 " Key bindings

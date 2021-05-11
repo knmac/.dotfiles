@@ -141,10 +141,10 @@ colorscheme gruvbox
 "colorscheme material-monokai
 "colorscheme onedark
 
-execute 'source ~/.config/nvim/plugin_cfg/basic.vim'
+source ~/.config/nvim/plugin_cfg/basic.vim
 
 " Custom snippets
-execute 'source ~/.config/nvim/plugin_cfg/snippet.vim'
+source ~/.config/nvim/plugin_cfg/snippet.vim
 
 
 " ============================================================================
@@ -152,16 +152,16 @@ execute 'source ~/.config/nvim/plugin_cfg/snippet.vim'
 " ============================================================================
 
 " Vim-startify
-execute 'source ~/.config/nvim/plugin_cfg/startify.vim'
+source ~/.config/nvim/plugin_cfg/startify.vim
 
 " Indentation
-execute 'source ~/.config/nvim/plugin_cfg/indent.vim'
+source ~/.config/nvim/plugin_cfg/indent.vim
 
 " Airline
-execute 'source ~/.config/nvim/plugin_cfg/airline.vim'
+source ~/.config/nvim/plugin_cfg/airline.vim
 
 " Signify
-execute 'source ~/.config/nvim/plugin_cfg/signify.vim'
+source ~/.config/nvim/plugin_cfg/signify.vim
 
 " Search for file name (require FZF)
 nnoremap <silent> <C-P> :Files<CR>
@@ -197,24 +197,24 @@ let g:floaterm_keymap_toggle = '<F12>'
 
 " Coc
 if use_coc 
-    execute 'source ~/.config/nvim/plugin_cfg/coc.vim'
+    source ~/.config/nvim/plugin_cfg/coc.vim
     nnoremap <silent> <F3> :CocCommand explorer --toggle<CR>
     nnoremap <silent> <F9> :<C-u>CocList diagnostics<CR>
 else
     " Nerd tree
-    execute 'source ~/.config/nvim/plugin_cfg/nerdtree.vim'
+    source ~/.config/nvim/plugin_cfg/nerdtree.vim
     nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
     " ALE
-    execute 'source ~/.config/nvim/plugin_cfg/ale.vim'
+    source ~/.config/nvim/plugin_cfg/ale.vim
     nnoremap <silent> <F9> :call QuickfixToggle()<CR>
 
     " Deoplete 
-    execute 'source ~/.config/nvim/plugin_cfg/deoplete.vim'
+    source ~/.config/nvim/plugin_cfg/deoplete.vim
 
     " JediVim
-    execute 'source ~/.config/nvim/plugin_cfg/jedivim.vim'
+    source ~/.config/nvim/plugin_cfg/jedivim.vim
 
     " Markdown
-    execute 'source ~/.config/nvim/plugin_cfg/markdown.vim'
+    source ~/.config/nvim/plugin_cfg/markdown.vim
 endif
