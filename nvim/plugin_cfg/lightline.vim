@@ -9,7 +9,7 @@ let g:lightline = {
 \     ]
 \   },
 \   'component': {
-\     'lineinfo': ' %3l:%-2v',
+\     'lineinfo': '%3l:%-2v',
 \   },
 \   'component_function': {
 \     'gitbranch': 'fugitive#head',
@@ -33,7 +33,7 @@ let g:lightline = {
 "\}
 
 let g:lightline#bufferline#show_number  = 1
-let g:lightline#bufferline#number_separator = ':'
+let g:lightline#bufferline#number_separator = ': '
 let g:lightline#bufferline#shorten_path = 0
 let g:lightline#bufferline#unnamed      = '[No Name]'
 let g:lightline#bufferline#clickable = 1
