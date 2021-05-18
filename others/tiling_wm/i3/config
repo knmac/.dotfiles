@@ -212,18 +212,11 @@ exec_always picom --experimental-backends
 # Simple X hotkey deamon
 exec_always --no-startup-id sxhkd
 
-# Polybar
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
-
 # Monitor settings
 exec_always "$HOME/.screenlayout/default.sh"
 
 # Wallpaper settings
 exec_always nitrogen --restore
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec_always --no-startup-id nm-applet
 
 # Autolock the screen. Place mouse at the bottom right to avoid autolock
 exec_always xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/i3lock.sh"
@@ -232,8 +225,15 @@ exec_always xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/i3lock.sh
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/i3lock.sh"
 
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec_always --no-startup-id nm-applet
+
 # Dropbox
-#exec_always caja-dropbox start
+#exec_always dropbox start
+
+# Polybar (should be after loading other tray icons first)
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 
 # -----------------------------------------------------------------------------
