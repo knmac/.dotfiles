@@ -9,6 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="typewritten/typewritten"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -101,6 +102,14 @@ source $ZSH/oh-my-zsh.sh
 # Turn on edit command line mode (Ctrl-x Ctrl-e)
 autoload -U edit-command-line
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+# Configure typewritten theme
+#TYPEWRITTEN_PROMPT_LAYOUT="multiline"
+#TYPEWRITTEN_RELATIVE_PATH="adaptive"
+
 # Configure zsh highlighting
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
@@ -132,6 +141,9 @@ elif type xsel &> /dev/null; then
   alias pbpaste='xsel --clipboard --output'
 fi
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PATH="$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 alias sim="nvim -u $HOME/.config/nvim/init_simple.vim"
+
+#source "$HOME/tools/add_tools.sh"

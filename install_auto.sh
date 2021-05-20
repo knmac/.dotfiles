@@ -27,7 +27,9 @@ sudo apt install bat ripgrep
 #cp oh-my-zsh/custom/themes/custom-bullet.zsh-theme ~/.oh-my-zsh/custom/themes 
 
 # Install p10k theme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes"
+# Install typewritten theme
+#git clone https://github.com/reobin/typewritten "$ZSH_CUSTOM/themes"
 
 
 # -----------------------------------------------------------------------------
