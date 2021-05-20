@@ -85,7 +85,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -94,13 +94,15 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-"augroup mygroup
-"    autocmd!
-"    " Setup formatexpr specified filetype(s).
-"    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-"    " Update signature help on jump placeholder.
-"    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-"augroup end
+augroup mygroup
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    "autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    "autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    " Disable coc suggestion for Markdown and plaintext
+    autocmd FileType markdown,text let b:coc_suggest_disable = 1
+augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
@@ -143,8 +145,6 @@ nmap <leader>f  <Plug>(coc-format-selected)
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings using CoCList:
-" Show all diagnostics.
-"nnoremap <silent> <F9>      :<C-u>CocList diagnostics<cr>
 "" Show all diagnostics.
 "nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 "" Manage extensions.
