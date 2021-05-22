@@ -225,15 +225,15 @@ exec_always xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/i3lock.sh
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/i3lock.sh"
 
+# Polybar
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec_always --no-startup-id nm-applet
 
 # Dropbox
-#exec_always dropbox start
-
-# Polybar (should be after loading other tray icons first)
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+exec_always caja-dropbox start
 
 
 # -----------------------------------------------------------------------------
