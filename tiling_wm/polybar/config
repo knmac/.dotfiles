@@ -16,8 +16,6 @@ include-file = ~/.config/polybar/modules/sysmenu.ini
 include-file = ~/.config/polybar/modules/i3.ini
 include-file = ~/.config/polybar/modules/title.ini
 
-include-file = ~/.config/polybar/modules/weather.ini
-
 include-file = ~/.config/polybar/modules/filesystem.ini
 include-file = ~/.config/polybar/modules/cpu.ini
 include-file = ~/.config/polybar/modules/memory.ini

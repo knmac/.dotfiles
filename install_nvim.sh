@@ -15,5 +15,5 @@ cp -r nvim-linux64/* $HOME/.local
 rm -r nvim-linux64
 rm nvim-linux64.tar.gz
 
-ln -s $HOME/dotfiles/nvim ~/.config/nvim
+ln -sf $HOME/dotfiles/nvim ~/.config/nvim
 nvim

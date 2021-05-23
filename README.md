@@ -79,7 +79,7 @@ pip3 install --user --upgrade pynvim
 
 ### 2.2. Cheatsheet
 
-[Neovim cheatsheet](nvim_cheatsheet.md)
+[Neovim cheatsheet](cheatsheets/nvim_cheatsheet.md)
 
 
 ## 3. Tmux
@@ -97,7 +97,7 @@ export LD_LIBRARY_PATH="$HOME/.local/lib":$LD_LIBRARY_PATH
 
 ### 3.2. Cheatsheet
 
-[Tmux cheatsheet](tmux_cheatsheet.md)
+[Tmux cheatsheet](cheatsheets/tmux_cheatsheet.md)
 
 ## 4. Some other tools that I like
 

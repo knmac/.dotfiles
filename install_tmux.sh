@@ -58,5 +58,5 @@ rm -rf "$HOME/tmux_tmp"
 echo "$HOME/.local/bin/tmux is now available. You can optionally add $HOME/.local/bin to your PATH."
 
 # link config
-ln -s "$HOME/dotfiles/tmux/.tmux.conf" "$HOME/.tmux.conf"
-ln -s "$HOME/dotfiles/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
+ln -sf "$HOME/dotfiles/tmux/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$HOME/dotfiles/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
