@@ -1,7 +1,0 @@
-#!/bin/bash -e
-
-for file in *.png
-do
-    echo "Converting $file"
-    convert "$file" -negate "$file"
-done

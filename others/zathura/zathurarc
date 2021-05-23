@@ -4,25 +4,3 @@ set page-padding    10
 set recolor-keephue true
 set smooth-scroll   true
 set selection-clipboard clipboard
-
-
-# key bindings
-map [normal]        <F11> toggle_fullscreen
-map [fullscreen]    <F11> toggle_fullscreen
-
-map [normal]        D toggle_page_mode
-map [normal]        r reload
-map [normal]        R rotate
-map [normal]        K zoom in
-map [normal]        J zoom out
-map [normal]        i recolor
-map [normal]        p print
-
-
-map [fullscreen]    D toggle_page_mode
-map [fullscreen]    r reload
-map [fullscreen]    R rotate
-map [fullscreen]    K zoom in
-map [fullscreen]    J zoom out
-map [fullscreen]    i recolor
-map [fullscreen]    p print
