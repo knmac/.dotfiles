@@ -102,10 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # Turn on edit command line mode (Ctrl-x Ctrl-e)
 autoload -U edit-command-line
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-#typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
 # Configure typewritten theme
 #TYPEWRITTEN_PROMPT_LAYOUT="multiline"
 #TYPEWRITTEN_RELATIVE_PATH="adaptive"
@@ -116,6 +112,10 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # Configure zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
+# Disabling suggestion for large buffers
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+# Enable Asynchronous Mode
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 # Press Ctrl+[space] to accept the suggestion
 bindkey '^ ' autosuggest-accept
 
@@ -132,7 +132,7 @@ if type bat &> /dev/null; then
   export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
 fi
 
-# Aliases and exports
+# Aliases
 if type xclip &> /dev/null; then
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
@@ -141,9 +141,12 @@ elif type xsel &> /dev/null; then
   alias pbpaste='xsel --clipboard --output'
 fi
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export PATH="$HOME/.local/bin:$PATH"
-export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 alias sim="nvim -u $HOME/.config/nvim/init_simple.vim"
 
-#source "$HOME/tools/add_tools.sh"
+# Exports
+export PATH="$HOME/.local/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export EDITOR="nvim -u $HOME/.config/nvim/init_simple.vim"
+
+#source "$HOME/.local/tools/add_tools.sh"
