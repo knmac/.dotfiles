@@ -16,11 +16,11 @@ super + w
 
 # Rofi menu
 super + space
-    rofi -no-lazy-grab -show run -modi "run#drun#window#ssh" -theme "~/.config/rofi/theme.rasi"
+    rofi -no-lazy-grab -show run -modi "run#drun#window#ssh"
 super + shift + space
-    rofi -no-lazy-grab -show drun -modi "run#drun#window#ssh" -theme "~/.config/rofi/theme.rasi"
+    rofi -no-lazy-grab -show drun -modi "run#drun#window#ssh"
 super + Tab
-    rofi -no-lazy-grab -show window -modi "run#drun#window#ssh" -theme "~/.config/rofi/theme.rasi"
+    rofi -no-lazy-grab -show window -modi "run#drun#window#ssh"
 
 # Power menu
 super + Escape
