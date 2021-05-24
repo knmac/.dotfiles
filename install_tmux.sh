@@ -10,6 +10,7 @@ set -e
 TMUX_VERSION=3.0
 LIBEVENT_VERSION=2.1.11
 NCURSES_VERSION=6.1
+DOTFILES_ROOT="$HOME/dotfiles"
 
 # create our directories
 mkdir -p "$HOME/.local" "$HOME/tmux_tmp"
@@ -58,5 +59,5 @@ rm -rf "$HOME/tmux_tmp"
 echo "$HOME/.local/bin/tmux is now available. You can optionally add $HOME/.local/bin to your PATH."
 
 # link config
-ln -sf "$HOME/dotfiles/tmux/.tmux.conf" "$HOME/.tmux.conf"
-ln -sf "$HOME/dotfiles/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
+ln -sf "$DOTFILES_ROOT/tmux/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$DOTFILES_ROOT/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"

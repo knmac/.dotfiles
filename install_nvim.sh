@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 NVIM_VERSION="v0.4.4"
+DOTFILES_ROOT="$HOME/dotfiles"
 
 echo "Install NeoVim..."
 
@@ -15,5 +16,4 @@ cp -r nvim-linux64/* $HOME/.local
 rm -r nvim-linux64
 rm nvim-linux64.tar.gz
 
-ln -sf $HOME/dotfiles/nvim ~/.config/nvim
-nvim
+ln -sf $DOTFILES_ROOT/nvim $HOME/.config/nvim

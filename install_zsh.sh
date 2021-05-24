@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+DOTFILES_ROOT="$HOME/dotfiles"
+
 echo "Automatically install and set up the packages. Requires sudo"
 
 # -----------------------------------------------------------------------------
@@ -20,13 +22,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/
 # Install bat for syntax highlighting, ripgrep for file finder (with a string)
 sudo apt install bat ripgrep
 
-# Copy the settings over. Deprecated, use p10k for better options
-#cp oh-my-zsh/custom/themes/custom-bullet.zsh-theme ~/.oh-my-zsh/custom/themes 
-
 # Install p10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes"
 # Install typewritten theme
 #git clone https://github.com/reobin/typewritten "$ZSH_CUSTOM/themes"
 
 # Copy zshrc over
-cp zsh/.zshrc "$HOME"
+cp $DOTFILES_ROOT/zsh/.zshrc "$HOME"
