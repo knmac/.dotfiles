@@ -10,8 +10,8 @@
 | Navigate between files and folders                        | `F3`               |
 | Navigate between functions (tags)                         | `F4`               |
 | Show (interactive) buffer list                            | `F5`               |
-| Previous buffer                                           | `F6`               |
-| Next buffer                                               | `F7`               |
+| Previous buffer                                           | `F6` (or `Alt-h`)  |
+| Next buffer                                               | `F7` (or `Alt-l`)  |
 | Close the current buffer (and switch to the previous one) | `F8`               |
 | Open error list                                           | `F9`               |
 | Run the `make` command (required to set up Makefile)      | `F10`              |
