@@ -49,6 +49,7 @@ separator = "%{F#555555}|%{F-}"
 scroll-up = "#i3.prev"
 scroll-down = "#i3.next"
 
-tray-position = right
-tray-background = ${colors.bg}
-tray-detached = false
+tray-position = none
+#tray-position = right
+#tray-background = ${colors.bg}
+#tray-detached = false

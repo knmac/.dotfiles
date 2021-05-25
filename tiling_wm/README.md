@@ -4,7 +4,7 @@
 
 ```bash
 sudo add-apt-repository ppa:kgilmer/speed-ricer
-sudo apt install i3-gaps lxappearance nemo polybar rofi arandr sxhkd xclip xss-lock xautolock scrot nitrogen
+sudo apt install i3-gaps lxappearance nemo polybar rofi arandr sxhkd xclip xss-lock xautolock scrot nitrogen trayer
 ```
 
 ## i3lock-color

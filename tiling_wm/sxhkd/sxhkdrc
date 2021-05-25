@@ -22,6 +22,10 @@ super + shift + space
 super + Tab
     rofi -no-lazy-grab -show window -modi "run#drun#window#ssh"
 
+# Systemtray
+super + t
+    "$HOME/.config/trayer_toggle.sh"
+
 # Power menu
 super + Escape
     "$HOME/.config/polybar/scripts/powermenu.sh"
