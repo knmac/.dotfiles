@@ -232,6 +232,9 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec_always --no-startup-id nm-applet
 
+# Bluetooth manager
+exec_always blueman-applet
+
 # Dropbox
 exec_always caja-dropbox start
 
