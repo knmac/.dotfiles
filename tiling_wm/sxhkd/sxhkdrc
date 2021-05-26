@@ -24,7 +24,7 @@ super + Tab
 
 # Systemtray
 super + t
-    "$HOME/.config/trayer_toggle.sh"
+    "$HOME/.config/trayer/trayer_toggle.sh"
 
 # Power menu
 super + Escape
