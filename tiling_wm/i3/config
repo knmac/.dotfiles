@@ -233,10 +233,10 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 exec_always --no-startup-id nm-applet
 
 # Bluetooth manager
-exec_always blueman-applet
+exec_always --no-startup-id blueman-applet
 
 # Dropbox
-exec_always caja-dropbox start
+exec_always dropbox start
 
 
 # -----------------------------------------------------------------------------
