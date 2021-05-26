@@ -240,6 +240,7 @@ exec_always dropbox start
 
 
 # -----------------------------------------------------------------------------
-# Windows
+# Windows rules
 # -----------------------------------------------------------------------------
 for_window [title="Figure *"] floating enable
+for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable
