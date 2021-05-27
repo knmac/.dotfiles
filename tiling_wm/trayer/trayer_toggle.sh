@@ -7,6 +7,7 @@ if [[ ! -f $TMP_FILE ]]; then
            --align right \
            --SetDockType false \
            --expand true \
+           --heighttype request \
            --width 10 \
            --transparent true \
            --alpha 255 \

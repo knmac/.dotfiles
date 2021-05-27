@@ -244,3 +244,4 @@ exec_always dropbox start
 # -----------------------------------------------------------------------------
 for_window [title="Figure *"] floating enable
 for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable
+for_window [class="meteo-qt"] floating enable
