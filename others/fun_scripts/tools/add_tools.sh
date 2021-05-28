@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-ROOT="$HOME/tools"
+#SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+SCRIPT_DIR="$HOME/.local/tools"
 
-source "$ROOT/connect.sh"
-source "$ROOT/fortune_cow.sh"
-source "$ROOT/imageme.sh"
-source "$ROOT/lookup.sh"
-source "$ROOT/rangercd.sh"
+source "$SCRIPT_DIR/tunnel.sh"
+source "$SCRIPT_DIR/auto_cow.sh"
+source "$SCRIPT_DIR/imageme.sh"
+source "$SCRIPT_DIR/lookup.sh"
+source "$SCRIPT_DIR/rangercd.sh"

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-fortune_cow() {
+# Fun script to auto print cowsay and update
+auto_cow() {
     if [ -z $1 ]; then
         SLEEP=10
     else

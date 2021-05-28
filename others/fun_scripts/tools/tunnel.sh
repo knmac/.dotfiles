@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-connect() {
+# Simple wrapper for port-forwarding using ssh
+tunnel() {
     echo "USAGE: connect [HOST] [PORT]"
 
     if [ -z $1 ]; then

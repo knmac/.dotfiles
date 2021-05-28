@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Wrapper over `dict` command for better output
 lookup() {
     echo "Usage: lookup [WORD]"
     if [ -z $1 ]; then
