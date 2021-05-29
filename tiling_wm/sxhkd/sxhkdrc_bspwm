@@ -1,0 +1,22 @@
+# =============================================================================
+# BSPWM keybindings
+# =============================================================================
+# Reset bspwm
+super + shift + r
+    bspc wm -r
+
+# Kill focused window
+super + shift + q
+    bspc node -k
+
+# Change focus ans swap
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+super + {_,shift + }{Left,Down,Up,Right}
+    bspc node -{f,s} {west,south,north,east}
+
+# Fullscreen mode
+
+# Change workspace
+super + {_,shift + }{1-9,0}
+      bspc {desktop -f,node -d} '^{1-9,10}' --follow

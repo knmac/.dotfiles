@@ -14,6 +14,7 @@ include-file = ~/.config/polybar/colors.ini
 
 include-file = ~/.config/polybar/modules/sysmenu.ini
 include-file = ~/.config/polybar/modules/i3.ini
+include-file = ~/.config/polybar/modules/bspwm.ini
 include-file = ~/.config/polybar/modules/title.ini
 
 include-file = ~/.config/polybar/modules/filesystem.ini
@@ -29,7 +30,7 @@ include-file = ~/.config/polybar/modules/date.ini
 [bar/mybar]
 ; =============================================================================
 monitor = ${env:MONITOR:}
-modules-left = sysmenu i3 title
+modules-left = sysmenu i3 bspwm title
 modules-center =
 modules-right = filesystem cpu memory backlight pulseaudio battery date
 module-margin = 1

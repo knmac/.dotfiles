@@ -6,7 +6,7 @@ super + Return
 super + e
     nemo
 
-# Conrol center
+# Control center
 super + c
     gnome-control-center
 
