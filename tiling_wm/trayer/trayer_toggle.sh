@@ -8,9 +8,8 @@ if [[ ! -f $TMP_FILE ]]; then
            --SetDockType false \
            --expand true \
            --heighttype request \
-           --width 10 \
-           --transparent true \
-           --alpha 255 \
+           --widthtype request \
+           --transparent false \
            --distancefrom top \
            --distance 10 \
            --iconspacing 5 \
