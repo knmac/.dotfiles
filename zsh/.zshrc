@@ -142,6 +142,7 @@ elif type xsel &> /dev/null; then
 fi
 
 alias sim="nvim -u $HOME/.config/nvim/init_simple.vim"
+alias dotfiles="git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles"
 
 # Exports
 export PATH="$HOME/.local/bin:$PATH"
