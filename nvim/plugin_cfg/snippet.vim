@@ -5,7 +5,7 @@ autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace
 " Shortcut for Python breakpoint (ipdb) - on the previous line
 autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
 
-" fill rest of line with characters
+" Fill rest of line with characters
 function! FillLine( str )
     " set tw to the desired total length
     let tw = &textwidth
@@ -24,6 +24,17 @@ endfunction
 nnoremap <leader>- :call FillLine('-')<CR>
 nnoremap <leader>= :call FillLine('=')<CR>
 
+" Clear registered macros
+function! ClearRegisters()
+    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
+    let i=0
+    while (i<strlen(regs))
+        exec 'let @'.regs[i].'=""'
+        let i=i+1
+    endwhile
+endfunction
+ 
+command! ClearRegisters call ClearRegisters()
 
 " ----------------------------------------------------------------------------
 " Custom snippets
