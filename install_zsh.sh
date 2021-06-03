@@ -23,7 +23,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/
 sudo apt install bat ripgrep
 
 # Install p10k theme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
 # Install typewritten theme
 #git clone https://github.com/reobin/typewritten "$ZSH_CUSTOM/themes"
 
