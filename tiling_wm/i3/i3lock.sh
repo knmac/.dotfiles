@@ -37,7 +37,8 @@ i3lock \
   --datecolor=$blue \
   --timecolor=$blue \
   --color="#00000077" \
-  --screen 1 \
+  --screen 0 \
+  --nofork \
   --clock \
   --indicator \
   --timestr="%H:%M:%S" \
