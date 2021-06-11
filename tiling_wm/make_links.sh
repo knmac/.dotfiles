@@ -8,3 +8,5 @@ ln -sf $ROOT/polybar $HOME/.config
 ln -sf $ROOT/rofi $HOME/.config
 ln -sf $ROOT/sxhkd $HOME/.config
 ln -sf $ROOT/trayer $HOME/.config
+
+ln -sf $ROOT/bspwm $HOME/.config
