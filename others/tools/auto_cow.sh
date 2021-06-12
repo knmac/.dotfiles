@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Fun script to auto print cowsay and update
+# Dependencies: fortune, cowsay, lolcat
 auto_cow() {
     if [ -z $1 ]; then
         SLEEP=10

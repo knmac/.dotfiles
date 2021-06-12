@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Wrapper over `dict` command for better output
+# Dependecies: dict, colorit
 lookup() {
     echo "Usage: lookup [WORD]"
     if [ -z $1 ]; then

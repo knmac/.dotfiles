@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-SCRIPT_DIR="$HOME/.local/tools"
+#SCRIPT_DIR="$HOME/.local/tools"
+SCRIPT_DIR=$(dirname $0)
 
 source "$SCRIPT_DIR/tunnel.sh"
 source "$SCRIPT_DIR/auto_cow.sh"
