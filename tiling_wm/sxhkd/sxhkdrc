@@ -16,9 +16,9 @@ super + w
 
 # Rofi menu
 super + space
-    rofi -no-lazy-grab -show run -modi "run#drun#window#ssh"
+    rofi -no-lazy-grab -show drun -modi "drun#run#window#ssh"
 super + shift + space
-    rofi -no-lazy-grab -show drun -modi "run#drun#window#ssh"
+    rofi -no-lazy-grab -show run -modi "drun#run#window#ssh"
 super + Tab
     rofi -no-lazy-grab -show window -modi "run#drun#window#ssh"
 
