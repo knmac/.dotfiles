@@ -5,17 +5,27 @@
 super + shift + r
     bspc wm -r
 
-# Kill focused window
+# Close focused window
 super + shift + q
-    bspc node -k
+    bspc node -c
 
-# Change focus ans swap
+# Change focus and swap
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 super + {_,shift + }{Left,Down,Up,Right}
     bspc node -{f,s} {west,south,north,east}
 
-# Fullscreen mode
+# Focus to the next/previous desktop in the current monitor
+super + {comma,period}
+    bspc desktop -f {prev,next}.local
+
+# Toggle fullscreen
+super + f
+    bspc node -t \~fullscreen
+
+# Toggle floating
+super + shift + f
+    bspc node -t \~floating
 
 # Change workspace
 super + {_,shift + }{1-9,0}
