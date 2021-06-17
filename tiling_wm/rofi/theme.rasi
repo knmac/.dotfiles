@@ -1,28 +1,20 @@
 configuration {
-    lines:                          10;
-    columns:                        2;
     font:                           "FiraCode Nerd Font 12";
-    bw:                             0;
     location:                       0;
-    padding:                        0;
     fixed-num-lines:                true;
     show-icons:                     true;
     sidebar-mode:                   true;
-    separator-style:                "none";
-    hide-scrollbar:                 true;
-    fullscreen:                     false;
-    fake-transparency:              false;
     scroll-method:                  1;
-    window-format:                  "[{w}] ··· {c} ···   {t}";
+    /*window-format:                  "[{w}] ··· {c} ···   {t}";*/
     click-to-exit:                  true;
-    show-match:                     true;
     combi-hide-mode-prefix:         false;
-    display-window:                 "  window ";
-    display-windowcd:               "  ";
-    display-run:                    "  run ";
-    display-ssh:                    "  ssh ";
-    display-drun:                   "  drun ";
-    display-combi:                  "  ";
+    display-window:                 " window";
+    display-windowcd:               " windowcd";
+    display-run:                    " run";
+    display-ssh:                    " ssh";
+    display-drun:                   " drun";
+    display-combi:                  " combi";
+    display-keys:                   " keys";
 }
 
 /*define colors*/
@@ -81,6 +73,12 @@ inputbar {
     padding:                        1px;
     children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
+textbox-prompt-colon {                                                
+    text-color:                     inherit;                                              
+    expand:                         false;                                                    
+    margin:                         0 0.3em 0em 0em;
+    str:                            ":";
+}
 
 mainbox {
     border:                         0px;
@@ -89,11 +87,12 @@ mainbox {
 }
 
 listview {
+    lines:                          10;
     fixed-height:                   0;
     border:                         0px;
     border-color:                   @ac;
     spacing:                        4px;
-    scrollbar:                      false;
+    scrollbar:                      true;
     padding:                        5px 5px 0px 5px;
 }
 
@@ -101,6 +100,10 @@ element {
     border:                         0px;
     border-radius:                  100%;
     padding:                        5px;
+}
+element-icon {
+    size:                           2ch;
+    padding:                        0em 1em 0em 0em;
 }
 element normal.normal {
     background-color:               @bg;
