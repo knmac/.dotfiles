@@ -4,7 +4,7 @@ uptime=$(uptime -p | sed -e 's/up //g')
 
 #rofi_command="rofi -theme $dir/powermenu.rasi"
 rofi_command="rofi"
-i3lock_pth="~/.config/i3/i3lock.sh"
+i3lock_pth="~/.config/polybar/scripts/i3lock.sh"
 
 # Options
 shutdown="  Shutdown"
@@ -29,7 +29,7 @@ msg() {
 # Variable passed to rofi
 options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 
-chosen="$(echo -e "$options" | $rofi_command -theme-str 'listview { scrollbar: false; }' -p "Uptime: $uptime" -dmenu -i -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -theme-str "listview { scrollbar: false; }" -p "Uptime: $uptime" -dmenu -i -selected-row 0)"
 case $chosen in
     $shutdown)
         ans=$(confirm_exit &)
@@ -52,12 +52,7 @@ case $chosen in
         fi
         ;;
     $lock)
-        #if [[ -f /usr/bin/i3lock ]]; then
-        #    i3lock
-        #elif [[ -f /usr/bin/betterlockscreen ]]; then
-        #    betterlockscreen -l
-        #fi
-        ~/.config/i3/i3lock.sh
+        exec $i3lock_pth
         ;;
     $suspend)
         ans=$(confirm_exit &)
