@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
 
-## Author  : Aditya Shakya
-## Mail    : adi1090x@gmail.com
-## Github  : @adi1090x
-## Twitter : @adi1090x
-
-#dir="~/.config/polybar/hack/scripts/rofi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_theme="~/.config/rofi/theme.rasi"
-rofi_command="rofi -theme $rofi_theme"
-i3lock_pth="~/.config/i3/i3lock.sh"
 #rofi_command="rofi -theme $dir/powermenu.rasi"
+rofi_command="rofi"
+i3lock_pth="~/.config/i3/i3lock.sh"
 
 # Options
 shutdown="  Shutdown"
@@ -25,19 +18,18 @@ confirm_exit() {
     rofi -dmenu\
         -i\
         -no-fixed-num-lines\
-        -p "Are You Sure? : "\
-        -theme $rofi_theme
+        -p "Are You Sure? : "
 }
 
 # Message
 msg() {
-    rofi -theme "$rofi_theme" -e "Available Options  -  yes / y / no / n"
+    rofi -e "Available Options  -  yes / y / no / n"
 }
 
 # Variable passed to rofi
 options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 
-chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -i -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -theme-str 'listview { scrollbar: false; }' -p "Uptime: $uptime" -dmenu -i -selected-row 0)"
 case $chosen in
     $shutdown)
         ans=$(confirm_exit &)
