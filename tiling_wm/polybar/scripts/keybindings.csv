@@ -1,0 +1,47 @@
+Terminal,super + 
+Key bindings,super + /
+File explorer,super + e
+Control center,super + c
+Random wallpaper,super + w
+System tray,super + t
+Rofi-drun,super + space
+Rofi-run,super + shift + space
+Rofi-window,super + Tab
+I3-reload,super + shift + c
+I3-restart,super + shift + r
+I3-window focus,super + {h/j/k/l}
+I3-window focus (alt),super + {←/↓/↑/→}
+I3-window move,super + shift + {h/j/k/l}
+I3-window move (alt),super + shift + {←/↓/↑/→}
+I3-window resize,super + r; {h/j/k/l}
+I3-window resize (alt),super + r; {←/↓/↑/→}
+I3-window resize (),super + RightClick
+I3-window (float) move (),super + LeftClick
+I3-window kill,super + shift + q
+I3-scratchpad show,super + -
+I3-scratchpad make,super + shift + -
+I3-workspace focus,super + {1/2/.../0}
+I3-workspace move,super + shift + {1/2/.../0}
+I3-workspace-prev focus,super + PageUp
+I3-workspace-next focus,super + PageDown
+I3-workspace-prev move,super + shift + PageUp
+I3-workspace-next move,super + shift + PageDown
+I3-monitor-left focus,super + <
+I3-monitor-right focus,super + >
+I3-monitor-left move (window),super + shift + <
+I3-monitor-right move (window),super + shift + >
+I3-monitor-left move (workspace),super + ctrl + shift + <
+I3-monitor-right move (workspace),super + ctrl + shift + >
+I3-split horz,super + ctrl + h
+I3-split vert,super + ctrl + v
+I3-split horz/vert toggle,super + ctrl + BackSpace
+I3-layout stacking,super + F1
+I3-layout tabbed,super + F2
+I3-layout split,super + F3
+I3-fullscreen,super + f
+I3-floating toggle,super + shift + f
+I3-focus tiling/floating,super + shift + t
+Screenshot-full,Print
+Screenshot-area,shift + Print
+Screenshot-full (cboard),ctrl + Print
+Screenshot-area (cboard),ctrl + shift + Print

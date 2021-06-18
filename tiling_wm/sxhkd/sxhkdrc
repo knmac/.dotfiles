@@ -30,6 +30,10 @@ super + t
 super + Escape
     "$HOME/.config/polybar/scripts/powermenu.sh"
 
+# Show key bindings
+super + slash
+    "$HOME/.config/polybar/scripts/find_keybindings.sh"
+
 # Screenshot
 Print
     sleep 0.2; \
