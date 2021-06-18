@@ -221,11 +221,11 @@ exec_always "$HOME/.screenlayout/default.sh"
 exec_always nitrogen --restore
 
 # Autolock the screen. Place mouse at the bottom right to avoid autolock
-exec_always xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/i3lock.sh"
+exec_always xautolock -time 30 -corners 000- -locker "$HOME/.config/polybar/scripts/i3lock.sh"
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/i3lock.sh"
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- "$HOME/.config/polybar/scripts/i3lock.sh"
 
 # Polybar
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
