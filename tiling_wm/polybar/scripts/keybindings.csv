@@ -7,6 +7,9 @@ System tray,super + t
 Rofi-drun,super + space
 Rofi-run,super + shift + space
 Rofi-window,super + Tab
+I3-fullscreen,super + f
+I3-floating toggle,super + shift + f
+I3-focus tiling/floating,super + shift + t
 I3-reload,super + shift + c
 I3-restart,super + shift + r
 I3-window focus,super + {h/j/k/l}
@@ -38,10 +41,7 @@ I3-split horz/vert toggle,super + ctrl + BackSpace
 I3-layout stacking,super + F1
 I3-layout tabbed,super + F2
 I3-layout split,super + F3
-I3-fullscreen,super + f
-I3-floating toggle,super + shift + f
-I3-focus tiling/floating,super + shift + t
 Screenshot-full,Print
 Screenshot-area,shift + Print
-Screenshot-full (cboard),ctrl + Print
-Screenshot-area (cboard),ctrl + shift + Print
+Screenshot-full (clipboard),ctrl + Print
+Screenshot-area (clipboard),ctrl + shift + Print
