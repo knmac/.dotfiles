@@ -29,12 +29,12 @@ I3-workspace-prev focus,super + PageUp
 I3-workspace-next focus,super + PageDown
 I3-workspace-prev move,super + shift + PageUp
 I3-workspace-next move,super + shift + PageDown
-I3-monitor-left focus,super + ＜
-I3-monitor-right focus,super + ＞
-I3-monitor-left move (window),super + shift + ＜
-I3-monitor-right move (window),super + shift + ＞
-I3-monitor-left move (workspace),super + ctrl + shift + ＜
-I3-monitor-right move (workspace),super + ctrl + shift + ＞
+I3-monitor-left focus,super + <
+I3-monitor-right focus,super + >
+I3-monitor-left move (window),super + shift + <
+I3-monitor-right move (window),super + shift + >
+I3-monitor-left move (workspace),super + ctrl + shift + <
+I3-monitor-right move (workspace),super + ctrl + shift + >
 I3-split horz,super + ctrl + h
 I3-split vert,super + ctrl + v
 I3-split horz/vert toggle,super + ctrl + BackSpace
