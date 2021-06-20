@@ -2,11 +2,13 @@ Terminal,super + 
 Key bindings,super + /
 File explorer,super + e
 Control center,super + c
-Random wallpaper,super + w
 System tray,super + t
+Random wallpaper,super + w
+------------------------------------------------------------
 Rofi-drun,super + space
 Rofi-run,super + shift + space
 Rofi-window,super + Tab
+------------------------------------------------------------
 I3-fullscreen,super + f
 I3-floating toggle,super + shift + f
 I3-focus tiling/floating,super + shift + t
@@ -38,9 +40,16 @@ I3-monitor-right move (workspace),super + ctrl + shift + >
 I3-split horz,super + ctrl + h
 I3-split vert,super + ctrl + v
 I3-split horz/vert toggle,super + ctrl + BackSpace
+I3-gaps increase,super + z
+I3-gaps decrease,super + shift + z
 I3-layout stacking,super + F1
 I3-layout tabbed,super + F2
 I3-layout split,super + F3
+------------------------------------------------------------
+Notification-history,ctrl + `
+Notification-close,ctrl + space
+Notification-close all,ctrl + shift + space
+------------------------------------------------------------
 Screenshot-full,Print
 Screenshot-area,shift + Print
 Screenshot-full (clipboard),ctrl + Print
