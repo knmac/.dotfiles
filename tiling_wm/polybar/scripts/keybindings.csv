@@ -46,8 +46,8 @@ I3-layout stacking,super + F1
 I3-layout tabbed,super + F2
 I3-layout split,super + F3
 ------------------------------------------------------------
-Notification-history,super + `
-Notification-close all,super + shift + `
+Notification-history,super + shift + `
+Notification-close all,super + `
 ------------------------------------------------------------
 Screenshot-full,Print
 Screenshot-area,shift + Print
