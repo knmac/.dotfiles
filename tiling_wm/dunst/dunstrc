@@ -31,10 +31,12 @@ class = Dunst
 transparency = 30
 
 [shortcuts]
-close = ctrl+space
-close_all = ctrl+shift+space
-history = ctrl+grave
-context = ctrl+shift+period
+/*close = ctrl+space*/
+/*close_all = ctrl+shift+space*/
+/*history = ctrl+grave*/
+/*context = ctrl+shift+period*/
+close_all = mod4+shift+grave
+history = mod4+grave
 
 [urgency_low]
 timeout = 4
