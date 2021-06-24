@@ -232,10 +232,10 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec_always --no-startup-id "sleep 10; nm-applet"
+exec_always --no-startup-id "nm-applet"
 
 # Bluetooth manager
-exec_always --no-startup-id "sleep 10; blueman-applet"
+exec_always --no-startup-id "blueman-applet"
 
 # Dropbox
 exec_always "sleep 10; dropbox start"
