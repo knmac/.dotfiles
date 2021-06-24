@@ -143,6 +143,9 @@ fi
 
 alias sim="nvim -u $HOME/.config/nvim/init_simple.vim"
 alias dotfiles="git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles"
+alias notes="git --git-dir=$HOME/Documents/my_notes/.git --work-tree=$HOME/Documents/my_notes"
+alias dotfiles_acp="dotfiles add . && dotfiles commit -m update && dotfiles push"
+alias notes_acp="notes add . && notes commit -m update && notes push"
 
 # Exports
 export PATH="$HOME/.local/bin:$PATH"
@@ -150,4 +153,4 @@ export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="nvim -u $HOME/.config/nvim/init_simple.vim"
 
-#source "$HOME/.local/tools/add_tools.sh"
+source "$HOME/dotfiles/others/tools/add_tools.sh"

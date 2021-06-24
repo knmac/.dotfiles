@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-NODE_VERSION="v16.2.0"
+if [ -z $1 ]; then
+    NODE_VERSION="v16.4.0"
+else
+    NODE_VERSION=$1
+fi
+echo $NODE_VERSION
 
 echo "Install and update NodeJS..."
 wget "https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-linux-x64.tar.xz"

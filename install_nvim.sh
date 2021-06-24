@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-NVIM_VERSION="v0.4.4"
+if [ -z $1 ]; then
+    NVIM_VERSION="v0.4.4"
+else
+    NVIM_VERSION=$1
+fi
 DOTFILES_ROOT="$HOME/dotfiles"
 
 echo "Install NeoVim..."
