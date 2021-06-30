@@ -1,9 +1,9 @@
 Terminal,super + 
 Key bindings,super + /
 File explorer,super + e
-Control center,super + c
+Settings,super + s
 System tray,super + t
-Calculator,super + q
+Calculator,super + c
 Random wallpaper,super + w
 ------------------------------------------------------------
 Rofi-drun,super + space
