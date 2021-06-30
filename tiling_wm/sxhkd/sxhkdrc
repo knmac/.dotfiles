@@ -6,12 +6,12 @@ super + Return
 super + e
     pcmanfm
 
-# Control center
-super + c
+# Settings (Gnome control center)
+super + s
     gnome-control-center
 
 # Calculator (qalculate)
-super + q
+super + c
     qalculate
 
 # Random wallpaper
