@@ -26,6 +26,20 @@ Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'morhetz/gruvbox'
 
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'  " Allow :LspInstall <language>
+Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'hrsh7th/vim-vsnip'
+
+" dependencies
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+" telescope
+Plug 'nvim-telescope/telescope.nvim'
+
+
+
 call plug#end()
 
 " Install plugins the first time vim runs
@@ -44,6 +58,13 @@ source ~/.config/nvim/plugin_cfg/netrw.vim
 source ~/.config/nvim/plugin_cfg/snippet.vim
 
 source ~/.config/nvim/plugin_cfg/lightline.vim
+
+" Language servers
+source ~/.config/nvim/plugin_cfg/lspconfig.vim
+"luafile ~/.config/nvim/plugin_cfg/lua/lspconfig.lua
+luafile ~/.config/nvim/plugin_cfg/lua/lspinstall.lua
+luafile ~/.config/nvim/plugin_cfg/lua/compe.lua
+luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
 
 " ============================================================================
 " Key bindings

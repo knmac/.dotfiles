@@ -5,12 +5,11 @@ let use_coc = 1
 " Avoid modify this section, unless you are very sure of what you are doing
 
 let vim_plug_just_installed = 0
-let vim_plug_path = expand('~/.config/nvim/autoload/plug.vim')
+let vim_plug_path = expand('~/.local/share/nvim/site/autoload/plug.vim')
 if !filereadable(vim_plug_path)
     echo "Installing Vim-plug..."
     echo ""
-    silent !mkdir -p ~/.config/nvim/autoload
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     let vim_plug_just_installed = 1
 endif
 

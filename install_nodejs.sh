@@ -11,6 +11,5 @@ wget "https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-linux-x64.tar
 tar xvf node-${NODE_VERSION}-linux-x64.tar.xz -C $HOME/.local
 rm node-${NODE_VERSION}-linux-x64.tar.xz 
 
-ln -sf $HOME/.local/node-${NODE_VERSION}-linux-x64/bin/node $HOME/.local/bin/node
-ln -sf $HOME/.local/node-${NODE_VERSION}-linux-x64/bin/npm  $HOME/.local/bin/npm
-ln -sf $HOME/.local/node-${NODE_VERSION}-linux-x64/bin/npx  $HOME/.local/bin/npx
+ln -sf $HOME/.local/node-${NODE_VERSION}-linux-x64 $HOME/.local/nodejs
+echo "Remember to add ~/.local/nodejs/bin to your \$PATH"
