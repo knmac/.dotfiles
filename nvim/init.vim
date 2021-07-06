@@ -93,6 +93,9 @@ Plug 'akinsho/nvim-bufferline.lua'
 " File explorer tree
 Plug 'kyazdani42/nvim-tree.lua'
 
+" Show project structure
+Plug 'simrat39/symbols-outline.nvim'
+
 call plug#end()
 
 " Install plugins the first time vim runs
@@ -141,8 +144,9 @@ nnoremap <silent> <F2> :TodoQuickFix<CR>
 nnoremap <silent> <F3> :NvimTreeToggle<CR>
 
 " <F4>: Tag bar
-nnoremap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+nnoremap <silent> <F4> :SymbolsOutline<CR>
+"nnoremap <silent> <F4> :TagbarToggle<CR>
+"let g:tagbar_autofocus = 1
 
 " <F5>: Show buffer list
 nnoremap <silent> <F5> :Buffers<CR>
