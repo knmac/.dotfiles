@@ -59,7 +59,7 @@ Plug 'godlygeek/tabular'
 " Floating terminal
 Plug 'voldikss/vim-floaterm'
 
-" Icons with colors (required by lualine, nvim-bufferline, etc.)
+" Icons with colors (required by lualine, nvim-bufferline, nvim-tree, etc.)
 Plug 'kyazdani42/nvim-web-devicons'  
 
 
@@ -125,6 +125,7 @@ luafile ~/.config/nvim/plugin_cfg/lua/compe.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lualine.lua
 luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/todocomments.lua
+source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
 
 
 " =============================================================================
