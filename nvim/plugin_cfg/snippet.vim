@@ -1,4 +1,3 @@
-" ----------------------------------------------------------------------------
 " Shortcut for Python breakpoint (ipdb) - on the next line
 autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
@@ -9,7 +8,7 @@ autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace
 function! FillLine( str )
     " set tw to the desired total length
     let tw = &textwidth
-    if tw==0 | let tw = 79 | endif
+    if tw==0 | let tw = 80 | endif
     " strip trailing spaces first
     .s/[[:space:]]*$//
     " calculate total number of 'str's to insert
@@ -36,7 +35,7 @@ endfunction
  
 command! ClearRegisters call ClearRegisters()
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Custom snippets
 nnoremap ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
 nnoremap ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg

@@ -4,8 +4,16 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:signify_realtime = 1
 
 " mappings to jump to changed blocks
-nnoremap <leader>sn <plug>(signify-next-hunk)
-nnoremap <leader>sp <plug>(signify-prev-hunk)
+"nnoremap <leader>sn <plug>(signify-next-hunk)
+"nnoremap <leader>sp <plug>(signify-prev-hunk)
+
+" default updatetime 4000ms is not good for async update
+set updatetime=100
+
+" better signs
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '-'
+let g:signify_sign_change            = '~'
 
 " nicer colors
 "highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119

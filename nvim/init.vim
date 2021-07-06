@@ -127,7 +127,7 @@ luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/todocomments.lua
 
 
-" ============================================================================
+" =============================================================================
 " Basic key bindings
 " Search for file name (require FZF)
 nnoremap <silent> <C-P> :Files<CR>

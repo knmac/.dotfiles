@@ -1,14 +1,14 @@
-" ============================================================================
+" =============================================================================
 " Basic configurations
-" ============================================================================
+" =============================================================================
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Color and syntax highlighting
 syntax enable
 set termguicolors
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Look and feel
 set ls=2                        " always show status bar
 set mouse=a                     " use mouse
@@ -49,13 +49,13 @@ filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Splitting
 set splitright          " new verticals split appears on the right
 set splitbelow          " new horizontal split appears below
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Spaces and tabs
 set expandtab           " tabs are spaces
 set tabstop=4           " changes the width of the TAB character
@@ -69,14 +69,14 @@ set autoindent          " copy the indentation from the prev line, on a new line
 autocmd FileType make   set noexpandtab
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Copy to clipboard
 if has('unnamedplus')
     set clipboard=unnamed,unnamedplus
 endif
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
@@ -85,7 +85,7 @@ set hlsearch            " highlight matches
 nnoremap <leader><space> :nohlsearch<CR>
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Code folding
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
@@ -93,13 +93,13 @@ set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " set folding method by looking at indentation
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Vmap for maintaining visual mode after shifting > and <
 vmap < <gv
 vmap > >gv
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Some customized navigation
 " Go down wrapped lines
 nmap <A-j> gj
