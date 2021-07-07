@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ -z $1 ]; then
-    NVIM_VERSION="v0.4.4"
+    NVIM_VERSION="v0.5.0"
 else
     NVIM_VERSION=$1
 fi
