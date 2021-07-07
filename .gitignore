@@ -1,5 +1,4 @@
 nvim/autoload/
 nvim/plugged/
-nvim/session/
 nvim/.netrwhist
 others/vis/vis.log

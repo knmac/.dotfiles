@@ -59,6 +59,9 @@ Plug 'godlygeek/tabular'
 " Floating terminal
 Plug 'voldikss/vim-floaterm'
 
+" Icons without colors (for startify)
+Plug 'ryanoasis/vim-devicons'
+
 " Icons with colors (required by lualine, nvim-bufferline, nvim-tree, etc.)
 Plug 'kyazdani42/nvim-web-devicons'  
 
