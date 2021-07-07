@@ -4,7 +4,7 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
   indent = {
-    enable = true,
+    enable = false,  -- treesitter's indent is buggy
     disable = {},
   },
   ensure_installed = {
@@ -13,9 +13,13 @@ require'nvim-treesitter.configs'.setup {
     "cpp",
     "bash",
     "latex",
+    "bibtex",
     "json",
     "yaml",
     "html",
-    "css"
+    "css",
+    "lua",
+    "cmake",
+    "dockerfile"
   },
 }
