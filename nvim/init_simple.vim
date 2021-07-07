@@ -5,8 +5,8 @@ source ~/.config/nvim/vim_plug_init.vim
 " Active plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
+"Plug 'itchyny/lightline.vim'
+"Plug 'mengelbrecht/lightline-bufferline'
 Plug 'morhetz/gruvbox'
 
 call plug#end()
@@ -26,7 +26,7 @@ source ~/.config/nvim/plugin_cfg/basic.vim
 source ~/.config/nvim/plugin_cfg/netrw.vim
 source ~/.config/nvim/plugin_cfg/snippet.vim
 
-source ~/.config/nvim/plugin_cfg/lightline.vim
+"source ~/.config/nvim/plugin_cfg/lightline.vim
 
 " ============================================================================
 " Key bindings
