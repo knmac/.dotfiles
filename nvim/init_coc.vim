@@ -162,6 +162,9 @@ source ~/.config/nvim/plugin_cfg/airline.vim
 " Signify
 source ~/.config/nvim/plugin_cfg/signify.vim
 
+" Float-term
+source ~/.config/nvim/plugin_cfg/floatterm.vim
+
 " Search for file name (require FZF)
 nnoremap <silent> <C-P> :Files<CR>
 

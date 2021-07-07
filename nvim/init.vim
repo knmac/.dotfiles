@@ -115,6 +115,7 @@ source ~/.config/nvim/plugin_cfg/snippet.vim
 source ~/.config/nvim/plugin_cfg/startify.vim
 source ~/.config/nvim/plugin_cfg/indent.vim
 source ~/.config/nvim/plugin_cfg/signify.vim
+source ~/.config/nvim/plugin_cfg/floatterm.vim
 
 " Language servers + Lua config
 source ~/.config/nvim/plugin_cfg/lspconfig.vim
@@ -167,4 +168,3 @@ nnoremap <silent> <F8> :bp<CR>:bd #<CR>
 nnoremap <silent> <F10> :make<CR>
 
 " <F12>: Toggle Float-term
-let g:floaterm_keymap_toggle = '<F12>'
