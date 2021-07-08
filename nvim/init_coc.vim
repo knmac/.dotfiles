@@ -35,7 +35,7 @@ if use_coc
     " Require nodejs
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
-    # Plugins to replace coc.nvim extensions
+    " Plugins to replace coc.nvim extensions
 
     " File explorer
     Plug 'scrooloose/nerdtree'
