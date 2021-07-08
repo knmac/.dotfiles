@@ -141,7 +141,7 @@ elif type xsel &> /dev/null; then
   alias pbpaste='xsel --clipboard --output'
 fi
 
-alias svim="nvim -u $HOME/.config/nvim/init_simple.vim"
+alias bvim="nvim -u $HOME/.config/nvim/init_basic.vim"
 alias cvim="nvim -u $HOME/.config/nvim/init_coc.vim"
 alias dotfiles="git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles"
 alias notes="git --git-dir=$HOME/Documents/my_notes/.git --work-tree=$HOME/Documents/my_notes"
