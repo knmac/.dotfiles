@@ -35,7 +35,7 @@ nnoremap <silent> <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
 nnoremap <silent> <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
 nnoremap <silent> <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
 
-nnoremap <silent> <F9>       <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
+"nnoremap <silent> <F9>       <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
 nnoremap <silent> [d         <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> ]d         <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 

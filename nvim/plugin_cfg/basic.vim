@@ -100,12 +100,7 @@ vmap > >gv
 
 
 " -----------------------------------------------------------------------------
-" Some customized navigation
 " Go down wrapped lines
 nmap <A-j> gj
 " Go up wrapped lines
 nmap <A-k> gk
-" Previous buffer
-nmap <A-h> :bp<CR>
-" Next buffer
-nmap <A-l> :bn<CR>

@@ -3,10 +3,12 @@ source ~/.config/nvim/vim_plug_init.vim
 
 " =============================================================================
 " Active plugins
+" =============================================================================
 call plug#begin('~/.local/share/nvim/plugged')
 
+" -----------------------------------------------------------------------------
 " Vim-script plugins
-" ------------------
+" -----------------------------------------------------------------------------
 " Color schemes
 Plug 'morhetz/gruvbox'
 
@@ -49,8 +51,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'  
 
 
+" -----------------------------------------------------------------------------
 " Lua-based plugins, require nvim>=0.5
-" ------------------------------------
+" -----------------------------------------------------------------------------
 " Language Server Protocol for neovim, core plugin
 Plug 'neovim/nvim-lspconfig'
 
@@ -93,11 +96,17 @@ endif
 
 " =============================================================================
 " Basic configurations
+" =============================================================================
 colorscheme gruvbox
 
 source ~/.config/nvim/plugin_cfg/basic.vim
 source ~/.config/nvim/plugin_cfg/snippet.vim
+source ~/.config/nvim/plugin_cfg/keybindings.vim
 
+
+" =============================================================================
+" Plugin configurations
+" =============================================================================
 source ~/.config/nvim/plugin_cfg/startify.vim
 source ~/.config/nvim/plugin_cfg/indent.vim
 source ~/.config/nvim/plugin_cfg/signify.vim
@@ -113,44 +122,3 @@ luafile ~/.config/nvim/plugin_cfg/lua/lualine.lua
 luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/todocomments.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
-
-
-" =============================================================================
-" Basic key bindings
-" Search for file name (require FZF)
-nnoremap <silent> <C-P> :Files<CR>
-
-" Search for file content (require FZF and ripgrep)
-nnoremap <silent> <C-F> :Rg<CR>
-
-" <F1>: show help
-
-" <F2>: Task List
-nnoremap <silent> <F2> :TodoQuickFix<CR>
-
-" <F3>: File tree explorer
-nnoremap <silent> <F3> :NvimTreeToggle<CR>
-
-" <F4>: Tag bar
-nnoremap <silent> <F4> :SymbolsOutline<CR>
-"nnoremap <silent> <F4> :TagbarToggle<CR>
-"let g:tagbar_autofocus = 1
-
-" <F5>: Show buffer list
-nnoremap <silent> <F5> :Buffers<CR>
-
-" <F6>: Prev buffer
-nnoremap <silent> <F6> :bp<CR>
-
-" <F7>: Next buffer
-nnoremap <silent> <F7> :bn<CR>
-
-" <F8>: Close buffer and switch to the previous one
-nnoremap <silent> <F8> :bp<CR>:bd #<CR>
-
-" <F9>: Show diagnostics Quickfix
-
-" <F10>: Run the make file
-nnoremap <silent> <F10> :make<CR>
-
-" <F12>: Toggle Float-term

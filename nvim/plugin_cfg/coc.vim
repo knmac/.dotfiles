@@ -1,5 +1,6 @@
 let g:coc_global_extensions = [
-    \ 'coc-python',
+    "\ 'coc-python',
+    \ 'coc-pyright',
     \ 'coc-jedi',
     \ 'coc-json',
     \ 'coc-clangd',

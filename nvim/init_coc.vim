@@ -4,8 +4,9 @@ source ~/.config/nvim/vim_plug_init.vim
 let use_coc = 1
 
 
-" ============================================================================
+" =============================================================================
 " Active plugins
+" =============================================================================
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Code commenter
@@ -29,10 +30,13 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Async autocompletion
+" Intellisense
 if use_coc
+    " Require nodejs
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
+    # Plugins to replace coc.nvim extensions
+
     " File explorer
     Plug 'scrooloose/nerdtree'
 
@@ -72,9 +76,6 @@ Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Create terminal in a split (instead of the whole screen)
-"Plug 'mklabs/split-term.vim'
-
 " Indentation guide
 Plug 'Yggdroot/indentLine'
 
@@ -96,8 +97,6 @@ Plug 'mhinz/vim-startify'
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
 
-
-" ============================================================================
 " Install plugins the first time vim runs
 if vim_plug_just_installed
     echo "Installing Bundles, please ignore key map error messages"
@@ -105,9 +104,9 @@ if vim_plug_just_installed
 endif
 
 
-" ============================================================================
+" =============================================================================
 " Basic configurations
-" ============================================================================
+" =============================================================================
 colorscheme gruvbox
 
 "if has("gui_running")
@@ -121,82 +120,26 @@ colorscheme gruvbox
 "colorscheme onedark
 
 source ~/.config/nvim/plugin_cfg/basic.vim
-
-" Custom snippets
 source ~/.config/nvim/plugin_cfg/snippet.vim
+source ~/.config/nvim/plugin_cfg/keybindings.vim
 
 
-" ============================================================================
-" Plugin configurations and key bindings
-" ============================================================================
-
-" Vim-startify
+" =============================================================================
+" Plugin configurations
+" =============================================================================
 source ~/.config/nvim/plugin_cfg/startify.vim
-
-" Indentation
 source ~/.config/nvim/plugin_cfg/indent.vim
-
-" Airline
 source ~/.config/nvim/plugin_cfg/airline.vim
-
-" Signify
 source ~/.config/nvim/plugin_cfg/signify.vim
-
-" Float-term
 source ~/.config/nvim/plugin_cfg/floatterm.vim
 
-" Search for file name (require FZF)
-nnoremap <silent> <C-P> :Files<CR>
-
-" Search for file content (require FZF and ripgrep)
-nnoremap <silent> <C-F> :Rg<CR>
-
-" Task list
-nnoremap <silent> <F2> :TaskList<CR>
-
-" Tag bar
-nnoremap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-
-" Show interactive buffer list (need fzf)
-nnoremap <silent> <F5> :Buffers<CR>
-
-" Prev buffer
-nnoremap <silent> <F6> :bp<CR>
-
-" Next buffer
-nnoremap <silent> <F7> :bn<CR>
-
-" Close buffer and switch to the previous one
-nnoremap <silent> <F8> :bp<CR>:bd #<CR>
-
-" Run the make file
-nnoremap <silent> <F10> :make<CR>
-
-" Toggle Float-term
-let g:floaterm_keymap_toggle = '<F12>'
-
-
 " Coc
-if use_coc 
+if has_key(plugs, 'coc.nvim')
     source ~/.config/nvim/plugin_cfg/coc.vim
-    nnoremap <silent> <F3> :CocCommand explorer --toggle<CR>
-    nnoremap <silent> <F9> :<C-u>CocList diagnostics<CR>
 else
-    " Nerd tree
     source ~/.config/nvim/plugin_cfg/nerdtree.vim
-    nnoremap <silent> <F3> :NERDTreeToggle<CR>
-
-    " ALE
     source ~/.config/nvim/plugin_cfg/ale.vim
-    nnoremap <silent> <F9> :call QuickfixToggle()<CR>
-
-    " Deoplete 
     source ~/.config/nvim/plugin_cfg/deoplete.vim
-
-    " JediVim
     source ~/.config/nvim/plugin_cfg/jedivim.vim
-
-    " Markdown
     source ~/.config/nvim/plugin_cfg/markdown.vim
 endif
