@@ -72,7 +72,7 @@ nnoremap <silent> <F10> :make<CR>
 nnoremap <silent> <F22> :make clean<CR>
 
 " <F12>: Toggle Float-term
-if has_key(plugs, 'floatterm.vim')
+if has_key(plugs, 'vim-floaterm')
     let g:floaterm_keymap_toggle = '<F12>'
 endif
 
