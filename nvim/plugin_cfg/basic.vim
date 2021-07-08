@@ -68,6 +68,9 @@ set autoindent          " copy the indentation from the prev line, on a new line
 " So do not expand tabs into space.
 autocmd FileType make   set noexpandtab
 
+" 2 spaces for html
+autocmd FileType html   setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
 
 " -----------------------------------------------------------------------------
 " Copy to clipboard
