@@ -10,7 +10,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Vim-script plugins
 " -----------------------------------------------------------------------------
 " Color schemes
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
 " Startup page and session manager
 Plug 'mhinz/vim-startify'
@@ -97,7 +98,8 @@ endif
 " =============================================================================
 " Basic configurations
 " =============================================================================
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme onedark
 
 source ~/.config/nvim/plugin_cfg/basic.vim
 source ~/.config/nvim/plugin_cfg/snippet.vim

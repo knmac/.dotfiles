@@ -65,8 +65,8 @@ endif
 "Plug 'tomasr/molokai'
 "Plug 'fratajczak/one-monokai-vim'
 "Plug 'skielbasa/vim-material-monokai'
-"Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
+"Plug 'morhetz/gruvbox'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
@@ -107,7 +107,8 @@ endif
 " =============================================================================
 " Basic configurations
 " =============================================================================
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme onedark
 
 "if has("gui_running")
 "    let g:molokai_original = 1
@@ -117,7 +118,6 @@ colorscheme gruvbox
 "colorscheme molokai
 "colorscheme one-monokai
 "colorscheme material-monokai
-"colorscheme onedark
 
 source ~/.config/nvim/plugin_cfg/basic.vim
 source ~/.config/nvim/plugin_cfg/snippet.vim

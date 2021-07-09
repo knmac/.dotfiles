@@ -6,7 +6,8 @@ source ~/.config/nvim/vim_plug_init.vim
 " =============================================================================
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 "Plug 'itchyny/lightline.vim'
 "Plug 'mengelbrecht/lightline-bufferline'
 
@@ -22,7 +23,8 @@ endif
 " =============================================================================
 " Basic configurations
 " =============================================================================
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme onedark
 
 source ~/.config/nvim/plugin_cfg/basic.vim
 source ~/.config/nvim/plugin_cfg/snippet.vim

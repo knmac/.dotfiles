@@ -1,8 +1,8 @@
 " Air line
 let g:airline_powerline_fonts = 0
 "let g:airline_theme = 'bubblegum'
-"let g:airline_theme = 'onedark'
-let g:airline_theme = 'base16_default'
+let g:airline_theme = 'onedark'
+"let g:airline_theme = 'base16_default'
 let g:airline#extensions#whitespace#enabled = 0
 
 if !exists('g:airline_symbols')
@@ -37,5 +37,5 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '| '
 
 " Remove unnecessary airline extensions to speed up
-"let g:airline_extensions = ['tabline', 'coc', 'branch', 'hunks']
-let g:airline_extensions = ['tabline', 'coc']
+let g:airline_extensions = ['tabline', 'coc', 'branch', 'hunks']
+"let g:airline_extensions = ['tabline', 'coc']
