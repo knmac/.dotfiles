@@ -35,7 +35,8 @@ modules-center =
 modules-right = filesystem cpu memory backlight pulseaudio battery date
 module-margin = 1
 
-font-0 = FiraCode Nerd Font:style=Regular:size=10;2
+font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;2
+font-1 = FiraCode Nerd Font:style=Regular:size=10;2
 width = 100%
 height = 32
 radius = 0.0

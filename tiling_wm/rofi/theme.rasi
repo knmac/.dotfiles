@@ -1,5 +1,6 @@
 configuration {
-    font:                           "FiraCode Nerd Font 12";
+    /*font:                           "FiraCode Nerd Font 12";*/
+    font:                           "JetBrainsMono Nerd Font 12";
     location:                       0;
     fixed-num-lines:                true;
     show-icons:                     true;
@@ -73,9 +74,9 @@ inputbar {
     padding:                        1px;
     children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
-textbox-prompt-colon {                                                
-    text-color:                     inherit;                                              
-    expand:                         false;                                                    
+textbox-prompt-colon {
+    text-color:                     inherit;
+    expand:                         false;
     margin:                         0 0.3em 0em 0em;
     str:                            ":";
 }
