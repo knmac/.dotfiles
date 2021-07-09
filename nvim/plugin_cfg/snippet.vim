@@ -1,10 +1,18 @@
-" Shortcut for Python breakpoint (ipdb) - on the next line
+" =============================================================================
+" Custom snippets and functions
+" =============================================================================
+
+" -----------------------------------------------------------------------------
+" Shortcut for Python breakpoint (ipdb)
+" On the next line
 autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
-" Shortcut for Python breakpoint (ipdb) - on the previous line
+" On the previous line
 autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
 
-" Fill rest of line with characters
+
+" -----------------------------------------------------------------------------
+" Fill the rest of line with characters
 function! FillLine( str )
     " set tw to the desired total length
     let tw = &textwidth
@@ -20,9 +28,14 @@ function! FillLine( str )
     endif
 endfunction
 
-nnoremap <leader>- :call FillLine('-')<CR>
-nnoremap <leader>= :call FillLine('=')<CR>
+" Fill with '-' characters
+nnoremap <silent> <leader>- :call FillLine('-')<CR>
 
+" Fill with '=' characters
+nnoremap <silent> <leader>= :call FillLine('=')<CR>
+
+
+" -----------------------------------------------------------------------------
 " Clear registered macros
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
@@ -35,9 +48,10 @@ endfunction
  
 command! ClearRegisters call ClearRegisters()
 
+
 " -----------------------------------------------------------------------------
-" Custom snippets
-nnoremap ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
-nnoremap ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
-nnoremap ,md    :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
-nnoremap ,today :read !date "+\%F"<CR>kJ$
+" Custom skeletons
+nnoremap <silent> ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
+nnoremap <silent> ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
+nnoremap <silent> ,md    :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
+nnoremap <silent> ,today :read !date "+\%F"<CR>kJ$

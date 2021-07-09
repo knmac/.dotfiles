@@ -26,7 +26,7 @@ set showmatch                   " highlight matching [{()}]
 set backspace=indent,eol,start  " resolve the problem of backspace not working
 set path+=**                    " provide tab-completion for file-related tasks
 set list
-set listchars=tab:>-            " replace tab character with >-
+set listchars=tab:>-,trail:.    " show tab character as >- and trailing space as .
 set hidden                      " not forced to write or undo changes of a file upon closing
 
 " set cursor shape (nvim >= 0.2)
@@ -84,9 +84,6 @@ endif
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-" turn off search highlight (by pressing <SPACE> in command mode)
-nnoremap <leader><space> :nohlsearch<CR>
-
 
 " -----------------------------------------------------------------------------
 " Code folding
@@ -94,16 +91,3 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " set folding method by looking at indentation
-
-
-" -----------------------------------------------------------------------------
-" Vmap for maintaining visual mode after shifting > and <
-vmap < <gv
-vmap > >gv
-
-
-" -----------------------------------------------------------------------------
-" Go down wrapped lines
-nmap <A-j> gj
-" Go up wrapped lines
-nmap <A-k> gk
