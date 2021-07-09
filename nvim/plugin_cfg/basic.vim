@@ -42,6 +42,8 @@ highlight Normal     guibg=NONE ctermbg=NONE
 highlight clear SignColumn
 " Italic comments
 highlight Comment    cterm=italic gui=italic
+" Italic comments
+highlight String     cterm=italic gui=italic
 "highlight SignColumn guibg=black
 "highlight LineNr     guifg=grey guibg=black
 
