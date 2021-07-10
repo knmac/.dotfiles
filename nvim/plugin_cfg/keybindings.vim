@@ -13,19 +13,24 @@ nnoremap ,c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo "conceallevel =" &cole <C
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 
+" Go down/up soft-wrapped lines instead of 'real' lines
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+
 " Window navigation
 nnoremap <silent> <A-h> <C-w>h
 nnoremap <silent> <A-j> <C-w>j
 nnoremap <silent> <A-k> <C-w>k
 nnoremap <silent> <A-l> <C-w>l
 
-" Go down/up soft wrapped lines
-nnoremap <silent> <C-A-j> gj
-nnoremap <silent> <C-A-k> gk
-
 " Buffer prev/next navigation
-nnoremap <silent> <C-A-h> :bprevious<CR>
-nnoremap <silent> <C-A-l> :bnext<CR>
+if has_key(plugs, 'nvim-bufferline.lua')
+    nnoremap <silent> <C-A-h> :BufferLineCycleNext<CR>
+    nnoremap <silent> <C-A-l> :BufferLineCycleNext<CR>
+else
+    nnoremap <silent> <C-A-h> :bprevious<CR>
+    nnoremap <silent> <C-A-l> :bnext<CR>
+endif
 
 " Search file name and file content
 if has_key(plugs, 'fzf.vim')
@@ -38,22 +43,22 @@ endif
 
 
 " =============================================================================
-" <F1> -> <F12> bindings, some require plugins
+" <F1> -> <F12> bindings
 " =============================================================================
 
-" <F1>: show help
+" <F1>: Show help
 if has_key(plugs, 'fzf.vim')
     nnoremap <silent> <F1> :Helptags<CR>
 endif
 
-" <F2>: Task List
+" <F2>: Show task list
 if has_key(plugs, 'todo-comments.nvim')
     nnoremap <silent> <F2> :TodoQuickFix<CR>
 elseif has_key(plugs, 'FixedTaskList.vim')
     nnoremap <silent> <F2> :TaskList<CR>
 endif
 
-" <F3>: File tree explorer
+" <F3>: Show file tree explorer
 if has_key(plugs, 'nvim-tree.lua')
     nnoremap <silent> <F3> :NvimTreeToggle<CR>
 elseif has_key(plugs, 'coc.nvim')
@@ -64,7 +69,7 @@ else
     nnoremap <silent> <F3> :call ToggleNetrw()<CR>
 endif
  
-" <F4>: Tag bar
+" <F4>: Show tag bar
 if has_key(plugs, 'symbols-outline.nvim')
     nnoremap <silent> <F4> :SymbolsOutline<CR>
 elseif  has_key(plugs, 'tagbar')
@@ -72,27 +77,39 @@ elseif  has_key(plugs, 'tagbar')
     let g:tagbar_autofocus = 1
 endif
 
-" <F5>: switch buffer
+" <F5>: Show and switch buffer
 if has_key(plugs, 'fzf.vim')
     nnoremap <silent> <F5> :Buffers<CR>
 else
     nnoremap <silent> <F5> :buffers<CR>:buffer<Space>
 endif
-" <S-F5>: show tab list
+" <S-F5>: Show tab list
 nnoremap <silent> <F17> :tabs<CR>
 
-" <F6>: Prev buffer (or Alt+h)
-nnoremap <silent> <F6> :bprevious<CR>
+" <F6>: Prev buffer
+if has_key(plugs, 'nvim-bufferline.lua')
+    nnoremap <silent> <F6> :BufferLineCyclePrev<CR>
+else
+    nnoremap <silent> <F6> :bprevious<CR>
+endif
 " <S-F6>: Prev tab
 nnoremap <silent> <F18> :tabprevious<CR>
 
-" <F7>: Next buffer (or Alt+l)
-nnoremap <silent> <F7> :bnext<CR>
-" <S-F7>: Next buffer
+" <F7>: Next buffer
+if has_key(plugs, 'nvim-bufferline.lua')
+    nnoremap <silent> <F7> :BufferLineCycleNext<CR>
+else
+    nnoremap <silent> <F7> :bnext<CR>
+endif
+" <S-F7>: Next tab
 nnoremap <silent> <F19> :tabnext<CR>
 
-" <F8>: Close current buffer and switch to the previous one
-nnoremap <silent> <F8> :bprevious<CR>:bdelete #<CR>
+" <F8>: Close current buffer and switch to previous buffer
+if has_key(plugs, 'nvim-bufferline.lua')
+    nnoremap <silent> <F8> :BufferLineCyclePrev<CR>:bdelete #<CR>
+else
+    nnoremap <silent> <F8> :bprevious<CR>:bdelete #<CR>
+endif
 " <S-F8>: Close current tab
 nnoremap <silent> <F20> :tabclose<CR>
 
@@ -105,12 +122,12 @@ elseif has_key(plugs, 'ale')
     nnoremap <silent> <F9> :call QuickfixToggle()<CR>
 endif
 
-" <F10>: Run the make file
+" <F10>: Run make file
 nnoremap <silent> <F10> :make<CR>
 " <S+F10>: Run make clean
 nnoremap <silent> <F22> :make clean<CR>
 
-" <F12>: Toggle Float-term
+" <F12>: Toggle float-term
 if has_key(plugs, 'vim-floaterm')
     let g:floaterm_keymap_toggle = '<F12>'
 endif
