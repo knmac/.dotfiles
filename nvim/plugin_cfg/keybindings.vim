@@ -25,7 +25,7 @@ nnoremap <silent> <A-l> <C-w>l
 
 " Buffer prev/next navigation
 if has_key(plugs, 'nvim-bufferline.lua')
-    nnoremap <silent> <C-A-h> :BufferLineCycleNext<CR>
+    nnoremap <silent> <C-A-h> :BufferLineCyclePrev<CR>
     nnoremap <silent> <C-A-l> :BufferLineCycleNext<CR>
 else
     nnoremap <silent> <C-A-h> :bprevious<CR>
