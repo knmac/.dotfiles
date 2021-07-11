@@ -60,7 +60,7 @@ endif
 
 " <F3>: Show file tree explorer
 if has_key(plugs, 'nvim-tree.lua')
-    nnoremap <silent> <F3> :NvimTreeToggle<CR>
+    nnoremap <silent> <F3> :NvimTreeRefresh<CR> :NvimTreeToggle<CR>
 elseif has_key(plugs, 'coc.nvim')
     nnoremap <silent> <F3> :CocCommand explorer --toggle<CR>
 elseif has_key(plugs, 'nerdtree')
