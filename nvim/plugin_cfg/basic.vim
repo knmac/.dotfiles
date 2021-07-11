@@ -68,7 +68,7 @@ set autoindent          " copy the indentation from the prev line, on a new line
 
 " If the filetype is Makefile then we need to use tabs
 " So do not expand tabs into space.
-autocmd FileType make   set noexpandtab
+autocmd FileType make   setlocal noexpandtab
 
 " 2 spaces for html
 autocmd FileType html   setlocal tabstop=2 softtabstop=2 shiftwidth=2
