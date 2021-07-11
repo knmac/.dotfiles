@@ -18,7 +18,7 @@ let g:startify_custom_header =
       \ 'startify#center(startify#fortune#cowsay())'
 
 " Shorten number of items to show (default 10)
-"let g:startify_files_number = 5
+let g:startify_files_number = 5
 
 " Show icons
 if has_key(plugs, 'vim-devicons')
