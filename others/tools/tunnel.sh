@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Simple wrapper for port-forwarding using ssh
 tunnel() {
-    echo "USAGE: connect [HOST] [PORT]"
+    echo "USAGE: tunnel [HOST] [PORT]"
 
     if [ -z $1 ]; then
         echo "Please specify host"

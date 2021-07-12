@@ -127,6 +127,11 @@ nnoremap <silent> <F10> :make<CR>
 " <S+F10>: Run make clean
 nnoremap <silent> <F22> :make clean<CR>
 
+" <F11>: Toggle hex color
+if has_key(plugs, 'Colorizer')
+    nnoremap <silent> <F11> :ColorToggle<CR>
+endif
+
 " <F12>: Toggle float-term
 if has_key(plugs, 'vim-floaterm')
     let g:floaterm_keymap_toggle = '<F12>'

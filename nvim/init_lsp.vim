@@ -51,6 +51,8 @@ Plug 'ryanoasis/vim-devicons'
 " Icons with colors (required by lualine, nvim-bufferline, nvim-tree, etc.)
 Plug 'kyazdani42/nvim-web-devicons'  
 
+" Colorize colornames and codes
+Plug 'chrisbra/Colorizer'
 
 " -----------------------------------------------------------------------------
 " Lua-based plugins, require nvim>=0.5
