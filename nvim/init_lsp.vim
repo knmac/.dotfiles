@@ -89,7 +89,7 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Show project structure
-Plug 'simrat39/symbols-outline.nvim'
+"Plug 'simrat39/symbols-outline.nvim'
 
 call plug#end()
 

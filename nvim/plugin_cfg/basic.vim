@@ -37,8 +37,8 @@ highlight CursorLine    cterm=bold   gui=bold
 " Change the background of cursor
 highlight Cursor        guibg=#626262
 " Transparent background
-highlight Normal        guibg=NONE ctermbg=NONE
-highlight NormalFloat   guibg=NONE ctermbg=NONE
+"highlight Normal        guibg=NONE ctermbg=NONE
+"highlight NormalFloat   guibg=NONE ctermbg=NONE
 " Italic comments and strings
 highlight Comment       cterm=italic gui=italic
 highlight String        cterm=italic gui=italic
