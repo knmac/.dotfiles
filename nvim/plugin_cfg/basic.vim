@@ -33,19 +33,19 @@ set hidden                      " not forced to write or undo changes of a file 
 "set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 " Highlight current line by bolding the text
-highlight CursorLine cterm=bold   gui=bold
+highlight CursorLine    cterm=bold   gui=bold
 " Change the background of cursor
-highlight Cursor     guibg=#626262
+highlight Cursor        guibg=#626262
 " Transparent background
-highlight Normal     guibg=NONE ctermbg=NONE
+highlight Normal        guibg=NONE ctermbg=NONE
+highlight NormalFloat   guibg=NONE ctermbg=NONE
+" Italic comments and strings
+highlight Comment       cterm=italic gui=italic
+highlight String        cterm=italic gui=italic
 " Clear highlight on sign column
-highlight clear SignColumn
-" Italic comments
-highlight Comment    cterm=italic gui=italic
-" Italic comments
-highlight String     cterm=italic gui=italic
-"highlight SignColumn guibg=black
-"highlight LineNr     guifg=grey guibg=black
+"highlight clear SignColumn
+"highlight SignColumn   guibg=black
+"highlight LineNr       guifg=grey guibg=black
 
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
