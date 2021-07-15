@@ -18,6 +18,12 @@ lsp_get_active_client_ids = function()
   return client_ids
 end
 require'lspconfig'._root._setup()
+
+-- set up diagnostic signs
+vim.fn.sign_define("LspDiagnosticsSignError", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignWarning", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignInformation", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
 EOF
 
 
