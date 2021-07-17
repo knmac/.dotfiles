@@ -40,18 +40,18 @@ history = mod4+shift+grave
 
 [urgency_low]
 timeout = 4
-background = "#141c21"
-foreground = "#93a1a1"
-frame_color = "#8bc34a"
+background = "#282c34"
+foreground = "#abb2bf"
+frame_color = "#98c379"
 
 [urgency_normal]
 timeout = 8
-background = "#141c21"
-foreground = "#93a1a1"
-frame_color = "#42a5f5"
+background = "#282c34"
+foreground = "#abb2bf"
+frame_color = "#61afef"
 
 [urgency_critical]
 timeout = 0
-background = "#141c21"
-foreground = "#93a1a1"
-frame_color = "#ff7043"
+background = "#282c34"
+foreground = "#abb2bf"
+frame_color = "#e06c75"

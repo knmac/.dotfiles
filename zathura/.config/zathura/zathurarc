@@ -3,4 +3,16 @@ set window-width    768
 set page-padding    10
 set recolor-keephue true
 set smooth-scroll   true
+
 set selection-clipboard clipboard
+set adjust-open "best-fit"
+set font "JetBrainsMono Nerd Font 10"
+
+map i recolor
+map [fullscreen] i recolor
+
+set recolor-lightcolor          "#282c34"
+set recolor-darkcolor           "#abb2bf"
+
+set highlight-color             "#e5c07b"
+set highlight-active-color      "#61afef"
