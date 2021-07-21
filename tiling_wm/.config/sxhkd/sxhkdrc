@@ -4,7 +4,7 @@ super + Return
 
 # File explorer
 super + e
-    pcmanfm
+    thunar
 
 # Settings (Gnome control center)
 super + s
