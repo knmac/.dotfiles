@@ -8,8 +8,8 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="typewritten/typewritten"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="spaceship-prompt/spaceship"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -152,6 +152,6 @@ alias notes_acp="notes add . && notes commit -m update && notes push"
 export PATH="$HOME/.local/bin:$HOME/.local/nodejs/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export EDITOR="nvim -u $HOME/.config/nvim/init_simple.vim"
+export EDITOR="nvim -u $HOME/.config/nvim/init_basic.vim"
 
 source "$HOME/dotfiles/others/tools/add_tools.sh"

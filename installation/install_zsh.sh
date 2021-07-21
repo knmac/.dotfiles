@@ -23,9 +23,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/
 sudo apt install bat ripgrep
 
 # Install p10k theme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
+#git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
 # Install typewritten theme
 #git clone https://github.com/reobin/typewritten "$ZSH_CUSTOM/themes"
 
-# Copy zshrc over
+# Install spaceship prompt
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+
+# Copy zshrc over any modify as needed
 cp $DOTFILES_ROOT/zsh/.zshrc "$HOME"
