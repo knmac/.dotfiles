@@ -1,0 +1,60 @@
+! -----------------------------------------------------------------------------
+! One Dark theme
+*.background:              #282c34
+*.foreground:              #abb2bf
+*.cursor:                  #abb2bf
+
+*.color0:                  #282c34
+*.color1:                  #e06c75
+*.color2:                  #98c379
+*.color3:                  #e5c07b
+*.color4:                  #61afef
+*.color5:                  #c678dd
+*.color6:                  #56b6c2
+*.color7:                  #abb2bf
+
+*.color8:                  #393e48
+*.color9:                  #d19a66
+*.color10:                 #56b6c2
+*.color11:                 #e5c07b
+*.color12:                 #61afef
+*.color13:                 #c678dd
+*.color14:                 #56b6c2
+*.color15:                 #abb2bf
+
+
+! -----------------------------------------------------------------------------
+! st settings
+! Transparency (0-1):
+st.alpha:       0.9
+
+! Set a default font and font size as below:
+st.font:        JetBrainsMono Nerd Font-11
+st.termname:    st-256color
+st.borderpx:    2
+
+
+! -----------------------------------------------------------------------------
+! xterm settings
+xterm*faceName: JetBrainsMono Nerd Font
+xterm*faceSize: 11
+
+
+! -----------------------------------------------------------------------------
+! URxvt settings
+URxvt.background:           [90]#282c34
+URxvt.intensityStyles:      false
+URxvt.scrollBar:            false
+URxvt.scrollBar_right:      false
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.fading:               30
+URxvt.loginShell:           true
+URxvt.saveLines:            1000
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+URxvt.font:                 xft:JetBrainsMono Nerd Font:size=11
+URxvt.letterSpace:          2
+
+URxvt.perl-ext-common:      default,matcher,keyboard-select
