@@ -39,7 +39,7 @@ super + F1
     "$HOME/.config/rofi/scripts/find_keybindings.sh"
 
 # I3 instant layout
-super + BackSpace
+super + shift + BackSpace
     "$HOME/.config/rofi/scripts/i3-instant-layout.sh"
 
 # Screenshot

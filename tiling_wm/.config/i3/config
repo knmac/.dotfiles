@@ -74,7 +74,7 @@ bindsym $mod+Ctrl+h split h
 bindsym $mod+Ctrl+v split v
 
 # toggle split orientation (horizontal/vertical)
-bindsym $mod+Ctrl+BackSpace split toggle
+bindsym $mod+BackSpace split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle

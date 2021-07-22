@@ -41,8 +41,8 @@ I3-monitor-left move (workspace),super + ctrl + shift + <
 I3-monitor-right move (workspace),super + ctrl + shift + >
 I3-split horz,super + ctrl + h
 I3-split vert,super + ctrl + v
-I3-split horz/vert toggle,super + ctrl + BackSpace
-I3-instant-layout,super + BackSpace
+I3-split horz/vert toggle,super + BackSpace
+I3-instant-layout,super + shift + BackSpace
 I3-gaps increase,super + z
 I3-gaps decrease,super + shift + z
 I3-layout stacking,super + F2
