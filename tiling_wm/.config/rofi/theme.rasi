@@ -9,13 +9,20 @@ configuration {
     /*window-format:                  "[{w}] ··· {c} ···   {t}";*/
     click-to-exit:                  true;
     combi-hide-mode-prefix:         false;
+
     display-window:                 " window";
-    display-windowcd:               " windowcd";
-    display-run:                    " run";
+    display-run:                    "❱ run";
     display-ssh:                    " ssh";
-    display-drun:                   " drun";
-    display-combi:                  " combi";
+    display-drun:                   " drun";
     display-keys:                   " keys";
+
+    /*display-window:                 " window";*/
+    /*display-windowcd:               " windowcd";*/
+    /*display-run:                    " run";*/
+    /*display-ssh:                    " ssh";*/
+    /*display-drun:                   " drun";*/
+    /*display-combi:                  " combi";*/
+    /*display-keys:                   " keys";*/
 }
 
 /*define colors*/
