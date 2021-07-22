@@ -74,15 +74,15 @@ bindsym $mod+Ctrl+h split h
 bindsym $mod+Ctrl+v split v
 
 # toggle split orientation (horizontal/vertical)
-bindsym $mod+BackSpace split toggle
+bindsym $mod+Ctrl+BackSpace split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+F1 layout stacking
-bindsym $mod+F2 layout tabbed
-bindsym $mod+F3 layout toggle split
+bindsym $mod+F2 layout stacking
+bindsym $mod+F3 layout tabbed
+bindsym $mod+F4 layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -233,7 +233,7 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # Auto switch horizontal/vertical tiling
 # Ref: https://github.com/chmln/i3-auto-layout
-exec_always --no-startup-id "$HOME/.config/i3/i3-auto-layout"
+#exec_always --no-startup-id "$HOME/.config/i3/i3-auto-layout"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.

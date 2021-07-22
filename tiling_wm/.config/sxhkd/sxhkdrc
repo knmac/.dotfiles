@@ -20,11 +20,11 @@ super + w
 
 # Rofi menu
 super + space
-    rofi -no-lazy-grab -show drun -modi "drun#run#window#ssh#keys"
+    "$HOME/.config/rofi/scripts/launch_rofi_drun.sh"
 super + shift + space
-    rofi -no-lazy-grab -show run -modi "drun#run#window#ssh#keys"
+    "$HOME/.config/rofi/scripts/launch_rofi_run.sh"
 super + Tab
-    rofi -no-lazy-grab -show window -modi "drun#run#window#ssh#keys"
+    "$HOME/.config/rofi/scripts/launch_rofi_window.sh"
 
 # Systemtray
 super + t
@@ -35,8 +35,12 @@ super + Escape
     "$HOME/.config/polybar/scripts/powermenu.sh"
 
 # Show key bindings
-super + slash
-    "$HOME/.config/polybar/scripts/find_keybindings.sh"
+super + F1
+    "$HOME/.config/rofi/scripts/find_keybindings.sh"
+
+# I3 instant layout
+super + BackSpace
+    "$HOME/.config/rofi/scripts/i3-instant-layout.sh"
 
 # Screenshot
 Print

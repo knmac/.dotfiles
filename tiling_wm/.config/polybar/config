@@ -12,7 +12,7 @@ margin-top = 0
 ; Include modules
 include-file = ~/.config/polybar/colors.ini
 
-include-file = ~/.config/polybar/modules/sysmenu.ini
+include-file = ~/.config/polybar/modules/rofi.ini
 include-file = ~/.config/polybar/modules/i3.ini
 include-file = ~/.config/polybar/modules/bspwm.ini
 include-file = ~/.config/polybar/modules/title.ini
@@ -24,15 +24,16 @@ include-file = ~/.config/polybar/modules/battery.ini
 include-file = ~/.config/polybar/modules/backlight.ini
 include-file = ~/.config/polybar/modules/pulseaudio.ini
 include-file = ~/.config/polybar/modules/date.ini
+include-file = ~/.config/polybar/modules/sysmenu.ini
 
 
 ; =============================================================================
 [bar/mybar]
 ; =============================================================================
 monitor = ${env:MONITOR:}
-modules-left = sysmenu i3 bspwm title
+modules-left = rofi i3 bspwm title
 modules-center =
-modules-right = filesystem cpu memory backlight pulseaudio battery date
+modules-right = filesystem cpu memory backlight pulseaudio battery date sysmenu
 module-margin = 1
 
 font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;2
