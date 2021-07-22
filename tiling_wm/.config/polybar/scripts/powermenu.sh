@@ -4,7 +4,7 @@ uptime=$(uptime -p | sed -e 's/up //g')
 
 #rofi_command="rofi -theme $dir/powermenu.rasi"
 rofi_command="rofi"
-i3lock_pth="~/.config/polybar/scripts/i3lock.sh"
+i3lock_pth="~/.config/i3/i3lock.sh"
 
 # Options
 shutdown="  Shutdown"
