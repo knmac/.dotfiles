@@ -12,7 +12,7 @@ configuration {
     combi-hide-mode-prefix:         false;
 
     display-drun:                   " drun";
-    display-run:                    "❱▁ run";
+    display-run:                    " run";
     display-window:                 " window";
     display-ssh:                    " ssh";
     display-keys:                   " keys";
