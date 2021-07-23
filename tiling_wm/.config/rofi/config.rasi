@@ -1,5 +1,8 @@
 // vim: ft=css
 configuration {
-    terminal: "kitty";
-    theme:    "~/.config/rofi/theme.rasi";
+    terminal:           "kitty";
+    theme:              "~/.config/rofi/theme.rasi";
+    modi:               "drun#run#window#ssh#keys";
+    no-lazy-grab:       true;
+    disable-history:    true;
 }
