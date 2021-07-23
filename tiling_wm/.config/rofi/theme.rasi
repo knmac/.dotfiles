@@ -1,3 +1,4 @@
+// vim: ft=css
 configuration {
     /*font:                           "FiraCode Nerd Font 12";*/
     font:                           "JetBrainsMono Nerd Font 12";

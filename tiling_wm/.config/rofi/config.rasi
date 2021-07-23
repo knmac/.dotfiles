@@ -1,3 +1,4 @@
+// vim: ft=css
 configuration {
     terminal: "kitty";
     theme:    "~/.config/rofi/theme.rasi";
