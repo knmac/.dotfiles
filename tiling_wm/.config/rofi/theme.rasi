@@ -10,10 +10,10 @@ configuration {
     click-to-exit:                  true;
     combi-hide-mode-prefix:         false;
 
+    display-drun:                   " drun";
+    display-run:                    "❱▁ run";
     display-window:                 " window";
-    display-run:                    "❱ run";
     display-ssh:                    " ssh";
-    display-drun:                   " drun";
     display-keys:                   " keys";
 
     /*display-window:                 " window";*/
