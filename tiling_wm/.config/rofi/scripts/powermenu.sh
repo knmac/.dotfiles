@@ -29,7 +29,7 @@ msg() {
 # Variable passed to rofi
 options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 
-chosen="$(echo -e "$options" | $rofi_command -theme-str "listview { scrollbar: false; }" -p "Uptime: $uptime" -dmenu -i -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -theme-str "listview { scrollbar: false; lines: 5;}" -p "Uptime: $uptime" -dmenu -i -selected-row 0)"
 case $chosen in
     $shutdown)
         ans=$(confirm_exit &)
