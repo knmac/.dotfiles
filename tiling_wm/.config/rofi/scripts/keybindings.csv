@@ -1,11 +1,13 @@
-Key bindings,super + F1
+Show keybindings,super + F1
 Terminal,super + 
 Power menu,super + Esc
+Web brower,super + w
+Email client,super + m
 File manager,super + e
 Settings,super + s
 System tray,super + t
 Calculator,super + c
-Random wallpaper,super + w
+Random wallpaper,super + p
 ------------------------------------------------------------
 Rofi-drun,super + space
 Rofi-run,super + shift + space

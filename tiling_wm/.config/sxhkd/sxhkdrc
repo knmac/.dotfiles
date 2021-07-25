@@ -14,8 +14,16 @@ super + s
 super + c
     qalculate
 
-# Random wallpaper
+# Web browser
 super + w
+    firefox
+
+# Email client
+super + m
+    thunderbird
+
+# Random wallpaper
+super + p
     nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --save
 
 # Rofi menu
