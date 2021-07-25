@@ -1,0 +1,122 @@
+// vim: ft=css
+configuration {
+    font:                           "JetBrainsMono Nerd Font 10";
+    location:                       0;
+    fixed-num-lines:                true;
+    show-icons:                     false;
+    sidebar-mode:                   false;
+    scroll-method:                  1;
+    click-to-exit:                  true;
+    combi-hide-mode-prefix:         false;
+}
+
+@import "colors.rasi" 
+//;
+
+window {
+    border:                         0px;
+    border-color:                   @ac;
+    border-radius:                  0px;
+    padding:                        30;
+    width:                          45%;
+    location:                       center;
+}
+
+prompt {
+    spacing:                        0;
+    border:                         0;
+    text-color:                     @fg;
+}
+
+textbox-prompt-colon {
+    expand:                         false;
+    str:                            " ";
+    margin:                         0px 4px 0px 0px;
+    text-color:                     inherit;
+}
+
+entry {
+    spacing:                        0;
+    text-color:                     @fg;
+}
+
+case-indicator {
+    spacing:                        0;
+    text-color:                     @fg;
+}
+
+inputbar {
+    spacing:                        0px;
+    text-color:                     @fg;
+    padding:                        1px;
+    children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    text-color:                     inherit;
+    expand:                         false;
+    margin:                         0 0.3em 0em 0em;
+    str:                            ":";
+}
+
+mainbox {
+    border:                         0px;
+    border-color:                   @ac;
+    padding:                        6;
+}
+
+listview {
+    fixed-height:                   0;
+    border:                         0px;
+    border-color:                   @ac;
+    spacing:                        4px;
+    scrollbar:                      true;
+    padding:                        5px 5px 0px 5px;
+    scrollbar: false;
+    layout: horizontal;
+}
+
+element {
+    border:                         0px;
+    border-radius:                  15px;
+    padding:                        1%;
+    orientation:                    horizontal;
+}
+element-text {
+    font:                           "feather 17";
+}
+element normal.normal {
+    background-color:               @bg;
+    text-color:                     @fg;
+}
+element normal.urgent {
+    background-color:               @bg;
+    text-color:                     @red;
+}
+element normal.active {
+    background-color:               @green;
+    text-color:                     @se;
+}
+element selected.normal {
+    background-color:               @ac;
+    text-color:                     @se;
+}
+element selected.urgent {
+    background-color:               @bg;
+    text-color:                     @red;
+}
+element selected.active {
+    background-color:               @ac;
+    text-color:                     @se;
+}
+element alternate.normal {
+    background-color:               @bg;
+    text-color:                     @fg;
+}
+element alternate.urgent {
+    background-color:               @bg;
+    text-color:                     @fg;
+}
+element alternate.active {
+    background-color:               @bg;
+    text-color:                     @fg;
+}

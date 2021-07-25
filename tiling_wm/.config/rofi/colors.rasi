@@ -1,0 +1,19 @@
+// vim: ft=css
+/*define colors*/
+* {
+    al:                             #00000000;
+    bg:                             #2c2c2ccc;
+    se:                             #282c34;
+    fg:                             #abb2bf;
+    ac:                             #61afef;
+    red:                            #e06c75;
+    green:                          #98c379;
+    yellow:                         #e5c07b;
+    blue:                           #61afef;
+    purple:                         #c678dd;
+    cyan:                           #56b6c2;
+}
+
+* {
+    background-color:               @bg;
+}
