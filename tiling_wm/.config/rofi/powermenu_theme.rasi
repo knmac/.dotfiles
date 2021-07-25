@@ -82,7 +82,7 @@ element {
     orientation:                    horizontal;
 }
 element-text {
-    font:                           "feather 17";
+    font:                           "feather 15";
 }
 element normal.normal {
     background-color:               @bg;
@@ -97,7 +97,7 @@ element normal.active {
     text-color:                     @se;
 }
 element selected.normal {
-    background-color:               @ac;
+    background-color:               @red;
     text-color:                     @se;
 }
 element selected.urgent {
