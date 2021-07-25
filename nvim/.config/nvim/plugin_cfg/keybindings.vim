@@ -128,9 +128,11 @@ nnoremap <silent> <F10> :make<CR>
 nnoremap <silent> <F22> :make clean<CR>
 
 " <F11>: Toggle hex color
-if has_key(plugs, 'Colorizer')
-    nnoremap <silent> <F11> :ColorToggle<CR>
-endif
+"if has_key(plugs, 'Colorizer')
+"    nnoremap <silent> <F11> :ColorToggle<CR>
+"endif
+" <F11>: Toggle zoom the current window (from custom functions)
+nnoremap <silent> <F11> :call ToggleZoom(v:true)<CR>
 
 " <F12>: Toggle float-term
 if has_key(plugs, 'vim-floaterm')

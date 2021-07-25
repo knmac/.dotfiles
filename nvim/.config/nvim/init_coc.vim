@@ -120,7 +120,7 @@ colorscheme onedark
 "colorscheme material-monokai
 
 source ~/.config/nvim/plugin_cfg/basic.vim
-source ~/.config/nvim/plugin_cfg/snippet.vim
+source ~/.config/nvim/plugin_cfg/custom_functions.vim
 source ~/.config/nvim/plugin_cfg/keybindings.vim
 
 

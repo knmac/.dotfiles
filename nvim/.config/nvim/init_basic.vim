@@ -27,7 +27,7 @@ endif
 colorscheme onedark
 
 source ~/.config/nvim/plugin_cfg/basic.vim
-source ~/.config/nvim/plugin_cfg/snippet.vim
+source ~/.config/nvim/plugin_cfg/custom_functions.vim
 source ~/.config/nvim/plugin_cfg/keybindings.vim
 source ~/.config/nvim/plugin_cfg/netrw.vim
 
