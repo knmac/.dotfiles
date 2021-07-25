@@ -32,7 +32,7 @@ super + t
 
 # Power menu
 super + Escape
-    "$HOME/.config/polybar/scripts/powermenu.sh"
+    "$HOME/.config/rofi/scripts/powermenu.sh"
 
 # Show key bindings
 super + F1
