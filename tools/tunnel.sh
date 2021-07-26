@@ -17,6 +17,6 @@ tunnel() {
         PORT=$2
     fi
 
-    echo "Port fowarding to $HOST:$PORT"
+    echo "Tunneling to $HOST:$PORT"
     ssh -NL $PORT:127.0.0.1:$PORT $HOST
 }
