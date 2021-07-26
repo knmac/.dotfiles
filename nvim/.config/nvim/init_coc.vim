@@ -119,9 +119,9 @@ colorscheme onedark
 "colorscheme one-monokai
 "colorscheme material-monokai
 
-source ~/.config/nvim/plugin_cfg/basic.vim
-source ~/.config/nvim/plugin_cfg/custom_functions.vim
-source ~/.config/nvim/plugin_cfg/keybindings.vim
+source ~/.config/nvim/share_cfg/basic.vim
+source ~/.config/nvim/share_cfg/custom_functions.vim
+source ~/.config/nvim/share_cfg/keybindings.vim
 
 
 " =============================================================================
