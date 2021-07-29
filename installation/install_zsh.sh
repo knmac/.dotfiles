@@ -19,16 +19,19 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_CUSTOM/plug
 # Install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 
+# Install conda-zsh-completion
+git clone https://github.com/esc/conda-zsh-completion "$ZSH_CUSTOM/plugins/conda-zsh-completion"
+
 # Install bat for syntax highlighting, ripgrep for file finder (with a string)
 sudo apt install bat ripgrep
 
 # Install p10k theme
-#git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
 # Install typewritten theme
 #git clone https://github.com/reobin/typewritten "$ZSH_CUSTOM/themes"
 
 # Install spaceship prompt
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+#git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 
 # Copy zshrc over any modify as needed
-cp $DOTFILES_ROOT/zsh/.zshrc "$HOME"
+cp "$DOTFILES_ROOT/zsh/.zshrc" "$HOME"

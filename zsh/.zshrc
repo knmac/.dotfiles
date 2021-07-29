@@ -9,8 +9,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-#ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="spaceship-prompt/spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="spaceship-prompt/spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,6 +74,7 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
+  conda-zsh-completion
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,8 +112,7 @@ autoload -U edit-command-line
 
 
 # Customize spaceship-prompt
-SPACESHIP_CHAR_SYMBOL="❱ "
-SPACESHIP_GIT_BRANCH_COLOR=yellow
+#SPACESHIP_CHAR_SYMBOL="❱ "
 
 
 # Configure zsh highlighting
