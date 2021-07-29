@@ -166,4 +166,4 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="nvim -u $HOME/.config/nvim/init_basic.vim"
 
 
-source "$HOME/dotfiles/others/tools/add_tools.sh"
+source "$HOME/dotfiles/tools/add_tools.sh"
