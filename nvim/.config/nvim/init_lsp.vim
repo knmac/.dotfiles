@@ -22,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 
 " Better syntax highlighting
 Plug 'sheerun/vim-polyglot'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Class/module browser
 Plug 'majutsushi/tagbar'
@@ -121,6 +122,7 @@ source ~/.config/nvim/plugin_cfg/startify.vim
 source ~/.config/nvim/plugin_cfg/indent.vim
 source ~/.config/nvim/plugin_cfg/signify.vim
 source ~/.config/nvim/plugin_cfg/floatterm.vim
+source ~/.config/nvim/plugin_cfg/semshi.vim
 
 " Language servers + Lua config
 source ~/.config/nvim/plugin_cfg/lspconfig.vim
