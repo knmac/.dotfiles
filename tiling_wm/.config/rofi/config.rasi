@@ -3,6 +3,6 @@ configuration {
     terminal:           "kitty";
     theme:              "~/.config/rofi/main_theme.rasi";
     modi:               "drun#run#window#ssh#keys";
-    no-lazy-grab:       true;
+    /*no-lazy-grab:       true;*/
     /*disable-history:    true;*/
 }
