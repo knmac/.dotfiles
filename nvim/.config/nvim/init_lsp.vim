@@ -75,6 +75,9 @@ Plug 'ray-x/lsp_signature.nvim'
 " Parser generator tool, allow better syntax highlighting -> :TSInstall <language>
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 
+" Highlight and navigate sets of matching text. Can integrate with treesitter
+Plug 'andymass/vim-matchup'
+
 " Highlight and search for todo comments (TODO, HACK, FIX, etc.)
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'

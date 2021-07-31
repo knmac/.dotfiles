@@ -22,4 +22,7 @@ require'nvim-treesitter.configs'.setup {
     "cmake",
     "dockerfile"
   },
+  matchup = {
+    enable = true,
+  },
 }
