@@ -5,9 +5,10 @@
 " Turn off search highlight (by pressing <SPACE> in command mode)
 nnoremap <silent> <leader><space> :nohlsearch<CR>
 
-" Toggle conceallevel between 0 and 2
-" Useful when your want to copy text and avoid copying indent character
-nnoremap ,c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo "conceallevel =" &cole <CR>
+" Toggle the indent lines
+if has_key(plugs, 'indentLine')
+    nnoremap <silent> <leader>i :IndentLinesToggle<CR>
+endif
 
 " Maintaining visual mode after shifting with > and <
 vnoremap <silent> > >gv

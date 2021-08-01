@@ -22,7 +22,6 @@ Plug 'junegunn/fzf.vim'
 
 " Better syntax highlighting
 Plug 'sheerun/vim-polyglot'
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Class/module browser
 Plug 'majutsushi/tagbar'
@@ -95,6 +94,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Show project structure
 "Plug 'simrat39/symbols-outline.nvim'
 
+" Highlight related text under cursor
+Plug 'RRethy/vim-illuminate'
+
 call plug#end()
 
 " Install plugins the first time vim runs
@@ -122,7 +124,6 @@ source ~/.config/nvim/plugin_cfg/startify.vim
 source ~/.config/nvim/plugin_cfg/indent.vim
 source ~/.config/nvim/plugin_cfg/signify.vim
 source ~/.config/nvim/plugin_cfg/floatterm.vim
-source ~/.config/nvim/plugin_cfg/semshi.vim
 
 " Language servers + Lua config
 source ~/.config/nvim/plugin_cfg/lspconfig.vim
@@ -135,3 +136,4 @@ luafile ~/.config/nvim/plugin_cfg/lua/lualine.lua
 luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/todocomments.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
+source ~/.config/nvim/plugin_cfg/lua/illuminate.vim
