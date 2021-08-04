@@ -151,9 +151,10 @@ elif type xsel &> /dev/null; then
   alias pbpaste='xsel --clipboard --output'
 fi
 
+DOTFILES_DIR="$HOME/.dotfiles"
 alias bvim="nvim -u $HOME/.config/nvim/init_basic.vim"
 alias cvim="nvim -u $HOME/.config/nvim/init_coc.vim"
-alias dotfiles="git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles"
+alias dotfiles="git --git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
 alias notes="git --git-dir=$HOME/Documents/my_notes/.git --work-tree=$HOME/Documents/my_notes"
 alias dotfiles_acp="dotfiles add . && dotfiles commit -m update && dotfiles push"
 alias notes_acp="notes add . && notes commit -m update && notes push"
@@ -166,4 +167,4 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="nvim -u $HOME/.config/nvim/init_basic.vim"
 
 
-source "$HOME/dotfiles/tools/add_tools.sh"
+source "$DOTFILES_DIR/tools/add_tools.sh"
