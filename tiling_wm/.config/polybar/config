@@ -59,3 +59,33 @@ tray-position = none
 #tray-position = right
 #tray-background = ${colors.bg}
 #tray-detached = false
+
+
+; =============================================================================
+[bar/mybar_vert]
+; =============================================================================
+monitor = ${env:MONITOR:}
+modules-left = rofi i3 bspwm title
+modules-center =
+modules-right = sysmenu
+module-margin = 1
+
+font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;2
+font-1 = FiraCode Nerd Font:style=Regular:size=10;2
+font-2 = feather:style=Regular:size=10;2
+width = 100%
+padding = 1
+height = 28
+radius = 0.0
+fixed-center = true
+bottom = false
+enable-ipc = true
+transparent = true
+background = ${colors.bg}
+foreground = ${colors.fg}
+line-size = 2
+separator = "%{F#555555}│%{F-}"
+scroll-up = "#i3.prev"
+scroll-down = "#i3.next"
+
+tray-position = none
