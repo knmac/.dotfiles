@@ -142,10 +142,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # move workspaces between screens
 bindsym $mod+less               focus output left
 bindsym $mod+greater            focus output right
-bindsym $mod+Shift+less         move container to output left
-bindsym $mod+Shift+greater      move container to output right
-bindsym $mod+Ctrl+Shift+less    move workspace to output left
-bindsym $mod+Ctrl+Shift+greater move workspace to output right
+bindsym $mod+Shift+less         move container to output left;  focus output left
+bindsym $mod+Shift+greater      move container to output right; focus output right
+#bindsym $mod+Ctrl+Shift+less    move workspace to output left;  focus output left
+#bindsym $mod+Ctrl+Shift+greater move workspace to output right; focus output right
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
