@@ -18,7 +18,7 @@ window {
     border-color:                   @ac;
     border-radius:                  0px;
     padding:                        30;
-    width:                          45%;
+    width:                          855;
     location:                       center;
 }
 
@@ -69,10 +69,9 @@ listview {
     border:                         0px;
     border-color:                   @ac;
     spacing:                        4px;
-    scrollbar:                      true;
     padding:                        5px 5px 0px 5px;
-    scrollbar: false;
-    layout: horizontal;
+    scrollbar:                      false;
+    layout:                         horizontal;
 }
 
 element {
