@@ -53,16 +53,20 @@ super + shift + BackSpace
 # Screenshot
 Print
     sleep 0.2; \
-    scrot
+    maim -u "$HOME/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
+    #scrot
 shift + Print
     sleep 0.2; \
-    scrot --select --freeze
+    maim -s -u "$HOME/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
+    #scrot --select --freeze
 ctrl + Print
     sleep 0.2; \
-    scrot '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
+    maim -u | xclip -selection clipboard -t image/png -i
+    #scrot '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
 ctrl + shift + Print
     sleep 0.2; \
-    scrot --select --freeze '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
+    maim -s -u | xclip -selection clipboard -t image/png -i
+    #scrot --select --freeze '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
 
 # Backlight control
 XF86MonBrightnessUp
