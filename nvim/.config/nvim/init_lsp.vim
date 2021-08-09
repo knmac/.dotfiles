@@ -24,7 +24,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 
 " Class/module browser
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
@@ -92,7 +92,7 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Show project structure
-"Plug 'simrat39/symbols-outline.nvim'
+Plug 'simrat39/symbols-outline.nvim'
 
 " Highlight related text under cursor
 Plug 'RRethy/vim-illuminate'
