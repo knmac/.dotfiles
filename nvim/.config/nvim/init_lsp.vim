@@ -34,11 +34,6 @@ Plug 'tpope/vim-fugitive'
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 
-" Indentation guide
-Plug 'Yggdroot/indentLine'
-" Detect indent automatically
-Plug 'ciaranm/detectindent'
-
 " Format markdown table
 Plug 'godlygeek/tabular'
 
@@ -97,6 +92,9 @@ Plug 'simrat39/symbols-outline.nvim'
 " Highlight related text under cursor
 Plug 'RRethy/vim-illuminate'
 
+" Indentation guide
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 call plug#end()
 
 " Install plugins the first time vim runs
@@ -121,11 +119,10 @@ source ~/.config/nvim/share_cfg/keybindings.vim
 " Plugin configurations
 " =============================================================================
 source ~/.config/nvim/plugin_cfg/startify.vim
-source ~/.config/nvim/plugin_cfg/indent.vim
 source ~/.config/nvim/plugin_cfg/signify.vim
 source ~/.config/nvim/plugin_cfg/floatterm.vim
 
-" Language servers + Lua config
+" Language servers + Lua config + nvim>=0.5
 source ~/.config/nvim/plugin_cfg/lspconfig.vim
 "source ~/.config/nvim/plugin_cfg/lua/lspsaga.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lspinstall.lua
@@ -135,5 +132,6 @@ luafile ~/.config/nvim/plugin_cfg/lua/signature.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lualine.lua
 luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/todocomments.lua
+luafile ~/.config/nvim/plugin_cfg/lua/indent.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
 source ~/.config/nvim/plugin_cfg/lua/illuminate.vim

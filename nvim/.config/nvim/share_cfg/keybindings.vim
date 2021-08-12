@@ -6,7 +6,9 @@
 nnoremap <silent> <leader><space> :nohlsearch<CR>
 
 " Toggle the indent lines
-if has_key(plugs, 'indentLine')
+if has_key(plugs, 'indent-blankline.nvim')
+    nnoremap <silent> <leader>i :IndentBlanklineToggle<CR>
+elseif has_key(plugs, 'indentLine')
     nnoremap <silent> <leader>i :IndentLinesToggle<CR>
 endif
 
