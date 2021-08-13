@@ -123,9 +123,10 @@ source ~/.config/nvim/plugin_cfg/signify.vim
 source ~/.config/nvim/plugin_cfg/floatterm.vim
 
 " Language servers + Lua config + nvim>=0.5
-source ~/.config/nvim/plugin_cfg/lspconfig.vim
+"source ~/.config/nvim/plugin_cfg/lspconfig.vim
 "source ~/.config/nvim/plugin_cfg/lua/lspsaga.lua
-luafile ~/.config/nvim/plugin_cfg/lua/lspinstall.lua
+"luafile ~/.config/nvim/plugin_cfg/lua/lspinstall.lua
+luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
 luafile ~/.config/nvim/plugin_cfg/lua/compe.lua
 luafile ~/.config/nvim/plugin_cfg/lua/signature.lua
