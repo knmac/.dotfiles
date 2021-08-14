@@ -58,9 +58,6 @@ Plug 'neovim/nvim-lspconfig'
 " Wrapper to install language server -> :LspInstall <language>
 Plug 'kabouzeid/nvim-lspinstall'
 
-" Better interface for nvim LSP
-"Plug 'glepnir/lspsaga.nvim'
-
 " Auto completion tool
 Plug 'hrsh7th/nvim-compe'
 
@@ -123,9 +120,6 @@ source ~/.config/nvim/plugin_cfg/signify.vim
 source ~/.config/nvim/plugin_cfg/floatterm.vim
 
 " Language servers + Lua config + nvim>=0.5
-"source ~/.config/nvim/plugin_cfg/lspconfig.vim
-"source ~/.config/nvim/plugin_cfg/lua/lspsaga.lua
-"luafile ~/.config/nvim/plugin_cfg/lua/lspinstall.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
 luafile ~/.config/nvim/plugin_cfg/lua/compe.lua
@@ -133,6 +127,6 @@ luafile ~/.config/nvim/plugin_cfg/lua/signature.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lualine.lua
 luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/todocomments.lua
-luafile ~/.config/nvim/plugin_cfg/lua/indent.lua
+luafile ~/.config/nvim/plugin_cfg/lua/indent-blankline.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
 source ~/.config/nvim/plugin_cfg/lua/illuminate.vim
