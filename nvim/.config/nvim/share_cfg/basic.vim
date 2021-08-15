@@ -50,6 +50,10 @@ highlight String        cterm=italic gui=italic
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " detects the type of file when the file is created or opened
 
+" Only show cursorline on active windows
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+
 
 " -----------------------------------------------------------------------------
 " Splitting
