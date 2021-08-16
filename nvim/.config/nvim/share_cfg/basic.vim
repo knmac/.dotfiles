@@ -86,9 +86,10 @@ endif
 
 
 " -----------------------------------------------------------------------------
-" Searching
+" Searching and substitution
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set inccommand=nosplit  " show substitution results live
 
 
 " -----------------------------------------------------------------------------
@@ -97,3 +98,9 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " set folding method by looking at indentation
+
+
+" -----------------------------------------------------------------------------
+" Terminal
+" Make <Esc> works in terminal
+tnoremap <Esc> <C-\><C-n>
