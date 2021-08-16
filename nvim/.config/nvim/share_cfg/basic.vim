@@ -103,4 +103,4 @@ set foldmethod=indent   " set folding method by looking at indentation
 " -----------------------------------------------------------------------------
 " Terminal
 " Make <Esc> works in terminal
-tnoremap <Esc> <C-\><C-n>
+"tnoremap <Esc> <C-\><C-n>

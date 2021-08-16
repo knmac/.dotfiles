@@ -75,9 +75,11 @@ endif
 " <F4>: Show tag bar
 if has_key(plugs, 'symbols-outline.nvim')
     nnoremap <silent> <F4> :SymbolsOutline<CR>
-elseif  has_key(plugs, 'tagbar')
+elseif has_key(plugs, 'tagbar')
     nnoremap <silent> <F4> :TagbarToggle<CR>
     let g:tagbar_autofocus = 1
+elseif has_key(plugs, 'fzf.vim')
+    nnoremap <silent> <F4> :BTags<CR>
 endif
 
 " <F5>: Show and switch buffer
