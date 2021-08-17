@@ -36,6 +36,7 @@ i3lock \
   --separator-color=$white$transparent \
   --verif-color=$green \
   --wrong-color=$red \
+  --modif-color=$white \
   --layout-color=$blue \
   --date-color=$blue \
   --time-color=$blue \
