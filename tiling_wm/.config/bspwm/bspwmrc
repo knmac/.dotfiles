@@ -1,36 +1,62 @@
 #!/usr/bin/env bash
 # =============================================================================
-# Startup programs
-# =============================================================================
-picom --experimental-backends &
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc_bspwm &
-$HOME/.screenlayout/default.sh &
-nitrogen --restore &
-xautolock -time 30 -corners 000- -locker $HOME/.config/i3/i3lock.sh &
-xss-lock --transfer-sleep-lock -- $HOME/.config/i3/i3lock.sh &
-$HOME/.config/polybar/launch.sh &
-
-nm-applet &
-blueman-applet &
-dropbox start &
-
-
-# =============================================================================
 # BSPWM config
 # =============================================================================
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
-bspc config border_width         2
-bspc config window_gap          10
+# Configure both monitors at the same time
+desktop_config() {
+    bspc config $1 $2
+    for M in $(bspc query -M); do
+        bspc config -m $M $1 $2
+    done
+}
 
-bspc config split_ratio                 0.5
-bspc config borderless_monocle          true
-bspc config gapless_monocle             true
-bspc config focus_follows_pointer       true
-bspc config history_aware_focus         true
+desktop_config border_width         3
+desktop_config window_gap          10
+
+desktop_config split_ratio                 0.5
+desktop_config borderless_monocle          true
+desktop_config gapless_monocle             true
+desktop_config focus_follows_pointer       true
+desktop_config history_aware_focus         true
 
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off
+
+
+# =============================================================================
+# Startup programs
+# =============================================================================
+# Compositor
+picom --experimental-backends &
+
+# Simple X hotkey deamon
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc_bspwm &
+
+# Monitor settings
+$HOME/.screenlayout/default.sh &
+
+# Wallpaper settings
+nitrogen --restore &
+
+# Autolock the screen
+xautolock -time 30 -corners 000- -locker $HOME/.config/i3/i3lock.sh &
+
+# Lockscreen settings
+xss-lock --transfer-sleep-lock -- $HOME/.config/i3/i3lock.sh &
+
+# polybar
+$HOME/.config/polybar/launch.sh &
+
+# Network manager
+nm-applet &
+
+# Bluetooth manager
+blueman-applet &
+
+# Dropbox
+sleep 10; dropbox start &

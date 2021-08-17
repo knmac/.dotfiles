@@ -5,19 +5,19 @@
 super + shift + r
     bspc wm -r
 
+# Change window gap
+super + {_,shift +}z
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2))
+
 # Close focused window
 super + shift + q
     bspc node -c
 
-# Change focus and swap
+# Change focus and swap between windows
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 super + {_,shift + }{Left,Down,Up,Right}
     bspc node -{f,s} {west,south,north,east}
-
-# Focus to the next/previous desktop in the current monitor
-super + {comma,period}
-    bspc desktop -f {prev,next}.local
 
 # Toggle fullscreen
 super + f
@@ -27,6 +27,20 @@ super + f
 super + shift + f
     bspc node -t \~floating
 
-# Change workspace
+# Change workspace (and follow)
 super + {_,shift + }{1-9,0}
-      bspc {desktop -f,node -d} '^{1-9,10}' --follow
+    bspc {desktop -f,node -d} '^{1-9,10}' --follow
+
+# focus west/east monitor
+super + {comma,period}
+    bspc monitor -f {west,east}
+
+# move window to west/east monitor
+super + shift + {comma,period}
+    bspc node --to-monitor {west,east} -f
+
+# Switch to the prev/next workspace
+super + {Prior,Next}
+    bspc desktop -f {prev,next}.local
+#super + {Prior,Next}
+#    bspc node -s {prev,next}.local
