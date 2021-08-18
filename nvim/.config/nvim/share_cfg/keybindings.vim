@@ -89,7 +89,11 @@ else
     nnoremap <silent> <F5> :buffers<CR>:buffer<Space>
 endif
 " <S-F5>: Show tab list
-nnoremap <silent> <F17> :tabs<CR>
+if has_key(plugs, 'fzf.vim')
+    nnoremap <silent> <F17> :Windows<CR>
+else
+    nnoremap <silent> <F17> :tabs<CR>
+endif
 
 " <F6>: Prev buffer
 if has_key(plugs, 'nvim-bufferline.lua')
