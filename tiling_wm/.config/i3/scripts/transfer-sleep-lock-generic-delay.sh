@@ -9,7 +9,7 @@
 ## CONFIGURATION ##############################################################
 
 # Command to start the locker (should not fork)
-locker="$HOME/.config/i3/i3lock.sh"
+locker="$HOME/.config/i3/scripts/i3lock.sh"
 
 # Delay in seconds. Note that by default systemd-logind allows a maximum sleep
 # delay of 5 seconds.
