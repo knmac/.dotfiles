@@ -64,6 +64,9 @@ Plug 'hrsh7th/nvim-compe'
 " Show code signature while typing
 Plug 'ray-x/lsp_signature.nvim'
 
+" Pictogram to LSP
+Plug 'onsails/lspkind-nvim'
+
 " Parser generator tool, allow better syntax highlighting -> :TSInstall <language>
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 
@@ -128,5 +131,6 @@ luafile ~/.config/nvim/plugin_cfg/lua/lualine.lua
 luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/todocomments.lua
 luafile ~/.config/nvim/plugin_cfg/lua/indent-blankline.lua
+luafile ~/.config/nvim/plugin_cfg/lua/lspkind.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
 source ~/.config/nvim/plugin_cfg/lua/illuminate.vim
