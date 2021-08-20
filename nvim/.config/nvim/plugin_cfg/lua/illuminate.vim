@@ -3,7 +3,7 @@ let g:Illuminate_ftHighlightGroups = {
       \         'vimFuncName', 'vimFunction', 'vimUserFunc', 'vimFunc']
       \ }
 
-let g:Illuminate_ftblacklist = ['nerdtree']
+let g:Illuminate_ftblacklist = ['nerdtree', 'NvimTree']
 
 augroup illuminate_augroup
     autocmd!

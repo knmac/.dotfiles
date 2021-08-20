@@ -55,6 +55,9 @@ Plug 'chrisbra/Colorizer'
 " Language Server Protocol for neovim, core plugin
 Plug 'neovim/nvim-lspconfig'
 
+" required by many other lua-plugins
+Plug 'nvim-lua/plenary.nvim'
+
 " Wrapper to install language server -> :LspInstall <language>
 Plug 'kabouzeid/nvim-lspinstall'
 
@@ -74,7 +77,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'andymass/vim-matchup'
 
 " Highlight and search for todo comments (TODO, HACK, FIX, etc.)
-Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
 
 " Status line
