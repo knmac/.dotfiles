@@ -30,8 +30,8 @@ prompt {
 
 textbox-prompt-colon {
     expand:                         false;
-    str:                            " ";
-    margin:                         0px 4px 0px 0px;
+    str:                            ":";
+    margin:                         0 0.3em 0em 0em;
     text-color:                     inherit;
 }
 
@@ -50,12 +50,6 @@ inputbar {
     text-color:                     @fg;
     padding:                        1px;
     children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-textbox-prompt-colon {
-    text-color:                     inherit;
-    expand:                         false;
-    margin:                         0 0.3em 0em 0em;
-    str:                            ":";
 }
 
 mainbox {
@@ -81,6 +75,8 @@ element {
     orientation:                    horizontal;
 }
 element-text {
+    background-color:               transparent;
+    text-color:                     inherit;
     font:                           "feather 15";
 }
 element normal.normal {
