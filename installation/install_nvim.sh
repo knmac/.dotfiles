@@ -4,7 +4,7 @@ if [ -z $1 ]; then
 else
     NVIM_VERSION=$1
 fi
-DOTFILES_ROOT="$HOME/dotfiles"
+DOTFILES_ROOT="$HOME/.dotfiles"
 
 echo "Install NeoVim..."
 

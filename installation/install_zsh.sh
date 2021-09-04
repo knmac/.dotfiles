@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-DOTFILES_ROOT="$HOME/dotfiles"
+DOTFILES_ROOT="$HOME/.dotfiles"
 
 echo "Automatically install and set up the packages. Requires sudo"
 

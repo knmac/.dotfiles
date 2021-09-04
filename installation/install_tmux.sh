@@ -10,7 +10,7 @@ set -e
 TMUX_VERSION=3.0
 LIBEVENT_VERSION=2.1.11
 NCURSES_VERSION=6.1
-DOTFILES_ROOT="$HOME/dotfiles"
+DOTFILES_ROOT="$HOME/.dotfiles"
 
 # create our directories
 mkdir -p "$HOME/.local" "$HOME/tmux_tmp"
