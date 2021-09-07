@@ -10,6 +10,9 @@ configuration {
     click-to-exit:                  true;
     combi-hide-mode-prefix:         false;
 
+    me-accept-entry:                "MousePrimary";
+    me-select-entry:                "";
+
     display-drun:                   " drun";
     display-run:                    " run";
     display-window:                 " window";

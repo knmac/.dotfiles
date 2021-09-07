@@ -8,6 +8,9 @@ configuration {
     scroll-method:                  1;
     click-to-exit:                  true;
     combi-hide-mode-prefix:         false;
+
+    me-accept-entry:                "MousePrimary";
+    me-select-entry:                "";
 }
 
 @import "colors.rasi" 
