@@ -8,10 +8,10 @@ i3lock_pth="~/.config/i3/scripts/i3lock.sh"
 
 # Options
 shutdown="  Shutdown"
-  reboot="  Restart "
-    lock="  Lock    "
- suspend="  Sleep   "
-  logout="  Logout  "
+  reboot="   Restart"
+    lock="    Lock  "
+ suspend="    Sleep "
+  logout="   Logout "
 
 # Confirmation
 confirm_exit() {

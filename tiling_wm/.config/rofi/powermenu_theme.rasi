@@ -71,16 +71,17 @@ listview {
 element {
     border:                         0px;
     border-radius:                  15px;
-    padding:                        1%;
+    padding:                        10px;
+    width:                          150px;
     orientation:                    horizontal;
 }
 element-text {
     background-color:               transparent;
-    text-color:                     inherit;
-    font:                           "feather 15";
+    text-color:                     @black;
+    font:                           "feather 14";
 }
 element normal.normal {
-    background-color:               @bg;
+    background-color:               @green;
     text-color:                     @fg;
 }
 element normal.urgent {
@@ -104,7 +105,7 @@ element selected.active {
     text-color:                     @se;
 }
 element alternate.normal {
-    background-color:               @bg;
+    background-color:               @green;
     text-color:                     @fg;
 }
 element alternate.urgent {
