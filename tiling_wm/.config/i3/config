@@ -15,7 +15,7 @@ set $mod Mod4
 # i3 Settings
 # -----------------------------------------------------------------------------
 # Gap
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 1
 gaps inner 10
 gaps outer 0
 bindsym $mod+z       gaps outer current plus 5
