@@ -21,24 +21,24 @@ tmux ls
 
 ## From inside tmux
 
-The commands and key-bindings have to be after pressing `<prefix>` (except for *swap windows*). The default `<prefix>` is `Ctrl-b`
+The commands and key-bindings have to be after pressing `<prefix>` (except for *swap windows*). The default `<prefix>` is `Ctrl+b`
 
 | Functionality             | Command                                  | Key-binding (after `<prefix>`)               |
 |---------------------------|------------------------------------------|----------------------------------------------|
 | Show all commands         |                                          | `?`                                          |
 | Reload tmux config        | `:source-file [path/to/file]`            | `r`                                          |
 |                           |                                          |                                              |
-| New session               | `:new-session`                           | `Ctrl-c`                                     |
+| New session               | `:new-session`                           | `Ctrl+c`                                     |
 | New window                | `:new-window`                            | `c`                                          |
 | Split vertically          | `:split-window -v`                       | `-` (default `%`)                            |
 | Split horizontally        | `:split-window -h`                       | `|` or `_` (default `"`)                     |
 |                           |                                          |                                              |
 | Navigate between sessions | `:switch-client` `-p`/`-n`               | `(`/`)`                                      |
-| Navigate between windows  | `:previous-window`/`:next-window`        | `Ctrl-` `h`/`l`                              |
+| Navigate between windows  | `:previous-window`/`:next-window`        | `Ctrl+` `h`/`l`                              |
 | Navigate to last window   | `:last-window`                           | `Tab`                                        |
 | Navigate between panes    | `:select-pane` `-L`/`-D`/`-U`/`-R`       | `h`/`j`/`k`/`l`                              |
-| Resize panes              | `:resize-pane` `-L`/`-D`/`-U`/`-R` `[n]` | `Shift-` `h`/`j`/`k`/`l`                     |
-| Swap windows              | `:swap-window -t` `-1`/`+1`              | `Ctrl-Shift-` `Left`/`Right` (no `<prefix>`) |
+| Resize panes              | `:resize-pane` `-L`/`-D`/`-U`/`-R` `[n]` | `Shift+` `h`/`j`/`k`/`l`                     |
+| Swap windows              | `:swap-window -t` `-1`/`+1`              | `Ctrl+Shift+` `Left`/`Right` (no `<prefix>`) |
 | Swap panes                | `:swap-pane -t` `-1`/`+1`                | `{`/`}`                                      |
 | Zoom/unzoom pane          | `:resize-pane -Z`                        | `z`                                          |
 | Next layout               | `:next-layout`                           | `space`                                      |
@@ -65,15 +65,15 @@ In *copy mode*:
     - Copy using keyboard:
         1. Enter copy mode
         2. Move to start/end of text
-        3. Begin highlight:   `Ctrl-Space`
+        3. Begin highlight:   `Ctrl+Space`
         4. Move to end/start of text
-        5. Copy to clipboard: `Ctrl-w` (on Linux) or `Esc-w` (on Mac)
+        5. Copy to clipboard: `Ctrl+w` (on Linux) or `Esc+w` (on Mac)
     - Copy using mouse:
         1. Enter copy mode
         2. Use your mouse to highlight
 - Search text:
     1. Enter copy mode
-    2. Search for text: `Ctrl-s [text]`
+    2. Search for text: `Ctrl+s [text]`
     3. Search forward/backward: `n/N`
 
 (You can also use Vim key-bindings in Copy mode)

@@ -2,16 +2,6 @@
 " Custom snippets and functions
 " =============================================================================
 
-" -----------------------------------------------------------------------------
-" Shortcut for Python breakpoint (ipdb)
-" On the next line
-autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
-
-" On the previous line
-autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
-
-
-" -----------------------------------------------------------------------------
 " Fill the rest of line with characters
 function! FillLine( str )
     " set tw to the desired total length
@@ -27,12 +17,6 @@ function! FillLine( str )
         .s/$/\=(' '.repeat(a:str, reps))/
     endif
 endfunction
-
-" Fill with '-' characters
-nnoremap <silent> <leader>- :call FillLine('-')<CR>
-
-" Fill with '=' characters
-nnoremap <silent> <leader>= :call FillLine('=')<CR>
 
 
 " -----------------------------------------------------------------------------
@@ -65,11 +49,3 @@ augroup restorezoom
     au WinEnter * silent! :call ToggleZoom(v:false)
 augroup END
 "nnoremap <silent> <leader>+ :call ToggleZoom(v:true)<CR>
-
-
-" -----------------------------------------------------------------------------
-" Custom skeletons
-nnoremap <silent> ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
-nnoremap <silent> ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
-nnoremap <silent> ,md    :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
-nnoremap <silent> ,today :read !date "+\%F"<CR>kJ$

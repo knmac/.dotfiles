@@ -20,7 +20,7 @@ cp -r nvim-linux64/* $HOME/.local
 rm -r nvim-linux64
 rm nvim-linux64.tar.gz
 
-#ln -sf $DOTFILES_ROOT/nvim $HOME/.config/nvim
+# Get config
 pushd $DOTFILES_ROOT
 stow nvim
 popd

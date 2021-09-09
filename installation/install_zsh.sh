@@ -7,9 +7,6 @@ echo "Automatically install and set up the packages. Requires sudo"
 echo "Install and setup zsh"
 sudo apt install zsh
 
-# Change default shell to zsh. Deprecated, oh-my-zsh will do it for you
-#chsh -s /bin/zsh "$USER"
-
 # Clone oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -25,13 +22,15 @@ git clone https://github.com/esc/conda-zsh-completion "$ZSH_CUSTOM/plugins/conda
 # Install bat for syntax highlighting, ripgrep for file finder (with a string)
 sudo apt install bat ripgrep
 
-# Install p10k theme
+# Install p10k prompt
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
-# Install typewritten theme
+# Install typewritten prompt
 #git clone https://github.com/reobin/typewritten "$ZSH_CUSTOM/themes"
-
 # Install spaceship prompt
 #git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 
 # Copy zshrc over any modify as needed
 cp "$DOTFILES_ROOT/zsh/.zshrc" "$HOME"
+
+# Configure p10k prompt
+p10k configure

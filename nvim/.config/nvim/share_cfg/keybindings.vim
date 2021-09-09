@@ -44,6 +44,23 @@ if has_key(plugs, 'fzf.vim')
     nnoremap <silent> <C-F> :Rg<CR>
 endif
 
+" Shortcut for Python breakpoint (ipdb)
+" On the next line
+autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
+" On the previous line
+autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
+
+" Fill with '-' characters
+nnoremap <silent> <leader>- :call FillLine('-')<CR>
+" Fill with '=' characters
+nnoremap <silent> <leader>= :call FillLine('=')<CR>
+
+" Custom skeletons
+nnoremap <silent> ,py    :-1read $HOME/.config/nvim/skeletons/skeleton.py<esc>Gddgg
+nnoremap <silent> ,html  :-1read $HOME/.config/nvim/skeletons/skeleton.html<esc>Gddgg
+nnoremap <silent> ,md    :-1read $HOME/.config/nvim/skeletons/skeleton.md<esc>Gddgg
+nnoremap <silent> ,today :read !date "+\%F"<CR>kJ$
+
 
 " =============================================================================
 " <F1> -> <F12> bindings
@@ -52,6 +69,7 @@ endif
 " <F1>: Show help
 if has_key(plugs, 'fzf.vim')
     nnoremap <silent> <F1> :Helptags<CR>
+    nnoremap <silent> <F13> :Maps<CR>
 endif
 
 " <F2>: Show task list
