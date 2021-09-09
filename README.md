@@ -1,12 +1,6 @@
 # Dotfiles
 
 Some linux configurations I have been collecting.
-<!--
-   -<p align="center">
-   -  <img src="demo.gif">
-   -</p>
-   -->
-
 
 ## 1. Prerequisite
 
@@ -41,6 +35,8 @@ You may need to log out and log in again to update your default shell.
 
 ## 3. NeoVim
 
+![](demo/nvim_demo.png)
+
 ### 3.1. Installation
 
 Install NeoVim dependencies, this will install `nodejs` for you, too:
@@ -55,6 +51,8 @@ Install NeoVim dependencies, this will install `nodejs` for you, too:
 
 
 ## 4. Tmux
+
+![](demo/tmux_demo.png)
 
 ### 4.1. Installation
 
@@ -74,7 +72,13 @@ The configuration is customized from [here](https://github.com/gpakosz/.tmux).
 
 [Tmux cheatsheet](cheatsheets/tmux_cheatsheet.md)
 
-## 5. Some other tools that I use
+## 5. Window manager
+
+![](demo/i3wm_demo.png)
+
+[TODO]
+
+## 6. Some other tools that I use
 
 - Terminal: `kitty`
 - File manager: `ranger-fm` (with `ueberzug` for image preview method)
