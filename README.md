@@ -1,6 +1,6 @@
 # Dotfiles
 
-Some linux configurations I have been collecting.
+Some linux configurations I have been collecting. Clone this repo to your home directory before using.
 
 ## 1. Prerequisite
 
@@ -39,7 +39,7 @@ You may need to log out and log in again to update your default shell.
 
 ### 3.1. Installation
 
-Install NeoVim dependencies, this will install `nodejs` for you, too:
+Install NeoVim, also install `nodejs` for you:
 
 ```bash
 ./installation/install_nvim.sh
