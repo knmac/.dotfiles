@@ -55,9 +55,6 @@ Plug 'chrisbra/Colorizer'
 " Language Server Protocol for neovim, core plugin
 Plug 'neovim/nvim-lspconfig'
 
-" Linter for format guide
-Plug 'mfussenegger/nvim-lint'
-
 " required by many other lua-plugins
 Plug 'nvim-lua/plenary.nvim'
 
@@ -129,7 +126,6 @@ source ~/.config/nvim/plugin_cfg/floatterm.vim
 
 " Language servers + Lua config + nvim>=0.5
 luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
-luafile ~/.config/nvim/plugin_cfg/lua/lint.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
 luafile ~/.config/nvim/plugin_cfg/lua/compe.lua
 luafile ~/.config/nvim/plugin_cfg/lua/signature.lua
