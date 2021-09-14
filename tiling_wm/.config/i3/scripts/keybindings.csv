@@ -1,9 +1,11 @@
 Show keybindings,super + F1
 Terminal,super + 
+Terminal (last location),super + shift + 
 Power menu,super + Esc
 Web brower,super + w
 Email client,super + m
 File manager,super + e
+File manager (last location),super + shift + e
 Settings,super + s
 System tray,super + t
 Calculator,super + c

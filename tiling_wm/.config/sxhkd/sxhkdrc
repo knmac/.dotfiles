@@ -1,10 +1,14 @@
 # Terminal
 super + Return
     kitty
+super + shift + Return
+    kitty --directory "$(cat /tmp/whereami)"
 
 # File explorer
 super + e
     thunar
+super + shift + e
+    thunar "$(cat /tmp/whereami)"
 
 # Settings (Gnome control center)
 super + s
