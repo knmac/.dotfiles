@@ -1,12 +1,12 @@
 # Dotfiles
 
-Some linux configurations I have been collecting. Clone this repo to your home directory before using.
+Clone this repo to your `$HOME` directory before using. The installation scripts assume you are using Debian-based Linux. Please inspect them *carefully* before running.
 
 ## 1. Prerequisite
 
 ### 1.1. Stow
 
-Install `stow` to manage the config files. The `stow` commands are added to my installation scripts.
+Install `stow` to manage the config files. The `stow` commands are used in the installation scripts.
 
 ```bash
 sudo apt install stow
@@ -14,8 +14,7 @@ sudo apt install stow
 
 ### 1.2. Fonts installation
 
-This is to display glyphs and breadcrumbs for Neovim and Tmux correctly. Visit [here](https://www.nerdfonts.com/#home) for more information.
-
+This is to display glyphs and breadcrumbs correctly. Visit [here](https://www.nerdfonts.com/#home) for more information.
 
 ```bash
 ./installation/install_fonts.sh
@@ -39,7 +38,7 @@ You may need to log out and log in again to update your default shell.
 
 ### 3.1. Installation
 
-Install NeoVim, also install `nodejs` for you:
+Install NeoVim (this also installs `nodejs`):
 
 ```bash
 ./installation/install_nvim.sh
@@ -76,16 +75,14 @@ The configuration is customized from [here](https://github.com/gpakosz/.tmux).
 
 ![](demo/i3wm_demo.png)
 
-[TODO]
+Follow the instructions [HERE](tiling_wm/README.md).
 
 ## 6. Some other tools that I use
 
 - Terminal: `kitty`
 - File manager: `ranger-fm` (with `ueberzug` for image preview method)
 - List contents in tree-like format: `tree`
-- File searcher: `rg` (ripgrep - improved version of `grep`)
-- File preview with syntax highlighting: `bat`
-- Interactive process viewer: `htop`, `bpytop`
+- Interactive process viewer: `htop`
 - Bandwidth monitor and rate esimator: `bmon`
 - System info viewer: `neofetch`
 - Document converter: `pandoc`
