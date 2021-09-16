@@ -31,7 +31,7 @@ Or follow the instructions from [here](https://github.com/yshui/picom)
 sudo apt install polybar
 ```
 
-Or follow the instructions from [here](https://github.com/davatorium/rofi)
+Or follow the instructions from [here](https://github.com/polybar/polybar)
 
 ## Rofi
 

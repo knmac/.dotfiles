@@ -75,7 +75,7 @@ The configuration is customized from [here](https://github.com/gpakosz/.tmux).
 
 ![](demo/i3wm_demo.png)
 
-Follow the instructions [HERE](tiling_wm/README.md).
+Follow the instructions [here](tiling_wm/README.md).
 
 ## 6. Some other tools that I use
 
