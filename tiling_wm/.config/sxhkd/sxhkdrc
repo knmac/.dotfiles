@@ -10,9 +10,9 @@ super + e
 super + shift + e
     thunar "$(cat /tmp/whereami)"
 
-# Settings (Gnome control center)
+# Settings
 super + s
-    gnome-control-center
+    stacer
 
 # Calculator (qalculate)
 super + c
@@ -20,11 +20,11 @@ super + c
 
 # Web browser
 super + w
-    firefox
+    google-chrome
 
 # Email client
 super + m
-    thunderbird
+    evolution --force-online
 
 # Random wallpaper
 super + p
