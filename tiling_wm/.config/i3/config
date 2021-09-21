@@ -189,6 +189,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#bindsym $mod+Ctrl+r exec i3-input -F 'rename workspace to "%s"' -P 'rename current workspace: '
+
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 

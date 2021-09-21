@@ -10,14 +10,18 @@ super + {_,shift +}z
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2))
 
 # Close focused window
-super + shift + q
-    bspc node -c
+super + {_,shift +}q
+    bspc node -{c,k}
 
 # Change focus and swap between windows
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 super + {_,shift + }{Left,Down,Up,Right}
     bspc node -{f,s} {west,south,north,east}
+
+# Rotate tree
+super + {_,shift +} BackSpace
+    bspc node @/ -C {forward,backward}
 
 # Toggle fullscreen
 super + f
@@ -44,3 +48,4 @@ super + {Prior,Next}
     bspc desktop -f {prev,next}.local
 #super + {Prior,Next}
 #    bspc node -s {prev,next}.local
+

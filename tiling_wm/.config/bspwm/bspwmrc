@@ -6,14 +6,17 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 # Configure both monitors at the same time
 desktop_config() {
-    bspc config $1 $2
-    for M in $(bspc query -M); do
-        bspc config -m $M $1 $2
+    #bspc config $1 $2
+    for monitor in $(bspc query -M); do
+        bspc config -m $monitor $1 $2
     done
 }
 
-desktop_config border_width         3
+desktop_config border_width         1
 desktop_config window_gap          10
+
+desktop_config focused_border_color \#61afef
+desktop_config active_border_color  \#98c379
 
 desktop_config split_ratio                 0.5
 desktop_config borderless_monocle          true
