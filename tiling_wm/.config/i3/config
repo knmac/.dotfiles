@@ -24,8 +24,8 @@ smart_borders on
 
 # Border
 # class                 border  backgr. text    indicator child_border
-client.focused          #61afef #282c34 #abb2bf #61afef #61afef
-client.focused_inactive #98c379 #272c34 #abb2bf #98c379 #98c379
+client.focused          #61afef #282c34 #abb2bf #56b6c2 #61afef
+#client.focused_inactive #98c379 #272c34 #abb2bf #98c379 #98c379
 #client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340
 
 # Font for window titles. Will also be used by the bar unless a different font
