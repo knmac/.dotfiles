@@ -6,6 +6,10 @@ configuration {
 @import "colors.rasi" 
 //;
 
+* {
+    background-color:               @bg;
+}
+
 window {
     border:                         0px;
     border-color:                   @ac;

@@ -13,7 +13,3 @@
     purple:                         #c678dd;
     cyan:                           #56b6c2;
 }
-
-* {
-    background-color:               @bg;
-}
