@@ -1,16 +1,6 @@
 // vim: ft=css
 configuration {
-    font:                           "JetBrainsMono Nerd Font 10";
-    location:                       0;
-    fixed-num-lines:                true;
     show-icons:                     false;
-    sidebar-mode:                   false;
-    scroll-method:                  1;
-    click-to-exit:                  true;
-    combi-hide-mode-prefix:         false;
-
-    me-accept-entry:                "MousePrimary";
-    me-select-entry:                "";
 }
 
 @import "colors.rasi" 

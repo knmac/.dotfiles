@@ -1,7 +1,7 @@
 // vim: ft=css
 configuration {
     terminal:                       "kitty";
-    modi:                           "drun#run#window#ssh#keys";
+    modi:                           "drun,run,window,ssh,keys";
 
     /*font:                           "FiraCode Nerd Font 12";*/
     font:                           "JetBrainsMono Nerd Font 12";
