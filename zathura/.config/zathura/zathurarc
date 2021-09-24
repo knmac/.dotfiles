@@ -2,7 +2,6 @@ set window-height   1024
 set window-width    768
 set page-padding    10
 set recolor-keephue true
-set smooth-scroll   true
 
 set selection-clipboard clipboard
 set adjust-open "best-fit"
