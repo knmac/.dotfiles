@@ -1,25 +1,4 @@
 // vim: ft=css
-configuration {
-    /*font:                           "FiraCode Nerd Font 12";*/
-    font:                           "JetBrainsMono Nerd Font 12";
-    fixed-num-lines:                true;
-    show-icons:                     true;
-    sidebar-mode:                   true;
-    scroll-method:                  1;
-    /*window-format:                  "[{w}] ··· {c} ···   {t}";*/
-    click-to-exit:                  true;
-    combi-hide-mode-prefix:         false;
-
-    me-accept-entry:                "MousePrimary";
-    me-select-entry:                "";
-
-    display-drun:                   " drun";
-    display-run:                    " run";
-    display-window:                 " window";
-    display-ssh:                    " ssh";
-    display-keys:                   " keys";
-}
-
 @import "colors.rasi" 
 //;
 

@@ -1,8 +1,26 @@
 // vim: ft=css
 configuration {
-    terminal:           "kitty";
-    theme:              "~/.config/rofi/main_theme.rasi";
-    modi:               "drun#run#window#ssh#keys";
-    /*no-lazy-grab:       true;*/
-    /*disable-history:    true;*/
+    terminal:                       "kitty";
+    modi:                           "drun#run#window#ssh#keys";
+
+    /*font:                           "FiraCode Nerd Font 12";*/
+    font:                           "JetBrainsMono Nerd Font 12";
+    fixed-num-lines:                true;
+    show-icons:                     true;
+    sidebar-mode:                   true;
+    scroll-method:                  1;
+    /*window-format:                  "[{w}] ··· {c} ···   {t}";*/
+    click-to-exit:                  true;
+    combi-hide-mode-prefix:         false;
+
+    me-accept-entry:                "MousePrimary";
+    me-select-entry:                "";
+
+    display-drun:                   " drun";
+    display-run:                    " run";
+    display-window:                 " window";
+    display-ssh:                    " ssh";
+    display-keys:                   " keys";
 }
+
+@theme "~/.config/rofi/main_theme.rasi"
