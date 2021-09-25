@@ -36,7 +36,7 @@ modules-left = rofi i3 bspwm title
 modules-center =
 modules-right = filesystem cpu memory backlight pulseaudio battery date sysmenu
 module-margin = 1
-wm-restack = bspwm
+;wm-restack = bspwm
 
 font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;2
 font-1 = FiraCode Nerd Font:style=Regular:size=10;2
@@ -70,7 +70,7 @@ modules-left = rofi i3 bspwm title
 modules-center =
 modules-right = sysmenu
 module-margin = 1
-wm-restack = bspwm
+;wm-restack = bspwm
 
 font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;2
 font-1 = FiraCode Nerd Font:style=Regular:size=10;2
