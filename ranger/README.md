@@ -1,7 +1,7 @@
 # Install ranger
 
 ```bash
-sudo apt install libx11-dev libxext-dev
+sudo apt install libx11-dev libxext-dev poppler-utils
 
 pip3 install --user ranger-fm ueberzug
 ranger --copy-config=all
