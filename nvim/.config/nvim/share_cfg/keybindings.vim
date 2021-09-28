@@ -17,8 +17,8 @@ vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 
 " Go down/up soft-wrapped lines instead of 'real' lines
-nnoremap <silent> j gj
-nnoremap <silent> k gk
+nnoremap <silent> j gjzz
+nnoremap <silent> k gkzz
 
 " Window navigation
 nnoremap <silent> <A-h> <C-w>h
@@ -133,7 +133,7 @@ nnoremap <silent> <F19> :tabnext<CR>
 
 " <F8>: Close current buffer and switch to previous buffer
 if has_key(plugs, 'nvim-bufferline.lua')
-    nnoremap <silent> <F8> :BufferLineCyclePrev<CR>:bdelete #<CR>
+    nnoremap <silent> <F8> :bdelete #<CR>
 else
     nnoremap <silent> <F8> :bprevious<CR>:bdelete #<CR>
 endif
