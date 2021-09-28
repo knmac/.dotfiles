@@ -17,8 +17,10 @@ vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 
 " Go down/up soft-wrapped lines instead of 'real' lines
-nnoremap <silent> j gjzz
-nnoremap <silent> k gkzz
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+"nnoremap <silent> j gjzz
+"nnoremap <silent> k gkzz
 
 " Window navigation
 nnoremap <silent> <A-h> <C-w>h
