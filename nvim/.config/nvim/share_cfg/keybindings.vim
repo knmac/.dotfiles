@@ -135,7 +135,7 @@ nnoremap <silent> <F19> :tabnext<CR>
 
 " <F8>: Close current buffer and switch to previous buffer
 if has_key(plugs, 'nvim-bufferline.lua')
-    nnoremap <silent> <F8> :bdelete #<CR>
+    nnoremap <silent> <F8> :bdelete<CR>
 else
     nnoremap <silent> <F8> :bprevious<CR>:bdelete #<CR>
 endif

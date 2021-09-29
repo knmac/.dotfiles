@@ -61,6 +61,9 @@ Plug 'nvim-lua/plenary.nvim'
 " Wrapper to install language server -> :LspInstall <language>
 Plug 'kabouzeid/nvim-lspinstall'
 
+" Linter for style checking
+Plug 'mfussenegger/nvim-lint'
+
 " Auto completion tool
 Plug 'hrsh7th/nvim-compe'
 
@@ -71,7 +74,7 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'onsails/lspkind-nvim'
 
 " Parser generator tool, allow better syntax highlighting -> :TSInstall <language>
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Highlight and navigate sets of matching text. Can integrate with treesitter
 Plug 'andymass/vim-matchup'
@@ -127,6 +130,7 @@ source ~/.config/nvim/plugin_cfg/floatterm.vim
 " Language servers + Lua config + nvim>=0.5
 luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
+luafile ~/.config/nvim/plugin_cfg/lua/lint.lua
 luafile ~/.config/nvim/plugin_cfg/lua/compe.lua
 luafile ~/.config/nvim/plugin_cfg/lua/signature.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lualine.lua
