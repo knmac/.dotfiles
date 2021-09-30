@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Replace the default ranger command with this one to allow keeping the current directory upon exiting by pressing <Shift+Q>
-function ranger {
+rangercd() {
     local IFS=$'\t\n'
     local tempfile="$(mktemp -t tmp.XXXXXX)"
     local ranger_cmd=(
@@ -15,3 +15,4 @@ function ranger {
     fi
     command rm -f -- "$tempfile" 2>/dev/null
 }
+alias ranger="rangercd"
