@@ -139,7 +139,6 @@ fi
 
 if type bat &> /dev/null; then
   export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
-  export BAT_THEME="OneHalfDark"
 fi
 
 
@@ -166,8 +165,11 @@ export PATH="$HOME/.local/bin:$HOME/.local/nodejs/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="nvim -u $HOME/.config/nvim/init_basic.vim"
-export PROMPT_COMMAND="pwd > /tmp/whereami"
-precmd() { eval "$PROMPT_COMMAND" }
+export PROMPT_COMMAND="pwd > /tmp/whereami_$USER"
+precmd() {
+    eval "$PROMPT_COMMAND"
+}
 
 
+# Add tools
 source "$DOTFILES_DIR/tools/add_tools.sh"
