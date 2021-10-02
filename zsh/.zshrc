@@ -71,7 +71,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  #git
   zsh-syntax-highlighting
   zsh-autosuggestions
   conda-zsh-completion
@@ -134,29 +134,30 @@ bindkey '^ ' autosuggest-accept
 export FZF_DEFAULT_OPTS="--layout=default"
 
 if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files --hidden'
+    export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 
 if type bat &> /dev/null; then
-  export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
+    export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
 fi
 
 
 # Aliases
 if type xclip &> /dev/null; then
-  alias pbcopy='xclip -selection clipboard'
-  alias pbpaste='xclip -selection clipboard -o'
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
 elif type xsel &> /dev/null; then
-  alias pbcopy='xsel --clipboard --input'
-  alias pbpaste='xsel --clipboard --output'
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
 fi
 
 DOTFILES_DIR="$HOME/.dotfiles"
+NOTES_DIR="$HOME/Documents/my_notes"
 alias bvim="nvim -u $HOME/.config/nvim/init_basic.vim"
 alias cvim="nvim -u $HOME/.config/nvim/init_coc.vim"
 alias dotfiles="git --git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
-alias notes="git --git-dir=$HOME/Documents/my_notes/.git --work-tree=$HOME/Documents/my_notes"
 alias dotfiles_acp="dotfiles add . && dotfiles commit -m update && dotfiles push"
+alias notes="git --git-dir=$NOTES_DIR/.git --work-tree=$NOTES_DIR"
 alias notes_acp="notes add . && notes commit -m update && notes push"
 
 
