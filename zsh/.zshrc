@@ -141,6 +141,7 @@ fi
 # Use bat for preview if possible
 if type bat &> /dev/null; then
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
+    export BAT_THEME="OneHalfDark"
 fi
 
 
