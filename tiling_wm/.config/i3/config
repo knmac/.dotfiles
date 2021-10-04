@@ -223,14 +223,14 @@ bindsym $mod+minus scratchpad show
 # -----------------------------------------------------------------------------
 # Startup programs
 # -----------------------------------------------------------------------------
-# Compositor
-exec_always picom --experimental-backends
+# Monitor settings
+exec_always "$HOME/.screenlayout/default.sh"
 
 # Simple X hotkey deamon
 exec_always --no-startup-id sxhkd
 
-# Monitor settings
-exec_always "$HOME/.screenlayout/default.sh"
+# Compositor
+exec_always "sleep 1; picom --experimental-backends"
 
 # Wallpaper settings
 exec_always nitrogen --restore
