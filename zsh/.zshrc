@@ -122,21 +122,23 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # Configure zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
+# Disabling suggestion for large buffers
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+# Enable Asynchronous Mode
 ZSH_AUTOSUGGEST_USE_ASYNC=1
-
+# Press Ctrl+[space] to accept the suggestion
 bindkey '^ ' autosuggest-accept
 
 
 # Configure FZF
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
-
+#export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --border"
 export FZF_DEFAULT_OPTS="--layout=default"
-
+# Use ripgrep as search program for fzf
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
-
+# Use bat for preview if possible
 if type bat &> /dev/null; then
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
 fi
