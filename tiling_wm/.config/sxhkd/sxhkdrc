@@ -2,13 +2,13 @@
 super + Return
     kitty
 super + shift + Return
-    kitty --directory "$(cat /tmp/whereami)"
+    kitty --directory "$(cat /tmp/whereami_$USER)"
 
 # File explorer
 super + e
     thunar
 super + shift + e
-    thunar "$(cat /tmp/whereami)"
+    thunar "$(cat /tmp/whereami_$USER)"
 
 # Settings
 super + s
