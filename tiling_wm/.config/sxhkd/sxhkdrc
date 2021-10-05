@@ -46,6 +46,10 @@ super + t
 super + Escape
     "$HOME/.config/rofi/scripts/powermenu.sh"
 
+# Keyboard layout
+ctrl + alt + space
+    "$HOME/.config/i3/scripts/next_keyboard_layout.sh"
+
 # Screenshot
 Print
     sleep 0.2; \
