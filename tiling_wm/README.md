@@ -23,7 +23,8 @@ Follow the instructions from [here](https://github.com/Raymo111/i3lock-color)
 sudo apt install picom
 ```
 
-Or follow the instructions from [here](https://github.com/yshui/picom)
+<!--Or follow the instructions from [here](https://github.com/yshui/picom)-->
+Or follow the instructions from [here](https://github.com/jonaburg/picom) (jonaburg's repo)
 
 ## Polybar
 
