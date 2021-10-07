@@ -26,6 +26,9 @@ msg() {
     rofi -e "Available Options  -  yes / y / no / n"
 }
 
+# Get machine type
+machine_type="$(hostnamectl status | grep 'Chassis' | awk '{split($0, ret, "Chassis: "); print ret[2]}')"
+
 # Variable passed to rofi
 options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 
@@ -59,8 +62,11 @@ case $chosen in
         if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
             mpc -q pause
             #amixer set Master mute
-            systemctl suspend
-            #systemctl hybrid-sleep
+            if [[ "$machine_type" == "laptop" ]]; then
+                systemctl hybrid-sleep
+            else
+                systemctl suspend
+            fi
         elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
             exit 0
         else
