@@ -1,3 +1,6 @@
+-- Setup for both nvim-lspconfig and nvim-lspInstall
+-- ============================================================================
+
 -- keymaps
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -87,6 +90,7 @@ local function make_config()
 end
 
 -- lsp-install
+-- ============================================================================
 local function setup_servers()
     require'lspinstall'.setup()
 
