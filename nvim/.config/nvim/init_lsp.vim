@@ -65,7 +65,9 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'mfussenegger/nvim-lint'
 
 " Auto completion tool
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
 
 " Show code signature while typing
 Plug 'ray-x/lsp_signature.nvim'
@@ -131,7 +133,7 @@ source ~/.config/nvim/plugin_cfg/floatterm.vim
 luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lint.lua
-luafile ~/.config/nvim/plugin_cfg/lua/compe.lua
+luafile ~/.config/nvim/plugin_cfg/lua/cmp.lua
 luafile ~/.config/nvim/plugin_cfg/lua/signature.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lualine.lua
 luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
