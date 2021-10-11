@@ -55,6 +55,7 @@ local on_attach = function(client, bufnr)
     vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
 end
 
+-- ----------------------------------------------------------------------------
 -- Configure lua language server for neovim development
 local lua_settings = {
     Lua = {
@@ -90,7 +91,6 @@ local function make_config()
 end
 
 -- lsp-install
--- ============================================================================
 local function setup_servers()
     require'lspinstall'.setup()
 
