@@ -230,7 +230,7 @@ exec_always "$HOME/.screenlayout/default.sh"
 exec_always --no-startup-id sxhkd
 
 # Compositor
-exec_always "sleep 1; picom --experimental-backends"
+exec_always "picom --experimental-backends"
 
 # Wallpaper settings
 exec_always nitrogen --restore
@@ -257,7 +257,7 @@ exec_always --no-startup-id "nm-applet"
 exec_always --no-startup-id "blueman-applet"
 
 # Dropbox
-exec_always "sleep 10; dropbox start"
+#exec_always "sleep 10; dropbox start"
 
 
 # -----------------------------------------------------------------------------
