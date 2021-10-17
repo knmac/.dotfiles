@@ -59,7 +59,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 
 " Wrapper to install language server -> :LspInstall <language>
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'kabouzeid/nvim-lspinstall'
+"Plug 'williamboman/nvim-lsp-installer'
 
 " Parser generator tool, allow better syntax highlighting -> :TSInstall <language>
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -130,8 +131,9 @@ source ~/.config/nvim/plugin_cfg/signify.vim
 source ~/.config/nvim/plugin_cfg/floatterm.vim
 
 " Language servers + Lua config + nvim>=0.5
-luafile ~/.config/nvim/plugin_cfg/lua/lspconfig.lua
-luafile ~/.config/nvim/plugin_cfg/lua/lsp-installer.lua
+"luafile ~/.config/nvim/plugin_cfg/lua/lspconfig.lua
+luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
+"luafile ~/.config/nvim/plugin_cfg/lua/lsp-installer.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lint.lua
 luafile ~/.config/nvim/plugin_cfg/lua/cmp.lua
