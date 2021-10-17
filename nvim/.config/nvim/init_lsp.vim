@@ -59,7 +59,10 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 
 " Wrapper to install language server -> :LspInstall <language>
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
+
+" Parser generator tool, allow better syntax highlighting -> :TSInstall <language>
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Linter for style checking
 Plug 'mfussenegger/nvim-lint'
@@ -75,9 +78,6 @@ Plug 'ray-x/lsp_signature.nvim'
 " Pictogram to LSP
 Plug 'onsails/lspkind-nvim'
 
-" Parser generator tool, allow better syntax highlighting -> :TSInstall <language>
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
 " Highlight and navigate sets of matching text. Can integrate with treesitter
 Plug 'andymass/vim-matchup'
 
@@ -90,14 +90,14 @@ Plug 'hoob3rt/lualine.nvim'
 " Buffer line
 Plug 'akinsho/nvim-bufferline.lua'
 
-" File explorer tree
-Plug 'kyazdani42/nvim-tree.lua'
-
 " Show project structure
 "Plug 'simrat39/symbols-outline.nvim'
 
 " Highlight related text under cursor
 Plug 'RRethy/vim-illuminate'
+
+" File explorer tree
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Indentation guide
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -130,7 +130,8 @@ source ~/.config/nvim/plugin_cfg/signify.vim
 source ~/.config/nvim/plugin_cfg/floatterm.vim
 
 " Language servers + Lua config + nvim>=0.5
-luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
+luafile ~/.config/nvim/plugin_cfg/lua/lspconfig.lua
+luafile ~/.config/nvim/plugin_cfg/lua/lsp-installer.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lint.lua
 luafile ~/.config/nvim/plugin_cfg/lua/cmp.lua
