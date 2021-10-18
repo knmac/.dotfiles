@@ -55,21 +55,15 @@ To navigate in FZF's window, use either `Ctrl+j`/`Ctrl+n`/`down arrow` to go dow
 
 | Functionality                                        | Key-binding   |
 |------------------------------------------------------|---------------|
-| Go to definition                                     | `gd`          |
-| Go to declaration                                    | `gD`          |
-| Go to reference                                      | `gr`          |
-| Go to implementation                                 | `gi`          |
+| LSP finder (definitions and references)              | `gd`          |
+| Definition previewer                                 | `gD`          |
 | Show function documentation                          | `K`           |
 | Show signature help (while typing funtion arguments) | `Ctrl+K`      |
-|                                                      |               |
 | Rename variables                                     | `<leader> rn` |
-| Format code                                          | `<leader> f`  |
-| Add workspace folder                                 | `<leader> wa` |
-| Remove workspace folder                              | `<leader> wr` |
-| List workspace folder                                | `<leader> wl` |
-|                                                      |               |
-| Go to previous diagnostic                            | `[d`          |
-| Go to next diagnostic                                | `]d`          |
+| Code action                                          | `<leader> a`  |
+| Show current line's diagnostic                       | `<leader> e`  |
+| Go to previous diagnostic                            | `[e`          |
+| Go to next diagnostic                                | `]e`          |
 
 ## Some NERD Commenter key-bindings
 
