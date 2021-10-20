@@ -41,7 +41,8 @@ font pango:JetBrainsMono Nerd Font 11
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+Shift+q kill
+#bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run

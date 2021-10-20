@@ -28,7 +28,7 @@ I3-window resize,super + r; {h/j/k/l}
 I3-window resize (alt),super + r; {←/↓/↑/→}
 I3-window resize (),super + RightClick
 I3-window (float) move (),super + LeftClick
-I3-window kill,super + shift + q
+I3-window kill,super + q
 I3-scratchpad show,super + -
 I3-scratchpad make,super + shift + -
 I3-workspace focus,super + {1/2/.../0}
