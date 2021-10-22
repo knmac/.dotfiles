@@ -1,21 +1,22 @@
-[Super⌘][Return⏎][Ctrl^][Shift⇧][Tab⇥][Space␣][BackSpace⌫]
+[Super⌘] [Return⏎] [Ctrl^] [Shift⇧] [Tab⇥] [Space␣] [BkSpace⌫]
+─────────────────────────────────────────────────────────────────
 Show keybindings,⌘ + ?
+Power menu,⌘ + Esc
 Terminal,⌘ + ⏎
 Terminal (last location),⌘ + ⇧ + ⏎
-Power menu,⌘ + Esc
-Web [b]rower,⌘ + b
-E[m]ail client,⌘ + m
 File [e]xplorer,⌘ + e
 File [e]xplorer (last location),⌘ + ⇧ + e
-[S]ettings,⌘ + s
-System [t]ray,⌘ + t
-[C]alculator,⌘ + c
 Random [w]allpaper,⌘ + w
-------------------------------------------------------------
+System [t]ray,⌘ + t
+Web [b]rower,⌘ + b
+E[m]ail client,⌘ + m
+[C]alculator,⌘ + c
+[S]ettings (Stacer),⌘ + s
+─────────────────────────────────────────────────────────────────
 Rofi-drun,⌘ + ␣
 Rofi-run,⌘ + ⇧ + ␣
 Rofi-window,⌘ + ⇥
-------------------------------------------------------------
+─────────────────────────────────────────────────────────────────
 I3-fullscreen,⌘ + f
 I3-floating toggle,⌘ + ⇧ + f
 I3-focus tiling/floating,⌘ + ⇧ + t
@@ -51,10 +52,10 @@ I3-layout stacking,⌘ + F1
 I3-layout tabbed,⌘ + F2
 I3-layout split,⌘ + F3
 I3-instant-layout,⌘ + F4
-------------------------------------------------------------
+─────────────────────────────────────────────────────────────────
 Notification-close all,⌘ + `
 Notification-history,⌘ + ⇧ + `
-------------------------------------------------------------
+─────────────────────────────────────────────────────────────────
 Screenshot-full,Print
 Screenshot-area,⇧ + Print
 Screenshot-full (clipboard),^ + Print
