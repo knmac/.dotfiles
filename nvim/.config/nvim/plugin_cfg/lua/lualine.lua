@@ -2,10 +2,10 @@ require'lualine'.setup {
   options = {
     icons_enabled = true,
     theme = 'onedark',
-    component_separators = {'', ''},
-    section_separators = {'', ''},
-    --component_separators = {'|'},
-    --section_separators = {},
+    --component_separators = {left='', right=''},
+    --section_separators = {left='', right=''},
+    component_separators = {left='', right=''},
+    section_separators = {left='', right=''},
     disabled_filetypes = {}
   },
   sections = {
@@ -15,11 +15,14 @@ require'lualine'.setup {
       {
         'diff',
         colored=true,
-        color_added = '#98C379',
-        color_modified= '#E5C07B',
-        color_removed = '#E06C75',
+        diff_color = {
+          added = { fg = "#98C379", },
+          modified = { fg = "#E5C07B", },
+          removed = { fg = "#E06C75", }
+        },
         symbols = {added = '+', modified = '~', removed = '-'}
-      }
+      },
+      'diagnostics'
     },
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},

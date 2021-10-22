@@ -89,10 +89,10 @@ Plug 'andymass/vim-matchup'
 Plug 'folke/todo-comments.nvim'
 
 " Status line
-Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 " Buffer line
-Plug 'akinsho/nvim-bufferline.lua'
+Plug 'akinsho/bufferline.nvim'
 
 " Show project structure
 "Plug 'simrat39/symbols-outline.nvim'
