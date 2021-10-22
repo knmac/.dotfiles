@@ -19,7 +19,7 @@ super + c
     qalculate
 
 # Web browser
-super + w
+super + b
     google-chrome
 
 # Email client
@@ -27,7 +27,7 @@ super + m
     evolution --force-online
 
 # Random wallpaper
-super + p
+super + w
     nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --save
 
 # Rofi menu

@@ -3,14 +3,14 @@ Show keybindings,⌘ + ?
 Terminal,⌘ + ⏎
 Terminal (last location),⌘ + ⇧ + ⏎
 Power menu,⌘ + Esc
-Web brower,⌘ + w
-Email client,⌘ + m
-File manager,⌘ + e
-File manager (last location),⌘ + ⇧ + e
-Settings,⌘ + s
-System tray,⌘ + t
-Calculator,⌘ + c
-Random wallpaper,⌘ + p
+Web [b]rower,⌘ + b
+E[m]ail client,⌘ + m
+File [e]xplorer,⌘ + e
+File [e]xplorer (last location),⌘ + ⇧ + e
+[S]ettings,⌘ + s
+System [t]ray,⌘ + t
+[C]alculator,⌘ + c
+Random [w]allpaper,⌘ + w
 ------------------------------------------------------------
 Rofi-drun,⌘ + ␣
 Rofi-run,⌘ + ⇧ + ␣
