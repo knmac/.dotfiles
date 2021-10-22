@@ -1,60 +1,61 @@
-Show keybindings,super + F1
-Terminal,super + 
-Terminal (last location),super + shift + 
-Power menu,super + Esc
-Web brower,super + w
-Email client,super + m
-File manager,super + e
-File manager (last location),super + shift + e
-Settings,super + s
-System tray,super + t
-Calculator,super + c
-Random wallpaper,super + p
+Super⌘ - Shift⇧ - Return⏎ - Tab⇥ - Space␣ - BackSpace⌫ - Ctrl^
+Show keybindings,⌘ + ?
+Terminal,⌘ + ⏎
+Terminal (last location),⌘ + ⇧ + ⏎
+Power menu,⌘ + Esc
+Web brower,⌘ + w
+Email client,⌘ + m
+File manager,⌘ + e
+File manager (last location),⌘ + ⇧ + e
+Settings,⌘ + s
+System tray,⌘ + t
+Calculator,⌘ + c
+Random wallpaper,⌘ + p
 ------------------------------------------------------------
-Rofi-drun,super + space
-Rofi-run,super + shift + space
-Rofi-window,super + Tab
+Rofi-drun,⌘ + ␣
+Rofi-run,⌘ + ⇧ + ␣
+Rofi-window,⌘ + ⇥
 ------------------------------------------------------------
-I3-fullscreen,super + f
-I3-floating toggle,super + shift + f
-I3-focus tiling/floating,super + shift + t
-I3-reload,super + shift + c
-I3-restart,super + shift + r
-I3-window focus,super + {h/j/k/l}
-I3-window focus (alt),super + {←/↓/↑/→}
-I3-window move,super + shift + {h/j/k/l}
-I3-window move (alt),super + shift + {←/↓/↑/→}
-I3-window resize,super + r; {h/j/k/l}
-I3-window resize (alt),super + r; {←/↓/↑/→}
-I3-window resize (),super + RightClick
-I3-window (float) move (),super + LeftClick
-I3-window kill,super + q
-I3-scratchpad show,super + -
-I3-scratchpad make,super + shift + -
-I3-workspace focus,super + {1/2/.../0}
-I3-workspace move,super + shift + {1/2/.../0}
-I3-workspace-prev focus,super + PageUp
-I3-workspace-next focus,super + PageDown
-I3-workspace-prev move,super + shift + PageUp
-I3-workspace-next move,super + shift + PageDown
-I3-monitor-left focus,super + <
-I3-monitor-right focus,super + >
-I3-monitor-left move window,super + shift + <
-I3-monitor-right move window,super + shift + >
-I3-split horz,super + ctrl + h
-I3-split vert,super + ctrl + v
-I3-split horz/vert toggle,super + BackSpace
-I3-instant-layout,super + shift + BackSpace
-I3-gaps increase,super + z
-I3-gaps decrease,super + shift + z
-I3-layout stacking,super + F2
-I3-layout tabbed,super + F3
-I3-layout split,super + F4
+I3-fullscreen,⌘ + f
+I3-floating toggle,⌘ + ⇧ + f
+I3-focus tiling/floating,⌘ + ⇧ + t
+I3-reload,⌘ + ⇧ + c
+I3-restart,⌘ + ⇧ + r
+I3-window focus,⌘ + {h/j/k/l}
+I3-window focus (alt),⌘ + {←/↓/↑/→}
+I3-window move,⌘ + ⇧ + {h/j/k/l}
+I3-window move (alt),⌘ + ⇧ + {←/↓/↑/→}
+I3-window resize,⌘ + r; {h/j/k/l}
+I3-window resize (alt),⌘ + r; {←/↓/↑/→}
+I3-window resize (),⌘ + RightClick
+I3-window (float) move (),⌘ + LeftClick
+I3-window kill,⌘ + q
+I3-scratchpad show,⌘ + -
+I3-scratchpad make,⌘ + ⇧ + -
+I3-workspace focus,⌘ + {1/2/.../0}
+I3-workspace move,⌘ + ⇧ + {1/2/.../0}
+I3-workspace-prev focus,⌘ + PgUp
+I3-workspace-next focus,⌘ + PgDown
+I3-workspace-prev move,⌘ + ⇧ + PgUp
+I3-workspace-next move,⌘ + ⇧ + PgDown
+I3-monitor-left focus,⌘ + <
+I3-monitor-right focus,⌘ + >
+I3-monitor-left move window,⌘ + ⇧ + <
+I3-monitor-right move window,⌘ + ⇧ + >
+I3-split horz,⌘ + ^ + h
+I3-split vert,⌘ + ^ + v
+I3-split horz/vert toggle,⌘ + ⌫
+I3-gaps increase,⌘ + z
+I3-gaps decrease,⌘ + ⇧ + z
+I3-layout stacking,⌘ + F1
+I3-layout tabbed,⌘ + F2
+I3-layout split,⌘ + F3
+I3-instant-layout,⌘ + F4
 ------------------------------------------------------------
-Notification-history,super + shift + `
-Notification-close all,super + `
+Notification-close all,⌘ + `
+Notification-history,⌘ + ⇧ + `
 ------------------------------------------------------------
 Screenshot-full,Print
-Screenshot-area,shift + Print
-Screenshot-full (clipboard),ctrl + Print
-Screenshot-area (clipboard),ctrl + shift + Print
+Screenshot-area,⇧ + Print
+Screenshot-full (clipboard),^ + Print
+Screenshot-area (clipboard),^ + ⇧ + Print

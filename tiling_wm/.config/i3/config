@@ -83,19 +83,19 @@ bindsym $mod+Ctrl+v split v
 # toggle split orientation (horizontal/vertical)
 bindsym $mod+BackSpace split toggle
 
-# I3 instant layout
-bindsym $mod+Shift+BackSpace exec "$HOME/.config/i3/scripts/i3-instant-layout.sh"
-
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # Show key bindings
-bindsym $mod+F1 exec "$HOME/.config/i3/scripts/find_keybindings.sh"
+bindsym $mod+shift+slash exec "$HOME/.config/i3/scripts/find_keybindings.sh"
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+F2 layout stacking
-bindsym $mod+F3 layout tabbed
-bindsym $mod+F4 layout toggle split
+bindsym $mod+F1 layout stacking
+bindsym $mod+F2 layout tabbed
+bindsym $mod+F3 layout toggle split
+
+# I3 instant layout
+bindsym $mod+F4 exec "$HOME/.config/i3/scripts/i3-instant-layout.sh"
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
