@@ -50,6 +50,10 @@ super + Escape
 ctrl + alt + space
     "$HOME/.config/i3/scripts/next_keyboard_layout.sh"
 
+# Toggle picom config
+super + p
+    "$HOME/.config/i3/scripts/toggle_picom.sh"
+
 # Screenshot
 Print
     sleep 0.2; \

@@ -87,7 +87,7 @@ bindsym $mod+BackSpace split toggle
 bindsym $mod+f fullscreen toggle
 
 # Show key bindings
-bindsym $mod+shift+slash exec "$HOME/.config/i3/scripts/find_keybindings.sh"
+bindsym $mod+slash exec "$HOME/.config/i3/scripts/find_keybindings.sh"
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+F1 layout stacking
@@ -231,7 +231,7 @@ exec_always "$HOME/.screenlayout/default.sh"
 exec_always --no-startup-id sxhkd
 
 # Compositor
-exec_always "picom --experimental-backends"
+exec_always "picom --experimental-backends; touch /tmp/picom"
 
 # Wallpaper settings
 exec_always nitrogen --restore
