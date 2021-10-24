@@ -86,9 +86,6 @@ bindsym $mod+BackSpace split toggle
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# Show key bindings
-bindsym $mod+slash exec "$HOME/.config/i3/scripts/find_keybindings.sh"
-
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+F1 layout stacking
 bindsym $mod+F2 layout tabbed

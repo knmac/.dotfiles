@@ -10,6 +10,10 @@ super + e
 super + shift + e
     thunar "$(cat /tmp/whereami_$USER)"
 
+# Show key bindings
+super + slash
+    "$HOME/.config/rofi/scripts/find_keybindings.sh"
+
 # Settings
 super + s
     stacer
@@ -30,7 +34,7 @@ super + m
 super + w
     nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --save
 
-# Rofi menu
+# Rofi menus
 super + space
     "$HOME/.config/rofi/scripts/launch_rofi_drun.sh"
 super + shift + space
@@ -48,11 +52,11 @@ super + Escape
 
 # Keyboard layout
 ctrl + alt + space
-    "$HOME/.config/i3/scripts/next_keyboard_layout.sh"
+    "$HOME/.config/sxhkd/scripts/next_keyboard_layout.sh"
 
-# Toggle picom config
+# Toggle picom compositor
 super + p
-    "$HOME/.config/i3/scripts/toggle_picom.sh"
+    "$HOME/.config/sxhkd/scripts/toggle_picom.sh"
 
 # Screenshot
 Print
