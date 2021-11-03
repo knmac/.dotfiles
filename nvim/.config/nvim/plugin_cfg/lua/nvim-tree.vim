@@ -1,8 +1,6 @@
-let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache', '__pycache__' ] "empty by default
 "let g:nvim_tree_gitignore = 1 "0 by default
 let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
-let g:nvim_tree_hide_dotfiles = 1 "0 by default, this option hides files and folders starting with a dot `.`
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -123,7 +121,10 @@ require'nvim-tree'.setup {
     -- the command arguments as a list
     args = {}
   },
-
+  filters = {
+    dotfiles = true,
+    custom = {'.git', '.cache', '__pycache__'}
+  },
   view = {
     -- width of the window, can be either a number (columns) or a string in `%`
     width = 40,
