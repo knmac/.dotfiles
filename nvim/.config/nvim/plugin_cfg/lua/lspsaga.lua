@@ -74,3 +74,7 @@ vim.api.nvim_set_keymap('n', '[e', '<cmd>lua require("lspsaga.diagnostic").lsp_j
 -- Code action
 vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua require("lspsaga.codeaction").code_action()<CR>', opts)
 vim.api.nvim_set_keymap('v', '<leader>a', ':<C-U>lua require("lspsaga.codeaction").range_code_action()<CR>', opts)
+
+-- Float term
+vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require("lspsaga.floaterm").open_float_terminal()<CR>', opts)
+vim.api.nvim_set_keymap('t', '<F12>', '<C-\\><C-n>:lua require("lspsaga.floaterm").close_float_terminal()<CR>', opts)

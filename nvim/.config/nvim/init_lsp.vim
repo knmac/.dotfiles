@@ -37,9 +37,6 @@ Plug 'mhinz/vim-signify'
 " Format markdown table
 Plug 'godlygeek/tabular'
 
-" Floating terminal
-Plug 'voldikss/vim-floaterm'
-
 " Icons without colors (for startify)
 Plug 'ryanoasis/vim-devicons'
 
@@ -131,7 +128,6 @@ source ~/.config/nvim/share_cfg/keybindings.vim
 " =============================================================================
 source ~/.config/nvim/plugin_cfg/startify.vim
 source ~/.config/nvim/plugin_cfg/signify.vim
-source ~/.config/nvim/plugin_cfg/floatterm.vim
 
 " Language servers + Lua config + nvim>=0.5
 "luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
