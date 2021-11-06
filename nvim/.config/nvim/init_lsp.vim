@@ -20,12 +20,6 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Better syntax highlighting
-Plug 'sheerun/vim-polyglot'
-
-" Class/module browser
-"Plug 'majutsushi/tagbar'
-
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
 
@@ -41,10 +35,7 @@ Plug 'godlygeek/tabular'
 Plug 'ryanoasis/vim-devicons'
 
 " Icons with colors (required by lualine, nvim-bufferline, nvim-tree, etc.)
-Plug 'kyazdani42/nvim-web-devicons'  
-
-" Colorize colornames and codes
-Plug 'chrisbra/Colorizer'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " -----------------------------------------------------------------------------
 " Lua-based plugins, require nvim>=0.5
@@ -102,6 +93,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 " Indentation guide
 Plug 'lukas-reineke/indent-blankline.nvim'
+
+" Colorizer
+Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 
