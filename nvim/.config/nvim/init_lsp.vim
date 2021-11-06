@@ -13,6 +13,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 
+" Icons without colors (for startify)
+Plug 'ryanoasis/vim-devicons'
+
+" Icons with colors (required by lualine, nvim-bufferline, nvim-tree, etc.)
+Plug 'kyazdani42/nvim-web-devicons'
+
 " Startup page and session manager
 Plug 'mhinz/vim-startify'
 
@@ -23,19 +29,8 @@ Plug 'junegunn/fzf.vim'
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
 
-" Git integration, can show git branch on statusline
-Plug 'tpope/vim-fugitive'
-" Git/mercurial/others diff icons on the side of the file lines
-Plug 'mhinz/vim-signify'
-
 " Format markdown table
 Plug 'godlygeek/tabular'
-
-" Icons without colors (for startify)
-Plug 'ryanoasis/vim-devicons'
-
-" Icons with colors (required by lualine, nvim-bufferline, nvim-tree, etc.)
-Plug 'kyazdani42/nvim-web-devicons'
 
 " -----------------------------------------------------------------------------
 " Lua-based plugins, require nvim>=0.5
@@ -94,8 +89,11 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Indentation guide
 Plug 'lukas-reineke/indent-blankline.nvim'
 
-" Colorizer
+" Colorizer for color code
 Plug 'norcalli/nvim-colorizer.lua'
+
+" Git/mercurial/others diff icons on the side of the file lines
+Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
 
@@ -137,5 +135,6 @@ luafile ~/.config/nvim/plugin_cfg/lua/bufferline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/todocomments.lua
 luafile ~/.config/nvim/plugin_cfg/lua/indent-blankline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lspkind.lua
+luafile ~/.config/nvim/plugin_cfg/lua/gitsigns.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
 source ~/.config/nvim/plugin_cfg/lua/illuminate.vim
