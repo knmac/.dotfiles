@@ -64,7 +64,7 @@ vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua require("lspsaga.provider").preview
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua require("lspsaga.hover").render_hover_doc()<CR>', opts)
 
 -- Rename
-vim.api.nvim_set_keymap('n', 'rn', '<cmd>lua require("lspsaga.rename").rename()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua require("lspsaga.rename").rename()<CR>', opts)
 
 -- Navigate diagnostic
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua require("lspsaga.diagnostic").show_line_diagnostics()<CR>', opts)
@@ -72,8 +72,8 @@ vim.api.nvim_set_keymap('n', ']e', '<cmd>lua require("lspsaga.diagnostic").lsp_j
 vim.api.nvim_set_keymap('n', '[e', '<cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_prev()<CR>', opts)
 
 -- Code action
-vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua require("lspsaga.codeaction").code_action()<CR>', opts)
-vim.api.nvim_set_keymap('v', '<leader>a', ':<C-U>lua require("lspsaga.codeaction").range_code_action()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua require("lspsaga.codeaction").code_action()<CR>', opts)
+vim.api.nvim_set_keymap('v', '<leader>ca', ':<C-U>lua require("lspsaga.codeaction").range_code_action()<CR>', opts)
 
 -- Float term
 vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require("lspsaga.floaterm").open_float_terminal()<CR>', opts)
