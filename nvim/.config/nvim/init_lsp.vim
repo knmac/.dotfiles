@@ -24,7 +24,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Startup page and session manager
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
+Plug 'glepnir/dashboard-nvim'
 
 " Format markdown table
 Plug 'plasticboy/vim-markdown'
@@ -118,7 +119,8 @@ source ~/.config/nvim/share_cfg/keybindings.vim
 " =============================================================================
 " Plugin configurations
 " =============================================================================
-source ~/.config/nvim/plugin_cfg/startify.vim
+" source ~/.config/nvim/plugin_cfg/startify.vim
+source ~/.config/nvim/plugin_cfg/dashboard.vim
 source ~/.config/nvim/plugin_cfg/markdown.vim
 
 " Language servers + Lua config + nvim>=0.5
