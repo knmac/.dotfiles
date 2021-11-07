@@ -19,12 +19,12 @@ Plug 'ryanoasis/vim-devicons'
 " Icons with colors (required by lualine, nvim-bufferline, nvim-tree, etc.)
 Plug 'kyazdani42/nvim-web-devicons'
 
-" Startup page and session manager
-Plug 'mhinz/vim-startify'
-
 " Fuzzy finder (also install fzf system-wise)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
+" Startup page and session manager
+Plug 'mhinz/vim-startify'
 
 " Format markdown table
 Plug 'plasticboy/vim-markdown'
@@ -119,11 +119,9 @@ source ~/.config/nvim/share_cfg/keybindings.vim
 " Plugin configurations
 " =============================================================================
 source ~/.config/nvim/plugin_cfg/startify.vim
-source ~/.config/nvim/plugin_cfg/signify.vim
+source ~/.config/nvim/plugin_cfg/markdown.vim
 
 " Language servers + Lua config + nvim>=0.5
-"luafile ~/.config/nvim/plugin_cfg/lua/lsp.lua
-"luafile ~/.config/nvim/plugin_cfg/lua/lspconfig.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lspsaga.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lsp-installer.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
