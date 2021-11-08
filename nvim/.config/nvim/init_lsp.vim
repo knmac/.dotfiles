@@ -25,7 +25,6 @@ Plug 'junegunn/fzf.vim'
 
 " Startup page and session manager
 " Plug 'mhinz/vim-startify'
-Plug 'glepnir/dashboard-nvim'
 
 " Format markdown table
 Plug 'plasticboy/vim-markdown'
@@ -96,6 +95,9 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 " Colorizer for color code
 Plug 'norcalli/nvim-colorizer.lua'
 
+" Startup page
+Plug 'goolord/alpha-nvim'
+
 call plug#end()
 
 " Install plugins the first time vim runs
@@ -120,7 +122,6 @@ source ~/.config/nvim/share_cfg/keybindings.vim
 " Plugin configurations
 " =============================================================================
 " source ~/.config/nvim/plugin_cfg/startify.vim
-source ~/.config/nvim/plugin_cfg/dashboard.vim
 source ~/.config/nvim/plugin_cfg/markdown.vim
 
 " Language servers + Lua config + nvim>=0.5
@@ -137,5 +138,6 @@ luafile ~/.config/nvim/plugin_cfg/lua/indent-blankline.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lspkind.lua
 luafile ~/.config/nvim/plugin_cfg/lua/gitsigns.lua
 luafile ~/.config/nvim/plugin_cfg/lua/comment-nvim.lua
+luafile ~/.config/nvim/plugin_cfg/lua/alpha.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
 source ~/.config/nvim/plugin_cfg/lua/illuminate.vim
