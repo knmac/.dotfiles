@@ -23,13 +23,14 @@ dashboard.section.header.val = {
 -- }
 
 dashboard.section.buttons.val = {
-    dashboard.button( "e", "  > Edit new file"        , ":ene<CR>"),
-    dashboard.button( "r", "  > Recently opened files", ":History<CR>"),
-    dashboard.button( "f", "  > File finder"          , ":Files<CR>"),
-    dashboard.button( "w", "  > Word finder"          , ":Rg<CR>"),
-    dashboard.button( "c", "  > Colorschemes"         , ":Colors<CR>"),
-    dashboard.button( "s", "  > Settings"             , ":e $MYVIMRC<CR>"),
-    dashboard.button( "q", "  > Quit"                 , ":qa<CR>"),
+    dashboard.button( "e", "  Edit new file"        , ":ene<CR>"),
+    dashboard.button( "r", "  Recently opened files", ":History<CR>"),
+    dashboard.button( "f", "  File finder"          , ":Files<CR>"),
+    dashboard.button( "w", "  Word finder"          , ":Rg<CR>"),
+    dashboard.button( "c", "  Color schemes"        , ":Colors<CR>"),
+    dashboard.button( "u", "  Update plugins"       , ":PlugUpdate<CR>"),
+    dashboard.button( "s", "  Settings"             , ":e $MYVIMRC<CR>"),
+    dashboard.button( "q", "  Quit"                 , ":qa<CR>"),
 }
 
 -- Set footer
