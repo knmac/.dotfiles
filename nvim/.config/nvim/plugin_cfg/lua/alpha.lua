@@ -23,7 +23,7 @@ dashboard.section.header.val = {
 -- }
 
 -- dashboard.section.buttons.val = {
---     dashboard.button( "e", "  Edit new file"        , ":ene<CR>"),
+--     dashboard.button( "e", "  Edit a new file"      , ":ene<CR>"),
 --     dashboard.button( "r", "  Recently opened files", ":History<CR>"),
 --     dashboard.button( "f", "  File finder"          , ":Files<CR>"),
 --     dashboard.button( "w", "  Word finder"          , ":Rg<CR>"),
@@ -34,13 +34,14 @@ dashboard.section.header.val = {
 -- }
 
 dashboard.section.buttons.val = {
-    dashboard.button( "e", "  Edit new file"        , ":ene<CR>"),
+    dashboard.button( "e", "  Edit a new file"      , ":ene<CR>"),
     dashboard.button( "r", "  Recently opened files", ":Telescope oldfiles<CR>"),
+    dashboard.button( "s", "  Session manager"      , ":Telescope sessions<CR>"),
     dashboard.button( "f", "  File finder"          , ":Telescope find_files<CR>"),
     dashboard.button( "w", "  Word finder"          , ":Telescope live_grep<CR>"),
     dashboard.button( "c", "  Color schemes"        , ":Telescope colorscheme<CR>"),
     dashboard.button( "u", "  Update plugins"       , ":PlugUpdate<CR>"),
-    dashboard.button( "s", "  Settings"             , ":e $MYVIMRC<CR>"),
+    dashboard.button( "c", "  Configs"             , ":e $MYVIMRC<CR>"),
     dashboard.button( "q", "  Quit"                 , ":qa<CR>"),
 }
 

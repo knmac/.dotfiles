@@ -98,6 +98,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Startup page
 Plug 'goolord/alpha-nvim'
 
+" Session manager
+Plug 'Shatur/neovim-session-manager'
+
 " Fuzzy finder
 Plug 'nvim-telescope/telescope.nvim'
 
@@ -142,5 +145,6 @@ luafile ~/.config/nvim/plugin_cfg/lua/lspkind.lua
 luafile ~/.config/nvim/plugin_cfg/lua/gitsigns.lua
 luafile ~/.config/nvim/plugin_cfg/lua/comment-nvim.lua
 luafile ~/.config/nvim/plugin_cfg/lua/alpha.lua
+luafile ~/.config/nvim/plugin_cfg/lua/neovim-session-manager.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
 source ~/.config/nvim/plugin_cfg/lua/illuminate.vim
