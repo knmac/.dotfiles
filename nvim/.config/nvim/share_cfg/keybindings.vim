@@ -46,7 +46,7 @@ if has_key(plugs, 'telescope.nvim')
     nnoremap <silent> <C-G> :Telescope live_grep<CR>
 
     " Search within the current buffer
-    nnoremap <silent> <leader>/ :Telescope current_buffer_fuzzy_find<CR>
+    nnoremap <silent> // :Telescope current_buffer_fuzzy_find<CR>
 elseif has_key(plugs, 'fzf.vim')
     " Search for file name
     nnoremap <silent> <C-F> :Files<CR>
