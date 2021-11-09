@@ -20,8 +20,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Fuzzy finder (also install fzf system-wise)
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 
 " Startup page and session manager
 " Plug 'mhinz/vim-startify'
@@ -97,6 +97,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 " Startup page
 Plug 'goolord/alpha-nvim'
+
+" Fuzzy finder
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 

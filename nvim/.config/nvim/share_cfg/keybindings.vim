@@ -38,12 +38,21 @@ else
 endif
 
 " Search file name and file content
-if has_key(plugs, 'fzf.vim')
-    " Search for file name (require FZF)
-    nnoremap <silent> <C-P> :Files<CR>
+if has_key(plugs, 'telescope.nvim')
+    " Search for file name
+    nnoremap <silent> <C-F> :Telescope find_files<CR>
 
-    " Search for file content (require FZF and ripgrep)
-    nnoremap <silent> <C-F> :Rg<CR>
+    " Search for file content
+    nnoremap <silent> <C-G> :Telescope live_grep<CR>
+
+    " Search within the current buffer
+    nnoremap <silent> <leader>/ :Telescope current_buffer_fuzzy_find<CR>
+elseif has_key(plugs, 'fzf.vim')
+    " Search for file name
+    nnoremap <silent> <C-F> :Files<CR>
+
+    " Search for file content
+    nnoremap <silent> <C-G> :Rg<CR>
 endif
 
 " Shortcut for Python breakpoint (ipdb)
@@ -69,7 +78,10 @@ nnoremap <silent> ,today :read !date "+\%F"<CR>kJ$
 " =============================================================================
 
 " <F1>: Show help
-if has_key(plugs, 'fzf.vim')
+if has_key(plugs, 'telescope.nvim')
+    nnoremap <silent> <F1> :Telescope help_tags<CR>
+    nnoremap <silent> <F13> :Telescope keymaps<CR>
+elseif has_key(plugs, 'fzf.vim')
     nnoremap <silent> <F1> :Helptags<CR>
     nnoremap <silent> <F13> :Maps<CR>
 endif
@@ -98,12 +110,16 @@ if has_key(plugs, 'symbols-outline.nvim')
 elseif has_key(plugs, 'tagbar')
     nnoremap <silent> <F4> :TagbarToggle<CR>
     let g:tagbar_autofocus = 1
+elseif has_key(plugs, 'telescope.nvim')
+    nnoremap <silent> <F4> :Telescope current_buffer_tags<CR>
 elseif has_key(plugs, 'fzf.vim')
     nnoremap <silent> <F4> :BTags<CR>
 endif
 
 " <F5>: Show and switch buffer
-if has_key(plugs, 'fzf.vim')
+if has_key(plugs, 'telescope.nvim')
+    nnoremap <silent> <F5> :Telescope buffers<CR>
+elseif has_key(plugs, 'fzf.vim')
     nnoremap <silent> <F5> :Buffers<CR>
 else
     nnoremap <silent> <F5> :buffers<CR>:buffer<Space>
