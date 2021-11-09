@@ -88,7 +88,11 @@ endif
 
 " <F2>: Show task list
 if has_key(plugs, 'todo-comments.nvim')
-    nnoremap <silent> <F2> :TodoQuickFix<CR>
+    if has_key(plugs, 'telescope.nvim')
+        nnoremap <silent> <F2> :TodoTelescope<CR>
+    else
+        nnoremap <silent> <F2> :TodoQuickFix<CR>
+    endif
 elseif has_key(plugs, 'FixedTaskList.vim')
     nnoremap <silent> <F2> :TaskList<CR>
 endif
