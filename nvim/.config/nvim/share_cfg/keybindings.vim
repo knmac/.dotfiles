@@ -183,3 +183,7 @@ nnoremap <silent> <F11> :call ToggleZoom(v:true)<CR>
 if has_key(plugs, 'vim-floaterm')
     let g:floaterm_keymap_toggle = '<F12>'
 endif
+" <S+F12>: Toggle startpage
+if has_key(plugs, 'alpha-nvim')
+    nnoremap <silent> <F24> :Alpha<CR>
+endif
