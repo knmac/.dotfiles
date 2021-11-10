@@ -4,40 +4,43 @@
 
 ## Some custom Vim key-bindings
 
-| Functionality                                               | Key-binding              |
-|-------------------------------------------------------------|--------------------------|
-| Search for help (FZF)                                       | `F1`                     |
-| Show key-bindings in normal mode (FZF)                      | `Shift+F1`               |
-| Open todo list                                              | `F2`                     |
-| File explorer                                               | `F3`                     |
-| Show tags in the current buffer (FZF)                       | `F4`                     |
-|                                                             |                          |
-| Show buffer list (FZF)                                      | `F5`                     |
-| Show tab list (FZF)                                         | `Shift+F5`               |
-| Previous buffer                                             | `F6` (or `Ctrl+Alt+h`)   |
-| Previous tab                                                | `Shift+F6`               |
-| Next buffer                                                 | `F7` (or `Ctrl+Alt+l`)   |
-| Next tab                                                    | `Shift+F7`               |
-| Close the current buffer (and switch to the previous one)   | `F8`                     |
-| Close the current tab                                       | `Shift+F8`               |
-|                                                             |                          |
-| Open diagnostic list                                        | `F9`                     |
-| Run the `make` command                                      | `F10`                    |
-| Run the `make clean` command                                | `Shift+F10`              |
-| Maximize/restore current window (splits)                    | `F11`                    |
-| Toggle floating terminal                                    | `F12`                    |
-|                                                             |                          |
-| Unhighlight searching text                                  | `<leader> <space>`       |
-| Insert ipdb breakpoint (on the next line)                   | `<leader> b`             |
-| Insert ipdb breakpoint (on the previous line)               | `<leader> B`             |
-| Insert '-' characters                                       | `<leader> -`             |
-| Insert '=' characters                                       | `<leader> =`             |
-|                                                             |                          |
-| Insert python template                                      | `,py`                    |
-| Insert html template                                        | `,html`                  |
-| Insert markdown template                                    | `,md`                    |
-| Insert today's date (end of line)                           | `,today`                 |
+| Functionality                                             | Key-binding            |
+|-----------------------------------------------------------|------------------------|
+| Search for help                                           | `F1`                   |
+| Show key-bindings in normal mode                          | `Shift+F1`             |
+| Open todo list                                            | `F2`                   |
+| File explorer                                             | `F3`                   |
+| Show tags in the current buffer                           | `F4`                   |
+|                                                           |                        |
+| Show buffer list                                          | `F5`                   |
+| Show tab list                                             | `Shift+F5`             |
+| Previous buffer                                           | `F6` (or `Ctrl+Alt+h`) |
+| Previous tab                                              | `Shift+F6`             |
+| Next buffer                                               | `F7` (or `Ctrl+Alt+l`) |
+| Next tab                                                  | `Shift+F7`             |
+| Close the current buffer (and switch to the previous one) | `F8`                   |
+| Close the current tab                                     | `Shift+F8`             |
+|                                                           |                        |
+| Open diagnostic list                                      | `F9`                   |
+| Run the `make` command                                    | `F10`                  |
+| Run the `make clean` command                              | `Shift+F10`            |
+| Maximize/restore current window (splits)                  | `F11`                  |
+| Toggle floating terminal                                  | `F12`                  |
+| Toggle start page                                         | `Shift+F12`            |
+|                                                           |                        |
+| Fuzzy search in the current buffer                        | `//`                   |
+| Unhighlight searching text                                | `<leader> <space>`     |
+| Insert ipdb breakpoint (on the next line)                 | `<leader> b`           |
+| Insert ipdb breakpoint (on the previous line)             | `<leader> B`           |
+| Insert '-' characters                                     | `<leader> -`           |
+| Insert '=' characters                                     | `<leader> =`           |
+|                                                           |                        |
+| Insert python template                                    | `,py`                  |
+| Insert html template                                      | `,html`                |
+| Insert markdown template                                  | `,md`                  |
+| Insert today's date (end of line)                         | `,today`               |
 
+<!--
 ## Some (other) FZF key-bindings
 
 (I only list some commands I use frequently. I highly recommend to check out [fzf.vim](https://github.com/junegunn/fzf.vim) for much cooler stuffs)
@@ -50,6 +53,7 @@
 | Git commits (it's **magic**)                    |             | `:Commits`  |
 
 To navigate in FZF's window, use either `Ctrl+j`/`Ctrl+n`/`down arrow` to go down and `Ctrl+k`/`Ctrl+p`/`up arrow` to go up.
+-->
 
 ## Some Vim-LSP key-bindings
 
@@ -60,11 +64,12 @@ To navigate in FZF's window, use either `Ctrl+j`/`Ctrl+n`/`down arrow` to go dow
 | Show function documentation                          | `K`           |
 | Show signature help (while typing funtion arguments) | `Ctrl+K`      |
 | Rename variables                                     | `<leader> rn` |
-| Code action                                          | `<leader> a`  |
+| Code action                                          | `<leader> ca` |
 | Show current line's diagnostic                       | `<leader> e`  |
 | Go to previous diagnostic                            | `[e`          |
 | Go to next diagnostic                                | `]e`          |
 
+<!--
 ## Some NERD Commenter key-bindings
 
 | Functionality           | Key-binding   |
@@ -74,6 +79,7 @@ To navigate in FZF's window, use either `Ctrl+j`/`Ctrl+n`/`down arrow` to go dow
 | Toggle comment          | `<leader> ci` |
 | Comment with left-align | `<leader> cl` |
 | Comment 'Sexily'        | `<leader> cs` |
+-->
 
 <!--
    -## Some CoC key-bindings
