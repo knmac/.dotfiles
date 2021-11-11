@@ -145,6 +145,7 @@ luafile ~/.config/nvim/plugin_cfg/lua/lspkind.lua
 luafile ~/.config/nvim/plugin_cfg/lua/gitsigns.lua
 luafile ~/.config/nvim/plugin_cfg/lua/comment-nvim.lua
 luafile ~/.config/nvim/plugin_cfg/lua/alpha.lua
+luafile ~/.config/nvim/plugin_cfg/lua/telescope.lua
 luafile ~/.config/nvim/plugin_cfg/lua/neovim-session-manager.lua
 source ~/.config/nvim/plugin_cfg/lua/nvim-tree.vim
 source ~/.config/nvim/plugin_cfg/lua/illuminate.vim
