@@ -26,6 +26,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Startup page and session manager
 " Plug 'mhinz/vim-startify'
 
+" FLoat terminal
+Plug 'voldikss/vim-floaterm'
+
 " Format markdown table
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
@@ -37,7 +40,7 @@ Plug 'godlygeek/tabular'
 Plug 'neovim/nvim-lspconfig'
 
 " Better config and UI setup for lsp-config
-Plug 'glepnir/lspsaga.nvim'
+" Plug 'glepnir/lspsaga.nvim'
 
 " required by many other lua-plugins
 Plug 'nvim-lua/plenary.nvim'
@@ -128,10 +131,12 @@ source ~/.config/nvim/share_cfg/keybindings.vim
 " Plugin configurations
 " =============================================================================
 " source ~/.config/nvim/plugin_cfg/startify.vim
+source ~/.config/nvim/plugin_cfg/floatterm.vim
 source ~/.config/nvim/plugin_cfg/markdown.vim
 
 " Language servers + Lua config + nvim>=0.5
-luafile ~/.config/nvim/plugin_cfg/lua/lspsaga.lua
+" luafile ~/.config/nvim/plugin_cfg/lua/lspsaga.lua
+luafile ~/.config/nvim/plugin_cfg/lua/nvim-lspconfig.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lsp-installer.lua
 luafile ~/.config/nvim/plugin_cfg/lua/treesitter.lua
 luafile ~/.config/nvim/plugin_cfg/lua/lint.lua
