@@ -36,6 +36,9 @@ map('n', '<C-A-l>', ':BufferLineCycleNext<CR>', default_opts)
 -- map('n', '<C-A-h>', ':bprev<CR>', default_opts)
 -- map('n', '<C-A-l>', ':bnext<CR>', default_opts)
 
+-- Open Telescope quickly
+map('n', '  ',    ':Telescope<CR>', default_opts)
+
 -- Search file name and file content
 map('n', '<C-F>', ':Telescope find_files<CR>', default_opts)
 map('n', '<C-G>', ':Telescope live_grep<CR>', default_opts)
