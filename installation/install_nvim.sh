@@ -10,7 +10,7 @@ echo "Install NeoVim..."
 
 # Dependecies
 bash ./install_nodejs.sh
-sudo apt install python3-dev python3-pip curl exuberant-ctags shellcheck cppcheck
+sudo apt install python3-dev python3-pip curl exuberant-ctags
 pip3 install --user pynvim neovim flake8 msgpack pycodestyle
 
 # Download nvim
