@@ -81,6 +81,25 @@ augroup restorezoom
 augroup END
 ]]
 
+-- Fill the rest of line with characters
+cmd [[
+function! FillLine( str )
+    " set tw to the desired total length
+    let tw = &textwidth
+    if tw==0 | let tw = 79 | endif
+    " calculate total number of 'str's to insert
+    let reps = (tw - col("$")) / len(a:str)
+    " insert them, if there's room, removing trailing spaces (though forcing
+    " there to be one)
+    if reps > 0
+        .s/$/\=(' '.repeat(a:str, reps))/
+    endif
+endfunction
+]]
+-- Fill with '-' characters
+map('n', '<leader>-', ':call FillLine("-")<CR>', default_opts)
+-- Fill with '=' characters
+map('n', '<leader>=', ':call FillLine("=")<CR>', default_opts)
 
 -------------------------------------------------------------------------------
 -- <F1> to <F12>
