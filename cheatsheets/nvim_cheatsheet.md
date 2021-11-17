@@ -37,7 +37,7 @@
 |------------------------------------|-------------------|
 | Open Telescope                     | `<space> <space>` |
 | Fuzzy search for filename          | `<Ctrl+f>`        |
-| Fuzzy search for text              | `<Ctrl+g>`        |
+| Fuzzy search for text              | `<Ctrl+Alt+f>`    |
 | Fuzzy search in the current buffer | `//`              |
 | Split navigation                   | `<Alt+h/j/k/l>`   |
 
