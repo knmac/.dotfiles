@@ -167,7 +167,7 @@ alias notes_acp="notes add . && notes commit -m update && notes push"
 export PATH="$HOME/.local/bin:$HOME/.local/nodejs/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export EDITOR="nvim -u $HOME/.config/nvim/init_basic.vim"
+export EDITOR="nvim"
 export PROMPT_COMMAND="pwd > /tmp/whereami_$USER"
 precmd() {
     eval "$PROMPT_COMMAND"
