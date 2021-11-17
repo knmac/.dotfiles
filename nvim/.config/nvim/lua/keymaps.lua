@@ -31,18 +31,8 @@ map('n', '<A-k>', '<C-w>k', default_opts)
 map('n', '<A-l>', '<C-w>l', default_opts)
 
 -- Buffer prev/next navigation
-map('n', '<C-A-h>', ':BufferLineCyclePrev<CR>', default_opts)
-map('n', '<C-A-l>', ':BufferLineCycleNext<CR>', default_opts)
 -- map('n', '<C-A-h>', ':bprev<CR>', default_opts)
 -- map('n', '<C-A-l>', ':bnext<CR>', default_opts)
-
--- Open Telescope quickly
-map('n', '  ',    ':Telescope<CR>', default_opts)
-
--- Search file name and file content
-map('n', '<C-F>', ':Telescope find_files<CR>', default_opts)
-map('n', '<C-G>', ':Telescope live_grep<CR>', default_opts)
-map('n', '//',    ':Telescope current_buffer_fuzzy_find<CR>', default_opts)
 
 -- Shortcut for Python breakpoint (ipdb)
 cmd [[
@@ -102,8 +92,17 @@ map('n', '<leader>-', ':call FillLine("-")<CR>', default_opts)
 map('n', '<leader>=', ':call FillLine("=")<CR>', default_opts)
 
 -------------------------------------------------------------------------------
--- <F1> to <F12>
+-- Plugins and Function key bindings
 -------------------------------------------------------------------------------
+-- Bufferline
+map('n', '<C-A-h>', ':BufferLineCyclePrev<CR>', default_opts)
+map('n', '<C-A-l>', ':BufferLineCycleNext<CR>', default_opts)
+
+-- Telescope
+map('n', '  ', ':Telescope<CR>', default_opts)
+map('n', '<C-f>', ':Telescope find_files<CR>', default_opts)
+map('n', '<C-A-f>', ':Telescope live_grep<CR>', default_opts)
+map('n', '//',    ':Telescope current_buffer_fuzzy_find<CR>', default_opts)
 
 -- <F1>: Show help
 map('n', '<F1>', ':Telescope help_tags<CR>', default_opts)
