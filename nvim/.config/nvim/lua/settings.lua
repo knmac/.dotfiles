@@ -32,7 +32,13 @@ cmd [[ set path+=** ]]              -- provide tab-completion for file-related t
 -- Neovim UI
 -------------------------------------------------------------------------------
 opt.termguicolors = true            -- enable 24-bit RGB color in the TUI
-cmd [[ colorscheme onedark ]]
+cmd [[
+try
+    colorscheme onedark
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme desert
+endtry
+]]
 
 opt.ls = 2                          -- always show status bar
 opt.number = true                   -- show line number
