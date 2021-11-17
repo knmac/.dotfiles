@@ -156,8 +156,7 @@ fi
 
 DOTFILES_DIR="$HOME/.dotfiles"
 NOTES_DIR="$HOME/Documents/my_notes"
-alias bvim="nvim -u $HOME/.config/nvim/init_basic.vim"
-alias cvim="nvim -u $HOME/.config/nvim/init_coc.vim"
+# alias bvim="nvim -u $HOME/.config/nvim/init_basic.vim"
 alias dotfiles="git --git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
 alias dotfiles_acp="dotfiles add . && dotfiles commit -m update && dotfiles push"
 alias notes="git --git-dir=$NOTES_DIR/.git --work-tree=$NOTES_DIR"
