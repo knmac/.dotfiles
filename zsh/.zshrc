@@ -131,7 +131,7 @@ bindkey '^ ' autosuggest-accept
 
 
 # Configure FZF
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+# [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 #export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --border"
 export FZF_DEFAULT_OPTS="--layout=default"
 # Use ripgrep as search program for fzf
@@ -143,6 +143,7 @@ if type bat &> /dev/null; then
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
     export BAT_THEME="OneHalfDark"
 fi
+source "$ZSH/plugins/fzf/fzf.plugin.zsh"
 
 
 # Aliases
