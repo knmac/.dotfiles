@@ -30,16 +30,17 @@
 | Toggle color code colorizer (e.g., CSS)  | `Shift+F11`            |
 | Toggle floating terminal                 | `F12`                  |
 | Toggle start page                        | `Shift+F12`            |
+|                                          |                        |
+| Split navigation                         | `<Alt+h/j/k/l>`        |
 
 ### 1.2. Telescope key-bindings
 
 | Functionality                      | Key-binding       |
 |------------------------------------|-------------------|
 | Open Telescope                     | `<space> <space>` |
-| Fuzzy search for filename          | `<Ctrl+f>`        |
-| Fuzzy search for text              | `<Ctrl+Alt+f>`    |
-| Fuzzy search in the current buffer | `//`              |
-| Split navigation                   | `<Alt+h/j/k/l>`   |
+| Fuzzy search for filename          | `<space> f`       |
+| Fuzzy search for text              | `<space> g`       |
+| Fuzzy search in the current buffer | `<space> /`       |
 
 <!-- | Insert python template                                    | `,py`                  | -->
 <!-- | Insert html template                                      | `,html`                | -->
