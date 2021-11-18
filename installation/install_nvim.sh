@@ -39,6 +39,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/shar
 # Python
 npm install -g pyright
 
+# Bash
+npm install -g bash-language-server
+
 # C, C++
 sudo apt install clangd-12
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
@@ -60,11 +63,11 @@ popd || exit
 # Python
 pip install --user pycodestyle
 
-# C, C++
-sudo apt install cppcheck
-
 # Shell
 sudo apt install shellcheck
+
+# C, C++
+sudo apt install cppcheck
 
 
 # -----------------------------------------------------------------------------

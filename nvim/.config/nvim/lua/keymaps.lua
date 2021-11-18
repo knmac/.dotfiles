@@ -141,7 +141,7 @@ map('n', '<F8>', ':bdelete<CR>', default_opts)
 map('n', '<F20>', ':tabclose<CR>', default_opts)
 
 -- <F9>: Show diagnostics Quickfix
-map('n', '<F9>', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>>', default_opts)
+map('n', '<F9>', ':Telescope lsp_document_diagnostics<CR>', default_opts)
 
 -- <F10>: Run make file
 map('n', '<F10>', ':make<CR>', default_opts)
