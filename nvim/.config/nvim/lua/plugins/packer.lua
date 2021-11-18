@@ -47,9 +47,9 @@ return packer.startup(function()
     use 'norcalli/nvim-colorizer.lua'          -- colorize color code
     use 'goolord/alpha-nvim'                   -- start page greeter
     use 'Shatur/neovim-session-manager'        -- session manager
+    use 'akinsho/toggleterm.nvim'              -- toggle terminal
 
     -- Extra nvim plugins
-    use 'voldikss/vim-floaterm'                -- floating terminal
     use {
         'plasticboy/vim-markdown',             -- markdown helper
         'godlygeek/tabular'                    -- format table in markdown

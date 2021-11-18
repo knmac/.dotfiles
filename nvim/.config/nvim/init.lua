@@ -26,7 +26,7 @@ require('plugins/indent-blankline')
 require('plugins/gitsigns')
 require('plugins/alpha-nvim')
 require('plugins/neovim-session-manager')
+require('plugins/toggleterm-nvim')
 
 -- Extra
-require('plugins/vim-floaterm')
 require('plugins/markdown')

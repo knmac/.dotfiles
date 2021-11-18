@@ -154,6 +154,6 @@ map('n', '<F11>', ':call ToggleZoom(v:true)<CR>', default_opts)
 map('n', '<F23>', ':ColorizerToggle<CR>', default_opts)
 
 -- <F12>: Toggle float-term
-g.floaterm_keymap_toggle = '<F12>'
+-- g.floaterm_keymap_toggle = '<F12>'
 -- <S-F12>: Toggle startpage
 map('n', '<F24>', ':Alpha<CR>', default_opts)
