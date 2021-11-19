@@ -34,6 +34,9 @@ map('n', '<A-l>', '<C-w>l', default_opts)
 -- map('n', '<C-A-h>', ':bprev<CR>', default_opts)
 -- map('n', '<C-A-l>', ':bnext<CR>', default_opts)
 
+-- Pressing Esc for terminals
+map('t', '<esc>', [[<C-\><C-n>]], default_opts)
+
 -- Shortcut for Python breakpoint (ipdb)
 cmd [[
 autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
@@ -57,13 +60,13 @@ command! ClearRegisters call ClearRegisters()
 -- Toogle zoom the current window
 cmd [[
 function! ToggleZoom(zoom)
-  if exists("t:restore_zoom") && (a:zoom == v:true || t:restore_zoom.win != winnr())
-      exec t:restore_zoom.cmd
-      unlet t:restore_zoom
-  elseif a:zoom
-      let t:restore_zoom = { 'win': winnr(), 'cmd': winrestcmd() }
-      exec "normal \<C-W>\|\<C-W>_"
-  endif
+    if exists("t:restore_zoom") && (a:zoom == v:true || t:restore_zoom.win != winnr())
+        exec t:restore_zoom.cmd
+        unlet t:restore_zoom
+    elseif a:zoom
+        let t:restore_zoom = { 'win': winnr(), 'cmd': winrestcmd() }
+        exec "normal \<C-W>\|\<C-W>_"
+    endif
 endfunction
 
 augroup restorezoom
@@ -155,5 +158,5 @@ map('n', '<F23>', ':ColorizerToggle<CR>', default_opts)
 
 -- <F12>: Toggle float-term
 -- g.floaterm_keymap_toggle = '<F12>'
--- <S-F12>: Toggle startpage
-map('n', '<F24>', ':Alpha<CR>', default_opts)
+-- <S-F12>: Toggle relative number
+map('n', '<F24>', ':set nu rnu!<CR>', default_opts)
