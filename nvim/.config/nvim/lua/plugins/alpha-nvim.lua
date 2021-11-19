@@ -23,9 +23,8 @@ dashboard.section.buttons.val = {
     dashboard.button( "s", "  Session manager"      , ":Telescope sessions<CR>"),
     dashboard.button( "f", "  File finder"          , ":Telescope find_files<CR>"),
     dashboard.button( "w", "  Word finder"          , ":Telescope live_grep<CR>"),
-    dashboard.button( "c", "  Color schemes"        , ":Telescope colorscheme<CR>"),
     dashboard.button( "u", "  Update plugins"       , ":PackerUpdate<CR>"),
-    dashboard.button( "g", "  Settings"             , ":e $MYVIMRC<CR>"),
+    dashboard.button( "c", "  Configurations"       , ":e $MYVIMRC<CR>"),
     dashboard.button( "q", "  Quit"                 , ":qa<CR>"),
 }
 
