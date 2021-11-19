@@ -29,9 +29,7 @@
 | Maximize/restore current window (splits) | `F11`                  |
 | Toggle color code colorizer (e.g., CSS)  | `Shift+F11`            |
 | Toggle floating terminal                 | `F12`                  |
-| Toggle start page                        | `Shift+F12`            |
-|                                          |                        |
-| Split navigation                         | `<Alt+h/j/k/l>`        |
+| Toggle relative number                   | `Shift+F12`            |
 
 ### 1.2. Telescope key-bindings
 
@@ -42,25 +40,9 @@
 | Fuzzy search for text              | `<space> g`       |
 | Fuzzy search in the current buffer | `<space> /`       |
 
-<!-- | Insert python template                                    | `,py`                  | -->
-<!-- | Insert html template                                      | `,html`                | -->
-<!-- | Insert markdown template                                  | `,md`                  | -->
-<!-- | Insert today's date (end of line)                         | `,today`               | -->
-
-<!--
-## Some (other) FZF key-bindings
-
-(I only list some commands I use frequently. I highly recommend to check out [fzf.vim](https://github.com/junegunn/fzf.vim) for much cooler stuffs)
-
-| Functionality                                   | Key-binding | Command     |
-|-------------------------------------------------|-------------|-------------|
-| Search for files with filename                  | `Ctrl+p`    | `:Files`    |
-| Search for files with string (requires ripgrep) | `Ctrl+f`    | `:Rg`       |
-| Show all commands                               |             | `:Commands` |
-| Git commits (it's **magic**)                    |             | `:Commits`  |
-
-To navigate in FZF's window, use either `Ctrl+j`/`Ctrl+n`/`down arrow` to go down and `Ctrl+k`/`Ctrl+p`/`up arrow` to go up.
--->
+<!-- | Insert python template            | `,py`    | -->
+<!-- | Insert markdown template          | `,md`    | -->
+<!-- | Insert today's date (end of line) | `,today` | -->
 
 ### 1.3. LSP-related key-bindings
 
@@ -86,52 +68,12 @@ To navigate in FZF's window, use either `Ctrl+j`/`Ctrl+n`/`down arrow` to go dow
 | Remove workspace folder                               | `<leader> wr` |
 | List workspace folder                                 | `<leader> wl` |
 
-<!--
-## Some NERD Commenter key-bindings
-
-| Functionality           | Key-binding   |
-| ----------------------- | ------------- |
-| Comment                 | `<leader> cc` |
-| Uncomment               | `<leader> cu` |
-| Toggle comment          | `<leader> ci` |
-| Comment with left-align | `<leader> cl` |
-| Comment 'Sexily'        | `<leader> cs` |
--->
-
-<!--
-   -## Some CoC key-bindings
-   -
-   -| Functionality                        | Key-binding   |
-   -|--------------------------------------|---------------|
-   -| Previous diagnostic                  | `[g`          |
-   -| Next diagnostic                      | `]g`          |
-   -| Go to definition                     | `gd`          |
-   -| Go to type definition                | `gy`          |
-   -| Go to implementation                 | `gi`          |
-   -| Go to reference                      | `gr`          |
-   -| Show documentation in preview window | `K`           |
-   -| Rename symbol                        | `<leader> rn` |
-   -| Format selected code                 | `<leader> f`  |
-   -->
-
-<!--
-   -## Some Vimtex key-bindings
-   -
-   -| Functionality | Key-binding   |
-   -|---------------|---------------|
-   -| Compile       | `<leader> ll` |
-   -| View          | `<leader> lv` |
-   -| Clean         | `<leader> lc` |
-   -->
-
 ### 1.4. Vim-markdown and Tabular key-bindings
 
 | Functionality                          | Key-binding/Command |
 |----------------------------------------|---------------------|
 | Open link in Vim to edit               | `ge`                |
 | Open link in browser                   | `gx`                |
-| Next header                            | `]]`                |
-| Previous header                        | `[[`                |
 | Format table                           | `:TableFormat`      |
 | Create table of contents (to navigate) | `:Toc`              |
 
@@ -145,6 +87,7 @@ To navigate in FZF's window, use either `Ctrl+j`/`Ctrl+n`/`down arrow` to go dow
 | Insert ipdb breakpoint (on the previous line) | `<leader> B`        |
 | Insert '-' characters                         | `<leader> -`        |
 | Insert '=' characters                         | `<leader> =`        |
+| Split navigation                              | `<Alt+h/j/k/l>`     |
 
 
 ## 2. Default useful vim key-bindings
@@ -159,8 +102,9 @@ To navigate in FZF's window, use either `Ctrl+j`/`Ctrl+n`/`down arrow` to go dow
 | Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                     |
 |                   | Go to end of a word                       | `e`                         |
 | Screen navigation | Go to first/last line                     | `gg`/`G`                    |
-|                   | Go to `n`-th line                         | `nG` (or `:n`)              |
+|                   | Go to `n`-th line                         | `:n` (or `ngg` or `nG`)     |
 |                   | Go half-page up/down                      | `Ctrl+u`/`Ctrl+d`           |
+|                   | Go full-page up/down                      | `Ctrl+b`/`Ctrl+f`           |
 | Search navigation | Search for pattern                        | `/[pattern]`                |
 |                   | Go to next/previous matching pattern      | `n`/`N`                     |
 | Window navigation | Create a horizontal split                 | `:split` (or `<Ctrl+w> s`)  |
@@ -224,11 +168,11 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 
 ### 2.6. Buffers manipulation
 
-| Functionality                     | Key-binding                           |
-|-----------------------------------|---------------------------------------|
-| Open file in new buffer           | `:badd [filename]`                    |
-| Go to next buffer                 | `:bn`                                 |
-| Go to previous buffer             | `:bp`                                 |
-| Delete buffer                     | `:bd`                                 |
-| List all buffer (not interactive) | `:ls`                                 |
-| Go to a buffer                    | `:b` `[buffer_index]`/`[buffer_name]` |
+| Functionality           | Key-binding                           |
+|-------------------------|---------------------------------------|
+| Open file in new buffer | `:badd [filename]`                    |
+| Go to next buffer       | `:bn`                                 |
+| Go to previous buffer   | `:bp`                                 |
+| Delete buffer           | `:bd`                                 |
+| List all buffers        | `:ls`                                 |
+| Go to a buffer          | `:b` `[buffer_index]`/`[buffer_name]` |
