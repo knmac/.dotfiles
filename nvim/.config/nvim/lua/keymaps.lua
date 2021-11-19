@@ -34,8 +34,12 @@ map('n', '<A-l>', '<C-w>l', default_opts)
 -- map('n', '<C-A-h>', ':bprev<CR>', default_opts)
 -- map('n', '<C-A-l>', ':bnext<CR>', default_opts)
 
--- Pressing Esc for terminals
+-- Navigation from terminal
 map('t', '<esc>', [[<C-\><C-n>]], default_opts)
+map('t', '<A-h>', [[<C-\><C-n><C-w>h]], default_opts)
+map('t', '<A-j>', [[<C-\><C-n><C-w>j]], default_opts)
+map('t', '<A-k>', [[<C-\><C-n><C-w>k]], default_opts)
+map('t', '<A-l>', [[<C-\><C-n><C-w>l]], default_opts)
 
 -- Shortcut for Python breakpoint (ipdb)
 cmd [[
