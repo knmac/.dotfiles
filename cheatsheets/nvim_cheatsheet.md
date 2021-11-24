@@ -13,6 +13,7 @@
 | Open to-do list                          | `F2`                   |
 | File explorer                            | `F3`                   |
 | Show tags in the current buffer          | `F4`                   |
+| Generate tags file (requires `ctags`)    | `Shift+F4`             |
 |                                          |                        |
 | Show buffer list                         | `F5`                   |
 | Show tab list                            | `Shift+F5`             |
