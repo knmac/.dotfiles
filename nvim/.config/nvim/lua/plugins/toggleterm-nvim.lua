@@ -18,12 +18,13 @@ require('toggleterm').setup{
     shade_filetypes = {},
     shade_terminals = true,
     -- shading_factor = '<number>', -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
-    shading_factor = '1',
+    shading_factor = '3',
     start_in_insert = true,
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
-    persist_size = true,
+    -- persist_size = true,
+    persist_size = false,
     -- direction = 'vertical' | 'horizontal' | 'tab' | 'float',
-    direction = 'float',
+    direction = 'vertical',
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
     -- This field is only relevant if direction is set to 'float'
