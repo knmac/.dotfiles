@@ -162,6 +162,7 @@ alias dotfiles="git --git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
 alias dotfiles_acp="dotfiles add . && dotfiles commit -m update && dotfiles push"
 alias notes="git --git-dir=$NOTES_DIR/.git --work-tree=$NOTES_DIR"
 alias notes_acp="notes add . && notes commit -m update && notes push"
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 
 
 # Exports
