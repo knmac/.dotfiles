@@ -12,7 +12,12 @@ return packer.startup(function()
     use 'wbthomason/packer.nvim'               -- packer can manage itself
 
     -- LSP and coding
-    use 'neovim/nvim-lspconfig'                -- language server protocol
+    use {
+        'neovim/nvim-lspconfig',               -- language server protocol
+        requires = {
+            'williamboman/nvim-lsp-installer', -- lsp installer helper
+        },
+    }
     use 'nvim-lua/plenary.nvim'                -- ultilities used by many other plugins
     -- use 'williamboman/nvim-lsp-installer'
     use 'nvim-treesitter/nvim-treesitter'      -- code parser generator for syntax highlighting

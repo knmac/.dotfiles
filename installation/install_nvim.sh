@@ -34,31 +34,31 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/shar
 
 
 # -----------------------------------------------------------------------------
-# Install language servers
+# Install language servers (manually)
 # -----------------------------------------------------------------------------
 # Python
-npm install -g pyright
+# npm install -g pyright
 
 # Bash
-npm install -g bash-language-server
+# npm install -g bash-language-server
 
 # C, C++
-sudo apt install clangd-12
-sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
+# sudo apt install clangd-12
+# sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
 
 # Latex, Bibtex, markdown, R, Org
-wget https://github.com/valentjn/ltex-ls/releases/download/15.1.0/ltex-ls-15.1.0-linux-x64.tar.gz
-tar zxvf ltex-ls-15.1.0-linux-x64.tar.gz
-rm ltex-ls-15.1.0-linux-x64.tar.gz
-mv ltex-ls-15.1.0 "$HOME/.local"
-pushd "$HOME/.local/bin" || exit
-ln -s ../ltex-ls-15.1.0/bin/ltex-cli .
-ln -s ../ltex-ls-15.1.0/bin/ltex-ls .
-popd || exit
+# wget https://github.com/valentjn/ltex-ls/releases/download/15.1.0/ltex-ls-15.1.0-linux-x64.tar.gz
+# tar zxvf ltex-ls-15.1.0-linux-x64.tar.gz
+# rm ltex-ls-15.1.0-linux-x64.tar.gz
+# mv ltex-ls-15.1.0 "$HOME/.local"
+# pushd "$HOME/.local/bin" || exit
+# ln -s ../ltex-ls-15.1.0/bin/ltex-cli .
+# ln -s ../ltex-ls-15.1.0/bin/ltex-ls .
+# popd || exit
 
 
 # -----------------------------------------------------------------------------
-# Install linters
+# Install linters for style check
 # -----------------------------------------------------------------------------
 # Python
 pip install --user pycodestyle
