@@ -50,9 +50,10 @@
 | Functionality                                         | Key-binding   |
 |-------------------------------------------------------|---------------|
 | Show definitions                                      | `gd`          |
-| Show declaration                                      | `gD`          |
 | Show implementation                                   | `gi`          |
 | Show reference                                        | `gr`          |
+| Show type definition                                  | `gt`          |
+| Show declaration                                      | `gD`          |
 | Show function documentation (on hover)                | `<Shift+k>`   |
 | Show signature help (while typing function arguments) | `<Ctrl+k>`    |
 | Show type definitions                                 | `<Shift+d>`   |
@@ -64,10 +65,10 @@
 | Show current line's diagnostic                        | `<leader> e`  |
 | Go to previous diagnostic                             | `[e`          |
 | Go to next diagnostic                                 | `]e`          |
-|                                                       |               |
-| Add workspace folder                                  | `<leader> wa` |
-| Remove workspace folder                               | `<leader> wr` |
-| List workspace folder                                 | `<leader> wl` |
+
+<!-- | Add workspace folder                                  | `<leader> wa` | -->
+<!-- | Remove workspace folder                               | `<leader> wr` | -->
+<!-- | List workspace folder                                 | `<leader> wl` | -->
 
 ### 1.4. Vim-markdown and Tabular key-bindings
 
