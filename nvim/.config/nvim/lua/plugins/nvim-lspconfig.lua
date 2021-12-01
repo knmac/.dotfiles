@@ -9,16 +9,16 @@ local lsp_installer = require('nvim-lsp-installer')
 
 -- Diagnostic signs
 -- neovim <= 0.5.1
-vim.fn.sign_define('LspDiagnosticsSignError',       {text='', texthl='DiagnosticsSignError'})
-vim.fn.sign_define('LspDiagnosticsSignWarning',     {text='', texthl='DiagnosticsSignWarn'})
-vim.fn.sign_define('LspDiagnosticsSignInformation', {text='', texthl='DiagnosticsSignInfo'})
-vim.fn.sign_define('LspDiagnosticsSignHint',        {text='', texthl='DiagnosticsSignHint'})
+vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
+vim.fn.sign_define('LspDiagnosticsSignWarning',     {text=' ', texthl='DiagnosticsSignWarn'})
+vim.fn.sign_define('LspDiagnosticsSignInformation', {text=' ', texthl='DiagnosticsSignInfo'})
+vim.fn.sign_define('LspDiagnosticsSignHint',        {text=' ', texthl='DiagnosticsSignHint'})
 
 -- neovim >= 0.6.0
-vim.fn.sign_define('DiagnosticSignError', {text='', texthl='DiagnosticSignError'})
-vim.fn.sign_define('DiagnosticSignWarn',  {text='', texthl='DiagnosticSignWarn'})
-vim.fn.sign_define('DiagnosticSignInfo',  {text='', texthl='DiagnosticSignInfo'})
-vim.fn.sign_define('DiagnosticSignHint',  {text='', texthl='DiagnosticSignHint'})
+vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignError'})
+vim.fn.sign_define('DiagnosticSignWarn',  {text=' ', texthl='DiagnosticSignWarn'})
+vim.fn.sign_define('DiagnosticSignInfo',  {text=' ', texthl='DiagnosticSignInfo'})
+vim.fn.sign_define('DiagnosticSignHint',  {text=' ', texthl='DiagnosticSignHint'})
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
