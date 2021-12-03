@@ -56,7 +56,7 @@ I3-instant-layout,Super + F4
 Notification-close all,Super + `
 Notification-history,Super + Shift + `
 ─────────────────────────────────────────────────────────────────
-Screenshot-full,Print
-Screenshot-area,Shift + Print
-Screenshot-full (clipboard),Ctrl + Print
-Screenshot-area (clipboard),Ctrl + Shift + Print
+Screenshot-full,Super + Insert
+Screenshot-area,Super + Shift + Insert
+Screenshot-full (clipboard),Super + Ctrl + Insert
+Screenshot-area (clipboard),Super + Ctrl + Shift + Insert

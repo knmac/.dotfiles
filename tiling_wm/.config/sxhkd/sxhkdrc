@@ -59,19 +59,23 @@ super + p
     "$HOME/.config/sxhkd/scripts/toggle_picom.sh"
 
 # Screenshot
-Print
+# Print
+super + Insert
     sleep 0.2; \
     maim -u "$HOME/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
     #scrot
-shift + Print
+# shift + Print
+super + shift + Insert
     sleep 0.2; \
     maim -s -u "$HOME/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
     #scrot --select --freeze
-ctrl + Print
+# ctrl + Print
+super + ctrl + Insert
     sleep 0.2; \
     maim -u | xclip -selection clipboard -t image/png -i
     #scrot '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
-ctrl + shift + Print
+# ctrl + shift + Print
+super + ctrl + shift + Insert
     sleep 0.2; \
     maim -s -u | xclip -selection clipboard -t image/png -i
     #scrot --select --freeze '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
