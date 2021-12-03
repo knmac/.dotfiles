@@ -126,7 +126,7 @@ map('n', '<F2>', ':TodoTelescope<CR>', default_opts)
 
 -- <F3>: Show file tree explorer
 map('n', '<F3>', ':NvimTreeToggle<CR> :NvimTreeRefresh<CR>', default_opts)
- 
+
 -- <F4>: Show tags of current buffer
 map('n', '<F4>', ':Telescope current_buffer_tags<CR>', default_opts)
 -- <S-F4>: Generate tags
@@ -155,6 +155,7 @@ map('n', '<F8>', ':bdelete<CR>', default_opts)
 map('n', '<F20>', ':tabclose<CR>', default_opts)
 
 -- <F9>: Show diagnostics Quickfix
+-- See nvim-lsp config
 -- map('n', '<F9>', ':Telescope lsp_document_diagnostics<CR>', default_opts)
 
 -- <F10>: Run make file
@@ -168,6 +169,6 @@ map('n', '<F11>', ':call ToggleZoom(v:true)<CR>', default_opts)
 map('n', '<F23>', ':ColorizerToggle<CR>', default_opts)
 
 -- <F12>: Toggle float-term
--- g.floaterm_keymap_toggle = '<F12>'
+-- See toogle term config
 -- <S-F12>: Toggle relative number
 map('n', '<F24>', ':set nu rnu!<CR>', default_opts)

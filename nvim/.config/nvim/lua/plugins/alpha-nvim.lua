@@ -24,7 +24,7 @@ dashboard.section.buttons.val = {
     dashboard.button( "f", "  File finder"          , ":Telescope find_files<CR>"),
     dashboard.button( "w", "  Word finder"          , ":Telescope live_grep<CR>"),
     dashboard.button( "u", "  Update plugins"       , ":PackerUpdate<CR>"),
-    dashboard.button( "c", "  Configurations"       , ":e $MYVIMRC<CR>"),
+    dashboard.button( "c", "  Configurations"       , ":cd $HOME/.config/nvim | e $MYVIMRC<CR>"),
     dashboard.button( "q", "  Quit"                 , ":qa<CR>"),
 }
 

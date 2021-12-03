@@ -22,7 +22,7 @@ return packer.startup(function()
     -- use 'williamboman/nvim-lsp-installer'
     use 'nvim-treesitter/nvim-treesitter'      -- code parser generator for syntax highlighting
     use 'mfussenegger/nvim-lint'               -- code linter for style checking
-    use { 
+    use {
         'hrsh7th/nvim-cmp',                    -- code completion
         requires = {
             'hrsh7th/cmp-nvim-lsp',            -- dependency of nvim-cmp

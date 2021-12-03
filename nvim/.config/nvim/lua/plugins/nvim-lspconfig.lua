@@ -9,10 +9,10 @@ local lsp_installer = require('nvim-lsp-installer')
 
 -- Diagnostic signs
 -- neovim <= 0.5.1
-vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
-vim.fn.sign_define('LspDiagnosticsSignWarning',     {text=' ', texthl='DiagnosticsSignWarn'})
-vim.fn.sign_define('LspDiagnosticsSignInformation', {text=' ', texthl='DiagnosticsSignInfo'})
-vim.fn.sign_define('LspDiagnosticsSignHint',        {text=' ', texthl='DiagnosticsSignHint'})
+vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
+vim.fn.sign_define('LspDiagnosticsSignWarning',     {text=' ', texthl='DiagnosticsSignWarn'})
+vim.fn.sign_define('LspDiagnosticsSignInformation', {text=' ', texthl='DiagnosticsSignInfo'})
+vim.fn.sign_define('LspDiagnosticsSignHint',        {text=' ', texthl='DiagnosticsSignHint'})
 
 -- neovim >= 0.6.0
 vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignError'})
