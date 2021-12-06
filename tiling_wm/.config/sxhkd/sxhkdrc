@@ -24,7 +24,7 @@ super + c
 
 # Web browser
 super + b
-    google-chrome
+    google-chrome-stable
 
 # Email client
 super + m
