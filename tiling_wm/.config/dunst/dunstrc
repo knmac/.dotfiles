@@ -36,8 +36,8 @@ transparency = 30
 /*close_all = ctrl+shift+space*/
 /*history = ctrl+grave*/
 /*context = ctrl+shift+period*/
-close_all = mod4+grave
-history = mod4+shift+grave
+/* close_all = mod4+grave */
+/* history = mod4+shift+grave */
 
 [urgency_low]
 timeout = 4

@@ -46,6 +46,12 @@ super + Tab
 super + t
     "$HOME/.config/trayer/trayer_toggle.sh"
 
+# notification (dunst)
+super + grave
+    dunstctl close-all
+super + shift + grave
+    dunstctl history-pop
+
 # Power menu
 super + Escape
     "$HOME/.config/rofi/scripts/powermenu.sh"
