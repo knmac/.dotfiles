@@ -75,9 +75,9 @@ autocmd WinLeave * setlocal nocursorline
 -- Highlight
 -------------------------------------------------------------------------------
 cmd [[
-autocmd ColorScheme * highlight CursorLine cterm=bold   gui=bold
-autocmd ColorScheme * highlight Comment    cterm=italic gui=italic
-autocmd ColorScheme * highlight String     cterm=italic gui=italic
+highlight CursorLine cterm=bold   gui=bold
+highlight Comment    cterm=italic gui=italic
+highlight String     cterm=italic gui=italic
 ]]
 
 
