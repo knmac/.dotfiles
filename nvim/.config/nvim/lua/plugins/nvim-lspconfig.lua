@@ -90,7 +90,7 @@ lsp_setup_opts['sumneko_lua'] = {
     settings = {
         Lua = {
             diagnostics = {
-                globals = { 'vim' }
+                globals = { 'vim', 'use' }
             }
         }
     }
