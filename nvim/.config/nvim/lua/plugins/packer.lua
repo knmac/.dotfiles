@@ -19,7 +19,6 @@ return packer.startup(function()
         },
     }
     use 'nvim-lua/plenary.nvim'                 -- ultilities used by many other plugins
-    -- use 'williamboman/nvim-lsp-installer'
     use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
     use 'mfussenegger/nvim-lint'                -- code linter for style checking
     use {
