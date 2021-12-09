@@ -87,7 +87,7 @@ highlight String     cterm=italic gui=italic
 opt.ignorecase = true               -- ignore case letters when search
 opt.incsearch = true                -- search as characters are entered
 opt.hlsearch = true                 -- highlight matches
-opt.inccommand = 'nosplit'          -- show substitution results live
+-- opt.inccommand = 'nosplit'          -- show substitution results live
 
 
 -------------------------------------------------------------------------------

@@ -84,12 +84,12 @@
 
 | Functionality                                 | Key-binding/Command |
 |-----------------------------------------------|---------------------|
-| Remove highlighted searching text             | `<leader> <space>`  |
 | Insert ipdb breakpoint (on the next line)     | `<leader> b`        |
 | Insert ipdb breakpoint (on the previous line) | `<leader> B`        |
 | Insert '-' characters                         | `<leader> -`        |
 | Insert '=' characters                         | `<leader> =`        |
 | Split navigation                              | `<Alt+h/j/k/l>`     |
+| Buffer navigation                             | `<Ctrl+Alt+h/l>`    |
 
 
 ## 2. Default useful vim key-bindings

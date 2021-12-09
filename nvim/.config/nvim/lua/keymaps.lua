@@ -14,7 +14,7 @@ local g = vim.g
 -------------------------------------------------------------------------------
 
 -- Clear search highlighting
-map('n', '<leader><space>', ':nohl<CR>', default_opts)
+-- map('n', '<leader><space>', ':nohl<CR>', default_opts)
 
 -- Maintain visual mode after shifting
 map('v', '>', '>gv', default_opts)
