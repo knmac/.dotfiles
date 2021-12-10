@@ -46,6 +46,9 @@ cmp.setup{
     formatting = {
         format = require'lspkind'.cmp_format(),
     },
+    documentation = {
+        border = 'single',
+    },
 }
 
 -- Setup lspconfig
