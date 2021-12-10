@@ -3,6 +3,7 @@
 -----------------------------------------------------------
 require('settings')
 require('keymaps')
+require('plugins/onedarkpro-nvim')
 require('plugins/packer-nvim')
 
 -- LSP and coding

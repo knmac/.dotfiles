@@ -34,7 +34,8 @@ return packer.startup(function()
     use 'numToStr/Comment.nvim'                 -- code commenter
 
     -- Functional user interface
-    use 'joshdick/onedark.vim'                  -- colorscheme
+    -- use 'joshdick/onedark.vim'                  -- colorscheme
+    use 'olimorris/onedarkpro.nvim'             -- colorscheme
     use 'ryanoasis/vim-devicons'                -- extra icons without colors
     use 'kyazdani42/nvim-web-devicons'          -- extra icons with colors
     use 'akinsho/bufferline.nvim'               -- buffer line (top)
