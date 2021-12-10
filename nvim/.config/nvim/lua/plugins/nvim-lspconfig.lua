@@ -7,6 +7,19 @@
 local nvim_lsp = require('lspconfig')
 local lsp_installer = require('nvim-lsp-installer')
 
+-- Popped up window borders
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+    vim.lsp.handlers.hover, {
+        border = 'single',
+    }
+)
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+    vim.lsp.handlers.signature_help, {
+        border = 'single',
+        close_events = {"CursorMoved", "BufHidden", "InsertCharPre"},
+    }
+)
+
 -- Diagnostic signs
 -- neovim <= 0.5.1
 vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
@@ -40,7 +53,6 @@ local on_attach = function(client, bufnr)
         buf_set_keymap('n', 'gt', '<cmd>Telescope lsp_type_definitions<CR>', opts)
 
         buf_set_keymap('n', '<F9>', '<cmd>Telescope lsp_document_diagnostics<CR>', opts)
-
     else
         buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
         buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
