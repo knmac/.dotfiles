@@ -3,7 +3,6 @@
 -----------------------------------------------------------
 require('settings')
 require('keymaps')
-require('plugins/onedarkpro-nvim')
 require('plugins/packer-nvim')
 
 -- LSP and coding
@@ -15,6 +14,7 @@ require('plugins/lsp-signature-nvim')
 require('plugins/comment-nvim')
 
 -- User interface
+require('plugins/onedarkpro-nvim')
 require('plugins/bufferline')
 require('plugins/lualine')
 
