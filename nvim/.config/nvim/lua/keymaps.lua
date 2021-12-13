@@ -128,7 +128,8 @@ map('n', '<F2>', ':TodoTelescope<CR>', default_opts)
 map('n', '<F3>', ':NvimTreeToggle<CR> :NvimTreeRefresh<CR>', default_opts)
 
 -- <F4>: Show tags of current buffer
-map('n', '<F4>', ':Telescope current_buffer_tags<CR>', default_opts)
+-- map('n', '<F4>', ':Telescope current_buffer_tags<CR>', default_opts)
+map('n', '<F4>', ':Vista!!<CR>', default_opts)
 -- <S-F4>: Generate tags
 map('n', '<F16>', ':!ctags -R --links=no . <CR>', default_opts)
 

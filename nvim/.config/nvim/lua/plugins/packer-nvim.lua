@@ -43,6 +43,7 @@ return packer.startup(function()
 
     -- Utilities
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
+    use 'liuchengxu/vista.vim'                  -- view and search for LSP symbols
     use 'nvim-telescope/telescope.nvim'         -- fuzzy finder for multiple things
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
