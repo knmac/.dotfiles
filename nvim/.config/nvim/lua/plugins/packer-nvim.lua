@@ -61,4 +61,8 @@ return packer.startup(function()
         'plasticboy/vim-markdown',              -- markdown helper
         'godlygeek/tabular'                     -- format table in markdown
     }
+    use {
+        'kkoomen/vim-doge',                     -- generate docstring
+        run=':call doge#install()',
+    }
 end)

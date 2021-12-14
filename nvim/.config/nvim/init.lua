@@ -31,3 +31,4 @@ require('plugins/toggleterm-nvim')
 
 -- Extra
 require('plugins/markdown')
+require('plugins/vim-doge')

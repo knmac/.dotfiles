@@ -113,4 +113,4 @@ opt.autoindent = true               -- copy the indent from the prev line to a n
 cmd [[ autocmd FileType make setlocal noexpandtab ]]
 
 -- 2 spaces for these file types
-cmd [[ autocmd FileType xml,html setlocal tabstop=2 softtabstop=2 shiftwidth=2 ]]
+cmd [[ autocmd FileType xml,html,c,cpp,h,hpp setlocal tabstop=2 softtabstop=2 shiftwidth=2 ]]
