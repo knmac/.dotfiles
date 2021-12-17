@@ -1,6 +1,6 @@
------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Import Lua modules
------------------------------------------------------------
+-------------------------------------------------------------------------------
 require('settings')
 require('keymaps')
 require('plugins/packer-nvim')
@@ -29,6 +29,7 @@ require('plugins/alpha-nvim')
 require('plugins/neovim-session-manager')
 require('plugins/toggleterm-nvim')
 
--- Extra
+-- Extra vimscript-based config
 require('plugins/markdown')
 require('plugins/vim-doge')
+require('plugins/vista-vim')
