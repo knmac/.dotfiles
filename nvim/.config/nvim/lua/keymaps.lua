@@ -2,17 +2,15 @@
 -- Keymaps configuration file: keymaps of neovim
 -- and plugins.
 -------------------------------------------------------------------------------
-
 local map = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
 local cmd = vim.cmd
-local g = vim.g
+-- local g = vim.g
 
 
 -------------------------------------------------------------------------------
 -- Basic key bindings
 -------------------------------------------------------------------------------
-
 -- Clear search highlighting
 -- map('n', '<leader><space>', ':nohl<CR>', default_opts)
 
@@ -113,7 +111,7 @@ map('n', '<C-A-l>', ':BufferLineCycleNext<CR>', default_opts)
 -- Telescope
 map('n', '<space><space>', ':Telescope<CR>', default_opts)
 map('n', '<space>f',       ':Telescope find_files<CR>', default_opts)
-map('n', '<space>g',       ':Telescope live_grep<CR>', default_opts)
+map('n', '<space>w',       ':Telescope live_grep<CR>', default_opts)
 map('n', '<space>/',       ':Telescope current_buffer_fuzzy_find<CR>', default_opts)
 
 -- <F1>: Show help

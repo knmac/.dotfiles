@@ -38,7 +38,7 @@
 |------------------------------------|-------------------|
 | Open Telescope                     | `<space> <space>` |
 | Fuzzy search for filename          | `<space> f`       |
-| Fuzzy search for text              | `<space> g`       |
+| Fuzzy search for word              | `<space> w`       |
 | Fuzzy search in the current buffer | `<space> /`       |
 
 <!-- | Insert python template            | `,py`    | -->
