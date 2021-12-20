@@ -52,7 +52,7 @@ local on_attach = function(client, bufnr)
         buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
         buf_set_keymap('n', 'gt', '<cmd>Telescope lsp_type_definitions<CR>', opts)
 
-        buf_set_keymap('n', '<F9>', '<cmd>Telescope lsp_document_diagnostics<CR>', opts)
+        buf_set_keymap('n', '<F9>', '<cmd>Telescope diagnostics<CR>', opts)
     else
         buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
         buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
