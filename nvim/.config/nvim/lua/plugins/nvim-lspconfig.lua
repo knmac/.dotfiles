@@ -115,7 +115,7 @@ lsp_installer.on_server_ready(function(server)
 
         -- Suggested configuration by nvim-cmp
         capabilities = require('cmp_nvim_lsp').update_capabilities(
-        vim.lsp.protocol.make_client_capabilities()
+            vim.lsp.protocol.make_client_capabilities()
         ),
     }
 
@@ -123,8 +123,8 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_extend("error", opts, lsp_setup_opts[server.name] or {})
 
     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-        server:setup(opts)
-        vim.cmd [[ do User LspAttachBuffers ]]
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
 end)
 
 -- Automatically install if a required LSP server is missing.

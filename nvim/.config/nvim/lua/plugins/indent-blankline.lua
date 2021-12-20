@@ -7,5 +7,6 @@ require('indent_blankline').setup {
     buftype_exclude = {"terminal"},
     filetype_exclude = {"help", "startify", "make", "NvimTree", "dashboard", "lsp-installer", "alpha"},
     use_treesitter = true,
-    --show_current_context = true,
+    show_current_context = true,
+    show_current_context_start = false,
 }

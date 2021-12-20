@@ -2,8 +2,8 @@
 -- Start page greeter
 -- goolord/alpha-nvim
 -------------------------------------------------------------------------------
-local alpha = require("alpha")
-local dashboard = require("alpha.themes.dashboard")
+local alpha = require('alpha')
+local dashboard = require('alpha.themes.dashboard')
 
 -- Set header
 dashboard.section.header.val = {
@@ -36,6 +36,4 @@ dashboard.section.footer.val = fortune()
 alpha.setup(dashboard.opts)
 
 -- Disable folding on alpha buffer
-vim.cmd([[
-    autocmd FileType alpha setlocal nofoldenable
-]])
+vim.cmd[[ autocmd FileType alpha setlocal nofoldenable ]]
