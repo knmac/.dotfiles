@@ -1,6 +1,10 @@
 -------------------------------------------------------------------------------
 -- Code completion
 -- hrsh7th/nvim-cmp
+--
+-- Ref: for snippet:
+-- https://github.com/neovim/nvim-lspconfig/wiki/Snippets
+-- https://raw.githubusercontent.com/L3MON4D3/LuaSnip/master/Examples/snippets.lua
 -------------------------------------------------------------------------------
 local cmp = require'cmp'
 
