@@ -6,7 +6,7 @@
 -- https://github.com/neovim/nvim-lspconfig/wiki/Snippets
 -- https://raw.githubusercontent.com/L3MON4D3/LuaSnip/master/Examples/snippets.lua
 -------------------------------------------------------------------------------
-local cmp = require'cmp'
+local cmp = require('cmp')
 
 cmp.setup{
     snippet = {
