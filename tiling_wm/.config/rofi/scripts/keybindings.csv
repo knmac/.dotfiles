@@ -1,4 +1,4 @@
-Show keybindings,Super + /
+Show keybindings,Super + ?
 Power menu,Super + Esc
 Terminal,Super + Return
 Terminal (last location),Super + Shift + Return
@@ -48,10 +48,10 @@ I3-split vert,Super + Ctrl + v
 I3-split horz/vert toggle,Super + Backspace
 I3-gaps increase,Super + z
 I3-gaps decrease,Super + Shift + z
-I3-layout stacking,Super + F1
-I3-layout tabbed,Super + F2
-I3-layout split,Super + F3
-I3-instant-layout,Super + F4
+I3-layout vstack,Super + F1
+I3-layout hstack,Super + F2
+I3-layout autosplit,Super + F3
+I3-layout spiral,Super + F4
 ─────────────────────────────────────────────────────────────────
 Notification-close all,Super + `
 Notification-history,Super + Shift + `

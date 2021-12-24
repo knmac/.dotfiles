@@ -11,7 +11,7 @@ super + shift + e
     thunar "$(cat /tmp/whereami_$USER)"
 
 # Show key bindings
-super + slash
+super + shift + slash
     "$HOME/.config/rofi/scripts/find_keybindings.sh"
 
 # Settings
