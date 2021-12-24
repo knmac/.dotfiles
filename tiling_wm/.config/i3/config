@@ -3,7 +3,7 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
+# Requirement: https://github.com/eliep/i3-layouts
 
 # i3 config file (v4)
 #
@@ -87,12 +87,16 @@ bindsym $mod+BackSpace split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+F1 layout stacking
-bindsym $mod+F2 layout tabbed
-bindsym $mod+F3 layout toggle split
+# bindsym $mod+F1 layout stacking
+# bindsym $mod+F2 layout tabbed
+# bindsym $mod+F3 layout toggle split
+bindsym $mod+F1 exec i3l vstack 0.5
+bindsym $mod+F2 exec i3l hstack 0.5
+bindsym $mod+F3 exec i3l autosplit
+bindsym $mod+F4 exec i3l spiral 0.5
 
 # I3 instant layout
-bindsym $mod+F4 exec "$HOME/.config/i3/scripts/i3-instant-layout.sh"
+# bindsym $mod+F4 exec "$HOME/.config/i3/scripts/i3-instant-layout.sh"
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -119,6 +123,17 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $i3l vstack to workspace $ws1
+set $i3l vstack to workspace $ws2
+set $i3l vstack to workspace $ws3
+set $i3l vstack to workspace $ws4
+set $i3l vstack to workspace $ws5
+set $i3l vstack to workspace $ws6
+set $i3l vstack to workspace $ws7
+set $i3l vstack to workspace $ws8
+set $i3l vstack to workspace $ws9
+set $i3l vstack to workspace $ws10
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -135,19 +150,19 @@ bindsym $mod+Next  workspace next
 bindsym $mod+Prior workspace prev
 
 # move focused container to workspace and focus on the new workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8; workspace $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9; workspace $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $ws10
+bindsym $mod+Shift+1 exec i3l move container to workspace number $ws1; workspace $ws1
+bindsym $mod+Shift+2 exec i3l move container to workspace number $ws2; workspace $ws2
+bindsym $mod+Shift+3 exec i3l move container to workspace number $ws3; workspace $ws3
+bindsym $mod+Shift+4 exec i3l move container to workspace number $ws4; workspace $ws4
+bindsym $mod+Shift+5 exec i3l move container to workspace number $ws5; workspace $ws5
+bindsym $mod+Shift+6 exec i3l move container to workspace number $ws6; workspace $ws6
+bindsym $mod+Shift+7 exec i3l move container to workspace number $ws7; workspace $ws7
+bindsym $mod+Shift+8 exec i3l move container to workspace number $ws8; workspace $ws8
+bindsym $mod+Shift+9 exec i3l move container to workspace number $ws9; workspace $ws9
+bindsym $mod+Shift+0 exec i3l move container to workspace number $ws10; workspace $ws10
 # Shift PageUp/PageDown
-bindsym $mod+Shift+Next  move container to workspace next; workspace next
-bindsym $mod+Shift+Prior move container to workspace prev; workspace prev
+bindsym $mod+Shift+Next  exec i3l move container to workspace next; workspace next
+bindsym $mod+Shift+Prior exec i3l move container to workspace prev; workspace prev
 
 # move workspaces between monitors
 bindsym $mod+less               focus output left
@@ -246,6 +261,8 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 # Auto switch horizontal/vertical tiling
 # Ref: https://github.com/chmln/i3-auto-layout
 #exec_always --no-startup-id "$HOME/.config/i3/scripts/i3-auto-layout"
+# Ref: https://github.com/eliep/i3-layouts
+exec_always --no-startup-id i3-layouts
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
