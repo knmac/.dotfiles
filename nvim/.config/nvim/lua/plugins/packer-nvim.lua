@@ -4,7 +4,6 @@
 -------------------------------------------------------------------------------
 local cmd = vim.cmd
 cmd [[packadd packer.nvim]]
-
 local packer = require('packer')
 
 -- Add packages

@@ -42,6 +42,7 @@ opt.termguicolors = true            -- enable 24-bit RGB color in the TUI
 
 opt.ls = 2                          -- always show status bar
 opt.number = true                   -- show line number
+opt.relativenumber = true           -- use relative number
 opt.numberwidth = 5                 -- width of line numbers
 opt.showcmd = true                  -- show command in bottom bar
 opt.cursorline = true               -- highlight current line
@@ -49,6 +50,7 @@ opt.colorcolumn = '80'              -- line length marker at 80 columns
 opt.showmatch = true                -- highlight matching parenthesis
 opt.smartcase = true                -- ignore lowercase for the whole pattern
 opt.linebreak = true                -- wrap on word boundary
+opt.signcolumn = 'yes'              -- always show the sign column to not shift the text
 
 -- Marking special characters
 opt.list = true                     -- list mode to mark special characters
