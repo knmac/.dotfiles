@@ -262,7 +262,7 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 # Ref: https://github.com/chmln/i3-auto-layout
 #exec_always --no-startup-id "$HOME/.config/i3/scripts/i3-auto-layout"
 # Ref: https://github.com/eliep/i3-layouts
-exec_always --no-startup-id i3-layouts
+exec_always --no-startup-id "$HOME/.local/bin/i3-layouts"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
