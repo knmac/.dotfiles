@@ -87,16 +87,13 @@ bindsym $mod+BackSpace split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+F1 layout stacking
-# bindsym $mod+F2 layout tabbed
-# bindsym $mod+F3 layout toggle split
-bindsym $mod+F1 exec i3l vstack 0.5
-bindsym $mod+F2 exec i3l hstack 0.5
-bindsym $mod+F3 exec i3l autosplit
-bindsym $mod+F4 exec i3l spiral 0.5
-
-# I3 instant layout
-# bindsym $mod+F4 exec "$HOME/.config/i3/scripts/i3-instant-layout.sh"
+bindsym $mod+F1 exec $HOME/.local/bin/i3l vstack 0.5 && notify-send 'Layout vstack'
+bindsym $mod+F2 exec $HOME/.local/bin/i3l hstack 0.5 && notify-send 'Layout hstack'
+bindsym $mod+F3 exec $HOME/.local/bin/i3l autosplit && notify-send 'Layout autosplit'
+bindsym $mod+F4 exec $HOME/.local/bin/i3l spiral 0.5 && notify-send 'Layout spiral'
+# bindsym $mod+F5 layout stacking
+# bindsym $mod+F6 layout tabbed
+# bindsym $mod+F7 layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -259,8 +256,6 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # Auto switch horizontal/vertical tiling
-# Ref: https://github.com/chmln/i3-auto-layout
-#exec_always --no-startup-id "$HOME/.config/i3/scripts/i3-auto-layout"
 # Ref: https://github.com/eliep/i3-layouts
 exec_always --no-startup-id "$HOME/.local/bin/i3-layouts"
 
