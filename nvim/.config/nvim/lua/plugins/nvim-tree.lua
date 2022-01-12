@@ -29,16 +29,15 @@ g.nvim_tree_window_picker_exclude = {
 -- selectable.
 g.nvim_tree_special_files = {
     ['README.md'] = true,
-    Makefile = true,
+    ['Makefile'] = true,
+    ['MAKEFILE'] = true,
 }  -- List of filenames that gets highlighted with NvimTreeSpecialFile
--- cmd [[
--- let g:nvim_tree_show_icons = {
---     \ 'git': 1,
---     \ 'folders': 1,
---     \ 'files': 1,
---     \ 'folder_arrows': 0,
---     \ }
--- ]]
+g.nvim_tree_show_icons = {
+    ['git'] = 1,
+    ['folders'] = 1,
+    ['files'] = 1,
+    ['folder_arrows'] = 0,
+}
 -- If 0, do not show the icons for one of 'git' 'folder' and 'files'
 -- 1 by default, notice that if 'files' is 1, it will only display
 -- if nvim-web-devicons is installed and on your runtimepath.
@@ -74,7 +73,7 @@ g.nvim_tree_icons = {
         info = "",
         warning = "",
         error = "",
-    }
+    },
 }
 
 -- a list of groups can be found at `:help nvim_tree_highlight`
@@ -83,7 +82,7 @@ cmd [[
 autocmd ColorScheme * highlight NvimTreeFolderIcon guibg=blue
 ]]
 
-require'nvim-tree'.setup {
+require('nvim-tree').setup {
     -- disables netrw completely
     disable_netrw       = true,
     -- hijack netrw window on startup
@@ -98,8 +97,12 @@ require'nvim-tree'.setup {
     open_on_tab         = false,
     -- hijack the cursor in the tree to put it at the start of the filename
     hijack_cursor       = false,
-    -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually) 
+    -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
     update_cwd          = false,
+    update_to_buf_dir = {
+        enable = true,
+        auto_open = true,
+    },
     -- show lsp diagnostics in the signcolumn
     diagnostics = {
         enable = false,
@@ -135,6 +138,7 @@ require'nvim-tree'.setup {
     view = {
         -- width of the window, can be either a number (columns) or a string in `%`
         width = 40,
+        hide_root_folder = false,
         -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
         side = 'left',
         -- if true the tree will resize itself after opening a file
@@ -145,6 +149,13 @@ require'nvim-tree'.setup {
             custom_only = false,
             -- list of mappings to set on the tree manually
             list = {}
-        }
-    }
+        },
+        number = false,
+        relativenumber = false,
+        signcolumn = 'yes',
+    },
+    trash = {
+        cmd = 'trash',
+        require_confirm = true,
+    },
 }
