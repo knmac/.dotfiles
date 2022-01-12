@@ -42,7 +42,12 @@ return packer.startup(function()
 
     -- Utilities
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
-    use 'nvim-telescope/telescope.nvim'         -- fuzzy finder for multiple things
+    use {
+        'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
+        requires = {
+            'nvim-telescope/telescope-ui-select.nvim',
+        }
+    }
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
     use 'folke/todo-comments.nvim'              -- highlight and search TODO tags

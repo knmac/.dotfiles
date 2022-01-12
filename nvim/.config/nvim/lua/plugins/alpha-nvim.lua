@@ -19,8 +19,8 @@ dashboard.section.header.val = {
 
 dashboard.section.buttons.val = {
     dashboard.button( "e", "  Edit a new file"      , ":ene<CR>"),
+    dashboard.button( "s", "  Session manager"      , ":SessionManager load_session<CR>"),
     dashboard.button( "r", "  Recently opened files", ":Telescope oldfiles<CR>"),
-    dashboard.button( "s", "  Session manager"      , ":Telescope sessions<CR>"),
     dashboard.button( "f", "  File finder"          , ":Telescope find_files<CR>"),
     dashboard.button( "w", "  Word finder"          , ":Telescope live_grep<CR>"),
     dashboard.button( "u", "  Update plugins"       , ":PackerUpdate<CR>"),
