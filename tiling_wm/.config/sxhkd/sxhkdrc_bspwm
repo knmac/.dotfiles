@@ -19,6 +19,12 @@ super + {_,shift + }{h,j,k,l}
 super + {_,shift + }{Left,Down,Up,Right}
     bspc node -{f,s} {west,south,north,east}
 
+# Preselect the splitting area for next window on leaf/parent
+super + ctrl + {h,j,k,l}
+	bspc node --presel-dir \~{west,south,north,east}
+super + ctrl + {Left,Down,Up,Right}
+	bspc node --presel-dir \~{west,south,north,east}
+
 # Rotate tree
 super + {_,shift +} BackSpace
     bspc node @/ -C {forward,backward}
@@ -45,7 +51,6 @@ super + shift + {comma,period}
 
 # Switch to the prev/next workspace
 super + {Prior,Next}
-    bspc desktop -f {prev,next}.local
+    bspc desktop -f {prev,next}.occupied
 #super + {Prior,Next}
-#    bspc node -s {prev,next}.local
-
+#    bspc node -s {prev,next}.occupied
