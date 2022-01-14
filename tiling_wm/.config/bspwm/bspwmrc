@@ -34,8 +34,8 @@ desktop_config history_aware_focus         true
 # =============================================================================
 # Startup programs
 # =============================================================================
-# Compositor
-picom --experimental-backends &
+# polybar
+$HOME/.config/polybar/launch_bspwm.sh &
 
 # Simple X hotkey deamon
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc_bspwm &
@@ -46,14 +46,15 @@ $HOME/.screenlayout/default.sh &
 # Wallpaper settings
 nitrogen --restore &
 
+# Compositor
+picom --experimental-backends &
+touch /tmp/picom &
+
 # Autolock the screen
-xautolock -time 30 -corners 000- -locker $HOME/.config/i3/i3lock.sh &
+xautolock -time 30 -corners 000- -locker $HOME/.config/i3/scripts/i3lock.sh &
 
 # Lockscreen settings
-xss-lock --transfer-sleep-lock -- $HOME/.config/i3/i3lock.sh &
-
-# polybar
-$HOME/.config/polybar/launch_bspwm.sh &
+xss-lock --transfer-sleep-lock -- $HOME/.config/i3/scripts/transfer-sleep-lock-generic-delay.sh
 
 # Network manager
 nm-applet &
@@ -62,4 +63,10 @@ nm-applet &
 blueman-applet &
 
 # Dropbox
-sleep 10; dropbox start &
+# sleep 10; dropbox start &
+
+
+# =============================================================================
+# Windows rules
+# =============================================================================
+bspc rule -a Qalculate state=floating
