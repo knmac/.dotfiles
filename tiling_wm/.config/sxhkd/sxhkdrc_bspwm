@@ -5,6 +5,10 @@
 super + shift + r
     bspc wm -r
 
+# Reset sxhkd
+super + shift + c
+    pkill -USR1 -x sxhkd
+
 # Change window gap
 super + {_,shift +}z
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2))
@@ -54,3 +58,10 @@ super + {Prior,Next}
     bspc desktop -f {prev,next}.occupied
 #super + {Prior,Next}
 #    bspc node -s {prev,next}.occupied
+
+# Expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+# Contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
