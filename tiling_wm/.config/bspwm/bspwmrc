@@ -56,6 +56,9 @@ xautolock -time 30 -corners 000- -locker $HOME/.config/i3/scripts/i3lock.sh &
 # Lockscreen settings
 xss-lock --transfer-sleep-lock -- $HOME/.config/i3/scripts/transfer-sleep-lock-generic-delay.sh
 
+# Change default cursor
+xsetroot -cursor_name left_ptr &
+
 # Network manager
 nm-applet &
 
