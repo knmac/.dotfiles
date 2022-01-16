@@ -27,8 +27,8 @@ super + b
     google-chrome-stable
 
 # Email client
-super + m
-    evolution --force-online
+# super + m
+#     evolution --force-online
 
 # Random wallpaper
 super + w
@@ -91,6 +91,8 @@ XF86MonBrightnessUp
     xbacklight -inc 10
 XF86MonBrightnessDown
     xbacklight -dec 10
+super + shift + bracket{left,right}
+    xbacklight {-dec,-inc} 10
 
 # Volume control
 XF86AudioRaiseVolume
@@ -99,3 +101,5 @@ XF86AudioLowerVolume
     amixer -q -D pulse sset Master 10%-
 XF86AudioMute
     amixer -q -D pulse sset Master toggle
+super + bracket{left,right}
+    amixer -q -D pulse sset Master {10%-,10%+}
