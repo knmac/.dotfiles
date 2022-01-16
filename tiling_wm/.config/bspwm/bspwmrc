@@ -12,7 +12,7 @@ desktop_config() {
     done
 }
 
-desktop_config border_width         1
+desktop_config border_width         2
 desktop_config window_gap          10
 
 desktop_config focused_border_color \#61afef
