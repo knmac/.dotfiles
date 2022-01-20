@@ -30,6 +30,6 @@ require('plugins/neovim-session-manager')
 require('plugins/toggleterm-nvim')
 
 -- Extra vimscript-based config
-require('plugins/vista-vim')
-require('plugins/markdown')
+-- require('plugins/markdown')
 require('plugins/vim-doge')
+require('plugins/vista-vim')

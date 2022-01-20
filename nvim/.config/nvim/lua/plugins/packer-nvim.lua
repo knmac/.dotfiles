@@ -60,10 +60,10 @@ return packer.startup(function()
     use 'akinsho/toggleterm.nvim'               -- toggle terminal
 
     -- Extra nvim plugins
-    use {
-        'plasticboy/vim-markdown',              -- markdown helper
-        'godlygeek/tabular'                     -- format table in markdown
-    }
+    -- use {
+    --     'plasticboy/vim-markdown',              -- markdown helper
+    --     'godlygeek/tabular'                     -- format table in markdown
+    -- }
     use {
         'kkoomen/vim-doge',                     -- generate docstring
         run=':call doge#install()',
