@@ -72,4 +72,7 @@ blueman-applet &
 # =============================================================================
 # Windows rules
 # =============================================================================
-bspc rule -a Qalculate state=floating
+bspc rule -a '*:pavucontrol' state=floating
+bspc rule -a '*:matplotlib' state=floating
+bspc rule -a '*:qalculate' state=floating
+bspc rule -a '*:com.gitlab.bitseater.meteo' state=floating
