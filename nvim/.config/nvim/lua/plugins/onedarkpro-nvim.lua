@@ -17,13 +17,14 @@ onedarkpro.setup({
     }, -- Override default colors. Can specify colors for "onelight" or "onedark" themes
     hlgroups = {
         CursorLine = { style = 'bold' },
+        Operator = { style = 'NONE' },
     }, -- Override default highlight groups
     styles = {
-        strings = "italic", -- Style that is applied to strings
-        comments = "italic", -- Style that is applied to comments
-        keywords = "bold", -- Style that is applied to keywords
-        functions = "bold", -- Style that is applied to functions
-        variables = "NONE", -- Style that is applied to variables
+        strings = 'italic', -- Style that is applied to strings
+        comments = 'italic', -- Style that is applied to comments
+        keywords = 'bold', -- Style that is applied to keywords
+        functions = 'bold', -- Style that is applied to functions
+        variables = 'NONE', -- Style that is applied to variables
     },
     options = {
         bold = true, -- Use the themes opinionated bold styles?
