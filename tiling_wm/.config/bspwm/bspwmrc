@@ -4,6 +4,20 @@
 # =============================================================================
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
+# Set layout using bsp-layout
+if type bsp-layout &> /dev/null; then
+    bsp-layout set tall 1 -- --master-size 0.5
+    bsp-layout set tall 2 -- --master-size 0.5
+    bsp-layout set tall 3 -- --master-size 0.5
+    bsp-layout set tall 4 -- --master-size 0.5
+    bsp-layout set tall 5 -- --master-size 0.5
+    bsp-layout set tall 6 -- --master-size 0.5
+    bsp-layout set tall 7 -- --master-size 0.5
+    bsp-layout set tall 8 -- --master-size 0.5
+    bsp-layout set tall 9 -- --master-size 0.5
+    bsp-layout set tall 10 -- --master-size 0.5
+fi
+
 # Configure both monitors at the same time
 desktop_config() {
     #bspc config $1 $2
