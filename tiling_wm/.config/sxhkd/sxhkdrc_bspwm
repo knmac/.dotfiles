@@ -30,8 +30,11 @@ super + ctrl + {Left,Down,Up,Right}
 	bspc node --presel-dir \~{west,south,north,east}
 
 # Rotate tree
-super + {_,shift +} BackSpace
-    bspc node @/ -C {forward,backward}
+# super + {_,shift +} BackSpace
+#     bspc node @/ -C {forward,backward}
+# Switch layout of the current workspace
+super + BackSpace
+    bsp-layout cycle --layouts tall,tiled
 
 # Toggle fullscreen
 super + f
@@ -45,11 +48,11 @@ super + shift + f
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{1-9,10}' --follow
 
-# focus west/east monitor
+# Focus west/east monitor
 super + {comma,period}
     bspc monitor -f {west,east}
 
-# move window to west/east monitor
+# Move window to west/east monitor
 super + shift + {comma,period}
     bspc node --to-monitor {west,east} -f
 
