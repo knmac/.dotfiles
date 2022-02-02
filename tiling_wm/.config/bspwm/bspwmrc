@@ -8,7 +8,7 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 desktop_config() {
     #bspc config $1 $2
     for monitor in $(bspc query -M); do
-        bspc config -m $monitor $1 $2
+        bspc config -m "$monitor" "$1" "$2"
     done
 }
 
@@ -35,13 +35,13 @@ desktop_config history_aware_focus         true
 # Startup programs
 # =============================================================================
 # polybar
-$HOME/.config/polybar/launch_bspwm.sh &
+"$HOME/.config/polybar/launch_bspwm.sh" &
 
 # Simple X hotkey deamon
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc_bspwm &
+sxhkd -c "$HOME/.config/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc_bspwm" &
 
 # Monitor settings
-$HOME/.screenlayout/default.sh &
+"$HOME/.screenlayout/default.sh" &
 
 # Wallpaper settings
 nitrogen --restore &
@@ -51,10 +51,10 @@ picom --experimental-backends &
 touch /tmp/picom &
 
 # Autolock the screen
-xautolock -time 30 -corners 000- -locker $HOME/.config/i3/scripts/i3lock.sh &
+xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/scripts/i3lock.sh" &
 
 # Lockscreen settings
-xss-lock --transfer-sleep-lock -- $HOME/.config/i3/scripts/transfer-sleep-lock-generic-delay.sh
+xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/scripts/transfer-sleep-lock-generic-delay.sh" &
 
 # Change default cursor
 xsetroot -cursor_name left_ptr &
