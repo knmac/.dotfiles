@@ -69,7 +69,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     buf_set_keymap('n', '<leader>f',  '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    buf_set_keymap('n', '<leader>e',  '<cmd>lua vim.diagnostic.open_loat({ border = "single" })<CR>', opts)
+    buf_set_keymap('n', '<leader>e',  '<cmd>lua vim.diagnostic.open_float({ border = "single" })<CR>', opts)
     buf_set_keymap('n', '[e',         '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "single" }})<CR>', opts)
     buf_set_keymap('n', ']e',         '<cmd>lua vim.diagnostic.goto_next({ float = { border = "single" }})<CR>', opts)
 
