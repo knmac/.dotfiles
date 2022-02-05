@@ -9,8 +9,8 @@ monitor = 0
 follow = mouse
 
 # Dimension and position
-# geometry = "300x60-20+48"
-width = 300
+geometry = "300x60-20+48"
+# width = 300
 origin = top-right
 offset = 20x48
 
