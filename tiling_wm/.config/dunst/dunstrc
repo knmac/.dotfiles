@@ -71,7 +71,7 @@ line_height = 4
 #  %n progress value if set without any extra characters
 #  %% Literal %
 markup = full
-format = "<i><b>%a</b></i>\n<b>%s</b>\n──────────────────────\n%b"
+format = "<i><b>%a</b></i>\n<b>%s</b>\n%b"
 
 # Left align the text
 alignment = left
