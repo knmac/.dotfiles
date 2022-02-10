@@ -9,6 +9,7 @@ local packer = require('packer')
 -- Add packages
 return packer.startup(function()
     use 'wbthomason/packer.nvim'                -- packer can manage itself
+    use 'nvim-lua/plenary.nvim'                 -- ultilities used by many other plugins
 
     -- LSP and coding
     use {
@@ -17,7 +18,6 @@ return packer.startup(function()
             'williamboman/nvim-lsp-installer' , -- lsp installer helper
         },
     }
-    use 'nvim-lua/plenary.nvim'                 -- ultilities used by many other plugins
     use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
     use 'mfussenegger/nvim-lint'                -- code linter for style checking
     use {
