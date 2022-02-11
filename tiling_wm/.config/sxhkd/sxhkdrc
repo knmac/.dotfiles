@@ -65,26 +65,24 @@ super + p
     "$HOME/.config/sxhkd/scripts/toggle_picom.sh"
 
 # Screenshot
+# Print
+#     sleep 0.2; \
+#     maim -u "$HOME/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
+#     #scrot
+# shift + Print
+#     sleep 0.2; \
+#     maim -s -u "$HOME/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
+#     #scrot --select --freeze
+# ctrl + Print
+#     sleep 0.2; \
+#     maim -u | xclip -selection clipboard -t image/png -i
+#     #scrot '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
+# ctrl + shift + Print
+#     sleep 0.2; \
+#     maim -s -u | xclip -selection clipboard -t image/png -i
+#     #scrot --select --freeze '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
 Print
-# super + Insert
-    sleep 0.2; \
-    maim -u "$HOME/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
-    #scrot
-shift + Print
-# super + shift + Insert
-    sleep 0.2; \
-    maim -s -u "$HOME/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png"
-    #scrot --select --freeze
-ctrl + Print
-# super + ctrl + Insert
-    sleep 0.2; \
-    maim -u | xclip -selection clipboard -t image/png -i
-    #scrot '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
-ctrl + shift + Print
-# super + ctrl + shift + Insert
-    sleep 0.2; \
-    maim -s -u | xclip -selection clipboard -t image/png -i
-    #scrot --select --freeze '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
+    flameshot gui
 
 # Backlight control
 XF86MonBrightnessUp
