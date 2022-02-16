@@ -1,17 +1,56 @@
-set window-height   1024
-set window-width    768
-set page-padding    10
-set recolor-keephue true
+# Geometry
+set window-height       1024
+set window-width        768
+set page-padding        10
+set statusbar-h-padding 0
+set statusbar-v-padding 0
 
+# UI
+set font "JetBrainsMono Nerd Font 10"
 set selection-clipboard clipboard
 set adjust-open "best-fit"
-set font "JetBrainsMono Nerd Font 10"
+# set recolor
+set recolor-keephue true
 
+# Mappings
 map i recolor
 map [fullscreen] i recolor
 
+# Colors
+set default-fg                  "#abb2bf"
+set default-bg                  "#282c34"
 set recolor-lightcolor          "#282c34"
 set recolor-darkcolor           "#abb2bf"
 
 set highlight-color             "#e5c07b"
-set highlight-active-color      "#61afef"
+set highlight-active-color      "#e06c79"
+
+set completion-fg               "#abb2bf"
+set completion-bg               "#282c34"
+set completion-highlight-fg     "#282c34"
+set completion-highlight-bg     "#98c379"
+set completion-group-fg         "#61afef"
+set completion-group-bg         "#282c34"
+
+set inputbar-fg                 "#98c379"
+set inputbar-bg                 "#282c34"
+
+set statusbar-fg                "#61afef"
+set statusbar-bg                "#282c34"
+
+set notification-bg             "#282c34"
+set notification-fg             "#abb2bf"
+set notification-error-bg       "#282c34"
+set notification-error-fg       "#e06c75"
+set notification-warning-bg     "#282c34"
+set notification-warning-fg     "#e5c07b"
+
+set index-fg                    "#abb2bf"
+set index-bg                    "#282c34"
+set index-active-fg             "#abb2bf"
+set index-active-bg             "#282c34"
+
+set render-loading-bg           "#282c34"
+set render-loading-fg           "#abb2bf"
+
+# vi: ft=config
