@@ -5,6 +5,7 @@
 local onedarkpro = require('onedarkpro')
 
 onedarkpro.setup({
+    -- Override default colors. Can specify colors for "onelight" or "onedark" themes
     colors = {
         onedark = {
             -- Standard colors
@@ -14,11 +15,13 @@ onedarkpro.setup({
             -- Additional colors
             comment = '#5c6370',
         },
-    }, -- Override default colors. Can specify colors for "onelight" or "onedark" themes
+    },
+    -- Override default highlight groups
     hlgroups = {
         CursorLine = { style = 'bold' },
         Operator = { style = 'NONE' },
-    }, -- Override default highlight groups
+    },
+    -- Override default styles
     styles = {
         strings = 'italic', -- Style that is applied to strings
         comments = 'italic', -- Style that is applied to comments
@@ -26,6 +29,7 @@ onedarkpro.setup({
         functions = 'bold', -- Style that is applied to functions
         variables = 'NONE', -- Style that is applied to variables
     },
+    -- Override default options
     options = {
         bold = true, -- Use the themes opinionated bold styles?
         italic = true, -- Use the themes opinionated italic styles?

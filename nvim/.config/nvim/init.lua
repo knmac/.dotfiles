@@ -21,7 +21,7 @@ require('plugins/lualine')
 -- Utilities
 require('plugins/nvim-tree')
 require('plugins/telescope')
-require('plugins/vim-illuminate')
+-- require('plugins/vim-illuminate')
 require('plugins/todo-comments-nvim')
 require('plugins/indent-blankline')
 require('plugins/gitsigns')

@@ -4,7 +4,7 @@ uptime=$(uptime -p | sed -e 's/up //g')
 
 #rofi_command="rofi -theme $dir/powermenu.rasi"
 rofi_command="rofi -theme $HOME/.config/rofi/powermenu_theme.rasi"
-i3lock_pth="~/.config/i3/scripts/i3lock.sh"
+i3lock_pth="$HOME/.config/i3/scripts/i3lock.sh"
 
 # Options
 shutdown="  Shutdown"
@@ -31,7 +31,7 @@ options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -i -selected-row 0)"
 case $chosen in
-    $shutdown)
+    "$shutdown")
         ans=$(confirm_exit &)
         if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
             systemctl poweroff
@@ -41,7 +41,7 @@ case $chosen in
             msg
         fi
         ;;
-    $reboot)
+    "$reboot")
         ans=$(confirm_exit &)
         if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
             systemctl reboot
@@ -51,10 +51,10 @@ case $chosen in
             msg
         fi
         ;;
-    $lock)
+    "$lock")
         exec $i3lock_pth
         ;;
-    $suspend)
+    "$suspend")
         ans=$(confirm_exit &)
         if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
             mpc -q pause
@@ -67,7 +67,7 @@ case $chosen in
             msg
         fi
         ;;
-    $logout)
+    "$logout")
         ans=$(confirm_exit &)
         if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
             if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
