@@ -49,7 +49,7 @@ return packer.startup(function()
         }
     }
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
-    -- use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
+    use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
     use 'folke/todo-comments.nvim'              -- highlight and search TODO tags
     use 'lukas-reineke/indent-blankline.nvim'   -- show indent line
     use 'lewis6991/gitsigns.nvim'               -- git diff sign
