@@ -57,8 +57,8 @@ super + Escape
     "$HOME/.config/rofi/scripts/powermenu.sh"
 
 # Keyboard layout
-ctrl + alt + space
-    "$HOME/.config/sxhkd/scripts/next_keyboard_layout.sh"
+# ctrl + alt + space
+#     "$HOME/.config/sxhkd/scripts/next_keyboard_layout.sh"
 
 # Toggle picom compositor
 super + p

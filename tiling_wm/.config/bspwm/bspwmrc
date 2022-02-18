@@ -65,6 +65,9 @@ nm-applet &
 # Bluetooth manager
 blueman-applet &
 
+# Ibus
+ibus-daemon -drx &
+
 # Dropbox
 # sleep 10; dropbox start &
 
