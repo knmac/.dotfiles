@@ -61,7 +61,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/shar
 # Install linters for style check
 # -----------------------------------------------------------------------------
 # Python
-pip install --user pycodestyle
+pip install --user pycodestyle pylama
 
 # Shell
 sudo apt install shellcheck

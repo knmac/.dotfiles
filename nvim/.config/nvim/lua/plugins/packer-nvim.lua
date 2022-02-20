@@ -19,7 +19,7 @@ return packer.startup(function()
         },
     }
     use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
-    use 'mfussenegger/nvim-lint'                -- code linter for style checking
+    use 'jose-elias-alvarez/null-ls.nvim'       -- code linter and formatter
     use {
         'hrsh7th/nvim-cmp',                     -- code completion
         requires = {
