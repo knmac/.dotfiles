@@ -2,6 +2,7 @@
 -- Neovim Language Server Protocol
 -- neovim/nvim-lspconfig
 -- Ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+-- Ref: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 -- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
 -------------------------------------------------------------------------------
 local nvim_lsp = require('lspconfig')
@@ -32,6 +33,17 @@ vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignEr
 vim.fn.sign_define('DiagnosticSignWarn',  {text=' ', texthl='DiagnosticSignWarn'})
 vim.fn.sign_define('DiagnosticSignInfo',  {text=' ', texthl='DiagnosticSignInfo'})
 vim.fn.sign_define('DiagnosticSignHint',  {text=' ', texthl='DiagnosticSignHint'})
+
+-- Config diagnostics
+vim.diagnostic.config({
+  virtual_text = {
+    source = "always",  -- Or "if_many"  -> show source of diagnostics
+    -- prefix = '■', -- Could be '●', '▎', 'x'
+  },
+  float = {
+    source = "always",  -- Or "if_many"  -> show source of diagnostics
+  },
+})
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer

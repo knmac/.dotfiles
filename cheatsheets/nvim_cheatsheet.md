@@ -6,31 +6,31 @@
 
 ### 1.1. Fn key-bindings
 
-| Functionality                            | Key-binding            |
-|------------------------------------------|------------------------|
-| Search for help                          | `F1`                   |
-| Show key-bindings                        | `Shift+F1`             |
-| Open to-do list                          | `F2`                   |
-| File explorer                            | `F3`                   |
-| Show tags in the current buffer          | `F4`                   |
-| Generate tags file (requires `ctags`)    | `Shift+F4`             |
-|                                          |                        |
-| Show buffer list                         | `F5`                   |
-| Show tab list                            | `Shift+F5`             |
-| Previous buffer                          | `F6` (or `Ctrl+Alt+h`) |
-| Previous tab                             | `Shift+F6`             |
-| Next buffer                              | `F7` (or `Ctrl+Alt+l`) |
-| Next tab                                 | `Shift+F7`             |
-| Close the current buffer                 | `F8`                   |
-| Close the current tab                    | `Shift+F8`             |
-|                                          |                        |
-| Open diagnostic list                     | `F9`                   |
-| Run the `make` command                   | `F10`                  |
-| Run the `make clean` command             | `Shift+F10`            |
-| Maximize/restore current window (splits) | `F11`                  |
-| Toggle color code colorizer (e.g., CSS)  | `Shift+F11`            |
-| Toggle floating terminal                 | `F12`                  |
-| Toggle relative number                   | `Shift+F12`            |
+| Functionality                           | Key-binding            |
+|-----------------------------------------|------------------------|
+| Search for help                         | `F1`                   |
+| Show key-bindings                       | `Shift+F1`             |
+| Open to-do list                         | `F2`                   |
+| File explorer                           | `F3`                   |
+| Show tags in the current buffer         | `F4`                   |
+| Generate tags file (requires `ctags`)   | `Shift+F4`             |
+|                                         |                        |
+| Show buffer list                        | `F5`                   |
+| Show tab list                           | `Shift+F5`             |
+| Previous buffer                         | `F6` (or `Ctrl+Alt+h`) |
+| Previous tab                            | `Shift+F6`             |
+| Next buffer                             | `F7` (or `Ctrl+Alt+l`) |
+| Next tab                                | `Shift+F7`             |
+| Close the current buffer                | `F8`                   |
+| Close the current tab                   | `Shift+F8`             |
+|                                         |                        |
+| Open diagnostic list                    | `F9`                   |
+| Run the `make` command                  | `F10`                  |
+| Run the `make clean` command            | `Shift+F10`            |
+| Toggle zoom the current window (splits) | `F11`                  |
+| Toggle color code colorizer (e.g., CSS) | `Shift+F11`            |
+| Toggle floating terminal                | `F12`                  |
+| Toggle relative number                  | `Shift+F12`            |
 
 ### 1.2. Telescope key-bindings
 
@@ -53,14 +53,12 @@
 | Show implementation                                   | `gi`          |
 | Show reference                                        | `gr`          |
 | Show type definition                                  | `gt`          |
-| Show declaration                                      | `gD`          |
 | Show function documentation (on hover)                | `<Shift+k>`   |
 | Show signature help (while typing function arguments) | `<Ctrl+k>`    |
-| Show type definitions                                 | `<Shift+d>`   |
 |                                                       |               |
 | Rename variables                                      | `<leader> rn` |
-| Code action                                           | `<leader> ca` |
-| Code formatting (if supported)                        | `<leader> f`  |
+| Code action (if supported by the language server)     | `<leader> ca` |
+| Code formatting (if supported by the language server) | `<leader> f`  |
 |                                                       |               |
 | Show current line's diagnostic                        | `<leader> e`  |
 | Go to previous diagnostic                             | `[e`          |
@@ -70,17 +68,17 @@
 <!-- | Remove workspace folder                               | `<leader> wr` | -->
 <!-- | List workspace folder                                 | `<leader> wl` | -->
 
-### 1.4. Vim-markdown and Tabular key-bindings
+<!-- ### 1.4. Vim-markdown and Tabular key-bindings -->
 
-| Functionality                          | Key-binding/Command |
-|----------------------------------------|---------------------|
-| Open link in Vim to edit               | `ge`                |
-| Open link in browser                   | `gx`                |
-| Format table                           | `:TableFormat`      |
-| Create table of contents (to navigate) | `:Toc`              |
+<!-- | Functionality                          | Key-binding/Command | -->
+<!-- |----------------------------------------|---------------------| -->
+<!-- | Open link in Vim to edit               | `ge`                | -->
+<!-- | Open link in browser                   | `gx`                | -->
+<!-- | Format table                           | `:TableFormat`      | -->
+<!-- | Create table of contents (to navigate) | `:Toc`              | -->
 
 
-### 1.5. Other key-bindings
+### 1.4. Other key-bindings
 
 | Functionality                                 | Key-binding/Command |
 |-----------------------------------------------|---------------------|
@@ -88,8 +86,17 @@
 | Insert ipdb breakpoint (on the previous line) | `<leader> B`        |
 | Insert '-' characters                         | `<leader> -`        |
 | Insert '=' characters                         | `<leader> =`        |
+|                                               |                     |
 | Split navigation                              | `<Alt+h/j/k/l>`     |
 | Buffer navigation                             | `<Ctrl+Alt+h/l>`    |
+|                                               |                     |
+| Go to previous hunk of Git change             | `[c`                |
+| Go to next hunk of Git change                 | `]c`                |
+|                                               |                     |
+| Toggle line-wise comment (normal mode)        | `gcc`               |
+| Toggle line-wise comment (visual mode)        | `gc`                |
+| Toggle block-wise comment (normal mode)       | `gbc`               |
+| Toggle block-wise comment (visual mode)       | `gb`                |
 
 
 ## 2. Default useful vim key-bindings
@@ -98,7 +105,7 @@
 
 | Group             | Functionality                             | Key-binding/Command         |
 |-------------------|-------------------------------------------|-----------------------------|
-| Line navigation   | Go left/down/up/ right                    | `h`/`j`/`k`/`l`             |
+| Line navigation   | Go left/down/up/right                     | `h`/`j`/`k`/`l`             |
 |                   | Go to start/end of current line           | `0`/`$`                     |
 |                   | Go to non-blank start/end of current line | `^`/`g_`                    |
 | Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                     |
