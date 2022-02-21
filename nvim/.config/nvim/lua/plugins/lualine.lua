@@ -2,7 +2,7 @@
 -- Status line at the bottom
 -- nvim-lualine/lualine.nvim
 -------------------------------------------------------------------------------
-require('lualine').setup {
+require('lualine').setup({
     options = {
         icons_enabled = true,
         theme = 'onedarkpro',
@@ -43,4 +43,4 @@ require('lualine').setup {
     },
     tabline = {},
     extensions = {'nvim-tree', 'quickfix', 'fugitive'}
-}
+})

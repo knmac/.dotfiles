@@ -9,6 +9,7 @@ g.Illuminate_ftHighlightGroups = {
     vim = {'vimVar', 'vimString', 'vimLineComment', 'vimFuncName', 'vimFunction', 'vimUserFunc', 'vimFunc'}
 }
 g.Illuminate_ftblacklist = {'nerdtree', 'NvimTree'}
+g.Illuminate_delay = 500
 
 cmd [[
 augroup illuminate_augroup

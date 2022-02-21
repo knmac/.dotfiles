@@ -82,7 +82,7 @@ cmd [[
 autocmd ColorScheme * highlight NvimTreeFolderIcon guibg=blue
 ]]
 
-require('nvim-tree').setup {
+require('nvim-tree').setup({
     -- disables netrw completely
     disable_netrw       = true,
     -- hijack netrw window on startup
@@ -158,4 +158,4 @@ require('nvim-tree').setup {
         cmd = 'trash',
         require_confirm = true,
     },
-}
+})

@@ -13,14 +13,14 @@ null_ls.setup({
     sources = {
         -- Formatting
         formatting.black.with({  -- Python formatter
-            extra_args = {"--fast",},
+            extra_args = {'--fast',},
         }),
         -- Non-LSP diagnostics (linters)
         diagnostics.pylama.with({  -- Python linter
             extra_args = {
-                "-l", "pycodestyle",  -- use pycodestyle as flake8 duplicates many things from pyright
-                "--max-line-length", "100",
-                "--ignore", "E226,E402,W503,W504,W391",
+                '-l', 'pycodestyle',  -- use pycodestyle as flake8 duplicates many things from pyright
+                '--max-line-length', '100',
+                '--ignore', 'E226,E402,W503,W504,W391',
             }
         }),
         diagnostics.cppcheck,  -- C/C++ linter

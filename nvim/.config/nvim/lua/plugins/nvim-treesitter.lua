@@ -2,7 +2,7 @@
 -- Code parser generator for syntax highlighting
 -- nvim-treesitter/nvim-treesitter
 -------------------------------------------------------------------------------
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup({
     highlight = {
         enable = true,
         disable = {},
@@ -37,4 +37,4 @@ require('nvim-treesitter.configs').setup {
         -- colors = {}, -- table of hex strings
         -- termcolors = {} -- table of colour name strings
     }
-}
+})

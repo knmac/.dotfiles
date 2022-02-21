@@ -2,7 +2,7 @@
 -- Fuzzy finder for multiple things
 -- nvim-telescope/telescope.nvim
 -------------------------------------------------------------------------------
-require('telescope').setup{
+require('telescope').setup({
     defaults = {
         -- Default configuration for telescope goes here:
         -- config_key = value,
@@ -38,7 +38,7 @@ require('telescope').setup{
             }
         }
     }
-}
+})
 
 -- Load other telescope extensions
 require('telescope').load_extension('ui-select')
