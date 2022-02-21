@@ -65,4 +65,5 @@ return packer.startup(function()
         run=':call doge#install()',
     }
     use 'liuchengxu/vista.vim'                  -- view and search for LSP symbols
+    use 'junegunn/vim-easy-align'               -- alignment plugin
 end)
