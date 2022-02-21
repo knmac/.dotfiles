@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ -z "$1" ]; then
-    NVIM_VERSION="v0.6.0"
+    NVIM_VERSION="v0.6.1"
 else
     NVIM_VERSION=$1
 fi
@@ -13,8 +13,21 @@ echo "Install NeoVim..."
 # Dependecies
 # -----------------------------------------------------------------------------
 bash ./install_nodejs.sh
-sudo apt install python3-dev python3-pip curl exuberant-ctags
+sudo apt install python3-dev python3-pip curl fd-find ripgrep
 pip install --user pynvim neovim msgpack
+
+
+# -----------------------------------------------------------------------------
+# Install universal ctags (not exuberant-ctags)
+# Ref: https://github.com/universal-ctags/ctags
+# -----------------------------------------------------------------------------
+git clone https://github.com/universal-ctags/ctags.git
+pushd ctags || exit
+./autogen.sh
+./configure --prefix="$HOME/.local"  # defaults to /usr/local
+make
+make install # may require extra privileges depending on where to install
+popd || exit
 
 
 # -----------------------------------------------------------------------------
@@ -61,7 +74,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/shar
 # Install linters for style check
 # -----------------------------------------------------------------------------
 # Python
-pip install --user pycodestyle pylama
+pip install --user pycodestyle pylama black
 
 # Shell
 sudo apt install shellcheck
