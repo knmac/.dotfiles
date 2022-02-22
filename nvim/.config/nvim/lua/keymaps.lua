@@ -117,6 +117,15 @@ map('n', '<space>f',       ':Telescope find_files<CR>', default_opts)
 map('n', '<space>w',       ':Telescope live_grep<CR>', default_opts)
 map('n', '<space>/',       ':Telescope current_buffer_fuzzy_find<CR>', default_opts)
 
+-- Easy align
+cmd [[
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+]]
+
 -- <F1>: Show help
 map('n', '<F1>', ':Telescope help_tags<CR>', default_opts)
 -- <S-F1>: Show keymaps
