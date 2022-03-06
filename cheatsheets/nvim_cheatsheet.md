@@ -86,6 +86,7 @@
 | Insert ipdb breakpoint (on the previous line) | `<leader> B`        |
 | Insert '-' characters                         | `<leader> -`        |
 | Insert '=' characters                         | `<leader> =`        |
+| Generate doc string for function              | `<leader> d`        |
 |                                               |                     |
 | Split navigation                              | `<Alt+h/j/k/l>`     |
 | Buffer navigation                             | `<Ctrl+Alt+h/l>`    |
@@ -97,7 +98,6 @@
 | Toggle line-wise comment (visual mode)        | `gc`                |
 | Toggle block-wise comment (normal mode)       | `gbc`               |
 | Toggle block-wise comment (visual mode)       | `gb`                |
-|                                               |                     |
 | Start easy align (visual mode)                | `ga`                |
 
 
