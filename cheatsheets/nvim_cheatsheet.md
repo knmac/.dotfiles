@@ -97,6 +97,8 @@
 | Toggle line-wise comment (visual mode)        | `gc`                |
 | Toggle block-wise comment (normal mode)       | `gbc`               |
 | Toggle block-wise comment (visual mode)       | `gb`                |
+|                                               |                     |
+| Start easy align (visual mode)                | `ga`                |
 
 
 ## 2. Default useful vim key-bindings
