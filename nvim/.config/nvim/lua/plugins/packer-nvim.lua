@@ -15,7 +15,8 @@ return packer.startup(function()
     use {
         'neovim/nvim-lspconfig',                -- language server protocol
         requires = {
-            'williamboman/nvim-lsp-installer' , -- lsp installer helper
+            'williamboman/nvim-lsp-installer',  -- lsp installer helper
+            'filipdutescu/renamer.nvim',        -- UI for vim.lsp.buf.rename()
         },
     }
     use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
