@@ -161,7 +161,7 @@ map('n', '<F7>', ':BufferLineCycleNext<CR>', default_opts)
 map('n', '<F19>', ':tabnext<CR>', default_opts)
 
 -- <F8>: Close current buffer and switch to previous buffer
-map('n', '<F8>', ':bdelete<CR>', default_opts)
+map('n', '<F8>', ':BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
 -- <S-F8>: Close current tab
 map('n', '<F20>', ':tabclose<CR>', default_opts)
 
