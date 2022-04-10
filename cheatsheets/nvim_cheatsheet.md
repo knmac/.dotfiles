@@ -7,7 +7,7 @@
 ### 1.1. Fn key-bindings
 
 | Functionality                           | Key-binding            |
-|-----------------------------------------|------------------------|
+| --------------------------------------- | ---------------------- |
 | Search for help                         | `F1`                   |
 | Show key-bindings                       | `Shift+F1`             |
 | Open to-do list                         | `F2`                   |
@@ -35,7 +35,7 @@
 ### 1.2. Telescope key-bindings
 
 | Functionality                      | Key-binding       |
-|------------------------------------|-------------------|
+| ---------------------------------- | ----------------- |
 | Open Telescope                     | `<space> <space>` |
 | Fuzzy search for filename          | `<space> f`       |
 | Fuzzy search for word              | `<space> w`       |
@@ -48,7 +48,7 @@
 ### 1.3. LSP-related key-bindings
 
 | Functionality                                         | Key-binding   |
-|-------------------------------------------------------|---------------|
+| ----------------------------------------------------- | ------------- |
 | Show definitions                                      | `gd`          |
 | Show implementation                                   | `gi`          |
 | Show reference                                        | `gr`          |
@@ -80,25 +80,36 @@
 
 ### 1.4. Other key-bindings
 
-| Functionality                                 | Key-binding/Command |
-|-----------------------------------------------|---------------------|
-| Insert ipdb breakpoint (on the next line)     | `<leader> b`        |
-| Insert ipdb breakpoint (on the previous line) | `<leader> B`        |
-| Insert '-' characters                         | `<leader> -`        |
-| Insert '=' characters                         | `<leader> =`        |
-| Generate doc string for function              | `<leader> d`        |
-|                                               |                     |
-| Split navigation                              | `<Alt+h/j/k/l>`     |
-| Buffer navigation                             | `<Ctrl+Alt+h/l>`    |
-|                                               |                     |
-| Go to previous hunk of Git change             | `[c`                |
-| Go to next hunk of Git change                 | `]c`                |
-|                                               |                     |
-| Toggle line-wise comment (normal mode)        | `gcc`               |
-| Toggle line-wise comment (visual mode)        | `gc`                |
-| Toggle block-wise comment (normal mode)       | `gbc`               |
-| Toggle block-wise comment (visual mode)       | `gb`                |
-| Start easy align (visual mode)                | `ga`                |
+| Functionality                                 | Key-binding/Command  |
+| --------------------------------------------- | -------------------- |
+| Insert ipdb breakpoint (on the next line)     | `<leader> b`         |
+| Insert ipdb breakpoint (on the previous line) | `<leader> B`         |
+| Insert '-' characters                         | `<leader> -`         |
+| Insert '=' characters                         | `<leader> =`         |
+| Generate doc string for function              | `<leader> d`         |
+|                                               |                      |
+| Switch to the left window                     | `<Alt+h>`            |
+| Switch to the lower window                    | `<Alt+j>`            |
+| Switch to the upper window                    | `<Alt+k>`            |
+| Switch to the right window                    | `<Alt+l>`            |
+|                                               |                      |
+| Switch to the previous buffer                 | `<Ctrl+Alt+h>`       |
+| Switch to the next buffer                     | `<Ctrl+Alt+l>`       |
+| Swap with the previous buffer                 | `<Ctrl+Alt+Shift+h>` |
+| Swap with the next buffer                     | `<Ctrl+Alt+Shift+l>` |
+| Pick a buffer to switch to                    | `<Ctrl+Alt+j>`       |
+| Pick a buffer to close                        | `<Ctrl+Alt+k>`       |
+|                                               |                      |
+| Go to previous hunk of Git change             | `[c`                 |
+| Go to next hunk of Git change                 | `]c`                 |
+|                                               |                      |
+| Toggle line-wise comment (normal mode)        | `gcc`                |
+| Toggle line-wise comment (visual mode)        | `gc`                 |
+| Toggle block-wise comment (normal mode)       | `gbc`                |
+| Toggle block-wise comment (visual mode)       | `gb`                 |
+|                                               |                      |
+| Start easy align (in visual mode)             | `ga`                 |
+| - Easy align by `|`                           | `ga*|`               |
 
 
 ## 2. Default useful vim key-bindings

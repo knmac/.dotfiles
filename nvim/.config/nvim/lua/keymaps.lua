@@ -108,8 +108,12 @@ map('n', '<leader>=', ':call FillLine("=")<CR>', default_opts)
 -- Plugins and Function key bindings
 -------------------------------------------------------------------------------
 -- Bufferline
-map('n', '<C-A-h>', ':BufferLineCyclePrev<CR>', default_opts)
-map('n', '<C-A-l>', ':BufferLineCycleNext<CR>', default_opts)
+map('n', '<C-A-h>',   ':BufferLineCyclePrev<CR>', default_opts)
+map('n', '<C-A-l>',   ':BufferLineCycleNext<CR>', default_opts)
+map('n', '<C-A-S-h>', ':BufferLineMovePrev<CR>', default_opts)
+map('n', '<C-A-S-l>', ':BufferLineMoveNext<CR>', default_opts)
+map('n', '<C-A-j>',   ':BufferLinePick<CR>', default_opts)
+map('n', '<C-A-k>',   ':BufferLinePickClose<CR>', default_opts)
 
 -- Telescope
 map('n', '<space><space>', ':Telescope<CR>', default_opts)
@@ -118,13 +122,10 @@ map('n', '<space>w',       ':Telescope live_grep<CR>', default_opts)
 map('n', '<space>/',       ':Telescope current_buffer_fuzzy_find<CR>', default_opts)
 
 -- Easy align
-cmd [[
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-]]
+-- Start interactive EasyAlign in visual mode (e.g. vipga)
+map('x', 'ga', '<Plug>(EasyAlign)', {})
+-- Start interactive EasyAlign for a motion/text object (e.g. gaip)
+map('n', 'ga', '<Plug>(EasyAlign)', {})
 
 -- <F1>: Show help
 map('n', '<F1>', ':Telescope help_tags<CR>', default_opts)
