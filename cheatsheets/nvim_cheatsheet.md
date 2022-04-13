@@ -92,6 +92,10 @@
 | Switch to the lower window                    | `<Alt+j>`            |
 | Switch to the upper window                    | `<Alt+k>`            |
 | Switch to the right window                    | `<Alt+l>`            |
+| Swap with the left window                     | `<Alt+Shift+h>`      |
+| Swap with the lower window                    | `<Alt+Shift+j>`      |
+| Swap with the upper window                    | `<Alt+Shift+k>`      |
+| Swap with the right window                    | `<Alt+Shift+l>`      |
 |                                               |                      |
 | Switch to the previous buffer                 | `<Ctrl+Alt+h>`       |
 | Switch to the next buffer                     | `<Ctrl+Alt+l>`       |
