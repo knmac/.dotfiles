@@ -19,6 +19,8 @@ require('lsp_signature').setup({
     floating_window_above_cur_line = true, -- try to place the floating above the current line when possible Note:
     -- will set to true when fully tested, set to false will use whichever side has more space
     -- this setting will be helpful if you do not want the PUM and floating win overlap
+    floating_window_off_x = 1, -- adjust float windows x position.
+    floating_window_off_y = 1, -- adjust float windows y position.
     fix_pos = false,  -- set to true, the floating window will not auto-close until finish all parameters
     hint_enable = true, -- virtual hint enable
     --hint_prefix = "🐼 ",  -- Panda for parameter
@@ -30,8 +32,8 @@ require('lsp_signature').setup({
                      -- to view the hiding contents
     max_width = 80, -- max_width of signature floating_window, line will be wrapped if exceed max_width
     handler_opts = {
-        border = "single"   -- double, single, shadow, none
-        -- border = "none"   -- double, single, shadow, none
+        border = "rounded"   -- double, single, shadow, none
+        -- border = "none"   -- double, rounded, single, shadow, none
     },
 
     always_trigger = false, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58
