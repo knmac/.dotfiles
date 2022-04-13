@@ -12,12 +12,12 @@ require('renamer').setup({})
 -- Popped up window borders
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover, {
-        border = 'single',
+        border = 'rounded',
     }
 )
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
     vim.lsp.handlers.signature_help, {
-        border = 'single',
+        border = 'rounded',
         close_events = {"CursorMoved", "BufHidden", "InsertCharPre"},
     }
 )
@@ -83,9 +83,9 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<leader>rn', '<cmd>lua require("renamer").rename()<CR>', opts)
     buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     buf_set_keymap('n', '<leader>f',  '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    buf_set_keymap('n', '<leader>e',  '<cmd>lua vim.diagnostic.open_float({ border = "single" })<CR>', opts)
-    buf_set_keymap('n', '[e',         '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "single" }})<CR>', opts)
-    buf_set_keymap('n', ']e',         '<cmd>lua vim.diagnostic.goto_next({ float = { border = "single" }})<CR>', opts)
+    buf_set_keymap('n', '<leader>e',  '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
+    buf_set_keymap('n', '[e',         '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" }})<CR>', opts)
+    buf_set_keymap('n', ']e',         '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" }})<CR>', opts)
 
     -- buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     -- buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
