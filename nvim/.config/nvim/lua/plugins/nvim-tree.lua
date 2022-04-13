@@ -3,7 +3,7 @@
 -- kyazdani42/nvim-tree.lua
 -------------------------------------------------------------------------------
 local g = vim.g
-local cmd = vim.cmd
+-- local cmd = vim.cmd
 
 -- g.nvim_tree_gitignore = 1 -- 0 by default
 -- g.nvim_tree_quit_on_open = 1 -- 0 by default, closes the tree when you open a file
@@ -83,7 +83,7 @@ g.nvim_tree_icons = {
 -- ]]
 
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-require'nvim-tree'.setup {
+require('nvim-tree').setup {
     auto_reload_on_write = true,
     disable_netrw = false,
     hide_root_folder = false,
@@ -97,7 +97,7 @@ require'nvim-tree'.setup {
     sort_by = "name",
     update_cwd = false,
     view = {
-        width = 30,
+        width = 40,
         height = 30,
         side = "left",
         preserve_window_proportions = false,

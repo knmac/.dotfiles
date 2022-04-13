@@ -27,8 +27,8 @@ map('n', 'k', 'gk', default_opts)
 -- map('n', 'k', 'kzz', default_opts)
 
 -- Use ; to enter command mode
-map('n', ';', ':', { noremap = true })
-map('v', ';', ':', { noremap = true })
+-- map('n', ';', ':', { noremap = true })
+-- map('v', ';', ':', { noremap = true })
 
 -- Window navigation
 map('n', '<A-h>', '<C-w>h', default_opts)
