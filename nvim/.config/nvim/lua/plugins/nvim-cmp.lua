@@ -9,6 +9,26 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
+local next_item = function(fallback)
+    if cmp.visible() then
+        cmp.select_next_item()
+    elseif luasnip.expand_or_jumpable() then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+    else
+        fallback()
+    end
+end
+
+local prev_item = function(fallback)
+    if cmp.visible() then
+        cmp.select_prev_item()
+    elseif luasnip.jumpable(-1) then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+    else
+        fallback()
+    end
+end
+
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -33,24 +53,10 @@ cmp.setup({
         }),
         -- ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
         -- ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })
-        ['<Tab>'] = function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-            else
-                fallback()
-            end
-        end,
-        ['<S-Tab>'] = function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
-            else
-                fallback()
-            end
-        end,
+        ['<Tab>'] = next_item,
+        ['<S-Tab>'] = prev_item,
+        ['<C-n>'] = next_item,
+        ['<C-p>'] = prev_item,
     },
     sources = {
         { name = 'nvim_lsp' },
@@ -69,7 +75,8 @@ cmp.setup({
     formatting = {
         format = require('lspkind').cmp_format(),
     },
-    documentation = {
-        border = 'single',
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
 })
