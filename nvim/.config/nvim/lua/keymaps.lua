@@ -36,6 +36,12 @@ map('n', '<A-j>', '<C-w>j', default_opts)
 map('n', '<A-k>', '<C-w>k', default_opts)
 map('n', '<A-l>', '<C-w>l', default_opts)
 
+-- Window swapping
+map('n', '<A-S-h>', '<C-w>h<C-w>x', default_opts)
+map('n', '<A-S-j>', '<C-w>j<C-w>x', default_opts)
+map('n', '<A-S-k>', '<C-w>k<C-w>x', default_opts)
+map('n', '<A-S-l>', '<C-w>l<C-w>x', default_opts)
+
 -- Buffer prev/next navigation
 -- map('n', '<C-A-h>', ':bprev<CR>', default_opts)
 -- map('n', '<C-A-l>', ':bnext<CR>', default_opts)
