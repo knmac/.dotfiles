@@ -73,7 +73,7 @@ The configuration is customized from [here](https://github.com/gpakosz/.tmux).
 
 ## 5. Window manager
 
-![](demo/i3wm_demo.png)
+![](demo/wm_demo.png)
 
 Follow the instructions [here](tiling_wm/README.md).
 
