@@ -53,7 +53,7 @@ cmd bulkrename ${{
             a="$(cat $index | sed "${counter}q;d")"
             b="$(cat $index_edit | sed "${counter}q;d")"
             counter=$(($counter+1))
-            
+
             [ "$a" = "$b" ] && continue
             [ -e "$b" ] && echo "File exists: $b" && continue
             mv "$a" "$b"
