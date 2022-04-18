@@ -18,5 +18,6 @@ require('todo-comments').setup({
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
         PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+        MAC  = { icon = " ", color = "hint", alt = { "KNMAC" } },
     },
 })
