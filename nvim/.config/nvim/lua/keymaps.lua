@@ -119,12 +119,15 @@ map('n', '<C-A-l>',   ':BufferLineCycleNext<CR>', default_opts)
 map('n', '<C-A-S-h>', ':BufferLineMovePrev<CR>', default_opts)
 map('n', '<C-A-S-l>', ':BufferLineMoveNext<CR>', default_opts)
 map('n', '<C-A-j>',   ':BufferLinePick<CR>', default_opts)
+map('n', '<C-A-S-j>', ':Telescope buffers<CR>', default_opts)
 map('n', '<C-A-k>',   ':BufferLinePickClose<CR>', default_opts)
+map('n', '<C-A-S-k>', ':BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
 
 -- Telescope
 map('n', '<space><space>', ':Telescope<CR>', default_opts)
 map('n', '<space>f',       ':Telescope find_files<CR>', default_opts)
 map('n', '<space>w',       ':Telescope live_grep<CR>', default_opts)
+map('n', '<space>b',       ':Telescope buffers<CR>', default_opts)
 map('n', '<space>/',       ':Telescope current_buffer_fuzzy_find<CR>', default_opts)
 
 -- Easy align
@@ -188,5 +191,5 @@ map('n', '<F23>', ':ColorizerToggle<CR>', default_opts)
 
 -- <F12>: Toggle float-term
 -- See toogle term config
--- <S-F12>: Toggle relative number
-map('n', '<F24>', ':set nu rnu!<CR>', default_opts)
+-- <F12>: Toggle relative number
+map('n', '<F12>', ':set nu rnu!<CR>', default_opts)
