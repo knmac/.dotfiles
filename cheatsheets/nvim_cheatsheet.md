@@ -29,8 +29,7 @@
 | Run the `make clean` command            | `Shift+F10`            |
 | Toggle zoom the current window (splits) | `F11`                  |
 | Toggle color code colorizer (e.g., CSS) | `Shift+F11`            |
-| Toggle floating terminal                | `F12`                  |
-| Toggle relative number                  | `Shift+F12`            |
+| Toggle relative number                  | `F12`                  |
 
 ### 1.2. Telescope key-bindings
 
@@ -41,9 +40,6 @@
 | Fuzzy search for word              | `<space> w`       |
 | Fuzzy search in the current buffer | `<space> /`       |
 
-<!-- | Insert python template            | `,py`    | -->
-<!-- | Insert markdown template          | `,md`    | -->
-<!-- | Insert today's date (end of line) | `,today` | -->
 
 ### 1.3. LSP-related key-bindings
 
@@ -68,15 +64,6 @@
 <!-- | Remove workspace folder                               | `<leader> wr` | -->
 <!-- | List workspace folder                                 | `<leader> wl` | -->
 
-<!-- ### 1.4. Vim-markdown and Tabular key-bindings -->
-
-<!-- | Functionality                          | Key-binding/Command | -->
-<!-- |----------------------------------------|---------------------| -->
-<!-- | Open link in Vim to edit               | `ge`                | -->
-<!-- | Open link in browser                   | `gx`                | -->
-<!-- | Format table                           | `:TableFormat`      | -->
-<!-- | Create table of contents (to navigate) | `:Toc`              | -->
-
 
 ### 1.4. Other key-bindings
 
@@ -99,10 +86,14 @@
 |                                               |                      |
 | Switch to the previous buffer                 | `<Ctrl+Alt+h>`       |
 | Switch to the next buffer                     | `<Ctrl+Alt+l>`       |
+| Jump to a buffer                              | `<Ctrl+Alt+j>`       |
+| Kill a buffer                                 | `<Ctrl+Alt+k>`       |
 | Swap with the previous buffer                 | `<Ctrl+Alt+Shift+h>` |
 | Swap with the next buffer                     | `<Ctrl+Alt+Shift+l>` |
-| Pick a buffer to switch to                    | `<Ctrl+Alt+j>`       |
-| Pick a buffer to close                        | `<Ctrl+Alt+k>`       |
+| Fuzzy jump to buffer using Telescope          | `<Ctrl+Alt+Shift+j>` |
+| Kill the current buffer                       | `<Ctrl+Alt+Shift+k>` |
+|                                               |                      |
+| Toggle terminal                               | `<Ctrl+\>`           |
 |                                               |                      |
 | Go to previous hunk of Git change             | `[c`                 |
 | Go to next hunk of Git change                 | `]c`                 |
@@ -114,6 +105,7 @@
 |                                               |                      |
 | Start easy align (in visual mode)             | `ga`                 |
 | - Easy align by `|`                           | `ga*|`               |
+| - Easy align by ` `                           | `ga* `               |
 
 
 ## 2. Default useful vim key-bindings
