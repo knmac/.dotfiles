@@ -6,7 +6,12 @@
 
 require('bufferline').setup({
     options = {
-        offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+        offsets = { {
+            filetype = 'NvimTree',
+            text = 'EXPLORER',
+            text_align = 'center',
+            padding = 0,
+        } },
         separator_style = 'slant',
     }
 })
