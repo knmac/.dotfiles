@@ -7,7 +7,7 @@
 -------------------------------------------------------------------------------
 local nvim_lsp = require('lspconfig')
 local lsp_installer = require('nvim-lsp-installer')
-require('renamer').setup({})
+-- require('renamer').setup({})
 
 -- Popped up window borders
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
@@ -79,8 +79,8 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'K',     '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
-    -- buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<leader>rn', '<cmd>lua require("renamer").rename()<CR>', opts)
+    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    -- buf_set_keymap('n', '<leader>rn', '<cmd>lua require("renamer").rename()<CR>', opts)
     buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     buf_set_keymap('n', '<leader>f',  '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     buf_set_keymap('n', '<leader>e',  '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)

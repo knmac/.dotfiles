@@ -115,13 +115,13 @@ map('n', '<leader>=', ':call FillLine("=")<CR>', default_opts)
 -------------------------------------------------------------------------------
 -- Bufferline
 map('n', '<C-A-h>',   ':BufferLineCyclePrev<CR>', default_opts)
+map('n', '<C-A-j>',   ':BufferLinePick<CR>', default_opts)
+map('n', '<C-A-k>',   ':BufferLinePickClose<CR>', default_opts)
 map('n', '<C-A-l>',   ':BufferLineCycleNext<CR>', default_opts)
 map('n', '<C-A-S-h>', ':BufferLineMovePrev<CR>', default_opts)
-map('n', '<C-A-S-l>', ':BufferLineMoveNext<CR>', default_opts)
-map('n', '<C-A-j>',   ':BufferLinePick<CR>', default_opts)
 map('n', '<C-A-S-j>', ':Telescope buffers<CR>', default_opts)
-map('n', '<C-A-k>',   ':BufferLinePickClose<CR>', default_opts)
 map('n', '<C-A-S-k>', ':BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
+map('n', '<C-A-S-l>', ':BufferLineMoveNext<CR>', default_opts)
 
 -- Telescope
 map('n', '<space><space>', ':Telescope<CR>', default_opts)
