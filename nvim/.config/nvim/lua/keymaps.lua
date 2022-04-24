@@ -54,9 +54,13 @@ map('t', '<A-k>', [[<C-\><C-n><C-w>k]], default_opts)
 map('t', '<A-l>', [[<C-\><C-n><C-w>l]], default_opts)
 
 -- Shortcut for Python breakpoint (ipdb)
+-- cmd [[
+-- autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
+-- autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
+-- ]]
 cmd [[
-autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
-autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
+autocmd FileType python nnoremap <silent> <leader>b obreakpoint()<esc>
+autocmd FileType python nnoremap <silent> <leader>B Obreakpoint()<esc>
 ]]
 
 -- Clear registered macros
@@ -186,10 +190,8 @@ map('n', '<F22>', ':make clean<CR>', default_opts)
 
 -- <F11>: Toggle zoom the current window (from custom functions)
 map('n', '<F11>', ':call ToggleZoom(v:true)<CR>', default_opts)
--- <S-F11>: Toggle colorizer
-map('n', '<F23>', ':ColorizerToggle<CR>', default_opts)
 
--- <F12>: Toggle float-term
--- See toogle term config
 -- <F12>: Toggle relative number
 map('n', '<F12>', ':set nu rnu!<CR>', default_opts)
+-- <S-F12>: Toggle colorizer
+map('n', '<F24>', ':ColorizerToggle<CR>', default_opts)

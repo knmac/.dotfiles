@@ -28,8 +28,8 @@
 | Run the `make` command                  | `F10`                  |
 | Run the `make clean` command            | `Shift+F10`            |
 | Toggle zoom the current window (splits) | `F11`                  |
-| Toggle color code colorizer (e.g., CSS) | `Shift+F11`            |
 | Toggle relative number                  | `F12`                  |
+| Toggle color code colorizer (e.g., CSS) | `Shift+F12`            |
 
 ### 1.2. Telescope key-bindings
 
@@ -66,47 +66,47 @@
 <!-- | List workspace folder                                 | `<leader> wl` | -->
 
 
-### 1.4. Other key-bindings
+### 1.4. Other custom key-bindings
 
-| Functionality                                 | Key-binding/Command  |
-| --------------------------------------------- | -------------------- |
-| Insert ipdb breakpoint (on the next line)     | `<leader> b`         |
-| Insert ipdb breakpoint (on the previous line) | `<leader> B`         |
-| Insert '-' characters                         | `<leader> -`         |
-| Insert '=' characters                         | `<leader> =`         |
-| Generate doc string for function              | `<leader> d`         |
-|                                               |                      |
-| Switch to the left window                     | `<Alt+h>`            |
-| Switch to the lower window                    | `<Alt+j>`            |
-| Switch to the upper window                    | `<Alt+k>`            |
-| Switch to the right window                    | `<Alt+l>`            |
-| Swap with the left window                     | `<Alt+Shift+h>`      |
-| Swap with the lower window                    | `<Alt+Shift+j>`      |
-| Swap with the upper window                    | `<Alt+Shift+k>`      |
-| Swap with the right window                    | `<Alt+Shift+l>`      |
-|                                               |                      |
-| Switch to the previous buffer                 | `<Ctrl+Alt+h>`       |
-| Switch to the next buffer                     | `<Ctrl+Alt+l>`       |
-| Jump to a buffer                              | `<Ctrl+Alt+j>`       |
-| Kill a buffer                                 | `<Ctrl+Alt+k>`       |
-| Swap with the previous buffer                 | `<Ctrl+Alt+Shift+h>` |
-| Swap with the next buffer                     | `<Ctrl+Alt+Shift+l>` |
-| Fuzzy jump to buffer using Telescope          | `<Ctrl+Alt+Shift+j>` |
-| Kill the current buffer                       | `<Ctrl+Alt+Shift+k>` |
-|                                               |                      |
-| Toggle terminal                               | `<Ctrl+\>`           |
-|                                               |                      |
-| Go to previous hunk of Git change             | `[c`                 |
-| Go to next hunk of Git change                 | `]c`                 |
-|                                               |                      |
-| Toggle line-wise comment (normal mode)        | `gcc`                |
-| Toggle line-wise comment (visual mode)        | `gc`                 |
-| Toggle block-wise comment (normal mode)       | `gbc`                |
-| Toggle block-wise comment (visual mode)       | `gb`                 |
-|                                               |                      |
-| Start easy align (in visual mode)             | `ga`                 |
-| - Easy align by `|`                           | `ga*|`               |
-| - Easy align by ` `                           | `ga* `               |
+| Functionality                                   | Key-binding/Command  |
+| ----------------------------------------------- | -------------------- |
+| Insert python breakpoint (on the next line)     | `<leader> b`         |
+| Insert python breakpoint (on the previous line) | `<leader> B`         |
+| Insert '-' characters                           | `<leader> -`         |
+| Insert '=' characters                           | `<leader> =`         |
+| Generate doc string for function                | `<leader> d`         |
+|                                                 |                      |
+| Switch to the left window                       | `<Alt+h>`            |
+| Switch to the lower window                      | `<Alt+j>`            |
+| Switch to the upper window                      | `<Alt+k>`            |
+| Switch to the right window                      | `<Alt+l>`            |
+| Swap with the left window                       | `<Alt+Shift+h>`      |
+| Swap with the lower window                      | `<Alt+Shift+j>`      |
+| Swap with the upper window                      | `<Alt+Shift+k>`      |
+| Swap with the right window                      | `<Alt+Shift+l>`      |
+|                                                 |                      |
+| Switch to the previous buffer                   | `<Ctrl+Alt+h>`       |
+| Switch to the next buffer                       | `<Ctrl+Alt+l>`       |
+| Jump to a buffer                                | `<Ctrl+Alt+j>`       |
+| Kill a buffer                                   | `<Ctrl+Alt+k>`       |
+| Swap with the previous buffer                   | `<Ctrl+Alt+Shift+h>` |
+| Swap with the next buffer                       | `<Ctrl+Alt+Shift+l>` |
+| Fuzzy jump to buffer using Telescope            | `<Ctrl+Alt+Shift+j>` |
+| Kill the current buffer                         | `<Ctrl+Alt+Shift+k>` |
+|                                                 |                      |
+| Toggle terminal                                 | `<Ctrl+\>`           |
+|                                                 |                      |
+| Go to previous hunk of Git change               | `[c`                 |
+| Go to next hunk of Git change                   | `]c`                 |
+|                                                 |                      |
+| Toggle line-wise comment (normal mode)          | `gcc`                |
+| Toggle line-wise comment (visual mode)          | `gc`                 |
+| Toggle block-wise comment (normal mode)         | `gbc`                |
+| Toggle block-wise comment (visual mode)         | `gb`                 |
+|                                                 |                      |
+| Start easy align (in visual mode)               | `ga`                 |
+| - Easy align by `|`                             | `ga*|`               |
+| - Easy align by ` `                             | `ga* `               |
 
 
 ## 2. Default useful vim key-bindings
