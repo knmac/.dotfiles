@@ -31,8 +31,12 @@ super + b
 #     evolution --force-online
 
 # Random wallpaper
-super + w
+super + r
     nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --save
+
+# Weather (Meteo)
+super + w
+    meteo
 
 # Rofi menus
 super + space

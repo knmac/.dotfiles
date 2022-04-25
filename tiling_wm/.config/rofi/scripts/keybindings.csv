@@ -4,7 +4,8 @@ Terminal,Super + Return
 Terminal (last location),Super + Shift + Return
 File [e]xplorer,Super + e
 File [e]xplorer (last location),Super + Shift + e
-Random [w]allpaper,Super + w
+Set [r]andom wallpaper,Super + r
+Show [w] weather,Super + w
 System [t]ray,Super + t
 Web [b]rower,Super + b
 E[m]ail client,Super + m

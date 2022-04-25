@@ -79,4 +79,5 @@ bspc rule -a '*:pavucontrol' state=floating
 bspc rule -a '*:matplotlib' state=floating
 bspc rule -a '*:qalculate' state=floating
 bspc rule -a '*:com.gitlab.bitseater.meteo' state=floating
+bspc rule -a '*:meteo' state=floating
 bspc rule -a 'Zathura' state=tiled
