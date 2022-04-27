@@ -24,10 +24,10 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 
 -- Diagnostic signs
 -- neovim <= 0.5.1
-vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
-vim.fn.sign_define('LspDiagnosticsSignWarning',     {text=' ', texthl='DiagnosticsSignWarn'})
-vim.fn.sign_define('LspDiagnosticsSignInformation', {text=' ', texthl='DiagnosticsSignInfo'})
-vim.fn.sign_define('LspDiagnosticsSignHint',        {text=' ', texthl='DiagnosticsSignHint'})
+-- vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
+-- vim.fn.sign_define('LspDiagnosticsSignWarning',     {text=' ', texthl='DiagnosticsSignWarn'})
+-- vim.fn.sign_define('LspDiagnosticsSignInformation', {text=' ', texthl='DiagnosticsSignInfo'})
+-- vim.fn.sign_define('LspDiagnosticsSignHint',        {text=' ', texthl='DiagnosticsSignHint'})
 
 -- neovim >= 0.6.0
 vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignError'})
@@ -87,9 +87,9 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '[e',         '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" }})<CR>', opts)
     buf_set_keymap('n', ']e',         '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" }})<CR>', opts)
 
-    -- buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+    buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+    buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+    buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 end
 
 -------------------------------------------------------------------------------
@@ -107,7 +107,7 @@ end
 --     }
 -- end
 
-local builtin_lsp_servers = { 'pyright', 'bashls', 'clangd', 'ltex', 'vimls', 'sumneko_lua' }
+local builtin_lsp_servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua' }
 
 -- Server-specific configs
 local lsp_setup_opts = {}
