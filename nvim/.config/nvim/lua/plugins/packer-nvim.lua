@@ -27,9 +27,10 @@ return packer.startup(function()
             'hrsh7th/cmp-nvim-lsp',             -- dependency of nvim-cmp
             'hrsh7th/cmp-buffer',               -- dependency of nvim-cmp
             'hrsh7th/cmp-path',                 -- dependency of nvim-cmp
+            'hrsh7th/cmp-cmdline',              -- dependency of nvim-cmp
             'onsails/lspkind-nvim',             -- pictogram for LSP
+            'L3MON4D3/LuaSnip',                 -- snippets plugin
             'saadparwaiz1/cmp_luasnip',         -- snippets source for nvim-cmp
-            'L3MON4D3/LuaSnip'                  -- Snippets plugin
          },
     }
     use 'ray-x/lsp_signature.nvim'              -- show code signature in completion
