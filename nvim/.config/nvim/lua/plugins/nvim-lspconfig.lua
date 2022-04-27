@@ -122,14 +122,16 @@ lsp_setup_opts['sumneko_lua'] = {
 }
 
 -- Attach LSP server
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+)
+
 lsp_installer.on_server_ready(function(server)
     local opts = {
         on_attach = on_attach,
 
         -- Suggested configuration by nvim-cmp
-        capabilities = require('cmp_nvim_lsp').update_capabilities(
-            vim.lsp.protocol.make_client_capabilities()
-        ),
+        capabilities = capabilities,
     }
 
     -- Customize the options passed to the server
