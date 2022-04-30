@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ -z "$1" ]; then
-    NODE_VERSION="v17.5.0"
+    NODE_VERSION="v17.9.0"
 else
     NODE_VERSION="$1"
 fi
