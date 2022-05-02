@@ -11,30 +11,30 @@ require('telescope').setup({
                 -- map actions.which_key to <C-h> (default: <C-/>)
                 -- actions.which_key shows the mappings for your picker,
                 -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-                -- ["<C-h>"] = "which_key"
-                ["<C-j>"] = "preview_scrolling_down",
-                ["<C-k>"] = "preview_scrolling_up",
+                -- ['<C-h>'] = 'which_key'
+                ['<C-j>'] = 'preview_scrolling_down',
+                ['<C-k>'] = 'preview_scrolling_up',
             }
         },
         vimgrep_arguments = {
-            "rg",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
         },
-        prompt_prefix = "   ",
-        selection_caret = "  ",
-        entry_prefix = "  ",
-        initial_mode = "insert",
-        selection_strategy = "reset",
-        sorting_strategy = "ascending",
-        layout_strategy = "horizontal",
+        prompt_prefix = '   ',
+        selection_caret = '  ',
+        entry_prefix = '  ',
+        initial_mode = 'insert',
+        selection_strategy = 'reset',
+        sorting_strategy = 'ascending',
+        layout_strategy = 'horizontal',
         layout_config = {
             horizontal = {
-                prompt_position = "top",
+                prompt_position = 'top',
                 preview_width = 0.55,
                 results_width = 0.8,
             },

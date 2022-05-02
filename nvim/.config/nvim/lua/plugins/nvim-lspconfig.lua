@@ -18,7 +18,7 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
     vim.lsp.handlers.signature_help, {
         border = 'rounded',
-        close_events = {"CursorMoved", "BufHidden", "InsertCharPre"},
+        close_events = {'CursorMoved', 'BufHidden', 'InsertCharPre'},
     }
 )
 
@@ -38,11 +38,11 @@ vim.fn.sign_define('DiagnosticSignHint',  {text=' ', texthl='DiagnosticSignHi
 -- Config diagnostics
 vim.diagnostic.config({
   virtual_text = {
-    source = "always",  -- Or "if_many"  -> show source of diagnostics
+    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
     -- prefix = '■', -- Could be '●', '▎', 'x'
   },
   float = {
-    source = "always",  -- Or "if_many"  -> show source of diagnostics
+    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
   },
 })
 
@@ -135,7 +135,7 @@ lsp_installer.on_server_ready(function(server)
     }
 
     -- Customize the options passed to the server
-    opts = vim.tbl_extend("error", opts, lsp_setup_opts[server.name] or {})
+    opts = vim.tbl_extend('error', opts, lsp_setup_opts[server.name] or {})
 
     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
     server:setup(opts)

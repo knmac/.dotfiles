@@ -22,9 +22,9 @@ require('lualine').setup({
                 'diff',
                 colored=true,
                 diff_color = {
-                    added = { fg = "#98C379", },
-                    modified = { fg = "#E5C07B", },
-                    removed = { fg = "#E06C75", }
+                    added = { fg = '#98C379', },
+                    modified = { fg = '#E5C07B', },
+                    removed = { fg = '#E06C75', }
                 },
                 symbols = {added = '+', modified = '~', removed = '-'}
             },

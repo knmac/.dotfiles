@@ -5,7 +5,7 @@
 local onedarkpro = require('onedarkpro')
 
 onedarkpro.setup({
-    -- Override default colors. Can specify colors for "onelight" or "onedark" themes
+    -- Override default colors. Can specify colors for 'onelight' or 'onedark' themes
     colors = {
         -- onedark = {
         --     -- Standard colors

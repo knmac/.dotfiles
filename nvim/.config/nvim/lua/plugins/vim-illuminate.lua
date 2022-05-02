@@ -15,7 +15,7 @@ cmd [[
 augroup illuminate_augroup
     autocmd!
     autocmd VimEnter * hi illuminatedWord cterm=underline gui=underline
-    "autocmd VimEnter * hi link illuminatedWord Visual
-    "autocmd VimEnter * hi illuminatedCurWord cterm=italic gui=italic
+    " autocmd VimEnter * hi link illuminatedWord Visual
+    " autocmd VimEnter * hi illuminatedCurWord cterm=italic gui=italic
 augroup END
 ]]
