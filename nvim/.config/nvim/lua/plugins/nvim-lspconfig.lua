@@ -5,47 +5,18 @@
 -- Ref: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 -- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
 -------------------------------------------------------------------------------
-local nvim_lsp = require('lspconfig')
-local lsp_installer = require('nvim-lsp-installer')
 -- require('renamer').setup({})
-
--- Popped up window borders
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover, {
-        border = 'rounded',
-    }
-)
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-    vim.lsp.handlers.signature_help, {
-        border = 'rounded',
-        close_events = {'CursorMoved', 'BufHidden', 'InsertCharPre'},
-    }
-)
-
--- Diagnostic signs
--- neovim <= 0.5.1
--- vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
--- vim.fn.sign_define('LspDiagnosticsSignWarning',     {text=' ', texthl='DiagnosticsSignWarn'})
--- vim.fn.sign_define('LspDiagnosticsSignInformation', {text=' ', texthl='DiagnosticsSignInfo'})
--- vim.fn.sign_define('LspDiagnosticsSignHint',        {text=' ', texthl='DiagnosticsSignHint'})
-
--- neovim >= 0.6.0
-vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignError'})
-vim.fn.sign_define('DiagnosticSignWarn',  {text=' ', texthl='DiagnosticSignWarn'})
-vim.fn.sign_define('DiagnosticSignInfo',  {text=' ', texthl='DiagnosticSignInfo'})
-vim.fn.sign_define('DiagnosticSignHint',  {text=' ', texthl='DiagnosticSignHint'})
-
--- Config diagnostics
-vim.diagnostic.config({
-  virtual_text = {
-    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
-    -- prefix = '■', -- Could be '●', '▎', 'x'
-  },
-  float = {
-    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
-  },
+local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua' }
+require('nvim-lsp-installer').setup({
+    ensure_installed = servers,  -- ensure these servers are always installed
+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 })
 
+local lspconfig = require('lspconfig')  -- Must call after lsp installer
+
+-------------------------------------------------------------------------------
+-- Set up LSP servers
+-------------------------------------------------------------------------------
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -92,26 +63,20 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 end
 
--------------------------------------------------------------------------------
--- Set up LSP servers
--------------------------------------------------------------------------------
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 -- local builtin_lsp_servers = { 'pyright', 'bashls', 'clangd', 'ltex' }
--- for _, lsp in ipairs(builtin_lsp_servers) do
---     nvim_lsp[lsp].setup {
---         on_attach = on_attach,
---         flags = {
---             debounce_text_changes = 150,
---         }
---     }
--- end
-
-local builtin_lsp_servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua' }
+for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
+        on_attach = on_attach,
+        flags = {
+            debounce_text_changes = 150,
+        }
+    }
+end
 
 -- Server-specific configs
-local lsp_setup_opts = {}
-lsp_setup_opts['sumneko_lua'] = {
+lspconfig.sumneko_lua.setup{
     settings = {
         Lua = {
             diagnostics = {
@@ -121,35 +86,88 @@ lsp_setup_opts['sumneko_lua'] = {
     }
 }
 
--- Attach LSP server
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
+-- local builtin_lsp_servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua' }
+-- -- Server-specific configs
+-- local lsp_setup_opts = {}
+-- lsp_setup_opts['sumneko_lua'] = {
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = { 'vim', 'use' }  -- global variables to ignore diagnostic
+--             }
+--         }
+--     }
+-- }
+
+-- -- Attach LSP server
+-- local capabilities = require('cmp_nvim_lsp').update_capabilities(
+--     vim.lsp.protocol.make_client_capabilities()
+-- )
+
+-- lsp_installer.on_server_ready(function(server)
+--     local opts = {
+--         on_attach = on_attach,
+
+--         -- Suggested configuration by nvim-cmp
+--         capabilities = capabilities,
+--     }
+
+--     -- Customize the options passed to the server
+--     opts = vim.tbl_extend('error', opts, lsp_setup_opts[server.name] or {})
+
+--     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
+--     server:setup(opts)
+--     vim.cmd [[ do User LspAttachBuffers ]]
+-- end)
+
+-- -- Automatically install if a required LSP server is missing.
+-- for _, lsp_name in ipairs(builtin_lsp_servers) do
+--     local ok, lsp = require('nvim-lsp-installer.servers').get_server(lsp_name)
+--     ---@diagnostic disable-next-line: undefined-field
+--     if ok and not lsp:is_installed() then
+--         vim.defer_fn(function()
+--             -- lsp:install()   -- headless
+--             lsp_installer.install(lsp_name)   -- with UI (so that users can be notified)
+--         end, 0)
+--     end
+-- end
+
+-------------------------------------------------------------------------------
+-- Setup UI for LSP
+-------------------------------------------------------------------------------
+-- Popped up window borders
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+    vim.lsp.handlers.hover, {
+        border = 'rounded',
+    }
+)
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+    vim.lsp.handlers.signature_help, {
+        border = 'rounded',
+        close_events = {'CursorMoved', 'BufHidden', 'InsertCharPre'},
+    }
 )
 
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-        on_attach = on_attach,
+-- Diagnostic signs
+-- neovim <= 0.5.1
+-- vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
+-- vim.fn.sign_define('LspDiagnosticsSignWarning',     {text=' ', texthl='DiagnosticsSignWarn'})
+-- vim.fn.sign_define('LspDiagnosticsSignInformation', {text=' ', texthl='DiagnosticsSignInfo'})
+-- vim.fn.sign_define('LspDiagnosticsSignHint',        {text=' ', texthl='DiagnosticsSignHint'})
 
-        -- Suggested configuration by nvim-cmp
-        capabilities = capabilities,
-    }
+-- neovim >= 0.6.0
+vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignError'})
+vim.fn.sign_define('DiagnosticSignWarn',  {text=' ', texthl='DiagnosticSignWarn'})
+vim.fn.sign_define('DiagnosticSignInfo',  {text=' ', texthl='DiagnosticSignInfo'})
+vim.fn.sign_define('DiagnosticSignHint',  {text=' ', texthl='DiagnosticSignHint'})
 
-    -- Customize the options passed to the server
-    opts = vim.tbl_extend('error', opts, lsp_setup_opts[server.name] or {})
-
-    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-    server:setup(opts)
-    vim.cmd [[ do User LspAttachBuffers ]]
-end)
-
--- Automatically install if a required LSP server is missing.
-for _, lsp_name in ipairs(builtin_lsp_servers) do
-    local ok, lsp = require('nvim-lsp-installer.servers').get_server(lsp_name)
-    ---@diagnostic disable-next-line: undefined-field
-    if ok and not lsp:is_installed() then
-        vim.defer_fn(function()
-            -- lsp:install()   -- headless
-            lsp_installer.install(lsp_name)   -- with UI (so that users can be notified)
-        end, 0)
-    end
-end
+-- Config diagnostics
+vim.diagnostic.config({
+  virtual_text = {
+    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
+    -- prefix = '■', -- Could be '●', '▎', 'x'
+  },
+  float = {
+    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
+  },
+})
