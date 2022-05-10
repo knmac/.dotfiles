@@ -1,13 +1,14 @@
 # =============================================================================
 # Settings
+# Ref: https://github.com/gokcehan/lf/wiki/Tips
 # =============================================================================
 set icons true
 set ignorecase true
 set drawbox true
 set info size:time
 
-set previewer ~/.config/lf/previewer
-set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/scripts/previewer_ueberzug
+set cleaner ~/.config/lf/scripts/cleaner_ueberzug
 
 
 # =============================================================================
@@ -16,6 +17,8 @@ set cleaner ~/.config/lf/cleaner
 map d # leave the command name empty like this for unmapping
 map dd cut
 map dD delete
+
+map a push %mkdir<space>  # Make directory
 
 
 # =============================================================================
@@ -81,5 +84,6 @@ cmd on-cd &{{
 }}
 
 on-cd
+
 
 # vi: ft=config
