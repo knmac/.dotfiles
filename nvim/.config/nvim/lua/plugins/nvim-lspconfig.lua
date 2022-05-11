@@ -6,7 +6,7 @@
 -- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
 -------------------------------------------------------------------------------
 -- require('renamer').setup({})
-local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua' }
+local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua', 'ltex' }
 require('nvim-lsp-installer').setup({
     ensure_installed = servers,  -- ensure these servers are always installed
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
@@ -75,7 +75,10 @@ for _, lsp in ipairs(servers) do
     }
 end
 
+-------------------------------------------------------------------------------
 -- Server-specific configs
+-------------------------------------------------------------------------------
+-- sumneko_lua
 lspconfig.sumneko_lua.setup{
     settings = {
         Lua = {
@@ -86,6 +89,59 @@ lspconfig.sumneko_lua.setup{
     }
 }
 
+-- ltex
+local path = vim.fn.stdpath('data')..'/spelling/en-US.txt'
+local words = {}
+if io.open(path, 'r') ~= nil then
+    for word in io.open(path, 'r'):lines() do
+        table.insert(words, word)
+    end
+end
+lspconfig.ltex.setup{
+    settings = {
+        ltex = {
+            dictionary = {
+                ['en-US'] = words,
+            }
+        }
+    }
+}
+
+-------------------------------------------------------------------------------
+-- Setup UI for LSP
+-------------------------------------------------------------------------------
+-- Popped up window borders
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+    vim.lsp.handlers.hover, {
+        border = 'rounded',
+    }
+)
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+    vim.lsp.handlers.signature_help, {
+        border = 'rounded',
+        close_events = {'CursorMoved', 'BufHidden', 'InsertCharPre'},
+    }
+)
+
+-- Diagnostic signs
+vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignError'})
+vim.fn.sign_define('DiagnosticSignWarn',  {text=' ', texthl='DiagnosticSignWarn'})
+vim.fn.sign_define('DiagnosticSignInfo',  {text=' ', texthl='DiagnosticSignInfo'})
+vim.fn.sign_define('DiagnosticSignHint',  {text=' ', texthl='DiagnosticSignHint'})
+
+-- Config diagnostics
+vim.diagnostic.config({
+  virtual_text = {
+    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
+    -- prefix = '■', -- Could be '●', '▎', 'x'
+  },
+  float = {
+    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
+  },
+})
+
+-------------------------------------------------------------------------------
+-- Old config for lsp install
 -- local builtin_lsp_servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua' }
 -- -- Server-specific configs
 -- local lsp_setup_opts = {}
@@ -131,43 +187,3 @@ lspconfig.sumneko_lua.setup{
 --         end, 0)
 --     end
 -- end
-
--------------------------------------------------------------------------------
--- Setup UI for LSP
--------------------------------------------------------------------------------
--- Popped up window borders
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover, {
-        border = 'rounded',
-    }
-)
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-    vim.lsp.handlers.signature_help, {
-        border = 'rounded',
-        close_events = {'CursorMoved', 'BufHidden', 'InsertCharPre'},
-    }
-)
-
--- Diagnostic signs
--- neovim <= 0.5.1
--- vim.fn.sign_define('LspDiagnosticsSignError',       {text=' ', texthl='DiagnosticsSignError'})
--- vim.fn.sign_define('LspDiagnosticsSignWarning',     {text=' ', texthl='DiagnosticsSignWarn'})
--- vim.fn.sign_define('LspDiagnosticsSignInformation', {text=' ', texthl='DiagnosticsSignInfo'})
--- vim.fn.sign_define('LspDiagnosticsSignHint',        {text=' ', texthl='DiagnosticsSignHint'})
-
--- neovim >= 0.6.0
-vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignError'})
-vim.fn.sign_define('DiagnosticSignWarn',  {text=' ', texthl='DiagnosticSignWarn'})
-vim.fn.sign_define('DiagnosticSignInfo',  {text=' ', texthl='DiagnosticSignInfo'})
-vim.fn.sign_define('DiagnosticSignHint',  {text=' ', texthl='DiagnosticSignHint'})
-
--- Config diagnostics
-vim.diagnostic.config({
-  virtual_text = {
-    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
-    -- prefix = '■', -- Could be '●', '▎', 'x'
-  },
-  float = {
-    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
-  },
-})
