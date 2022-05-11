@@ -18,7 +18,7 @@ require('nvim-treesitter.configs').setup({
         'bash',
         'latex',
         'bibtex',
-        'json',
+        -- 'json',
         'yaml',
         'html',
         'css',
@@ -38,3 +38,7 @@ require('nvim-treesitter.configs').setup({
         -- termcolors = {} -- table of colour name strings
     }
 })
+
+-- Overwrite fold method using treesitter expression
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
