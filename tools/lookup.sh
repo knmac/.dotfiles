@@ -3,12 +3,12 @@
 # Dependecies: dict, colorit
 lookup() {
     echo "Usage: lookup [WORD]"
-    if [ -z $1 ]; then
+    if [[ -z "$1" ]]; then
         echo "Please input the word you want to look up"
         return 1
     else
-        WORD=$1
+        WORD="$1"
     fi
 
-    dict $WORD | colorit | less
+    dict "$WORD" | colorit | less
 }

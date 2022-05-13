@@ -25,5 +25,5 @@ sshx2x() {
     fi
 
     echo "Connecting to $HOST with DISPLAY=$DISPLAY_PORT. The machine is at the $DIRECTION direction..."
-    ssh -XC $HOST x2x -"$DIRECTION" -to ":$DISPLAY_PORT"
+    ssh -XC "$HOST" x2x -"$DIRECTION" -to ":$DISPLAY_PORT"
 }
