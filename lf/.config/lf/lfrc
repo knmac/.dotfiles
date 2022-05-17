@@ -18,9 +18,12 @@ map d # leave the command name empty like this for unmapping
 map dd cut
 map dD delete
 
+cmd open-with %"$@" "$fx"
+map o push :open-with<space>  # Open-with
 map a push %mkdir<space>  # Make directory
-
-map <enter> shell-wait
+map x extract  # Extract compressed files
+map . set hidden!  # Toggle hidden files
+map <enter> shell-wait  # Run shell command
 
 
 # =============================================================================
@@ -108,8 +111,6 @@ cmd extract &{{
         *.tar.zst)   tar xf $f    ;;
     esac
 }}
-
-map x extract
 
 
 # vi: ft=config
