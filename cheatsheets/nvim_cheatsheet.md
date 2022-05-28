@@ -39,6 +39,7 @@
 | Fuzzy search for filename          | `<space> f`       |
 | Fuzzy search for word              | `<space> w`       |
 | Fuzzy search for buffer            | `<space> b`       |
+| Fuzzy search for session           | `<space> s`       |
 | Fuzzy search in the current buffer | `<space> /`       |
 
 
