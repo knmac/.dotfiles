@@ -3,7 +3,7 @@
 -- kyazdani42/nvim-tree.lua
 -------------------------------------------------------------------------------
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-require('nvim-tree').setup {
+require('nvim-tree').setup({
     auto_reload_on_write = true,
     create_in_closed_folder = false,
     disable_netrw = false,
@@ -157,4 +157,4 @@ require('nvim-tree').setup {
             profile = false,
         },
     },
-}
+})
