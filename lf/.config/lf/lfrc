@@ -2,28 +2,40 @@
 # Settings
 # Ref: https://github.com/gokcehan/lf/wiki/Tips
 # =============================================================================
-set icons true
+set icons      true
 set ignorecase true
-set drawbox true
-set info size:time
+set drawbox    true
+set info       size:time
 
-set previewer ~/.config/lf/scripts/previewer_ueberzug
-set cleaner ~/.config/lf/scripts/cleaner_ueberzug
+set previewer ~/.config/lf/scripts/previewer_kitty
+set cleaner   ~/.config/lf/scripts/cleaner_kitty
 
 
 # =============================================================================
 # Key bindings
 # =============================================================================
-map d # leave the command name empty like this for unmapping
+# Cut and delete
+map d  # leave the command name empty like this for unmapping
 map dd cut
 map dD delete
 
-cmd open-with %"$@" "$fx"
-map o push :open-with<space>  # Open-with
-map a push %mkdir<space>  # Make directory
-map x extract  # Extract compressed files
-map . set hidden!  # Toggle hidden files
-map <enter> shell-wait  # Run shell command
+# Create files and folders
+map m  # unmap m
+map md push %mkdir<space>  # Make new directory
+map mf push %touch<space>  # Make new file
+
+# Bookmarks
+map g~ cd ~
+map gD cd ~/Downloads
+map gP cd ~/Pictures
+map gM cd ~/Music
+
+# Remap of some commands
+map <enter> shell-wait
+map .  set hidden!
+
+# Custom functions
+map x extract
 
 
 # =============================================================================

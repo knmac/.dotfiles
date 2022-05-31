@@ -105,20 +105,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# =============================================================================
 
-# -----------------------------------------------------------------------------
+# Configure zsh ---------------------------------------------------------------
 # Turn on edit command line mode (Ctrl-x Ctrl-e)
 autoload -U edit-command-line
-
 
 # Customize spaceship-prompt
 #SPACESHIP_CHAR_SYMBOL="❱ "
 
-
 # Configure zsh highlighting
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-
 
 # Configure zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
@@ -130,7 +128,7 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 bindkey '^ ' autosuggest-accept
 
 
-# Configure FZF
+# Configure FZF ---------------------------------------------------------------
 # [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 #export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --border"
 export FZF_DEFAULT_OPTS="--layout=default"
@@ -146,7 +144,22 @@ fi
 source "$ZSH/plugins/fzf/fzf.plugin.zsh"
 
 
-# Aliases
+# Configure lf ----------------------------------------------------------------
+if type lf &> /dev/null; then
+    LF_ICONS=$(sed ~/.config/lf/diricons \
+                -e '/^[ \t]*#/d'         \
+                -e '/^[ \t]*$/d'         \
+                -e 's/[ \t]\+/=/g'       \
+                -e 's/$/ /')
+    LF_ICONS=${LF_ICONS//$'\n'/:}
+    export LF_ICONS
+    # alias lf="$HOME/.config/lf/scripts/lf_launcher_ueberzug.sh"
+    source "$HOME/.config/lf/scripts/lfcd.sh"
+    alias lf=lfcd
+fi
+
+
+# Aliases ---------------------------------------------------------------------
 if type xclip &> /dev/null; then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
@@ -163,9 +176,11 @@ alias dotfiles_acp="dotfiles add . && dotfiles commit -m update && dotfiles push
 alias notes="git --git-dir=$NOTES_DIR/.git --work-tree=$NOTES_DIR"
 alias notes_acp="notes add . && notes commit -m update && notes push"
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+# Add tools
+source "$DOTFILES_DIR/tools/add_tools.sh"
 
 
-# Exports
+# Exports ---------------------------------------------------------------------
 export PATH="$HOME/.local/bin:$HOME/.local/nodejs/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -174,7 +189,3 @@ export PROMPT_COMMAND="pwd > /tmp/whereami_$USER"
 precmd() {
     eval "$PROMPT_COMMAND"
 }
-
-
-# Add tools
-source "$DOTFILES_DIR/tools/add_tools.sh"
