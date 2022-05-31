@@ -20,22 +20,24 @@ map dd cut
 map dD delete
 
 # Create files and folders
-map m  # unmap m
-map md push %mkdir<space>  # Make new directory
-map mf push %touch<space>  # Make new file
+map Md push %mkdir<space>  # Make new directory
+map Mf push %touch<space>  # Make new file
+
+# Toggle line number
+map zl :{{ set number!; set relativenumber!; }}
 
 # Bookmarks
-map g~ cd ~
 map gD cd ~/Downloads
 map gP cd ~/Pictures
 map gM cd ~/Music
 
-# Remap of some commands
+# Additional mappings of some existing commands
 map <enter> shell-wait
-map .  set hidden!
+map .       set hidden!
 
-# Custom functions
+# Mappings for custom functions
 map x extract
+map o push :open-with<space>
 
 
 # =============================================================================
@@ -123,6 +125,10 @@ cmd extract &{{
         *.tar.zst)   tar xf $f    ;;
     esac
 }}
+
+
+# Open with -------------------------------------------------------------------
+cmd open-with %"$@" "$fx"
 
 
 # vi: ft=config
