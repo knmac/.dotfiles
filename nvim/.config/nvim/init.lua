@@ -10,7 +10,7 @@ require('plugins/nvim-lspconfig')
 require('plugins/nvim-treesitter')
 require('plugins/null-ls')
 require('plugins/nvim-cmp')
-require('plugins/lsp-signature-nvim')
+-- require('plugins/lsp-signature-nvim')
 require('plugins/comment-nvim')
 
 -- User interface

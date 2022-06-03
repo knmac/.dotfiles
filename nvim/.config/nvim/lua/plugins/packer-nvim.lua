@@ -24,16 +24,19 @@ return packer.startup(function()
     use {
         'hrsh7th/nvim-cmp',                     -- code completion
         requires = {
-            'hrsh7th/cmp-nvim-lsp',             -- dependency of nvim-cmp
-            'hrsh7th/cmp-buffer',               -- dependency of nvim-cmp
-            'hrsh7th/cmp-path',                 -- dependency of nvim-cmp
-            'hrsh7th/cmp-cmdline',              -- dependency of nvim-cmp
-            'onsails/lspkind-nvim',             -- pictogram for LSP
-            'L3MON4D3/LuaSnip',                 -- snippets plugin
-            'saadparwaiz1/cmp_luasnip',         -- snippets source for nvim-cmp
+            'hrsh7th/cmp-nvim-lsp',                 -- source for neovim's built-in language server client
+            'hrsh7th/cmp-buffer',                   -- source for buffer words
+            'hrsh7th/cmp-path',                     -- source for filesystem paths
+            'hrsh7th/cmp-cmdline',                  -- source for vim's cmdline
+            'hrsh7th/cmp-nvim-lsp-signature-help',  -- source for displaying function signatures with the current parameter emphasized
+            'onsails/lspkind-nvim',                 -- pictogram for LSP
+            -- 'L3MON4D3/LuaSnip',                     -- snippets plugin
+            -- 'saadparwaiz1/cmp_luasnip',             -- snippets source for nvim-cmp
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip',
          },
     }
-    use 'ray-x/lsp_signature.nvim'              -- show code signature in completion
+    -- use 'ray-x/lsp_signature.nvim'              -- show code signature in completion
     use 'numToStr/Comment.nvim'                 -- code commenter
 
     -- Functional user interface
@@ -43,14 +46,15 @@ return packer.startup(function()
     use 'kyazdani42/nvim-web-devicons'          -- extra icons with colors
     use 'akinsho/bufferline.nvim'               -- buffer line (top)
     use 'nvim-lualine/lualine.nvim'             -- status line (bottom)
+    use 'stevearc/dressing.nvim'                -- UI improvement for vim.ui.select and vim.ui.input
 
     -- Utilities
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
     use {
         'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
-        requires = {
-            'nvim-telescope/telescope-ui-select.nvim',
-        }
+        -- requires = {
+        --     'nvim-telescope/telescope-ui-select.nvim',
+        -- }
     }
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
