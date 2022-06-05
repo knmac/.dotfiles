@@ -38,6 +38,10 @@ super + r
 super + w
     meteo
 
+# Dmenu
+super + d
+    dmenu_run -p " " -fn "JetBrainsMono Nerd Font"
+
 # Rofi menus
 super + space
     "$HOME/.config/rofi/scripts/launch_rofi_drun.sh"

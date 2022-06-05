@@ -71,6 +71,9 @@ ibus-daemon -drx &
 # Dropbox
 # sleep 10; dropbox start &
 
+# Power manager
+xfce4-power-manager &
+
 
 # =============================================================================
 # Windows rules
