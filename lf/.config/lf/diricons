@@ -31,8 +31,8 @@ CMakeLists.txt                   
 ~/Desktop/                       
 ~/Documents/                     
 ~/Downloads/                     
-~/Dotfiles/                      
-~/Dropbox/                       
+~/.dotfiles/                     
+~/Dropbox/                       
 ~/Music/                         
 ~/Pictures/                      
 ~/Public/                        

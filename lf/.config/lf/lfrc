@@ -38,6 +38,7 @@ map .       set hidden!
 # Mappings for custom functions
 map x extract
 map o push :open-with<space>
+map R bulkrename
 
 
 # =============================================================================
