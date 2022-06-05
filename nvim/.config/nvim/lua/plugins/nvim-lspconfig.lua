@@ -5,7 +5,6 @@
 -- Ref: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 -- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
 -------------------------------------------------------------------------------
--- require('renamer').setup({})
 local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua', 'ltex' }
 require('nvim-lsp-installer').setup({
     ensure_installed = servers,  -- ensure these servers are always installed
@@ -51,7 +50,6 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
     buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>rn', '<cmd>lua require("renamer").rename()<CR>', opts)
     buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     buf_set_keymap('n', '<leader>f',  '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     buf_set_keymap('n', '<leader>e',  '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
