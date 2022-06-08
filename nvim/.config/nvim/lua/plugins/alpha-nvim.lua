@@ -29,7 +29,7 @@ dashboard.section.buttons.val = {
     dashboard.button( 'u', '  Update plugins'       , ':PackerUpdate<CR>'),
     dashboard.button( 'd', '﬜  Dictionary'           , ':cd $HOME/.local/share/nvim/ | e spelling/en-US.txt<CR>'),
     dashboard.button( 'c', '  Configurations'       , ':cd $HOME/.config/nvim | e $MYVIMRC<CR>'),
-    dashboard.button( 'h', '  Cheatsheet'           , ':e $HOME/.dotfiles/cheatsheets/nvim_cheatsheet.md<CR>'),
+    dashboard.button( 'h', '  Cheatsheet'           , ':e $HOME/.dotfiles/cheatsheets/nvim_cheatsheet.md | Vista<CR>'),
     dashboard.button( 'q', '  Quit'                 , ':qa<CR>'),
 }
 

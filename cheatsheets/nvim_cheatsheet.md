@@ -1,4 +1,4 @@
-# My neovim cheatsheet
+# My NeoVim cheatsheet
 
 (The default `<leader>` is `\`)
 
@@ -6,30 +6,31 @@
 
 ### 1.1. Fn key-bindings
 
-| Functionality                           | Key-binding            |
-| --------------------------------------- | ---------------------- |
-| Search for help                         | `F1`                   |
-| Show key-bindings                       | `Shift+F1`             |
-| Open to-do list                         | `F2`                   |
-| File explorer                           | `F3`                   |
-| Show tags in the current buffer         | `F4`                   |
-| Generate tags file (requires `ctags`)   | `Shift+F4`             |
-|                                         |                        |
-| Show buffer list                        | `F5`                   |
-| Show tab list                           | `Shift+F5`             |
-| Previous buffer                         | `F6` (or `Ctrl+Alt+h`) |
-| Previous tab                            | `Shift+F6`             |
-| Next buffer                             | `F7` (or `Ctrl+Alt+l`) |
-| Next tab                                | `Shift+F7`             |
-| Close the current buffer                | `F8`                   |
-| Close the current tab                   | `Shift+F8`             |
-|                                         |                        |
-| Open diagnostic list                    | `F9`                   |
-| Run the `make` command                  | `F10`                  |
-| Run the `make clean` command            | `Shift+F10`            |
-| Toggle zoom the current window (splits) | `F11`                  |
-| Toggle relative number                  | `F12`                  |
-| Toggle color code colorizer (e.g., CSS) | `Shift+F12`            |
+| Functionality                            | Key-binding            |
+| ---------------------------------------- | ---------------------- |
+| Search for help                          | `F1`                   |
+| Show key-bindings                        | `Shift+F1`             |
+| Open to-do list                          | `F2`                   |
+| File explorer                            | `F3`                   |
+| Show tags in the current buffer          | `F4`                   |
+| Generate tags file (requires `ctags`)    | `Shift+F4`             |
+|                                          |                        |
+| Show buffer list                         | `F5`                   |
+| Show tab list                            | `Shift+F5`             |
+| Previous buffer                          | `F6` (or `Ctrl+Alt+h`) |
+| Previous tab                             | `Shift+F6`             |
+| Next buffer                              | `F7` (or `Ctrl+Alt+l`) |
+| Next tab                                 | `Shift+F7`             |
+| Close the current buffer                 | `F8`                   |
+| Close the current tab                    | `Shift+F8`             |
+|                                          |                        |
+| Open diagnostic list                     | `F9`                   |
+| Run the `make` command                   | `F10`                  |
+| Run the `make clean` command             | `Shift+F10`            |
+| Toggle zoom the current window (splits)  | `F11`                  |
+| Toggle relative number                   | `F12`                  |
+| Toggle color code colorizing (e.g., CSS) | `Shift+F12`            |
+
 
 ### 1.2. Telescope key-bindings
 
@@ -117,6 +118,7 @@
 | Group             | Functionality                             | Key-binding/Command         |
 |-------------------|-------------------------------------------|-----------------------------|
 | Line navigation   | Go left/down/up/right                     | `h`/`j`/`k`/`l`             |
+|                   | Go next/previous (useful for menu items)  | `Ctrl+n`/`Ctrl+p`           |
 |                   | Go to start/end of current line           | `0`/`$`                     |
 |                   | Go to non-blank start/end of current line | `^`/`g_`                    |
 | Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                     |
@@ -124,12 +126,14 @@
 | Screen navigation | Go to first/last line                     | `gg`/`G`                    |
 |                   | Go to `n`-th line                         | `:n` (or `ngg` or `nG`)     |
 |                   | Go half-page up/down                      | `Ctrl+u`/`Ctrl+d`           |
-|                   | Go full-page up/down                      | `Ctrl+b`/`Ctrl+f`           |
-| Search navigation | Search for pattern                        | `/[pattern]`                |
+|                   | Go full-page backward/forward             | `Ctrl+b`/`Ctrl+f`           |
+| Search navigation | Search (forward) for pattern              | `/[pattern]`                |
+|                   | Search (backward) for pattern             | `?[pattern]`                |
 |                   | Go to next/previous matching pattern      | `n`/`N`                     |
 | Window navigation | Create a horizontal split                 | `:split` (or `<Ctrl+w> s`)  |
 |                   | Create a vertical split                   | `:vsplit` (or `<Ctrl+w> v`) |
 |                   | Go to left/down/up/right split            | `Ctrl+w` `h`/`j`/`k`/`l`    |
+
 
 ### 2.2. Substitution
 
@@ -158,6 +162,7 @@ Examples:
 - `:%s/foo/bar/g`: replace all `foo` by `bar`
 - `:s/foo/bar/g`: replace `foo` by `bar` on the current line
 
+
 ### 2.3. Vim's default auto-completion (insert mode)
 
 | Functionality                      | Key-binding     |
@@ -170,6 +175,7 @@ Examples:
 
 More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-5-awesome-examples-for-automatic-word-completion-using-ctrl-x-magic/)
 
+
 ### 2.4. Ctags key-bindings (requires Ctags)
 
 | Functionality        | Key-binding |
@@ -178,6 +184,7 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 | Preview definition   | `Ctrl+w }`  |
 | Close preview window | `Ctrl+w z`  |
 
+
 ### 2.5. Code folding
 
 | Functionality    | Key-binding |
@@ -185,6 +192,7 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 | Toggle a fold    | `za`        |
 | Close all folds  | `zM`        |
 | Reopen all folds | `zR`        |
+
 
 ### 2.6. Buffers manipulation
 
