@@ -4,37 +4,51 @@
 -------------------------------------------------------------------------------
 local alpha = require('alpha')
 local dashboard = require('alpha.themes.dashboard')
+
+-- Create Dictionary file if necessary
 local Path = require('plenary.path')
 Path:new(vim.fn.stdpath('data')..'/spelling'):mkdir()
 Path:new(vim.fn.stdpath('data')..'/spelling/en-US.txt'):touch()
 
 -- Set header
 dashboard.section.header.val = {
-    '                                              ',
     '   ██╗  ██╗███╗   ██╗██╗   ██╗██╗███╗   ███╗  ',
     '   ██║ ██╔╝████╗  ██║██║   ██║██║████╗ ████║  ',
     '   █████╔╝ ██╔██╗ ██║██║   ██║██║██╔████╔██║  ',
     '   ██╔═██╗ ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║  ',
     '   ██║  ██╗██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║  ',
     '   ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝  ',
-    '                                              ',
 }
 
 dashboard.section.buttons.val = {
     dashboard.button( 'e', '  Edit a new file'      , ':ene<CR>'),
-    dashboard.button( 's', '  Session manager'      , ':SessionManager load_session<CR>'),
+    dashboard.button( 's', '  Session manager'      , ':SessionManager load_session<CR>'),
     dashboard.button( 'r', '  Recently opened files', ':Telescope oldfiles<CR>'),
     dashboard.button( 'f', '  File finder'          , ':Telescope find_files<CR>'),
-    dashboard.button( 'w', '  Word finder'          , ':Telescope live_grep<CR>'),
+    dashboard.button( 't', '  Text finder'          , ':Telescope live_grep<CR>'),
     dashboard.button( 'u', '  Update plugins'       , ':PackerUpdate<CR>'),
     dashboard.button( 'd', '﬜  Dictionary'           , ':cd $HOME/.local/share/nvim/ | e spelling/en-US.txt<CR>'),
     dashboard.button( 'c', '  Configurations'       , ':cd $HOME/.config/nvim | e $MYVIMRC<CR>'),
+    dashboard.button( 'h', '  Cheatsheet'           , ':e $HOME/.dotfiles/cheatsheets/nvim_cheatsheet.md<CR>'),
     dashboard.button( 'q', '  Quit'                 , ':qa<CR>'),
 }
 
 -- Set footer
 local fortune = require('alpha.fortune')
 dashboard.section.footer.val = fortune()
+
+-- Dynamic header padding
+local margin_top_percent = 0.2
+local min_padding = 2
+local header_padding = vim.fn.max({ min_padding, vim.fn.floor(vim.fn.winheight(0) * margin_top_percent) })
+
+dashboard.config.layout = {
+    { type = 'padding', val = header_padding },
+    dashboard.section.header,
+    { type = 'padding', val = min_padding },
+    dashboard.section.buttons,
+    dashboard.section.footer,
+}
 
 -- Send config to alpha
 alpha.setup(dashboard.opts)

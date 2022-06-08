@@ -130,7 +130,7 @@ map('n', '<C-A-S-l>', ':BufferLineMoveNext<CR>', default_opts)
 -- Telescope
 map('n', '<space><space>', ':Telescope<CR>', default_opts)
 map('n', '<space>f',       ':Telescope find_files<CR>', default_opts)
-map('n', '<space>w',       ':Telescope live_grep<CR>', default_opts)
+map('n', '<space>t',       ':Telescope live_grep<CR>', default_opts)
 map('n', '<space>b',       ':Telescope buffers<CR>', default_opts)
 map('n', '<space>/',       ':Telescope current_buffer_fuzzy_find<CR>', default_opts)
 map('n', '<space>s',       ':SessionManager load_session<CR>', default_opts)

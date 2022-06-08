@@ -37,7 +37,7 @@
 | ---------------------------------- | ----------------- |
 | Open Telescope                     | `<space> <space>` |
 | Fuzzy search for filename          | `<space> f`       |
-| Fuzzy search for word              | `<space> w`       |
+| Fuzzy search for text              | `<space> t`       |
 | Fuzzy search for buffer            | `<space> b`       |
 | Fuzzy search for session           | `<space> s`       |
 | Fuzzy search in the current buffer | `<space> /`       |
@@ -61,10 +61,10 @@
 | Show current line's diagnostic                        | `<leader> e`  |
 | Go to previous diagnostic                             | `[e`          |
 | Go to next diagnostic                                 | `]e`          |
-
-<!-- | Add workspace folder                                  | `<leader> wa` | -->
-<!-- | Remove workspace folder                               | `<leader> wr` | -->
-<!-- | List workspace folder                                 | `<leader> wl` | -->
+|                                                       |               |
+| Add workspace folder                                  | `<leader> wa` |
+| Remove workspace folder                               | `<leader> wr` |
+| List workspace folder                                 | `<leader> wl` |
 
 
 ### 1.4. Other custom key-bindings
