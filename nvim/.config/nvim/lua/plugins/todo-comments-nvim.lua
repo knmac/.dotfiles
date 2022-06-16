@@ -13,11 +13,12 @@ require('todo-comments').setup({
             alt = { 'FIXME', 'BUG', 'FIXIT', 'ISSUE', 'ERROR' }, -- a set of other keywords that all map to this FIX keywords
             -- signs = false, -- configure signs for some keywords individually
         },
-        TODO = { icon = ' ', color = 'info' },
-        HACK = { icon = ' ', color = 'warning' },
-        WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
-        PERF = { icon = ' ', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
-        NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },
-        MAC  = { icon = ' ', color = 'hint', alt = { 'KNMAC' } },
+        TODO  = { icon = ' ', color = 'info' },
+        HACK  = { icon = ' ', color = 'warning' },
+        WARN  = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
+        PERF  = { icon = ' ', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
+        NOTE  = { icon = ' ', color = 'hint', alt = { 'INFO' } },
+        MAC   = { icon = ' ', color = 'hint', alt = { 'KNMAC' } },
+        DEBUG = { icon = ' ', color = 'error', },
     },
 })
