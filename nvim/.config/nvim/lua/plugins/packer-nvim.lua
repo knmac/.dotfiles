@@ -32,8 +32,8 @@ return packer.startup(function()
             'onsails/lspkind-nvim',                 -- pictogram for LSP
             -- 'L3MON4D3/LuaSnip',                     -- snippets plugin
             -- 'saadparwaiz1/cmp_luasnip',             -- snippets source for nvim-cmp
-            'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip',
+            'hrsh7th/cmp-vsnip',                    -- snippets plugin
+            'hrsh7th/vim-vsnip',                    -- snippets source for nvim-cmp
          },
     }
     -- use 'ray-x/lsp_signature.nvim'              -- show code signature in completion
