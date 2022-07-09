@@ -141,6 +141,7 @@ map('x', 'ga', '<Plug>(EasyAlign)', {})
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 map('n', 'ga', '<Plug>(EasyAlign)', {})
 
+-- Fn keys
 -- <F1>: Show help
 map('n', '<F1>', ':Telescope help_tags<CR>', default_opts)
 -- <S-F1>: Show keymaps
@@ -191,8 +192,10 @@ map('n', '<F22>', ':make clean<CR>', default_opts)
 
 -- <F11>: Toggle zoom the current window (from custom functions)
 map('n', '<F11>', ':call ToggleZoom(v:true)<CR>', default_opts)
+-- <S-F11>: Toggle colorizer
+map('n', '<F23>', ':ColorizerToggle<CR>', default_opts)
 
 -- <F12>: Toggle relative number
 map('n', '<F12>', ':set nu rnu!<CR>', default_opts)
--- <S-F12>: Toggle colorizer
-map('n', '<F24>', ':ColorizerToggle<CR>', default_opts)
+-- <S-F11>: Toggle welcome screen
+map('n', '<F24>', ':Alpha<CR>', default_opts)

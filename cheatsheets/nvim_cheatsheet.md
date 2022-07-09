@@ -28,8 +28,9 @@
 | Run the `make` command                   | `F10`                  |
 | Run the `make clean` command             | `Shift+F10`            |
 | Toggle zoom the current window (splits)  | `F11`                  |
+| Toggle color code colorizing (e.g., CSS) | `Shift+F11`            |
 | Toggle relative number                   | `F12`                  |
-| Toggle color code colorizing (e.g., CSS) | `Shift+F12`            |
+| Toggle welcome screen                    | `Shift+F12`            |
 
 
 ### 1.2. Telescope key-bindings
