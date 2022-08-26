@@ -17,7 +17,7 @@ onedarkpro.setup({
         -- },
     },
     -- Override default highlight groups
-    hlgroups = {
+    highlights = {
         -- CursorLine = { style = 'bold' },
         Operator = { style = 'NONE' },  -- default is italic
     },
