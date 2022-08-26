@@ -74,7 +74,7 @@ element {
 }
 element-text {
     background-color:               transparent;
-    text-color:                     @black;
+    text-color:                     @se;
     font:                           "feather 14";
 }
 element normal.normal {
