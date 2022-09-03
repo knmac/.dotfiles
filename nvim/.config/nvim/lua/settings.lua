@@ -9,8 +9,24 @@
 local cmd = vim.cmd                 -- execute Vim commands
 -- local exec = vim.api.nvim_exec      -- execute Vimscript
 -- local fn = vim.fn                   -- call Vim functions
--- local g = vim.g                     -- global variables
+local g = vim.g                     -- global variables
 local opt = vim.opt                 -- global/buffer/windows-scoped options
+
+
+-------------------------------------------------------------------------------
+-- Setup python path
+-------------------------------------------------------------------------------
+local possible_python_paths = {
+    -- Extend the list for possible python path. Will use the 1st possible one
+    os.getenv('HOME')..'/anaconda3/envs/dev/bin/python',
+    os.getenv('HOME')..'/opt/anaconda3/envs/dev/bin/python',
+}
+for _, python_path in pairs(possible_python_paths) do
+    if io.open(python_path, 'r') ~= nil then
+        g.python3_host_prog = python_path
+        break
+    end
+end
 
 
 -------------------------------------------------------------------------------
