@@ -10,6 +10,13 @@ local Path = require('plenary.path')
 Path:new(vim.fn.stdpath('data')..'/spelling'):mkdir()
 Path:new(vim.fn.stdpath('data')..'/spelling/en-US.txt'):touch()
 
+-- Get version
+local function get_version()
+    local version = vim.version()
+    local nvim_version_info = 'NVIM v'..version.major..'.'..version.minor..'.'..version.patch
+    return nvim_version_info
+end
+
 -- Set header
 dashboard.section.header.val = {
     '   ██╗  ██╗███╗   ██╗██╗   ██╗██╗███╗   ███╗  ',
@@ -45,6 +52,7 @@ local header_padding = vim.fn.max({ min_padding, vim.fn.floor(vim.fn.winheight(0
 dashboard.config.layout = {
     { type = 'padding', val = header_padding },
     dashboard.section.header,
+    { type = 'text', val = get_version(), opts = {position = 'center', hl = 'hl_group'} },
     { type = 'padding', val = min_padding },
     dashboard.section.buttons,
     dashboard.section.footer,
