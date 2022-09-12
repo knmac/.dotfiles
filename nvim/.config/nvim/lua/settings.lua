@@ -128,6 +128,12 @@ opt.shiftwidth = 4                  -- affect what happens when press >>, <<, or
 opt.smarttab = true                 -- affects how <Tab> are interpreted based on cursor location
 opt.autoindent = true               -- copy the indent from the prev line to a new line
 
+-- Make sure colons do not mess up the indent in Python
+cmd [[
+autocmd FileType python setlocal indentkeys-=<:>
+autocmd FileType python setlocal indentkeys-=:
+]]
+
 -- Use tab instead of space for make files
 cmd [[ autocmd FileType make setlocal noexpandtab ]]
 
