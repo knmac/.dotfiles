@@ -5,7 +5,7 @@
 -- Ref: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 -- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
 -------------------------------------------------------------------------------
-local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua', 'ltex' }
+local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua', 'ltex', 'texlab' }
 require('nvim-lsp-installer').setup({
     ensure_installed = servers,  -- ensure these servers are always installed
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
