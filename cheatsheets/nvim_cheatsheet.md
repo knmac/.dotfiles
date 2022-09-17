@@ -42,6 +42,7 @@
 | Fuzzy search for text              | `<space> t`       |
 | Fuzzy search for buffer            | `<space> b`       |
 | Fuzzy search for session           | `<space> s`       |
+| Fuzzy search for bibtex citations  | `<space> c`       |
 | Fuzzy search in the current buffer | `<space> /`       |
 
 

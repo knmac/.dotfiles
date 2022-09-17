@@ -134,6 +134,7 @@ map('n', '<space>t',       ':Telescope live_grep<CR>', default_opts)
 map('n', '<space>b',       ':Telescope buffers<CR>', default_opts)
 map('n', '<space>/',       ':Telescope current_buffer_fuzzy_find<CR>', default_opts)
 map('n', '<space>s',       ':SessionManager load_session<CR>', default_opts)
+map('n', '<space>x',       ':Telescope bibtex<CR>', default_opts)
 
 -- Easy align
 -- Start interactive EasyAlign in visual mode (e.g. vipga)

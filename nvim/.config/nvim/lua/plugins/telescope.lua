@@ -65,9 +65,21 @@ require('telescope').setup({
             require('telescope.themes').get_dropdown {
                 -- even more opts
             }
-        }
+        },
+        ['bibtex'] = {
+            -- Path to global bibliographies (placed outside of the project)
+            global_files = {
+                os.getenv('HOME')..'/Documents/global_bib.bib',
+            },
+            -- Use context awareness
+            context = true,
+            -- Use non-contextual behavior if no context found
+            -- This setting has no effect if context = false
+            context_fallback = true,
+        },
     }
 })
 
 -- Load other telescope extensions
 -- require('telescope').load_extension('ui-select')
+require('telescope').load_extension('bibtex')

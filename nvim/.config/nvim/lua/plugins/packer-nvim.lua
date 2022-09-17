@@ -52,17 +52,14 @@ return packer.startup(function()
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
     use {
         'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
+        'nvim-telescope/telescope-bibtex.nvim',
         -- requires = {
         --     'nvim-telescope/telescope-ui-select.nvim',
         -- }
     }
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
-    -- use 'folke/todo-comments.nvim'              -- highlight and search TODO tags
-    use {
-        'knmac/todo-comments.nvim',             -- highlight and search TODO tags
-        branch='pr_branch',
-    }
+    use 'folke/todo-comments.nvim'              -- highlight and search TODO tags
     use 'lukas-reineke/indent-blankline.nvim'   -- show indent line
     use 'lewis6991/gitsigns.nvim'               -- git diff sign
     use 'norcalli/nvim-colorizer.lua'           -- colorize color code
