@@ -8,10 +8,11 @@ require('bufferline').setup({
     options = {
         offsets = { {
             filetype = 'NvimTree',
-            text = 'EXPLORER',
+            text = 'File Explorer',
             text_align = 'center',
-            padding = 0,
+            separator = false,
         } },
         separator_style = 'slant',
+        diagnostics = 'nvim_lsp',
     }
 })

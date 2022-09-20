@@ -10,7 +10,7 @@
 | ---------------------------------------- | ---------------------- |
 | Search for help                          | `F1`                   |
 | Show key-bindings                        | `Shift+F1`             |
-| Open to-do list                          | `F2`                   |
+| Open to-do list (project-wise)           | `F2`                   |
 | File explorer                            | `F3`                   |
 | Show tags in the current buffer          | `F4`                   |
 | Generate tags file (requires `ctags`)    | `Shift+F4`             |
@@ -24,7 +24,7 @@
 | Close the current buffer                 | `F8`                   |
 | Close the current tab                    | `Shift+F8`             |
 |                                          |                        |
-| Open diagnostic list                     | `F9`                   |
+| Open diagnostic list (project-wise)      | `F9`                   |
 | Run the `make` command                   | `F10`                  |
 | Run the `make clean` command             | `Shift+F10`            |
 | Toggle zoom the current window (splits)  | `F11`                  |

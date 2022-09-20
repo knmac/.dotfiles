@@ -76,6 +76,7 @@ require('telescope').setup({
             -- Use non-contextual behavior if no context found
             -- This setting has no effect if context = false
             context_fallback = true,
+            citation_format = '{{author}}. {{title}}. {{booktitle}}{{journal}}. {{year}}.',
         },
     }
 })
