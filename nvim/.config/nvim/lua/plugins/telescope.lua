@@ -69,14 +69,14 @@ require('telescope').setup({
         ['bibtex'] = {
             -- Path to global bibliographies (placed outside of the project)
             global_files = {
-                os.getenv('HOME')..'/Documents/global_bib.bib',
+                os.getenv('HOME')..'/Documents/global.bib',
             },
             -- Use context awareness
             context = true,
             -- Use non-contextual behavior if no context found
             -- This setting has no effect if context = false
             context_fallback = true,
-            citation_format = '{{author}}. {{title}}. {{booktitle}}{{journal}}. {{year}}.',
+            citation_format = '{{author}} {{title}}. {{booktitle}}{{journal}}. {{year}}.',
         },
     }
 })
