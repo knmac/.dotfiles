@@ -46,13 +46,13 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-j>'] = cmp.mapping.scroll_docs(4),
+        ['<C-k>']     = cmp.mapping.scroll_docs(-4),
+        ['<C-j>']     = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-c>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
-        ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })
+        ['<C-c>']     = cmp.mapping.abort(),
+        ['<CR>']      = cmp.mapping.confirm({ select = false }),
+        ['<Tab>']     = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+        ['<S-Tab>']   = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })
         -- ['<Tab>'] = next_item,
         -- ['<S-Tab>'] = prev_item,
         -- ['<C-n>'] = next_item,
