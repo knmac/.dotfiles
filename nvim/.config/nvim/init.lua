@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------------
 require('settings')
 require('keymaps')
-require('plugins/packer-nvim')
+require('plugins.packer-nvim')
 
 -- LSP and coding
 require('plugins/nvim-lspconfig')
@@ -16,6 +16,7 @@ require('plugins/comment-nvim')
 require('plugins/onedarkpro-nvim')
 require('plugins/bufferline')
 require('plugins/lualine')
+require('plugins/symbols-outline-nvim')
 
 -- Utilities
 require('plugins/nvim-tree')
@@ -30,4 +31,3 @@ require('plugins/toggleterm-nvim')
 
 -- Extra vimscript-based config
 require('plugins/vim-doge')
-require('plugins/vista-vim')

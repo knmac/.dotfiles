@@ -61,6 +61,7 @@
 | Code action (if supported by the language server)     | `<leader> ca` |
 | Code formatting (if supported by the language server) | `<leader> f`  |
 |                                                       |               |
+| Open diagnostic list (project-wise)                   | `<leader> E`  |
 | Show current line's diagnostic                        | `<leader> e`  |
 | Go to previous diagnostic                             | `[e`          |
 | Go to next diagnostic                                 | `]e`          |

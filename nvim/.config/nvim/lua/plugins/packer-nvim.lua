@@ -46,6 +46,7 @@ return packer.startup(function()
     use 'akinsho/bufferline.nvim'               -- buffer line (top)
     use 'nvim-lualine/lualine.nvim'             -- status line (bottom)
     use 'stevearc/dressing.nvim'                -- UI improvement for vim.ui.select and vim.ui.input
+    use 'simrat39/symbols-outline.nvim'
 
     -- Utilities
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
@@ -72,6 +73,6 @@ return packer.startup(function()
         'kkoomen/vim-doge',                     -- generate docstring
         run=':call doge#install()',
     }
-    use 'liuchengxu/vista.vim'                  -- view and search for LSP symbols
+    -- use 'liuchengxu/vista.vim'                  -- view and search for LSP symbols
     use 'junegunn/vim-easy-align'               -- alignment plugin
 end)
