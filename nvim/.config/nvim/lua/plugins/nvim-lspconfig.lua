@@ -21,11 +21,9 @@ local telescope_ok, telescope = pcall(require, 'telescope.builtin')
 -- Mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<leader>e', function()
-    vim.diagnostic.open_float({ border = 'rounded' })
-end, opts)
-vim.keymap.set('n', '[e', function() vim.diagnostic.goto_prev({ border = 'rounded' }) end, opts)
-vim.keymap.set('n', ']e', function() vim.diagnostic.goto_next({ border = 'rounded' }) end, opts)
+vim.keymap.set('n', '<leader>e', function() vim.diagnostic.open_float({ border = 'rounded' }) end, opts)
+vim.keymap.set('n', '[e', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end, opts)
+vim.keymap.set('n', ']e', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end, opts)
 if telescope_ok then
     vim.keymap.set('n', '<leader>E', telescope.diagnostics, opts)
 else
