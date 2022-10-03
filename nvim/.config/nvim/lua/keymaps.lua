@@ -2,7 +2,7 @@
 -- Keymaps configuration file: keymaps of neovim
 -- and plugins.
 -------------------------------------------------------------------------------
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
 local cmd = vim.cmd
 -- local g = vim.g
@@ -183,8 +183,7 @@ map('n', '<F8>', ':BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
 map('n', '<F20>', ':tabclose<CR>', default_opts)
 
 -- <F9>: Show diagnostics Quickfix
--- See nvim-lsp config
--- map('n', '<F9>', ':Telescope lsp_document_diagnostics<CR>', default_opts)
+map('n', '<F9>', '<cmd>Telescope diagnostics<CR>', default_opts)
 
 -- <F10>: Run make file
 map('n', '<F10>', ':make<CR>', default_opts)

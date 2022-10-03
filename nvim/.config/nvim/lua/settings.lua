@@ -31,6 +31,13 @@ end
 
 
 -------------------------------------------------------------------------------
+-- Deactivate unused providers
+-------------------------------------------------------------------------------
+g.loaded_ruby_provider = 0
+g.loaded_perl_provider = 0
+
+
+-------------------------------------------------------------------------------
 -- General
 -------------------------------------------------------------------------------
 -- g.mapleader = ','                -- change leader to a comma
@@ -49,14 +56,6 @@ cmd [[ set path+=** ]]              -- provide tab-completion for file-related t
 -- Neovim UI
 -------------------------------------------------------------------------------
 opt.termguicolors = true            -- enable 24-bit RGB color in the TUI
--- cmd [[
--- try
---     colorscheme onedark
--- catch /^Vim\%((\a\+)\)\=:E185/
---     colorscheme desert
--- endtry
--- ]]
-
 opt.ls = 2                          -- always show status bar
 opt.number = true                   -- show line number
 opt.relativenumber = true           -- use relative number

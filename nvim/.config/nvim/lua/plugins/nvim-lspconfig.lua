@@ -7,103 +7,105 @@
 -------------------------------------------------------------------------------
 local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua', 'ltex', 'texlab' }
 require('nvim-lsp-installer').setup({
-    ensure_installed = servers,  -- ensure these servers are always installed
+    ensure_installed = servers, -- ensure these servers are always installed
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 })
 
-local lspconfig = require('lspconfig')  -- Must call after lsp installer
+local lspconfig = require('lspconfig') -- Must call after lsp installer
 
 -------------------------------------------------------------------------------
 -- Set up LSP servers
 -------------------------------------------------------------------------------
+local telescope_ok, telescope = pcall(require, 'telescope.builtin')
+
+-- Mappings
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<leader>e', function()
+    vim.diagnostic.open_float({ border = 'rounded' })
+end, opts)
+vim.keymap.set('n', '[e', function() vim.diagnostic.goto_prev({ border = 'rounded' }) end, opts)
+vim.keymap.set('n', ']e', function() vim.diagnostic.goto_next({ border = 'rounded' }) end, opts)
+if telescope_ok then
+    vim.keymap.set('n', '<leader>E', telescope.diagnostics, opts)
+else
+    vim.keymap.set('n', '<leader>E', function() vim.diagnostic.setloclist() end, opts)
+end
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
     -- Enable completion triggered by <c-x><c-o>
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings
-    local opts = { noremap=true, silent=true }
-
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    if vim.fn.exists(':Telescope') then
-        buf_set_keymap('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
-        buf_set_keymap('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', opts)
-        buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
-        buf_set_keymap('n', 'gt', '<cmd>Telescope lsp_type_definitions<CR>', opts)
-
-        buf_set_keymap('n', '<F9>', '<cmd>Telescope diagnostics<CR>', opts)
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    if telescope_ok then
+        vim.keymap.set('n', 'gd', telescope.lsp_definitions, bufopts)
+        vim.keymap.set('n', 'gi', telescope.lsp_implementations, bufopts)
+        vim.keymap.set('n', 'gr', telescope.lsp_references, bufopts)
+        vim.keymap.set('n', 'gt', telescope.lsp_type_definitions, bufopts)
     else
-        buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-        buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-        buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-        buf_set_keymap('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-
-        buf_set_keymap('n', '<F9>', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+        vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
     end
 
-    buf_set_keymap('n', 'gD',    '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'K',     '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 
-    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    buf_set_keymap('n', '<leader>f',  '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    buf_set_keymap('n', '<leader>e',  '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
-    buf_set_keymap('n', '[e',         '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" }})<CR>', opts)
-    buf_set_keymap('n', ']e',         '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" }})<CR>', opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, bufopts)
 
-    buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+    vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+    vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+    vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufopts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
--- local builtin_lsp_servers = { 'pyright', 'bashls', 'clangd', 'ltex' }
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        on_attach = on_attach,
-        flags = {
-            debounce_text_changes = 150,
-        }
-    }
-end
-
--------------------------------------------------------------------------------
--- Server-specific configs
--------------------------------------------------------------------------------
--- sumneko_lua
-lspconfig.sumneko_lua.setup{
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim', 'use' }  -- global variables to ignore diagnostic
-            }
-        }
-    }
+local lsp_flags = {
+    -- This is the default in Nvim 0.7+
+    debounce_text_changes = 150,
 }
 
--- ltex
-local path = vim.fn.stdpath('data')..'/spelling/en-US.txt'
+-- Server-specific configs
+local path = vim.fn.stdpath('data') .. '/spelling/en-US.txt'
 local words = {}
 if io.open(path, 'r') ~= nil then
     for word in io.open(path, 'r'):lines() do
         table.insert(words, word)
     end
 end
-lspconfig.ltex.setup{
-    settings = {
+local server_cfgs = {
+    sumneko_lua = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim', 'use', }
+            }
+        },
+    },
+    ltex = {
         ltex = {
             dictionary = {
                 ['en-US'] = words,
             }
-        }
-    }
+        },
+    },
 }
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
+        on_attach = on_attach,
+        flags = lsp_flags,
+        settings = server_cfgs[lsp],
+    }
+end
+
 
 -------------------------------------------------------------------------------
 -- Setup UI for LSP
@@ -111,77 +113,29 @@ lspconfig.ltex.setup{
 -- Popped up window borders
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover, {
-        border = 'rounded',
-    }
+    border = 'rounded',
+}
 )
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
     vim.lsp.handlers.signature_help, {
-        border = 'rounded',
-        close_events = {'CursorMoved', 'BufHidden', 'InsertCharPre'},
-    }
+    border = 'rounded',
+    close_events = { 'CursorMoved', 'BufHidden', 'InsertCharPre' },
+}
 )
 
 -- Diagnostic signs
-vim.fn.sign_define('DiagnosticSignError', {text=' ', texthl='DiagnosticSignError'})
-vim.fn.sign_define('DiagnosticSignWarn',  {text=' ', texthl='DiagnosticSignWarn'})
-vim.fn.sign_define('DiagnosticSignInfo',  {text=' ', texthl='DiagnosticSignInfo'})
-vim.fn.sign_define('DiagnosticSignHint',  {text=' ', texthl='DiagnosticSignHint'})
+vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
+vim.fn.sign_define('DiagnosticSignHint', { text = ' ', texthl = 'DiagnosticSignHint' })
 
 -- Config diagnostics
 vim.diagnostic.config({
-  virtual_text = {
-    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
-    -- prefix = '■', -- Could be '●', '▎', 'x'
-  },
-  float = {
-    source = 'always',  -- Or 'if_many'  -> show source of diagnostics
-  },
+    virtual_text = {
+        source = 'always', -- Or 'if_many'  -> show source of diagnostics
+        -- prefix = '■', -- Could be '●', '▎', 'x'
+    },
+    float = {
+        source = 'always', -- Or 'if_many'  -> show source of diagnostics
+    },
 })
-
--------------------------------------------------------------------------------
--- Old config for lsp install
--- local builtin_lsp_servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua' }
--- -- Server-specific configs
--- local lsp_setup_opts = {}
--- lsp_setup_opts['sumneko_lua'] = {
---     settings = {
---         Lua = {
---             diagnostics = {
---                 globals = { 'vim', 'use' }  -- global variables to ignore diagnostic
---             }
---         }
---     }
--- }
-
--- -- Attach LSP server
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(
---     vim.lsp.protocol.make_client_capabilities()
--- )
-
--- lsp_installer.on_server_ready(function(server)
---     local opts = {
---         on_attach = on_attach,
-
---         -- Suggested configuration by nvim-cmp
---         capabilities = capabilities,
---     }
-
---     -- Customize the options passed to the server
---     opts = vim.tbl_extend('error', opts, lsp_setup_opts[server.name] or {})
-
---     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
---     server:setup(opts)
---     vim.cmd [[ do User LspAttachBuffers ]]
--- end)
-
--- -- Automatically install if a required LSP server is missing.
--- for _, lsp_name in ipairs(builtin_lsp_servers) do
---     local ok, lsp = require('nvim-lsp-installer.servers').get_server(lsp_name)
---     ---@diagnostic disable-next-line: undefined-field
---     if ok and not lsp:is_installed() then
---         vim.defer_fn(function()
---             -- lsp:install()   -- headless
---             lsp_installer.install(lsp_name)   -- with UI (so that users can be notified)
---         end, 0)
---     end
--- end
