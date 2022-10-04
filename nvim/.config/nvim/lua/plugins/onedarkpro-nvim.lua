@@ -2,7 +2,8 @@
 -- OneDarkPro colorscheme
 -- olimorris/onedarkpro.nvim
 -------------------------------------------------------------------------------
-local onedarkpro = require('onedarkpro')
+local ok, onedarkpro = pcall(require, 'onedarkpro')
+if not ok then return end
 
 onedarkpro.setup({
     -- Override default colors. Can specify colors for 'onelight' or 'onedark' themes

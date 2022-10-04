@@ -2,7 +2,9 @@
 -- Start page greeter
 -- goolord/alpha-nvim
 -------------------------------------------------------------------------------
-local alpha = require('alpha')
+local ok, alpha = pcall(require, 'alpha')
+if not ok then return end
+
 local dashboard = require('alpha.themes.dashboard')
 
 -- Create Dictionary file if necessary

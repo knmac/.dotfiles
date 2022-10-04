@@ -2,8 +2,11 @@
 -- File explorer
 -- kyazdani42/nvim-tree.lua
 -------------------------------------------------------------------------------
+local ok, nvim_tree = pcall(require, 'nvim-tree')
+if not ok then return end
+
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-require('nvim-tree').setup({
+nvim_tree.setup({
     auto_reload_on_write = true,
     create_in_closed_folder = false,
     disable_netrw = false,

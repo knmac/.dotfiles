@@ -2,7 +2,10 @@
 -- Toggle terminal
 -- akinsho/toggleterm.nvim
 -------------------------------------------------------------------------------
-require('toggleterm').setup({
+local ok, toggleterm = pcall(require, 'toggleterm')
+if not ok then return end
+
+toggleterm.setup({
     -- size can be a number or function which is passed the current terminal
     -- size = 20 | function(term)
     size = function(term)

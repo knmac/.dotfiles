@@ -2,7 +2,10 @@
 -- Highlight and search TODO tags
 -- folke/todo-comments.nvim
 -------------------------------------------------------------------------------
-require('todo-comments').setup({
+local ok, todo = pcall(require, 'todo-comments')
+if not ok then return end
+
+todo.setup({
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below

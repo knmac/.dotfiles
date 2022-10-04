@@ -6,7 +6,9 @@
 -- https://github.com/neovim/nvim-lspconfig/wiki/Snippets
 -- https://raw.githubusercontent.com/L3MON4D3/LuaSnip/master/Examples/snippets.lua
 -------------------------------------------------------------------------------
-local cmp = require('cmp')
+local ok, cmp = pcall(require, 'cmp')
+if not ok then return end
+
 -- local luasnip = require('luasnip')
 
 -- -- Navigate to the next item in the list

@@ -6,12 +6,16 @@
 -- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
 -------------------------------------------------------------------------------
 local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua', 'ltex', 'texlab' }
-require('nvim-lsp-installer').setup({
+
+local installer_ok, installer = pcall(require, 'nvim-lsp-installer')
+if not installer_ok then return end
+installer.setup({
     ensure_installed = servers, -- ensure these servers are always installed
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 })
 
-local lspconfig = require('lspconfig') -- Must call after lsp installer
+local lspconfig_ok, lspconfig = pcall(require, 'lspconfig') -- Must call after lsp installer
+if not lspconfig_ok then return end
 
 -------------------------------------------------------------------------------
 -- Set up LSP servers

@@ -2,9 +2,11 @@
 -- Bufferline on the top
 -- akinsho/bufferline.nvim
 -------------------------------------------------------------------------------
--- vim.opt.termguicolors = true
+local ok, bufferline = pcall(require, 'bufferline')
+if not ok then return end
 
-require('bufferline').setup({
+-- vim.opt.termguicolors = true
+bufferline.setup({
     options = {
         offsets = { {
             filetype = 'NvimTree',

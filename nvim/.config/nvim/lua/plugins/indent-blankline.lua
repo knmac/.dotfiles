@@ -2,7 +2,10 @@
 -- Show indent lines
 -- lukas-reineke/indent-blankline.nvim
 -------------------------------------------------------------------------------
-require('indent_blankline').setup({
+local ok, indent = pcall(require, 'indent_blankline')
+if not ok then return end
+
+indent.setup({
     --char = '|',
     buftype_exclude = {'terminal'},
     filetype_exclude = {'help', 'startify', 'make', 'NvimTree', 'dashboard',
