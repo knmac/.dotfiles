@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------------
 require('settings')
 require('keymaps')
-require('plugins.packer-nvim')
+require('plugins/packer-nvim')
 
 -- LSP and coding
 require('plugins/nvim-lspconfig')

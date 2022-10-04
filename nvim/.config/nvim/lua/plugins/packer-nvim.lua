@@ -2,12 +2,30 @@
 -- Plugin manager
 -- wbthomason/packer.nvim
 -------------------------------------------------------------------------------
-local cmd = vim.cmd
-cmd [[packadd packer.nvim]]
-local packer = require('packer')
+-- local packer = require('packer')
+-- vim.cmd [[ packadd packer.nvim ]]
 
+-- ============================================================================
+-- Auto install packer
+-- ============================================================================
+local packer_url = 'https://github.com/wbthomason/packer.nvim'
+local install_pth = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local first_run = false
+
+if vim.fn.empty(vim.fn.glob(install_pth)) > 0 then
+    print('Installing package manager "packer"...')
+    vim.fn.system({'git', 'clone', '--depth', '1', packer_url, install_pth})
+    print('Done')
+
+    vim.cmd('packadd packer.nvim')
+    first_run = true
+end
+
+-- ============================================================================
 -- Add packages
-return packer.startup(function()
+-- ============================================================================
+local packer = require('packer')
+packer.startup(function(use)
     use 'wbthomason/packer.nvim'                -- packer can manage itself
     use 'nvim-lua/plenary.nvim'                 -- ultilities used by many other plugins
 
@@ -30,13 +48,10 @@ return packer.startup(function()
             'hrsh7th/cmp-nvim-lsp-signature-help',  -- source for displaying function signatures with the current parameter emphasized
             'hrsh7th/cmp-calc',                     -- source for math calculation
             'onsails/lspkind-nvim',                 -- pictogram for LSP
-            -- 'L3MON4D3/LuaSnip',                     -- snippets plugin
-            -- 'saadparwaiz1/cmp_luasnip',             -- snippets source for nvim-cmp
             'hrsh7th/cmp-vsnip',                    -- snippets plugin
             'hrsh7th/vim-vsnip',                    -- snippets source for nvim-cmp
          },
     }
-    -- use 'ray-x/lsp_signature.nvim'              -- show code signature in completion
     use 'numToStr/Comment.nvim'                 -- code commenter
 
     -- Functional user interface
@@ -52,10 +67,7 @@ return packer.startup(function()
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
     use {
         'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
-        'nvim-telescope/telescope-bibtex.nvim',
-        -- requires = {
-        --     'nvim-telescope/telescope-ui-select.nvim',
-        -- }
+        'nvim-telescope/telescope-bibtex.nvim', -- fuzzy finder for bibtex entries
     }
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
@@ -68,11 +80,24 @@ return packer.startup(function()
     use 'Shatur/neovim-session-manager'         -- session manager
     use 'akinsho/toggleterm.nvim'               -- toggle terminal
 
-    -- Extra nvim plugins
+    -- Non-lua nvim plugins
     use {
         'kkoomen/vim-doge',                     -- generate docstring
         run=':call doge#install()',
     }
     -- use 'liuchengxu/vista.vim'                  -- view and search for LSP symbols
     use 'junegunn/vim-easy-align'               -- alignment plugin
+
+    if first_run then
+        packer.sync()
+    end
 end)
+
+-- Show comments if the packer is installed for the first time
+if first_run then
+    print('==============================================')
+    print('Plugins are being installed.')
+    print('Wait until Packer completes then restart nvim.')
+    print('==============================================')
+    return
+end

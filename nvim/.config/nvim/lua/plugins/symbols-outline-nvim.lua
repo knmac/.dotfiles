@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
--- Porject outline
+-- Show project outline
 -- simrat39/symbols-outline.nvim
 -------------------------------------------------------------------------------
 local ok, symbols_outline = pcall(require, 'symbols-outline')

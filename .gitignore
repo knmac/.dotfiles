@@ -1,2 +1,4 @@
+vis/.config/vis/vis.log
+
 nvim/.config/nvim/.netrwhist
-./vis/.config/vis/vis.log
+nvim/.config/nvim/plugin/packer_compiled.lua
