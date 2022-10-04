@@ -6,11 +6,13 @@
 -- Neovim API aliases
 -------------------------------------------------------------------------------
 -- local map = vim.api.nvim_set_keymap  -- set global keymap
-local cmd = vim.cmd                 -- execute Vim commands
+-- local cmd = vim.cmd                 -- execute Vim commands
 -- local exec = vim.api.nvim_exec      -- execute Vimscript
 -- local fn = vim.fn                   -- call Vim functions
 local g = vim.g                     -- global variables
 local opt = vim.opt                 -- global/buffer/windows-scoped options
+
+local user_group = vim.api.nvim_create_augroup('user_group', { clear = false })
 
 
 -------------------------------------------------------------------------------
@@ -49,7 +51,7 @@ opt.wildmenu = true                 -- enhance mode of command-line completion
 opt.wildmode = 'longest:full,full'  -- completion mode config
 opt.backspace = 'indent,eol,start'  -- resolve the problem that backspace not working
 
-cmd [[ set path+=** ]]              -- provide tab-completion for file-related tasks
+vim.cmd [[ set path+=** ]]              -- provide tab-completion for file-related tasks
 
 
 -------------------------------------------------------------------------------
@@ -83,16 +85,20 @@ opt.foldnestmax = 10                -- 10 nested fold max
 opt.foldmethod = 'indent'           -- set folding method by looking at indent
 
 -- Only show cursorline in active windows
-cmd [[
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-]]
+vim.api.nvim_create_autocmd('WinEnter', {
+    group = user_group,
+    callback = function() vim.opt_local.cursorline = true end,
+})
+vim.api.nvim_create_autocmd('WinLeave', {
+    group = user_group,
+    callback = function() vim.opt_local.cursorline = false end,
+})
 
 
 -------------------------------------------------------------------------------
 -- Highlight
 -------------------------------------------------------------------------------
--- cmd [[
+-- vim.cmd [[
 -- highlight CursorLine cterm=bold   gui=bold
 -- highlight Comment    cterm=italic gui=italic
 -- highlight String     cterm=italic gui=italic
@@ -128,13 +134,27 @@ opt.smarttab = true                 -- affects how <Tab> are interpreted based o
 opt.autoindent = true               -- copy the indent from the prev line to a new line
 
 -- Make sure colons do not mess up the indent in Python
-cmd [[
+vim.cmd [[
 autocmd FileType python setlocal indentkeys-=<:>
 autocmd FileType python setlocal indentkeys-=:
 ]]
 
 -- Use tab instead of space for make files
-cmd [[ autocmd FileType make setlocal noexpandtab ]]
+vim.api.nvim_create_autocmd('FileType', {
+    desc = 'Use tab instead of space for make files',
+    pattern = { 'make' },
+    group = user_group,
+    callback = function() vim.opt_local.expandtab = false end,
+})
 
 -- 2 spaces for these file types
-cmd [[ autocmd FileType xml,html,c,cpp,h,hpp setlocal tabstop=2 softtabstop=2 shiftwidth=2 ]]
+vim.api.nvim_create_autocmd('FileType', {
+    desc = '2 spaces for these files types',
+    pattern = { 'xml', 'html', 'c', 'cpp', 'h', 'hpp' },
+    group = user_group,
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+        vim.opt_local.shiftwidth = 2
+    end,
+})

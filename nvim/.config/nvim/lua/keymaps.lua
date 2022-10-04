@@ -4,7 +4,6 @@
 -------------------------------------------------------------------------------
 local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
-local cmd = vim.cmd
 -- local g = vim.g
 
 
@@ -54,17 +53,20 @@ map('t', '<A-k>', [[<C-\><C-n><C-w>k]], default_opts)
 map('t', '<A-l>', [[<C-\><C-n><C-w>l]], default_opts)
 
 -- Shortcut for Python breakpoint (ipdb)
--- cmd [[
--- autocmd FileType python nnoremap <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
--- autocmd FileType python nnoremap <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
--- ]]
-cmd [[
-autocmd FileType python nnoremap <silent> <leader>b obreakpoint()<esc>
-autocmd FileType python nnoremap <silent> <leader>B Obreakpoint()<esc>
-]]
+local user_cmds_group = vim.api.nvim_create_augroup('user_cmds', { clear = false })
+
+vim.api.nvim_create_autocmd('FileType', {
+    desc = 'Insert breakpoints for python files',
+    pattern = { 'python' },
+    group = user_cmds_group,
+    callback = function()
+        map('n', '<leader>b', 'obreakpoint()<esc>', default_opts)
+        map('n', '<leader>B', 'Obreakpoint()<esc>', default_opts)
+    end,
+})
 
 -- Clear registered macros
-cmd [[
+vim.cmd [[
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
     let i=0
@@ -78,7 +80,7 @@ command! ClearRegisters call ClearRegisters()
 ]]
 
 -- Toogle zoom the current window
-cmd [[
+vim.cmd [[
 function! ToggleZoom(zoom)
     if exists("t:restore_zoom") && (a:zoom == v:true || t:restore_zoom.win != winnr())
         exec t:restore_zoom.cmd
@@ -95,7 +97,7 @@ augroup END
 ]]
 
 -- Fill the rest of line with characters
-cmd [[
+vim.cmd [[
 function! FillLine( str )
     " set tw to the desired total length
     let tw = &textwidth
