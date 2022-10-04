@@ -102,13 +102,13 @@ rm -rf cppcheck
 # -----------------------------------------------------------------------------
 # Install package manager
 # -----------------------------------------------------------------------------
-git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 
 
 # -----------------------------------------------------------------------------
 # Download nvim
 # -----------------------------------------------------------------------------
-nvim_version="v0.7.0"
+nvim_version="v0.8.0"
 echo "Installing nvim..."
 wget "https://github.com/neovim/neovim/releases/download/${nvim_version?}/nvim-linux64.tar.gz"
 tar zxvf nvim-linux64.tar.gz
@@ -122,7 +122,7 @@ rm nvim-linux64.tar.gz
 # -----------------------------------------------------------------------------
 if [[ -f "./nvim.tar.gz" ]]; then
     tar zxvf ./nvim.tar.gz --directory="$HOME/.config"
-    nvim -c PackerSync
+    nvim
 else
     echo "Set up your own vim config"
 fi

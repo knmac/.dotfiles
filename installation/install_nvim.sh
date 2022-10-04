@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ -z "$1" ]; then
-    NVIM_VERSION="v0.7.0"
+    NVIM_VERSION="v0.8.0"
 else
     NVIM_VERSION=$1
 fi
@@ -43,7 +43,7 @@ rm nvim-linux64.tar.gz
 # -----------------------------------------------------------------------------
 # Install package manager
 # -----------------------------------------------------------------------------
-git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 
 
 # -----------------------------------------------------------------------------
