@@ -17,6 +17,8 @@ installer.setup({
 local lspconfig_ok, lspconfig = pcall(require, 'lspconfig') -- Must call after lsp installer
 if not lspconfig_ok then return end
 
+local navic_ok, navic = pcall(require, 'nvim-navic')
+
 -------------------------------------------------------------------------------
 -- Set up LSP servers
 -------------------------------------------------------------------------------
@@ -66,6 +68,11 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufopts)
+
+    -- Enable vim-navic
+    if navic_ok and client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
 end
 
 local lsp_flags = {

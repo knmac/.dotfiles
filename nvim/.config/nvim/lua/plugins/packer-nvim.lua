@@ -36,6 +36,7 @@ packer.startup(function(use)
             'williamboman/nvim-lsp-installer',  -- lsp installer helper
         },
     }
+    use 'SmiteshP/nvim-navic'                   -- statusline/winbar component using lsp
     use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
     use 'jose-elias-alvarez/null-ls.nvim'       -- code linter and formatter
     use {
