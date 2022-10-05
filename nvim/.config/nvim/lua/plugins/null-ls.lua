@@ -24,7 +24,7 @@ null_ls.setup({
                 '--ignore', 'E226,E402,W503,W504,W391',
             }
         }),
-        diagnostics.cppcheck,  -- C/C++ linter
+        -- diagnostics.cppcheck,  -- C/C++ linter
         diagnostics.shellcheck,  -- Shell script linter
         -- Completion
         -- completion.spell,  -- Spell suggestion
