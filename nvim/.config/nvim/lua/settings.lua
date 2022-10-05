@@ -12,8 +12,6 @@
 local g = vim.g                     -- global variables
 local opt = vim.opt                 -- global/buffer/windows-scoped options
 
-local user_group = vim.api.nvim_create_augroup('user_group', { clear = false })
-
 
 -------------------------------------------------------------------------------
 -- Setup python path
@@ -51,7 +49,7 @@ opt.wildmenu = true                 -- enhance mode of command-line completion
 opt.wildmode = 'longest:full,full'  -- completion mode config
 opt.backspace = 'indent,eol,start'  -- resolve the problem that backspace not working
 
-vim.cmd [[ set path+=** ]]              -- provide tab-completion for file-related tasks
+vim.cmd [[ set path+=** ]]          -- provide tab-completion for file-related tasks, e.g., gf
 
 
 -------------------------------------------------------------------------------
@@ -84,26 +82,6 @@ opt.foldlevelstart = 10             -- open most folds by default
 opt.foldnestmax = 10                -- 10 nested fold max
 opt.foldmethod = 'indent'           -- set folding method by looking at indent
 
--- Only show cursorline in active windows
-vim.api.nvim_create_autocmd('WinEnter', {
-    group = user_group,
-    callback = function() vim.opt_local.cursorline = true end,
-})
-vim.api.nvim_create_autocmd('WinLeave', {
-    group = user_group,
-    callback = function() vim.opt_local.cursorline = false end,
-})
-
-
--------------------------------------------------------------------------------
--- Highlight
--------------------------------------------------------------------------------
--- vim.cmd [[
--- highlight CursorLine cterm=bold   gui=bold
--- highlight Comment    cterm=italic gui=italic
--- highlight String     cterm=italic gui=italic
--- ]]
-
 
 -------------------------------------------------------------------------------
 -- Searching and substitution
@@ -132,29 +110,3 @@ opt.softtabstop = 4                 -- affect what happens when press <Tab> or <
 opt.shiftwidth = 4                  -- affect what happens when press >>, <<, or ==
 opt.smarttab = true                 -- affects how <Tab> are interpreted based on cursor location
 opt.autoindent = true               -- copy the indent from the prev line to a new line
-
--- Make sure colons do not mess up the indent in Python
-vim.cmd [[
-autocmd FileType python setlocal indentkeys-=<:>
-autocmd FileType python setlocal indentkeys-=:
-]]
-
--- Use tab instead of space for make files
-vim.api.nvim_create_autocmd('FileType', {
-    desc = 'Use tab instead of space for make files',
-    pattern = { 'make' },
-    group = user_group,
-    callback = function() vim.opt_local.expandtab = false end,
-})
-
--- 2 spaces for these file types
-vim.api.nvim_create_autocmd('FileType', {
-    desc = '2 spaces for these files types',
-    pattern = { 'xml', 'html', 'c', 'cpp', 'h', 'hpp' },
-    group = user_group,
-    callback = function()
-        vim.opt_local.tabstop = 2
-        vim.opt_local.softtabstop = 2
-        vim.opt_local.shiftwidth = 2
-    end,
-})
