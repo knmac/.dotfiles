@@ -30,7 +30,4 @@ null_ls.setup({
         -- Completion
         -- completion.spell,  -- Spell suggestion
     },
-    on_init = function(new_client, _)  -- Resolve multiple offset_encoding in clangd of nvim_lsp
-        new_client.offset_encoding = 'utf-8'
-    end,
 })
