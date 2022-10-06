@@ -80,7 +80,8 @@ pip install --user pycodestyle pylama black
 sudo apt install shellcheck
 
 # C, C++
-sudo apt install cppcheck
+# sudo apt install cppcheck
+pip install --user cpplint
 
 
 # -----------------------------------------------------------------------------

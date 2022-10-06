@@ -87,16 +87,17 @@ cp "shellcheck-${scversion?}/shellcheck" "$HOME/.local/bin/"
 rm -rf "shellcheck-${scversion?}"
 
 # C, C++
-git clone https://github.com/danmar/cppcheck
-pushd cppcheck || exit
-mkdir build
-pushd build || exit
-cmake ..
-cmake --build .
-cp -r bin/* "$HOME/.local/bin"
-popd || exit
-popd || exit
-rm -rf cppcheck
+pip install cpplint
+# git clone https://github.com/danmar/cppcheck
+# pushd cppcheck || exit
+# mkdir build
+# pushd build || exit
+# cmake ..
+# cmake --build .
+# cp -r bin/* "$HOME/.local/bin"
+# popd || exit
+# popd || exit
+# rm -rf cppcheck
 
 
 # -----------------------------------------------------------------------------

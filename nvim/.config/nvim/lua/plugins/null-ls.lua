@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 -- Code linter and formatter
 -- jose-elias-alvarez/null-ls.nvim
+-- builtins: https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 -------------------------------------------------------------------------------
 local ok, null_ls = pcall(require, 'null-ls')
 if not ok then return end
@@ -24,9 +25,12 @@ null_ls.setup({
                 '--ignore', 'E226,E402,W503,W504,W391',
             }
         }),
-        -- diagnostics.cppcheck,  -- C/C++ linter
+        diagnostics.cpplint,  -- C/C++ linter
         diagnostics.shellcheck,  -- Shell script linter
         -- Completion
         -- completion.spell,  -- Spell suggestion
     },
+    on_init = function(new_client, _)  -- Resolve multiple offset_encoding in clangd of nvim_lsp
+        new_client.offset_encoding = 'utf-8'
+    end,
 })
