@@ -57,6 +57,10 @@ packer.startup(function(use)
 
     -- Functional user interface
     use 'olimorris/onedarkpro.nvim'             -- colorscheme
+    use {                                       -- colorscheme
+        'catppuccin/nvim',
+        as = 'catppuccin',
+    }
     use 'ryanoasis/vim-devicons'                -- extra icons without colors
     use 'kyazdani42/nvim-web-devicons'          -- extra icons with colors
     use 'akinsho/bufferline.nvim'               -- buffer line (top)

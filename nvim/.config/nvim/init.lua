@@ -12,9 +12,11 @@ require('plugins/nvim-treesitter')
 require('plugins/null-ls')
 require('plugins/nvim-cmp')
 require('plugins/comment-nvim')
+require('plugins/nvim-navic')
 
 -- User interface
 require('plugins/onedarkpro-nvim')
+
 require('plugins/bufferline')
 require('plugins/lualine')
 require('plugins/symbols-outline-nvim')
