@@ -10,6 +10,7 @@ vim.g.catppuccin_flavour = 'macchiato' -- latte, frappe, macchiato, mocha
 
 catppuccin.setup({
     transparent_background = false,
+    term_colors = true,
     dim_inactive = {
         enabled = false,
         shade = 'dark',
