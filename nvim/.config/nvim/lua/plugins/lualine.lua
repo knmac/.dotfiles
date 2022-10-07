@@ -63,5 +63,5 @@ lualine.setup({
     tabline = {},
     winbar = winbar_cfg,
     inactive_winbar = inactive_winbar_cfg,
-    extensions = { 'nvim-tree', 'quickfix', 'fugitive' }
+    extensions = { 'nvim-tree', 'quickfix', 'fugitive', 'symbols-outline', 'toggleterm' }
 })
