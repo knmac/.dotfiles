@@ -15,8 +15,10 @@ desktop_config() {
 desktop_config border_width         2
 desktop_config window_gap          10
 
-desktop_config focused_border_color \#61afef
-desktop_config active_border_color  \#98c379
+# desktop_config focused_border_color \#61afef
+# desktop_config active_border_color  \#98c379
+desktop_config focused_border_color \#8AADF4
+desktop_config active_border_color  \#A6DA95
 
 desktop_config split_ratio                 0.5
 desktop_config borderless_monocle          true

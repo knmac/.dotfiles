@@ -153,22 +153,43 @@ ignore_dbusclose = false
 # -----------------------------------------------------------------------------
 # Urgency
 # -----------------------------------------------------------------------------
+# [urgency_low]
+# timeout = 4
+# background = "#282c34"
+# foreground = "#abb2bf"
+# frame_color = "#98c379"
+
+# [urgency_normal]
+# timeout = 8
+# background = "#282c34"
+# foreground = "#abb2bf"
+# frame_color = "#61afef"
+
+# [urgency_critical]
+# timeout = 0
+# background = "#282c34"
+# foreground = "#abb2bf"
+# frame_color = "#e06c75"
+
+[global]
+separator_color= frame
+
 [urgency_low]
 timeout = 4
-background = "#282c34"
-foreground = "#abb2bf"
-frame_color = "#98c379"
+background = "#24273A"
+foreground = "#CAD3F5"
+frame_color = "#A6DA95"
 
 [urgency_normal]
 timeout = 8
-background = "#282c34"
-foreground = "#abb2bf"
-frame_color = "#61afef"
+background = "#24273A"
+foreground = "#CAD3F5"
+frame_color = "#8AADF4"
 
 [urgency_critical]
 timeout = 0
-background = "#282c34"
-foreground = "#abb2bf"
-frame_color = "#e06c75"
+background = "#24273A"
+foreground = "#CAD3F5"
+frame_color = "#ED8796"
 
 // vim: ft=config
