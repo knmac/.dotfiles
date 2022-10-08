@@ -17,40 +17,78 @@ map i recolor
 map [fullscreen] i recolor
 
 # Colors
-set default-fg                  "#abb2bf"
-set default-bg                  "#282c34"
-set recolor-lightcolor          "#282c34"
-set recolor-darkcolor           "#abb2bf"
+# set default-fg                  "#abb2bf"
+# set default-bg                  "#282c34"
+# set recolor-lightcolor          "#282c34"
+# set recolor-darkcolor           "#abb2bf"
 
-set highlight-color             "#e5c07b"
-set highlight-active-color      "#e06c79"
+# set highlight-color             "#e5c07b"
+# set highlight-active-color      "#e06c79"
 
-set completion-fg               "#abb2bf"
-set completion-bg               "#282c34"
-set completion-highlight-fg     "#282c34"
-set completion-highlight-bg     "#98c379"
-set completion-group-fg         "#61afef"
-set completion-group-bg         "#282c34"
+# set completion-fg               "#abb2bf"
+# set completion-bg               "#282c34"
+# set completion-highlight-fg     "#282c34"
+# set completion-highlight-bg     "#98c379"
+# set completion-group-fg         "#61afef"
+# set completion-group-bg         "#282c34"
 
-set inputbar-fg                 "#98c379"
-set inputbar-bg                 "#282c34"
+# set inputbar-fg                 "#98c379"
+# set inputbar-bg                 "#282c34"
 
-set statusbar-fg                "#61afef"
-set statusbar-bg                "#282c34"
+# set statusbar-fg                "#61afef"
+# set statusbar-bg                "#282c34"
 
-set notification-bg             "#282c34"
-set notification-fg             "#abb2bf"
-set notification-error-bg       "#282c34"
-set notification-error-fg       "#e06c75"
-set notification-warning-bg     "#282c34"
-set notification-warning-fg     "#e5c07b"
+# set notification-bg             "#282c34"
+# set notification-fg             "#abb2bf"
+# set notification-error-bg       "#282c34"
+# set notification-error-fg       "#e06c75"
+# set notification-warning-bg     "#282c34"
+# set notification-warning-fg     "#e5c07b"
 
-set index-fg                    "#abb2bf"
-set index-bg                    "#282c34"
-set index-active-fg             "#abb2bf"
-set index-active-bg             "#282c34"
+# set index-fg                    "#abb2bf"
+# set index-bg                    "#282c34"
+# set index-active-fg             "#abb2bf"
+# set index-active-bg             "#282c34"
 
-set render-loading-bg           "#282c34"
-set render-loading-fg           "#abb2bf"
+# set render-loading-bg           "#282c34"
+# set render-loading-fg           "#abb2bf"
+
+set default-fg              "#CAD3F5"
+set default-bg              "#24273A"
+
+set completion-bg           "#363A4F"
+set completion-fg           "#CAD3F5"
+set completion-highlight-bg "#575268"
+set completion-highlight-fg "#CAD3F5"
+set completion-group-bg     "#363A4F"
+set completion-group-fg     "#8AADF4"
+
+set statusbar-fg            "#CAD3F5"
+set statusbar-bg            "#363A4F"
+
+set notification-bg         "#363A4F"
+set notification-fg         "#CAD3F5"
+set notification-error-bg   "#363A4F"
+set notification-error-fg   "#ED8796"
+set notification-warning-bg "#363A4F"
+set notification-warning-fg "#FAE3B0"
+
+set inputbar-fg             "#CAD3F5"
+set inputbar-bg             "#363A4F"
+
+set recolor-lightcolor      "#24273A"
+set recolor-darkcolor       "#CAD3F5"
+
+set index-fg                "#CAD3F5"
+set index-bg                "#24273A"
+set index-active-fg         "#CAD3F5"
+set index-active-bg         "#363A4F"
+
+set render-loading-bg       "#24273A"
+set render-loading-fg       "#CAD3F5"
+
+set highlight-color         "#575268"
+set highlight-fg            "#F5BDE6"
+set highlight-active-color  "#F5BDE6"
 
 # vi: ft=config
