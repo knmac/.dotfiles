@@ -25,9 +25,9 @@ super + {_,shift + }{Left,Down,Up,Right}
 
 # Preselect the splitting area for next window on leaf/parent
 super + ctrl + {h,j,k,l}
-	bspc node --presel-dir \~{west,south,north,east}
+    bspc node --presel-dir \~{west,south,north,east}
 super + ctrl + {Left,Down,Up,Right}
-	bspc node --presel-dir \~{west,south,north,east}
+    bspc node --presel-dir \~{west,south,north,east}
 
 # Rotate tree
 # super + {_,shift +} BackSpace
@@ -64,7 +64,7 @@ super + {Prior,Next}
 
 # Expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 # Contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
