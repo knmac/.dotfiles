@@ -454,7 +454,8 @@ source "$ZSH/plugins/fzf/fzf.plugin.zsh"
 
 # Configure lf ----------------------------------------------------------------
 if type lf &> /dev/null; then
-    LF_ICONS=$(sed ~/.config/lf/diricons \
+    # Set up icons
+    LF_ICONS=$(gsed $HOME/.config/lf/icons \
                 -e '/^[ \t]*#/d'         \
                 -e '/^[ \t]*$/d'         \
                 -e 's/[ \t]\+/=/g'       \
@@ -462,8 +463,14 @@ if type lf &> /dev/null; then
     LF_ICONS=${LF_ICONS//$'\n'/:}
     export LF_ICONS
     # alias lf="$HOME/.config/lf/scripts/lf_launcher_ueberzug.sh"
-    source "$HOME/.config/lf/scripts/lfcd.sh"
-    alias lf=lfcd
+
+    # Set up lfcd
+    LFCD="$HOME/.config/lf/scripts/lfcd.sh"
+    if [ -f "$LFCD" ]; then
+        source "$LFCD"
+        bindkey -s "^o" "lfcd\n"  # set up key-binding
+        alias lf=lfcd  # overwrite lf with lfcd
+    fi
 fi
 
 
