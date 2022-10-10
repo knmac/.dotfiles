@@ -28,6 +28,7 @@ map zl :{{ set number!; set relativenumber!; }}
 
 # Bookmarks
 map gD cd ~/Downloads
+map gC cd ~/Documents
 map gP cd ~/Pictures
 map gM cd ~/Music
 
