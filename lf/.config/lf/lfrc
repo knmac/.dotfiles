@@ -7,8 +7,8 @@ set ignorecase true
 set drawbox    true
 set info       size:time
 
-set previewer ~/.config/lf/scripts/previewer_ueberzug
-set cleaner   ~/.config/lf/scripts/cleaner_ueberzug
+set previewer ~/.config/lf/scripts/previewer_kitty
+set cleaner   ~/.config/lf/scripts/cleaner_kitty
 
 
 # =============================================================================
