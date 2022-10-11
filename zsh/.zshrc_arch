@@ -296,13 +296,13 @@ alias ngrub="sudo $EDITOR /etc/default/grub"
 alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
 alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
 alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias narcomirrorlist='sudo nano /etc/pacman.d/arcolinux-mirrorlist'
+alias narcomirrorlist="sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist"
 alias nsddm="sudo $EDITOR /etc/sddm.conf"
 alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias nfstab="sudo $EDITOR /etc/fstab"
 alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
 alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
-alias ngnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
+alias ngnupgconf="sudo $EDITOR /etc/pacman.d/gnupg/gpg.conf"
 alias nb="$EDITOR ~/.bashrc"
 alias nz="$EDITOR ~/.zshrc"
 
@@ -414,7 +414,6 @@ alias personal='cp -Rf /personal/* ~'
 #colorscript random
 
 # =============================================================================
-
 # Configure zsh ---------------------------------------------------------------
 # Turn on edit command line mode (Ctrl-x Ctrl-e)
 autoload -U edit-command-line
@@ -492,6 +491,7 @@ alias notes="git --git-dir=$NOTES_DIR/.git --work-tree=$NOTES_DIR"
 alias notes_acp="notes add . && notes commit -m update && notes push"
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 alias ls="exa --icons --group-directories-first"
+alias via="via --disable-features=VizDisplayCompositor"
 
 # Add tools
 source "$DOTFILES_DIR/tools/add_tools.sh"
