@@ -66,7 +66,7 @@ packer.startup(function(use)
     use 'akinsho/bufferline.nvim'               -- buffer line (top)
     use 'nvim-lualine/lualine.nvim'             -- status line (bottom)
     use 'stevearc/dressing.nvim'                -- UI improvement for vim.ui.select and vim.ui.input
-    use 'simrat39/symbols-outline.nvim'
+    use 'simrat39/symbols-outline.nvim'         -- Show symbols of the current buffer
 
     -- Utilities
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
@@ -75,7 +75,7 @@ packer.startup(function(use)
         'nvim-telescope/telescope-bibtex.nvim', -- fuzzy finder for bibtex entries
     }
     use {
-        'nvim-telescope/telescope-fzf-native.nvim',
+        'nvim-telescope/telescope-fzf-native.nvim',  -- Use fzf sorter for telescope
         run = 'make'
     }
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
