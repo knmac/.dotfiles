@@ -74,6 +74,10 @@ packer.startup(function(use)
         'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
         'nvim-telescope/telescope-bibtex.nvim', -- fuzzy finder for bibtex entries
     }
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
+    }
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
     use 'folke/todo-comments.nvim'              -- highlight and search TODO tags
