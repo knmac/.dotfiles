@@ -36,7 +36,6 @@ packer.startup(function(use)
         'williamboman/mason-lspconfig.nvim',    -- bridges mason.nvim and nvim-lspconfig
         'neovim/nvim-lspconfig',                -- language server protocol, must be placed after mason
     }
-    use 'SmiteshP/nvim-navic'                   -- statusline/winbar component using lsp
     use {
         'jose-elias-alvarez/null-ls.nvim',      -- linter and formatter
         'jayp0521/mason-null-ls.nvim',          -- bridges mason.nvim and null-ls
@@ -55,29 +54,31 @@ packer.startup(function(use)
             'hrsh7th/vim-vsnip',                    -- snippets source for nvim-cmp
          },
     }
+    use 'SmiteshP/nvim-navic'                   -- statusline/winbar component using lsp
     use 'numToStr/Comment.nvim'                 -- code commenter
 
     -- Functional user interface
+    use 'ryanoasis/vim-devicons'                -- extra icons without colors
+    use 'kyazdani42/nvim-web-devicons'          -- extra icons with colors
     use 'olimorris/onedarkpro.nvim'             -- colorscheme
     use {                                       -- colorscheme
         'catppuccin/nvim',
         as = 'catppuccin',
     }
-    use 'ryanoasis/vim-devicons'                -- extra icons without colors
-    use 'kyazdani42/nvim-web-devicons'          -- extra icons with colors
     use 'akinsho/bufferline.nvim'               -- buffer line (top)
     use 'nvim-lualine/lualine.nvim'             -- status line (bottom)
     use 'stevearc/dressing.nvim'                -- UI improvement for vim.ui.select and vim.ui.input
-    use 'simrat39/symbols-outline.nvim'         -- Show symbols of the current buffer
+    use 'p00f/nvim-ts-rainbow'                  -- colorize parentheses
 
     -- Utilities
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
+    use 'simrat39/symbols-outline.nvim'         -- show symbols of the current buffer
     use {
         'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
         'nvim-telescope/telescope-bibtex.nvim', -- fuzzy finder for bibtex entries
     }
     use {
-        'nvim-telescope/telescope-fzf-native.nvim',  -- Use fzf sorter for telescope
+        'nvim-telescope/telescope-fzf-native.nvim',  -- use fzf sorter for telescope
         run = 'make'
     }
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
@@ -85,19 +86,18 @@ packer.startup(function(use)
     use 'folke/todo-comments.nvim'              -- highlight and search TODO tags
     use 'lukas-reineke/indent-blankline.nvim'   -- show indent line
     use 'lewis6991/gitsigns.nvim'               -- git diff sign
-    use 'norcalli/nvim-colorizer.lua'           -- colorize color code
-    use 'p00f/nvim-ts-rainbow'                  -- colorize parentheses
     use 'goolord/alpha-nvim'                    -- start page greeter
     use 'Shatur/neovim-session-manager'         -- session manager
     use 'akinsho/toggleterm.nvim'               -- toggle terminal
+    use 'norcalli/nvim-colorizer.lua'           -- colorize color code
 
     -- Non-lua nvim plugins
     use {
         'kkoomen/vim-doge',                     -- generate docstring
         run=':call doge#install()',
     }
-    -- use 'liuchengxu/vista.vim'                  -- view and search for LSP symbols
     use 'junegunn/vim-easy-align'               -- alignment plugin
+    -- use 'liuchengxu/vista.vim'                  -- view and search for LSP symbols
 
     if first_run then
         packer.sync()

@@ -7,23 +7,23 @@ require('auto_commands')
 require('plugins/packer-nvim')
 
 -- LSP and coding
-require('plugins/mason')
 require('plugins/nvim-treesitter')
+require('plugins/mason')
 require('plugins/nvim-lspconfig')
 require('plugins/null-ls')
 require('plugins/nvim-cmp')
-require('plugins/comment-nvim')
 require('plugins/nvim-navic')
+require('plugins/comment-nvim')
 
--- User interface
+-- Funnctional user interface
 -- require('plugins/onedarkpro-nvim')
 require('plugins/catppuccin')
 require('plugins/bufferline')
 require('plugins/lualine')
-require('plugins/symbols-outline-nvim')
 
 -- Utilities
 require('plugins/nvim-tree')
+require('plugins/symbols-outline-nvim')
 require('plugins/telescope')
 require('plugins/vim-illuminate')
 require('plugins/todo-comments-nvim')
