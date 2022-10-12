@@ -3,6 +3,20 @@
 -- jose-elias-alvarez/null-ls.nvim
 -- builtins: https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 -------------------------------------------------------------------------------
+local servers = { 'pylama', 'black', 'cpplint', 'shellcheck' }
+
+-- Install the linter and formatter servers automatically using mason-null-ls
+local mason_ok, _ = pcall(require, 'mason')
+if not mason_ok then return end
+
+local mason_nullls_ok, mason_nullls = pcall(require, 'mason-null-ls')
+if not mason_nullls_ok then return end
+mason_nullls.setup({
+    ensure_installed = servers,
+    automatic_installation = true,
+})
+
+-- Init for null-ls
 local ok, null_ls = pcall(require, 'null-ls')
 if not ok then return end
 

@@ -30,15 +30,17 @@ packer.startup(function(use)
     use 'nvim-lua/plenary.nvim'                 -- ultilities used by many other plugins
 
     -- LSP and coding
+    use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
     use {
-        'neovim/nvim-lspconfig',                -- language server protocol
-        requires = {
-            'williamboman/nvim-lsp-installer',  -- lsp installer helper
-        },
+        'williamboman/mason.nvim',              -- portable package manager for LSP servers, DAP servers, linters, and formatter
+        'williamboman/mason-lspconfig.nvim',    -- bridges mason.nvim and nvim-lspconfig
+        'neovim/nvim-lspconfig',                -- language server protocol, must be placed after mason
     }
     use 'SmiteshP/nvim-navic'                   -- statusline/winbar component using lsp
-    use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
-    use 'jose-elias-alvarez/null-ls.nvim'       -- code linter and formatter
+    use {
+        'jose-elias-alvarez/null-ls.nvim',      -- linter and formatter
+        'jayp0521/mason-null-ls.nvim',          -- bridges mason.nvim and null-ls
+    }
     use {
         'hrsh7th/nvim-cmp',                     -- code completion
         requires = {

@@ -7,16 +7,18 @@
 -------------------------------------------------------------------------------
 local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua', 'ltex', 'texlab' }
 
-local installer_ok, installer = pcall(require, 'nvim-lsp-installer')
-if not installer_ok then return end
-installer.setup({
-    ensure_installed = servers, -- ensure these servers are always installed
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
-    ui = {
-        border = 'rounded',
-    }
+-- Install the LSP servers automatically using mason-lspconfig
+local mason_ok, _ = pcall(require, 'mason')
+if not mason_ok then return end
+
+local mason_lspconfig_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
+if not mason_lspconfig_ok then return end
+mason_lspconfig.setup({
+    ensure_installed = servers,
+    automatic_installation = true,
 })
 
+-- Init for lspconfig
 local lspconfig_ok, lspconfig = pcall(require, 'lspconfig') -- Must call after lsp installer
 if not lspconfig_ok then return end
 

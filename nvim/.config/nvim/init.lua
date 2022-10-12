@@ -7,8 +7,9 @@ require('auto_commands')
 require('plugins/packer-nvim')
 
 -- LSP and coding
-require('plugins/nvim-lspconfig')
+require('plugins/mason')
 require('plugins/nvim-treesitter')
+require('plugins/nvim-lspconfig')
 require('plugins/null-ls')
 require('plugins/nvim-cmp')
 require('plugins/comment-nvim')

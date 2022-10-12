@@ -9,7 +9,7 @@ indent.setup({
     --char = '|',
     buftype_exclude = {'terminal'},
     filetype_exclude = {'help', 'startify', 'make', 'NvimTree', 'dashboard',
-                        'lsp-installer', 'alpha', 'packer', 'Outline'},
+                        'lsp-installer', 'alpha', 'packer', 'Outline', 'mason'},
     use_treesitter = true,
     show_current_context = true,
     show_current_context_start = false,
