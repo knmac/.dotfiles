@@ -81,7 +81,6 @@ packer.startup(function(use)
         'nvim-telescope/telescope-fzf-native.nvim',  -- use fzf sorter for telescope
         run = 'make'
     }
-    use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
     use 'folke/todo-comments.nvim'              -- highlight and search TODO tags
     use 'lukas-reineke/indent-blankline.nvim'   -- show indent line
@@ -89,6 +88,7 @@ packer.startup(function(use)
     use 'goolord/alpha-nvim'                    -- start page greeter
     use 'Shatur/neovim-session-manager'         -- session manager
     use 'akinsho/toggleterm.nvim'               -- toggle terminal
+    use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'norcalli/nvim-colorizer.lua'           -- colorize color code
 
     -- Non-lua nvim plugins
