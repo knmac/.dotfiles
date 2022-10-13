@@ -33,12 +33,16 @@ packer.startup(function(use)
     use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
     use {
         'williamboman/mason.nvim',              -- portable package manager for LSP servers, DAP servers, linters, and formatter
-        'williamboman/mason-lspconfig.nvim',    -- bridges mason.nvim and nvim-lspconfig
         'neovim/nvim-lspconfig',                -- language server protocol, must be placed after mason
+        'williamboman/mason-lspconfig.nvim',    -- bridges mason.nvim and nvim-lspconfig
     }
     use {
         'jose-elias-alvarez/null-ls.nvim',      -- linter and formatter
         'jayp0521/mason-null-ls.nvim',          -- bridges mason.nvim and null-ls
+    }
+    use {
+        'mfussenegger/nvim-dap',                -- debugger adapter protocol
+        'jayp0521/mason-nvim-dap.nvim',         -- bridges mason.nvim and nvim-dap
     }
     use {
         'hrsh7th/nvim-cmp',                     -- code completion

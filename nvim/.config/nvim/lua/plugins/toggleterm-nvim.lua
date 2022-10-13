@@ -27,7 +27,7 @@ toggleterm.setup({
     -- persist_size = true,
     persist_size = false,
     -- direction = 'vertical' | 'horizontal' | 'tab' | 'float',
-    direction = 'float',
+    direction = 'vertical',
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
     -- This field is only relevant if direction is set to 'float'
