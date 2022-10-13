@@ -41,8 +41,8 @@ packer.startup(function(use)
         'jayp0521/mason-null-ls.nvim',          -- bridges mason.nvim and null-ls
     }
     use {
-        'mfussenegger/nvim-dap',                -- debugger adapter protocol
-        'jayp0521/mason-nvim-dap.nvim',         -- bridges mason.nvim and nvim-dap
+        'mfussenegger/nvim-dap',                -- debug adapter protocol
+        'rcarriga/nvim-dap-ui',                 -- UI for nvim-dap
     }
     use {
         'hrsh7th/nvim-cmp',                     -- code completion
