@@ -81,6 +81,10 @@ map('x', 'ga', '<Plug>(EasyAlign)', {})
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 map('n', 'ga', '<Plug>(EasyAlign)', {})
 
+-- Alternative ways to toggle NvimTree and symbol outline
+map('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', default_opts)
+map('n', '<leader>o', '<cmd>SymbolsOutline<CR>', default_opts)
+
 -- Fn keys
 -- <F1>: Show help
 map('n', '<F1>', ':Telescope help_tags<CR>', default_opts)
@@ -98,7 +102,7 @@ map('n', '<F3>', ':NvimTreeToggle<CR>', default_opts)
 -- map('n', '<F4>', ':Vista!!<CR>', default_opts)
 map('n', '<F4>', '<cmd>SymbolsOutline<CR>', default_opts)
 -- <S-F4>: Generate tags
-map('n', '<F16>', ':!ctags -R --links=no . <CR>', default_opts)
+-- map('n', '<F16>', ':!ctags -R --links=no . <CR>', default_opts)
 
 -- <F5>: Show and switch buffer
 map('n', '<F5>', ':Telescope buffers<CR>', default_opts)
