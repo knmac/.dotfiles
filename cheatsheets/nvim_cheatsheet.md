@@ -6,31 +6,31 @@
 
 ### 1.1. Fn key-bindings
 
-| Functionality                            | Key-binding            |
-| ---------------------------------------- | ---------------------- |
-| Search for help                          | `F1`                   |
-| Show key-bindings                        | `Shift+F1`             |
-| Open to-do list (project-wise)           | `F2`                   |
-| File explorer                            | `F3`                   |
-| Show tags in the current buffer          | `F4`                   |
-| Generate tags file (requires `ctags`)    | `Shift+F4`             |
-|                                          |                        |
-| Show buffer list                         | `F5`                   |
-| Show tab list                            | `Shift+F5`             |
-| Previous buffer                          | `F6` (or `Ctrl+Alt+h`) |
-| Previous tab                             | `Shift+F6`             |
-| Next buffer                              | `F7` (or `Ctrl+Alt+l`) |
-| Next tab                                 | `Shift+F7`             |
-| Close the current buffer                 | `F8`                   |
-| Close the current tab                    | `Shift+F8`             |
-|                                          |                        |
-| Open diagnostic list (project-wise)      | `F9`                   |
-| Run the `make` command                   | `F10`                  |
-| Run the `make clean` command             | `Shift+F10`            |
-| Toggle zoom the current window (splits)  | `F11`                  |
-| Toggle color code colorizing (e.g., CSS) | `Shift+F11`            |
-| Toggle relative number                   | `F12`                  |
-| Toggle welcome screen                    | `Shift+F12`            |
+| Functionality                            | Key-binding                  |
+| ---------------------------------------- | ---------------------------- |
+| Search for help                          | `F1`                         |
+| Show key-bindings                        | `Shift+F1`                   |
+| Open to-do list (project-wise)           | `F2`                         |
+| Toggle NvimTree file explorer            | `F3` (or `<leader> t`)       |
+| Toggle symbol view                       | `F4` (or `<leader> o`)       |
+|                                          |                              |
+| Show buffer list                         | `F5`                         |
+| Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
+| Next buffer                              | `F7` (or `Ctrl+Alt+l`)       |
+| Close the current buffer                 | `F8` (or `Ctrl+Alt+Shift+k`) |
+|                                          |                              |
+| Show tab list                            | `Shift+F5`                   |
+| Previous tab                             | `Shift+F6`                   |
+| Next tab                                 | `Shift+F7`                   |
+| Close the current tab                    | `Shift+F8`                   |
+|                                          |                              |
+| Open diagnostic list (project-wise)      | `F9` (or `<leader> E`)       |
+| Run the `make` command                   | `F10`                        |
+| Run the `make clean` command             | `Shift+F10`                  |
+| Toggle zoom the current window (splits)  | `F11`                        |
+| Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
+| Toggle relative number                   | `F12`                        |
+| Toggle welcome screen                    | `Shift+F12`                  |
 
 
 ### 1.2. Telescope key-bindings
@@ -54,8 +54,8 @@
 | Show implementation                                   | `gi`          |
 | Show reference                                        | `gr`          |
 | Show type definition                                  | `gt`          |
-| Show function documentation (on hover)                | `<Shift+k>`   |
-| Show signature help (while typing function arguments) | `<Ctrl+k>`    |
+| Show function documentation (on hover)                | `K`           |
+| Show signature help (while typing function arguments) | `Ctrl+k`      |
 |                                                       |               |
 | Rename variables                                      | `<leader> rn` |
 | Code action (if supported by the language server)     | `<leader> ca` |
@@ -80,6 +80,8 @@
 | Insert '-' characters                           | `<leader> -`         |
 | Insert '=' characters                           | `<leader> =`         |
 | Generate doc string for function                | `<leader> d`         |
+| Toggle NvimTree file explorer                   | `<leader> t`         |
+| Toggle symbol view                              | `<leader> o`         |
 |                                                 |                      |
 | Switch to the left window                       | `<Alt+h>`            |
 | Switch to the lower window                      | `<Alt+j>`            |
