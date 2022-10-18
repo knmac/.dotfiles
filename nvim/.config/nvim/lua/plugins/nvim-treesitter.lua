@@ -23,7 +23,7 @@ require('nvim-treesitter.configs').setup({
         'bibtex',
         'markdown',
         'markdown_inline',
-        -- 'json',
+        'json',
         'yaml',
         'html',
         'css',

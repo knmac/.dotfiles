@@ -31,12 +31,19 @@ dap.configurations.python = {
 local opts = { noremap = true, silent = true }
 local dap_widgets = require('dap.ui.widgets')
 
-vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = '', linehl = '', numhl = '' })
-vim.fn.sign_define('DapBreakpointCondition', { text = '🟢', texthl = '', linehl = '', numhl = '' })
-vim.fn.sign_define('DapLogPoint', { text = '📜', texthl = '', linehl = '', numhl = '' })
-vim.fn.sign_define('DapStopped', { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
-vim.fn.sign_define('DapBreakpointRejected', { text = '🟠', texthl = '', linehl = '', numhl = '' })
+-- Set up signs and colors
+vim.fn.sign_define('DapBreakpoint',
+    { text = '🔴', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpointCondition',
+    { text = '🟢', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
+vim.fn.sign_define('DapLogPoint',
+    { text = '📜', texthl = 'DapLogPoint', linehl = '', numhl = '' })
+vim.fn.sign_define('DapStopped',
+    { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
+vim.fn.sign_define('DapBreakpointRejected',
+    { text = '🟠', texthl = '', linehl = '', numhl = '' })
 
+-- Set up keymaps
 vim.keymap.set('n', ',d', function() dapui.toggle() end, {})
 vim.keymap.set('n', ',b', function() dap.toggle_breakpoint() end, opts)
 vim.keymap.set('n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, opts)

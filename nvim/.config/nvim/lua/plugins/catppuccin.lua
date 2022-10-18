@@ -21,7 +21,7 @@ catppuccin.setup({
         conditionals = { 'italic' },
         loops = { 'italic' },
         functions = {},
-        keywords = {},
+        keywords = { 'bold' },
         strings = { 'italic' },
         variables = {},
         numbers = {},
@@ -45,6 +45,10 @@ catppuccin.setup({
         navic = {
             enabled = true,
             custom_bg = 'NONE',
+        },
+        dap = {
+            enabled = true,
+            enable_ui = true, -- enable nvim-dap-ui
         },
     }
 })
