@@ -61,6 +61,7 @@ CMakeLists.txt                   
 ~/Videos/                        
 ~/datasets/                      
 ~/workspace/                     
+~/workspaces/                    
 
 # file extensions (vim-devicons)
 *.styl          
