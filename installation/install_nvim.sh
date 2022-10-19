@@ -14,20 +14,20 @@ echo "Install NeoVim..."
 # -----------------------------------------------------------------------------
 bash ./install_nodejs.sh
 sudo apt install python3-dev python3-pip curl fd-find ripgrep
-pip install --user pynvim neovim msgpack
+pip install --user pynvim
 
 
 # -----------------------------------------------------------------------------
 # Install universal ctags (not exuberant-ctags)
 # Ref: https://github.com/universal-ctags/ctags
 # -----------------------------------------------------------------------------
-git clone https://github.com/universal-ctags/ctags.git
-pushd ctags || exit
-./autogen.sh
-./configure --prefix="$HOME/.local"  # defaults to /usr/local
-make
-make install # may require extra privileges depending on where to install
-popd || exit
+# git clone https://github.com/universal-ctags/ctags.git
+# pushd ctags || exit
+# ./autogen.sh
+# ./configure --prefix="$HOME/.local"  # defaults to /usr/local
+# make
+# make install # may require extra privileges depending on where to install
+# popd || exit
 
 
 # -----------------------------------------------------------------------------
@@ -73,15 +73,15 @@ rm nvim-linux64.tar.gz
 # -----------------------------------------------------------------------------
 # Install linters for style check
 # -----------------------------------------------------------------------------
-# Python
-pip install --user pycodestyle pylama black
+# # Python
+# pip install --user pycodestyle pylama black
 
-# Shell
-sudo apt install shellcheck
+# # Shell
+# sudo apt install shellcheck
 
-# C, C++
-# sudo apt install cppcheck
-pip install --user cpplint
+# # C, C++
+# # sudo apt install cppcheck
+# pip install --user cpplint
 
 
 # -----------------------------------------------------------------------------
@@ -90,5 +90,3 @@ pip install --user cpplint
 pushd "$DOTFILES_ROOT" || exit
 stow nvim
 popd || exit
-
-echo "Please open nvim and type the command [:PackerInstall] to install the plugins"
