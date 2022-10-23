@@ -71,7 +71,7 @@ opt.signcolumn = 'yes'              -- always show the sign column to not shift 
 
 -- Marking special characters
 opt.list = true                     -- list mode to mark special characters
-opt.listchars='tab:>-,trail:.'      -- mark <Tab> as >-, trailing <Space> as .
+opt.listchars = 'tab:>-,trail:.'    -- mark <Tab> as >-, trailing <Space> as .
 
 -- Splitting
 opt.splitright = true               -- vertical split to the right

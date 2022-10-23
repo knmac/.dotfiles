@@ -6,7 +6,7 @@ local default_opts = { noremap = true, silent = true }
 -------------------------------------------------------------------------------
 -- Auto change the configs
 -------------------------------------------------------------------------------
-local user_cfgs_group = vim.api.nvim_create_augroup('user_cfgs', { clear = true })
+local user_cfgs_group = vim.api.nvim_create_augroup('user_cfgs', { clear = false })
 
 -- Only show cursorline in active windows
 vim.api.nvim_create_autocmd('WinEnter', {
@@ -19,10 +19,10 @@ vim.api.nvim_create_autocmd('WinLeave', {
 })
 
 -- Make sure colons do not mess up the indent in Python
--- vim.cmd [[
--- autocmd FileType python setlocal indentkeys-=<:>
--- autocmd FileType python setlocal indentkeys-=:
--- ]]
+vim.cmd [[
+autocmd FileType python setlocal indentkeys-=<:>
+autocmd FileType python setlocal indentkeys-=:
+]]
 
 -- Use tab instead of space for make files
 vim.api.nvim_create_autocmd('FileType', {
