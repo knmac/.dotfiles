@@ -81,7 +81,7 @@ opt.splitbelow = true               -- orizontal split to the bottom
 opt.foldenable = true               -- enable folding
 opt.foldlevelstart = 10             -- open most folds by default
 opt.foldnestmax = 10                -- 10 nested fold max
-opt.foldmethod = 'indent'           -- set folding method by looking at indent
+-- opt.foldmethod = 'indent'           -- set folding method by looking at indent
 
 
 -------------------------------------------------------------------------------

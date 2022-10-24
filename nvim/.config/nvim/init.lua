@@ -1,9 +1,11 @@
 ------------------------------------------------------------------------------
 -- Import Lua modules
 -------------------------------------------------------------------------------
-require('settings')
-require('keymaps')
-require('auto_commands')
+require('core/settings')
+require('core/keymaps')
+require('core/auto_commands')
+
+-- Package manager
 require('plugins/packer-nvim')
 
 -- LSP and coding
