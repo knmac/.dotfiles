@@ -7,9 +7,9 @@ if not ok then return end
 
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 nvim_tree.setup({
-    respect_buf_cwd = true,
+    respect_buf_cwd = true, -- Change cwd of nvim-tree to that of new buffer's when opening nvim-tree
     view = {
-        width = 40,
+        width = 40, -- Width of the window
     },
     renderer = {
         add_trailing = true, -- Append a trailing slash to folder names
