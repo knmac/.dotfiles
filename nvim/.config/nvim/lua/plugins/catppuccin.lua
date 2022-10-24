@@ -22,7 +22,7 @@ catppuccin.setup({
         loops = { 'italic' },
         functions = {},
         keywords = { 'bold' },
-        strings = { 'italic' },
+        strings = {},
         variables = {},
         numbers = {},
         booleans = {},
