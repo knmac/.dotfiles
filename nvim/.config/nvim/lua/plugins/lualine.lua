@@ -13,7 +13,7 @@ if navic_ok then
         lualine_a = {},
         lualine_b = {},
         lualine_c = {
-            { 'filename', path = 1, color = { bg = 'NONE' }, cond = navic.is_available },
+            { 'filename', path = 1, color = { bg = 'NONE' } },
             { navic.get_location, cond = navic.is_available },
         },
         lualine_x = {},
@@ -24,7 +24,7 @@ if navic_ok then
         lualine_a = {},
         lualine_b = {},
         lualine_c = {
-            { 'filename', path = 1, color = { bg = 'NONE' }, cond = navic.is_available },
+            { 'filename', path = 1, color = { bg = 'NONE' } },
         },
         lualine_x = {},
         lualine_y = {},
@@ -40,7 +40,10 @@ lualine.setup({
         --section_separators = {left='', right=''},
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {},
+        disabled_filetypes = {
+            statusline = {},
+            winbar = { 'NvimTree', 'Outline', 'toggleterm', 'alpha', 'dap-repl' },
+        },
         always_divide_middle = true,
         globalstatus = true,
     },
