@@ -23,7 +23,7 @@ dap.configurations.python = {
     {
         type = 'python',
         request = 'launch',
-        name = 'Launch file',
+        name = 'Default python launcher',
         program = '${file}', -- This configuration will launch the current file if used.
     },
 }
@@ -44,14 +44,36 @@ vim.fn.sign_define('DapBreakpointRejected',
     { text = '🟠', texthl = '', linehl = '', numhl = '' })
 
 -- Set up keymaps
-vim.keymap.set('n', ',d', function() dapui.toggle() end, {})
-vim.keymap.set('n', ',b', function() dap.toggle_breakpoint() end, opts)
-vim.keymap.set('n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, opts)
-vim.keymap.set('n', ',c', function() dap.continue() end, opts)
-vim.keymap.set('n', ',r', function() dap.run() end, opts)
-vim.keymap.set('n', ',l', function() dap.run_last() end, opts)
-vim.keymap.set('n', ',n', function() dap.step_over() end, opts)
-vim.keymap.set('n', ',i', function() dap.step_into() end, opts)
-vim.keymap.set('n', ',o', function() dap.step_out() end, opts)
-vim.keymap.set('n', ',t', function() dap.terminate() end, opts)
-vim.keymap.set('n', ',h', function() dap_widgets.hover() end, opts)
+vim.keymap.set(
+    'n', ',d', function() dapui.toggle() end,
+    { desc = 'Toggle DAP UI' }, opts)
+vim.keymap.set(
+    'n', ',b', function() dap.toggle_breakpoint() end,
+    { desc = 'Toggle DAP breakpoint' }, opts)
+vim.keymap.set(
+    'n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
+    { desc = 'Toggle DAP breakpoint with condition' }, opts)
+vim.keymap.set(
+    'n', ',c', function() dap.continue() end,
+    { desc = 'Continue debugging' }, opts)
+vim.keymap.set(
+    'n', ',r', function() dap.run() end,
+    { desc = 'Run debugging' }, opts)
+vim.keymap.set(
+    'n', ',l', function() dap.run_last() end,
+    { desc = 'Run the last debug adapter entry' }, opts)
+vim.keymap.set(
+    'n', ',n', function() dap.step_over() end,
+    { desc = 'Step over' }, opts)
+vim.keymap.set(
+    'n', ',i', function() dap.step_into() end,
+    { desc = 'Step into' }, opts)
+vim.keymap.set(
+    'n', ',o', function() dap.step_out() end,
+    { desc = 'Step out' }, opts)
+vim.keymap.set(
+    'n', ',t', function() dap.terminate() end,
+    { desc = 'Terminate debugging' }, opts)
+vim.keymap.set(
+    'n', ',h', function() dap_widgets.hover() end,
+    { desc = 'Hover' }, opts)
