@@ -9,13 +9,13 @@ local dashboard = require('alpha.themes.dashboard')
 
 -- Create Dictionary file if necessary
 local Path = require('plenary.path')
-Path:new(vim.fn.stdpath('data')..'/spelling'):mkdir()
-Path:new(vim.fn.stdpath('data')..'/spelling/en-US.txt'):touch()
+Path:new(vim.fn.stdpath('data') .. '/spelling'):mkdir()
+Path:new(vim.fn.stdpath('data') .. '/spelling/en-US.txt'):touch()
 
 -- Get version
 local function get_version()
     local version = vim.version()
-    local nvim_version_info = 'NVIM v'..version.major..'.'..version.minor..'.'..version.patch
+    local nvim_version_info = 'NVIM v' .. version.major .. '.' .. version.minor .. '.' .. version.patch
     return nvim_version_info
 end
 

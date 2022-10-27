@@ -24,7 +24,7 @@ onedarkpro.setup({
     },
     -- Override default styles
     styles = {
-        strings = 'italic', -- Style that is applied to strings
+        strings = 'NONE', -- Style that is applied to strings
         comments = 'italic', -- Style that is applied to comments
         keywords = 'bold', -- Style that is applied to keywords
         functions = 'bold', -- Style that is applied to functions
