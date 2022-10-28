@@ -35,6 +35,4 @@ require('plugins/gitsigns')
 require('plugins/alpha-nvim')
 require('plugins/neovim-session-manager')
 require('plugins/toggleterm-nvim')
-
--- Extra vimscript-based config
-require('plugins/vim-doge')
+require('plugins/neogen')
