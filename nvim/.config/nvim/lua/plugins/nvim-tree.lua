@@ -21,8 +21,19 @@ nvim_tree.setup({
         },
         icons = {
             webdev_colors = true, -- Use the webdev icon colors, otherwise NvimTreeFileIcon
-            git_placement = 'after', -- Place where the git icons will be rendered
+            git_placement = 'before', -- Place where the git icons will be rendered
             symlink_arrow = ' -> ', -- Used as a separator between symlinks' source and target
+            glyphs = {
+                git = {
+                    unstaged  = "",
+                    staged    = "",
+                    unmerged  = "",
+                    renamed   = "",
+                    untracked = "",
+                    deleted   = "✖",
+                    ignored   = "",
+                },
+            },
         },
         special_files = { 'Cargo.toml', 'Makefile', 'README.md', 'readme.md', 'environment.yml' }, -- A list of filenames that gets highlighted with NvimTreeSpecialFile
     },
