@@ -83,6 +83,16 @@
 | Toggle NvimTree file explorer                   | `<leader> t`         |
 | Toggle symbol view                              | `<leader> o`         |
 |                                                 |                      |
+| Toggle DAP UI                                   | `,d`                 |
+| Toggle DAP breakpoint                           | `,b`                 |
+| Toggle DAP breakpoint with condition            | `,B`                 |
+| Continue DAP debugging                          | `,c`                 |
+| Step over                                       | `,n`                 |
+| Step into                                       | `,i`                 |
+| Step out                                        | `,o`                 |
+| Terminate debugging                             | `,t`                 |
+| Hover variable while debugging                  | `,h`                 |
+|                                                 |                      |
 | Switch to the left window                       | `<Alt+h>`            |
 | Switch to the lower window                      | `<Alt+j>`            |
 | Switch to the upper window                      | `<Alt+k>`            |
@@ -151,9 +161,9 @@ Substitution options:
 | Functionality                              | Key-binding |
 |--------------------------------------------|-------------|
 | Replace all                                | `%s`        |
-| replace the current line                   | `s`         |
-| replace from line 5 to line 12             | `5,12s`     |
-| replace from current line to the last line | `,$s`       |
+| Replace the current line                   | `s`         |
+| Replace from line 5 to line 12             | `5,12s`     |
+| Replace from current line to the last line | `,$s`       |
 
 Execution options:
 
