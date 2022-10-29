@@ -4,7 +4,7 @@
 -------------------------------------------------------------------------------
 -- local servers = { 'debugpy' }
 
--- Set up UI
+-- Init DAP-UI
 local dapui_ok, dapui = pcall(require, 'dapui')
 if not dapui_ok then return end
 dapui.setup()
@@ -13,21 +13,36 @@ dapui.setup()
 local dap_ok, dap = pcall(require, 'dap')
 if not dap_ok then return end
 
+-- Configurations for each languages ------------------------------------------
 dap.adapters.python = {
     type = 'executable',
     command = vim.g.python3_host_prog,
     args = { '-m', 'debugpy.adapter', },
 }
-
 dap.configurations.python = {
     {
         type = 'python',
         request = 'launch',
-        name = 'Default python launcher',
-        program = '${file}', -- This configuration will launch the current file if used.
+        name = 'Launch DAP for the current file',
+        -- console = 'integratedTerminal',
+        program = '${file}',
+        cwd = '${workspaceFolder}',
+        args = {},
+    },
+    {
+        type = 'python',
+        request = 'launch',
+        name = 'Launch DAP with file selection',
+        -- console = 'integratedTerminal',
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        args = {},
     },
 }
 
+-- Setup UI -------------------------------------------------------------------
 local opts = { noremap = true, silent = true }
 local dap_widgets = require('dap.ui.widgets')
 

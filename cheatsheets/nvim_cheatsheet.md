@@ -87,6 +87,7 @@
 | Toggle DAP breakpoint                           | `,b`                 |
 | Toggle DAP breakpoint with condition            | `,B`                 |
 | Continue DAP debugging                          | `,c`                 |
+| Run last DAP launcher (if there are many)       | `,l`                 |
 | Step over                                       | `,n`                 |
 | Step into                                       | `,i`                 |
 | Step out                                        | `,o`                 |
