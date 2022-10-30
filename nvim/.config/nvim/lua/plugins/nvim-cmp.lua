@@ -9,8 +9,11 @@
 local ok, cmp = pcall(require, 'cmp')
 if not ok then return end
 
-local luasnip = require('luasnip')
-local neogen = require('neogen')
+local luasnip_ok, luasnip = pcall(require, 'luasnip')
+if not luasnip_ok then return end
+
+local neogen_ok, neogen = pcall(require, 'neogen')
+if not neogen_ok then return end
 
 -- Navigate to the next item in the list
 local next_item = function(fallback)
