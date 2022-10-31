@@ -122,9 +122,9 @@
 | Toggle block-wise comment (normal mode)         | `gbc`                |
 | Toggle block-wise comment (visual mode)         | `gb`                 |
 |                                                 |                      |
-| Start easy align (in visual mode)               | `ga`                 |
-| - Easy align by `|`                             | `ga*|`               |
-| - Easy align by ` `                             | `ga* `               |
+| Start easy align (in visual mode)               | `<leader>a`          |
+| - Easy align by `|`                             | `<leader>a*|`        |
+| - Easy align by ` `                             | `<leader>a* `        |
 
 
 ## 2. Default useful vim key-bindings
