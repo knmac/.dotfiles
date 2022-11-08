@@ -61,34 +61,34 @@ vim.fn.sign_define('DapBreakpointRejected',
 -- Set up keymaps
 vim.keymap.set(
     'n', ',d', function() dapui.toggle() end,
-    { desc = 'Toggle DAP UI' }, opts)
+    { desc = 'DAP: Toggle UI' }, opts)
 vim.keymap.set(
     'n', ',b', function() dap.toggle_breakpoint() end,
-    { desc = 'Toggle DAP breakpoint' }, opts)
+    { desc = 'DAP: Toggle breakpoint' }, opts)
 vim.keymap.set(
     'n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
-    { desc = 'Toggle DAP breakpoint with condition' }, opts)
+    { desc = 'DAP: Toggle breakpoint with condition' }, opts)
 vim.keymap.set(
     'n', ',c', function() dap.continue() end,
-    { desc = 'Continue debugging' }, opts)
+    { desc = 'DAP: Continue debugging' }, opts)
 vim.keymap.set(
     'n', ',r', function() dap.run() end,
-    { desc = 'Run debugging' }, opts)
+    { desc = 'DAP: Run debugging' }, opts)
 vim.keymap.set(
     'n', ',l', function() dap.run_last() end,
-    { desc = 'Run the last debug adapter entry' }, opts)
+    { desc = 'DAP: Run the last debug adapter entry' }, opts)
 vim.keymap.set(
     'n', ',n', function() dap.step_over() end,
-    { desc = 'Step over' }, opts)
+    { desc = 'DAP: Step over' }, opts)
 vim.keymap.set(
     'n', ',i', function() dap.step_into() end,
-    { desc = 'Step into' }, opts)
+    { desc = 'DAP: Step into' }, opts)
 vim.keymap.set(
     'n', ',o', function() dap.step_out() end,
-    { desc = 'Step out' }, opts)
+    { desc = 'DAP: Step out' }, opts)
 vim.keymap.set(
     'n', ',t', function() dap.terminate() end,
-    { desc = 'Terminate debugging' }, opts)
+    { desc = 'DAP: Terminate debugging' }, opts)
 vim.keymap.set(
     'n', ',h', function() dap_widgets.hover() end,
-    { desc = 'Hover' }, opts)
+    { desc = 'DAP: Check variable value on hover' }, opts)
