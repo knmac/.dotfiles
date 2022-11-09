@@ -3,6 +3,7 @@
 -- mfussenegger/nvim-dap
 -------------------------------------------------------------------------------
 -- local servers = { 'debugpy' }
+local map = vim.keymap.set
 
 -- Init DAP-UI
 local dapui_ok, dapui = pcall(require, 'dapui')
@@ -43,52 +44,33 @@ dap.configurations.python = {
 }
 
 -- Setup UI -------------------------------------------------------------------
-local opts = { noremap = true, silent = true }
-local dap_widgets = require('dap.ui.widgets')
+local dap_widgets_ok, dap_widgets = pcall(require, 'dap.ui.widgets')
 
 -- Set up signs and colors
 vim.fn.sign_define('DapBreakpoint',
-    { text = '🔴', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+    { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
 vim.fn.sign_define('DapBreakpointCondition',
-    { text = '🟢', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
+    { text = '🔶', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
 vim.fn.sign_define('DapLogPoint',
     { text = '📜', texthl = 'DapLogPoint', linehl = '', numhl = '' })
 vim.fn.sign_define('DapStopped',
     { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
 vim.fn.sign_define('DapBreakpointRejected',
-    { text = '🟠', texthl = '', linehl = '', numhl = '' })
+    { text = '🚫', texthl = '', linehl = '', numhl = '' })
 
 -- Set up keymaps
-vim.keymap.set(
-    'n', ',d', function() dapui.toggle() end,
-    { desc = 'DAP: Toggle UI' }, opts)
-vim.keymap.set(
-    'n', ',b', function() dap.toggle_breakpoint() end,
-    { desc = 'DAP: Toggle breakpoint' }, opts)
-vim.keymap.set(
-    'n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
-    { desc = 'DAP: Toggle breakpoint with condition' }, opts)
-vim.keymap.set(
-    'n', ',c', function() dap.continue() end,
-    { desc = 'DAP: Continue debugging' }, opts)
-vim.keymap.set(
-    'n', ',r', function() dap.run() end,
-    { desc = 'DAP: Run debugging' }, opts)
-vim.keymap.set(
-    'n', ',l', function() dap.run_last() end,
-    { desc = 'DAP: Run the last debug adapter entry' }, opts)
-vim.keymap.set(
-    'n', ',n', function() dap.step_over() end,
-    { desc = 'DAP: Step over' }, opts)
-vim.keymap.set(
-    'n', ',i', function() dap.step_into() end,
-    { desc = 'DAP: Step into' }, opts)
-vim.keymap.set(
-    'n', ',o', function() dap.step_out() end,
-    { desc = 'DAP: Step out' }, opts)
-vim.keymap.set(
-    'n', ',t', function() dap.terminate() end,
-    { desc = 'DAP: Terminate debugging' }, opts)
-vim.keymap.set(
-    'n', ',h', function() dap_widgets.hover() end,
-    { desc = 'DAP: Check variable value on hover' }, opts)
+if dapui_ok then
+    map('n', ',d', function() dapui.toggle() end, { desc = 'DAP: Toggle UI' })
+end
+if dap_widgets_ok then
+    map('n', ',h', function() dap_widgets.hover() end, { desc = 'DAP: Check variable value on hover' })
+end
+map('n', ',b', function() dap.toggle_breakpoint() end, { desc = 'DAP: Toggle breakpoint' })
+map('n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, { desc = 'DAP: Toggle breakpoint with condition' })
+map('n', ',c', function() dap.continue() end, { desc = 'DAP: Continue debugging' })
+map('n', ',r', function() dap.run() end, { desc = 'DAP: Run debugging' })
+map('n', ',l', function() dap.run_last() end, { desc = 'DAP: Run the last debug adapter entry' })
+map('n', ',n', function() dap.step_over() end, { desc = 'DAP: Step over' })
+map('n', ',i', function() dap.step_into() end, { desc = 'DAP: Step into' })
+map('n', ',o', function() dap.step_out() end, { desc = 'DAP: Step out' })
+map('n', ',t', function() dap.terminate() end, { desc = 'DAP: Terminate debugging' })
