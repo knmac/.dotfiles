@@ -95,6 +95,7 @@ packer.startup(function(use)
     use 'akinsho/toggleterm.nvim'               -- toggle terminal
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'norcalli/nvim-colorizer.lua'           -- colorize color code
+    use 'folke/which-key.nvim'                  -- display a popup with possible key bindings
 
     -- Non-lua nvim plugins
     -- use {

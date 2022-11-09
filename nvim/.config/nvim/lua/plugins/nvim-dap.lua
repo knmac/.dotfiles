@@ -3,7 +3,6 @@
 -- mfussenegger/nvim-dap
 -------------------------------------------------------------------------------
 -- local servers = { 'debugpy' }
-local map = vim.keymap.set
 
 -- Init DAP-UI
 local dapui_ok, dapui = pcall(require, 'dapui')
@@ -58,19 +57,25 @@ vim.fn.sign_define('DapStopped',
 vim.fn.sign_define('DapBreakpointRejected',
     { text = '🚫', texthl = '', linehl = '', numhl = '' })
 
+-- Wrapper function to set keymaps with default opts
+local map = function(mode, lhs, rhs, desc)
+    local opts = { noremap = true, silent = true, desc = 'DAP: ' .. desc }
+    vim.keymap.set(mode, lhs, rhs, opts)
+end
+
 -- Set up keymaps
 if dapui_ok then
-    map('n', ',d', function() dapui.toggle() end, { desc = 'DAP: Toggle UI' })
+    map('n', ',d', function() dapui.toggle() end, 'Toggle UI')
 end
 if dap_widgets_ok then
-    map('n', ',h', function() dap_widgets.hover() end, { desc = 'DAP: Check variable value on hover' })
+    map('n', ',h', function() dap_widgets.hover() end, 'Check variable value on hover')
 end
-map('n', ',b', function() dap.toggle_breakpoint() end, { desc = 'DAP: Toggle breakpoint' })
-map('n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, { desc = 'DAP: Toggle breakpoint with condition' })
-map('n', ',c', function() dap.continue() end, { desc = 'DAP: Continue debugging' })
-map('n', ',r', function() dap.run() end, { desc = 'DAP: Run debugging' })
-map('n', ',l', function() dap.run_last() end, { desc = 'DAP: Run the last debug adapter entry' })
-map('n', ',n', function() dap.step_over() end, { desc = 'DAP: Step over' })
-map('n', ',i', function() dap.step_into() end, { desc = 'DAP: Step into' })
-map('n', ',o', function() dap.step_out() end, { desc = 'DAP: Step out' })
-map('n', ',t', function() dap.terminate() end, { desc = 'DAP: Terminate debugging' })
+map('n', ',b', function() dap.toggle_breakpoint() end, 'Toggle breakpoint')
+map('n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, 'Toggle breakpoint with condition')
+map('n', ',c', function() dap.continue() end, 'Continue debugging')
+map('n', ',r', function() dap.run() end, 'Run debugging')
+map('n', ',l', function() dap.run_last() end, 'Run the last debug adapter entry')
+map('n', ',n', function() dap.step_over() end, 'Step over')
+map('n', ',i', function() dap.step_into() end, 'Step into')
+map('n', ',o', function() dap.step_out() end, 'Step out')
+map('n', ',t', function() dap.terminate() end, 'Terminate debugging')
