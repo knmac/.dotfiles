@@ -81,6 +81,7 @@
 | Insert '=' characters                           | `<leader> =`         |
 | Generate doc string for function                | `<leader> d`         |
 | Toggle NvimTree file explorer                   | `<leader> t`         |
+| Find the current buffer in NvimTree             | `<leader> T`         |
 | Toggle symbol view                              | `<leader> o`         |
 |                                                 |                      |
 | Toggle DAP UI                                   | `,d`                 |
