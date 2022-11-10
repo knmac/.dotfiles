@@ -9,6 +9,7 @@ if not ok then return end
 nvim_tree.setup({
     respect_buf_cwd = true, -- Change cwd of nvim-tree to that of new buffer's when opening nvim-tree
     view = {
+        adaptive_size = true,
         width = 40, -- Width of the window
     },
     renderer = {
