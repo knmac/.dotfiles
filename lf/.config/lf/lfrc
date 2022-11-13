@@ -41,8 +41,8 @@ map dd cut
 map dD delete
 
 # Create files and folders
-map Md push %mkdir<space>  # Make new directory
-map Mf push %touch<space>  # Make new file
+map a push %touch<space>  # Make new file
+map A push %mkdir<space>  # Make new directory
 
 # Toggle line number
 map zl :{{ set number!; set relativenumber!; }}
