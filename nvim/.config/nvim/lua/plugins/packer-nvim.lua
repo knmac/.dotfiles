@@ -88,6 +88,7 @@ packer.startup(function(use)
     }
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
     use 'folke/todo-comments.nvim'              -- highlight and search TODO tags
+    use 'nvim-zh/colorful-winsep.nvim'          -- highlight the current window
     use 'lukas-reineke/indent-blankline.nvim'   -- show indent line
     use 'lewis6991/gitsigns.nvim'               -- git diff sign
     use 'goolord/alpha-nvim'                    -- start page greeter
