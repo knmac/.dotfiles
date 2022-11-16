@@ -77,6 +77,7 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'path' },
         { name = 'nvim_lsp_signature_help' },
+        { name = 'omni' },
         { name = 'calc' },
     }),
     formatting = {
