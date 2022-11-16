@@ -78,7 +78,6 @@ cmp.setup({
         { name = 'path' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'calc' },
-        { name = 'omni' },
     }),
     formatting = {
         format = require('lspkind').cmp_format(),

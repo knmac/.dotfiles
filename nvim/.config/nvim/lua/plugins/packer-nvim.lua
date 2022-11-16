@@ -52,7 +52,6 @@ packer.startup(function(use)
         'hrsh7th/cmp-cmdline',                  -- source for vim's cmdline
         'hrsh7th/cmp-nvim-lsp-signature-help',  -- source for displaying function signatures with the current parameter emphasized
         'hrsh7th/cmp-calc',                     -- source for math calculation
-        'hrsh7th/cmp-omni',                     -- source for omni-func
         'onsails/lspkind-nvim',                 -- pictogram for LSP
         -- 'hrsh7th/cmp-vsnip',                    -- snippets plugin
         -- 'hrsh7th/vim-vsnip',                    -- snippets source for nvim-cmp

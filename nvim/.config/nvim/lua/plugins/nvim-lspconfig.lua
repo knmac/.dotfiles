@@ -73,7 +73,7 @@ local on_attach = function(client, bufnr)
 
     bufmap('n', 'gD', vim.lsp.buf.declaration, bufnr, 'Go to declaration')
     bufmap('n', 'K', vim.lsp.buf.hover, bufnr, 'Show docstring of the item under the cursor')
-    bufmap('n', '<C-k>', vim.lsp.buf.signature_help, bufnr, 'Show signature help')
+    bufmap('i', '<C-k>', vim.lsp.buf.signature_help, bufnr, 'Show signature help')
 
     bufmap('n', '<leader>rn', vim.lsp.buf.rename, bufnr, 'Rename variable under the cursor')
     bufmap('n', '<leader>ca', vim.lsp.buf.code_action, bufnr, 'Code action')
