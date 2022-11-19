@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- Highlight the current window
--- wbthomason/packer.nvim
+-- nvim-zh/colorful-winsep.nvim
 -------------------------------------------------------------------------------
 local ok, winsep = pcall(require, 'colorful-winsep')
 if not ok then return end

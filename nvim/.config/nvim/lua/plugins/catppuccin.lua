@@ -37,7 +37,7 @@ catppuccin.setup({
         symbols_outline = true,
         telescope = true,
         treesitter = true,
-        ts_rainbow = false,
+        ts_rainbow = true,
         which_key = true,
         indent_blankline = {
             enabled = true,

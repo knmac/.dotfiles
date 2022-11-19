@@ -110,3 +110,6 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' },
     })
 })
+
+-- Load snippets for luansip
+require('luasnip.loaders.from_vscode').lazy_load()

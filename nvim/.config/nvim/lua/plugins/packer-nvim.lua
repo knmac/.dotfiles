@@ -57,6 +57,7 @@ packer.startup(function(use)
         -- 'hrsh7th/vim-vsnip',                    -- snippets source for nvim-cmp
         'L3MON4D3/LuaSnip',                     -- snippets plugin
         'saadparwaiz1/cmp_luasnip',             -- snippets source for nvim-cmp
+        'rafamadriz/friendly-snippets'          -- Snippets collection for a set of different programming languages
     }
     use 'SmiteshP/nvim-navic'                   -- statusline/winbar component using lsp
     use 'numToStr/Comment.nvim'                 -- code commenter
