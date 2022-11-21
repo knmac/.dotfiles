@@ -84,10 +84,11 @@ map('n', '<leader>a', '<Plug>(EasyAlign)', {})
 -- Neogen
 map('n', '<leader>d', '<cmd>Neogen<CR>', default_opts)
 
--- Alternative ways to toggle NvimTree and symbol outline
+-- Alternative ways to toggle NvimTree, symbol outline, and zen-mode
 map('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', default_opts)
 map('n', '<leader>T', '<cmd>NvimTreeFindFile!<CR>', default_opts)
 map('n', '<leader>o', '<cmd>SymbolsOutline<CR>', default_opts)
+map('n', '<leader>z', '<cmd>ZenMode<CR>', default_opts)
 
 -- Fn keys
 -- <F1>: Show help
@@ -139,7 +140,8 @@ map('n', '<F10>', '<cmd>make<CR>', default_opts)
 map('n', '<F22>', '<cmd>make clean<CR>', default_opts)
 
 -- <F11>: Toggle zoom the current window (from custom functions)
-map('n', '<F11>', '<cmd>call ToggleZoom(v:true)<CR>', default_opts)
+-- map('n', '<F11>', '<cmd>call ToggleZoom(v:true)<CR>', default_opts)
+map('n', '<F11>', '<cmd>ZenMode<CR>', default_opts)
 -- <S-F11>: Toggle colorizer
 map('n', '<F23>', '<cmd>ColorizerToggle<CR>', default_opts)
 
