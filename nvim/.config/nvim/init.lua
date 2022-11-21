@@ -18,12 +18,6 @@ require('plugins.nvim-cmp')
 require('plugins.nvim-navic')
 require('plugins.comment-nvim')
 
--- Funnctional user interface
--- require('plugins.onedarkpro-nvim')
-require('plugins.catppuccin')
-require('plugins.bufferline')
-require('plugins.lualine')
-
 -- Utilities
 require('plugins.nvim-tree')
 require('plugins.symbols-outline-nvim')
@@ -39,3 +33,9 @@ require('plugins.toggleterm-nvim')
 require('plugins.neogen')
 require('plugins.which-key')
 require('plugins.zen-mode')
+
+-- Funnctional user interface
+-- require('plugins.onedarkpro-nvim')
+require('plugins.catppuccin')
+require('plugins.bufferline')
+require('plugins.lualine')
