@@ -89,6 +89,8 @@ packer.startup(function(use)
     }
     use 'RRethy/vim-illuminate'                 -- highlight related text under cursor
     use 'folke/todo-comments.nvim'              -- highlight and search TODO tags
+    use 'folke/which-key.nvim'                  -- display a popup with possible key bindings
+    use 'folke/zen-mode.nvim'                   -- distraction-free coding
     use 'nvim-zh/colorful-winsep.nvim'          -- highlight the current window
     use 'lukas-reineke/indent-blankline.nvim'   -- show indent line
     use 'lewis6991/gitsigns.nvim'               -- git diff sign
@@ -97,8 +99,6 @@ packer.startup(function(use)
     use 'akinsho/toggleterm.nvim'               -- toggle terminal
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'norcalli/nvim-colorizer.lua'           -- colorize color code
-    use 'folke/which-key.nvim'                  -- display a popup with possible key bindings
-    use 'folke/zen-mode.nvim'                   -- distraction-free coding
 
     -- Non-lua nvim plugins
     -- use {
