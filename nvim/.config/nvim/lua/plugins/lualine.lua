@@ -35,7 +35,7 @@ end
 local fmt_stat = function()
     local stat = ''
     stat = stat .. 'spaces=' .. vim.opt_local.tabstop._value
-    return nil
+    return stat
 end
 
 
