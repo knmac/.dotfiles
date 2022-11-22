@@ -32,6 +32,13 @@ if navic_ok then
     }
 end
 
+local fmt_stat = function()
+    local stat = ''
+    stat = stat .. 'spaces=' .. vim.opt_local.tabstop._value
+    return nil
+end
+
+
 lualine.setup({
     options = {
         icons_enabled = true,
@@ -58,7 +65,7 @@ lualine.setup({
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { { 'filename', path = 3, } },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_x = { fmt_stat, 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },

@@ -47,14 +47,6 @@ vim.api.nvim_create_autocmd('FileType', {
 
 
 -------------------------------------------------------------------------------
--- Callable functions
--------------------------------------------------------------------------------
-function Inspect(obj)
-    print(vim.inspect(obj))
-end
-
-
--------------------------------------------------------------------------------
 -- Callable commands
 -------------------------------------------------------------------------------
 local user_cmds_group = vim.api.nvim_create_augroup('user_cmds', { clear = false })

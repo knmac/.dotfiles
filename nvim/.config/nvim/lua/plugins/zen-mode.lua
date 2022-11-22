@@ -8,7 +8,7 @@ if not ok then return end
 zenmode.setup({
     window = {
         backdrop = 1.0,
-        width = 120,
+        width = 150,
     },
     plugins = {
         kitty = {
