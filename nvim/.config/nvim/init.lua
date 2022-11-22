@@ -8,6 +8,12 @@ require('core.auto_commands')
 -- Package manager
 require('plugins.packer-nvim')
 
+-- Funnctional user interface
+-- require('plugins.onedarkpro-nvim')
+require('plugins.catppuccin')
+require('plugins.bufferline')
+require('plugins.lualine')
+
 -- LSP and coding
 require('plugins.nvim-treesitter')
 require('plugins.mason')
@@ -33,9 +39,3 @@ require('plugins.alpha-nvim')
 require('plugins.neovim-session-manager')
 require('plugins.toggleterm-nvim')
 require('plugins.neogen')
-
--- Funnctional user interface
--- require('plugins.onedarkpro-nvim')
-require('plugins.catppuccin')
-require('plugins.bufferline')
-require('plugins.lualine')

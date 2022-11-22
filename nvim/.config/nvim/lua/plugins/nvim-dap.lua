@@ -7,7 +7,25 @@
 -- Init DAP-UI
 local dapui_ok, dapui = pcall(require, 'dapui')
 if not dapui_ok then return end
-dapui.setup()
+dapui.setup({
+    icons = {
+        expanded = "▾",
+        collapsed = "▸",
+        current_frame = "▸",
+    },
+    controls = {
+        icons = {
+            pause = "",
+            play = "",
+            step_into = "",
+            step_over = "",
+            step_out = "",
+            step_back = "",
+            run_last = "",
+            terminate = "",
+        },
+    },
+})
 
 -- Init for DAP
 local dap_ok, dap = pcall(require, 'dap')
