@@ -42,6 +42,9 @@ local prev_item = function(fallback)
 end
 
 -- Main config
+local win_doc_cfg = cmp.config.window.bordered()
+win_doc_cfg['max_width'] = 80
+
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -53,7 +56,8 @@ cmp.setup({
     },
     window = {
         completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
+        documentation = win_doc_cfg,
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-k>']     = cmp.mapping.scroll_docs(-4),
