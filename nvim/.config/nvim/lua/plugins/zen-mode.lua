@@ -7,7 +7,7 @@ if not ok then return end
 
 zenmode.setup({
     window = {
-        backdrop = 1.0,
+        backdrop = 0.9,
         width = 150,
     },
     plugins = {
