@@ -26,8 +26,12 @@ end
 -- ============================================================================
 local packer = require('packer')
 packer.startup(function(use)
+    -- Libraries and commonly required packages
     use 'wbthomason/packer.nvim'                -- packer can manage itself
     use 'nvim-lua/plenary.nvim'                 -- ultilities used by many other plugins
+    use 'MunifTanjim/nui.nvim'                  -- UI Component Library for Neovim
+    use 'ryanoasis/vim-devicons'                -- extra icons without colors
+    use 'kyazdani42/nvim-web-devicons'          -- extra icons with colors
 
     -- LSP and coding
     use 'nvim-treesitter/nvim-treesitter'       -- code parser generator for syntax highlighting
@@ -64,8 +68,6 @@ packer.startup(function(use)
     use 'danymat/neogen'                        -- generate docstring
 
     -- Functional user interface
-    use 'ryanoasis/vim-devicons'                -- extra icons without colors
-    use 'kyazdani42/nvim-web-devicons'          -- extra icons with colors
     use 'olimorris/onedarkpro.nvim'             -- colorscheme
     use {                                       -- colorscheme
         'catppuccin/nvim',
@@ -75,6 +77,7 @@ packer.startup(function(use)
     use 'nvim-lualine/lualine.nvim'             -- status line (bottom)
     use 'stevearc/dressing.nvim'                -- UI improvement for vim.ui.select and vim.ui.input
     use 'p00f/nvim-ts-rainbow'                  -- colorize parentheses
+    use 'folke/noice.nvim'                      -- UI improvement for messages, cmdline, and popupmenu
 
     -- Utilities
     use 'kyazdani42/nvim-tree.lua'              -- file explorer

@@ -23,6 +23,7 @@ require('plugins.nvim-dap')
 require('plugins.nvim-cmp')
 require('plugins.nvim-navic')
 require('plugins.comment-nvim')
+require('plugins.noice-nvim')
 
 -- Utilities
 require('plugins.nvim-tree')
