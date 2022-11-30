@@ -85,6 +85,7 @@ packer.startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
         'nvim-telescope/telescope-bibtex.nvim', -- fuzzy finder for bibtex entries
+        'nvim-telescope/telescope-file-browser.nvim'  -- file browser extension
     }
     use {
         'nvim-telescope/telescope-fzf-native.nvim',  -- use fzf sorter for telescope

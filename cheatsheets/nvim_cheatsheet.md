@@ -44,6 +44,7 @@
 | Fuzzy search for session           | `<space> s`       |
 | Fuzzy search for bibtex citations  | `<space> c`       |
 | Fuzzy search for vim options       | `<space> v`       |
+| File browser using Telescop        | `<space> w`       |
 | Fuzzy search in the current buffer | `<space> /`       |
 
 
