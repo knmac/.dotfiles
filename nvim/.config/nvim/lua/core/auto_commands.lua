@@ -45,6 +45,16 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
+-- Go down/up soft-wrapped lines instead of 'real' lines
+vim.api.nvim_create_autocmd('FileType', {
+    desc = 'Go down/up soft-wrapped lines instead of real lines',
+    pattern = { 'md', },
+    group = user_cfgs_group,
+    callback = function()
+        vim.keymap.set('n', 'j', 'gj', default_opts)
+        vim.keymap.set('n', 'k', 'gk', default_opts)
+    end,
+})
 
 -------------------------------------------------------------------------------
 -- Callable commands

@@ -24,8 +24,8 @@ smart_borders on
 
 # Border
 # class                 border  backgr. text    indicator child_border
-client.focused          #61afef #282c34 #abb2bf #98c379 #61afef
-#client.focused_inactive #98c379 #272c34 #abb2bf #98c379 #98c379
+client.focused          #8AADF4 #24273A #CAD3F5 #A6DA95 #8AADF4
+#client.focused_inactive #A6DA95 #1E2030 #CAD3F5 #A6DA95 #A6DA95
 #client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -255,9 +255,12 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/
 # Polybar
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
+# Change default cursor
+exec_always --no-startup-id xsetroot -cursor_name left_ptr &
+
 # Auto switch horizontal/vertical tiling
 # Ref: https://github.com/eliep/i3-layouts
-exec_always --no-startup-id "$HOME/.local/bin/i3-layouts"
+# exec_always --no-startup-id "$HOME/.local/bin/i3-layouts"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -268,6 +271,9 @@ exec_always --no-startup-id "blueman-applet"
 
 # Dropbox
 #exec_always "sleep 10; dropbox start"
+
+# Power manager
+exec_always --no-startup-id xfce4-power-manager
 
 
 # -----------------------------------------------------------------------------

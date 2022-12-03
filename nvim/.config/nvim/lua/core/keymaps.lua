@@ -17,9 +17,9 @@ local default_opts = { noremap = true, silent = true }
 map('v', '>', '>gv', default_opts)
 map('v', '<', '<gv', default_opts)
 
--- -- Go down/up soft-wrapped lines instead of 'real' lines
-map('n', 'j', 'gj', default_opts)
-map('n', 'k', 'gk', default_opts)
+-- Go down/up soft-wrapped lines instead of 'real' lines
+-- map('n', 'j', 'gj', default_opts)
+-- map('n', 'k', 'gk', default_opts)
 
 -- Keep the cursor line in the middle of the screen
 -- map('n', 'j', 'jzz', default_opts)
