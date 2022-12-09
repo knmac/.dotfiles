@@ -46,11 +46,15 @@ dashboard.section.buttons.val = {
 local fortune = require('alpha.fortune')
 dashboard.section.footer.val = fortune()
 
--- Dynamic header padding
-local margin_top_percent = 0.2
+-- Dynamic header padding (center of the page)
 local min_padding = 2
-local header_padding = vim.fn.max({ min_padding, vim.fn.floor(vim.fn.winheight(0) * margin_top_percent) })
+-- local margin_top_percent = 0.2
+-- local header_padding = vim.fn.max({ min_padding, vim.fn.floor(vim.fn.winheight(0) * margin_top_percent) })
+local page_len = #dashboard.section.header.val + 1 + min_padding +
+                 2*#dashboard.section.buttons.val + #dashboard.section.footer.val
+local header_padding = vim.fn.max({min_padding, vim.fn.floor((vim.fn.winheight(0) - page_len) / 2)})
 
+-- Set layout
 dashboard.config.layout = {
     { type = 'padding', val = header_padding },
     dashboard.section.header,
@@ -64,4 +68,6 @@ dashboard.config.layout = {
 alpha.setup(dashboard.opts)
 
 -- Disable folding on alpha buffer
-vim.cmd[[ autocmd FileType alpha setlocal nofoldenable ]]
+vim.cmd[[
+    autocmd FileType alpha setlocal nofoldenable
+]]
