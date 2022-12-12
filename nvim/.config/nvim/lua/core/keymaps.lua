@@ -63,7 +63,8 @@ map('n', '<C-A-k>',   '<cmd>BufferLinePickClose<CR>', default_opts)
 map('n', '<C-A-l>',   '<cmd>BufferLineCycleNext<CR>', default_opts)
 map('n', '<C-A-S-h>', '<cmd>BufferLineMovePrev<CR>', default_opts)
 map('n', '<C-A-S-j>', '<cmd>Telescope buffers<CR>', default_opts)
-map('n', '<C-A-S-k>', '<cmd>BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
+-- map('n', '<C-A-S-k>', '<cmd>BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
+map('n', '<C-A-S-k>', '<cmd>BufDel<CR>', default_opts)
 map('n', '<C-A-S-l>', '<cmd>BufferLineMoveNext<CR>', default_opts)
 
 -- Telescope

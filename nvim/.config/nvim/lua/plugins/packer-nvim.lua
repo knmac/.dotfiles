@@ -103,6 +103,7 @@ packer.startup(function(use)
     use 'akinsho/toggleterm.nvim'               -- toggle terminal
     use 'andymass/vim-matchup'                  -- highlight and navigate sets of matching text
     use 'norcalli/nvim-colorizer.lua'           -- colorize color code
+    use 'ojroques/nvim-bufdel'                  -- delete buffer while keeping the same layout
 
     -- Non-lua nvim plugins
     -- use {
