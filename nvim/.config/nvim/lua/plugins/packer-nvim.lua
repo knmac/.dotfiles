@@ -68,7 +68,7 @@ packer.startup(function(use)
     use 'danymat/neogen'                        -- generate docstring
 
     -- Functional user interface
-    use 'olimorris/onedarkpro.nvim'             -- colorscheme
+    -- use 'olimorris/onedarkpro.nvim'             -- colorscheme
     use {                                       -- colorscheme
         'catppuccin/nvim',
         as = 'catppuccin',
