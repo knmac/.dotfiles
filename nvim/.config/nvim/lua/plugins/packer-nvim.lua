@@ -112,6 +112,7 @@ packer.startup(function(use)
     -- }
     use 'junegunn/vim-easy-align'               -- alignment plugin
     -- use 'liuchengxu/vista.vim'                  -- view and search for LSP symbols
+    use 'fladson/vim-kitty'                     -- syntax highlighting for kitty
 
     if first_run then
         packer.sync()
