@@ -16,7 +16,7 @@ bufferline.setup({
             text_align = 'center',
             separator = false,
         } },
-        separator_style = 'slant',
+        -- separator_style = 'slant',
         diagnostics = 'nvim_lsp',
     }
 })

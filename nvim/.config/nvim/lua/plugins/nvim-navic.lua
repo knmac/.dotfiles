@@ -7,4 +7,5 @@ if not ok then return end
 
 navic.setup {
     highlight = true,
+    separator = ' 〉',
 }
