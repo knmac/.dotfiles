@@ -18,5 +18,6 @@ bufferline.setup({
         } },
         -- separator_style = 'slant',
         diagnostics = 'nvim_lsp',
-    }
+    },
+    highlights = require('catppuccin.groups.integrations.bufferline').get(),
 })

@@ -76,6 +76,7 @@ map('n', '<space>/',       '<cmd>Telescope current_buffer_fuzzy_find<CR>', defau
 map('n', '<space>c',       '<cmd>Telescope bibtex<CR>', default_opts)
 map('n', '<space>v',       '<cmd>Telescope vim_options<CR>', default_opts)
 map('n', '<space>w',       '<cmd>Telescope file_browser<CR>', default_opts)
+map('n', '<space>h',       '<cmd>Telescope help_tags<CR>', default_opts)
 map('n', '<space>s',       '<cmd>SessionManager load_session<CR>', default_opts)
 
 -- Easy align
