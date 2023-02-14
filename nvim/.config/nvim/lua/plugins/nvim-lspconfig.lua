@@ -5,7 +5,7 @@
 -- Ref: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 -- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
 -------------------------------------------------------------------------------
-local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'sumneko_lua', 'ltex', 'texlab' }
+local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'lua_ls', 'ltex', 'texlab' }
 
 -- Install the LSP servers automatically using mason-lspconfig
 local mason_ok, _ = pcall(require, 'mason')
@@ -103,7 +103,7 @@ if io.open(path, 'r') ~= nil then
     end
 end
 local server_cfgs = {
-    sumneko_lua = {
+    lua_ls = {
         Lua = {
             diagnostics = {
                 globals = { 'vim', 'use', }
