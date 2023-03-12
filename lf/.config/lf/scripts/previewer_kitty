@@ -10,7 +10,8 @@ image() {
     h=$((h*99/100))
 
     if [[ "$( file -Lb --mime-type "$file")" =~ ^image ]]; then
-        kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
+        # kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
+        kitten icat --transfer-mode file --stdin no --place "${w}x${h}@${x}x${y}" "$file" < /dev/null > /dev/tty
         exit 1
     fi
 

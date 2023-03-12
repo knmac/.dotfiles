@@ -28,6 +28,8 @@ local config = {
         fade_out_function = 'EaseOut',
         fade_out_duration_ms = 150,
     },
+    -- Kitty image protocol
+    enable_kitty_graphics = true,
 }
 
 return config
