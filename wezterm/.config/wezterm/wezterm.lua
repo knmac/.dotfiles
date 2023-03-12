@@ -6,7 +6,7 @@ local config = {
         'JetBrainsMono Nerd Font',
         'JetBrains Mono',
     },
-    font_size = 19.0,
+    font_size = 11.0,
     -- Color
     color_scheme = 'Catppuccin Macchiato',
     -- Window
