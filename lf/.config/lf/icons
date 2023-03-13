@@ -48,8 +48,11 @@ CMakeLists.txt                   
 
 # Folder
 ~/.dotfiles/                     
+~/.npm/                          
+~/.Trash/                        
 ~/.steam/                        
 ~/AmazonWorkDocsCompanion/       
+'~/Amazon WorkDocs Drive/'       
 ~/Applications/                  
 ~/Desktop/                       
 ~/Documents/                     
