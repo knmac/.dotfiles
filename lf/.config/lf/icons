@@ -398,7 +398,8 @@ Vagrantfile             
 *.xlsx  
 *.ods   
 *.ppt   
-*.pttx   
+*.pttx  
 *.odp   
-*.tex    
+*.tex   
 *.bib   
+*.bin   
