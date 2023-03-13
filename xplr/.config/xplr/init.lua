@@ -46,6 +46,7 @@ require("xpm").setup({
         "dtomvan/xpm.xplr",
         "sayanarijit/fzf.xplr",
         "sayanarijit/dual-pane.xplr",
+        -- "sayanarijit/command-mode.xplr",
     },
     auto_install = true,
     auto_cleanup = true,
@@ -155,10 +156,12 @@ xplr.config.node_types.mime_essence        = {
 xplr.config.node_types.extension           = {
     ["py"]       = meta_icon(" "),
     ["ipynb"]    = meta_icon(" "),
+    ["lua"]      = meta_icon(" "),
     ["zsh"]      = meta_icon(" "),
     ["bash"]     = meta_icon(" "),
     ["md"]       = meta_icon(" "),
     ["mdx"]      = meta_icon(" "),
     ["markdown"] = meta_icon(" "),
     ["rmd"]      = meta_icon(" "),
+    ["conf"]     = meta_icon(" "),
 }
