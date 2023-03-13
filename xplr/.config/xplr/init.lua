@@ -45,6 +45,7 @@ require("xpm").setup({
         -- Let xpm manage itself
         'dtomvan/xpm.xplr',
         'sayanarijit/fzf.xplr',
+        'sayanarijit/dual-pane.xplr',
     },
     auto_install = true,
     auto_cleanup = true,
