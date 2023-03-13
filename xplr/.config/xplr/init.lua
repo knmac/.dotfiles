@@ -153,8 +153,12 @@ xplr.config.node_types.mime_essence        = {
 
 -- Icons by other extension
 xplr.config.node_types.extension           = {
-    ["py"]    = meta_icon(" "),
-    ["ipynb"] = meta_icon(" "),
-    ["zsh"]   = meta_icon(" "),
-    ["bash"]  = meta_icon(" "),
+    ["py"]       = meta_icon(" "),
+    ["ipynb"]    = meta_icon(" "),
+    ["zsh"]      = meta_icon(" "),
+    ["bash"]     = meta_icon(" "),
+    ["md"]       = meta_icon(" "),
+    ["mdx"]      = meta_icon(" "),
+    ["markdown"] = meta_icon(" "),
+    ["rmd"]      = meta_icon(" "),
 }
