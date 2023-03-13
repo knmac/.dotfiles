@@ -52,6 +52,128 @@ require("xpm").setup({
 })
 
 
+-- Layout ---------------------------------------------------------------------
+xplr.config.layouts.builtin.default = {
+    Horizontal = {
+        config = {
+            constraints = {
+                { Percentage = 70 },
+                { Percentage = 30 },
+            },
+        },
+        splits = {
+            {
+                Vertical = {
+                    config = {
+                        constraints = {
+                            { Length = 3 },
+                            { Min = 1 },
+                            { Length = 3 },
+                        },
+                    },
+                    splits = {
+                        "SortAndFilter",
+                        "Table",
+                        "InputAndLogs",
+                    },
+                },
+            },
+            {
+                Vertical = {
+                    config = {
+                        constraints = {
+                            { Percentage = 40 },
+                            { Percentage = 30 },
+                            { Percentage = 30 },
+                        },
+                    },
+                    splits = {
+                        {
+                            CustomContent = {
+                                title = "Preview",
+                                body = { DynamicParagraph = { render = "custom.preview_pane.render" } },
+                            },
+                        },
+                        "Selection",
+                        "HelpMenu",
+                    },
+                },
+            },
+        },
+    },
+}
+
+-- Text preview
+local function stat(node)
+    return node.mime_essence
+end
+
+local function read(path, height)
+    local p = io.open(path)
+
+    if p == nil then
+        return nil
+    end
+
+    local i = 0
+    local res = ""
+    for line in p:lines() do
+        if line:match("[^ -~\n\t]") then
+            p:close()
+            return
+        end
+
+        res = res .. line .. "\n"
+        if i == height then
+            break
+        end
+        i = i + 1
+    end
+    p:close()
+
+    return res
+end
+
+xplr.fn.custom.preview_pane = {}
+xplr.fn.custom.preview_pane.render = function(ctx)
+    local n = ctx.app.focused_node
+
+    if n and n.canonical then
+        n = n.canonical
+    end
+
+    if n then
+        if n.is_file then
+            return read(n.absolute_path, ctx.layout_size.height)
+        else
+            return stat(n)
+        end
+    else
+        return ""
+    end
+end
+
+
+-- Key bindings ---------------------------------------------------------------
+-- Batch rename
+-- require: https://github.com/marcusbuffett/pipe-rename
+xplr.config.modes.builtin.default.key_bindings.on_key.R = {
+    help = "batch rename",
+    messages = {
+        {
+            BashExec = [===[
+                SELECTION=$(cat "${XPLR_PIPE_SELECTION_OUT:?}")
+                NODES=${SELECTION:-$(cat "${XPLR_PIPE_DIRECTORY_NODES_OUT:?}")}
+                if [ "$NODES" ]; then
+                    echo -e "$NODES" | renamer
+                    "$XPLR" -m ExplorePwdAsync
+                fi
+            ]===],
+        },
+    },
+}
+
+
 -- Icons ----------------------------------------------------------------------
 local function meta_icon(my_icon)
     return { meta = { icon = my_icon } }
