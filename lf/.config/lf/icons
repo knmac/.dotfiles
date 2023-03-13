@@ -389,6 +389,7 @@ Vagrantfile             
 # other formats
 *.pdf   
 *.txt   
+*.log   
 *.doc   
 *.docx  
 *.odt   
@@ -398,3 +399,5 @@ Vagrantfile             
 *.ppt   
 *.pttx   
 *.odp   
+*.tex    
+*.bib   

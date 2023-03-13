@@ -168,4 +168,6 @@ xplr.config.node_types.extension           = {
     ["rmd"]      = meta_icon(" "),
     ["conf"]     = meta_icon(" "),
     ["pem"]      = meta_icon(" "),
+    ["tex"]      = meta_icon(" "),
+    ["bib"]      = meta_icon(" "),
 }
