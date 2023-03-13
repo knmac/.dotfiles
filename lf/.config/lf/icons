@@ -23,9 +23,9 @@
 ln             # LINK
 or             # ORPHAN
 tw      t       # STICKY_OTHER_WRITABLE
-ow             # OTHER_WRITABLE
+ow             # OTHER_WRITABLE
 st      t       # STICKY
-di             # DIR
+di             # DIR
 pi      p       # FIFO
 so      s       # SOCK
 bd      b       # BLK
@@ -33,13 +33,13 @@ cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
 ex             # EXEC
-fi             # FILE
+fi             # FILE
 
 # full matches
 # Files
 .DS_Store                        
 .Dockerfile                      
-CMakeLists.txt                   
+CMakeLists.txt                   
 .gitlab-ci.yml                   
 .git                             
 
@@ -91,6 +91,7 @@ CMakeLists.txt                   
 *.pyc           
 *.pyo           
 *.pyd           
+*.ipynb         
 *.coffee        
 *.mustache      
 *.hbs           
