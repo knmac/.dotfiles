@@ -41,7 +41,7 @@ CMakeLists.txt                   
 .DS_Store                        
 .Dockerfile                      
 .gitlab-ci.yml                   
-.git                             
+.git                             
 *README                          
 *Readme                          
 *readme                          
@@ -50,12 +50,12 @@ CMakeLists.txt                   
 ~/.dotfiles/                     
 ~/.steam/                        
 ~/AmazonWorkDocsCompanion/       
-~/Applications/                  
+~/Applications/                  
 ~/Desktop/                       
 ~/Documents/                     
 ~/Downloads/                     
 ~/Dropbox/                       
-~/Library/                       
+~/Library/                       
 ~/Movies/                        
 ~/Music/                         
 ~/Pictures/                      
