@@ -221,8 +221,8 @@ CMakeLists.txt                   
 *node_modules           
 *react.jsx              
 *procfile               
-*dockerfile             
-*docker-compose.yml     
+*dockerfile             
+*docker-compose.yml     
 *rakefile               
 *config.ru              
 *gemfile                
@@ -240,10 +240,11 @@ CMakeLists.txt                   
 *Dropbox                
 *.DS_Store              
 *LICENSE                
+*LICENSE.txt            
 *React.jsx              
 *Procfile               
-*Dockerfile             
-*Docker-compose.yml     
+*Dockerfile             
+*Docker-compose.yml     
 *Rakefile               
 *Gemfile                
 *Makefile               
@@ -393,7 +394,9 @@ Vagrantfile             
 # other formats
 *.pdf   
 *.txt   
-*.log   
+*.lst   
+*.log   
+*.bak   
 *.doc   
 *.docx  
 *.odt   

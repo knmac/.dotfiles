@@ -6,6 +6,8 @@ set icons      true
 set ignorecase true
 set drawbox    true
 set info       size:time
+set number
+set relativenumber
 
 set previewer ~/.config/lf/scripts/previewer_kitty
 set cleaner   ~/.config/lf/scripts/cleaner_kitty
@@ -46,8 +48,6 @@ map A push %mkdir<space>  # Make new directory
 
 # Toggle line number
 map zl :{{ set number!; set relativenumber!; }}
-set number
-set relativenumber
 
 # Bookmarks
 map gD cd ~/Downloads
