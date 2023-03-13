@@ -46,6 +46,8 @@ map A push %mkdir<space>  # Make new directory
 
 # Toggle line number
 map zl :{{ set number!; set relativenumber!; }}
+set number
+set relativenumber
 
 # Bookmarks
 map gD cd ~/Downloads
