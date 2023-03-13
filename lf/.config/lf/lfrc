@@ -52,6 +52,7 @@ map gD cd ~/Downloads
 map gC cd ~/Documents
 map gP cd ~/Pictures
 map gM cd ~/Music
+map gW cd ~/workspace
 
 # Additional mappings of some existing commands
 map <enter> shell-wait
