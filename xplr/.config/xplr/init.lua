@@ -86,18 +86,22 @@ xplr.config.node_types.special             = {
     [".dotfiles"]               = meta_icon(" "),
     [".steam"]                  = meta_icon(" "),
     -- Files
-    ["Makefile"]                = meta_icon(" "),
+    ["readme"]                  = meta_icon(" "),
+    ["Readme"]                  = meta_icon(" "),
     ["README"]                  = meta_icon(" "),
     [".DS_Store"]               = meta_icon(" "),
     [".Dockerfile"]             = meta_icon(" "),
     [".gitlab-ci.yml"]          = meta_icon(" "),
     [".git"]                    = meta_icon(" "),
+    ["Makefile"]                = meta_icon(" "),
     ["CMakeLists.txt"]          = meta_icon(" "),
     [".bashrc"]                 = meta_icon(" "),
     [".bashprofile"]            = meta_icon(" "),
     [".zshrc"]                  = meta_icon(" "),
     [".zshenv"]                 = meta_icon(" "),
     [".zprofile"]               = meta_icon(" "),
+    ["license"]                 = meta_icon(" "),
+    ["LICENSE"]                 = meta_icon(" "),
 }
 
 -- Icons by MIME list
@@ -163,4 +167,5 @@ xplr.config.node_types.extension           = {
     ["markdown"] = meta_icon(" "),
     ["rmd"]      = meta_icon(" "),
     ["conf"]     = meta_icon(" "),
+    ["pem"]      = meta_icon(" "),
 }
