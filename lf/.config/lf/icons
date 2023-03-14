@@ -37,27 +37,28 @@ fi             # FILE
 
 # full matches
 # Files
-CMakeLists.txt                   
-.DS_Store                        
-.Dockerfile                      
-.gitlab-ci.yml                   
-.git                             
 *README                          
 *Readme                          
 *readme                          
+.DS_Store                        
+.Dockerfile                      
+.git                             
+.gitlab-ci.yml                   
+CMakeLists.txt                   
 
 # Folder
-~/.dotfiles/                     
 ~/.config/                       
+~/.dotfiles/                     
 ~/.npm/                          
-~/.Trash/                        
 ~/.steam/                        
+~/.Trash/                        
+~/.vscode/                       
 ~/AmazonWorkDocsCompanion/       
-'~/Amazon WorkDocs Drive/'       
+'~/Amazon WorkDocs Drive/'       
 ~/Applications/                  
-~/Desktop/                       
+~/Desktop/                       
 ~/Documents/                     
-~/Downloads/                     
+~/Downloads/                     
 ~/Dropbox/                       
 ~/Library/                       
 ~/Movies/                        
@@ -111,13 +112,6 @@ CMakeLists.txt                   
 *.toml          
 *.bat           
 *.mk            
-*.jpg           
-*.jpeg          
-*.bmp           
-*.png           
-*.webp          
-*.gif           
-*.ico           
 *.twig          
 *.cpp           
 *.c++           
@@ -205,7 +199,7 @@ CMakeLists.txt                   
 *gulpfile.ls            
 *mix.lock               
 *dropbox                
-*.ds_store              
+*.ds_store              
 *.gitconfig             
 *.gitignore             
 *.gitattributes         
@@ -249,7 +243,7 @@ CMakeLists.txt                   
 *Gulpfile.js            
 *Gulpfile.ls            
 *Dropbox                
-*.DS_Store              
+*.DS_Store              
 *LICENSE                
 *LICENSE.txt            
 *React.jsx              
@@ -351,6 +345,8 @@ Vagrantfile             
 *.svgz  
 *.mng   
 *.pcx   
+*.webp  
+*.ico   
 
 # video formats (extensions from dircolors defaults)
 *.mov   
