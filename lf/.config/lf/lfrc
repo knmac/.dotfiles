@@ -49,7 +49,10 @@ map a push %touch<space>  # Make new file
 map A push %mkdir<space>  # Make new directory
 
 # Toggle line number
-map zl :{{ set number!; set relativenumber!; }}
+map zl :set number!; set relativenumber!
+
+# Toggle mouse
+map zm set mouse!
 
 # Bookmarks
 map gD cd ~/Downloads

@@ -40,11 +40,11 @@ fi             # FILE
 *README                          
 *Readme                          
 *readme                          
-.DS_Store                        
-.Dockerfile                      
-.git                             
-.gitlab-ci.yml                   
-CMakeLists.txt                   
+'CMakeLists.txt'                 
+'.DS_Store'                      
+'.Dockerfile'                    
+'.git/'                          
+'.gitlab-ci.yml'                 
 
 # Folder
 ~/.config/                       
