@@ -44,7 +44,7 @@ fi             # FILE
 .Dockerfile                      
 .git                             
 .gitlab-ci.yml                   
-CMakeLists.txt                   
+CMakeLists.txt                   
 
 # Folder
 ~/.config/                       
@@ -184,7 +184,7 @@ CMakeLists.txt                   
 *.elm           
 *.swift         
 *.xcplayground  
-*.tex           ﭨ
+*.tex           
 *.r             ﳒ
 *.rproj         鉶
 *.sol           ﲹ
@@ -252,8 +252,8 @@ CMakeLists.txt                   
 *Docker-compose.yml     
 *Rakefile               
 *Gemfile                
-*Makefile               
-*CMakeLists.txt         
+*Makefile               
+*CMakeLists.txt         
 
 # file patterns (vim-devicons) (patterns not supported in lf)
 # .*jquery.*\.js$         
