@@ -48,6 +48,7 @@ CMakeLists.txt                   
 
 # Folder
 ~/.dotfiles/                     
+~/.config/                       
 ~/.npm/                          
 ~/.Trash/                        
 ~/.steam/                        
@@ -78,6 +79,8 @@ CMakeLists.txt                   
 *.slim          
 *.haml          
 *.ejs           
+*.csv           
+*.csl           
 *.css           
 *.less          
 *.md            
@@ -211,11 +214,19 @@ CMakeLists.txt                   
 *.zshrc                 
 *.zshenv                
 *.zprofile              
+*.condarc               
+*.cshrc                 
+*.tcshrc                
+*.nbrc                  
 *.vimrc                 
 *.gvimrc                
 *_vimrc                 
 *_gvimrc                
+*.viminfo               
 *.bashprofile           
+*.bash_profile          
+*.bash_login            
+*.profile               
 *favicon.ico            
 *license                
 *node_modules           
@@ -406,6 +417,5 @@ Vagrantfile             
 *.ppt   
 *.pttx  
 *.odp   
-*.tex   
 *.bib   
 *.bin   

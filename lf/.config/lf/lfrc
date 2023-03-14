@@ -2,12 +2,14 @@
 # Settings
 # Ref: https://github.com/gokcehan/lf/wiki/Tips
 # =============================================================================
-set icons      true
-set ignorecase true
-set drawbox    true
-set info       size:time
-set number
-set relativenumber
+set icons          true
+set ignorecase     true
+set drawbox        true
+set dircounts      true
+set number         true
+set relativenumber true
+set info           size:time
+set mouse
 
 set previewer ~/.config/lf/scripts/previewer_kitty
 set cleaner   ~/.config/lf/scripts/cleaner_kitty
