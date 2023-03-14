@@ -204,10 +204,6 @@ CMakeLists.txt                   
 *.gitignore             
 *.gitattributes         
 *.gitlab-ci.yml         
-*.bashrc                
-*.zshrc                 
-*.zshenv                
-*.zprofile              
 *.condarc               
 *.cshrc                 
 *.tcshrc                
@@ -217,10 +213,14 @@ CMakeLists.txt                   
 *_vimrc                 
 *_gvimrc                
 *.viminfo               
-*.bashprofile           
-*.bash_profile          
-*.bash_login            
-*.profile               
+*.bashrc                
+*.zshrc                 
+*.zshenv                
+*.zprofile              
+*.bashprofile           
+*.bash_profile          
+*.bash_login            
+*.profile               
 *favicon.ico            
 *license                
 *node_modules           
@@ -231,8 +231,8 @@ CMakeLists.txt                   
 *rakefile               
 *config.ru              
 *gemfile                
-*makefile               
-*cmakelists.txt         
+*makefile               
+*cmakelists.txt         
 *robots.txt             ﮧ
 
 # file names (case-sensitive adaptations)
