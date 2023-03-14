@@ -22,10 +22,10 @@
 # file types (with matching order)
 ln             # LINK
 or             # ORPHAN
-tw             # STICKY_OTHER_WRITABLE
-ow             # OTHER_WRITABLE
-st             # STICKY
-di             # DIR
+tw             # STICKY_OTHER_WRITABLE
+ow             # OTHER_WRITABLE
+st             # STICKY
+di             # DIR
 pi      p       # FIFO
 so      s       # SOCK
 bd      b       # BLK
@@ -33,16 +33,16 @@ cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
 ex             # EXEC
-fi             # FILE
+fi             # FILE
 
 # full matches
 # Files
-*README                          
-*Readme                          
-*readme                          
+*README                          
+*Readme                          
+*readme                          
 .DS_Store                        
 .Dockerfile                      
-.git                             
+.git                             
 .gitlab-ci.yml                   
 CMakeLists.txt                   
 
@@ -84,10 +84,10 @@ CMakeLists.txt                   
 *.csl           
 *.css           
 *.less          
-*.md            
-*.mdx           
-*.markdown      
-*.rmd           
+*.md            
+*.mdx           
+*.markdown      
+*.rmd           
 *.json          
 *.webmanifest   
 *.js            
@@ -129,14 +129,14 @@ CMakeLists.txt                   
 *.nix           
 *.lua           
 *.java          
-*.sh            
-*.fish          
-*.bash          
-*.zsh           
-*.ksh           
-*.csh           
-*.awk           
-*.ps1           
+*.sh            
+*.fish          
+*.bash          
+*.zsh           
+*.ksh           
+*.csh           
+*.awk           
+*.ps1           
 *.ml            λ
 *.mli           λ
 *.diff          
@@ -200,9 +200,9 @@ CMakeLists.txt                   
 *mix.lock               
 *dropbox                
 *.ds_store              
-*.gitconfig             
-*.gitignore             
-*.gitattributes         
+*.gitconfig             
+*.gitignore             
+*.gitattributes         
 *.gitlab-ci.yml         
 *.bashrc                
 *.zshrc                 
@@ -308,7 +308,7 @@ Vagrantfile             
 *.tz    
 *.deb   
 *.rpm   
-*.jar   
+*.jar   
 *.war   
 *.ear   
 *.sar   
@@ -399,11 +399,10 @@ Vagrantfile             
 *.xspf  
 
 # other formats
-*.pdf   
-*.txt   
-*.lst   
-*.log   
-*.bak   
+*.pdf   
+*.txt   
+*.lst   
+*.log   
 *.doc   
 *.docx  
 *.odt   
@@ -411,7 +410,7 @@ Vagrantfile             
 *.xlsx  
 *.ods   
 *.ppt   
-*.pttx  
+*.pptx  
 *.odp   
 *.bib   
 *.bin   
