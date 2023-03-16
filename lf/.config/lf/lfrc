@@ -6,10 +6,10 @@ set icons          true
 set ignorecase     true
 set drawbox        true
 set dircounts      true
+set info           size:time
 set number         true
 set relativenumber true
-set info           size:time
-set mouse
+# set mouse
 
 set previewer ~/.config/lf/scripts/previewer_kitty
 set cleaner   ~/.config/lf/scripts/cleaner_kitty

@@ -58,6 +58,18 @@ dap.configurations.python = {
         cwd = '${workspaceFolder}',
         args = {},
     },
+    {
+        type = 'python',
+        request = 'launch',
+        name = 'Launch DAP with arguments',
+        -- console = 'integratedTerminal',
+        program = '${file}',
+        cwd = '${workspaceFolder}',
+        args = function()
+            local args_str = vim.fn.input('Program arguments: ')
+            return vim.fn.split(args_str, '', true)
+        end,
+    },
 }
 
 -- Setup UI -------------------------------------------------------------------
