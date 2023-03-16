@@ -58,18 +58,6 @@ dap.configurations.python = {
         cwd = '${workspaceFolder}',
         args = {},
     },
-    {
-        type = 'python',
-        request = 'launch',
-        name = 'Launch DAP with arguments',
-        -- console = 'integratedTerminal',
-        program = '${file}',
-        cwd = '${workspaceFolder}',
-        args = function()
-            local args_str = vim.fn.input('Program arguments: ')
-            return vim.fn.split(args_str, '', true)
-        end,
-    },
 }
 
 -- Setup UI -------------------------------------------------------------------
@@ -100,12 +88,17 @@ end
 if dap_widgets_ok then
     map('n', ',h', function() dap_widgets.hover() end, 'Check variable value on hover')
 end
+map('n', ',c', function()
+    if vim.fn.filereadable('.vscode/launch.json') then
+        require('dap.ext.vscode').load_launchjs()
+    end
+    dap.continue()
+end, 'Start/Continue debugging')
+map('n', ',l', function() dap.run_last() end, 'Run the last debug adapter entry')
 map('n', ',b', function() dap.toggle_breakpoint() end, 'Toggle breakpoint')
 map('n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, 'Toggle breakpoint with condition')
-map('n', ',c', function() dap.continue() end, 'Continue debugging')
-map('n', ',r', function() dap.run() end, 'Run debugging')
-map('n', ',l', function() dap.run_last() end, 'Run the last debug adapter entry')
 map('n', ',n', function() dap.step_over() end, 'Step over')
 map('n', ',s', function() dap.step_into() end, 'Step into')
 map('n', ',u', function() dap.step_out() end, 'Step out')
 map('n', ',t', function() dap.terminate() end, 'Terminate debugging')
+-- map('n', ',r', function() dap.run() end, 'Run debugging')
