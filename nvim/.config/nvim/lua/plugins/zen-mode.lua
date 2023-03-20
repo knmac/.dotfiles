@@ -15,7 +15,7 @@ zenmode.setup({
     },
     plugins = {
         kitty = {
-            enabled = true,
+            enabled = false,
             font = '+4',
         },
     },

@@ -8,11 +8,11 @@
 local dapui_ok, dapui = pcall(require, 'dapui')
 if not dapui_ok then return end
 dapui.setup({
-    icons = {
-        expanded = "▾",
-        collapsed = "▸",
-        current_frame = "▸",
-    },
+    -- icons = {
+    --     expanded = "▾",
+    --     collapsed = "▸",
+    --     current_frame = "▸",
+    -- },
     -- controls = {
     --     icons = {
     --         pause = "",
@@ -32,6 +32,7 @@ local dap_ok, dap = pcall(require, 'dap')
 if not dap_ok then return end
 
 -- Configurations for each languages ------------------------------------------
+-- Python
 dap.adapters.python = {
     type = 'executable',
     command = vim.g.python3_host_prog,
@@ -39,41 +40,39 @@ dap.adapters.python = {
 }
 dap.configurations.python = {
     {
+        name = '[Default] Launch DAP for the current file',
         type = 'python',
         request = 'launch',
-        name = 'Launch DAP for the current file',
-        -- console = 'integratedTerminal',
-        program = '${file}',
+        console = 'integratedTerminal',
         cwd = '${workspaceFolder}',
+        program = '${file}',
         args = {},
     },
     {
+        name = '[Default] Launch DAP with file selection',
         type = 'python',
         request = 'launch',
-        name = 'Launch DAP with file selection',
-        -- console = 'integratedTerminal',
+        console = 'integratedTerminal',
+        cwd = '${workspaceFolder}',
         program = function()
             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
-        cwd = '${workspaceFolder}',
         args = {},
     },
 }
+
+-- TODO:: C/C++
+
 
 -- Setup UI -------------------------------------------------------------------
 local dap_widgets_ok, dap_widgets = pcall(require, 'dap.ui.widgets')
 
 -- Set up signs and colors
-vim.fn.sign_define('DapBreakpoint',
-    { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
-vim.fn.sign_define('DapBreakpointCondition',
-    { text = '🔶', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
-vim.fn.sign_define('DapLogPoint',
-    { text = '📜', texthl = 'DapLogPoint', linehl = '', numhl = '' })
-vim.fn.sign_define('DapStopped',
-    { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
-vim.fn.sign_define('DapBreakpointRejected',
-    { text = '🚫', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpoint',          { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpointCondition', { text = '🔶', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
+vim.fn.sign_define('DapLogPoint',            { text = '📜', texthl = 'DapLogPoint', linehl = '', numhl = '' })
+vim.fn.sign_define('DapStopped',             { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
+vim.fn.sign_define('DapBreakpointRejected',  { text = '🚫', texthl = '', linehl = '', numhl = '' })
 
 -- Wrapper function to set keymaps with default opts
 local map = function(mode, lhs, rhs, desc)
@@ -88,6 +87,7 @@ end
 if dap_widgets_ok then
     map('n', ',h', function() dap_widgets.hover() end, 'Check variable value on hover')
 end
+
 map('n', ',c', function()
     if vim.fn.filereadable('.vscode/launch.json') then
         require('dap.ext.vscode').load_launchjs()
