@@ -45,6 +45,7 @@
 | Fuzzy search for bibtex citations  | `<space> c`       |
 | Fuzzy search for vim options       | `<space> v`       |
 | File browser using Telescope       | `<space> w`       |
+| Show notification history          | `<space> n`       |
 | Fuzzy search in the current buffer | `<space> /`       |
 
 
@@ -85,6 +86,7 @@
 | Toggle NvimTree file explorer                   | `<leader> t`         |
 | Find the current buffer in NvimTree             | `<leader> T`         |
 | Toggle symbol view                              | `<leader> o`         |
+| Dismiss current notify's message                | `<leader> n`         |
 |                                                 |                      |
 | Toggle DAP UI                                   | `,d`                 |
 | Toggle DAP breakpoint                           | `,b`                 |

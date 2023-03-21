@@ -15,7 +15,7 @@ noice.setup({
     -- Setup LSP for prettier rendering
     lsp = {
         progress = {
-            enabled = true,
+            enabled = false,
         },
         override = {
             -- override the default lsp markdown formatter with Noice
