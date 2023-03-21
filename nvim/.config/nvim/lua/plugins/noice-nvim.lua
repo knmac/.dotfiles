@@ -7,13 +7,15 @@ if not ok then return end
 
 -- Only use the lsp rendering feature, deactivate everything else
 noice.setup({
-    cmdline = { enabled = false, },
-    messages = { enabled = false, },
-    popupmenu = { enabled = false, },
-    notify = { enabled = false, },
+    -- Turn off cmdline, messages, popupmenu, and notify for the default behavior
+    cmdline = { enabled = true, },
+    messages = { enabled = true, },
+    popupmenu = { enabled = true, },
+    notify = { enabled = true, },
+    -- Setup LSP for prettier rendering
     lsp = {
         progress = {
-            enabled = false,
+            enabled = true,
         },
         override = {
             -- override the default lsp markdown formatter with Noice
@@ -23,6 +25,7 @@ noice.setup({
             -- override cmp documentation with Noice (needs the other options to work)
             ['cmp.entry.get_documentation'] = true,
         },
+        -- Let nvim-cmp handle hover and signature
         hover = {
             enabled = false,
         },

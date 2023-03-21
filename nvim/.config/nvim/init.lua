@@ -24,6 +24,7 @@ require('plugins.nvim-cmp')
 require('plugins.nvim-navic')
 require('plugins.comment-nvim')
 require('plugins.noice-nvim')
+require('plugins.nvim-notify')
 
 -- Utilities
 require('plugins.nvim-tree')

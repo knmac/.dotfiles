@@ -79,6 +79,7 @@ packer.startup(function(use)
     -- use 'mrjones2014/nvim-ts-rainbow'           -- colorize parentheses
     use 'HiPhish/nvim-ts-rainbow2'              -- colorize parentheses
     use 'folke/noice.nvim'                      -- UI improvement for messages, cmdline, and popupmenu
+    use 'rcarriga/nvim-notify'                  -- A fancy, configurable, notification manager
 
     -- Utilities
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
