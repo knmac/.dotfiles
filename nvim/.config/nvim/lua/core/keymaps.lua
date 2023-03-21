@@ -80,9 +80,9 @@ map('n', '<space>h',       '<cmd>Telescope help_tags<CR>', default_opts)
 map('n', '<space>s',       '<cmd>SessionManager load_session<CR>', default_opts)
 
 -- Easy align
--- Start interactive EasyAlign in visual mode (e.g. vipga)
+-- Start interactive EasyAlign in visual mode (e.g. vip\a)
 map('x', '<leader>a', '<Plug>(EasyAlign)', {})
--- Start interactive EasyAlign for a motion/text object (e.g. gaip)
+-- Start interactive EasyAlign for a motion/text object (e.g. \aip)
 map('n', '<leader>a', '<Plug>(EasyAlign)', {})
 
 -- Neogen

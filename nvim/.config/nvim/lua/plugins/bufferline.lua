@@ -5,19 +5,29 @@
 local ok, bufferline = pcall(require, 'bufferline')
 if not ok then return end
 
--- vim.opt.termguicolors = true
+-- Fallback for buffer deletion command
+local bufdel_fn = function()
+    if vim.fn.exists(':BufDel') > 0 then
+        return 'BufDel %d'
+    else
+        return 'bdelete! %d'
+    end
+end
+
 bufferline.setup({
     options = {
-        close_command = 'BufDel %d',
-        right_mose_command = 'BufDel %d',
-        offsets = { {
-            filetype = 'NvimTree',
-            text = 'File Explorer',
-            text_align = 'center',
-            separator = false,
-        } },
-        -- separator_style = 'slant',
+        close_command = bufdel_fn,
+        right_mose_command = bufdel_fn,
         diagnostics = 'nvim_lsp',
+        offsets = {
+            {
+                filetype = 'NvimTree',
+                text = 'File Explorer',
+                text_align = 'center',
+                separator = true,
+            }
+        },
+        -- separator_style = 'slant',
     },
     highlights = require('catppuccin.groups.integrations.bufferline').get(),
 })
