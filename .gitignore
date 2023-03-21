@@ -2,3 +2,6 @@ vis/.config/vis/vis.log
 
 nvim/.config/nvim/.netrwhist
 nvim/.config/nvim/plugin/packer_compiled.lua
+
+.DS_Store
+.DS_Store?
