@@ -85,7 +85,7 @@ if dapui_ok then
     map('n', ',d', function() dapui.toggle() end, 'Toggle UI')
 end
 if dap_widgets_ok then
-    map('n', ',h', function() dap_widgets.hover() end, 'Check variable value on hover')
+    map('n', ',k', function() dap_widgets.hover() end, 'Check variable value on hover')
 end
 
 map('n', ',c', function()
