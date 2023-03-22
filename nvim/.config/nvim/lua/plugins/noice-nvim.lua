@@ -8,10 +8,10 @@ if not ok then return end
 -- Only use the lsp rendering feature, deactivate everything else
 noice.setup({
     -- Turn off cmdline, messages, popupmenu, and notify for the default behavior
-    cmdline = { enabled = true, },
-    messages = { enabled = true, },
-    popupmenu = { enabled = true, },
-    notify = { enabled = true, },
+    -- cmdline = { enabled = false, },
+    -- messages = { enabled = false, },
+    -- popupmenu = { enabled = false, },
+    -- notify = { enabled = false, },
     -- Setup LSP for prettier rendering
     lsp = {
         progress = {

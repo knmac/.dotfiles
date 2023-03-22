@@ -32,6 +32,8 @@ catppuccin.setup({
     integrations = {
         cmp = true,
         gitsigns = true,
+        noice = true,
+        notify = true,
         nvimtree = true,
         symbols_outline = true,
         telescope = true,
@@ -53,4 +55,5 @@ catppuccin.setup({
     }
 })
 
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme('catppuccin')
+vim.cmd.highlight('DiagnosticUnderlineError gui=undercurl')  -- use undercurl for error, if supported by terminal
