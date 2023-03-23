@@ -30,6 +30,7 @@ require('nvim-treesitter.configs').setup({
         'lua',
         'cmake',
         'dockerfile',
+        'regex',
     },
     matchup = {
         enable = true,
