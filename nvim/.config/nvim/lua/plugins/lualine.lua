@@ -5,6 +5,7 @@
 local ok, lualine = pcall(require, 'lualine')
 if not ok then return end
 
+-- Custom winbar config that uses nvim-navic
 local navic_ok, navic = pcall(require, 'nvim-navic')
 local winbar_cfg = {}
 local inactive_winbar_cfg = {}
@@ -43,6 +44,7 @@ if navic_ok then
     }
 end
 
+-- Custom message to show the number of spaces per tab of the bufffer
 local fmt_stat = function()
     local stat = ''
     stat = stat .. 'spaces=' .. vim.opt_local.tabstop._value
