@@ -14,7 +14,18 @@ if navic_ok then
         lualine_b = {},
         lualine_c = {
             { 'filename', path = 1, color = { bg = 'NONE' } },
-            { navic.get_location, cond = navic.is_available },
+            {
+                function()
+                    local loc = navic.get_location()
+                    if loc ~= "" then
+                        return '› ' .. loc
+                    end
+                    return loc
+                end,
+                cond = function()
+                    return navic.is_available()
+                end
+            },
         },
         lualine_x = {},
         lualine_y = {},

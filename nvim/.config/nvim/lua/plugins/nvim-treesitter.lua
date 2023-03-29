@@ -31,6 +31,7 @@ require('nvim-treesitter.configs').setup({
         'cmake',
         'dockerfile',
         'regex',
+        'sql',
     },
     matchup = {
         enable = true,
