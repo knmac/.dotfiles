@@ -18,7 +18,7 @@ if navic_ok then
             {
                 function()
                     local loc = navic.get_location()
-                    if loc ~= "" then
+                    if loc ~= '' then
                         return '› ' .. loc
                     end
                     return loc
@@ -44,7 +44,7 @@ if navic_ok then
     }
 end
 
--- Custom message to show the number of spaces per tab of the bufffer
+-- Custom message to show the number of spaces per tab of the buffer
 local fmt_stat = function()
     local stat = ''
     stat = stat .. 'spaces=' .. vim.opt_local.tabstop._value
@@ -52,6 +52,7 @@ local fmt_stat = function()
 end
 
 
+-- Main config
 lualine.setup({
     options = {
         icons_enabled = true,
