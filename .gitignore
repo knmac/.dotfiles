@@ -2,6 +2,7 @@ vis/.config/vis/vis.log
 
 nvim/.config/nvim/.netrwhist
 nvim/.config/nvim/plugin/packer_compiled.lua
+nvim/.config/nvim/lazy-lock.json
 
 .DS_Store
 .DS_Store?
