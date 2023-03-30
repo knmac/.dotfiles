@@ -21,7 +21,7 @@ lazy.setup({
     -- Libraries and commonly required packages
     -- ------------------------------------------------------------------------
     'nvim-lua/plenary.nvim',                -- ultilities used by many other plugins
-    'ryanoasis/vim-devicons',               -- extra icons without colors
+    -- 'ryanoasis/vim-devicons',               -- extra icons without colors
 
     -- ------------------------------------------------------------------------
     -- Functional user interface
@@ -63,25 +63,29 @@ lazy.setup({
         build = ':MasonUpdate',             -- :MasonUpdate updates registry contents
     },
     'williamboman/mason-lspconfig.nvim',    -- bridges mason.nvim and nvim-lspconfig
-    -- linter and formatter
-    'jose-elias-alvarez/null-ls.nvim',      -- linter and formatter
-    'jayp0521/mason-null-ls.nvim',          -- bridges mason.nvim and null-ls
-    -- code completion
-    'hrsh7th/nvim-cmp',                     -- code completion
-    'hrsh7th/cmp-nvim-lsp',                 -- source for neovim's built-in language server client
-    'hrsh7th/cmp-buffer',                   -- source for buffer words
-    'hrsh7th/cmp-path',                     -- source for filesystem paths
-    'hrsh7th/cmp-cmdline',                  -- source for vim's cmdline
-    'hrsh7th/cmp-nvim-lsp-signature-help',  -- source for displaying function signatures with the current parameter emphasized
-    'hrsh7th/cmp-calc',                     -- source for math calculation
-    'onsails/lspkind-nvim',                 -- pictogram for LSP
-    'L3MON4D3/LuaSnip',                     -- snippets plugin
-    'saadparwaiz1/cmp_luasnip',             -- snippets source for nvim-cmp
-    'rafamadriz/friendly-snippets',         -- Snippets collection for a set of different programming languages
-    -- debugger
-    'mfussenegger/nvim-dap',                -- debug adapter protocol
-    'rcarriga/nvim-dap-ui',                 -- UI for nvim-dap
-    --
+    {
+        'jose-elias-alvarez/null-ls.nvim',  -- linter and formatter
+        dependencies = 'jayp0521/mason-null-ls.nvim',   -- bridges mason.nvim and null-ls
+    },
+    {
+        'hrsh7th/nvim-cmp',                 -- code completion
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',                 -- source for neovim's built-in language server client
+            'hrsh7th/cmp-buffer',                   -- source for buffer words
+            'hrsh7th/cmp-path',                     -- source for filesystem paths
+            'hrsh7th/cmp-cmdline',                  -- source for vim's cmdline
+            'hrsh7th/cmp-nvim-lsp-signature-help',  -- source for displaying function signatures with the current parameter emphasized
+            'hrsh7th/cmp-calc',                     -- source for math calculation
+            'onsails/lspkind-nvim',                 -- pictogram for LSP
+            'L3MON4D3/LuaSnip',                     -- snippets plugin
+            'saadparwaiz1/cmp_luasnip',             -- snippets source for nvim-cmp
+            'rafamadriz/friendly-snippets',         -- Snippets collection for a set of different programming languages
+        },
+    },
+    {
+        'mfussenegger/nvim-dap',            -- debug adapter protocol
+        dependencies = 'rcarriga/nvim-dap-ui',      -- UI for nvim-dap
+    },
     'SmiteshP/nvim-navic',                  -- statusline/winbar component using lsp
     'numToStr/Comment.nvim',                -- code commenter
     'danymat/neogen',                       -- generate docstring
@@ -89,15 +93,17 @@ lazy.setup({
     -- ------------------------------------------------------------------------
     -- Utilities
     -- ------------------------------------------------------------------------
-    -- Telescope
-    'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
-    'nvim-telescope/telescope-bibtex.nvim', -- fuzzy finder for bibtex entries
-    'nvim-telescope/telescope-file-browser.nvim',  -- file browser extension
     {
-        'nvim-telescope/telescope-fzf-native.nvim',  -- use fzf sorter for telescope
-        build = 'make',
+        'nvim-telescope/telescope.nvim',        -- fuzzy finder for multiple things
+        dependencies = {
+            'nvim-telescope/telescope-bibtex.nvim', -- fuzzy finder for bibtex entries
+            'nvim-telescope/telescope-file-browser.nvim',  -- file browser extension
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',  -- use fzf sorter for telescope
+                build = 'make',
+            },
+        }
     },
-    --
     'kyazdani42/nvim-tree.lua',             -- file explorer
     'simrat39/symbols-outline.nvim',        -- show symbols of the current buffer
     'RRethy/vim-illuminate',                -- highlight related text under cursor
