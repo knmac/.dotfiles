@@ -101,9 +101,15 @@ local plugins = {
         'mfussenegger/nvim-dap',               -- debug adapter protocol
         dependencies = 'rcarriga/nvim-dap-ui', -- UI for nvim-dap
     },
-    'SmiteshP/nvim-navic',                     -- statusline/winbar component using lsp
-    'numToStr/Comment.nvim',                   -- code commenter
-    'danymat/neogen',                          -- generate docstring
+    {
+        'SmiteshP/nvim-navic', -- statusline/winbar component using lsp
+        dependencies = 'neovim/nvim-lspconfig',
+    },
+    'numToStr/Comment.nvim', -- code commenter
+    {
+        'danymat/neogen',    -- generate docstring
+        dependencies = 'nvim-treesitter/nvim-treesitter',
+    },
 
     -- ------------------------------------------------------------------------
     -- Utilities
