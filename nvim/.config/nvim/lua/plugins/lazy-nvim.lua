@@ -123,7 +123,10 @@ local plugins = {
     'simrat39/symbols-outline.nvim',       -- show symbols of the current buffer
     'RRethy/vim-illuminate',               -- highlight related text under cursor
     'folke/todo-comments.nvim',            -- highlight and search TODO tags
-    'folke/which-key.nvim',                -- display a popup with possible key bindings
+    {
+        'folke/which-key.nvim',                -- display a popup with possible key bindings
+        lazy = true,
+    },
     'folke/zen-mode.nvim',                 -- distraction-free coding
     'nvim-zh/colorful-winsep.nvim',        -- highlight the current window
     'lukas-reineke/indent-blankline.nvim', -- show indent line
