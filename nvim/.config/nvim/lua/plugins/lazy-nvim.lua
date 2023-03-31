@@ -21,6 +21,10 @@ vim.opt.rtp:prepend(lazypath)
 local lazy = require('lazy')
 
 local opts = {
+    install = {
+        -- try to load one of these colorschemes when starting an installation during startup
+        colorscheme = { 'catppuccin-macchiato', 'habamax' },
+    },
     ui = {
         border = 'rounded',
     },
@@ -125,12 +129,12 @@ local plugins = {
             },
         }
     },
-    'kyazdani42/nvim-tree.lua',            -- file explorer
-    'simrat39/symbols-outline.nvim',       -- show symbols of the current buffer
-    'RRethy/vim-illuminate',               -- highlight related text under cursor
-    'folke/todo-comments.nvim',            -- highlight and search TODO tags
+    'kyazdani42/nvim-tree.lua',      -- file explorer
+    'simrat39/symbols-outline.nvim', -- show symbols of the current buffer
+    'RRethy/vim-illuminate',         -- highlight related text under cursor
+    'folke/todo-comments.nvim',      -- highlight and search TODO tags
     {
-        'folke/which-key.nvim',                -- display a popup with possible key bindings
+        'folke/which-key.nvim',      -- display a popup with possible key bindings
         lazy = true,
     },
     'folke/zen-mode.nvim',                 -- distraction-free coding
