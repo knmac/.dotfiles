@@ -2,6 +2,7 @@
 -- Plugin manager
 -- folke/lazy.nvim
 -------------------------------------------------------------------------------
+-- Bootstrap 1st install
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -16,8 +17,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
+-- Setup lazy.nvim
 local lazy = require('lazy')
-lazy.setup({
+
+local opts = {
+    ui = {
+        border = 'rounded',
+    },
+}
+
+local plugins = {
     -- ------------------------------------------------------------------------
     -- Libraries and commonly required packages
     -- ------------------------------------------------------------------------
@@ -131,4 +140,6 @@ lazy.setup({
     -- ------------------------------------------------------------------------
     'junegunn/vim-easy-align', -- alignment plugin
     'fladson/vim-kitty',       -- syntax highlighting for kitty
-})
+}
+
+lazy.setup(plugins, opts)
