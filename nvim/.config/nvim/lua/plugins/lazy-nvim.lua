@@ -102,8 +102,11 @@ local plugins = {
         },
     },
     {
-        'mfussenegger/nvim-dap',               -- debug adapter protocol
-        dependencies = 'rcarriga/nvim-dap-ui', -- UI for nvim-dap
+        'mfussenegger/nvim-dap',            -- debug adapter protocol
+        dependencies = {
+            'rcarriga/nvim-dap-ui',         -- UI for nvim-dap
+            'jay-babu/mason-nvim-dap.nvim', -- bridges mason.nvim and nvim-dap
+        },
     },
     {
         'SmiteshP/nvim-navic', -- statusline/winbar component using lsp

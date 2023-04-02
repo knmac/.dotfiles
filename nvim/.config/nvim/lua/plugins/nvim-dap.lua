@@ -2,7 +2,14 @@
 -- Debug adapter protocol
 -- mfussenegger/nvim-dap
 -------------------------------------------------------------------------------
--- local servers = { 'debugpy' }
+local servers = { 'python', 'codelldb' }
+
+local mason_nvimdap_ok, mason_nvimdap = pcall(require, 'mason-nvim-dap')
+if not mason_nvimdap_ok then return end
+mason_nvimdap.setup({
+    ensure_installed = servers,
+    automatic_installation = true,
+})
 
 -- Init DAP-UI
 local dapui_ok, dapui = pcall(require, 'dapui')
@@ -32,7 +39,7 @@ local dap_ok, dap = pcall(require, 'dap')
 if not dap_ok then return end
 
 -- Configurations for each languages ------------------------------------------
--- Python
+-- Python - debugpy
 dap.adapters.python = {
     type = 'executable',
     command = vim.g.python3_host_prog,
@@ -61,7 +68,7 @@ dap.configurations.python = {
     },
 }
 
--- TODO:: C/C++
+-- TODO: C/C++ - codelldb
 
 
 -- Setup UI -------------------------------------------------------------------
