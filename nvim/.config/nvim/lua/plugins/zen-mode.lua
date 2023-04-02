@@ -8,10 +8,17 @@ if not ok then return end
 local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
 
+--- Return with with maximum threshold
+local width_with_max = function(ratio, min_width)
+    local width = math.floor(vim.go.columns * ratio)
+    width = math.min(width, min_width)
+    return width
+end
+
 zenmode.setup({
     window = {
-        backdrop = 0.95,
-        width = 150,
+        backdrop = 0.9,
+        width = width_with_max(0.85, 150),
     },
     plugins = {
         kitty = {
@@ -20,7 +27,7 @@ zenmode.setup({
         },
     },
     -- callback where you can add custom code when the Zen window opens
-    on_open = function(win)
+    on_open = function()
         map('n', 'j', 'jzz', default_opts)
         map('n', 'k', 'kzz', default_opts)
     end,

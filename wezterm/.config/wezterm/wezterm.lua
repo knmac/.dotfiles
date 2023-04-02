@@ -13,12 +13,16 @@ end
 -- ----------------------------------------------------------------------------
 -- This is where you actually apply your config choices
 -- ----------------------------------------------------------------------------
+local font_size = 19.0
+
 -- Font
 config.font = wezterm.font_with_fallback {
     'JetBrainsMono Nerd Font',
     'JetBrains Mono',
 }
-config.font_size = 19.0
+config.font_size = font_size
+config.command_palette_font_size = font_size
+config.char_select_font_size = font_size
 
 -- Color
 config.color_scheme = 'Catppuccin Macchiato'
@@ -32,6 +36,9 @@ config.window_padding = {
     bottom = '0cell',
 }
 config.window_decorations = 'RESIZE'
+config.window_frame = {
+    font_size = font_size - 3.0,
+}
 config.macos_window_background_blur = 20
 
 -- Tabs
