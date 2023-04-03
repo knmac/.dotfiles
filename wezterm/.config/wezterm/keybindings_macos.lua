@@ -2,6 +2,9 @@ local wezterm = require('wezterm')
 local act = wezterm.action
 
 local keys = {
+    { key = '/',     mods = 'SHIFT|CTRL',     action = act.PaneSelect },
+    { key = '>',     mods = 'SHIFT|CTRL',     action = act.RotatePanes 'Clockwise' },
+    { key = '<',     mods = 'SHIFT|CTRL',     action = act.RotatePanes 'CounterClockwise' },
     { key = 'Tab',   mods = 'CTRL',           action = act.ActivateTabRelative(1) },
     { key = 'Tab',   mods = 'SHIFT|CTRL',     action = act.ActivateTabRelative(-1) },
     { key = 'Enter', mods = 'ALT',            action = act.ToggleFullScreen },

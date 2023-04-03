@@ -10,6 +10,9 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
+-- Add the right status
+require('right_status')
+
 -- ----------------------------------------------------------------------------
 -- This is where you actually apply your config choices
 -- ----------------------------------------------------------------------------
