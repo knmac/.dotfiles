@@ -57,15 +57,23 @@ map('t', '<A-l>', [[<C-\><C-n><C-w>l]], default_opts)
 -- Plugins and Function key bindings
 -------------------------------------------------------------------------------
 -- Bufferline
-map('n', '<C-A-h>',   '<cmd>BufferLineCyclePrev<CR>', default_opts)
-map('n', '<C-A-j>',   '<cmd>BufferLinePick<CR>', default_opts)
-map('n', '<C-A-k>',   '<cmd>BufferLinePickClose<CR>', default_opts)
-map('n', '<C-A-l>',   '<cmd>BufferLineCycleNext<CR>', default_opts)
-map('n', '<C-A-S-h>', '<cmd>BufferLineMovePrev<CR>', default_opts)
-map('n', '<C-A-S-j>', '<cmd>Telescope buffers<CR>', default_opts)
--- map('n', '<C-A-S-k>', '<cmd>BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
-map('n', '<C-A-S-k>', '<cmd>BufDel<CR>', default_opts)
-map('n', '<C-A-S-l>', '<cmd>BufferLineMoveNext<CR>', default_opts)
+-- map('n', '<C-A-h>',   '<cmd>BufferLineCyclePrev<CR>', default_opts)
+-- map('n', '<C-A-j>',   '<cmd>BufferLinePick<CR>', default_opts)
+-- map('n', '<C-A-k>',   '<cmd>BufferLinePickClose<CR>', default_opts)
+-- map('n', '<C-A-l>',   '<cmd>BufferLineCycleNext<CR>', default_opts)
+-- map('n', '<C-A-S-h>', '<cmd>BufferLineMovePrev<CR>', default_opts)
+-- map('n', '<C-A-S-j>', '<cmd>Telescope buffers<CR>', default_opts)
+-- -- map('n', '<C-A-S-k>', '<cmd>BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
+-- map('n', '<C-A-S-k>', '<cmd>BufDel<CR>', default_opts)
+-- map('n', '<C-A-S-l>', '<cmd>BufferLineMoveNext<CR>', default_opts)
+map('n', '<C-A-h>',   '<cmd>BufferPrevious<CR>', default_opts)
+map('n', '<C-A-j>',   '<cmd>BufferPick<CR>', default_opts)
+map('n', '<C-A-k>',   '<cmd>BufferPickDelete<CR>', default_opts)
+map('n', '<C-A-l>',   '<cmd>BufferNext<CR>', default_opts)
+map('n', '<C-A-S-h>', '<cmd>BufferMovePrevious<CR>', default_opts)
+map('n', '<C-A-S-j>', '<cmd>BufferRestore<CR>', default_opts)
+map('n', '<C-A-S-k>', '<cmd>BufferClose<CR>', default_opts)
+map('n', '<C-A-S-l>', '<cmd>BufferMoveNext<CR>', default_opts)
 
 -- Telescope
 map('n', '<space><space>', '<cmd>Telescope<CR>', default_opts)
@@ -120,19 +128,22 @@ map('n', '<F5>', '<cmd>Telescope buffers<CR>', default_opts)
 map('n', '<F17>', '<cmd>tabs<CR>', default_opts)
 
 -- <F6>: Prev buffer
-map('n', '<F6>', '<cmd>BufferLineCyclePrev<CR>', default_opts)
+-- map('n', '<F6>', '<cmd>BufferLineCyclePrev<CR>', default_opts)
 -- nnoremap <silent> <F6> :bprevious<CR>
+map('n', '<F6>', '<cmd>BufferPrevious<CR>', default_opts)
 -- <S-F6>: Prev tab
 map('n', '<F18>', '<cmd>tabprevious<CR>', default_opts)
 
 -- <F7>: Next buffer
-map('n', '<F7>', '<cmd>BufferLineCycleNext<CR>', default_opts)
+-- map('n', '<F7>', '<cmd>BufferLineCycleNext<CR>', default_opts)
 -- nnoremap <silent> <F7> :bnext<CR>
+map('n', '<F7>', '<cmd>BufferNext<CR>', default_opts)
 -- <S-F7>: Next tab
 map('n', '<F19>', '<cmd>tabnext<CR>', default_opts)
 
 -- <F8>: Close current buffer and switch to previous buffer
-map('n', '<F8>', '<cmd>BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
+-- map('n', '<F8>', '<cmd>BufferLineCyclePrev<CR>:bdelete #<CR>', default_opts)
+map('n', '<F8>', '<cmd>BufferClose<CR>', default_opts)
 -- <S-F8>: Close current tab
 map('n', '<F20>', '<cmd>tabclose<CR>', default_opts)
 

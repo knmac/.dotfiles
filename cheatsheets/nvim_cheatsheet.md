@@ -114,8 +114,8 @@
 | Kill a buffer                                   | `<Ctrl+Alt+k>`       |
 | Swap with the previous buffer                   | `<Ctrl+Alt+Shift+h>` |
 | Swap with the next buffer                       | `<Ctrl+Alt+Shift+l>` |
-| Fuzzy jump to buffer using Telescope            | `<Ctrl+Alt+Shift+j>` |
-| Kill the current buffer                         | `<Ctrl+Alt+Shift+k>` |
+| Restore a closed buffer                         | `<Ctrl+Alt+Shift+j>` |
+| Close the current buffer                        | `<Ctrl+Alt+Shift+k>` |
 |                                                 |                      |
 | Toggle terminal                                 | `<Ctrl+\>`           |
 |                                                 |                      |

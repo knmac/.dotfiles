@@ -6,13 +6,11 @@ require('core.keymaps')
 require('core.auto_commands')
 
 -- Package manager
--- require('plugins.packer-nvim')
 require('plugins.lazy-nvim')
 
 -- Funnctional user interface
--- require('plugins.onedarkpro-nvim')
 require('plugins.catppuccin')
-require('plugins.bufferline')
+require('plugins.barbar-nvim')
 require('plugins.lualine')
 require('plugins.noice-nvim')
 require('plugins.nvim-notify')

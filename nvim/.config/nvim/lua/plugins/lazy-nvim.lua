@@ -45,12 +45,8 @@ local plugins = {
         name = 'catppuccin',
     },
     {
-        'akinsho/bufferline.nvim', -- buffer line (top)
-        version = 'v3.*',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons', -- extra icons with colors
-            'ojroques/nvim-bufdel',        -- delete buffer while keeping the same layout
-        },
+        'romgrk/barbar.nvim',  -- buffer line (top)
+        dependencies = 'nvim-tree/nvim-web-devicons', -- extra icons with colors
     },
     {
         'nvim-lualine/lualine.nvim',                  -- status line (bottom)

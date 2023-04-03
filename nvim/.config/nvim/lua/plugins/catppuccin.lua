@@ -30,6 +30,7 @@ catppuccin.setup({
         operators = {},
     },
     integrations = {
+        barbar = true,
         cmp = true,
         gitsigns = true,
         noice = true,
