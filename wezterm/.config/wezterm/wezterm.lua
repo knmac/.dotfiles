@@ -13,7 +13,7 @@ end
 -- ----------------------------------------------------------------------------
 -- This is where you actually apply your config choices
 -- ----------------------------------------------------------------------------
-local font_size = 19.0
+local font_size = 11.0
 
 -- Font
 config.font = wezterm.font_with_fallback {
@@ -62,8 +62,8 @@ config.use_ime = false
 
 -- Key-bindings
 config.disable_default_key_bindings = true -- Deactivate default key bindings
-local keybindings = require('keybindings_macos')
--- local keybindings = require('keybindings_linux')
+-- local keybindings = require('keybindings_macos')
+local keybindings = require('keybindings_linux')
 config.keys = keybindings.keys
 config.key_tables = keybindings.key_tables
 
