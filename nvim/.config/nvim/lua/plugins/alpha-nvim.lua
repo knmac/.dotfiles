@@ -36,7 +36,7 @@ dashboard.section.buttons.val = {
     dashboard.button( 'f', '  File finder'          , ':Telescope find_files<CR>'),
     dashboard.button( 't', '  Text finder'          , ':Telescope live_grep<CR>'),
     dashboard.button( 'u', '  Update packages'      , ':Lazy sync<CR>'),
-    dashboard.button( 'm', '  Language servers'     , ':Mason<CR>'),
+    dashboard.button( 'l', '  Language servers'     , ':Mason<CR>'),
     dashboard.button( 'd', '  Dictionary'           , ':cd $HOME/.local/share/nvim/ | e spelling/en-US.txt<CR>'),
     dashboard.button( 'c', '  Configurations'       , ':cd $HOME/.config/nvim | e $MYVIMRC<CR>'),
     dashboard.button( 'h', '  Cheatsheet'           , ':e $HOME/.dotfiles/cheatsheets/nvim_cheatsheet.md | SymbolsOutlineOpen<CR>'),

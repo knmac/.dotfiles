@@ -6,7 +6,7 @@ local ok, notify = pcall(require, 'notify')
 if not ok then return end
 
 notify.setup({
-    top_down = true,
+    top_down = false,
 })
 
 local map = function(mode, lhs, rhs, desc)
