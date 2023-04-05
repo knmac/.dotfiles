@@ -11,7 +11,7 @@
 | Search for help                          | `F1`                         |
 | Show key-bindings                        | `Shift+F1`                   |
 | Open to-do list (project-wise)           | `F2`                         |
-| Toggle NvimTree file explorer            | `F3` (or `<leader> t`)       |
+| Toggle file explorer                     | `F3` (or `<leader> t`)       |
 | Toggle symbol view                       | `F4` (or `<leader> o`)       |
 |                                          |                              |
 | Show buffer list                         | `F5`                         |
@@ -83,8 +83,7 @@
 | Insert '-' characters                           | `<leader> -`         |
 | Insert '=' characters                           | `<leader> =`         |
 | Generate doc string for function                | `<leader> d`         |
-| Toggle NvimTree file explorer                   | `<leader> t`         |
-| Find the current buffer in NvimTree             | `<leader> T`         |
+| Toggle file explorer                            | `<leader> t`         |
 | Toggle symbol view                              | `<leader> o`         |
 | Dismiss current notify's message                | `<leader> n`         |
 |                                                 |                      |
