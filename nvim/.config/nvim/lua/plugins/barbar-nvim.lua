@@ -24,6 +24,6 @@ barbar.setup({
         -- Or, specify the event which the sidebar executes when leaving:
         ['neo-tree'] = { event = 'BufWipeout' },
         -- Or, specify both
-        Outline = { event = 'BufWinLeave', text = 'symbols-outline' },
+        -- Outline = { event = 'BufWinLeave', text = 'symbols-outline' },
     },
 })
