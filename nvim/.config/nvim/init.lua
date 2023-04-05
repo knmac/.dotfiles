@@ -27,7 +27,7 @@ require('plugins.comment-nvim')
 
 -- Utilities
 require('plugins.telescope')
-require('plugins.nvim-tree')
+require('plugins.neo-tree-nvim')
 require('plugins.symbols-outline-nvim')
 require('plugins.vim-illuminate')
 require('plugins.todo-comments-nvim')

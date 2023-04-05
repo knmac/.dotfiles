@@ -98,8 +98,9 @@ map('n', '<leader>a', '<Plug>(EasyAlign)', {})
 map('n', '<leader>d', '<cmd>Neogen<CR>', default_opts)
 
 -- Alternative ways to toggle NvimTree, symbol outline, and zen-mode
-map('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', default_opts)
-map('n', '<leader>T', '<cmd>NvimTreeFindFile!<CR>', default_opts)
+-- map('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', default_opts)
+-- map('n', '<leader>T', '<cmd>NvimTreeFindFile!<CR>', default_opts)
+map('n', '<leader>t', '<cmd>Neotree toggle<CR>', default_opts)
 map('n', '<leader>o', '<cmd>SymbolsOutline<CR>', default_opts)
 map('n', '<leader>z', '<cmd>ZenMode<CR>', default_opts)
 
@@ -113,7 +114,8 @@ map('n', '<F13>', '<cmd>Telescope keymaps<CR>', default_opts)
 map('n', '<F2>', '<cmd>TodoTelescope<CR>', default_opts)
 
 -- <F3>: Show file tree explorer
-map('n', '<F3>', '<cmd>NvimTreeToggle<CR>', default_opts)
+-- map('n', '<F3>', '<cmd>NvimTreeToggle<CR>', default_opts)
+map('n', '<F3>', '<cmd>Neotree toggle<CR>', default_opts)
 
 -- <F4>: Show tags of current buffer
 -- map('n', '<F4>', ':Telescope current_buffer_tags<CR>', default_opts)

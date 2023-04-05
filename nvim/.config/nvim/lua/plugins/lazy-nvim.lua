@@ -35,7 +35,6 @@ local plugins = {
     -- Libraries and commonly required packages
     -- ------------------------------------------------------------------------
     'nvim-lua/plenary.nvim', -- ultilities used by many other plugins
-    -- 'ryanoasis/vim-devicons', -- extra icons without colors
 
     -- ------------------------------------------------------------------------
     -- Functional user interface
@@ -45,7 +44,7 @@ local plugins = {
         name = 'catppuccin',
     },
     {
-        'romgrk/barbar.nvim',  -- buffer line (top)
+        'romgrk/barbar.nvim',                         -- buffer line (top)
         dependencies = 'nvim-tree/nvim-web-devicons', -- extra icons with colors
     },
     {
@@ -128,7 +127,21 @@ local plugins = {
             },
         }
     },
-    'kyazdani42/nvim-tree.lua',      -- file explorer
+    -- 'kyazdani42/nvim-tree.lua',      -- file explorer
+    {
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = 'v2.x',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+            'MunifTanjim/nui.nvim',
+            {
+                -- only needed if you want to use the commands with "_with_window_picker" suffix
+                's1n7ax/nvim-window-picker',
+                version = 'v1.*',
+            },
+        },
+    },
     'simrat39/symbols-outline.nvim', -- show symbols of the current buffer
     'RRethy/vim-illuminate',         -- highlight related text under cursor
     'folke/todo-comments.nvim',      -- highlight and search TODO tags

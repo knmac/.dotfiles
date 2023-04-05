@@ -33,6 +33,7 @@ catppuccin.setup({
         barbar = true,
         cmp = true,
         gitsigns = true,
+        neotree = true,
         noice = true,
         notify = true,
         nvimtree = true,
