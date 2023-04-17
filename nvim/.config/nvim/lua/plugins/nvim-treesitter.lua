@@ -8,7 +8,10 @@ if not ok then return end
 require('nvim-treesitter.configs').setup({
     highlight = {
         enable = true,
-        disable = {},
+        -- disable = {},
+        disable = function(lang, bufnr) -- Disable in large buffers
+            return vim.api.nvim_buf_line_count(bufnr) > 50000
+        end,
     },
     indent = {
         enable = false,  -- treesitter's indent is buggy

@@ -101,6 +101,7 @@ map('n', '<leader>d', '<cmd>Neogen<CR>', default_opts)
 -- map('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', default_opts)
 -- map('n', '<leader>T', '<cmd>NvimTreeFindFile!<CR>', default_opts)
 map('n', '<leader>t', '<cmd>Neotree toggle<CR>', default_opts)
+map('n', '<leader>T', '<cmd>Neotree dir=%:p:h<CR>', default_opts)
 map('n', '<leader>o', '<cmd>SymbolsOutline<CR>', default_opts)
 map('n', '<leader>z', '<cmd>ZenMode<CR>', default_opts)
 
