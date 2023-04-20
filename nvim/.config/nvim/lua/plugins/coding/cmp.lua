@@ -126,6 +126,8 @@ return {
                 { name = 'path' }
             }, {
                 { name = 'cmdline' },
+            }, {
+                { name = 'neorg' },
             })
         })
 
