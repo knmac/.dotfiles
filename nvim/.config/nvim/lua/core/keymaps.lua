@@ -1,6 +1,5 @@
 -------------------------------------------------------------------------------
--- Keymaps configuration file: keymaps of neovim
--- and plugins.
+-- Keymaps configuration file: keymaps of neovim and plugins.
 -------------------------------------------------------------------------------
 local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
