@@ -1,10 +1,7 @@
--------------------------------------------------------------------------------
 -- Neovim Language Server Protocol
--- neovim/nvim-lspconfig
 -- Ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 -- Ref: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 -- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
--------------------------------------------------------------------------------
 return {
     -- Mason
     {

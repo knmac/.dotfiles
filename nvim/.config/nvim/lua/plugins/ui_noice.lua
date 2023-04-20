@@ -1,7 +1,8 @@
+-- UI improvement for messages, cmdline, and popupmenu
 return {
     {
         -- Noice
-        'folke/noice.nvim',     -- UI improvement for messages, cmdline, and popupmenu
+        'folke/noice.nvim',
         dependencies = 'MunifTanjim/nui.nvim', -- UI Component Library for Neovim
         config = function()
             require('noice').setup({

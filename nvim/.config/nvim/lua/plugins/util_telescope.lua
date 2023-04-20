@@ -1,7 +1,4 @@
--------------------------------------------------------------------------------
 -- Fuzzy finder for multiple things
--- nvim-telescope/telescope.nvim
--------------------------------------------------------------------------------
 return {
     'nvim-telescope/telescope.nvim',                    -- fuzzy finder for multiple things
     dependencies = {

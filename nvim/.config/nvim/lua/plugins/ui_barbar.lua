@@ -1,3 +1,4 @@
+-- Tabline bar at the top
 return {
     'romgrk/barbar.nvim',                         -- buffer line (top)
     dependencies = 'nvim-tree/nvim-web-devicons', -- extra icons with colors
