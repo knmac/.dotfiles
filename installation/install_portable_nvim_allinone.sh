@@ -2,7 +2,7 @@
 nodeversion="v17.9.0"
 rgversion="13.0.0"
 fdversion="v8.3.2"
-nvim_version="v0.8.0"
+nvim_version="v0.9.0"
 
 
 # Export path (may change to zsh if needed)

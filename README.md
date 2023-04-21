@@ -34,20 +34,7 @@ You may need to log out and log in again to update your default shell.
 
 ## 3. NeoVim
 
-![](demo/nvim_demo.png)
-
-### 3.1. Installation
-
-Install NeoVim (this also installs `nodejs`):
-
-```bash
-./installation/install_nvim.sh
-```
-
-### 3.2. Cheatsheet
-
-[Neovim cheatsheet](cheatsheets/nvim_cheatsheet.md)
-
+Neovim config has been moved to [knvim](https://github.com/knmac/knvim).
 
 ## 4. Tmux
 
