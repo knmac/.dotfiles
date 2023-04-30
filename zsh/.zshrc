@@ -70,11 +70,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  #git
-  zsh-syntax-highlighting
+  git
   zsh-autosuggestions
   conda-zsh-completion
 )
+
+SHORT_HOST=${HOST/.*/}
+ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.cache/zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,13 +112,6 @@ source $ZSH/oh-my-zsh.sh
 # Turn on edit command line mode (Ctrl-x Ctrl-e)
 autoload -U edit-command-line
 
-# Customize spaceship-prompt
-#SPACESHIP_CHAR_SYMBOL="❱ "
-
-# Configure zsh highlighting
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-
 # Configure zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240,underline"
 # Disabling suggestion for large buffers
@@ -128,7 +123,6 @@ bindkey '^ ' autosuggest-accept
 
 
 # Configure FZF ---------------------------------------------------------------
-# [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 #export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --border"
 export FZF_DEFAULT_OPTS="--layout=default"
 # Use ripgrep as search program for fzf
@@ -138,7 +132,7 @@ fi
 # Use bat for preview if possible
 if type bat &> /dev/null; then
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
-    export BAT_THEME="OneHalfDark"
+    export BAT_THEME="base16"
 fi
 source "$ZSH/plugins/fzf/fzf.plugin.zsh"
 
@@ -153,8 +147,14 @@ if type lf &> /dev/null; then
     LF_ICONS=${LF_ICONS//$'\n'/:}
     export LF_ICONS
     # alias lf="$HOME/.config/lf/scripts/lf_launcher_ueberzug.sh"
-    source "$HOME/.config/lf/scripts/lfcd.sh"
-    alias lf=lfcd
+
+    # Set up lfcd
+    LFCD="$HOME/.config/lf/scripts/lfcd.sh"
+    if [ -f "$LFCD" ]; then
+        source "$LFCD"
+        bindkey -s "^o" "lfcd\n"  # set up key-binding
+        alias lf=lfcd  # overwrite lf with lfcd
+    fi
 fi
 
 
@@ -168,13 +168,12 @@ elif type xsel &> /dev/null; then
 fi
 
 DOTFILES_DIR="$HOME/.dotfiles"
-NOTES_DIR="$HOME/Documents/my_notes"
-# alias bvim="nvim -u $HOME/.config/nvim/init_basic.vim"
 alias dotfiles="git --git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
 alias dotfiles_acp="dotfiles add . && dotfiles commit -m update && dotfiles push"
-alias notes="git --git-dir=$NOTES_DIR/.git --work-tree=$NOTES_DIR"
-alias notes_acp="notes add . && notes commit -m update && notes push"
-alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+# NOTES_DIR="$HOME/Documents/my_notes"
+# alias notes="git --git-dir=$NOTES_DIR/.git --work-tree=$NOTES_DIR"
+# alias notes_acp="notes add . && notes commit -m update && notes push"
+# alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 # Add tools
 source "$DOTFILES_DIR/tools/add_tools.sh"
 
@@ -184,6 +183,8 @@ export PATH="$HOME/.local/bin:$HOME/.local/nodejs/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="nvim"
+export VISUAL="nvim"
+export PYTHONBREAKPOINT="ipdb.set_trace"
 export PROMPT_COMMAND="pwd > /tmp/whereami_$USER"
 precmd() {
     eval "$PROMPT_COMMAND"
