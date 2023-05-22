@@ -5,9 +5,11 @@ preview_image() {
     h=$3
     x=$4
     y=$5
+
     # Rescale the image
-    w=$((w*99/100))
-    h=$((h*99/100))
+    w=$(( w * 99 / 100 ))
+    h=$(( h * 99 / 100 ))
+    y=$(( y + 1 ))
 
     if [[ "$( file -Lb --mime-type "$file")" =~ ^image ]]; then
         # kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
