@@ -46,7 +46,7 @@ preview_docx() {
 
     # MacOS
     if command -v docx2txt.sh > /dev/null 2>&1; then
-        docx2txt.sh "$file_docx"
+        docx2txt.sh "$file_docx" > /dev/null
     # Linux
     elif command -v  docx2txt > /dev/null 2>&1; then
         docx2txt < "$file_docx"
