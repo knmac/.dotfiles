@@ -56,6 +56,14 @@ preview_docx() {
     rm "$file_txt"
 }
 
+preview_nb() {
+    if command -v nbpreview > /dev/null 2>&1; then
+        nbpreview --theme material --image-drawing block "$1"
+    else
+        preview_text "$1"
+    fi
+}
+
 # CACHE="$HOME/.cache/lf/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | awk '{print $1}')"
 CACHE="$HOME/.cache/lf/thumbnail.$(stat "$(readlink -f "$1")" | sha256sum | awk '{print $1}')"
 mkdir -p "$HOME/.cache/lf"
@@ -135,6 +143,9 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
         ;;
     *.ino)
         preview_text --language=cpp "$1"
+        ;;
+    *.ipynb)
+        preview_nb "$1"
         ;;
     *)
         preview_text "$1"

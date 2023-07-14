@@ -174,7 +174,7 @@ tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 tmux_conf_theme_window_status_fg="$thm_fg"
 tmux_conf_theme_window_status_bg="$thm_bg"
 tmux_conf_theme_window_status_attr="none"
-tmux_conf_theme_window_status_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,,}#{?window_zoomed_flag,,}"
+tmux_conf_theme_window_status_format="#I:#W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,󰂞,}#{?window_zoomed_flag,,}"
 #tmux_conf_theme_window_status_format="#{circled_window_index} #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
 #tmux_conf_theme_window_status_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
 
@@ -191,7 +191,7 @@ tmux_conf_theme_window_status_format="#I #W#{?#{||:#{window_bell_flag},#{window_
 tmux_conf_theme_window_status_current_fg="$thm_black"
 tmux_conf_theme_window_status_current_bg="$thm_cyan"
 tmux_conf_theme_window_status_current_attr="bold"
-tmux_conf_theme_window_status_current_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,,}#{?window_zoomed_flag,,}"
+tmux_conf_theme_window_status_current_format="#I:#W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,󰂞,}#{?window_zoomed_flag,,}"
 #tmux_conf_theme_window_status_current_format="#{circled_window_index} #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
 #tmux_conf_theme_window_status_current_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
 
@@ -329,8 +329,8 @@ tmux_conf_battery_vbar_palette="gradient"
 #tmux_conf_battery_status_discharging="↓"    # U+2193
 # tmux_conf_battery_status_charging="🔌"     # U+1F50C
 # tmux_conf_battery_status_discharging="🔋"  # U+1F50B
-tmux_conf_battery_status_charging="ﮣ"     # U+1F50C
-tmux_conf_battery_status_discharging=""  # U+1F50B
+tmux_conf_battery_status_charging="󰚥"     # U+1F50C
+tmux_conf_battery_status_discharging="󱊥"  # U+1F50B
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
@@ -414,7 +414,7 @@ tmux_conf_uninstall_plugins_on_reload=true
 # visit https://github.com/tmux-plugins for available plugins
 #set -g @plugin 'tmux-plugins/tmux-copycat'
 #set -g @plugin 'tmux-plugins/tmux-cpu'
-#set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 
@@ -475,9 +475,10 @@ unbind C-b
 set -g prefix C-b
 bind C-b send-prefix
 set -g repeat-time 300
-# set -g default-terminal "xterm-256color"
-set -ag terminal-overrides ",xterm-256color:RGB"
-set  -g default-terminal "tmux-256color"
+
+set -g default-terminal "xterm-256color"
+# set -ag terminal-overrides ",xterm-256color:RGB"
+# set  -g default-terminal "tmux-256color"
 
 bind-key -n Home send Escape "OH"
 bind-key -n End send Escape "OF"
