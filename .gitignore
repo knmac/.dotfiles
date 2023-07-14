@@ -4,5 +4,7 @@ nvim/.config/nvim/.netrwhist
 nvim/.config/nvim/plugin/packer_compiled.lua
 nvim/.config/nvim/lazy-lock.json
 
+tmux/.config/tmux/plugins
+
 .DS_Store
 .DS_Store?
