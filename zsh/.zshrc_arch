@@ -13,7 +13,6 @@ export ZSH=/usr/share/oh-my-zsh/
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
 # ZSH_THEME="random"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -446,7 +445,7 @@ fi
 # Use bat for preview if possible
 if type bat &> /dev/null; then
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
-    export BAT_THEME="OneHalfDark"
+    export BAT_THEME="base16"
 fi
 source "$ZSH/plugins/fzf/fzf.plugin.zsh"
 
@@ -454,6 +453,7 @@ source "$ZSH/plugins/fzf/fzf.plugin.zsh"
 # Configure lf ----------------------------------------------------------------
 if type lf &> /dev/null; then
     # Set up icons
+    # NOTE: For MacOS, use gsed
     LF_ICONS=$(gsed $HOME/.config/lf/icons \
                 -e '/^[ \t]*#/d'         \
                 -e '/^[ \t]*$/d'         \
@@ -493,16 +493,19 @@ alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 alias ls="exa --icons --group-directories-first"
 alias via="via --disable-features=VizDisplayCompositor"
 
-# Add tools
+# Add custom tools
 source "$DOTFILES_DIR/tools/add_tools.sh"
 
 
 # Exports ---------------------------------------------------------------------
 export PATH="$HOME/.local/bin:$HOME/.local/nodejs/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+export NVIM_APPNAME="knvim"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="nvim"
 export PROMPT_COMMAND="pwd > /tmp/whereami_$USER"
 precmd() {
     eval "$PROMPT_COMMAND"
 }
+
+# eval "$(starship init zsh)"

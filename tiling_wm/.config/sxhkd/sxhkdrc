@@ -1,8 +1,10 @@
 # Terminal
+# super + Return
+#     kitty
+# super + shift + Return
+#     kitty --directory "$(cat /tmp/whereami_$USER)"
 super + Return
-    kitty
-super + shift + Return
-    kitty --directory "$(cat /tmp/whereami_$USER)"
+    wezterm
 
 # File explorer
 super + e
