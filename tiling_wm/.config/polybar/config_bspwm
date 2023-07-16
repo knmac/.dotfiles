@@ -72,8 +72,8 @@ module-margin = 1
 wm-restack = bspwm
 
 font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;2
-font-1 = FiraCode Nerd Font:style=Regular:size=10;2
-font-2 = feather:style=Regular:size=10;2
+font-1 = feather:style=Regular:size=10;2
+; font-2 = FiraCode Nerd Font:style=Regular:size=10;2
 width = 100%
 padding = 1
 height = 28
