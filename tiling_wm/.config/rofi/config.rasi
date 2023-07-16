@@ -1,4 +1,4 @@
-// vim: ft=css
+// vim: ft=css sw=4 ts=4
 configuration {
     terminal:                       "kitty";
     modi:                           "drun,run,window,ssh,keys";
@@ -16,11 +16,11 @@ configuration {
     me-accept-entry:                "MousePrimary";
     me-select-entry:                "";
 
-    display-drun:                   " drun";
-    display-run:                    " run";
-    display-window:                 " window";
-    display-ssh:                    " ssh";
-    display-keys:                   " keys";
+    display-drun:                   "󰕮 drun";
+    display-run:                    " run";
+    display-window:                 " window";
+    display-ssh:                    " ssh";
+    display-keys:                   "󰌌 keys";
 }
 
 @theme "~/.config/rofi/main_theme.rasi"
