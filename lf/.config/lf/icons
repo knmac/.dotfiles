@@ -43,6 +43,7 @@ fi             # FILE
 '.Dockerfile'                    
 '.git/'                          
 '.gitlab-ci.yml'                 
+'.vscode/'                       
 
 # Folder
 ~/.config/                       
@@ -50,20 +51,19 @@ fi             # FILE
 ~/.npm/                          
 ~/.steam/                        
 ~/.Trash/                        
-~/.vscode/                       
 ~/AmazonWorkDocsCompanion/       
 '~/Amazon WorkDocs Drive/'       
 ~/Applications/                  
-~/Desktop/                       
-~/Documents/                     
-~/Downloads/                     
+~/Desktop/                       󰇄
+~/Documents/                     󱗖
+~/Downloads/                     󰅢
 ~/Dropbox/                       
 ~/Library/                       
 ~/Movies/                        
 ~/Music/                         
 ~/Pictures/                      
-~/Public/                        
-~/Templates/                     
+~/Public/                        
+~/Templates/                      
 ~/Videos/                        
 ~/datasets/                      
 ~/workspace/                     
