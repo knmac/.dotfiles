@@ -21,12 +21,12 @@ local font_size = 11.0
 -- Font
 config.font = wezterm.font_with_fallback {
     'JetBrains Mono',
-    'JetBrainsMono Nerd Font',
+    -- 'JetBrainsMono Nerd Font',
 }
 config.font_size = font_size
 config.command_palette_font_size = font_size
 config.char_select_font_size = font_size
-config.warn_about_missing_glyphs = false
+-- config.warn_about_missing_glyphs = false
 
 -- Color
 config.color_scheme = 'Catppuccin Macchiato'
@@ -70,6 +70,32 @@ config.disable_default_key_bindings = true -- Deactivate default key bindings
 local keybindings = require('keybindings_linux')
 config.keys = keybindings.keys
 config.key_tables = keybindings.key_tables
+
+-- ----------------------------------------------------------------------------
+-- For nvim-zenmode
+-- ----------------------------------------------------------------------------
+wezterm.on('user-var-changed', function(window, pane, name, value)
+    local overrides = window:get_config_overrides() or {}
+    if name == "ZEN_MODE" then
+        local incremental = value:find("+")
+        local number_value = tonumber(value)
+        if incremental ~= nil then
+            while (number_value > 0) do
+                window:perform_action(wezterm.action.IncreaseFontSize, pane)
+                number_value = number_value - 1
+            end
+            overrides.enable_tab_bar = false
+        elseif number_value < 0 then
+            window:perform_action(wezterm.action.ResetFontSize, pane)
+            overrides.font_size = nil
+            overrides.enable_tab_bar = true
+        else
+            overrides.font_size = number_value
+            overrides.enable_tab_bar = false
+        end
+    end
+    window:set_config_overrides(overrides)
+end)
 
 -- ----------------------------------------------------------------------------
 -- and finally, return the configuration to wezterm

@@ -20,6 +20,9 @@ wezterm.on('update-right-status', function(window, pane)
             if dot then
                 hostname = hostname:sub(1, dot - 1)
             end
+            if hostname == '' then
+                hostname = 'local'
+            end
             -- and extract the cwd from the uri
             cwd = cwd_uri:sub(slash)
 
