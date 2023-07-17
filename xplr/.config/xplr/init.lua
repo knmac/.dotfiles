@@ -180,22 +180,22 @@ local function meta_icon(my_icon)
 end
 
 -- Common icons
-xplr.config.node_types.directory.meta.icon = " "
-xplr.config.node_types.file.meta.icon      = " "
+xplr.config.node_types.directory.meta.icon = " "
+xplr.config.node_types.file.meta.icon      = " "
 xplr.config.node_types.symlink.meta.icon   = " "
 
 -- Icons based on special file name
-xplr.config.node_types.special             = {
+xplr.config.node_types.special = {
     -- Directories
     ["AmazonWorkDocsCompanion"] = meta_icon(" "),
-    ["Amazon WorkDocs Drive"]   = meta_icon(" "),
-    ["Applications"]            = meta_icon(" "),
-    ["Desktop"]                 = meta_icon(" "),
-    ["Documents"]               = meta_icon(" "),
-    ["Downloads"]               = meta_icon(" "),
+    ["Amazon WorkDocs Drive"]   = meta_icon(" "),
+    ["Applications"]            = meta_icon(" "),
+    ["Desktop"]                 = meta_icon("󰇄 "),
+    ["Documents"]               = meta_icon("󱗖 "),
+    ["Downloads"]               = meta_icon("󰅢 "),
     ["Dropbox"]                 = meta_icon(" "),
     ["Drop Box"]                = meta_icon(" "),
-    ["Library"]                 = meta_icon(" "),
+    ["Library"]                 = meta_icon(" "),
     ["Movies"]                  = meta_icon(" "),
     ["Music"]                   = meta_icon(" "),
     ["Pictures"]                = meta_icon(" "),
@@ -208,9 +208,9 @@ xplr.config.node_types.special             = {
     [".dotfiles"]               = meta_icon(" "),
     [".steam"]                  = meta_icon(" "),
     -- Files
-    ["readme"]                  = meta_icon(" "),
-    ["Readme"]                  = meta_icon(" "),
-    ["README"]                  = meta_icon(" "),
+    ["readme"]                  = meta_icon(" "),
+    ["Readme"]                  = meta_icon(" "),
+    ["README"]                  = meta_icon(" "),
     [".DS_Store"]               = meta_icon(" "),
     [".Dockerfile"]             = meta_icon(" "),
     [".gitlab-ci.yml"]          = meta_icon(" "),
@@ -227,14 +227,14 @@ xplr.config.node_types.special             = {
 }
 
 -- Icons by MIME list
-xplr.config.node_types.mime_essence        = {
+xplr.config.node_types.mime_essence = {
     application = {
-        ["*"]                                                             = meta_icon(" "),
+        ["*"]                                                             = meta_icon(" "),
         ["pdf"]                                                           = meta_icon(" "),
         ["vnd.amazon.ebook"]                                              = meta_icon(" "),
         ["octet-stream"]                                                  = meta_icon(" "),
         ["x-sh"]                                                          = meta_icon(" "),
-        ["rtf"]                                                           = meta_icon(" "),
+        ["rtf"]                                                           = meta_icon(" "),
         -- word
         ["msword"]                                                        = meta_icon(" "),
         ["vnd.openxmlformats-officedocument.wordprocessingml.document"]   = meta_icon(" "),
@@ -259,7 +259,7 @@ xplr.config.node_types.mime_essence        = {
         ["zip"]                                                           = meta_icon(" "),
     },
     text = {
-        ["*"]    = meta_icon(" "),
+        ["*"]    = meta_icon(" "),
         ["html"] = meta_icon(" "),
         ["css"]  = meta_icon(" "),
     },
@@ -278,16 +278,16 @@ xplr.config.node_types.mime_essence        = {
 }
 
 -- Icons by other extension
-xplr.config.node_types.extension           = {
+xplr.config.node_types.extension = {
     ["py"]       = meta_icon(" "),
     ["ipynb"]    = meta_icon(" "),
     ["lua"]      = meta_icon(" "),
     ["zsh"]      = meta_icon(" "),
     ["bash"]     = meta_icon(" "),
-    ["md"]       = meta_icon(" "),
-    ["mdx"]      = meta_icon(" "),
-    ["markdown"] = meta_icon(" "),
-    ["rmd"]      = meta_icon(" "),
+    ["md"]       = meta_icon(" "),
+    ["mdx"]      = meta_icon(" "),
+    ["markdown"] = meta_icon(" "),
+    ["rmd"]      = meta_icon(" "),
     ["conf"]     = meta_icon(" "),
     ["pem"]      = meta_icon(" "),
     ["tex"]      = meta_icon(" "),
