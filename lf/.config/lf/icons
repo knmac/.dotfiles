@@ -80,7 +80,7 @@ fi             # FILE
 *.ejs           
 *.csv           
 *.csl           
-*.css           
+*.css           󰌜
 *.less          
 *.md            
 *.mdx           
@@ -117,7 +117,7 @@ fi             # FILE
 *.cc            
 *.cp            
 *.c             
-*.cs            
+*.cs            󰌛
 *.h             
 *.hh            
 *.hpp           
