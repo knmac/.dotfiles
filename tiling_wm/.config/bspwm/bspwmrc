@@ -65,7 +65,6 @@ xsetroot -cursor_name left_ptr &
 nm-applet &
 
 # Bluetooth manager
-# blueman-applet &
 blueberry-tray &
 
 # Ibus
@@ -76,6 +75,9 @@ ibus-daemon -drx &
 
 # Power manager
 xfce4-power-manager &
+
+# Launch polkit
+pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }
 
 
 # =============================================================================

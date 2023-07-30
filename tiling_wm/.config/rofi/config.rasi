@@ -16,11 +16,11 @@ configuration {
     me-accept-entry:                "MousePrimary";
     me-select-entry:                "";
 
-    display-drun:                   "󰕮 drun";
-    display-run:                    " run";
-    display-window:                 " window";
-    display-ssh:                    " ssh";
-    display-keys:                   "󰌌 keys";
+    display-drun:                   "󰕮 App";
+    display-run:                    " Cmd";
+    display-window:                 " Window";
+    display-ssh:                    " SSH";
+    display-keys:                   "󰌌 Keys";
 }
 
 @theme "~/.config/rofi/main_theme.rasi"

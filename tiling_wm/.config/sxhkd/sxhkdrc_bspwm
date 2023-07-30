@@ -28,13 +28,23 @@ super + ctrl + {h,j,k,l}
     bspc node --presel-dir \~{west,south,north,east}
 super + ctrl + {Left,Down,Up,Right}
     bspc node --presel-dir \~{west,south,north,east}
+super + ctrl + space
+    bspc node -p cancel
+
+# Make split ratios equal
+super + equal
+    bspc node @/ --equalize
+
+# Make split ratios balanced
+super + minus
+    bspc node @/ --balance
 
 # Rotate tree
 # super + {_,shift +} BackSpace
 #     bspc node @/ -C {forward,backward}
 # Switch layout of the current workspace
-super + BackSpace
-    bsp-layout cycle --layouts tall,tiled
+# super + BackSpace
+#     bsp-layout cycle --layouts tall,tiled
 
 # Toggle fullscreen
 super + f

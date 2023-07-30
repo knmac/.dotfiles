@@ -23,6 +23,8 @@ include-file = ~/.config/polybar/modules/memory.ini
 include-file = ~/.config/polybar/modules/battery.ini
 include-file = ~/.config/polybar/modules/backlight.ini
 include-file = ~/.config/polybar/modules/pulseaudio.ini
+include-file = ~/.config/polybar/modules/network.ini
+include-file = ~/.config/polybar/modules/weather.ini
 include-file = ~/.config/polybar/modules/date.ini
 include-file = ~/.config/polybar/modules/sysmenu.ini
 
@@ -32,14 +34,13 @@ include-file = ~/.config/polybar/modules/sysmenu.ini
 ; =============================================================================
 monitor = ${env:MONITOR:}
 modules-left = rofi bspwm title
-modules-center =
+modules-center = weather
 modules-right = filesystem cpu memory backlight pulseaudio battery date sysmenu
 module-margin = 1
 wm-restack = bspwm
 
 font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;2
-font-1 = FiraCode Nerd Font:style=Regular:size=10;2
-font-2 = feather:style=Regular:size=10;2
+font-1 = feather:style=Regular:size=10;2
 width = 100%
 padding = 1
 height = 28
@@ -73,7 +74,6 @@ wm-restack = bspwm
 
 font-0 = JetBrainsMono Nerd Font:style=Regular:size=10;2
 font-1 = feather:style=Regular:size=10;2
-; font-2 = FiraCode Nerd Font:style=Regular:size=10;2
 width = 100%
 padding = 1
 height = 28

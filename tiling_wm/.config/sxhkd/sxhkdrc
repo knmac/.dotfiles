@@ -37,8 +37,8 @@ super + r
     nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --save
 
 # Weather (Meteo)
-super + w
-    meteo
+# super + w
+#     meteo
 
 # Dmenu
 super + d
