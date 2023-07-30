@@ -1,20 +1,18 @@
 # Terminal
-# super + Return
-#     kitty
-# super + shift + Return
-#     kitty --directory "$(cat /tmp/whereami_$USER)"
 super + Return
     wezterm
 
 # File explorer
 super + e
     thunar
+
+# File explorer (at previous location)
 super + shift + e
     thunar "$(cat /tmp/whereami_$USER)"
 
 # Show key bindings
 super + shift + slash
-    "$HOME/.config/rofi/scripts/find_keybindings.sh"
+    "$HOME/.config/sxhkd/scripts/find_keybindings.sh"
 
 # Settings
 super + s
@@ -22,7 +20,7 @@ super + s
 
 # Calculator (qalculate)
 super + c
-    qalculate
+    galculator
 
 # Web browser
 super + b
@@ -36,10 +34,6 @@ super + b
 super + r
     nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --save
 
-# Weather (Meteo)
-# super + w
-#     meteo
-
 # Dmenu
 super + d
     dmenu_run -p " " -fn "JetBrainsMono Nerd Font"
@@ -47,9 +41,13 @@ super + d
 # Rofi menus
 super + space
     "$HOME/.config/rofi/scripts/launch_rofi_drun.sh"
+
+# Show applications
 super + shift + space
     "/home/knmac/.config/rofi/scripts/launch_rofi_fullscreen.sh"
     # "$HOME/.config/rofi/scripts/launch_rofi_run.sh"
+
+# Switch open windows
 super + Tab
     "$HOME/.config/rofi/scripts/launch_rofi_window.sh"
 
@@ -57,9 +55,11 @@ super + Tab
 super + t
     "$HOME/.config/trayer/trayer_toggle.sh"
 
-# notification (dunst)
+# Show notification history
 super + Insert
     dunstctl history-pop
+
+# Delete notification
 super + Delete
     dunstctl close-all
 
