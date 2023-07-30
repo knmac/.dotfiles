@@ -6,12 +6,28 @@
     background-color:               @bg;
 }
 
+/*****----- Main Window -----*****/
 window {
     border:                         0px;
     border-color:                   @ac;
     border-radius:                  0px;
     padding:                        30;
     width:                          800;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    border:                         0px;
+    border-color:                   @ac;
+    padding:                        6;
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    spacing:                        0px;
+    text-color:                     @fg;
+    padding:                        1px;
+    children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 
 prompt {
@@ -37,19 +53,7 @@ case-indicator {
     text-color:                     @fg;
 }
 
-inputbar {
-    spacing:                        0px;
-    text-color:                     @fg;
-    padding:                        1px;
-    children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-
-mainbox {
-    border:                         0px;
-    border-color:                   @ac;
-    padding:                        6;
-}
-
+/*****----- Listview -----*****/
 listview {
     lines:                          10;
     /*columns:                        2;*/
@@ -61,6 +65,7 @@ listview {
     padding:                        5px 5px 0px 5px;
 }
 
+/*****----- Elements -----*****/
 element {
     border:                         0px;
     border-radius:                  5px;
@@ -109,12 +114,7 @@ element alternate.active {
     text-color:                     @fg;
 }
 
-sidebar {
-    border:                         0px;
-    border-color:                   @ac;
-    border-radius:                  0px;
-}
-
+/*****----- Button -----*****/
 button {
     background-color:               @green;
     margin:                         5px;
@@ -133,14 +133,7 @@ button selected {
     border-color:                   @fg;
 }
 
-scrollbar {
-    width:                          4px;
-    border:                         0px;
-    handle-color:                   @fg;
-    handle-width:                   8px;
-    padding:                        0;
-}
-
+/*****----- Message -----*****/
 message {
     border:                         0px;
     border-color:                   @ac;
@@ -149,4 +142,19 @@ message {
 
 textbox {
     text-color:                     @fg;
+}
+
+/*****----- Sidebar -----*****/
+sidebar {
+    border:                         0px;
+    border-color:                   @ac;
+    border-radius:                  0px;
+}
+
+scrollbar {
+    width:                          4px;
+    border:                         0px;
+    handle-color:                   @fg;
+    handle-width:                   8px;
+    padding:                        0;
 }

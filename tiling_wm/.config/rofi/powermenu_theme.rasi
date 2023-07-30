@@ -10,6 +10,7 @@ configuration {
     background-color:               @bg;
 }
 
+/*****----- Main Window -----*****/
 window {
     border:                         0px;
     border-color:                   @ac;
@@ -17,6 +18,21 @@ window {
     padding:                        30;
     width:                          855;
     location:                       center;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    border:                         0px;
+    border-color:                   @ac;
+    padding:                        6;
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    spacing:                        0px;
+    text-color:                     @fg;
+    padding:                        1px;
+    children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 
 prompt {
@@ -42,19 +58,7 @@ case-indicator {
     text-color:                     @fg;
 }
 
-inputbar {
-    spacing:                        0px;
-    text-color:                     @fg;
-    padding:                        1px;
-    children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-
-mainbox {
-    border:                         0px;
-    border-color:                   @ac;
-    padding:                        6;
-}
-
+/*****----- Listview -----*****/
 listview {
     fixed-height:                   0;
     border:                         0px;
@@ -65,6 +69,7 @@ listview {
     layout:                         horizontal;
 }
 
+/*****----- Elements -----*****/
 element {
     border:                         0px;
     border-radius:                  15px;

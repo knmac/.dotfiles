@@ -1,20 +1,24 @@
 // vim: ft=css sw=4 ts=4
 configuration {
-    terminal:                       "kitty";
+    terminal:                       "wezterm";
     modi:                           "drun,run,window,ssh,keys";
 
+    /* Display */
     /*font:                           "FiraCode Nerd Font 12";*/
     font:                           "JetBrainsMono Nerd Font 12";
     fixed-num-lines:                true;
     show-icons:                     true;
     sidebar-mode:                   true;
     scroll-method:                  1;
-    /*window-format:                  "[{w}] ··· {c} ···   {t}";*/
+    disable-history:                true;
     click-to-exit:                  true;
     combi-hide-mode-prefix:         false;
+    /*window-format:                  "[{w}] ··· {c} ···   {t}";*/
 
+    /* Mouse */
     me-accept-entry:                "MousePrimary";
     me-select-entry:                "";
+    hover-select:                   false;
 
     display-drun:                   "󰕮 App";
     display-run:                    " Cmd";

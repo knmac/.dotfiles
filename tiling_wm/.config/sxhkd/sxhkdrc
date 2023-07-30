@@ -48,7 +48,8 @@ super + d
 super + space
     "$HOME/.config/rofi/scripts/launch_rofi_drun.sh"
 super + shift + space
-    "$HOME/.config/rofi/scripts/launch_rofi_run.sh"
+    "/home/knmac/.config/rofi/scripts/launch_rofi_fullscreen.sh"
+    # "$HOME/.config/rofi/scripts/launch_rofi_run.sh"
 super + Tab
     "$HOME/.config/rofi/scripts/launch_rofi_window.sh"
 
