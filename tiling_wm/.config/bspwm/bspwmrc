@@ -65,7 +65,8 @@ xsetroot -cursor_name left_ptr &
 nm-applet &
 
 # Bluetooth manager
-blueman-applet &
+# blueman-applet &
+blueberry-tray &
 
 # Ibus
 ibus-daemon -drx &
