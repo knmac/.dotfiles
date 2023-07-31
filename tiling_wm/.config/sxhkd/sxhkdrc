@@ -1,28 +1,28 @@
-# Terminal
+# Open terminal (Wezterm)
 super + Return
     wezterm
 
-# File explorer
+# Open file explorer (Thunar)
 super + e
     thunar
 
-# File explorer (at previous location)
+# Open file explorer (at the previous location)
 super + shift + e
     thunar "$(cat /tmp/whereami_$USER)"
 
-# Show key bindings
+# Show key-bindings
 super + shift + slash
     "$HOME/.config/sxhkd/scripts/find_keybindings.sh"
 
-# Settings
+# Open task manager (xfce4-taskmanager)
 super + s
-    stacer
+    xfce4-taskmanager
 
-# Calculator (qalculate)
+# Open calculator (Galculator)
 super + c
     galculator
 
-# Web browser
+# Open web browser (Google Chrome)
 super + b
     google-chrome-stable
 
@@ -30,19 +30,19 @@ super + b
 # super + m
 #     evolution --force-online
 
-# Random wallpaper
+# Set a random wallpaper
 super + r
     nitrogen --set-zoom-fill --random "$HOME/Pictures/my_wallpapers" --save
 
-# Dmenu
+# Launch dmenu
 super + d
-    dmenu_run -p " " -fn "JetBrainsMono Nerd Font"
+    dmenu_run -p "󰍉 " -fn "JetBrainsMono Nerd Font"
 
-# Rofi menus
+# Show multiple menus with Rofi
 super + space
     "$HOME/.config/rofi/scripts/launch_rofi_drun.sh"
 
-# Show applications
+# Show fullscreen application menu
 super + shift + space
     "/home/knmac/.config/rofi/scripts/launch_rofi_fullscreen.sh"
     # "$HOME/.config/rofi/scripts/launch_rofi_run.sh"
@@ -51,7 +51,7 @@ super + shift + space
 super + Tab
     "$HOME/.config/rofi/scripts/launch_rofi_window.sh"
 
-# Systemtray
+# Toggle systemtray
 super + t
     "$HOME/.config/trayer/trayer_toggle.sh"
 
@@ -59,11 +59,11 @@ super + t
 super + Insert
     dunstctl history-pop
 
-# Delete notification
+# Clear notification
 super + Delete
     dunstctl close-all
 
-# Power menu
+# Show power menu
 super + Escape
     "$HOME/.config/rofi/scripts/powermenu.sh"
 
@@ -92,6 +92,8 @@ super + p
 #     sleep 0.2; \
 #     maim -s -u | xclip -selection clipboard -t image/png -i
 #     #scrot --select --freeze '/tmp/%F_%T_$wx$h.png' --exec 'xclip -selection clipboard -target image/png -i $f'
+
+# Screenshot (Flameshot)
 Print
     flameshot gui
 

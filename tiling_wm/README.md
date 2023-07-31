@@ -1,43 +1,32 @@
-# Installation
+# List of packages
 
-## General dependencies
+Need to install
+- bspwm
+- flameshot
+- galculator
+- google-chrome-stable
+- ibus
+- kitty
+- meteo-gtk
+- nitrogen
+- picom (jonaburg)
+- polybar
+- rofi
+- thunar
+- wezterm
 
-```bash
-sudo apt install lxappearance arandr sxhkd xclip xss-lock xautolock maim nitrogen trayer blueman thunar
-```
-
-## I3 window manager (with gaps)
-
-```bash
-sudo add-apt-repository ppa:kgilmer/speed-ricer
-sudo apt install i3-gaps
-```
-
-## i3lock-color
-
-Follow the instructions from [here](https://github.com/Raymo111/i3lock-color)
-
-## Picom
-
-```bash
-sudo apt install picom
-```
-
-<!--Or follow the instructions from [here](https://github.com/yshui/picom)-->
-Or follow the instructions from [here](https://github.com/jonaburg/picom) (jonaburg's repo)
-
-## Polybar
-
-```bash
-sudo apt install polybar
-```
-
-Or follow the instructions from [here](https://github.com/polybar/polybar)
-
-## Rofi
-
-```bash
-sudo apt install rofi
-```
-
-Or follow the instructions from [here](https://github.com/davatorium/rofi)
+Pre-installed by xfce4
+- alsamixer
+- blueberry
+- dmenu
+- dunst
+- i3-lock
+- nm-applet
+- pamac
+- pavucontrol
+- polkit-gnome-authentication-agent-1
+- xautolock
+- xfce-taskmanager
+- xfce4-clipman
+- xfce4-power-manager
+- xss-lock
