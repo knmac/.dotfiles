@@ -91,9 +91,8 @@ pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-g
 # =============================================================================
 bspc rule -a '*:pavucontrol' state=floating
 bspc rule -a '*:matplotlib' state=floating
-bspc rule -a '*:galculator' state=floating
-bspc rule -a 'Galculator' state=floating
 bspc rule -a '*:com.gitlab.bitseater.meteo' state=floating
 bspc rule -a '*:meteo' state=floating
 bspc rule -a '*:xfce4-taskmanager' state=floating
+bspc rule -a 'Galculator' state=floating
 bspc rule -a 'Zathura' state=tiled
