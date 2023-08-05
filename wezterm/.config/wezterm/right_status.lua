@@ -3,6 +3,7 @@ local wezterm = require('wezterm')
 wezterm.on('update-right-status', function(window, pane)
     -- Each element holds the text for a cell in a "powerline" style << fade
     local cells = {}
+    table.insert(cells, '')  -- Empty item with default background for decoration
 
     -- Figure out the cwd and host of the current pane.
     -- This will pick up the hostname for the remote host if your
@@ -47,6 +48,7 @@ wezterm.on('update-right-status', function(window, pane)
 
     -- Color palette for the backgrounds of each cell
     local colors = {
+        '#333333',  -- Default background
         '#3c1361',
         '#52307c',
         '#663a82',
