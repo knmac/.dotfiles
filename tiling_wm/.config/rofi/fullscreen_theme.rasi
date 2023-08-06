@@ -9,6 +9,10 @@
  * Copyright: Dave Davenport
  */
 
+configuration {
+    display-drun: "";
+}
+
 * {
     background-color: transparent;
     text-color:       @fg;
