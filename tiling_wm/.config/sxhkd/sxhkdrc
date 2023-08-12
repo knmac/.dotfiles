@@ -27,8 +27,8 @@ super + b
     google-chrome-stable
 
 # Email client
-# super + m
-#     evolution --force-online
+super + m
+    thunderbird
 
 # Set a random wallpaper
 super + r
@@ -44,7 +44,7 @@ super + space
 
 # Show fullscreen application menu
 super + shift + space
-    "/home/knmac/.config/rofi/scripts/launch_rofi_fullscreen.sh"
+    "$HOME/.config/rofi/scripts/launch_rofi_fullscreen.sh"
     # "$HOME/.config/rofi/scripts/launch_rofi_run.sh"
 
 # Switch open windows
