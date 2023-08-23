@@ -476,9 +476,8 @@ set -g prefix C-b
 bind C-b send-prefix
 set -g repeat-time 300
 
-set -g default-terminal "xterm-256color"
-# set -ag terminal-overrides ",xterm-256color:RGB"
-# set  -g default-terminal "tmux-256color"
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"
 
 bind-key -n Home send Escape "OH"
 bind-key -n End send Escape "OF"
