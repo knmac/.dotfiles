@@ -77,7 +77,7 @@ ibus-daemon -drx &
 xfce4-power-manager &
 
 # Clipboard manager
-xfce4-clipman &
+pidof -q xfce4-clipman || { xfce4-clipman & }
 
 # Package manager
 pamac-tray &
