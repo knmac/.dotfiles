@@ -46,8 +46,10 @@ fi             # FILE
 '.vscode/'                       
 
 # Folder
+~/                               󱂵
 ~/.config/                       
-~/.dotfiles/                     
+~/.dotfiles/                     
+~/tools/                         󱧼
 ~/.npm/                          
 ~/.steam/                        
 ~/.Trash/                        
