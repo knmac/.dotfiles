@@ -21,9 +21,9 @@
 ln             # LINK
 or             # ORPHAN
 tw             # STICKY_OTHER_WRITABLE
-ow             # OTHER_WRITABLE
+ow             # OTHER_WRITABLE
 st             # STICKY
-di             # DIR
+di             # DIR
 pi      p       # FIFO
 so      s       # SOCK
 bd      b       # BLK
@@ -101,7 +101,7 @@ fi             # FILE
 *.pyc           
 *.pyo           
 *.pyd           
-*.ipynb         
+*.ipynb         
 *.coffee        
 *.mustache      
 *.hbs           
@@ -137,8 +137,8 @@ fi             # FILE
 *.csh           
 *.awk           
 *.ps1           
-*.ml            λ
-*.mli           λ
+*.ml            
+*.mli           
 *.diff          
 *.db            
 *.sql           
@@ -180,15 +180,15 @@ fi             # FILE
 *.tsx           
 *.jl            
 *.pp            
-*.vue           ﵂
+󰡄.vue           ﵂
 *.elm           
 *.swift         
 *.xcplayground  
-*.tex           
-*.r             ﳒ
+*.tex           
+*.r             
 *.rproj         鉶
 *.sol           ﲹ
-*.pem           
+*.pem           
 
 # file names (vim-devicons) (case-insensitive not supported in lf)
 *gruntfile.coffee       
@@ -412,7 +412,7 @@ Vagrantfile             
 *.ppt   
 *.pptx  
 *.odp   
-*.bib   
+*.bib   
 *.bin   
 
 # vim:ft=conf
