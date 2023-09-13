@@ -20,10 +20,10 @@
 # file types (with matching order)
 ln             # LINK
 or             # ORPHAN
-tw             # STICKY_OTHER_WRITABLE
-ow             # OTHER_WRITABLE
-st             # STICKY
-di             # DIR
+tw      󰚝       # STICKY_OTHER_WRITABLE
+ow      󰉋       # OTHER_WRITABLE
+st      󰚝       # STICKY
+di      󰉋       # DIR
 pi      p       # FIFO
 so      s       # SOCK
 bd      b       # BLK
@@ -47,7 +47,7 @@ fi             # FILE
 
 # Folder
 ~/                               󱂵
-~/.config/                       
+~/.config/                       󱁿
 ~/.dotfiles/                     
 ~/tools/                         󱧼
 ~/.npm/                          
