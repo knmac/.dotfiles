@@ -31,14 +31,14 @@ cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
 ex             # EXEC
-fi             # FILE
+fi             # FILE
 
 # full matches
 # Files
-*README                          
-*Readme                          
-*readme                          
-'CMakeLists.txt'                 
+*README                          
+*Readme                          
+*readme                          
+'CMakeLists.txt'                 
 '.DS_Store'                      
 '.Dockerfile'                    
 '.git/'                          
@@ -172,7 +172,7 @@ fi             # FILE
 *.eex           
 *.leex          
 *.heex          
-*.vim           
+*.vim           
 *.ai            
 *.psd           
 *.psb           
@@ -186,7 +186,7 @@ fi             # FILE
 *.xcplayground  
 *.tex           
 *.r             
-*.rproj         鉶
+*.rproj         
 *.sol           ﲹ
 *.pem           
 
@@ -208,19 +208,19 @@ fi             # FILE
 *.cshrc                 
 *.tcshrc                
 *.nbrc                  
-*.vimrc                 
-*.gvimrc                
-*_vimrc                 
-*_gvimrc                
-*.viminfo               
-*.bashrc                
-*.zshrc                 
-*.zshenv                
-*.zprofile              
-*.bashprofile           
-*.bash_profile          
-*.bash_login            
-*.profile               
+*.vimrc                 
+*.gvimrc                
+*_vimrc                 
+*_gvimrc                
+*.viminfo               
+*.bashrc                󱆃
+*.zshrc                 󱆃
+*.zshenv                󱆃
+*.zprofile              󱆃
+*.bashprofile           󱆃
+*.bash_profile          󱆃
+*.bash_login            󱆃
+*.profile               󱆃
 *favicon.ico            
 *license                
 *node_modules           
@@ -231,8 +231,8 @@ fi             # FILE
 *rakefile               
 *config.ru              
 *gemfile                
-*makefile               
-*cmakelists.txt         
+*makefile               
+*cmakelists.txt         
 *robots.txt             ﮧ
 
 # file names (case-sensitive adaptations)
@@ -252,8 +252,8 @@ fi             # FILE
 *Docker-compose.yml     
 *Rakefile               
 *Gemfile                
-*Makefile               
-*CMakeLists.txt         
+*Makefile               
+*CMakeLists.txt         
 
 # file patterns (vim-devicons) (patterns not supported in lf)
 # .*jquery.*\.js$         
@@ -274,7 +274,7 @@ fi             # FILE
 *materialize.min.js     
 *materialize.min.css    
 *mootools.min.js        
-*vimrc                  
+*vimrc                  
 Vagrantfile             
 
 # archives or compressed (extensions from dircolors defaults)
@@ -400,8 +400,8 @@ Vagrantfile             
 
 # other formats
 *.pdf   
-*.txt   
-*.lst   
+*.txt   
+*.lst   
 *.log   
 *.doc   
 *.docx  
