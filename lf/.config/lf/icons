@@ -180,7 +180,7 @@ fi             # FILE
 *.tsx           
 *.jl            
 *.pp            
-󰡄.vue           ﵂
+*.vue           󰡄
 *.elm           
 *.swift         
 *.xcplayground  
@@ -189,6 +189,7 @@ fi             # FILE
 *.rproj         
 *.sol           ﲹ
 *.pem           
+*.pub           󰷖
 
 # file names (vim-devicons) (case-insensitive not supported in lf)
 *gruntfile.coffee       
