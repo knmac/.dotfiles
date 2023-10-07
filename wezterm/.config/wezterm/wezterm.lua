@@ -20,8 +20,9 @@ local font_size = 11.0
 
 -- Font
 config.font = wezterm.font_with_fallback {
-    -- 'JetBrains Mono',
-    'JetBrainsMono Nerd Font',
+    'JetBrains Mono',
+    -- 'JetBrainsMono Nerd Font',
+    'feather',
 }
 config.font_size = font_size
 config.command_palette_font_size = font_size
