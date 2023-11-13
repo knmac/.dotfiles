@@ -89,7 +89,8 @@ tmux_conf_theme=enabled
 # --> Catppuccin (Macchiato)
 thm_bg="#181926"
 thm_fg="#cad3f5"
-thm_cyan="#91d7e3"
+# thm_cyan="#91d7e3"
+thm_cyan="#a6da95"
 thm_black="#1e2030"
 thm_gray="#494d64"
 thm_magenta="#c6a0f6"
