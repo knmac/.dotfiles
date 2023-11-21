@@ -16,7 +16,7 @@ require('right_status')
 -- ----------------------------------------------------------------------------
 -- This is where you actually apply your config choices
 -- ----------------------------------------------------------------------------
-local font_size = 11.0
+local font_size = 17.0
 
 -- Font
 config.font = wezterm.font_with_fallback {
@@ -27,7 +27,7 @@ config.font = wezterm.font_with_fallback {
 config.font_size = font_size
 config.command_palette_font_size = font_size
 config.char_select_font_size = font_size
--- config.warn_about_missing_glyphs = false
+config.warn_about_missing_glyphs = false
 
 -- Color
 config.color_scheme = 'Catppuccin Macchiato'

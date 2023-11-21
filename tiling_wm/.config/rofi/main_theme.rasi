@@ -12,7 +12,8 @@ window {
     border-color:                   @ac;
     border-radius:                  0px;
     padding:                        30;
-    width:                          800;
+    /* width:                          800; */
+    width:                          1280;
 }
 
 /*****----- Main Box -----*****/
@@ -55,7 +56,8 @@ case-indicator {
 
 /*****----- Listview -----*****/
 listview {
-    lines:                          10;
+    /* lines:                          10; */
+    lines:                          15;
     /*columns:                        2;*/
     fixed-height:                   0;
     border:                         0px;

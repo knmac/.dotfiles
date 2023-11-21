@@ -16,7 +16,8 @@ window {
     border-color:                   @ac;
     border-radius:                  0px;
     padding:                        30;
-    width:                          855;
+    /* width:                          855; */
+    width:                          1280;
     location:                       center;
 }
 
@@ -74,13 +75,15 @@ element {
     border:                         0px;
     border-radius:                  15px;
     padding:                        10px;
-    width:                          150px;
+    /* width:                          150px; */
+    width:                          235px;
     orientation:                    horizontal;
 }
 element-text {
     background-color:               transparent;
     text-color:                     @se;
-    font:                           "feather 14";
+    /* font:                           "feather 14"; */
+    font:                           "feather 17";
 }
 element normal.normal {
     background-color:               @green;

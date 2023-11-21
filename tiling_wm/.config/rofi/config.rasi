@@ -5,7 +5,8 @@ configuration {
 
     /* Display */
     /*font:                           "FiraCode Nerd Font 12";*/
-    font:                           "JetBrainsMono Nerd Font 12";
+    /* font:                           "JetBrainsMono Nerd Font 12"; */
+    font:                           "JetBrainsMono Nerd Font 17";
     fixed-num-lines:                true;
     show-icons:                     true;
     sidebar-mode:                   true;
