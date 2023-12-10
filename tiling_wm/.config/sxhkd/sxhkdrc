@@ -39,11 +39,11 @@ super + d
     dmenu_run -p "󰍉 " -fn "JetBrainsMono Nerd Font"
 
 # Show multiple menus with Rofi
-super + space
-    "$HOME/.config/rofi/scripts/launch_rofi_drun.sh"
+super + shift + space
+    "$HOME/.config/rofi/scripts/launch_rofi_run.sh"
 
 # Show fullscreen application menu
-super + shift + space
+super + space
     "$HOME/.config/rofi/scripts/launch_rofi_fullscreen.sh"
     # "$HOME/.config/rofi/scripts/launch_rofi_run.sh"
 

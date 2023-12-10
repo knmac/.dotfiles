@@ -1,7 +1,7 @@
 // vim: ft=css sw=4 ts=4
 configuration {
     terminal:                       "wezterm";
-    modi:                           "drun,run,window,ssh,keys";
+    modi:                           "run,drun,window,ssh,keys";
 
     /* Display */
     /*font:                           "FiraCode Nerd Font 12";*/
@@ -21,8 +21,8 @@ configuration {
     me-select-entry:                "";
     hover-select:                   false;
 
-    display-drun:                   "󰕮 App";
     display-run:                    " Cmd";
+    display-drun:                   "󰕮 App";
     display-window:                 " Window";
     display-ssh:                    " SSH";
     display-keys:                   "󰌌 Keys";

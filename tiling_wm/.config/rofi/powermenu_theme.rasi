@@ -83,7 +83,7 @@ element-text {
     background-color:               transparent;
     text-color:                     @se;
     /* font:                           "feather 14"; */
-    font:                           "feather 17";
+    font:                           "feather 20";
 }
 element normal.normal {
     background-color:               @green;
