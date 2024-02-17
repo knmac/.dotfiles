@@ -96,3 +96,4 @@ bspc rule -a '*:meteo' state=floating
 bspc rule -a '*:xfce4-taskmanager' state=floating
 bspc rule -a 'Galculator' state=floating
 bspc rule -a 'Zathura' state=tiled
+bspc rule -a 'zoom' state=floating
