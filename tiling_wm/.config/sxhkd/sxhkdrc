@@ -57,11 +57,12 @@ super + t
 
 # Show notification history
 super + Insert
-    dunstctl history-pop
+    kill -s USR1 $(pidof deadd-notification-center)
+    # dunstctl history-pop
 
 # Clear notification
-super + Delete
-    dunstctl close-all
+# super + Delete
+#     dunstctl close-all
 
 # Show power menu
 super + Escape

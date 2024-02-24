@@ -19,7 +19,8 @@ Pre-installed by xfce4
 - alsamixer
 - blueberry
 - dmenu
-- dunst
+- ~dunst~
+- ddead_notification_center
 - i3-lock
 - nm-applet
 - pamac

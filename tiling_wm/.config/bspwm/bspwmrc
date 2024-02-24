@@ -85,6 +85,8 @@ pamac-tray &
 # Launch polkit
 pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }
 
+# Linux notification center
+pidof -q deadd-notification-center || { deadd-notification-center & }
 
 # =============================================================================
 # Windows rules
