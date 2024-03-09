@@ -28,15 +28,15 @@
 
 .title {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .appname {
-  font-size: 12px;
+  font-size: 17px;
 }
 
 .time {
-  font-size: 12px;
+  font-size: 17px;
 }
 
 .blurredBG.notification {
@@ -93,6 +93,7 @@
 
 label {
   color: @fg;
+  font-size: 17px;
 }
 
 label.notification {
@@ -187,9 +188,12 @@ button:hover {
 
 .userbuttonlabel {
   color: @fg;
-  font-size: 12px;
+  font-size: 17px;
+  font-weight: bold;
   margin-top: 24px; /* ( 60 - 12 ) / 2 */
   margin-bottom: 24px; /* ( 60 - 12 ) / 2 */
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .userbutton:hover {

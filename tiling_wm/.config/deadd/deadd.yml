@@ -78,6 +78,14 @@ notification-center:
       #   command: screensaverToggle
       # - label: Keyboard
       #   command: keyboardToggle
+      - label: Clean All
+        command: notify-send.py a --hint boolean:deadd-notification-center:true string:type:clearInCenter
+      - label: Reload CSS
+        command: notify-send.py a --hint boolean:deadd-notification-center:true string:type:reloadStyle
+      - label: Applications
+        command: ~/.config/rofi/scripts/launch_rofi_fullscreen.sh
+      - label: Power Menu
+        command: ~/.config/rofi/scripts/powermenu.sh
 
 notification:
   ### If true, markup (<u>, <i>, <b>, <a>) will be displayed properly
