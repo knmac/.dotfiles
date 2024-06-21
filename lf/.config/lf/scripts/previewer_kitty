@@ -13,7 +13,8 @@ preview_image() {
 
     if [[ "$( file -Lb --mime-type "$file")" =~ ^image ]]; then
         # kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
-        kitty +kitten icat --transfer-mode file --stdin no --place "${w}x${h}@${x}x${y}" "$file" < /dev/null > /dev/tty
+        # kitty +kitten icat --transfer-mode file --stdin no --place "${w}x${h}@${x}x${y}" "$file" < /dev/null > /dev/tty
+        kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file" < /dev/null > /dev/tty
         exit 1
     fi
 
