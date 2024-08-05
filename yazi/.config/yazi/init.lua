@@ -9,7 +9,7 @@ function Linemode:size_and_mtime()
     if time > 0 and os.date("%Y", time) == year then
         time = os.date("%m/%d %H:%M", time)
     else
-        time = time and os.date("%m/%d %Y", time) or ""
+        time = time and os.date("%m/%d  %Y", time) or ""
     end
 
     local size = self._file:size()
