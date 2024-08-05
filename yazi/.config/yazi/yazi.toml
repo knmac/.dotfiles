@@ -1,5 +1,6 @@
 [manager]
-linemode = "mtime"
+# linemode = "mtime"
+linemode = "size_and_mtime"
 
 [preview]
 max_width = 2048
