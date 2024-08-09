@@ -8,6 +8,11 @@ on   = [ "T" ]
 run  = "plugin --sync max-preview"
 desc = "Maximize or restore preview"
 
+[[manager.append_keymap]]
+on   = [ "m", "h" ]
+run  = "linemode size_and_mtime"
+desc = "Set linemode to size and mtime"
+
 [[input.prepend_keymap]]
 on   = [ "<Esc>" ]
 run  = "close"
