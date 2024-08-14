@@ -1,19 +1,14 @@
-[[manager.prepend_keymap]]
-on   = [ "c", "m" ]
-run  = "plugin chmod"
-desc = "Chmod on selected files"
+[manager]
+prepend_keymap = [
+    { on = [ "T" ], run = "plugin --sync max-preview", desc = "Maximize or restore preview" },
+    { on = [ "c", "m" ], run = "plugin chmod", desc = "Chmod on selected files" },
+]
 
-[[manager.prepend_keymap]]
-on   = [ "T" ]
-run  = "plugin --sync max-preview"
-desc = "Maximize or restore preview"
+append_keymap = [
+    { on = [ "m", "h" ], run = "linemode size_and_mtime", desc = "Set linemode to size and mtime" },
+]
 
-[[manager.append_keymap]]
-on   = [ "m", "h" ]
-run  = "linemode size_and_mtime"
-desc = "Set linemode to size and mtime"
-
-[[input.prepend_keymap]]
-on   = [ "<Esc>" ]
-run  = "close"
-desc = "Cancel input"
+[input]
+prepend_keymap = [
+    { on = [ "<Esc>" ], run = "close", desc = "Cancel input" },
+]
