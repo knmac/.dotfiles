@@ -1,9 +1,10 @@
 # Geometry
-set window-height       1024
-set window-width        768
+set window-height       1440
+set window-width        1080
 set page-padding        10
 set statusbar-h-padding 0
 set statusbar-v-padding 0
+set scroll-step         20
 
 # UI
 set font "JetBrainsMono Nerd Font 15"
@@ -128,5 +129,6 @@ set render-loading-fg       rgba(202,211,245,1)
 set highlight-color         rgba(87,82,104,0.5)
 set highlight-fg            rgba(245,189,230,0.5)
 set highlight-active-color  rgba(245,189,230,0.5)
+set highlight-transparency "0.95"
 
 # vi: ft=config
