@@ -3,7 +3,7 @@ use = "catppuccin-macchiato"
 
 [icon]
 prepend_dirs = [
-    { name = ".Trash", text = "" },
+    { name = ".Trash", text = "" },
     { name = ".vscode", text = "󰨞" },
     { name = "Amazon WorkDocs Drive", text = "" },
     { name = "AmazonWorkDocsCompanion", text = "" },
