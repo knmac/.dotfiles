@@ -60,9 +60,11 @@ wezterm.on("update-right-status", function(window, pane)
     end
 
     -- The powerline < symbol
-    local LEFT_ARROW = utf8.char(0xe0b3)
+    -- local LEFT_ARROW = utf8.char(0xe0b3)
     -- The filled in variant of the < symbol
-    local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+    -- local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+    local LEFT_ARROW = utf8.char(0xe0b7)
+    local SOLID_LEFT_ARROW = utf8.char(0xe0b6)
 
     -- Color palette for the backgrounds of each cell
     local colors = {
