@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "yazi-rs/plugins#full-border", commit = "07b36c3" }, { use = "yazi-rs/plugins#chmod", commit = "07b36c3" }, { use = "yazi-rs/plugins#max-preview", commit = "07b36c3" }, { use = "Rolv-Apneseth/starship", commit = "dc9989c" }]
+deps = [{ use = "yazi-rs/plugins#full-border", commit = "c578505" }, { use = "yazi-rs/plugins#chmod", commit = "c578505" }, { use = "yazi-rs/plugins#max-preview", commit = "c578505" }, { use = "Rolv-Apneseth/starship", commit = "77a65f5" }, { use = "KKV9/compress", commit = "60b24af" }]
 
 [flavor]
-deps = [{ use = "yazi-rs/flavors#catppuccin-macchiato", commit = "a97684c" }]
+deps = [{ use = "yazi-rs/flavors#catppuccin-macchiato", commit = "d479f67" }]
