@@ -53,9 +53,16 @@ wezterm.on("update-right-status", function(window, pane)
     table.insert(cells, date)
 
     -- An entry for each battery (typically 0 or 1 battery)
-    local batt_icons = { "  ", "  ", "  ", "  ", "  " }
+    -- local batt_icons = { "  ", "  ", "  ", "  ", "  " }
+    local batt_icons = { "󰂎 ", "󰁺 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹" }
+    local batt_icons_charging = { "󰢟 ", "󰢜 ", "󰂆 ", "󰂇 ", "󰂈 ", "󰢝 ", "󰂉 ", "󰢞 ", "󰂊 ", "󰂋 ", "󰂅 " }
     for _, b in ipairs(wezterm.battery_info()) do
-        local curr_batt_icon = batt_icons[math.ceil(b.state_of_charge * #batt_icons)]
+        local curr_batt_icon = ""
+        if b.state == "Charging" then
+            curr_batt_icon = batt_icons_charging[math.ceil(b.state_of_charge * #batt_icons)]
+        else
+            curr_batt_icon = batt_icons[math.ceil(b.state_of_charge * #batt_icons)]
+        end
         table.insert(cells, string.format("%s %.0f%%", curr_batt_icon, b.state_of_charge * 100))
     end
 
