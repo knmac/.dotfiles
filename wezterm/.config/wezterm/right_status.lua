@@ -54,8 +54,8 @@ wezterm.on("update-right-status", function(window, pane)
 
     -- An entry for each battery (typically 0 or 1 battery)
     -- local batt_icons = { "  ", "  ", "  ", "  ", "  " }
-    local batt_icons = { "󰂎 ", "󰁺 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹" }
-    local batt_icons_charging = { "󰢟 ", "󰢜 ", "󰂆 ", "󰂇 ", "󰂈 ", "󰢝 ", "󰂉 ", "󰢞 ", "󰂊 ", "󰂋 ", "󰂅 " }
+    local batt_icons = { "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" }
+    local batt_icons_charging = { "󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅" }
     for _, b in ipairs(wezterm.battery_info()) do
         local curr_batt_icon = ""
         if b.state == "Charging" then
@@ -70,7 +70,7 @@ wezterm.on("update-right-status", function(window, pane)
     -- local LEFT_ARROW = utf8.char(0xe0b3)
     -- The filled in variant of the < symbol
     -- local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
-    local LEFT_ARROW = utf8.char(0xe0b7)
+    -- local LEFT_ARROW = utf8.char(0xe0b7)
     local SOLID_LEFT_ARROW = utf8.char(0xe0b6)
 
     -- Color palette for the backgrounds of each cell

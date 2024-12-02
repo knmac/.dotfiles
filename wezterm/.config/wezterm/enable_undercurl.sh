@@ -4,4 +4,4 @@ tempfile=$(mktemp) \
   && tic -x -o ~/.terminfo "$tempfile" \
   && rm "$tempfile"
 
-echo 'TERM="wezterm"' >> ~/.zshrc
+echo 'TERM="wezterm"' >> "$HOME/.zshrc"

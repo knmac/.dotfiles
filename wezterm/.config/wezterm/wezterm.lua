@@ -70,11 +70,17 @@ config.enable_kitty_graphics = true
 config.use_ime = false
 
 -- Key-bindings
-config.disable_default_key_bindings = true -- Deactivate default key bindings
--- local keybindings = require("keybindings_macos")
-local keybindings = require('keybindings_linux')
-config.keys = keybindings.keys
-config.key_tables = keybindings.key_tables
+if wezterm.target_triple:find("linux") ~= nil then
+    config.disable_default_key_bindings = true -- Deactivate default key bindings
+    local keybindings = require('keybindings_linux')
+    config.keys = keybindings.keys
+    config.key_tables = keybindings.key_tables
+elseif wezterm.target_triple:find("darwin") ~= nil then
+    config.disable_default_key_bindings = true -- Deactivate default key bindings
+    local keybindings = require("keybindings_macos")
+    config.keys = keybindings.keys
+    config.key_tables = keybindings.key_tables
+end
 
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
