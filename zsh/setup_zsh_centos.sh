@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Set up zsh prerequisites for zshrc, need to set up zinit first
-# The prerequisites are: zoxide, starship prompt, fzf, eza, bat, rg
+# The prerequisites are: zoxide, starship prompt, fzf, eza, bat, rg, yazi
 
 FZF_VERSION="0.56.3"
 EZA_VERSION="0.20.10"
 BAT_VERSION="0.24.0"
 RG_VERSION="14.1.1"
+YAZI_VERSION="0.3.3"
 # ZOXIDE_VERSION=""
 # STARSHIP_VERSION=""
 
@@ -78,3 +79,14 @@ mv complete/_rg "$COMP_DIR"
 popd || exit
 rm "ripgrep-${RG_VERSION}-x86_64-unknown-linux-musl.tar.gz"
 rm -r "ripgrep-${RG_VERSION}-x86_64-unknown-linux-musl"
+
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
+# yazi
+wget "https://github.com/sxyazi/yazi/releases/download/v${YAZI_VERSION}/yazi-x86_64-unknown-linux-musl.zip"
+unzip "yazi-x86_64-unknown-linux-musl.zip"
+pushd yazi-x86_64-unknown-linux-musl || exit
+mv ya yazi "$BIN_DIR"
+mv completions/_yazi completions/_ya "$COMP_DIR"
+popd || exit
+rm "yazi-x86_64-unknown-linux-musl.zip"
+rm -r "yazi-x86_64-unknown-linux-musl"
