@@ -17,15 +17,24 @@
 
 /* Catppuccin color */
 * {
-    al:                             #00000000;
-    bg:                             #2C2C2CCC;
-    se:                             #24273A;
-    fg:                             #CAD3F5;
-    ac:                             #8AADF4;
-    red:                            #ED8796;
-    green:                          #A6DA95;
-    yellow:                         #EED49F;
-    blue:                           #8AADF4;
-    magenta:                        #F5BDE6;
-    cyan:                           #8BD5CA;
+    al        : #00000000;
+    bg        : #2C2C2CCC;
+    se        : #24273A;
+    fg        : #cad3f5;
+    ac        : #8aadf4;
+    /*---*/
+    blue      : #8aadf4;
+    lavender  : #b7bdf8;
+    sapphire  : #7dc4e4;
+    sky       : #91d7e3;
+    teal      : #8bd5ca;
+    green     : #a6da95;
+    yellow    : #eed49f;
+    peach     : #f5a97f;
+    maroon    : #ee99a0;
+    red       : #ed8796;
+    mauve     : #c6a0f6;
+    pink      : #f5bde6;
+    flamingo  : #f0c6c6;
+    rosewater : #f4dbd6;
 }

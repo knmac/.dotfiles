@@ -40,7 +40,7 @@ wrap {
     children: [ inputbar, message ];
     /* background-image: linear-gradient(white/5%, white/40%); */
     background-color: @bg;
-    border-color: @blue;
+    border-color: @ac;
     border: 3px;
     border-radius: 0.4em;
 }
@@ -109,7 +109,7 @@ element-text selected {
 element selected {
     /* background-image: linear-gradient(white/25%, white/10%); */
     /* border-color: @blue; */
-    background-color: @blue;
+    background-color: @ac;
     border: 3px;
     border-radius: 0.4em;
 }

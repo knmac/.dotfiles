@@ -15,12 +15,13 @@ transparent='00'
 # white='#abb2bf'
 
 black='#24273A'
-yellow='#EED49F'
-red='#ED8796'
-magenta='#C6A0F6'
-blue='#8AADF4'
-green='#A6DA95'
-white='#B8C0E0'
+yellow='#eed49f'
+red='#ed8796'
+magenta='#c6a0f6'
+blue='#8aadf4'
+green='#a6da95'
+white='#cad3f5'
+gray='#6e738d'
 
 
 i3lock \
@@ -38,7 +39,7 @@ i3lock \
   --wrong-color=$red \
   --modif-color=$white \
   --layout-color=$blue \
-  --date-color=$blue \
+  --date-color=$gray \
   --time-color=$blue \
   --color="#00000077" \
   --screen 0 \
@@ -52,7 +53,11 @@ i3lock \
   --noinput="No Input" \
   --lock-text="Locking..." \
   --lockfailed="Lock Failed" \
-  --radius=100 \
+  --time-size=70 \
+  --date-size=30 \
+  --verif-size=50 \
+  --wrong-size=50 \
+  --radius=200 \
   --ring-width=20 \
   --pass-media-keys \
   --pass-screen-keys \

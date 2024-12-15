@@ -131,6 +131,6 @@ case $1 in
         echo "$CITY"
         ;;
     "wmodule")
-        [[ "$UNITS" == "metric" ]] && echo "$WEATHER_ICON $WEATHER_DESC, $WEATHER_TEMP"
-        [[ "$UNITS" == "imperial" ]] && echo "$WEATHER_ICON $WEATHER_DESC, $WEATHER_TEMP"
+        [[ "$UNITS" == "metric" ]] && echo "$WEATHER_ICON  $WEATHER_DESC, $WEATHER_TEMP"
+        [[ "$UNITS" == "imperial" ]] && echo "$WEATHER_ICON  $WEATHER_DESC, $WEATHER_TEMP"
 esac

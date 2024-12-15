@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# =============================================================================
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
 # BSPWM config
-# =============================================================================
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 # Configure both monitors at the same time
@@ -15,10 +15,8 @@ desktop_config() {
 desktop_config border_width         2
 desktop_config window_gap          10
 
-# desktop_config focused_border_color \#61afef
-# desktop_config active_border_color  \#98c379
-desktop_config focused_border_color \#8AADF4
-desktop_config active_border_color  \#A6DA95
+desktop_config focused_border_color \#8aadf4
+desktop_config active_border_color  \#a6da95
 
 desktop_config split_ratio                 0.5
 desktop_config borderless_monocle          true
@@ -33,9 +31,9 @@ desktop_config history_aware_focus         true
 #bspc rule -a Screenkey manage=off
 
 
-# =============================================================================
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
 # Startup programs
-# =============================================================================
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
 # polybar
 "$HOME/.config/polybar/launch_bspwm.sh" &
 
@@ -49,7 +47,7 @@ sxhkd -c "$HOME/.config/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc_bspwm" &
 nitrogen --restore &
 
 # Compositor
-picom --experimental-backends &
+picom &
 touch /tmp/picom &
 
 # Autolock the screen
@@ -88,9 +86,9 @@ pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-g
 # Linux notification center
 pidof -q deadd-notification-center || { deadd-notification-center & }
 
-# =============================================================================
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
 # Windows rules
-# =============================================================================
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
 bspc rule -a '*:pavucontrol' state=floating
 bspc rule -a '*:matplotlib' state=floating
 bspc rule -a '*:com.gitlab.bitseater.meteo' state=floating
