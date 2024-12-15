@@ -37,8 +37,11 @@ desktop_config history_aware_focus         true
 # polybar
 "$HOME/.config/polybar/launch_bspwm.sh" &
 
+# Eww widgets
+pidof -q eww || { eww -c "$HOME/.config/eww daemon" & }
+
 # Simple X hotkey deamon
-sxhkd -c "$HOME/.config/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc_bspwm" &
+pidof -q sxhkd || { sxhkd -c "$HOME/.config/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc_bspwm" & }
 
 # Monitor settings
 "$HOME/.screenlayout/default.sh" &
@@ -47,8 +50,7 @@ sxhkd -c "$HOME/.config/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc_bspwm" &
 nitrogen --restore &
 
 # Compositor
-picom &
-touch /tmp/picom &
+pidof -q picom || { touch /tmp/picom && picom & }
 
 # Autolock the screen
 xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/scripts/i3lock.sh" &
@@ -60,25 +62,19 @@ xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/scripts/transfer-sleep-lock-
 xsetroot -cursor_name left_ptr &
 
 # Network manager
-nm-applet &
+pidof -q nm-applet || { nm-applet & }
 
 # Bluetooth manager
-blueberry-tray &
+pidof -q blueberry-tray || { blueberry-tray & }
 
 # Ibus
-ibus-daemon -drx &
-
-# Dropbox
-# sleep 10; dropbox start &
+pidof -q ibus-daemon || { ibus-daemon -drx & }
 
 # Power manager
-xfce4-power-manager &
+pidof -q xfce4-power-manager || { xfce4-power-manager & }
 
 # Clipboard manager
 pidof -q xfce4-clipman || { xfce4-clipman & }
-
-# Package manager
-pamac-tray &
 
 # Launch polkit
 pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }
