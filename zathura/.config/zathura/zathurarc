@@ -16,6 +16,8 @@ set recolor-keephue true
 # Mappings
 map i recolor
 map [fullscreen] i recolor
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"
 
 # Colors
 # set default-fg                  "#abb2bf"
