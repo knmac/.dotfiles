@@ -12,8 +12,10 @@ if [[ ! -f $TMP_FILE ]]; then
            --transparent false \
            --distancefrom top \
            --distance 10 \
-           --iconspacing 5 \
-           --margin 10
+           --iconspacing 10 \
+           --margin 10 \
+           --height 48 \
+           --padding 10
 else
     killall trayer
     rm $TMP_FILE

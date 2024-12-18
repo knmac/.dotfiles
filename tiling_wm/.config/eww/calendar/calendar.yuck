@@ -1,38 +1,55 @@
-(defpoll date :interval "1s" "date '+%d %b, %I:%M %p'")
+(defpoll date        :interval "1s" "date '+%d %b, %I:%M %p'")
 (defpoll completeday :interval "1h" "date '+%A, %d %B'")
 
 (defpoll lithour :interval "30m" "date +%H")
-(defpoll litmin :interval "30s" "date +%M")
+(defpoll litmin  :interval "30s" "date +%M")
 
-(defpoll calendar_day :interval "10h" "date '+%d'")
+(defpoll calendar_day   :interval "10h" "date '+%d'")
 (defpoll calendar_month :interval "10h" "date '+%m'")
-(defpoll calendar_year :interval "10h" "date '+%Y'")
+(defpoll calendar_year  :interval "10h" "date '+%Y'")
 
 (defwidget divider []
-  (box :class "divider"
-       :orientation "v"
-       :space-evenly true)
+  (box :class        "divider"
+       :orientation  "v"
+       :space-evenly true
+  )
 )
 
 (defwidget time []
-  (box :class "timebox" :orientation "v" :space-evenly false
-    (box :class "time-container" :orientation "h" :space-evenly false :halign "center" :valign "center"
-      (label :class "content" :text "${lithour}")
-    (divider)
-      (label :class "content" :text "${litmin}"))
+  (box :class        "timebox"
+       :orientation  "v"
+       :space-evenly false
+    (box :class        "time-container"
+         :orientation  "h"
+         :space-evenly false
+         :halign       "center"
+         :valign       "center"
+      (label :class "content"
+             :text  "${lithour}"
+      )
+      (divider)
+      (label :class "content"
+             :text "${litmin}"
+      )
+    )
 
-    (box :class "date-container" :orientation "h" :space-evenly true :halign "center"
-      (label :text "${completeday}"))
-))
+    (box :class        "date-container"
+         :orientation  "h"
+         :space-evenly true
+         :halign       "center"
+      (label :text "${completeday}")
+    )
+  )
+)
 
 (defwidget cal []
   (box :class "cal-box"
        :orientation "v"
        :space-evenly false
     (calendar :class "cal"
-              :day {calendar_day ?: "1"}
+              :day   {calendar_day   ?: "1"}
               :month {calendar_month ?: "1"}
-              :year {calendar_year ?: "2023"}
+              :year  {calendar_year  ?: "2023"}
     )
   )
 )
@@ -47,6 +64,11 @@
 )
 
 (defwindow date
-  :geometry (geometry :x "-55px" :y "55px" :anchor "top right")
+  :geometry
+    (geometry :x      "-0.8%"
+              :y      "2.5%"
+              :anchor "top right"
+    )
   :wm-ignore true
-(date))
+  (date)
+)
