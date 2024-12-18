@@ -9,8 +9,8 @@
 
   .time-container {
     .content {
-      // font-family: JetBrainsMono Nerd Font;
-      // font-weight: Bolder;
+      font-family: "JetBrainsMono Nerd Font";
+      font-weight: Bolder;
       font-size: 3.6rem;
       color: $fg;
     }
@@ -23,8 +23,8 @@
   }
 
   .date-container {
-    // font-family: JetBrainsMono Nerd Font;
-    // font-weight: Bold;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: Bold;
     font-size: 1rem;
     color: $fg;
     margin: 5px 0;
@@ -32,9 +32,9 @@
 }
 
 .cal-box {
-  // font-family: JetBrainsMono Nerd Font;
-  // font-weight: Bold;
-  font-size: 0.9rem;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: Bold;
+  font-size: 1.5rem;
   background-color: $bg;
   border-radius: 0.5rem;
   padding: 0 1rem 0.2rem;
@@ -59,6 +59,7 @@
 
 calendar:selected {
   color: $green;
+  font-weight: Bold;
 }
 
 calendar.header {
@@ -72,7 +73,7 @@ calendar.button {
 
 calendar.highlight {
   color: $blue;
-  // font-weight: bold;
+  // font-weight: Bold;
 }
 
 calendar:indeterminate {

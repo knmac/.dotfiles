@@ -65,8 +65,8 @@
 
 (defwindow date
   :geometry
-    (geometry :x      "-0.8%"
-              :y      "2.5%"
+    (geometry :x      "-0.5%"
+              :y      "3%"
               :anchor "top right"
     )
   :wm-ignore true
