@@ -50,7 +50,7 @@ pidof -q sxhkd || { sxhkd -c "$HOME/.config/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/
 nitrogen --restore &
 
 # Compositor
-pidof -q picom || { touch /tmp/picom && picom & }
+touch /tmp/picom && picom &
 
 # Autolock the screen
 xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/scripts/i3lock.sh" &
