@@ -6,7 +6,7 @@ configuration {
 //;
 
 * {
-    background-color:               @bg;
+    background-color: @bg;
 }
 
 window {
@@ -24,8 +24,8 @@ window {
 prompt {
     enabled:          true;
     padding:          0% 0.5% 0.5% 0.5%;
-    background-color: @bg-alt;
-    text-color:       @fg;
+    background-color: transparent;
+    text-color:       @green;
     /*spacing:          0;*/
     /*border:           0;*/
 }
@@ -33,9 +33,9 @@ prompt {
 textbox-prompt-colon {
     expand:           false;
     str:              " ";
-    background-color: @bg-alt;
+    background-color: transparent;
     text-color:       @ac;
-    padding:          0% 0.5% 0.5% 0.5%;
+    padding:          0.75% 0.5% 0.5% 0.5%;
 }
 
 entry {
@@ -45,17 +45,20 @@ entry {
     padding:          0.5% 0.5% 0.5% 1%;
     expand:           false;
     width:            31.5%;
+    border-radius:    0.5em;
+    border:           3px;
+    border-color:     @ac;
 }
 
 inputbar {
     /*children:         [ textbox-prompt-colon, prompt ];*/
     children:         [ textbox-prompt-colon, entry, prompt ];
-    background-color: @bg-alt;
+    background-color: transparent;
     text-color:       @fg;
+    border-color:     @ac;
     expand:           false;
     border:           0% 0% 0% 0.2%;
     border-radius:    0% 0% 0% 0%;
-    border-color:     @ac;
     margin:           0% 21.3% 0% 0%;
     padding:          0.5%;
     position:         center;
@@ -63,7 +66,7 @@ inputbar {
 
 
 listview {
-    background-color: @bg-alt;
+    background-color: transparent;
     margin:           0% 0% 0% 0%;
     spacing:          2%;
     cycle:            true;
@@ -73,13 +76,14 @@ listview {
 
 mainbox {
     children:         [ inputbar, listview ];
-    background-color: @bg-alt;
+    background-color: @bg;
+    border-radius:    0.2em;
     spacing:          1%;
     padding:          1% 2% 1% 2%;
 }
 
 element {
-    background-color: @bg-alt;
+    background-color: transparent;
     text-color:       @fg;
     orientation:      horizontal;
     border-radius:    1.5%;
@@ -94,7 +98,7 @@ element-text {
     expand:           true;
     horizontal-align: 0.5;
     vertical-align:   0.5;
-    margin: 1.5% 0% 1.5% 0%;
+    margin:           1.5% 0% 1.5% 0%;
 }
 
 element normal.normal,
