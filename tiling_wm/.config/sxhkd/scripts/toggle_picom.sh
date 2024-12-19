@@ -5,7 +5,7 @@ if [[ -f "$IS_RUNNING" ]]; then
     rm -f "$IS_RUNNING"
     notify-send --urgency="low" "Picom turned off"
 else
-    picom --experimental-backends &
+    picom &
     touch "$IS_RUNNING"
     notify-send --urgency="low" "Picom turned on"
 fi
