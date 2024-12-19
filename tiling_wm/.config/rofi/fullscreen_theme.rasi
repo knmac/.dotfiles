@@ -1,10 +1,9 @@
-// vim: ft=css sw=4 ts=4
-@import "colors.rasi" 
+@import "colors/catppuccin-macchiato.rasi"
 /**
  * ROFI Color Theme
  *
  * Fullscreen theme with switchable PREVIEW option.
- * 
+ *
  * User: Dave Davenport
  * Copyright: Dave Davenport
  */
@@ -145,3 +144,5 @@ element selected {
         horizontal-align: 0.0;
     }
 }
+
+// vim: ft=css sw=4 ts=4

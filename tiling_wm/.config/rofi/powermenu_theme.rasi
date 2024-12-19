@@ -1,123 +1,135 @@
-// vim: ft=css sw=4 ts=4
 configuration {
     show-icons:                     false;
 }
 
-@import "colors.rasi" 
+@import "colors/catppuccin-macchiato.rasi"
 //;
 
 * {
     background-color:               @bg;
 }
 
-/*****----- Main Window -----*****/
 window {
-    border:                         0px;
-    border-color:                   @ac;
-    border-radius:                  0px;
-    padding:                        30;
-    /* width:                          855; */
-    width:                          1280;
-    location:                       center;
-}
-
-/*****----- Main Box -----*****/
-mainbox {
-    border:                         0px;
-    border-color:                   @ac;
-    padding:                        6;
-}
-
-/*****----- Inputbar -----*****/
-inputbar {
-    spacing:                        0px;
-    text-color:                     @fg;
-    padding:                        1px;
-    children:                       [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    transparency:  "real";
+    text-color:    @fg;
+    border-color:  @ac;
+    /*border:        0px;*/
+    /*border-radius: 0px;*/
+    padding:       30;
+    height:        20%;
+    width:         50%;
+    location:      center;
 }
 
 prompt {
-    spacing:                        0;
-    border:                         0;
-    text-color:                     @fg;
+    enabled:          true;
+    padding:          0% 0.5% 0.5% 0.5%;
+    background-color: @bg-alt;
+    text-color:       @fg;
+    /*spacing:          0;*/
+    /*border:           0;*/
 }
 
 textbox-prompt-colon {
-    expand:                         false;
-    str:                            ":";
-    margin:                         0 0.3em 0em 0em;
-    text-color:                     inherit;
+    expand:           false;
+    str:              " ";
+    background-color: @bg-alt;
+    text-color:       @ac;
+    padding:          0% 0.5% 0.5% 0.5%;
 }
 
 entry {
-    spacing:                        0;
-    text-color:                     @fg;
+    background-color: @bg;
+    text-color:       @fg;
+    placeholder:      "Type here";
+    padding:          0.5% 0.5% 0.5% 1%;
+    expand:           false;
+    width:            31.5%;
 }
 
-case-indicator {
-    spacing:                        0;
-    text-color:                     @fg;
+inputbar {
+    /*children:         [ textbox-prompt-colon, prompt ];*/
+    children:         [ textbox-prompt-colon, entry, prompt ];
+    background-color: @bg-alt;
+    text-color:       @fg;
+    expand:           false;
+    border:           0% 0% 0% 0.2%;
+    border-radius:    0% 0% 0% 0%;
+    border-color:     @ac;
+    margin:           0% 21.3% 0% 0%;
+    padding:          0.5%;
+    position:         center;
 }
 
-/*****----- Listview -----*****/
+
 listview {
-    fixed-height:                   0;
-    border:                         0px;
-    border-color:                   @ac;
-    spacing:                        4px;
-    padding:                        5px 5px 0px 5px;
-    scrollbar:                      false;
-    layout:                         horizontal;
+    background-color: @bg-alt;
+    margin:           0% 0% 0% 0%;
+    spacing:          2%;
+    cycle:            true;
+    dynamic:          true;
+    layout:           horizontal;
 }
 
-/*****----- Elements -----*****/
+mainbox {
+    children:         [ inputbar, listview ];
+    background-color: @bg-alt;
+    spacing:          1%;
+    padding:          1% 2% 1% 2%;
+}
+
 element {
-    border:                         0px;
-    border-radius:                  15px;
-    padding:                        10px;
-    /* width:                          150px; */
-    width:                          235px;
-    orientation:                    horizontal;
+    background-color: @bg-alt;
+    text-color:       @fg;
+    orientation:      horizontal;
+    border-radius:    1.5%;
+    padding:          2% 0% 2% 0%;
+    width:            7.3%;
 }
+
 element-text {
-    background-color:               transparent;
-    text-color:                     @se;
-    /* font:                           "feather 14"; */
-    font:                           "feather 20";
+    background-color: transparent;
+    text-color:       @se;
+    font:             "feather 30";
+    expand:           true;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    margin: 1.5% 0% 1.5% 0%;
 }
-element normal.normal {
-    background-color:               @green;
-    text-color:                     @fg;
-}
-element normal.urgent {
-    background-color:               @bg;
-    text-color:                     @red;
-}
-element normal.active {
-    background-color:               @green;
-    text-color:                     @se;
-}
-element selected.normal {
-    background-color:               @red;
-    text-color:                     @se;
-}
-element selected.urgent {
-    background-color:               @bg;
-    text-color:                     @red;
-}
-element selected.active {
-    background-color:               @ac;
-    text-color:                     @se;
-}
+
+element normal.normal,
 element alternate.normal {
-    background-color:               @green;
-    text-color:                     @fg;
+    background-color: @blue;
+    text-color:       @fg;
 }
+
+element normal.urgent,
 element alternate.urgent {
-    background-color:               @bg;
-    text-color:                     @fg;
+    background-color: @bg;
+    text-color:       @red;
 }
+
+element normal.active,
 element alternate.active {
-    background-color:               @bg;
-    text-color:                     @fg;
+    background-color: @blue;
+    text-color:       @se;
 }
+
+element selected.normal {
+    background-color: @mauve;
+    border:           3px;
+    border-color:     @fg;
+}
+element-text selected.normal {
+    text-color: @fg-alt;
+}
+
+element selected.urgent {
+    background-color: @bg;
+}
+
+element selected.active {
+    background-color: @ac;
+}
+
+// vim: ft=css sw=4 ts=4

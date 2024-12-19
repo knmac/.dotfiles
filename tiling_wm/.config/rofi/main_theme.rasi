@@ -1,5 +1,4 @@
-// vim: ft=css sw=4 ts=4
-@import "colors.rasi" 
+@import "colors/catppuccin-macchiato.rasi" 
 //;
 
 * {
@@ -160,3 +159,5 @@ scrollbar {
     handle-width:                   8px;
     padding:                        0;
 }
+
+// vim: ft=css sw=4 ts=4

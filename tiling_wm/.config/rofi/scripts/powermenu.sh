@@ -7,11 +7,16 @@ rofi_command="rofi -theme $HOME/.config/rofi/powermenu_theme.rasi"
 i3lock_pth="$HOME/.config/i3/scripts/i3lock.sh"
 
 # Options
-shutdown=" 󰐥   Shutdown"
-  reboot="     Restart"
-    lock="    󰌾  Lock"
- suspend="    󰤄  Sleep"
-  logout="   󰍃  Logout"
+# shutdown=" 󰐥   Shutdown"
+# reboot="   󰜉  Restart"
+# lock="    󰍁  Lock"
+# suspend="    󰤄  Sleep"
+# logout="   󰍃  Logout"
+shutdown="󰐥  Shutdown"
+reboot="󰜉  Restart"
+lock="󰍁  Lock"
+suspend="󰤄  Sleep"
+logout="󰍃  Logout"
 
 # Confirmation
 confirm_exit() {
