@@ -5,7 +5,7 @@ local wezterm = require("wezterm")
 require("right_status")
 
 -- Nvim zenmode
-require("nvim_zenmode")
+-- require("nvim_zenmode")
 
 
 -- This table will hold the configuration
