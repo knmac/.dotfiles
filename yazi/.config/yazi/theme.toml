@@ -1,5 +1,5 @@
 [flavor]
-use = "catppuccin-macchiato"
+dark = "catppuccin-macchiato"
 
 [icon]
 prepend_dirs = [
