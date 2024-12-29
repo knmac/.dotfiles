@@ -13,7 +13,6 @@ local act_rename_tab = act.PromptInputLine {
     end),
 }
 
-
 local keys = {
     { key = "e",          mods = "SHIFT|CTRL",     action = act_rename_tab },
     { key = "E",          mods = "SHIFT|CTRL",     action = act_rename_tab },
