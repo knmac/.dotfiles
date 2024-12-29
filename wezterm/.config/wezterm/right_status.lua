@@ -9,11 +9,10 @@ wezterm.on("update-right-status", function(window, pane)
     -- Figure out the cwd and host of the current pane.
     -- This will pick up the hostname for the remote host if your
     -- shell is using OSC 7 on the remote host.
+    local cwd = ""
+    local hostname = ""
     local cwd_uri = pane:get_current_working_dir()
     if cwd_uri then
-        local cwd = ""
-        local hostname = ""
-
         if type(cwd_uri) == "userdata" then
             -- Running on a newer version of wezterm and we have
             -- a URL object here, making this simple!
@@ -42,11 +41,10 @@ wezterm.on("update-right-status", function(window, pane)
         if hostname == "" then
             hostname = wezterm.hostname()
         end
-
-        table.insert(cells, "") -- Empty item
-        table.insert(cells, "  " .. cwd)
-        table.insert(cells, "  " .. hostname)
     end
+    table.insert(cells, "") -- Empty item
+    table.insert(cells, "   " .. cwd)
+    table.insert(cells, "   " .. hostname)
 
     -- I like my date/time in this style: "Wed Mar 3 08:14"
     local date = wezterm.strftime "  %a %b %-d %H:%M"
