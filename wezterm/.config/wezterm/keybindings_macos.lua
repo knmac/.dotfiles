@@ -2,7 +2,11 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local act_rename_tab = act.PromptInputLine {
-    description = "Enter new name for tab",
+    description = wezterm.format {
+        { Attribute = { Intensity = "Bold" } },
+        { Foreground = { AnsiColor = "Fuchsia" } },
+        { Text = "Enter new name for tab" },
+    },
     action = wezterm.action_callback(function(window, pane, line)
         -- line will be `nil` if they hit escape without entering anything
         -- An empty string if they just hit enter
@@ -14,8 +18,23 @@ local act_rename_tab = act.PromptInputLine {
 }
 
 local keys = {
-    { key = "e",          mods = "SHIFT|CTRL",     action = act_rename_tab },
-    { key = "E",          mods = "SHIFT|CTRL",     action = act_rename_tab },
+    { key = "e",          mods = "ALT|SUPER",      action = act_rename_tab },
+    { key = "w",          mods = "ALT|SUPER",      action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+    { key = "t",          mods = "ALT|SUPER",      action = act.ShowLauncherArgs({ flags = "FUZZY|TABS" }) },
+
+    { key = "h",          mods = "ALT|SUPER",      action = act.ActivatePaneDirection "Left" },
+    { key = "j",          mods = "ALT|SUPER",      action = act.ActivatePaneDirection "Down" },
+    { key = "k",          mods = "ALT|SUPER",      action = act.ActivatePaneDirection "Up" },
+    { key = "l",          mods = "ALT|SUPER",      action = act.ActivatePaneDirection "Right" },
+
+    { key = "H",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Left", 1 } },
+    { key = "J",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Down", 1 } },
+    { key = "K",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Up", 1 } },
+    { key = "L",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Right", 1 } },
+
+    { key = "s",          mods = "SUPER",          action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+    { key = "S",          mods = "SUPER",          action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
     { key = "/",          mods = "SHIFT|CTRL",     action = act.PaneSelect },
     { key = ">",          mods = "SHIFT|CTRL",     action = act.RotatePanes "Clockwise" },
     { key = "<",          mods = "SHIFT|CTRL",     action = act.RotatePanes "CounterClockwise" },
@@ -153,20 +172,16 @@ local keys = {
     { key = "PageDown",   mods = "SHIFT|CTRL",     action = act.MoveTabRelative(1) },
     { key = "LeftArrow",  mods = "SUPER|ALT",      action = act.ActivateTabRelative(-1) },
     { key = "RightArrow", mods = "SUPER|ALT",      action = act.ActivateTabRelative(1) },
-    { key = "LeftArrow",  mods = "SHIFT|CTRL",     action = act.ActivatePaneDirection "Left" },
-    { key = "LeftArrow",  mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize { "Left", 1 } },
-    { key = "RightArrow", mods = "SHIFT|CTRL",     action = act.ActivatePaneDirection "Right" },
-    { key = "RightArrow", mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize { "Right", 1 } },
-    { key = "UpArrow",    mods = "SHIFT|CTRL",     action = act.ActivatePaneDirection "Up" },
-    { key = "UpArrow",    mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize { "Up", 1 } },
-    { key = "DownArrow",  mods = "SHIFT|CTRL",     action = act.ActivatePaneDirection "Down" },
-    { key = "DownArrow",  mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize { "Down", 1 } },
+    -- { key = "LeftArrow",  mods = "SHIFT|CTRL",     action = act.ActivatePaneDirection "Left" },
+    -- { key = "LeftArrow",  mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize { "Left", 1 } },
+    -- { key = "RightArrow", mods = "SHIFT|CTRL",     action = act.ActivatePaneDirection "Right" },
+    -- { key = "RightArrow", mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize { "Right", 1 } },
+    -- { key = "UpArrow",    mods = "SHIFT|CTRL",     action = act.ActivatePaneDirection "Up" },
+    -- { key = "UpArrow",    mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize { "Up", 1 } },
+    -- { key = "DownArrow",  mods = "SHIFT|CTRL",     action = act.ActivatePaneDirection "Down" },
+    -- { key = "DownArrow",  mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize { "Down", 1 } },
     { key = "Copy",       mods = "NONE",           action = act.CopyTo "Clipboard" },
     { key = "Paste",      mods = "NONE",           action = act.PasteFrom "Clipboard" },
-    { key = "h",          mods = "SUPER",          action = act.ActivatePaneDirection "Left" },
-    { key = "j",          mods = "SUPER",          action = act.ActivatePaneDirection "Down" },
-    { key = "k",          mods = "SUPER",          action = act.ActivatePaneDirection "Up" },
-    { key = "l",          mods = "SUPER",          action = act.ActivatePaneDirection "Right" },
 }
 local key_tables = {
     copy_mode = {

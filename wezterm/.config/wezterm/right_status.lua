@@ -64,11 +64,15 @@ wezterm.on("update-right-status", function(window, pane)
         table.insert(cells, string.format("%s %.0f%%", curr_batt_icon, b.state_of_charge * 100))
     end
 
+    -- Workspace name
+    table.insert(cells, "󰃀 " .. window:active_workspace())
+
     -- The powerline < symbol
     -- local LEFT_ARROW = utf8.char(0xe0b3)
     -- The filled in variant of the < symbol
     -- local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
     -- local LEFT_ARROW = utf8.char(0xe0b7)
+    ---@diagnostic disable-next-line: undefined-global
     local SOLID_LEFT_ARROW = utf8.char(0xe0b6)
 
     -- Color palette for the backgrounds of each cell
@@ -82,7 +86,14 @@ wezterm.on("update-right-status", function(window, pane)
     }
 
     -- Foreground color for the text across the fade
-    local text_fg = "#c0c0c0"
+    local text_fgs = {
+        "#c0c0c0",
+        "#c0c0c0",
+        "#c0c0c0",
+        "#c0c0c0",
+        "#c0c0c0",
+        "#24273A",
+    }
 
     -- The elements to be formatted
     local elements = {}
@@ -92,7 +103,7 @@ wezterm.on("update-right-status", function(window, pane)
     -- Translate a cell into elements
     local function push(text, is_last)
         local cell_no = num_cells + 1
-        table.insert(elements, { Foreground = { Color = text_fg } })
+        table.insert(elements, { Foreground = { Color = text_fgs[cell_no] } })
         table.insert(elements, { Background = { Color = colors[cell_no] } })
         table.insert(elements, { Text = " " .. text .. " " })
         if not is_last then

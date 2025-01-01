@@ -51,7 +51,7 @@ config.window_frame = {
 config.macos_window_background_blur = 20
 
 -- Cursor
-config.default_cursor_style = "BlinkingBar"
+config.default_cursor_style = "BlinkingBlock"
 
 -- Tabs
 config.use_fancy_tab_bar = true
@@ -71,6 +71,9 @@ config.enable_kitty_graphics = true
 
 -- IME
 config.use_ime = false
+
+-- Others
+config.max_fps = 120
 
 -- Key-bindings
 if wezterm.target_triple:find("linux") ~= nil then
