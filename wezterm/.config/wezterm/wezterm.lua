@@ -7,7 +7,6 @@ require("right_status")
 -- Nvim zenmode
 -- require("nvim_zenmode")
 
-
 -- This table will hold the configuration
 local config = {}
 
@@ -24,7 +23,7 @@ local font_size = 17.0
 
 -- Font
 config.font = wezterm.font_with_fallback {
-    -- 'JetBrains Mono',
+    -- "JetBrains Mono",
     "JetBrainsMono Nerd Font",
     "feather",
 }
@@ -75,10 +74,12 @@ config.use_ime = false
 -- Others
 config.max_fps = 120
 
+-- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- Key-bindings
+-- ────────────────────────────────────────────────────────────────────────────────────────────────
 if wezterm.target_triple:find("linux") ~= nil then
     config.disable_default_key_bindings = true -- Deactivate default key bindings
-    local keybindings = require('keybindings_linux')
+    local keybindings = require("keybindings_linux")
     config.keys = keybindings.keys
     config.key_tables = keybindings.key_tables
 elseif wezterm.target_triple:find("darwin") ~= nil then
