@@ -32,8 +32,8 @@ local keys = {
     { key = "K",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Up", 1 } },
     { key = "L",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Right", 1 } },
 
-    { key = "s",          mods = "SUPER",          action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-    { key = "S",          mods = "SUPER",          action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+    { key = "d",          mods = "SUPER",          action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+    { key = "D",          mods = "SUPER",          action = act.SplitVertical { domain = "CurrentPaneDomain" } },
     -- ────────────────────────────────────────────────────────────────────────────────────────────
     { key = "/",          mods = "SHIFT|CTRL",     action = act.PaneSelect },
     { key = ">",          mods = "SHIFT|CTRL",     action = act.RotatePanes "Clockwise" },
