@@ -18,22 +18,22 @@ local act_rename_tab = act.PromptInputLine {
 }
 
 local keys = {
-    { key = "e",          mods = "ALT|SUPER",      action = act_rename_tab },
-    { key = "w",          mods = "ALT|SUPER",      action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-    { key = "t",          mods = "ALT|SUPER",      action = act.ShowLauncherArgs({ flags = "FUZZY|TABS" }) },
+    { key = "e",          mods = "CTRL|SUPER",     action = act_rename_tab },
+    { key = "w",          mods = "CTRL|SUPER",     action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+    { key = "t",          mods = "CTRL|SUPER",     action = act.ShowLauncherArgs({ flags = "FUZZY|TABS" }) },
 
-    { key = "h",          mods = "ALT|SUPER",      action = act.ActivatePaneDirection "Left" },
-    { key = "j",          mods = "ALT|SUPER",      action = act.ActivatePaneDirection "Down" },
-    { key = "k",          mods = "ALT|SUPER",      action = act.ActivatePaneDirection "Up" },
-    { key = "l",          mods = "ALT|SUPER",      action = act.ActivatePaneDirection "Right" },
+    { key = "h",          mods = "CTRL|SUPER",     action = act.ActivatePaneDirection "Left" },
+    { key = "j",          mods = "CTRL|SUPER",     action = act.ActivatePaneDirection "Down" },
+    { key = "k",          mods = "CTRL|SUPER",     action = act.ActivatePaneDirection "Up" },
+    { key = "l",          mods = "CTRL|SUPER",     action = act.ActivatePaneDirection "Right" },
 
-    { key = "H",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Left", 1 } },
-    { key = "J",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Down", 1 } },
-    { key = "K",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Up", 1 } },
-    { key = "L",          mods = "ALT|SUPER",      action = act.AdjustPaneSize { "Right", 1 } },
+    { key = "H",          mods = "CTRL|SUPER",     action = act.AdjustPaneSize { "Left", 1 } },
+    { key = "J",          mods = "CTRL|SUPER",     action = act.AdjustPaneSize { "Down", 1 } },
+    { key = "K",          mods = "CTRL|SUPER",     action = act.AdjustPaneSize { "Up", 1 } },
+    { key = "L",          mods = "CTRL|SUPER",     action = act.AdjustPaneSize { "Right", 1 } },
 
-    { key = "d",          mods = "SUPER",          action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-    { key = "D",          mods = "SUPER",          action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+    { key = "\\",         mods = "CTRL|SUPER",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+    { key = "-",          mods = "CTRL|SUPER",     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
     -- ────────────────────────────────────────────────────────────────────────────────────────────
     { key = "/",          mods = "SHIFT|CTRL",     action = act.PaneSelect },
     { key = ">",          mods = "SHIFT|CTRL",     action = act.RotatePanes "Clockwise" },
