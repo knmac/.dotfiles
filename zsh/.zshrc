@@ -102,7 +102,7 @@ if type bat &> /dev/null; then
     export BAT_THEME="Catppuccin Macchiato"
     export BAT_STYLE="auto"
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
-    export MANPAGER="sh -c 'col -bx | bat -l man'"
+    export MANPAGER="sh -c 'col -bx | bat -l man --plain'"
 fi
 
 # Configure yazi ──────────────────────────────────────────────────────────────────────────────────
