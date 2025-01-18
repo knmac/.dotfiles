@@ -30,7 +30,7 @@ zinit snippet OMZP::command-not-found
 # zinit snippet OMZP::archlinux
 
 # Load completions
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 
 # Keybindings (emacs mode)
 bindkey -e
@@ -116,7 +116,7 @@ yy() {
     fi
     rm -f -- "$tmp"
 }
-bindkey -s "^o" "yy\n"  # set up key-binding
+bindkey -s "^y" "yy\n"  # set up key-binding
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
