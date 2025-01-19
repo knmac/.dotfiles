@@ -32,8 +32,11 @@ zinit snippet OMZP::command-not-found
 # Load completions
 autoload -Uz compinit && compinit
 
-# Keybindings (emacs mode)
-bindkey -e
+# Keybindings - vim mode with some emacs key-bindings in insert mode
+# bindkey -e
+bindkey -v
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^ ' autosuggest-accept
@@ -116,7 +119,7 @@ yy() {
     fi
     rm -f -- "$tmp"
 }
-bindkey -s "^y" "yy\n"  # set up key-binding
+bindkey -s '^y' "yy\n"  # set up key-binding for yazi
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
