@@ -16,8 +16,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
-# zinit light zsh-users/zsh-completions
-# zinit light conda-incubator/conda-zsh-completion
 zinit light sainnhe/zsh-completions
 zinit light Aloxaf/fzf-tab
 zinit light zpm-zsh/ls
