@@ -27,13 +27,19 @@ zinit snippet OMZP::command-not-found
 # Load completions
 autoload -Uz compinit && compinit
 
-# Keybindings - vim mode with some emacs key-bindings in insert mode
-# bindkey -e
-bindkey -v
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+# Keybindings
+bindmode="emacs" # emacs | vim
+if [ "$bindmode" = "emacs" ]; then
+    # Emacs mode - Ctrl-x Ctrl-v to switch to vim normal mode
+    bindkey -e
+else
+    # Vim mode with some emacs key-bindings in insert mode - Esc to enter normal mode
+    bindkey -v
+    bindkey '^a' beginning-of-line
+    bindkey '^e' end-of-line
+    bindkey '^p' history-search-backward
+    bindkey '^n' history-search-forward
+fi
 bindkey '^ ' autosuggest-accept
 
 # History
