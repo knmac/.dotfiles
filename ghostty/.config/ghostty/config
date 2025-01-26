@@ -23,6 +23,9 @@ keybind = cmd+alt+left=previous_tab
 # keybind = ctrl+shift+s>period=move_tab:1
 
 keybind = ctrl+s>r=reload_config
+keybind = ctrl+s>d=toggle_window_decorations
+keybind = ctrl+s>tab=toggle_tab_overview
+
 keybind = ctrl+s>shift+\=new_split:right
 keybind = ctrl+s>-=new_split:down
 keybind = ctrl+s>j=goto_split:bottom
