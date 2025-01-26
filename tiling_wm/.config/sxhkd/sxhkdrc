@@ -1,6 +1,7 @@
 # Open terminal (Wezterm)
 super + Return
-    wezterm
+    ghostty
+    # wezterm
 
 # Open file explorer (Thunar)
 super + e
@@ -115,3 +116,5 @@ XF86AudioMute
     amixer -q -D pulse sset Master toggle
 # super + bracket{left,right}
 #     amixer -q -D pulse sset Master {10%-,10%+}
+
+# vi: ft=sh

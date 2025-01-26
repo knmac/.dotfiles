@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "yazi-rs/plugins:full-border", rev = "71c4fc2" }, { use = "yazi-rs/plugins:chmod", rev = "71c4fc2" }, { use = "yazi-rs/plugins:max-preview", rev = "71c4fc2" }, { use = "Rolv-Apneseth/starship", rev = "9c37d37" }, { use = "KKV9/compress", rev = "60b24af" }]
+deps = [{ use = "yazi-rs/plugins:full-border", rev = "8ed2537" }, { use = "yazi-rs/plugins:chmod", rev = "8ed2537" }, { use = "yazi-rs/plugins:max-preview", rev = "8ed2537" }, { use = "Rolv-Apneseth/starship", rev = "af8bf6f" }, { use = "KKV9/compress", rev = "60b24af" }]
 
 [flavor]
-deps = [{ use = "yazi-rs/flavors:catppuccin-macchiato", rev = "8458d25" }]
+deps = [{ use = "yazi-rs/flavors:catppuccin-macchiato", rev = "fd85060" }]
