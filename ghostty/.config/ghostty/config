@@ -19,8 +19,10 @@ keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 keybind = cmd+alt+right=next_tab
 keybind = cmd+alt+left=previous_tab
-# keybind = ctrl+shift+s>comma=move_tab:-1
-# keybind = ctrl+shift+s>period=move_tab:1
+keybind = ctrl+page_down=next_tab
+keybind = ctrl+page_up=previous_tab
+keybind = ctrl+shift+page_down=move_tab:1
+keybind = ctrl+shift+page_up=move_tab:-1
 
 keybind = ctrl+s>r=reload_config
 keybind = ctrl+s>d=toggle_window_decorations
