@@ -27,6 +27,9 @@ super + c
 super + b
     google-chrome-stable
 
+super + z
+    zen-browser
+
 # Email client
 super + m
     thunderbird
