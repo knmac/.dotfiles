@@ -11,6 +11,7 @@ window-padding-balance = true
 
 # macos-titlebar-style = tabs
 macos-option-as-alt = true
+window-theme = "ghostty"
 
 # ─────────────────────────────────────────────────────────────────────────────────────────────────
 # Keybindings
