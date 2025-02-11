@@ -1,5 +1,29 @@
-[plugin]
-deps = [{ use = "yazi-rs/plugins:full-border", rev = "8ed2537" }, { use = "yazi-rs/plugins:chmod", rev = "8ed2537" }, { use = "yazi-rs/plugins:max-preview", rev = "8ed2537" }, { use = "Rolv-Apneseth/starship", rev = "af8bf6f" }, { use = "KKV9/compress", rev = "60b24af" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "8945e54"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
 
-[flavor]
-deps = [{ use = "yazi-rs/flavors:catppuccin-macchiato", rev = "fd85060" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "8945e54"
+hash = "f28138c2e11e87962b66d583fef724c3"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "8945e54"
+hash = "15b2ff7f6563c14d5b2e93b3e9da35de"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "d1cd0a3"
+hash = "d1fee6d0f74cb52d4e031dc6b9207f31"
+
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "60b24af"
+hash = "ee025be766240cc98e671754ac836da3"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-macchiato"
+rev = "fd85060"
+hash = "c34feed32d555e79ab9a0c0a7bdda2be"
