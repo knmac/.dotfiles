@@ -1,21 +1,5 @@
 #!/usr/bin/env bash
 ya pack -i
-# Plugins
-# ya pack -a yazi-rs/plugins#full-border
-# ya pack -a yazi-rs/plugins#chmod
-# ya pack -a yazi-rs/plugins#max-preview
-# ya pack -a Rolv-Apneseth/starship
-#
-# Themes
-# ya pack -a yazi-rs/flavors#catppuccin-macchiato
-
-# if [ ! -d "flavors" ]; then
-#     git clone https://github.com/yazi-rs/flavors
-# fi
-
-# if [ ! -d "plugins" ]; then
-#     git clone https://github.com/yazi-rs/plugins
-# fi
 
 # Configure yazi
 echo "Add the following to your .bashrc or .zshrc etc."

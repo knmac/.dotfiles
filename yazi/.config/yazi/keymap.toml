@@ -1,6 +1,6 @@
 [manager]
 prepend_keymap = [
-    { on = [ "T" ], run = "plugin --sync max-preview", desc = "Maximize or restore preview" },
+    { on = [ "T" ], run = "plugin toggle-pane max-preview", desc = "Maximize or restore preview" },
     { on = [ "c", "m" ], run = "plugin chmod", desc = "Chmod on selected files" },
     { on = [ "c", "a" ], run = "plugin compress", desc = "Archive selected files" },
 ]
