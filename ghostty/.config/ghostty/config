@@ -7,6 +7,7 @@ background-opacity = 0.9
 background-blur-radius = 20
 
 cursor-opacity = 0.5
+adjust-cursor-thickness = 1
 
 # window-theme = "ghostty"
 window-theme = auto
