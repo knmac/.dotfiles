@@ -6,6 +6,8 @@ mouse-hide-while-typing = true
 background-opacity = 0.9
 background-blur-radius = 20
 
+cursor-opacity = 0.5
+
 # window-theme = "ghostty"
 window-theme = auto
 window-padding-balance = true
