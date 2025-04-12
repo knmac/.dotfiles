@@ -1,29 +1,24 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "5186af7"
-hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
+rev = "7112e91"
+hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "5186af7"
-hash = "f28138c2e11e87962b66d583fef724c3"
+rev = "7112e91"
+hash = "2f1053f89d1a301a648ab181d0948e38"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "6c639b4"
-hash = "5614c46d5de76623c283d415bfac8025"
-
-[[plugin.deps]]
-use = "KKV9/compress"
-rev = "60b24af"
-hash = "ee025be766240cc98e671754ac836da3"
+rev = "c070754"
+hash = "ebe49da58741aa3bf06c49ee394e0a5a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "5186af7"
-hash = "2391805528b59d562a51f9b33f4a8236"
+rev = "7112e91"
+hash = "5c9dda1a587b8f5b6f63e3d5375bda88"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "df95930"
-hash = "c34feed32d555e79ab9a0c0a7bdda2be"
+rev = "68326b4"
+hash = "3ec21bcfd2735cfcbab61faaf43e59e4"
