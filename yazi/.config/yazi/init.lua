@@ -1,6 +1,6 @@
 require("full-border"):setup()
 require("starship"):setup()
-
+require("duckdb"):setup({ mode = "standard", })
 
 function Linemode:size_and_mtime()
     local year = os.date("%Y")

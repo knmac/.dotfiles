@@ -1,22 +1,27 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "7112e91"
+rev = "864a021"
 hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "7112e91"
+rev = "864a021"
 hash = "2f1053f89d1a301a648ab181d0948e38"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "c070754"
-hash = "ebe49da58741aa3bf06c49ee394e0a5a"
+rev = "6fde3b2"
+hash = "7ddb7a790746fd91ecdd0350cc5a5d8c"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "7112e91"
-hash = "5c9dda1a587b8f5b6f63e3d5375bda88"
+rev = "864a021"
+hash = "f3853bbdd1da2fad09d059ab5464abfd"
+
+[[plugin.deps]]
+use = "wylie102/duckdb"
+rev = "02f902d"
+hash = "9893839d5134aaecf6fafbeff6cac18e"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
