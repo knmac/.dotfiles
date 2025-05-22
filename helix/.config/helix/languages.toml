@@ -1,0 +1,28 @@
+[[language]]
+name = "python"
+# formatter = { command = "black", args = ["--quiet", "-"] }
+formatter = { command = "/Users/knmac/.local/share/knvim/mason/bin/ruff" }
+auto-format = false
+roots = ["pyproject.toml"]
+language-servers = ["pyright"]
+
+[language-server.pyright]
+command = "/Users/knmac/.local/share/knvim/mason/bin/pyright-langserver"
+args = ["--stdio"]
+config = {}
+
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
+[[language]]
+name = "bash"
+formatter = { command = "/Users/knmac/.local/share/knvim/mason/bin/shfmt" }
+
+[language-server.bash-language-server]
+command = "/Users/knmac/.local/share/knvim/mason/bin/bash-language-server"
+args = ["start"]
+config = {}
+
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
+[language-server.marksman]
+command = "/Users/knmac/.local/share/knvim/mason/bin/marksman"
+args = ["server"]
+config = {}

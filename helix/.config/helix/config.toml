@@ -1,0 +1,48 @@
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = "relative"
+mouse = true
+auto-save = true
+rulers = [100]
+cursorline = true
+# cursorcolumn = true
+# bufferline = "always"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+# wrap-at-text-width = true
+# wrap-indicator = "↩ "
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+character = "│" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 0
+
+[editor.file-picker]
+hidden = false
+
+# [editor.statusline]
+# left = [ "mode", "spinner", "diagnostics" ]
+# center = [ "file-name", "separator", "version-control", "separator" ]
+# right = [ "position", "position-percentage", "total-line-numbers" ]
+# separator = "│"
+# mode.normal = "NORMAL"
+# mode.insert = "INSERT"
+# mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
+display-progress-messages = true
