@@ -34,14 +34,17 @@ skip-levels = 0
 [editor.file-picker]
 hidden = false
 
-# [editor.statusline]
-# left = [ "mode", "spinner", "diagnostics" ]
-# center = [ "file-name", "separator", "version-control", "separator" ]
-# right = [ "position", "position-percentage", "total-line-numbers" ]
+[editor.statusline]
+left = ["mode", "spacer", "version-control", "spinner", "diagnostics"]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["file-encoding", "selections", "register", "position", "position-percentage", "total-line-numbers"]
+# left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+# center = []
+# right = ["diagnostics", "selections", "register", "position", "file-encoding"]
 # separator = "│"
-# mode.normal = "NORMAL"
-# mode.insert = "INSERT"
-# mode.select = "SELECT"
+# mode.normal = "NOR"
+# mode.insert = "INS"
+# mode.select = "SEL"
 
 [editor.lsp]
 display-inlay-hints = true
