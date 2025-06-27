@@ -6,8 +6,14 @@ mouse = true
 auto-save = true
 rulers = [100]
 cursorline = true
+color-modes = true
 # cursorcolumn = true
 # bufferline = "always"
+continue-comments = true
+auto-completion = true
+path-completion = true
+completion-replace = false
+completion-trigger-len = 2
 
 [editor.cursor-shape]
 insert = "bar"
@@ -49,3 +55,4 @@ right = ["file-encoding", "selections", "register", "position", "position-percen
 [editor.lsp]
 display-inlay-hints = true
 display-progress-messages = true
+display-messages = true
