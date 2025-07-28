@@ -61,7 +61,7 @@ super + t
 
 # Show notification history
 super + Insert
-    kill -s USR1 $(pidof deadd-notification-center)
+    kill -s USR1 "$(pidof deadd-notification-center)"
     # dunstctl history-pop
 
 # Clear notification
@@ -100,6 +100,8 @@ super + p
 
 # Screenshot (Flameshot)
 Print
+    flameshot gui
+super + shift + 4
     flameshot gui
 
 # Backlight control
