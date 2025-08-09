@@ -52,8 +52,8 @@ nitrogen --restore &
 # Compositor
 touch /tmp/picom && picom &
 
-# Autolock the screen
-xautolock -time 30 -corners 000- -locker "$HOME/.config/i3/scripts/i3lock.sh" &
+# Autolock the screen (do not lock if mouse is placed at bottom-left and bottom-right corners)
+xautolock -time 30 -corners 00-- -cornersize 50 -locker "$HOME/.config/i3/scripts/i3lock.sh" &
 
 # Lockscreen settings
 xss-lock --transfer-sleep-lock -- "$HOME/.config/i3/scripts/transfer-sleep-lock-generic-delay.sh" &
