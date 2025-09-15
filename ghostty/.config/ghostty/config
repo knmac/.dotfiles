@@ -1,6 +1,6 @@
 font-family = "JetBrainsMono Nerd Font"
 font-size = 17
-theme = "catppuccin-macchiato"
+theme = "Catppuccin Macchiato"
 mouse-hide-while-typing = true
 
 background-opacity = 0.9
@@ -17,6 +17,8 @@ window-padding-balance = true
 macos-option-as-alt = true
 
 gtk-titlebar = false
+
+custom-shader=~/.config/ghostty/shaders/cursor_blaze.glsl
 
 # ─────────────────────────────────────────────────────────────────────────────────────────────────
 # Keybindings
