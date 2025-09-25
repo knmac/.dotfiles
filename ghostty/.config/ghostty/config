@@ -18,7 +18,7 @@ macos-option-as-alt = true
 
 gtk-titlebar = false
 
-custom-shader=~/.config/ghostty/shaders/cursor_blaze.glsl
+# custom-shader=~/.config/ghostty/shaders/cursor_blaze.glsl
 
 # ─────────────────────────────────────────────────────────────────────────────────────────────────
 # Keybindings
