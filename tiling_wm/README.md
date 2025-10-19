@@ -4,16 +4,15 @@ Need to install
 - bspwm
 - flameshot
 - galculator
-- google-chrome-stable
+- ghostty
 - ibus
-- kitty
 - meteo-gtk
 - nitrogen
 - picom (jonaburg)
 - polybar
 - rofi
 - thunar
-- wezterm
+- zen-browser
 
 Pre-installed by xfce4
 - alsamixer
