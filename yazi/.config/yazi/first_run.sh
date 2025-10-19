@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-ya pack -i
+ya pkg install
 
 # Configure yazi
 echo "Add the following to your .bashrc or .zshrc etc."

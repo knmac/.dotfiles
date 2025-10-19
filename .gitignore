@@ -7,5 +7,8 @@ nvim/.config/nvim/lazy-lock.json
 tmux/.config/tmux/plugins
 tmux/.config/tmux/plugins/*
 
+yazi/.config/yazi/flavors
+yazi/.config/yazi/plugins
+
 .DS_Store
 .DS_Store?
