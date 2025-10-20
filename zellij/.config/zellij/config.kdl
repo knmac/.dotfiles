@@ -520,9 +520,3 @@ default_mode "locked"
 web_client {
     font "monospace"
 }
-
-ui {
-    pane_frames {
-        rounded_corners true
-    }
-}
