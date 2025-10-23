@@ -123,7 +123,7 @@ window {
   border: none;
   border-radius: 12px;
   color: @text;
-  background-color: @base;
+  background-color: @mantle;
   animation: fadeIn 0.5s ease-in-out both;
 }
 

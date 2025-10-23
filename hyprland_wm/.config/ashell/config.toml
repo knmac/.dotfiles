@@ -7,7 +7,7 @@ clipboard_cmd = "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
 [modules]
 left = [ [ "appLauncher", "Updates", "Workspaces" ], "MediaPlayer" ]
 center = [ "WindowTitle" ]
-right = [ "SystemInfo", [ "Clipboard", "Tray", "Clock", "Privacy", "Settings" ] ]
+right = [ "SystemInfo", [ "Clipboard", "Tray", "Clock", "Privacy", "notification", "Settings" ] ]
 
 [updates]
 check_cmd = "checkupdates; paru -Qua"
@@ -20,6 +20,14 @@ enable_workspace_filling = true
 name = "appLauncher"
 icon = ""
 command = "wofi --show drun"
+
+[[CustomModule]]
+name = "notification"
+icon = "󰎟"
+command = "swaync-client -t -sw"
+listen_cmd = "swaync-client -t -swb"
+icons.'dnd.*' = ""
+alert = ".*notification"
 
 [window_title]
 truncate_title_after_length = 100
@@ -53,3 +61,6 @@ strong = "#6e738d"
 
 [appearance.secondary_color]
 base = "#181926"
+
+[appearance.menu]
+opacity = 0.9

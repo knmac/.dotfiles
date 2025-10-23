@@ -3,6 +3,7 @@
   font-size: 14px;
   font-family: "Ubuntu Nerd Font";
   transition: 200ms;
+  opacity: 0.95;
 }
 
 trough highlight {
@@ -29,7 +30,9 @@ trough slider {
 }
 
 trough slider:hover {
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 0 8px #8aadf4;
+  box-shadow:
+    0 0 2px rgba(0, 0, 0, 0.8),
+    0 0 8px #8aadf4;
 }
 
 trough {
@@ -38,7 +41,9 @@ trough {
 
 /* notifications */
 .notification-background {
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px #494d64;
+  box-shadow:
+    0 0 8px 0 rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px #494d64;
   border-radius: 12.6px;
   margin: 18px;
   background: #1e2030;
@@ -112,7 +117,6 @@ trough {
 .notification .notification-action:hover {
   background-color: #494d64;
 }
-
 .notification .notification-action:active {
   background-color: #5b6078;
 }
@@ -135,7 +139,9 @@ trough {
 
 /* control center */
 .control-center {
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px #363a4f;
+  box-shadow:
+    0 0 8px 0 rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px #363a4f;
   border-radius: 12.6px;
   background-color: #24273a;
   color: #cad3f5;
@@ -326,4 +332,3 @@ scrollbar trough {
 .image {
   padding-right: 0.5rem;
 }
-
