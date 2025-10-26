@@ -13,9 +13,6 @@ fi
 # Source/load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Load completions
-autoload -Uz compinit && compinit
-
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
@@ -26,6 +23,9 @@ zinit light zpm-zsh/ls
 # Add in snippets
 # zinit snippet OMZP::command-not-found
 # zinit snippet OMZP::archlinux
+
+# Load completions
+autoload -Uz compinit && compinit
 
 # Keybindings
 bindmode="emacs" # emacs | vim
