@@ -5,7 +5,7 @@ app_launcher_cmd = "wofi --show drun"
 clipboard_cmd = "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
 
 [modules]
-left = [ [ "appLauncher", "Updates", "Workspaces" ], ["MediaPlayer", "musicVisualizer"] ]
+left = [ [ "appLauncher", "Updates", "Workspaces" ], "MediaPlayer" ]
 center = [ "WindowTitle" ]
 right = [ "SystemInfo", [ "Clipboard", "Tray", "Clock", "Privacy", "notification", "Settings" ] ]
 
@@ -21,17 +21,17 @@ name = "appLauncher"
 icon = ""
 command = "wofi --show drun"
 
-[[CustomModule]]
-name = "musicVisualizer"
-icon = "󱑽"
-command = "ghostty -e bash -c cava"
+# [[CustomModule]]
+# name = "musicVisualizer"
+# icon = "󱑽"
+# command = "ghostty -e bash -c cava"
 
 [[CustomModule]]
 name = "notification"
 icon = "󰎟"
 command = "swaync-client -t -sw"
 listen_cmd = "swaync-client -t -swb"
-icons.'dnd.*' = ""
+icons.'dnd.*' = ""
 alert = ".*notification"
 
 [window_title]
