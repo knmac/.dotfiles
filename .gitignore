@@ -9,6 +9,7 @@ tmux/.config/tmux/plugins/*
 
 yazi/.config/yazi/flavors
 yazi/.config/yazi/plugins
+yazi/.config/yazi/packages.toml
 
 .DS_Store
 .DS_Store?
