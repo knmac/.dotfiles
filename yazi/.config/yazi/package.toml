@@ -1,11 +1,11 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "9a52857"
+rev = "8f1d971"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "9a52857"
+rev = "8f1d971"
 hash = "8ad3e90b079190b4905f24a44f4ca06b"
 
 [[plugin.deps]]
@@ -15,10 +15,10 @@ hash = "c2021386289a0cbb3e152a052f67c177"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "9a52857"
+rev = "8f1d971"
 hash = "8a7c58225816a163a6e8730c0adafbc8"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "2d73b79"
-hash = "86f1eb7e792533c80b34cdff4e191f41"
+rev = "f6b425a"
+hash = "4127d9d6c96862ed96a7a64b3973a5af"

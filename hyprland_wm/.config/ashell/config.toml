@@ -11,7 +11,7 @@ right = [ "SystemInfo", [ "Clipboard", "Tray", "Clock", "Privacy", "notification
 
 [updates]
 check_cmd = "checkupdates; paru -Qua"
-update_cmd = 'ghostty -e bash -c "yay; echo Done - Press enter to exit; read" &'
+update_cmd = 'kitty -e bash -c "yay; echo Done - Press enter to exit; read" &'
 
 [workspaces]
 enable_workspace_filling = true
@@ -24,7 +24,7 @@ command = "wofi --show drun"
 # [[CustomModule]]
 # name = "musicVisualizer"
 # icon = "󱑽"
-# command = "ghostty -e bash -c cava"
+# command = "kitty -e bash -c cava"
 
 [[CustomModule]]
 name = "notification"
