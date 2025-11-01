@@ -1,8 +1,10 @@
 log_level = "warn"
 outputs = { Targets = ["eDP-1"] }
 position = "Top"
-app_launcher_cmd = "wofi --show drun"
-clipboard_cmd = "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
+app_launcher_cmd = "walker"
+clipboard_cmd = "walker -m clipboard"
+# app_launcher_cmd = "wofi --show drun"
+# clipboard_cmd = "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
 
 [modules]
 left = [ [ "appLauncher", "Updates", "Workspaces" ], "MediaPlayer" ]
@@ -19,7 +21,8 @@ enable_workspace_filling = true
 [[CustomModule]]
 name = "appLauncher"
 icon = ""
-command = "wofi --show drun"
+command = "walker"
+# command = "wofi --show drun"
 
 # [[CustomModule]]
 # name = "musicVisualizer"
