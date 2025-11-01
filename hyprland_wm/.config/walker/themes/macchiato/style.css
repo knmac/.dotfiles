@@ -1,0 +1,219 @@
+@define-color rosewater #f4dbd6;
+@define-color flamingo #f0c6c6;
+@define-color pink #f5bde6;
+@define-color mauve #c6a0f6;
+@define-color red #ed8796;
+@define-color maroon #ee99a0;
+@define-color peach #f5a97f;
+@define-color yellow #eed49f;
+@define-color green #a6da95;
+@define-color teal #8bd5ca;
+@define-color sky #91d7e3;
+@define-color sapphire #7dc4e4;
+@define-color blue #8aadf4;
+@define-color lavender #b7bdf8;
+@define-color text #cad3f5;
+@define-color subtext1 #b8c0e0;
+@define-color subtext0 #a5adcb;
+@define-color overlay2 #939ab7;
+@define-color overlay1 #8087a2;
+@define-color overlay0 #6e738d;
+@define-color surface2 #5b6078;
+@define-color surface1 #494d64;
+@define-color surface0 #363a4f;
+@define-color base #24273a;
+@define-color mantle #1e2030;
+@define-color crust #181926;
+
+/* @define-color window_bg_color #1f1f28; */
+/* @define-color accent_bg_color #54546d; */
+/* @define-color theme_fg_color #f2ecbc; */
+/* @define-color error_bg_color #C34043; */
+/* @define-color error_fg_color #DCD7BA; */
+@define-color window_bg_color @base;
+@define-color accent_bg_color @overlay0;
+@define-color theme_fg_color @text;
+@define-color error_bg_color @red;
+@define-color error_fg_color @text;
+
+* {
+  all: unset;
+}
+
+.normal-icons {
+  -gtk-icon-size: 32px;
+}
+
+.large-icons {
+  -gtk-icon-size: 64px;
+}
+
+scrollbar {
+  opacity: 0;
+}
+
+.box-wrapper {
+  /* box-shadow: */
+  /*   0 19px 38px rgba(0, 0, 0, 0.3), */
+  /*   0 15px 12px rgba(0, 0, 0, 0.22); */
+  /* background: @window_bg_color; */
+  /* padding: 20px; */
+  /* border-radius: 20px; */
+  /* border: 1px solid darker(@accent_bg_color); */
+  margin: 0px;
+  padding: 20px;
+  background:
+    linear-gradient(@base, @base) padding-box,
+    linear-gradient(45deg, #33ccff, #00ff99) border-box;
+  border: 0.16em solid transparent;
+  border-radius: 20px;
+  background-color: @base;
+  /* animation: slideIn 0.5s ease-in-out both; */
+}
+
+.preview-box,
+.elephant-hint,
+.placeholder {
+  color: @theme_fg_color;
+}
+
+.box {
+}
+
+.search-container {
+  border-radius: 10px;
+}
+
+.input placeholder {
+  opacity: 0.5;
+}
+
+.input {
+  caret-color: @theme_fg_color;
+  background: lighter(@window_bg_color);
+  padding: 10px;
+  color: @theme_fg_color;
+}
+
+.input:focus,
+.input:active {
+}
+
+.content-container {
+}
+
+.placeholder {
+}
+
+.scroll {
+}
+
+.list {
+  color: @theme_fg_color;
+}
+
+child {
+}
+
+.item-box {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.item-quick-activation {
+  background: alpha(@accent_bg_color, 0.25);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+child:hover .item-box,
+child:selected .item-box {
+  background: alpha(@accent_bg_color, 0.25);
+}
+
+.item-text-box {
+}
+
+.item-subtext {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.providerlist .item-subtext {
+  font-size: unset;
+  opacity: 0.75;
+}
+
+.item-image-text {
+  font-size: 28px;
+}
+
+.preview {
+  border: 1px solid alpha(@accent_bg_color, 0.25);
+  padding: 10px;
+  border-radius: 10px;
+  color: @theme_fg_color;
+}
+
+.calc .item-text {
+  font-size: 24px;
+}
+
+.calc .item-subtext {
+}
+
+.symbols .item-image {
+  font-size: 24px;
+}
+
+.todo.done .item-text-box {
+  opacity: 0.25;
+}
+
+.todo.urgent {
+  font-size: 24px;
+}
+
+.todo.active {
+  font-weight: bold;
+}
+
+.bluetooth.disconnected {
+  opacity: 0.5;
+}
+
+.preview .large-icons {
+  -gtk-icon-size: 64px;
+}
+
+.keybinds-wrapper {
+  border-top: 1px solid lighter(@window_bg_color);
+  font-size: 12px;
+  opacity: 0.5;
+  color: @theme_fg_color;
+}
+
+.keybinds {
+}
+
+.keybind {
+}
+
+.keybind-bind {
+  /* color: lighter(@window_bg_color); */
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.keybind-label {
+}
+
+.error {
+  padding: 10px;
+  background: @error_bg_color;
+  color: @error_fg_color;
+}
+
+:not(.calc).current {
+  font-style: italic;
+}
