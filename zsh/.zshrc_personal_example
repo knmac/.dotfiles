@@ -1,0 +1,80 @@
+# Lazy load conda
+lazy_conda_aliases=("conda")
+load_conda() {
+    for lazy_conda_alias in $lazy_conda_aliases
+    do
+        unalias $lazy_conda_alias
+    done
+
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/knmac/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/knmac/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/knmac/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/knmac/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+
+    unfunction load_conda
+}
+
+for lazy_conda_alias in "$lazy_conda_aliases"; do
+    alias $lazy_conda_alias="load_conda && $lazy_conda_alias"
+done
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Personal setup
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Exports ─────────────────────────────────────────────────────────────────────────────────────────
+export PATH="$HOME/.local/bin:$HOME/.local/share/knvim/mason/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+export PYENV_ROOT="$HOME/.venvs"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+export PYTHONBREAKPOINT="ipdb.set_trace"
+export GIT_SSH_COMMAND="/usr/bin/ssh"
+export NVIM_APPNAME="knvim"
+export MANROFFOPT="-c"
+# export TERM="wezterm"
+
+# Change colors for ls on MacOS
+# export LS_COLORS="$LSCOLORS"
+
+
+# Aliases ─────────────────────────────────────────────────────────────────────────────────────────
+alias l="ll -a"
+alias vi="NVIM_APPNAME=knvim.mini nvim"
+if type xclip &> /dev/null; then
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+elif type xsel &> /dev/null; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+fi
+DOTFILES_DIR="$HOME/.dotfiles"
+alias dotfiles="git --git-dir=$DOTFILES_DIR/.git --work-tree=$DOTFILES_DIR"
+
+# Combine yay with fzf
+# alias pacmanfind="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+if type yay &> /dev/null; then
+    alias yayfind="yay -Slqa | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+    alias yayrm="yay -Q | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -Rns"
+fi
+
+
+# Source custom tools ─────────────────────────────────────────────────────────────────────────────
+# source "$DOTFILES_DIR/tools/add_tools.sh"
+# for tool in "$HOME"/tools/*.sh; do
+#     source "$tool"
+# done
+
+# vi: ft=zsh
