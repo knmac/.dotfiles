@@ -85,9 +85,10 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 # Configure fzf ───────────────────────────────────────────────────────────────────────────────────
 export FZF_DEFAULT_OPTS=" \
---color=spinner:#f4dbd6,hl:#ed8796 \
---color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
---color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
+    --color=spinner:#f4dbd6,hl:#ed8796 \
+    --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+    --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+"
 zstyle ':fzf-tab:*' fzf-flags $(echo $FZF_DEFAULT_OPTS)
 
 # Use ripgrep as search program for fzf
@@ -111,17 +112,26 @@ if type bat &> /dev/null; then
     export MANPAGER="sh -c 'col -bx | bat -l man --plain'"
 fi
 
+# Combine yay with fzf
+# alias pacmanfind="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+if type yay &> /dev/null; then
+    alias yayfind="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+    alias yayrm="yay -Q | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -Rns"
+fi
+
 # Configure yazi ──────────────────────────────────────────────────────────────────────────────────
-yy() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        # cd -- "$cwd"
-        "$cwd"
-    fi
-    rm -f -- "$tmp"
-}
-bindkey -s '^y' "yy\n"  # set up key-binding for yazi
+if type yazi &> /dev/null; then
+    yy() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+            # cd -- "$cwd"
+            "$cwd"
+        fi
+        rm -f -- "$tmp"
+    }
+    bindkey -s '^y' "yy\n"  # set up key-binding for yazi
+fi
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
