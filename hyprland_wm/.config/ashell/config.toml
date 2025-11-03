@@ -12,7 +12,7 @@ center = [ "WindowTitle" ]
 right = [ "SystemInfo", [ "Clipboard", "Tray", "Clock", "Privacy", "notification", "Settings" ] ]
 
 [updates]
-check_cmd = "checkupdates; paru -Qua"
+check_cmd = "checkupdates; yay -Qua"
 update_cmd = 'kitty -e bash -c "yay; echo Done - Press enter to exit; read" &'
 
 [workspaces]
