@@ -116,7 +116,7 @@ fi
 # alias pacmanfind="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 if type yay &> /dev/null; then
     alias yayfind="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
-    alias yayrm="yay -Q | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -Rns"
+    alias yayrm="yay -Q | fzf --multi --preview 'yay -Si {1}' | awk '{print \$1}' | xargs -ro yay -Rns"
 fi
 
 # Configure yazi ──────────────────────────────────────────────────────────────────────────────────
