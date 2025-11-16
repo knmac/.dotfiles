@@ -18,6 +18,11 @@ use = "yazi-rs/plugins:toggle-pane"
 rev = "8f1d971"
 hash = "8a7c58225816a163a6e8730c0adafbc8"
 
+[[plugin.deps]]
+use = "orhnk/system-clipboard"
+rev = "888026c"
+hash = "9f82a544335a53d79e87ea315746caaa"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
 rev = "f6b425a"
