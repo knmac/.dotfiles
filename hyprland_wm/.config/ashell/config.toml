@@ -1,8 +1,10 @@
 log_level = "warn"
 outputs = { Targets = ["eDP-1"] }
 position = "Top"
-app_launcher_cmd = "walker"
-clipboard_cmd = "walker -m clipboard"
+app_launcher_cmd = "vicinae toggle"
+clipboard_cmd = "vicinae vicinae://extensions/vicinae/clipboard/history"
+# app_launcher_cmd = "walker"
+# clipboard_cmd = "walker -m clipboard"
 # app_launcher_cmd = "wofi --show drun"
 # clipboard_cmd = "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
 

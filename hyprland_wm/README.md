@@ -16,6 +16,7 @@ Prerequisites:
   ```
 - wlogout: logout menu
 - ~wofi: app launcher~
-- walker+elephant: app launcher
+- ~walker+elephant: app launcher~
+- vicinae: app launcher
 - nwg-look: GTK theme editor
 - hyprpaper: wallpaper
