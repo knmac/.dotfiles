@@ -23,7 +23,8 @@ enable_workspace_filling = true
 [[CustomModule]]
 name = "appLauncher"
 icon = ""
-command = "walker"
+command = "vicinae toggle"
+# command = "walker"
 # command = "wofi --show drun"
 
 # [[CustomModule]]
