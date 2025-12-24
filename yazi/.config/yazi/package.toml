@@ -23,11 +23,6 @@ use = "orhnk/system-clipboard"
 rev = "888026c"
 hash = "9f82a544335a53d79e87ea315746caaa"
 
-[[plugin.deps]]
-use = "uhs-robert/sshfs"
-rev = "75a025c"
-hash = "e1cebecfee70daef1f97aa083209340c"
-
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
 rev = "9276ffa"
