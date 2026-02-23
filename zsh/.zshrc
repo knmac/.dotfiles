@@ -10,6 +10,9 @@ if [ ! -d "$ZINIT_HOME" ]; then
     git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# Load completions
+autoload -Uz compinit && compinit
+
 # Source/load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -23,9 +26,6 @@ zinit light zpm-zsh/ls
 # Add in snippets
 # zinit snippet OMZP::command-not-found
 # zinit snippet OMZP::archlinux
-
-# Load completions
-autoload -Uz compinit && compinit
 
 # Keybindings
 bindmode="emacs" # emacs | vim
@@ -41,6 +41,10 @@ else
     bindkey '^n' history-search-forward
 fi
 bindkey '^ ' autosuggest-accept
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
 
 # History
 HISTSIZE=5000

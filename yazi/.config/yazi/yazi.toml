@@ -7,3 +7,14 @@ show_hidden = true
 [preview]
 max_width = 2048
 max_height = 2048
+
+[opener]
+pdf = [
+    { run = 'zathura "$@"', block = false, desc = "Zathura" },
+]
+
+[open]
+rules = [
+    { mime = "application/pdf", use = [ "open", "pdf", "reveal" ] },
+]
+
