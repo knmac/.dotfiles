@@ -10,11 +10,11 @@ if [ ! -d "$ZINIT_HOME" ]; then
     git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-# Load completions
-autoload -Uz compinit && compinit
-
 # Source/load zinit
 source "${ZINIT_HOME}/zinit.zsh"
+
+# Load completions
+autoload -Uz compinit && compinit
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -150,3 +150,4 @@ fi
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
+eval "$(uv generate-shell-completion zsh)"

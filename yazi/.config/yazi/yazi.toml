@@ -14,7 +14,7 @@ pdf = [
 ]
 
 [open]
-rules = [
+append_rules = [
     { mime = "application/pdf", use = [ "open", "pdf", "reveal" ] },
 ]
 
