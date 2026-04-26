@@ -22,6 +22,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light sainnhe/zsh-completions
 zinit light Aloxaf/fzf-tab
 zinit light zpm-zsh/ls
+zinit light redxtech/zsh-kitty
 
 # Add in snippets
 # zinit snippet OMZP::command-not-found
