@@ -21,6 +21,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light sainnhe/zsh-completions
 zinit light Aloxaf/fzf-tab
+zinit ice atload"exa_params+=('--hyperlink')"
 zinit light zpm-zsh/ls
 zinit light redxtech/zsh-kitty
 
