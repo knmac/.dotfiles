@@ -36,7 +36,7 @@ command = "vicinae toggle"
 name = "notification"
 icon = "󰎟"
 command = "swaync-client -t -sw"
-listen_cmd = "swaync-client -t -swb"
+listen_cmd = "swaync-client -swb"
 icons.'dnd.*' = ""
 alert = ".*notification"
 
