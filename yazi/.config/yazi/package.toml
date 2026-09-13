@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "b9598e6"
-hash = "7b625412411be411153886894d9acaf"
+rev = "58c4f4e"
+hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
