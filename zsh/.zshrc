@@ -48,6 +48,11 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
+# Reset mouse reporting each prompt (a dropped ssh leaves a TUI's mouse mode on)
+autoload -Uz add-zsh-hook
+_mouse_off() { printf '\e[?1000l\e[?1002l\e[?1003l\e[?1005l\e[?1006l\e[?1015l' }
+add-zsh-hook precmd _mouse_off
+
 # History
 HISTSIZE=5000
 HISTFILE="${HOME}/.zsh_history"
@@ -150,6 +155,7 @@ fi
 # Shell integrations (placed at the end)
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 eval "$(uv generate-shell-completion zsh)"
+export _ZO_DOCTOR=0
+eval "$(zoxide init --cmd cd zsh)" # replace cd with zoxide
