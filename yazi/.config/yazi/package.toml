@@ -23,6 +23,11 @@ use = "orhnk/system-clipboard"
 rev = "75a5330"
 hash = "2eca70f99d25c661e0a92000843d001e"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "58c4f4e"
+hash = "45a533508a9840cc5a10cf6129f63e6a"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
 rev = "1a5f787"

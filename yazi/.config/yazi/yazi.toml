@@ -8,13 +8,37 @@ show_hidden = true
 max_width = 2048
 max_height = 2048
 
-[opener]
-pdf = [
-    { run = 'zathura "$@"', block = false, desc = "Zathura" },
-]
+# [opener]
+# pdf = [
+#     { run = 'zathura "$@"', block = false, desc = "Zathura" },
+# ]
 
 [open]
 append_rules = [
     { mime = "application/pdf", use = [ "open", "pdf", "reveal" ] },
 ]
 
+# piper previewer configs ─────────────────────────────────────────────────────────────────────────
+[plugin]
+prepend_previewers = [
+    # Preview tarballs with tar
+    { url = "*.tar*", run = 'piper --format=url -- tar tf "$1"' },
+    { url = "*.tgz", run = 'piper --format=url -- tar tf "$1"' },
+
+    # Preview CSV with bat
+    { url = "*.csv", run = 'piper -- bat -p --color=always "$1"' },
+
+    # Preview Markdown with glow
+    { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
+
+    # Preview directory tree with eza
+    # { url = "*/", run = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
+
+    # Preview the schema of a SQLite database
+    { mime = "application/sqlite3", run  = 'piper -- sqlite3 "$1" ".schema --indent"' },
+]
+
+append_previewers = [
+    # Use hexyl as fallback previewer
+    { url = "*", run = 'piper -- hexyl --border=none --terminal-width=$w "$1"', }
+]
