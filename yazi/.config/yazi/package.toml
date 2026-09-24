@@ -1,34 +1,34 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "58c4f4e"
+rev = "f703392"
 hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "b9598e6"
-hash = "5b1c276b75cae91cbbdbe7863f39a540"
+rev = "f703392"
+hash = "87472b05a8c420100f6a2b9cde1e7746"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "159eaba"
-hash = "7de446280b1ba8c49ffd86dbc24bbbe6"
+rev = "ea92cf4"
+hash = "9776f378459072b6c2875eae5addc49d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "b9598e6"
-hash = "15e5b67a241172cbb86b8fbf9e63692"
+rev = "f703392"
+hash = "5b2fbef7d1513ce38ff72623a071a5e"
 
 [[plugin.deps]]
 use = "orhnk/system-clipboard"
-rev = "75a5330"
-hash = "2eca70f99d25c661e0a92000843d001e"
+rev = "ed946c3"
+hash = "43fff18b85896a499105f621de458ea1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "58c4f4e"
-hash = "45a533508a9840cc5a10cf6129f63e6a"
+rev = "f703392"
+hash = "d1e0499cae5f3aeb628c267616d4b682"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "1a5f787"
-hash = "67f2240fd9c98f21714527a24cd672f8"
+rev = "20b47bf"
+hash = "5b1bf96d1cba26376087c37de993c517"
