@@ -209,6 +209,8 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 hl.config({
     dwindle = {
         preserve_split = true, -- You probably want this
+        force_split = 2, -- 0 = follow mouse, 1 = always left/top, 2 = always right/bottom
+        use_active_for_splits = true, -- Ensures splits happen inside the focused window, not under the cursor
     },
 })
 
